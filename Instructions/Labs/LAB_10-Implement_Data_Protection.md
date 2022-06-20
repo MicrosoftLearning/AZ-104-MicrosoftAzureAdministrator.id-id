@@ -2,12 +2,12 @@
 lab:
   title: 10 - Menerapkan Perlindungan Data
   module: Module 10 - Data Protection
-ms.openlocfilehash: 28884df63a3efefa1d426a6fbec194e113cb203b
-ms.sourcegitcommit: 0d47b9c4ded01643654314d8e615045c4e8692bb
+ms.openlocfilehash: f4e79a18ee68068147de54a2bca65e0e879f0419
+ms.sourcegitcommit: e8161696e61bdf61f6fac5641cdf6d5ba65f4739
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 04/09/2022
-ms.locfileid: "145198195"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "146066372"
 ---
 # <a name="lab-10---backup-virtual-machines"></a>Lab 10 - Mencadangkan mesin virtual
 # <a name="student-lab-manual"></a>Panduan lab siswa
@@ -20,7 +20,7 @@ Anda telah ditugaskan untuk mengevaluasi penggunaan Layanan Pemulihan Azure untu
 
 Di lab ini Anda akan:
 
-+ Tugas 1: Menyediakan lingkungan lab
++ Tugas 1: Memprovisikan lingkungan lab
 + Tugas 2: Membuat vault Recovery Service
 + Tugas 3: Menerapkan pencadangan tingkat mesin virtual Azure
 + Tugas 4: Menerapkan pencadangan File dan Folder
@@ -30,7 +30,7 @@ Di lab ini Anda akan:
 
 ## <a name="estimated-timing-50-minutes"></a>Perkiraan waktu: 50 menit
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -48,7 +48,7 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan unt
 
 1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu dropdown, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** ke dalam direktori beranda Cloud Shell.
 
-1. Edit file Parameter yang baru saja Anda unggah dan ubah kata sandinya. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Untuk praktik terbaik, rahasia, seperti kata sandi, harus disimpan lebih aman di Key Vault. 
+1. Edit file Parameter yang baru saja Anda unggah dan ubah kata sandinya. Jika memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Untuk praktik terbaik, rahasia, seperti kata sandi, harus disimpan lebih aman di Key Vault. 
 
 1. Dari panel Cloud Shell, jalankan cara berikut ini untuk membuat grup sumber daya yang akan meng-hosting mesin virtual (ganti tempat penampung `[Azure_region]` dengan nama wilayah Azure tempat Anda ingin menyebarkan mesin virtual Azure). Ketikkan setiap baris perintah secara terpisah dan jalankan secara terpisah:
 
@@ -370,6 +370,8 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 1. Pada bilah **Item Cadangan (Agen Azure Backup)** , klik entri yang mewakili cadangan **az104-10-vm1**.
 
 1. Di **C:\\ pada bilah az104-10-vm1.** , pilih **Lihat detail** untuk **az104-10-vm1.** .
+
+1. Pada panel Detail, klik **az104-10-vm1**.
 
 1. Di bilah **az104-10-vm1.** Server yang Dilindungi, klik **Hapus**.
 
