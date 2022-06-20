@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3a6d97b55de3c7521ccc4df57f952992a47848bf
-ms.sourcegitcommit: 7bee317d45512510f9d6eb9b05c4ee6ef6c4ada0
+ms.openlocfilehash: a106aae9e7c3de7b5154ce5e889ee057a1b9dff3
+ms.sourcegitcommit: 69083589fed0a226499b3067222e444d3fe0bac8
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "145198208"
+ms.lasthandoff: 06/17/2022
+ms.locfileid: "146458132"
 ---
 # <a name="az-104-microsoft-azure-administrator"></a>AZ-104: Microsoft Azure Administrator
 
@@ -44,7 +44,7 @@ Setelah mereka masuk, mesin dapat digunakan untuk penambangan kripto atau aktivi
 
 ## <a name="what-about-changes-to-the-student-handbook"></a>Bagaimana dengan perubahan pada buku pegangan siswa?
 
-- Repositori ini hanya untuk Masalah dengan lab kursus. Komentar tentang konten kursus harus diposting di Forum Courseware MCT. 
+- Repositori ini hanya untuk Masalah dengan lab kursus. Anda dapat mengirimkan umpan balik atau koreksi pada [konten kursus](https://docs.microsoft.com/learn/certifications/courses/az-104t00). Harap gunakan tautan _laporkan masalah_ di bagian bawah setiap laman konten.
 
 ## <a name="notes"></a>Catatan
 
