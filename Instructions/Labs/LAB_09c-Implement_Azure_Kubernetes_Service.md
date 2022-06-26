@@ -2,12 +2,12 @@
 lab:
   title: 09c - Menerapkan Azure Kubernetes Service
   module: Module 09 - Serverless Computing
-ms.openlocfilehash: 42e43fa916e61988df87b3188fba59ab7b57652e
-ms.sourcegitcommit: dd61587ee547d5efa09ad0a63c0b2af272ee1e55
+ms.openlocfilehash: 929e2dfa4aba9df613e8d5ac594d903ede2f9934
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 03/31/2022
-ms.locfileid: "145198206"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587475"
 ---
 # <a name="lab-09c---implement-azure-kubernetes-service"></a>Lab 09c - Menerapkan Azure Kubernetes Service
 # <a name="student-lab-manual"></a>Panduan lab siswa
@@ -77,7 +77,7 @@ Dalam tugas ini, Anda akan menyebarkan kluster Azure Kubernetes Services menggun
     | Metode skala | **Manual** |
     | Jumlah simpul | **1** |
 
-1. Klik **Berikutnya: Kumpulan Simpul >** dan, pada tab **Kumpulan Simpul** bilah **Buat kluster Kubernetes**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Klik **Berikutnya: Kumpulan Node >** dan, pada tab **Kumpulan Node** bilah **Buat kluster Kubernetes**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | ---- | ---- |
@@ -178,11 +178,6 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
 1. Dari panel **Cloud Shell**, dan jalankan perintah berikut untuk menskalakan penyebaran dengan menambah jumlah pod menjadi 2:
 
     ```sh
-
-    RESOURCE_GROUP='az104-09c-rg1'
-
-    AKS_CLUSTER='az104-9c-aks1'
-
     kubectl scale --replicas=2 deployment/nginx-deployment
     ```
 
@@ -197,6 +192,10 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
 1. Dari panel **Cloud Shell**, jalankan perintah berikut untuk menskalakan kluster dengan menambah jumlah simpul menjadi 2:
 
     ```sh
+    RESOURCE_GROUP='az104-09c-rg1'
+
+    AKS_CLUSTER='az104-9c-aks1'
+
     az aks scale --resource-group $RESOURCE_GROUP --name $AKS_CLUSTER --node-count 2
     ```
 

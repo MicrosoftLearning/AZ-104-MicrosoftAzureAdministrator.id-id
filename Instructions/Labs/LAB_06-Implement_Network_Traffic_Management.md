@@ -2,12 +2,12 @@
 lab:
   title: 06 - Menerapkan Manajemen Lalu Lintas
   module: Module 06 - Network Traffic Management
-ms.openlocfilehash: 9b2a379c1c01645b0b7998d8eb463f95ab7825d2
-ms.sourcegitcommit: 4efd79c7aa4b4ba9b1f91d0b69eb64a8326b75e4
+ms.openlocfilehash: 81fd0fefc28cbf9eb59935e93bb548c69d677cf5
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 06/01/2022
-ms.locfileid: "145985695"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587457"
 ---
 # <a name="lab-06---implement-traffic-management"></a>Lab 06 - Menerapkan Manajemen Lalu Lintas
 # <a name="student-lab-manual"></a>Panduan lab siswa
@@ -46,7 +46,7 @@ Dalam tugas ini, Anda akan menyebarkan empat mesin virtual ke wilayah Azure yang
 
 1. Masuk ke [portal Microsoft Azure](https://portal.azure.com).
 
-1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Microsoft Azure.
+1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
@@ -327,7 +327,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | --- | --- |
     | Nama rute | **az104-06-route-vnet2-to-vnet3** |
     | Tujuan awalan alamat | **Alamat IP** |
-    | Alamat IP sumber/rentang CIDR | **10.63.0.0/20** |
+    | Alamat IP tujuan/rentang CIDR | **10.63.0.0/20** |
     | Tipe Lompatan Berikutnya | **Appliance virtual** |
     | Alamat lompatan berikutnya | **10.60.0.4** |
 
@@ -370,7 +370,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | --- | --- |
     | Nama rute | **az104-06-route-vnet3-to-vnet2** |
     | Tujuan awalan alamat | **Alamat IP** |
-    | Alamat IP sumber/rentang CIDR | **10.62.0.0/20** |    
+    | Alamat IP tujuan/rentang CIDR | **10.62.0.0/20** |
     | Tipe Lompatan Berikutnya | **Appliance virtual** |
     | Alamat lompatan berikutnya | **10.60.0.4** |
 
@@ -614,7 +614,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
->**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Memantau penggunaan sumber daya adalah tugas Administrator yang umum, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+>**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
 1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
 
