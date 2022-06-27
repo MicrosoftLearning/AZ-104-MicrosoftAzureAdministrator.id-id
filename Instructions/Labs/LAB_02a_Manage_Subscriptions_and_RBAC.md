@@ -2,12 +2,12 @@
 lab:
   title: 02a - Mengelola Langganan dan RBAC
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 8318d90573a04b60e4b1cfd79ed2daa621e8401f
-ms.sourcegitcommit: 8282cbcee5f7cd46bdc73d781c460d6a078049bb
+ms.openlocfilehash: 14b37fcd923ad1b45c83c3a6c41889db3869ed40
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 04/19/2022
-ms.locfileid: "145198188"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587439"
 ---
 # <a name="lab-02a---manage-subscriptions-and-rbac"></a>Lab 02a - Mengelola Langganan dan RBAC
 # <a name="student-lab-manual"></a>Panduan lab siswa
@@ -205,7 +205,7 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
    
 1. Pilih **Refresh** untuk memverifikasi bahwa langganan telah berhasil dipindahkan ke **grup pengelolaan Penyewa Root**.
 
-1. Navigasikan kembali ke panel **Grup Managemen**, klik kanan ikon **elipsis** di sebelah kanan grup pengelolaan **az104-02-mg1** dan klik **Hapus**.
+1. Navigasikan kembali ke panel **Grup manajemen**, klik ikon **elipsis** di sebelah kanan grup manajemen **az104-02-mg1** dan klik **Hapus**.
 
 #### <a name="review"></a>Tinjau
 

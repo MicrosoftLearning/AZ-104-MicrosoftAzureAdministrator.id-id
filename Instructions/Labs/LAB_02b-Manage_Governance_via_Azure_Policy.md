@@ -2,12 +2,12 @@
 lab:
   title: 02b - Mengatur Tata Kelola melalui Azure Policy
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 4e61ed82921b3d069646b2de131d765fed23f3d2
-ms.sourcegitcommit: d3c9789a6f4761a9c69901b8aefdabb39769235c
+ms.openlocfilehash: fad481d30818aaea390ed1357c223f3686671383
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 05/10/2022
-ms.locfileid: "145198212"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587430"
 ---
 # <a name="lab-02b---manage-governance-via-azure-policy"></a>Lab 02b - Mengelola Tata Kelola melalui Azure Policy
 # <a name="student-lab-manual"></a>Panduan lab siswa
@@ -149,7 +149,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
 
 1. Di bagian **Authoring**, klik **Tugas**. 
 
-1. Dalam daftar penugasan, klik kanan ikon elipsis di baris yang mewakili penetapan kebijakan **Wajibkan tag Peran dengan nilai Infra** dan gunakan item menu **Hapus penugasan** untuk menghapus penugasan. 
+1. Dalam daftar penetapan, klik ikon elipsis di baris yang mewakili penetapan kebijakan **Memerlukan tag Peran dengan nilai Infra** dan gunakan item menu **Hapus penetapan** untuk menghapus penetapan.
 
 1. Klik **Tetapkan kebijakan** dan tentukan **Cakupan** dengan mengeklik tombol elipsis dan memilih nilai berikut:
 

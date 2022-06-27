@@ -2,12 +2,12 @@
 lab:
   title: 07 - Mengelola penyimpanan Azure
   module: Module 07 - Azure Storage
-ms.openlocfilehash: 9703d6543f6b3cf7791352a4ee0ba84cda3b5934
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
+ms.openlocfilehash: 34b6dba73d87731df935f80a1b5909e44075e871
+ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "145198201"
+ms.lasthandoff: 06/26/2022
+ms.locfileid: "146587466"
 ---
 # <a name="lab-07---manage-azure-storage"></a>Lab 07 - Mengelola Azure Storage
 # <a name="student-lab-manual"></a>Panduan lab siswa
@@ -44,7 +44,7 @@ Dalam tugas ini, Anda akan menerapkan komputer virtual Azure yang akan Anda guna
 
 1. Masuk ke [portal Microsoft Azure](https://portal.azure.com).
 
-1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Microsoft Azure.
+1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
@@ -85,10 +85,10 @@ Dalam tugas ini, Anda akan menerapkan komputer virtual Azure yang akan Anda guna
 
     >**Catatan**: Jika mendapatkan kesalahan yang menyatakan ukuran VM tidak tersedia, mintalah bantuan instruktur Anda dan coba langkah-langkah ini.
     > 1. Klik tombol `{}` di CloudShell Anda, pilih **az104-07-vm-parameters.json** dari bilah sisi kiri dan catat nilai parameter `vmSize`.
-    > 1. Periksa lokasi di mana grup sumber daya 'az104-04-rg1' diterapkan. Anda dapat menjalankan `az group show -n az104-04-rg1 --query location` di CloudShell untuk mendapatkannya.
+    > 1. Periksa lokasi di mana grup sumber daya 'az104-04-rg1' diterapkan. Anda dapat menjalankan `az group show -n az104-04-rg1 --query location` di CloudShell Anda untuk mendapatkannya.
     > 1. Jalankan `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` di CloudShell Anda.
     > 1. Ganti nilai parameter `vmSize` dengan salah satu nilai yang dikembalikan oleh perintah yang baru saja Anda jalankan.
-    > 1. Sekarang sebarkan ulang template Anda dengan menjalankan perintah `New-AzResourceGroupDeployment` lagi. Anda dapat menekan tombol atas beberapa kali yang akan membawa ke perintah yang terakhir dijalankan.
+    > 1. Sekarang sebarkan ulang template Anda dengan menjalankan perintah `New-AzResourceGroupDeployment` lagi. Anda dapat menekan tombol atas beberapa kali yang akan membawa ke perintah yang dieksekusi terakhir.
 
 1. Tutup panel Cloud Shell.
 
@@ -111,7 +111,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun Azure Storage.
 
 1. Klik **Berikutnya: Lanjutan >** , pada tab **Lanjutan** bilah **Buat akun penyimpanan**, tinjau opsi yang tersedia, terima defaultnya, dan klik **Berikutnya: Jaringan >** .
 
-1. Pada tab **Jaringan** di bilah **Buat akun penyimpanan**, tinjau opsi yang tersedia, terima opsi default **Titik akhir publik (semua jaringan}** dan klik **Berikutnya : Perlindungan data >** .
+1. Pada tab **Jaringan** pada panel **Buat akun penyimpanan**, tinjau opsi yang tersedia, terima opsi default **Aktifkan akses publik dari semua jaringan** dan klik **Berikutnya: Perlindungan data >** .
 
 1. Pada tab **Perlindungan data** dari bilah **Buat akun penyimpanan**, tinjau opsi yang tersedia, terima defaultnya, klik **Tinjau + Buat**, tunggu proses validasi untuk selesai dan klik **Buat**.
 
