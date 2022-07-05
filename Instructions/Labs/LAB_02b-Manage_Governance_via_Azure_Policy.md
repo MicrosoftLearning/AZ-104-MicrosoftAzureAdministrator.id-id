@@ -2,12 +2,12 @@
 lab:
   title: 02b - Mengatur Tata Kelola melalui Azure Policy
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: fad481d30818aaea390ed1357c223f3686671383
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
+ms.openlocfilehash: 2bf92c914983a28dc2d3f85abed917a95e88c04f
+ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587430"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "146973675"
 ---
 # <a name="lab-02b---manage-governance-via-azure-policy"></a>Lab 02b - Mengelola Tata Kelola melalui Azure Policy
 # <a name="student-lab-manual"></a>Panduan lab siswa
@@ -36,7 +36,7 @@ Di lab ini, kami akan:
 
 ![gambar](../media/lab02b.png)
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -179,7 +179,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
     | Pengaturan | Nilai |
     | --- | --- |
     | Buat tugas remediasi | diaktifkan |
-    | Kebijakan yang akan diremediasi | **Mewarisi tag dari grup sumber daya jika tidak ada** |
+    | Kebijakan yang akan diremediasi | **Mewarisi tag dari langganan jika tidak ada** |
 
     >**Catatan**: Definisi kebijakan ini mencakup efek **Modifikasi**.
 
