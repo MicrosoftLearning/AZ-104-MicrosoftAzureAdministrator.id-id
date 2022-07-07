@@ -2,12 +2,12 @@
 lab:
   title: 02a - Mengelola Langganan dan RBAC
   module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 14b37fcd923ad1b45c83c3a6c41889db3869ed40
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
+ms.openlocfilehash: e8b6f60a421222db74d93715ed63860e3ca3c78d
+ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587439"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "146973684"
 ---
 # <a name="lab-02a---manage-subscriptions-and-rbac"></a>Lab 02a - Mengelola Langganan dan RBAC
 # <a name="student-lab-manual"></a>Panduan lab siswa
@@ -43,7 +43,7 @@ Di lab ini Anda akan:
 ![gambar](../media/lab02a.png)
 
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -146,7 +146,7 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
 
 1. Di portal Azure, navigasikan kembali ke grup pengelolaan **az104-02-mg1** dan tampilkan **detailnya**.
 
-1. Klik **Kontrol akses (IAM)** , klik **+ Tambahkan** diikuti dengan **Tambahkan penetapan peran**, dan tetapkan peran **Kontributor Permintaan Dukungan (Kustom)** ke akun pengguna yang baru dibuat.
+1. Klik **Kontrol akses (IAM)** , klik **+ Tambahkan** lalu **Tambahkan penetapan peran**, pilih **Anggota**, masukkan **Tinjau+Tetapkan**, lalu tetapkan peran **Kontributor Permintaan Dukungan (Kustom)** ke akun pengguna yang baru dibuat.
 
 1. Buka jendela browser **InPrivate** dan masuk ke [portal Azure](https://portal.azure.com) menggunakan akun pengguna yang baru dibuat. Saat diminta untuk memperbarui kata sandi, ubah kata sandi untuk pengguna.
 
@@ -206,6 +206,7 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
 1. Pilih **Refresh** untuk memverifikasi bahwa langganan telah berhasil dipindahkan ke **grup pengelolaan Penyewa Root**.
 
 1. Navigasikan kembali ke panel **Grup manajemen**, klik ikon **elipsis** di sebelah kanan grup manajemen **az104-02-mg1** dan klik **Hapus**.
+  >**Catatan**: Jika Anda tidak dapat menghapus **Grup manajemen Akar Penyewa**, kemungkinan **Langganan Azure** akan berada di bagian grup sumber daya. Anda perlu memindahkan **Langganan Azure** dari **grup manajemen Akar Penyewa** lalu menghapus grup.
 
 #### <a name="review"></a>Tinjau
 

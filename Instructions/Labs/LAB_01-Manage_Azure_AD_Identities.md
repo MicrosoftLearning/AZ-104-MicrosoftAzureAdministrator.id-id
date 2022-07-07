@@ -2,12 +2,12 @@
 lab:
   title: 01 - Mengelola Identitas Azure Active Directory
   module: Module 01 - Identity
-ms.openlocfilehash: de59a0e8c7634ee756fc66301b90f73233a9cf8a
-ms.sourcegitcommit: d3c9789a6f4761a9c69901b8aefdabb39769235c
+ms.openlocfilehash: 589e423af0901c93ef685905e4a01a7246e3c791
+ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 05/10/2022
-ms.locfileid: "145198216"
+ms.lasthandoff: 07/05/2022
+ms.locfileid: "146973693"
 ---
 # <a name="lab-01---manage-azure-active-directory-identities"></a>Lab 01 - Mengelola Identitas Azure Active Directory
 
@@ -23,15 +23,15 @@ Di lab ini Anda akan:
 
 + Tugas 1: Buat dan konfigurasikan pengguna Azure AD
 + Tugas 2: Buat grup Azure AD dengan keanggotaan yang ditetapkan dan dinamis
-+ Tugas 3: Membuat penyewa Azure Active Directory (AD)
-+ Tugas 4: Mengelola pengguna tamu Azure AD 
++ Tugas 3: Membuat penyewa Azure Active Directory (AD) (Opsional - masalah lingkungan lab)
++ Tugas 4: Mengelola pengguna tamu Azure Active Directory (Opsional - masalah lingkungan lab)
 
 ## <a name="estimated-timing-30-minutes"></a>Perkiraan waktu: 30 menit
 
 ## <a name="architecture-diagram"></a>Diagram arsitektur
 ![gambar](../media/lab01.png)
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -186,9 +186,11 @@ Dalam tugas ini, Anda akan membuat grup Azure Active Directory dengan keanggotaa
 
 1. Navigasikan kembali ke panel **Grup - Semua grup**, klik entri yang mewakili grup **IT System Administrators**, lalu tampilkan panel **Anggota**. Verifikasi bahwa **az104-01a-aaduser2** muncul dalam daftar anggota grup.
 
-#### <a name="task-3-create-an-azure-active-directory-ad-tenant"></a>Tugas 3: Membuat penyewa Azure Active Directory (AD)
+#### <a name="task-3-create-an-azure-active-directory-ad-tenant-optional---lab-environment-issue"></a>Tugas 3: Membuat penyewa Azure Active Directory (AD) (Opsional - Masalah lingkungan lab)
 
 Dalam tugas ini, Anda akan membuat penyewa Azure AD baru.
+
+   >**Catatan**: Ada masalah yang diketahui dengan verifikasi Captcha di lingkungan lab. Jika Anda mengalami masalah ini, lewati tugas ini dan tugas berikutnya. Kami sedang berusaha memperbaikinya.
 
 1. Di portal Microsoft Azure, cari dan pilih **Azure Active Directory**.
 
