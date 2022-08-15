@@ -53,7 +53,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
     | --- | --- |
     | Langganan | nama langganan Azure yang akan Anda gunakan di lab ini |
     | Grup sumber daya | nama grup sumber daya baru **az104-08-rg01** |
-    | Nama komputer virtual | **az104-08-vm0** |
+    | Nama mesin virtual | **az104-08-vm0** |
     | Wilayah | pilih salah satu wilayah yang mendukung zona ketersediaan dan lokasi Anda dapat menyediakan mesin virtual Azure |
     | Opsi ketersediaan | **Zona ketersediaan** |
     | Zona ketersediaan | **Zona 1** |
@@ -92,7 +92,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
     | Grup keamanan jaringan NIC | **dasar** |
     | Port masuk publik | **Tidak ada** |
     | Jaringan Dipercepat | **Nonaktif**
-    | Tempatkan komputer virtual ini di belakang solusi penyeimbang muatan yang ada? | **Tidak Dicentang** |
+    | Tempatkan mesin virtual ini di belakang solusi penyeimbang muatan yang ada? | **Tidak Dicentang** |
 
 1. Klik **Berikutnya: Manajemen >** dan, pada tab **Manajemen** bilah **Buat mesin virtual**, tentukan pengaturan berikut (biarkan opsi yang lain dengan nilai defaultnya):
 
@@ -102,15 +102,15 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
     | Akun penyimpanan diagnostik | menerima nilai default |
     | Opsi orkestrasi patch | **Pembaruan secara manual** |  
 
-    >**Catatan**: Jika perlu, pilih akun penyimpanan yang ada di daftar dropdown atau buat akun penyimpanan baru. Catat nama akun penyimpanan. Anda akan menggunakannya dalam tugas berikutnya.
+    >**Catatan**: Jika perlu, pilih akun penyimpanan yang ada di daftar menurun atau buat akun penyimpanan baru. Catat nama akun penyimpanan. Anda akan menggunakannya dalam tugas berikutnya.
 
-1. Klik **Berikutnya: Lanjutan >** , pada tab **Lanjutan** bilah **Buat mesin virtual**, tinjau pengaturan yang tersedia tanpa mengubahnya, dan klik **Tinjau + Buat**.
+1. Klik **Berikutnya: Lanjutan >** , pada tab **Lanjutan** bilah **Buat mesin virtual**, tinjau pengaturan yang tersedia tanpa mengubahnya, dan klik **Tinjauan + Buat**.
 
-1. Pada bilah **Tinjau + Buat**, klik **Buat**.
+1. Pada bilah **Tinjauan + Buat**, klik **Buat**.
 
 1. Pada bilah penyebaran, klik **Templat**.
 
-1. Tinjau templat yang menunjukkan penyebaran yang sedang berlangsung dan klik **Sebarkan**.
+1. Tinjauan templat yang menunjukkan penyebaran yang sedang berlangsung dan klik **Sebarkan**.
 
     >**Catatan**: Anda akan menggunakan opsi ini untuk menyebarkan mesin virtual kedua dengan konfigurasi yang cocok kecuali untuk zona ketersediaan.
 
@@ -130,7 +130,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
 
     >**Catatan**: Anda perlu mengubah parameter yang sesuai dengan properti dari sumber daya berbeda yang Anda gunakan menggunakan templat, termasuk mesin virtual dan antarmuka jaringannya.
 
-1. Klik **Tinjau + Buat**, pada bilah **Tinjau + Buat**, klik **Buat**.
+1. Klik **Tinjauan + Buat**, pada bilah **Tinjauan + Buat**, klik **Buat**.
 
     >**Catatan**: Tunggu hingga kedua penyebaran selesai sebelum Anda melanjutkan ke tugas berikutnya. Proses ini mungkin perlu waktu sekitar 5 menit.
 
@@ -165,7 +165,7 @@ Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada dua m
 
 1. Pada bilah **Akun penyimpanan**, klik nama akun penyimpanan tempat Anda mengunggah skrip **az104-08-install_IIS.ps1**, pada bilah **Kontainer**, klik **skrip**, pada bilah **skrip**, klik **az104-08-install_IIS.ps1**, lalu klik **Pilih**.
 
-1. Kembali pada bilah **Pasang ekstensi**, klik **Tinjau + buat** dan, pada bilah **Tinjau + buat** klik **Buat**.
+1. Kembali pada bilah **Pasang ekstensi**, klik **Tinjauan + buat** dan, pada bilah **Tinjauan + buat** klik **Buat**.
 
 1. Di portal Microsoft Azure, cari dan pilih **Mesin virtual** dan, pada bilah **Mesin virtual**, klik **az104-08-vm1**.
 
@@ -205,7 +205,7 @@ Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada dua m
 
    >**Catatan**: Bagian templat ini menentukan ekstensi skrip kustom mesin virtual Azure yang sama yang Anda terapkan sebelumnya ke mesin virtual pertama melalui Azure PowerShell.
 
-1. Klik **Simpan** dan, kembali pada bilah **Templat kustom**, klik **Tinjau + Buat** dan, pada bilah **Tinjau + Buat**, klik **Buat**
+1. Klik **Simpan** dan, kembali pada bilah **Templat kustom**, klik **Tinjauan + Buat** dan, pada bilah **Tinjauan + Buat**, klik **Buat**
 
     >**Catatan**: Tunggu hingga penyebaran templat selesai. Anda dapat memantau progresnya dari bilah **Ekstensi** pada mesin virtual **az104-08-vm0** dan **az104-08-vm1**. Operasi ini tidak akan lebih dari 3 menit.
 
@@ -314,7 +314,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
     >**Catatan**: Bagian templat ini membuat dua disk terkelola dan melampirkannya ke **az104-08-vm1**, serupa dengan konfigurasi penyimpanan mesin virtual pertama melalui portal Azure.
 
 
-1. Klik **Simpan** dan, kembali pada bilah **Penyebaran kustom**, klik **Tinjau + Buat** dan, pada bilah **Tinjau + Buat**, klik **Buat**.
+1. Klik **Simpan** dan, kembali pada bilah **Penyebaran kustom**, klik **Tinjauan + Buat** dan, pada bilah **Tinjauan + Buat**, klik **Buat**.
 
     >**Catatan**: Tunggu hingga penyebaran templat selesai. Anda dapat memantau progresnya dari bilah **Disk** mesin virtual **az104-08-vm1**. Operasi ini tidak akan lebih dari 3 menit.
 
@@ -362,7 +362,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
     | --- | --- |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | nama grup sumber daya baru **az104-08-rg02** |
-    | Nama set skala komputer virtual | **az10408vmss0** |
+    | Nama set skala mesin virtual | **az10408vmss0** |
     | Wilayah | pilih salah satu wilayah yang mendukung zona ketersediaan dan tempat Anda dapat menyediakan mesin virtual Azure yang berbeda dari yang Anda gunakan untuk menyebarkan mesin virtual sebelumnya di lab ini |
     | Zona ketersediaan | **Zona 1, 2, 3** |
     | Gambar | **Pusat Data Windows Server 2019 - Gen2** |
@@ -389,7 +389,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
 
 1. Kembali ke tab **Jaringan** pada bilah **Buat kumpulan skala mesin virtual**, klik ikon **Edit antarmuka jaringan** di sebelah kanan entri antarmuka jaringan.
 
-1. Pada bilah **Edit antarmuka jaringan**, di bagian **grup keamanan jaringan NIC**, klik **Lanjutan** dan klik **Buat baru** pada  **Konfigurasikan daftar dropdown grup keamanan jaringan**.
+1. Pada bilah **Edit antarmuka jaringan**, di bagian **grup keamanan jaringan NIC**, klik **Lanjutan** dan klik **Buat baru** pada  **Konfigurasikan daftar menurun grup keamanan jaringan**.
 
 1. Pada bilah **Buat grup keamanan jaringan**, tentukan pengaturan berikut (biarkan opsi yang lain dengan nilai defaultnya):
 
@@ -418,7 +418,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Opsi penyeimbangan muatan | **Penyeimbang beban Azure** |
+    | Opsi load balancer | **Azure load balancer** |
     | Memilih load balancer | **(baru) az10408vmss0-lb** |
     | Memilih kumpulan backend | **(baru) bepool** |
 
@@ -442,7 +442,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
 
 1. Pada tab **Kondisi** bilah **Buat kumpulan skala mesin virtual**, tinjau pengaturan default tanpa membuat perubahan apa pun dan klik **Berikutnya : Lanjutan >** .
 
-1. Pada tab **Lanjutan** pada bilah **Buat kumpulan skala mesin virtual**, tentukan pengaturan berikut (biarkan opsi yang lain dengan nilai defaultnya) dan klik **Tinjau + buat**.
+1. Pada tab **Lanjutan** pada bilah **Buat kumpulan skala mesin virtual**, tentukan pengaturan berikut (biarkan opsi yang lain dengan nilai defaultnya) dan klik **Tinjauan + buat**.
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -450,7 +450,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
 
     >**Catatan**: Pengaturan **Penyebaran maksimum** saat ini tidak berfungsi.
 
-1. Pada tab **Tinjau + buat** bilah **Buat kumpulan skala mesin virtual**, pastikan validasi lulus dan klik **Buat**.
+1. Pada tab **Tinjauan + buat** bilah **Buat kumpulan skala mesin virtual**, pastikan validasi lulus dan klik **Buat**.
 
     >**Catatan**: Tunggu hingga penyebaran kumpulan skala mesin virtual selesai. Proses ini memerlukan waktu sekitar 5 menit.
 
@@ -644,7 +644,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 

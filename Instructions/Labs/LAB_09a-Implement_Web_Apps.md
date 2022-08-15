@@ -21,9 +21,9 @@ Anda perlu mengevaluasi penggunaan aplikasi Web Azure untuk menghosting situs we
 Di lab ini Anda akan:
 
 + Tugas 1: Membuat aplikasi web Azure
-+ Tugas 2: Buat slot penyebaran pentahapan
-+ Tugas 3: Konfigurasikan pengaturan penyebaran aplikasi web
-+ Tugas 4: Sebarkan kode ke slot pentahapan pementasan
++ Tugas 2: Menukar slot pentahapan
++ Tugas 3: Mengonfigurasikan pengaturan penyebaran aplikasi web
++ Tugas 4: Menyebarkan kode ke slot pentahapan pementasan
 + Tugas 5: Menukar slot pentahapan
 + Tugas 6: Mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure
 
@@ -45,7 +45,7 @@ Dalam tugas ini, Anda akan membuat aplikasi web Azure.
 
 1. Di portal Microsoft Azure, cari dan pilih **Layanan aplikasi**, dan, pada panel **App Services**, klik **+ Buat**.
 
-1. Pada tab **Dasar-dasar** panel **Buat Aplikasi Web**, tentukan setelan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Pada tab **Dasar-dasar** panel **Buat Aplikasi Web**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- | ---|
@@ -58,13 +58,13 @@ Dalam tugas ini, Anda akan membuat aplikasi web Azure.
     | Wilayah | nama wilayah Azure tempat Anda dapat memprovisikan aplikasi web Azure |
     | Paket App service | menerima konfigurasi default |
 
-1. Klik **Tinjau + buat**. Pada tab **Tinjau + buat** panel **Buat Aplikasi Web**, pastikan validasi lulus dan klik **Buat**.
+1. Klik **Tinjauan + buat**. Pada tab **Tinjauan + buat** panel **Buat Aplikasi Web**, pastikan validasi lulus dan klik **Buat**.
 
     >**Catatan**: Tunggu hingga aplikasi web dibuat sebelum Anda melanjutkan ke tugas berikutnya. Ini akan memakan waktu sekitar satu menit.
 
 1. Pada panel penyebaran, klik **Buka sumber daya**.
 
-#### <a name="task-2-create-a-staging-deployment-slot"></a>Tugas 2: Buat slot penyebaran pentahapan
+#### <a name="task-2-create-a-staging-deployment-slot"></a>Tugas 2: Membuat slot penyebaran pentahapan
 
 Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan.
 
@@ -74,7 +74,7 @@ Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan.
 
     >**Catatan**: Aplikasi web, pada titik ini, memiliki satu slot penerapan berlabel **PRODUCTION**.
 
-1. Klik **+ Tambahkan slot**, dan tambahkan slot baru dengan setelan berikut:
+1. Klik **+ Tambahkan slot**, dan tambahkan slot baru dengan pengaturan berikut:
 
     | Pengaturan | Nilai |
     | --- | ---|
@@ -85,7 +85,7 @@ Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan.
 
     >**Catatan**: Ini akan membuka panel yang menampilkan properti slot pentahapan.
 
-1. Tinjau panel slot pentahapan dan perhatikan bahwa URL-nya berbeda dari yang ditetapkan ke slot produksi.
+1. Tinjauan panel slot pentahapan dan perhatikan bahwa URL-nya berbeda dari yang ditetapkan ke slot produksi.
 
 #### <a name="task-3-configure-web-app-deployment-settings"></a>Tugas 3: Konfigurasikan pengaturan penyebaran aplikasi web
 
@@ -95,7 +95,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran aplikasi web.
 
     >**Catatan:** Pastikan Anda berada di panel slot pentahapan (bukan slot produksi).
     
-1. Pada tab **Pengaturan**, di daftar drop-down **Sumber**, pilih **Git Lokal** dan klik tombol **Simpan**
+1. Pada tab **Pengaturan**, di daftar menurun **Sumber**, pilih **Git Lokal** dan klik tombol **Simpan**
 
 1. Pada panel **Pusat Penyebaran**, salin entri **Url Klon Git** ke Notepad.
 
@@ -120,7 +120,7 @@ Dalam tugas ini, Anda akan menyebarkan kode ke slot penyebaran pentahapan.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
 1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mengkloning repositori jarak jauh yang berisi kode untuk aplikasi web.
 
@@ -182,7 +182,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
 1. Biarkan opsi default **Menskalakan berdasarkan metrik** yang dipilih dan klik **+ Tambahkan aturan**
 
-1. Pada panel **Aturan skala**, tentukan setelan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Pada panel **Aturan skala**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- |--- |
@@ -200,7 +200,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
     >**Catatan**: Jelas nilai-nilai ini tidak mewakili konfigurasi yang realistis, karena tujuannya adalah untuk memicu penskalaan otomatis sesegera mungkin, tanpa masa tunggu yang diperpanjang.
 
-1. Klik **Tambahkan** dan, kembali pada panel penskalaan paket App Service, tentukan setelan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Klik **Tambahkan** dan, kembali pada panel penskalaan paket App Service, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- |--- |
@@ -264,12 +264,12 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 
 + Membuat aplikasi web Azure
-+ Buat slot penyebaran pentahapan
++ Menukar slot pentahapan
 + Mengonfigurasikan pengaturan penyebaran aplikasi web
 + Menyebarkan kode ke slot penyebaran pentahapan
 + Tukar slot pentahapan

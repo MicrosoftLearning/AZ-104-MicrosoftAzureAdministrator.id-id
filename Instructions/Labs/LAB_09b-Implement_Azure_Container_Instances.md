@@ -21,7 +21,7 @@ Contoso ingin menemukan platform baru untuk beban kerja virtualnya. Anda mengide
 Di lab ini Anda akan:
 
 - Tugas 1: Terapkan gambar Docker dengan menggunakan Azure Container Instance
-- Tugas 2: Tinjau fungsionalitas Instans Kontainer Azure
+- Tugas 2: Tinjauan fungsionalitas Instans Kontainer Azure
 
 ## <a name="estimated-timing-20-minutes"></a>Perkiraan waktu: 20 menit
 
@@ -41,7 +41,7 @@ Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
 
 1. Di portal Azure, jelajahi **Instans kontainer** lalu, pada bilah **Instans kontainer**, klik **+ Buat**.
 
-1. Pada tab **Dasar-dasar** pada bilah **Buat instans penampung**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Pada tab **Dasar** pada bilah **Buat instans penampung**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | ---- | ---- |
@@ -58,7 +58,7 @@ Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
     | --- | --- |
     | Label nama DNS | nama host DNS yang valid dan unik secara global |
 
-    >**Catatan**: Kontainer Anda akan dapat dijangkau publik di dns-name-label.region.azurecontainer.io. Jika Anda menerima pesan galat **DNS name label not available**, tentukan nilai yang berbeda.
+    >**Catatan**: Kontainer Anda akan dapat dijangkau publik di dns-name-label.region.azurecontainer.io. Jika Anda menerima pesan error **DNS name label not available**, tentukan nilai yang berbeda.
 
 1. Klik **Berikutnya: Lanjutan >** , tinjau pengaturan pada tab **Lanjutan** pada bilah **Buat instans penampung** tanpa membuat perubahan apa pun, klik **Tinjau + Buat**, pastikan validasi lulus dan klik **Buat**.
 
@@ -66,7 +66,7 @@ Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
 
     >**Catatan**: Sambil menunggu, Anda mungkin tertarik untuk melihat [kode di balik contoh aplikasi](https://github.com/Azure-Samples/aci-helloworld). Untuk melihatnya, jelajahi \\folder aplikasi.
 
-#### <a name="task-2-review-the-functionality-of-the-azure-container-instance"></a>Tugas 2: Tinjau fungsionalitas Instans Kontainer Azure
+#### <a name="task-2-review-the-functionality-of-the-azure-container-instance"></a>Tugas 2: Tinjauan fungsionalitas Instans Kontainer Azure
 
 Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
@@ -104,7 +104,7 @@ Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 

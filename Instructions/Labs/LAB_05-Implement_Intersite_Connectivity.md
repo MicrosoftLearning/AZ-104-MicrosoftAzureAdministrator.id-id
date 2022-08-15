@@ -9,7 +9,7 @@ ms.contentlocale: id-ID
 ms.lasthandoff: 05/11/2022
 ms.locfileid: "145198215"
 ---
-# <a name="lab-05---implement-intersite-connectivity"></a>Lab 05 - Menerapkan Konektivitas Antar Situs
+# <a name="lab-05---implement-intersite-connectivity"></a>Lab 05 - Menerapkan Konektivitas Antarsitus
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
@@ -91,7 +91,7 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
 
 1. Di portal Microsoft Azure, cari dan pilih **Jaringan virtual**.
 
-1. Tinjau jaringan virtual yang Anda buat di tugas sebelumnya dan verifikasi bahwa dua jaringan pertama terletak di wilayah Azure yang sama dan yang ketiga di wilayah Azure yang berbeda.
+1. Tinjauan jaringan virtual yang Anda buat di tugas sebelumnya dan verifikasi bahwa dua jaringan pertama terletak di wilayah Azure yang sama dan yang ketiga di wilayah Azure yang berbeda.
 
     >**Catatan**: Templat yang Anda gunakan untuk penyebaran tiga jaringan virtual memastikan bahwa rentang alamat IP dari tiga jaringan virtual tidak tumpang tindih.
 
@@ -169,7 +169,7 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
 
 1. Navigasi kembali ke panel **Jaringan virtual** dan, dalam daftar jaringan virtual, klik **az104-05-vnet1**.
 
-1. Pada panel jaringan virtual **az104-05-vnet1**, di bagian **Setelan**, klik **Peering** lalu klik **+ Tambahkan**.
+1. Pada panel jaringan virtual **az104-05-vnet1**, di bagian **Pengaturan**, klik **Peering** lalu klik **+ Tambahkan**.
 
 1. Tambahkan peering dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya) dan klik **Tambahkan**:
 
@@ -208,11 +208,11 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
 
 Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga jaringan virtual yang Anda sambungkan melalui peering lokal dan global di tugas sebelumnya.
 
-1. Di portal Microsoft Azure, cari dan pilih **Komputer virtual.**
+1. Di portal Microsoft Azure, cari dan pilih **Mesin virtual.**
 
 1. Dalam daftar mesin virtual, klik **az104-05-vm0**.
 
-1. Pada panel **az104-05-vm0**, klik **Hubungkan**, di menu drop-down, klik **RDP**, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jauh.
+1. Pada panel **az104-05-vm0**, klik **Hubungkan**, di menu menurun, klik **RDP**, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jauh.
 
     >**Catatan**: Langkah ini mengacu pada menghubungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
 
@@ -242,7 +242,7 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
 
 1. Dalam daftar mesin virtual, klik **az104-05-vm1**.
 
-1. Pada panel **az104-05-vm1**, klik **Hubungkan**, di menu drop-down, klik **RDP**, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
+1. Pada panel **az104-05-vm1**, klik **Hubungkan**, di menu menurun, klik **RDP**, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
 
     >**Catatan**: Langkah ini mengacu pada menghubungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
 
@@ -284,7 +284,7 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 

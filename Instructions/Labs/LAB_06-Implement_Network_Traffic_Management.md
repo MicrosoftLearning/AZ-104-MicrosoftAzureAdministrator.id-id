@@ -50,9 +50,9 @@ Dalam tugas ini, Anda akan menyebarkan empat mesin virtual ke wilayah Azure yang
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
-1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu dropdown, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** dan **\\Allfiles\\Labs\\06\\az104-06-vms-loop -parameters.json** ke dalam direktori beranda Cloud Shell.
+1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** dan **\\Allfiles\\Labs\\06\\az104-06-vms-loop -parameters.json** ke dalam direktori beranda Cloud Shell.
 
 1. Edit file **Parameter** yang baru saja Anda unggah dan ubah kata sandinya. Jika memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
 
@@ -122,7 +122,7 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual 
 
 1. Di portal Microsoft Azure, cari dan pilih **Jaringan virtual**.
 
-1. Tinjau jaringan virtual yang Anda buat di tugas sebelumnya.
+1. Tinjauan jaringan virtual yang Anda buat di tugas sebelumnya.
 
     >**Catatan**: Template yang Anda gunakan untuk penyebaran tiga jaringan virtual memastikan bahwa rentang alamat IP dari tiga jaringan virtual tidak tumpang tindih.
 
@@ -207,15 +207,15 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | **az104-06-rg1** |
     | Jenis sumber | **Mesin virtual** |
-    | Komputer virtual | **az104-06-vm0** |
+    | Mesin virtual | **az104-06-vm0** |
     | Tujuan | **Tentukan secara manual** |
     | URI, FQDN atau IPv4 | **10.62.0.4** |
     | Protokol | **TCP** |
     | Port Tujuan | **3389** |
 
-    > **Catatan**: **10.62.0.4** mewakili alamat IP pribadi **az104-06-vm2**
+    > **Catatan**: **10.62.0.4** mewakili alamat IP privat **az104-06-vm2**
 
-1. Klik **Periksa** dan tunggu hingga hasil pemeriksaan konektivitas ditampilkan. Verifikasi bahwa statusnya **Dapat dijangkau**. Tinjau jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
+1. Klik **Periksa** dan tunggu hingga hasil pemeriksaan konektivitas ditampilkan. Verifikasi bahwa statusnya **Dapat dijangkau**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
 
     > **Catatan**: Hal ini diharapkan, karena jaringan virtual hub di-peering langsung dengan jaringan virtual spoke pertama.
 
@@ -226,7 +226,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | **az104-06-rg1** |
     | Jenis sumber | **Mesin virtual** |
-    | Komputer virtual | **az104-06-vm0** |
+    | Mesin virtual | **az104-06-vm0** |
     | Tujuan | **Tentukan secara manual** |
     | URI, FQDN atau IPv4 | **10.63.0.4** |
     | Protokol | **TCP** |
@@ -234,7 +234,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
 
     > **Catatan**: **10.63.0.4** mewakili alamat IP pribadi **az104-06-vm3**
 
-1. Klik **Periksa** dan tunggu hingga hasil pemeriksaan konektivitas ditampilkan. Verifikasi bahwa statusnya **Dapat dijangkau**. Tinjau jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
+1. Klik **Periksa** dan tunggu hingga hasil pemeriksaan konektivitas ditampilkan. Verifikasi bahwa statusnya **Dapat dijangkau**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
 
     > **Catatan**: Hal ini diharapkan, karena jaringan virtual hub di-peering langsung dengan jaringan virtual spoke kedua.
 
@@ -245,7 +245,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | **az104-06-rg1** |
     | Jenis sumber | **Mesin virtual** |
-    | Komputer virtual | **az104-06-vm2** |
+    | Mesin virtual | **az104-06-vm2** |
     | Tujuan | **Tentukan secara manual** |
     | URI, FQDN atau IPv4 | **10.63.0.4** |
     | Protokol | **TCP** |
@@ -313,7 +313,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | Nama | **az104-06-rt23** |
     | Merambat rute gateway | **Tidak** |
 
-1. Klik **Tinjau dan Buat**. Biarkan validasi berjalan, dan klik **Buat** untuk mengirimkan penyebaran Anda.
+1. Klik **Tinjauan dan Buat**. Biarkan validasi berjalan, dan klik **Buat** untuk mengirimkan penyebaran Anda.
 
    > **Catatan**: Tunggu hingga tabel rute dibuat. Ini akan memakan waktu sekitar 3 menit.
 
@@ -356,7 +356,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | Nama | **az104-06-rt32** |
     | Merambat rute gateway | **Tidak** |
 
-1. Klik Tinjau dan Buat. Biarkan validasi berjalan, dan tekan Buat untuk mengirimkan penyebaran Anda.
+1. Klik Tinjauan dan Buat. Biarkan validasi berjalan, dan tekan Buat untuk mengirimkan penyebaran Anda.
 
    > **Catatan**: Tunggu hingga tabel rute dibuat. Ini akan memakan waktu sekitar 3 menit.
 
@@ -396,13 +396,13 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | **az104-06-rg1** |
     | Jenis sumber | **Mesin virtual** |
-    | Komputer virtual | **az104-06-vm2** |
+    | Mesin virtual | **az104-06-vm2** |
     | Tujuan | **Tentukan secara manual** |
     | URI, FQDN atau IPv4 | **10.63.0.4** |
     | Protokol | **TCP** |
     | Port Tujuan | **3389** |
 
-1. Klik **Periksa** dan tunggu hingga hasil pemeriksaan konektivitas ditampilkan. Verifikasi bahwa statusnya **Dapat dijangkau**. Tinjau jalur jaringan dan perhatikan bahwa lalu lintas dirutekan melalui **10.60.0.4**, ditetapkan ke adaptor jaringan **az104-06-nic0**. Jika statusnya **Tidak dapat dijangkau**, Anda harus berhenti, lalu memulai az104-06-vm0.
+1. Klik **Periksa** dan tunggu hingga hasil pemeriksaan konektivitas ditampilkan. Verifikasi bahwa statusnya **Dapat dijangkau**. Tinjauan jalur jaringan dan perhatikan bahwa lalu lintas dirutekan melalui **10.60.0.4**, ditetapkan ke adaptor jaringan **az104-06-nic0**. Jika statusnya **Tidak dapat dijangkau**, Anda harus berhenti, lalu memulai az104-06-vm0.
 
     > **Catatan**: Hal ini diharapkan, karena lalu lintas antara jaringan virtual spoke sekarang dirutekan melalui mesin virtual yang terletak di jaringan virtual hub, yang berfungsi sebagai router.
 
@@ -433,7 +433,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
     | Alamat IP publik | **Buat baru** |
     | Nama alamat IP publik | **az104-06-pip4** |
 
-1. Klik **Tinjau dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** untuk mengirimkan penyebaran Anda.
+1. Klik **Tinjauan dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** untuk mengirimkan penyebaran Anda.
 
     > **Catatan**: Tunggu hingga load balancer Azure diprovisikan. Proses ini memerlukan waktu sekitar 2 menit.
 
@@ -448,9 +448,9 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
     | Nama | **az104-06-lb4-be1** |
     | Jaringan virtual | **az104-06-vnet01** |
     | Versi IP | **IPv4** |
-    | Komputer virtual | **az104-06-vm0** |
+    | Mesin virtual | **az104-06-vm0** |
     | Alamat IP mesin virtual | **ipconfig1 (10.60.0.4)** |
-    | Komputer virtual | **az104-06-vm1** |
+    | Mesin virtual | **az104-06-vm1** |
     | Alamat IP mesin virtual | **ipconfig1 (10.60.1.4)** |
 
 1. Klik **Tambahkan**
@@ -555,7 +555,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
     | Jenis target | **Alamat IP atau FQDN** |
     | Target | **10.63.0.4** |
 
-    > **Catatan**: Target mewakili alamat IP pribadi mesin virtual di jaringan virtual spoke **az104-06-vm2** dan **az104-06-vm3**.
+    > **Catatan**: Target mewakili alamat IP privat mesin virtual di jaringan virtual spoke **az104-06-vm2** dan **az104-06-vm3**.
 
 1. Klik **Tambahkan**, klik **Berikutnya: Konfigurasi >** dan, pada tab **Konfigurasi** pada panel **Buat gateway aplikasi**, klik **+ Tambahkan aturan perutean**.
 
@@ -592,7 +592,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
 1. Klik **Tambahkan** pada panel **Tambahkan pengaturan HTTP**, dan kembali pada panel **Tambahkan aturan perutean**, klik **Tambahkan**.
 
-1. Klik **Berikutnya: Tag >** , diikuti dengan **Berikutnya: Tinjau + buat >** lalu klik **Buat**.
+1. Klik **Berikutnya: Tag >** , diikuti dengan **Berikutnya: Tinjauan + buat >** lalu klik **Buat**.
 
     > **Catatan**: Tunggu hingga instans Application Gateway dibuat. Proses ini mungkin perlu waktu sekitar 8 menit.
 
@@ -632,13 +632,13 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 
 + Memprovisikan lingkungan lab
 + Mengonfigurasi topologi jaringan hub dan spoke
 + Menguji transitivitas peering jaringan virtual
-+ Tugas 4: Mengonfigurasi perutean di topologi spoke dan hub
-+ Tugas 5: Menerapkan Azure Load Balancer
-+ Tugas 6: Menerapkan Azure Application Gateway
++ Mengonfigurasi perutean di topologi spoke dan hub
++ Menerapkan Azure Load Balancer
++ Menerapkan Azure Application Gateway

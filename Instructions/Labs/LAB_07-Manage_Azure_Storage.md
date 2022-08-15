@@ -48,7 +48,7 @@ Dalam tugas ini, Anda akan menerapkan komputer virtual Azure yang akan Anda guna
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
 1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** dan **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** ke direktori beranda Cloud Shell.
 
@@ -113,7 +113,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun Azure Storage.
 
 1. Pada tab **Jaringan** pada panel **Buat akun penyimpanan**, tinjau opsi yang tersedia, terima opsi default **Aktifkan akses publik dari semua jaringan** dan klik **Berikutnya: Perlindungan data >** .
 
-1. Pada tab **Perlindungan data** dari bilah **Buat akun penyimpanan**, tinjau opsi yang tersedia, terima defaultnya, klik **Tinjau + Buat**, tunggu proses validasi untuk selesai dan klik **Buat**.
+1. Pada tab **Perlindungan data** dari bilah **Buat akun penyimpanan**, tinjau opsi yang tersedia, terima defaultnya, klik **Tinjauan + Buat**, tunggu proses validasi untuk selesai dan klik **Buat**.
 
     >**Catatan**: Tunggu hingga akun Penyimpanan dibuat. Proses ini memerlukan waktu sekitar 2 menit.
 
@@ -172,7 +172,7 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamny
 
 Dalam tugas ini, Anda akan mengonfigurasi autentikasi dan otorisasi Azure Storage.
 
-1. Pada bilah **lisensi/LICENSE**, pada tab **Ringkasan**, klik tombol **Salin ke papan klip** di samping entri **URL**.
+1. Pada bilah **lisensi/LICENSE**, pada tab **Ringkasan**, klik tombol **Salin ke clipboard** di samping entri **URL**.
 
 1. Buka jendela browser lain dengan menggunakan mode InPrivate dan arahkan ke URL yang Anda salin di langkah sebelumnya.
 
@@ -197,7 +197,7 @@ Dalam tugas ini, Anda akan mengonfigurasi autentikasi dan otorisasi Azure Storag
 
 1. Klik **Hasilkan token SAS dan URL**.
 
-1. Klik tombol **Salin ke papan klip** di sebelah entri **Blob SAS URL**.
+1. Klik tombol **Salin ke clipboard** di sebelah entri **Blob SAS URL**.
 
 1. Buka jendela browser lain dengan menggunakan mode InPrivate dan arahkan ke URL yang Anda salin di langkah sebelumnya.
 
@@ -227,7 +227,7 @@ Dalam tugas ini, Anda akan mengonfigurasi autentikasi dan otorisasi Azure Storag
     | Tetapkan akses ke | **Pengguna, grup, atau perwakilan layanan** |
     | Anggota | nama akun pengguna Anda |
 
-1. Klik **Tinjau + Tetapkan** lalu **Tinjau + tetapkan**, dan kembali ke bilah **Ringkasan** dari wadah **az104-07-container** dan verifikasi bahwa Anda dapat mengubah metode Autentikasi ke (Beralih ke Akun Pengguna Azure AD).
+1. Klik **Tinjauan + Tetapkan** lalu **Tinjauan + tetapkan**, dan kembali ke bilah **Ringkasan** dari wadah **az104-07-container** dan verifikasi bahwa Anda dapat mengubah metode Autentikasi ke (Beralih ke Akun Pengguna Azure AD).
 
     > **Catatan**: Mungkin perlu waktu sekitar 5 menit agar perubahan diterapkan.
 
@@ -247,9 +247,9 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files.
 
 1. Klik berbagi file yang baru dibuat dan klik **Hubungkan**.
 
-1. Pada panel **Hubungkan**, pastikan tab **Windows** dipilih. Di bawah ini Anda akan menemukan kotak teks abu-abu dengan skrip, di sudut kanan bawah kotak itu arahkan kursor ke ikon laman dan klik **Salin ke papan klip**.
+1. Pada panel **Hubungkan**, pastikan tab **Windows** dipilih. Di bawah ini Anda akan menemukan kotak teks abu-abu dengan skrip, di sudut kanan bawah kotak itu arahkan kursor ke ikon laman dan klik **Salin ke clipboard**.
 
-1. Di portal Azure, cari dan pilih **Komputer virtual**, dan, dalam daftar komputer virtual, klik **az104-07-vm0**.
+1. Di portal Azure, cari dan pilih **Mesin virtual**, dan, dalam daftar komputer virtual, klik **az104-07-vm0**.
 
 1. Pada bilah **az104-07-vm0**, di bagian **Operasi**, klik **Jalankan perintah**.
 
@@ -259,7 +259,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files.
 
 1. Verifikasi bahwa skrip berhasil diselesaikan.
 
-1. Ganti konten panel **Skrip PowerShell** dengan skrip berikut dan klik **Jalankan**:
+1. Ganti konten panel **PowerShell Script** dengan skrip berikut dan klik **Jalankan**:
 
    ```powershell
    New-Item -Type Directory -Path 'Z:\az104-07-folder'
@@ -269,7 +269,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files.
 
 1. Verifikasi bahwa skrip berhasil diselesaikan.
 
-1. Navigasikan kembali ke bilah berbagi file **az104-07-berbagi**, klik **Segarkan**, dan verifikasi bahwa **az104-07-folder** muncul dalam daftar folder.
+1. Navigasikan kembali ke bilah berbagi file **az104-07-berbagi**, klik **Refresh**, dan verifikasi bahwa **az104-07-folder** muncul dalam daftar folder.
 
 1. Klik **az104-07-folder** dan verifikasi bahwa **az104-07-file.txt** muncul dalam daftar file.
 
@@ -332,7 +332,7 @@ Dalam tugas ini, Anda akan mengonfigurasi akses jaringan Azure Storage.
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 
