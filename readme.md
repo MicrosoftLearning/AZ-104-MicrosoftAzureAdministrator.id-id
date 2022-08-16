@@ -18,7 +18,7 @@ Repositori ini untuk instruktur yang mengajar kursus Microsoft. Jika Anda berada
 ## <a name="security-issue---february-2022"></a>Masalah Keamanan - Februari 2022
 
 Beberapa lab pelatihan Azure menginstruksikan siswa untuk menggunakan nama pengguna dan kata sandi tertentu. Aktor jahat terus-menerus memindai mesin virtual dan mencoba masuk menggunakan kredensial itu.
-Setelah mereka masuk, mesin dapat digunakan untuk penambangan kripto atau aktivitas non-kelas lainnya.
+Setelah mereka masuk, mesin dapat digunakan untuk penambangan kripto atau aktivitas nonkelas lainnya.
 
 **Remediasi**: Siswa harus diinstruksikan untuk menggunakan kata sandi yang mereka pilih sendiri. Siswa tidak boleh menggunakan kata sandi apa pun dalam instruksi lab. 
 

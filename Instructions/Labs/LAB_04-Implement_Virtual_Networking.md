@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 04 - Menerapkan Virtual Network
+  title: 04 - Menerapkan Jaringan Virtual
   module: Module 04 - Virtual Networking
 ms.openlocfilehash: 383f88f2dddb48d498efb3d868330e4bba15c92b
 ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
@@ -9,9 +9,9 @@ ms.contentlocale: id-ID
 ms.lasthandoff: 05/11/2022
 ms.locfileid: "145198224"
 ---
-# <a name="lab-04---implement-virtual-networking"></a>Lab 04 - Menerapkan Virtual Network
+# <a name="lab-04---implement-virtual-networking"></a>Lab 04 - Menerapkan Jaringan Virtual
 
-# <a name="student-lab-manual"></a>panduan lab siswa
+# <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
@@ -68,7 +68,7 @@ Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet mengg
     | Nama subnet | **subnet0** |
     | Rentang alamat subnet | **10.40.0.0/24** |
 
-1. Terima defaultnya dan klik **Tinjau dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
+1. Terima defaultnya dan klik **Tinjauan dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
 
     >**Catatan:** Tunggu hingga jaringan virtual diprovisika. Ini seharusnya memakan waktu kurang dari satu menit.
 
@@ -97,7 +97,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke subnet yang berbed
 
     >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
-1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu dropdown, klik **Unggah** dan unggah file **\\Allfiles\\Lab\\04\\az104-04-vms-loop-template.json** dan **\\Allfiles\\Lab\\04\\az104-04-vms-loop-parameters.json** ke dalam direktori beranda Cloud Shell.
+1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Lab\\04\\az104-04-vms-loop-template.json** dan **\\Allfiles\\Lab\\04\\az104-04-vms-loop-parameters.json** ke dalam direktori beranda Cloud Shell.
 
     >**Catatan**: Anda mungkin perlu mengunggah setiap file secara terpisah.
 
@@ -141,7 +141,7 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
 1. Klik **az104-04-nic0** dan, pada panel **az104-04-nic0**, klik **Konfigurasi IP**.
 
-    >**Catatan**: Verifikasi bahwa **ipconfig1** saat ini disiapkan dengan alamat IP pribadi dinamis.
+    >**Catatan**: Verifikasi bahwa **ipconfig1** saat ini disiapkan dengan alamat IP privat dinamis.
 
 1. Di daftar konfigurasi IP, klik **ipconfig1**.
 
@@ -187,7 +187,7 @@ Dalam tugas ini, Anda akan mengonfigurasi kelompok keamanan jaringan untuk mengi
 
 1. Di portal Microsoft Azure, navigasikan kembali ke panel grup sumber daya **az104-04-rg1**, dan dalam daftar sumber dayanya, klik **az104-04-vm0**.
 
-1. Pada panel ringkasan **az104-04-vm0**, klik **Hubungkan**, klik **RDP** di menu dropdown, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** menggunakan alamat IP Publik dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
+1. Pada panel ringkasan **az104-04-vm0**, klik **Hubungkan**, klik **RDP** di menu menurun, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** menggunakan alamat IP Publik dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
 
 1. Perhatikan bahwa upaya koneksi gagal.
 
@@ -208,7 +208,7 @@ Dalam tugas ini, Anda akan mengonfigurasi kelompok keamanan jaringan untuk mengi
     | Nama | **az104-04-nsg01** |
     | Wilayah | nama wilayah Azure tempat Anda menerapkan semua sumber daya lainnya di lab ini |
 
-1. Klik **Tinjau dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** untuk mengirimkan penyebaran Anda.
+1. Klik **Tinjauan dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** untuk mengirimkan penyebaran Anda.
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Proses ini memerlukan waktu sekitar 2 menit.
 
@@ -248,11 +248,11 @@ Dalam tugas ini, Anda akan mengonfigurasi kelompok keamanan jaringan untuk mengi
 
 1. Saat diminta, masuk dengan pengguna dan kata sandi di file parameter.
 
-    >**Catatan**: Biarkan sesi Remote Desktop terbuka. Anda akan membutuhkannya di tugas berikutnya.
+    >**Catatan**: Biarkan sesi Desktop Jauh terbuka. Anda akan membutuhkannya di tugas berikutnya.
 
 #### <a name="task-5-configure-azure-dns-for-internal-name-resolution"></a>Tugas 5: Mengonfigurasi Azure DNS untuk resolusi nama internal
 
-Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS dalam jaringan virtual dengan menggunakan zona DNS pribadi Azure.
+Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS dalam jaringan virtual dengan menggunakan zona DNS privat Azure.
 
 1. Di portal Microsoft Azure, cari dan pilih **Zona DNS Pribadi** dan, pada panel **Zona DNS Pribadi**, klik **+ Buat**.
 
@@ -264,7 +264,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS dalam jaringan virtu
     | Grup Sumber Daya | **az104-04-rg1** |
     | Nama | **contoso.org** |
 
-1. Klik **Tinjau dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
+1. Klik **Tinjauan dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
 
     >**Catatan**: Tunggu hingga zona DNS pribadi dibuat. Proses ini memerlukan waktu sekitar 2 menit.
 
@@ -320,7 +320,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
     | Grup Sumber Daya | **az104-04-rg1** |
     | Nama | nama domain DNS yang Anda identifikasi sebelumnya dalam tugas ini |
 
-1. Klik **Tinjau dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
+1. Klik **Tinjauan dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
 
     >**Catatan**: Tunggu hingga zona DNS dibuat. Proses ini memerlukan waktu sekitar 2 menit.
 
@@ -398,7 +398,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 

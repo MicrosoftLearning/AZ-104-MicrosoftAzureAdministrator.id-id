@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 03c - Kelola sumber daya Azure dengan Menggunakan Azure PowerShell
+  title: 03c - Mengelola sumber daya Azure dengan Menggunakan Azure PowerShell
   module: Module 03 - Azure Administration
 ms.openlocfilehash: 4210a06af5b873e1031e2224239dd8738e97f23d
 ms.sourcegitcommit: a8c7d995806dcf8eaad35b204e87bde178f28443
@@ -9,7 +9,7 @@ ms.contentlocale: id-ID
 ms.lasthandoff: 02/08/2022
 ms.locfileid: "145198181"
 ---
-# <a name="lab-03c---manage-azure-resources-by-using-azure-powershell"></a>Lab 03c - Kelola sumber daya Azure dengan Menggunakan Azure PowerShell
+# <a name="lab-03c---manage-azure-resources-by-using-azure-powershell"></a>Lab 03c - Mengelola sumber daya Azure dengan Menggunakan Azure PowerShell
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
@@ -20,9 +20,9 @@ Sekarang setelah Anda menjelajahi kemampuan administrasi Azure dasar yang terkai
 
 Di lab ini Anda akan:
 
-+ Tugas 1: Mulai sesi PowerShell di Azure Cloud Shell
-+ Tugas 2: Buat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure PowerShell
-+ Tugas 3: Konfigurasikan disk terkelola dengan menggunakan Azure PowerShell
++ Tugas 1: Memulai sesi PowerShell di Azure Cloud Shell
++ Tugas 2: Membuat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure PowerShell
++ Tugas 3: Mengonfigurasi disk terkelola dengan menggunakan Azure PowerShell
 
 ## <a name="estimated-timing-20-minutes"></a>Perkiraan waktu: 20 menit
 
@@ -32,11 +32,11 @@ Di lab ini Anda akan:
 
 ## <a name="instructions"></a>Instruksi
 
-> **Catatan**:  Selalu buat kata sandi aman Anda sendiri untuk mesin virtual atau akun pengguna apa pun yang Anda buat. Jika mesin virtual dibuat untuk Anda, gunakan **Setel ulang kata sandi** di Portal untuk memperbarui kata sandi. 
+> **Catatan**:  Selalu buat kata sandi aman Anda sendiri untuk mesin virtual atau akun pengguna apa pun yang Anda buat. Jika mesin virtual dibuat untuk Anda, gunakan **Atur ulang kata sandi** di Portal untuk memperbarui kata sandi. 
 
 ### <a name="exercise-1"></a>Latihan 1
 
-#### <a name="task-1-start-a-powershell-session-in-azure-cloud-shell"></a>Tugas 1: Mulai sesi PowerShell di Azure Cloud Shell
+#### <a name="task-1-start-a-powershell-session-in-azure-cloud-shell"></a>Tugas 1: Memulai sesi PowerShell di Azure Cloud Shell
 
 Dalam tugas ini, Anda akan membuka sesi PowerShell di Cloud Shell. 
 
@@ -50,11 +50,11 @@ Dalam tugas ini, Anda akan membuka sesi PowerShell di Cloud Shell.
 
 1. Pastikan **PowerShell** muncul di menu drop-down di sudut kiri atas panel Cloud Shell.
 
-#### <a name="task-2-create-a-resource-group-and-an-azure-managed-disk-by-using-azure-powershell"></a>Tugas 2: Buat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure PowerShell
+#### <a name="task-2-create-a-resource-group-and-an-azure-managed-disk-by-using-azure-powershell"></a>Tugas 2: Membuat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure PowerShell
 
 Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure dengan menggunakan sesi Azure PowerShell dalam Cloud Shell
 
-1. Untuk membuat grup sumber daya di region Azure yang sama dengan grup sumber daya **az104-03b-rg1** yang Anda buat di lab sebelumnya, dari sesi PowerShell dalam Cloud Shell, jalankan berikut ini:
+1. Untuk membuat grup sumber daya di wilayah Azure yang sama dengan grup sumber daya **az104-03b-rg1** yang Anda buat di lab sebelumnya, dari sesi PowerShell dalam Cloud Shell, jalankan berikut ini:
 
    ```powershell
    $location = (Get-AzResourceGroup -Name az104-03b-rg1).Location
@@ -91,7 +91,7 @@ Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure
    Get-AzDisk -ResourceGroupName $rgName -Name $diskName
    ```
 
-#### <a name="task-3-configure-the-managed-disk-by-using-azure-powershell"></a>Tugas 3: Konfigurasikan disk terkelola dengan menggunakan Azure PowerShell
+#### <a name="task-3-configure-the-managed-disk-by-using-azure-powershell"></a>Tugas 3: Mengonfigurasi disk terkelola dengan menggunakan Azure PowerShell
 
 Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan menggunakan sesi Azure PowerShell dalam Cloud Shell. 
 
@@ -129,7 +129,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
 
    >**Catatan**: Jangan hapus sumber daya yang Anda terapkan di lab ini. Anda akan merujuknya di lab berikutnya dari modul ini.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 

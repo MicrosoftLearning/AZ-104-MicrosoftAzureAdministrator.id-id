@@ -20,9 +20,9 @@ Sekarang, setelah menjelajahi kemampuan administrasi dasar Azure yang terkait de
 
 Di lab ini Anda akan:
 
-+ Tugas 1: Mulai sesi Bash di Azure Cloud Shell
-+ Tugas 2: Buat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure CLI
-+ Tugas 3: Konfigurasikan disk yang dikelola dengan menggunakan Azure CLI
++ Tugas 1: Memulai sesi Bash di Azure Cloud Shell
++ Tugas 2: Membuat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure CLI
++ Tugas 3: Mengonfigurasi disk yang dikelola dengan menggunakan Azure CLI
 
 ## <a name="estimated-timing-20-minutes"></a>Perkiraan waktu: 20 menit
 
@@ -30,7 +30,7 @@ Di lab ini Anda akan:
 
 ### <a name="exercise-1"></a>Latihan 1
 
-#### <a name="task-1-start-a-bash-session-in-azure-cloud-shell"></a>Tugas 1: Mulai sesi Bash di Azure Cloud Shell
+#### <a name="task-1-start-a-bash-session-in-azure-cloud-shell"></a>Tugas 1: Memulai sesi Bash di Azure Cloud Shell
 
 Dalam tugas ini, Anda akan membuka sesi Bash di Cloud Shell. 
 
@@ -38,13 +38,13 @@ Dalam tugas ini, Anda akan membuka sesi Bash di Cloud Shell.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **Bash**. 
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
 
 1. Jika diminta, klik **Buat penyimpanan**, dan tunggu hingga panel Azure Cloud Shell ditampilkan. 
 
-1. Pastikan **Bash** muncul di menu tarik-turun di sudut kiri atas panel Cloud Shell.
+1. Pastikan **Bash** muncul di menu menurun di sudut kiri atas panel Cloud Shell.
 
-#### <a name="task-2-create-a-resource-group-and-an-azure-managed-disk-by-using-azure-cli"></a>Tugas 2: Buat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure CLI
+#### <a name="task-2-create-a-resource-group-and-an-azure-managed-disk-by-using-azure-cli"></a>Tugas 2: Membuat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure CLI
 
 Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure dengan menggunakan sesi Azure CLI dalam Cloud Shell.
 
@@ -81,7 +81,7 @@ Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure
    az disk show --resource-group $RGNAME --name $DISKNAME
    ```
 
-#### <a name="task-3-configure-the-managed-disk-by-using-azure-cli"></a>Tugas 3: Konfigurasikan disk yang dikelola dengan menggunakan Azure CLI
+#### <a name="task-3-configure-the-managed-disk-by-using-azure-cli"></a>Tugas 3: Mengonfigurasi disk yang dikelola dengan menggunakan Azure CLI
 
 Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan menggunakan sesi Azure CLI dalam Cloud Shell. 
 
@@ -131,7 +131,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
 
     >**Catatan**: Perintah dijalankan secara tidak sinkron (seperti yang ditentukan oleh parameter --nowait), jadi sementara Anda akan dapat menjalankan perintah Azure CLI lain segera setelah itu dalam sesi Bash yang sama, itu akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 

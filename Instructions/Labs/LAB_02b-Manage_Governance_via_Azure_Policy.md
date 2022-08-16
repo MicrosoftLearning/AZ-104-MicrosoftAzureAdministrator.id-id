@@ -24,11 +24,11 @@ Untuk meningkatkan pengelolaan sumber daya Azure di Contoso, Anda telah ditugask
 
 ## <a name="objectives"></a>Tujuan
 
-Di lab ini, kami akan:
+Di lab ini, kita akan:
 
 + Tugas 1: Membuat dan menetapkan tag melalui portal Microsoft Azure
 + Tugas 2: Menegakkan pemberian tag melalui Azure Policy
-+ Tugas 3: Terapkan penandaan melalui kebijakan Azure
++ Tugas 3: Menerapkan tag melalui kebijakan Azure
 
 ## <a name="estimated-timing-30-minutes"></a>Perkiraan waktu: 30 menit
 
@@ -46,7 +46,7 @@ Dalam tugas ini, Anda akan membuat dan menetapkan tag ke grup sumber daya Azure 
 
 1. Di portal Microsoft Azure, mulai sesi **PowerShell** dalam **Cloud Shell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
 
 1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mengidentifikasi nama akun penyimpanan yang digunakan oleh Cloud Shell:
 
@@ -75,7 +75,7 @@ Dalam tugas ini, Anda akan membuat dan menetapkan tag ke grup sumber daya Azure 
     | Nama | **Peran** |
     | Nilai | **Infra** |
 
-1. Navigasikan kembali ke panel akun penyimpanan. Tinjau informasi **Gambaran Umum** dan perhatikan bahwa tag baru tidak ditetapkan secara otomatis ke akun penyimpanan. 
+1. Navigasikan kembali ke panel akun penyimpanan. Tinjauan informasi **Gambaran Umum** dan perhatikan bahwa tag baru tidak ditetapkan secara otomatis ke akun penyimpanan. 
 
 #### <a name="task-2-enforce-tagging-via-an-azure-policy"></a>Tugas 2: Menegakkan pemberian tag melalui Azure Policy
 
@@ -83,9 +83,9 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
 1. Di portal Microsoft Azure, telusuri dan pilih **Kebijakan**. 
 
-1. Di bagian **Penulisan**, klik **Definisi**. Luangkan waktu sejenak untuk menelusuri daftar definisi kebijakan bawaan yang tersedia untuk Anda gunakan. Cantumkan semua kebijakan bawaan yang melibatkan penggunaan tag dengan memilih entri **Tag** (dan membatalkan pemilihan semua entri lainnya) di daftar drop-down **Kategori**. 
+1. Di bagian **Penulisan**, klik **Definisi**. Luangkan waktu sejenak untuk menelusuri daftar definisi kebijakan bawaan yang tersedia untuk Anda gunakan. Cantumkan semua kebijakan bawaan yang melibatkan penggunaan tag dengan memilih entri **Tag** (dan membatalkan pemilihan semua entri lainnya) di daftar menurun **Kategori**. 
 
-1. Klik entri yang mewakili kebijakan bawaan **Memerlukan tag dan nilainya pada sumber daya** dan tinjau definisinya.
+1. Klik entri yang mewakili kebijakan bawaan **Memerlukan tag dan nilainya pada sumber daya** dan tinjauan definisinya.
 
 1. Pada panel **Memerlukan tag dan nilainya pada definisi** kebijakan bawaan sumber daya, klik **Tetapkan**.
 
@@ -115,11 +115,11 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
     | Nama Tag | **Peran** |
     | Nilai Tag | **Infra** |
 
-1. Klik **Berikutnya** dan tinjau tab **Perbaikan**. Biarkan kotak centang **Buat Identitas Terkelola** tidak dicentang. 
+1. Klik **Berikutnya** dan tinjauan tab **Perbaikan**. Biarkan kotak centang **Buat Identitas Terkelola** tidak dicentang. 
 
     >**Catatan**: Pengaturan ini dapat digunakan saat kebijakan atau inisiatif menyertakan efek **deployIfNotExists** atau **Modifikasi**.
 
-1. Klik **Tinjau + Buat**, lalu klik **Buat**.
+1. Klik **Tinjauan + Buat**, lalu klik **Buat**.
 
     >**Catatan**: Sekarang Anda akan memverifikasi bahwa penetapan kebijakan baru berlaku dengan mencoba membuat akun Azure Storage lain di grup sumber daya tanpa secara eksplisit menambahkan tag yang diperlukan. 
     
@@ -129,7 +129,7 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
 1. Pada panel grup sumber daya, klik **+ Buat** lalu cari **Akun Storage**, dan klik **+ Buat**. 
 
-1. Pada tab **Dasar** dari panel **Buat akun penyimpanan**, verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Policy diterapkan dan tentukan pengaturan berikut (biarkan orang lain dengan defaultnya), klik **Tinjau + buat** lalu klik **Buat**:
+1. Pada tab **Dasar** dari panel **Buat akun penyimpanan**, verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Policy diterapkan dan tentukan pengaturan berikut (biarkan orang lain dengan defaultnya), klik **Tinjauan + buat** lalu klik **Buat**:
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -147,7 +147,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
 
 1. Di portal Microsoft Azure, telusuri dan pilih **Kebijakan**. 
 
-1. Di bagian **Authoring**, klik **Tugas**. 
+1. Di bagian **Penulisan**, klik **Tugas**. 
 
 1. Dalam daftar penetapan, klik ikon elipsis di baris yang mewakili penetapan kebijakan **Memerlukan tag Peran dengan nilai Infra** dan gunakan item menu **Hapus penetapan** untuk menghapus penetapan.
 
@@ -183,7 +183,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
 
     >**Catatan**: Definisi kebijakan ini mencakup efek **Modifikasi**.
 
-1. Klik **Tinjau + Buat**, lalu klik **Buat**.
+1. Klik **Tinjauan + Buat**, lalu klik **Buat**.
 
     >**Catatan**: Untuk memverifikasi bahwa penetapan kebijakan baru berlaku, Anda akan membuat akun Azure Storage lain di grup sumber daya yang sama tanpa secara eksplisit menambahkan tag yang diperlukan. 
     
@@ -193,7 +193,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
 
 1. Pada panel grup sumber daya, klik **+ Buat** lalu cari **Akun Storage**, dan klik **+ Buat**. 
 
-1. Pada tab **Dasar** pada panel **Buat akun penyimpanan**, verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Policy diterapkan dan tentukan setelan berikut (biarkan yang lain dengan default) dan klik **Tinjau + buat**:
+1. Pada tab **Dasar** pada panel **Buat akun penyimpanan**, verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Policy diterapkan dan tentukan setelan berikut (biarkan yang lain dengan default) dan klik **Tinjauan + buat**:
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -203,11 +203,11 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
 
 1. Setelah akun penyimpanan baru disediakan, klik tombol **Buka sumber daya** dan, pada panel **Gambaran Umum** akun penyimpanan yang baru dibuat, perhatikan bahwa **Peran** tag dengan nilai **Infra** telah secara otomatis ditetapkan ke sumber daya.
 
-#### <a name="task-4-clean-up-resources"></a>Tugas 4: Bersihkan sumber daya
+#### <a name="task-4-clean-up-resources"></a>Tugas 4: Membersihkan sumber daya
 
    >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan memastikan Anda tidak akan melihat biaya tak terduga, meskipun perlu diingat bahwa kebijakan Azure tidak dikenakan biaya tambahan.
    
-   >**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+   >**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
 1. Di portal, telusuri dan pilih **Kebijakan**.
 
@@ -219,7 +219,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
 
 1. Klik **Gambaran Umum** dan klik **Hapus** di bagian atas panel akun penyimpanan. Saat dimintai konfirmasi, di panel **Hapus akun penyimpanan**, ketik nama akun penyimpanan untuk mengonfirmasi dan klik **Hapus**. 
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 
