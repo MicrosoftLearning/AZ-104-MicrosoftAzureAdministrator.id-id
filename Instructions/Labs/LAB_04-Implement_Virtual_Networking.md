@@ -137,7 +137,7 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
 1. Pada panel grup sumber daya **az104-04-rg1**, dalam daftar sumber dayanya, klik **az104-04-vnet1**.
 
-1. Pada panel jaringan virtual **az104-04-vnet1**, tinjau bagian **Perangkat yang terhubung** dan verifikasi bahwa ada dua antarmuka jaringan **az104-04-nic0** dan **az104-04-nic1** terpasang ke jaringan virtual.
+1. Pada panel jaringan virtual **az104-04-vnet1**, tinjauan bagian **Perangkat yang terhubung** dan verifikasi bahwa ada dua antarmuka jaringan **az104-04-nic0** dan **az104-04-nic1** terpasang ke jaringan virtual.
 
 1. Klik **az104-04-nic0** dan, pada panel **az104-04-nic0**, klik **Konfigurasi IP**.
 
@@ -380,7 +380,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
 
  > **Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
- > **Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+ > **Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
 1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
 

@@ -60,7 +60,7 @@ Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
 
     >**Catatan**: Kontainer Anda akan dapat dijangkau publik di dns-name-label.region.azurecontainer.io. Jika Anda menerima pesan error **DNS name label not available**, tentukan nilai yang berbeda.
 
-1. Klik **Berikutnya: Lanjutan >** , tinjau pengaturan pada tab **Lanjutan** pada bilah **Buat instans penampung** tanpa membuat perubahan apa pun, klik **Tinjau + Buat**, pastikan validasi lulus dan klik **Buat**.
+1. Klik **Berikutnya: Lanjutan >** , tinjauan pengaturan pada tab **Lanjutan** pada bilah **Buat instans penampung** tanpa membuat perubahan apa pun, klik **Tinjauan + Buat**, pastikan validasi lulus dan klik **Buat**.
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Ini akan memakan waktu sekitar 3 menit.
 
@@ -86,7 +86,7 @@ Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
->**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+>**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
 1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
 

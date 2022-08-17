@@ -141,7 +141,7 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
     >**Catatan**: Dengan mengklik tab **Kesalahan Mentah**, Anda dapat menemukan detail selengkapnya tentang kesalahan tersebut, termasuk nama definisi peran **Memerlukan tag Peran dengan nilai Infra**. Penyebaran gagal karena akun penyimpanan yang Anda coba buat tidak memiliki tag bernama **Peran** dengan nilainya yang diatur ke **Infra**.
 
-#### <a name="task-3-apply-tagging-via-an-azure-policy"></a>Tugas 3: Terapkan penandaan melalui kebijakan Azure
+#### <a name="task-3-apply-tagging-via-an-azure-policy"></a>Tugas 3: Menerapkan tag melalui kebijakan Azure
 
 Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk memulihkan sumber daya yang tidak patuh. 
 

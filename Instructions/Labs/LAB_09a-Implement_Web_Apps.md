@@ -21,7 +21,7 @@ Anda perlu mengevaluasi penggunaan aplikasi Web Azure untuk menghosting situs we
 Di lab ini Anda akan:
 
 + Tugas 1: Membuat aplikasi web Azure
-+ Tugas 2: Menukar slot pentahapan
++ Tugas 2: Membuat slot penyebaran pentahapan
 + Tugas 3: Mengonfigurasikan pengaturan penyebaran aplikasi web
 + Tugas 4: Menyebarkan kode ke slot pentahapan pementasan
 + Tugas 5: Menukar slot pentahapan
