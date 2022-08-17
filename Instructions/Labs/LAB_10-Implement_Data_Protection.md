@@ -44,9 +44,9 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan unt
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
-1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu dropdown, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** ke dalam direktori beranda Cloud Shell.
+1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** ke dalam direktori beranda Cloud Shell.
 
 1. Edit file Parameter yang baru saja Anda unggah dan ubah kata sandinya. Jika memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Untuk praktik terbaik, rahasia, seperti kata sandi, harus disimpan lebih aman di Key Vault. 
 
@@ -95,7 +95,7 @@ Dalam tugas ini, Anda akan membuat recovery service vault.
 
     >**Catatan**: Pastikan Anda menentukan wilayah yang sama tempat Anda menyebarkan mesin virtual di tugas sebelumnya.
 
-1. Klik **Tinjau + Buat**, pastikan validasi lulus dan klik **Buat**.
+1. Klik **Tinjauan + Buat**, pastikan validasi lulus dan klik **Buat**.
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Penyebaran akan memakan waktu kurang dari 1 menit.
 
@@ -105,7 +105,7 @@ Dalam tugas ini, Anda akan membuat recovery service vault.
 
 1. Pada bilah **az104-10-rsv1 - Properti**, klik tautan **Perbarui** pada label **Konfigurasi Cadangan**.
 
-1. Pada bilah **Konfigurasi Cadangan**, perhatikan bahwa Anda dapat mengatur **Jenis replikasi penyimpanan** menjadi **Locally-redundant** atau **Geo-redundant**. Biarkan pengaturan default **Geo-redundant** di tempatnya dan tutup bilah.
+1. Pada bilah **Konfigurasi Cadangan**, perhatikan bahwa Anda dapat mengatur **Jenis replikasi penyimpanan** menjadi **Locally-redundant** atau **Geo-redundan**. Biarkan pengaturan default **Geo-redundan** di tempatnya dan tutup bilah.
 
     >**Catatan**: Pengaturan ini hanya dapat dikonfigurasi jika tidak ada item cadangan yang ada.
 
@@ -164,7 +164,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Di portal Microsoft Azure, cari dan pilih **Mesin Virtual**, dan pada bilah **Mesin Virtual**, klik **az104-10-vm1**.
 
-1. Pada bilah **az104-10-vm1**, klik **Hubungkan**, di menu dropdown, klik **RDP**, di bilah **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
+1. Pada bilah **az104-10-vm1**, klik **Hubungkan**, di menu menurun, klik **RDP**, di bilah **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
 
     >**Catatan**: Langkah ini mengacu pada menghubungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
 
@@ -227,7 +227,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Pada halaman **Pilih Item untuk Dicadangkan**, klik **Tambahkan Item**.
 
-1. Di kotak dialog **Pilih Item**, perluas **C:\\Windows\\System32\\drivers\\etc\\** , pilih **hosts** , lalu klik **OK**:
+1. Di kotak dialog **Pilih Item**, perluas **C:\\Windows\\System32\\drivers\\etc\\** , pilih **host** , lalu klik **OK**:
 
 1. Pada halaman **Pilih Item untuk Dicadangkan**, klik **Berikutnya**.
 
@@ -261,7 +261,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 Dalam tugas ini, Anda akan melakukan pemulihan file menggunakan agen Layanan Pemulihan Azure.
 
-1. Dalam sesi Desktop Jarak Jauh ke **az104-10-vm1**, buka File Explorer, navigasikan ke folder **C:\\Windows\\System32\\drivers\\etc\\** dan hapus file **hosts**.
+1. Dalam sesi Desktop Jarak Jauh ke **az104-10-vm1**, buka File Explorer, navigasikan ke folder **C:\\Windows\\System32\\drivers\\etc\\** dan hapus file **host**.
 
 1. Buka Microsoft Azure Backup dan klik **Pulihkan data** di panel **Tindakan**. Cara ini akan memulai **Wizard Pemulihan Data**.
 
@@ -277,7 +277,7 @@ Dalam tugas ini, Anda akan melakukan pemulihan file menggunakan agen Layanan Pem
 
 1. Klik **Mulai**, luaskan map **Sistem Windows**, dan klik **Perintah**.
 
-1. Dari Perintah, jalankan perintah berikut untuk menyalin file **hosts** pemulihan ke lokasi aslinya (ganti `[recovery_volume]` dengan huruf drive volume pemulihan yang Anda identifikasi sebelumnya):
+1. Dari Perintah, jalankan perintah berikut untuk menyalin file **host** pemulihan ke lokasi aslinya (ganti `[recovery_volume]` dengan huruf drive volume pemulihan yang Anda identifikasi sebelumnya):
 
    ```sh
    robocopy [recovery_volume]:\Windows\System32\drivers\etc C:\Windows\system32\drivers\etc hosts /r:1 /w:1
@@ -295,7 +295,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Di portal Microsoft Azure, cari dan pilih **Mesin virtual**, dan pada bilah **Mesin virtual**, klik **az104-10-vm0**.
 
-1. Pada bilah **az104-10-vm0**, klik **Hubungkan**, di menu dropdown, klik **RDP**, di bilah **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
+1. Pada bilah **az104-10-vm0**, klik **Hubungkan**, di menu menurun, klik **RDP**, di bilah **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
 
     >**Catatan**: Langkah ini mengacu pada menghubungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
 
@@ -307,7 +307,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Dalam sesi Desktop Jarak Jauh ke **az104-10-vm0**, klik **Mulai**, luaskan folder **Sistem Windows**, dan klik **Perintah**.
 
-1. Dari Perintah, jalankan perintah berikut untuk menghapus file **hosts**:
+1. Dari Perintah, jalankan perintah berikut untuk menghapus file **host**:
 
    ```sh
    del C:\Windows\system32\drivers\etc\hosts
@@ -349,7 +349,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Beralih ke jendela **Perintah**.
 
-1. Dari Perintah, jalankan perintah berikut untuk menyalin file **hosts** pemulihan ke lokasi aslinya (ganti `[os_volume]` dengan huruf drive volume sistem operasi yang Anda identifikasi sebelumnya):
+1. Dari Perintah, jalankan perintah berikut untuk menyalin file **host** pemulihan ke lokasi aslinya (ganti `[os_volume]` dengan huruf drive volume sistem operasi yang Anda identifikasi sebelumnya):
 
    ```sh
    robocopy [os_volume]:\Windows\System32\drivers\etc C:\Windows\system32\drivers\etc hosts /r:1 /w:1
@@ -465,7 +465,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 

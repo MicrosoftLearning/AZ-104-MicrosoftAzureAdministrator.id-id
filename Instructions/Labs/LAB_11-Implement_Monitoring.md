@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 11 - Implementasi Monitoring
+  title: 11 - Implementasi Pemantauan
   module: Module 11 - Monitoring
 ms.openlocfilehash: 10c3fe049aaf037892a34299c21dfd8213ce40b2
 ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
@@ -9,12 +9,12 @@ ms.contentlocale: id-ID
 ms.lasthandoff: 05/11/2022
 ms.locfileid: "145198182"
 ---
-# <a name="lab-11---implement-monitoring"></a>Lab 11 - Implementasi Monitoring
+# <a name="lab-11---implement-monitoring"></a>Lab 11 - Implementasi Pemantauan
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
-Anda perlu mengevaluasi fungsionalitas Azure yang akan memberikan wawasan tentang kinerja dan konfigurasi sumber daya Azure, dengan fokus khususnya pada komputer virtual Azure. Untuk mencapai ini, Anda bermaksud untuk memeriksa kemampuan Azure Monitor, termasuk Analisis Log.
+Anda perlu mengevaluasi fungsionalitas Azure yang akan memberikan wawasan tentang kinerja dan konfigurasi sumber daya Azure, dengan fokus khususnya pada mesin virtual Azure. Untuk mencapai ini, Anda bermaksud untuk memeriksa kemampuan Azure Monitor, termasuk Analisis Log.
 
 ## <a name="objectives"></a>Tujuan
 
@@ -23,8 +23,8 @@ Di lab ini Anda akan:
 + Tugas 1: Memprovisikan lingkungan lab
 + Tugas 2: Mendaftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement
 + Tugas 3: Membuat dan mengonfigurasi ruang kerja Azure Log Analytics dan solusi berbasis Azure Automation
-+ Tugas 4: Meninjau pengaturan pemantauan default komputer virtual Azure
-+ Tugas 5: Mengonfigurasi pengaturan diagnostik komputer virtual Azure
++ Tugas 4: Meninjau pengaturan pemantauan default mesin virtual Azure
++ Tugas 5: Mengonfigurasi pengaturan diagnostik mesin virtual Azure
 + Tugas 6: Meninjau fungsionalitas Azure Monitor
 + Tugas 7: Meninjau fungsionalitas Azure Log Analytics
 
@@ -36,7 +36,7 @@ Di lab ini Anda akan:
 
 #### <a name="task-1-provision-the-lab-environment"></a>Tugas 1: Memprovisikan lingkungan lab
 
-Dalam tugas ini, Anda akan menggunakan komputer virtual yang akan digunakan untuk menguji skenario monitoring.
+Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk menguji skenario pemantauan.
 
 1. Masuk ke [portal Microsoft Azure](https://portal.azure.com).
 
@@ -44,15 +44,15 @@ Dalam tugas ini, Anda akan menggunakan komputer virtual yang akan digunakan untu
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
 1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\11\\az104-11-vm-template.json** dan **\\Allfiles\\Labs\\11\\az104-11-vm-parameters.json** ke direktori beranda Cloud Shell.
 
 1. Edit file Parameter yang baru saja Anda unggah dan ubah kata sandinya. Jika memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
 
-1. Dari panel Cloud Shell, jalankan elemen berikut ini untuk membuat grup sumber daya yang akan menghosting komputer virtual (ganti `[Azure_region]` tempat penampung dengan nama wilayah Azure tempat Anda ingin menerapkan komputer virtual Azure):
+1. Dari panel Cloud Shell, jalankan elemen berikut ini untuk membuat grup sumber daya yang akan menghosting mesin virtual (ganti `[Azure_region]` tempat penampung dengan nama wilayah Azure tempat Anda ingin menerapkan mesin virtual Azure):
 
-    >**Catatan**: Pastikan untuk memilih salah satu wilayah yang terdaftar sebagai **Log Analytics Workspace Region** dalam referensi di [dokumentasi pemetaan Ruang Kerja](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)
+    >**Catatan**: Pastikan untuk memilih salah satu wilayah yang terdaftar sebagai **should be translated** dalam referensi di [dokumentasi pemetaan Ruang Kerja](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)
 
    ```powershell
    $location = '[Azure_region]'
@@ -62,7 +62,7 @@ Dalam tugas ini, Anda akan menggunakan komputer virtual yang akan digunakan untu
    New-AzResourceGroup -Name $rgName -Location $location
    ```
 
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk membuat jaringan virtual pertama dan menerapkan komputer virtual ke dalamnya dengan menggunakan file templat dan parameter yang Anda unggah:
+1. Dari panel Cloud Shell, jalankan perintah berikut untuk membuat jaringan virtual pertama dan menerapkan mesin virtual ke dalamnya dengan menggunakan file templat dan parameter yang Anda unggah:
 
    ```powershell
    New-AzResourceGroupDeployment `
@@ -92,22 +92,22 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi ruang kerja Azure Log Anal
 
 1. Di portal Azure, telusuri dan pilih **ruang kerja Log Analytics** dan, pada panel **ruang kerja Log Analytics**, klik **+ Buat**.
 
-1. Pada tab **Dasar** bilah **Buat ruang kerja Analytics Log**, masukkan pengaturan berikut, klik **Tinjau + Buat**, lalu klik **Buat**:
+1. Pada tab **Dasar** bilah **Buat ruang kerja Analytics Log**, masukkan pengaturan berikut, klik **Tinjauan + Buat**, lalu klik **Buat**:
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | nama grup sumber daya baru **az104-11-rg1** |
     | Ruang Kerja Analitik Log | nama unik apa pun |
-    | Wilayah | nama wilayah Azure tempat Anda menggunakan komputer virtual di tugas sebelumnya |
+    | Wilayah | nama wilayah Azure tempat Anda menggunakan mesin virtual di tugas sebelumnya |
 
-    >**Catatan**: Pastikan Anda menentukan wilayah yang sama tempat Anda menerapkan komputer virtual di tugas sebelumnya.
+    >**Catatan**: Pastikan Anda menentukan wilayah yang sama tempat Anda menerapkan mesin virtual di tugas sebelumnya.
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Penyebaran akan memakan waktu sekitar 1 menit.
 
 1. Di portal Azure, telusuri dan pilih **Akun Automasi**, dan pada panel **Akun Automasi**, klik **+ Buat**.
 
-1. Pada bilah **Buat Akun Azure Automation**, tentukan pengaturan berikut, dan klik **Tinjau + Buat** setelah validasi, klik **Buat**:
+1. Pada bilah **Buat Akun Azure Automation**, tentukan pengaturan berikut, dan klik **Tinjauan + Buat** setelah validasi, klik **Buat**:
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -134,9 +134,9 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi ruang kerja Azure Log Anal
 
     >**Catatan**: Tunggu hingga penginstalan selesai. Proses ini mungkin perlu waktu sekitar 5 menit.
 
-#### <a name="task-4-review-default-monitoring-settings-of-azure-virtual-machines"></a>Tugas 4: Meninjau pengaturan pemantauan default komputer virtual Azure
+#### <a name="task-4-review-default-monitoring-settings-of-azure-virtual-machines"></a>Tugas 4: Meninjau pengaturan pemantauan default mesin virtual Azure
 
-Dalam tugas ini, Anda akan meninjau pengaturan pemantauan default komputer virtual Azure
+Dalam tugas ini, Anda akan meninjau pengaturan pemantauan default mesin virtual Azure
 
 1. Di portal Azure, cari dan pilih **Komputer virtual**, dan pada panel **Komputer virtual**, klik **az104-11-vm0**.
 
@@ -148,13 +148,13 @@ Dalam tugas ini, Anda akan meninjau pengaturan pemantauan default komputer virtu
 
 1. Di daftar menurun **Metrik**, tinjau daftar metrik yang tersedia.
 
-    >**Catatan**: Daftar tersebut mencakup berbagai metrik terkait CPU, disk, dan jaringan yang dapat dikumpulkan dari host komputer virtual, tanpa memiliki akses ke metrik tingkat tamu.
+    >**Catatan**: Daftar tersebut mencakup berbagai metrik terkait CPU, disk, dan jaringan yang dapat dikumpulkan dari host mesin virtual, tanpa memiliki akses ke metrik tingkat tamu.
 
 1. Di daftar menurun **Metrik**, pilih **Persentase CPU**, di daftar menurun **Agregasi**, pilih **Rata-rata**, dan tinjau grafik yang dihasilkan.
 
-#### <a name="task-5-configure-azure-virtual-machine-diagnostic-settings"></a>Tugas 5: Mengonfigurasi pengaturan diagnostik komputer virtual Azure
+#### <a name="task-5-configure-azure-virtual-machine-diagnostic-settings"></a>Tugas 5: Mengonfigurasi pengaturan diagnostik mesin virtual Azure
 
-Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual Azure.
+Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Azure.
 
 1. Pada bilah **az104-11-vm0**, di bagian **Pemantauan**, klik **Pengaturan diagnostik**.
 
@@ -170,7 +170,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
     >**Catatan**: Secara default, pengumpulan log mencakup entri kritis, kesalahan, dan peringatan dari Log Aplikasi dan log Sistem, serta entri kegagalan Audit dari log Keamanan. Di sini Anda juga dapat beralih ke tampilan **Kustom** untuk pengaturan konfigurasi yang lebih detail.
 
-1. Pada bilah **az104-11-vm0**, di bagian **Monitoring**, klik **Log** lalu klik **Aktifkan**.
+1. Pada bilah **az104-11-vm0**, di bagian **Pemantauan**, klik **Log** lalu klik **Aktifkan**.
 
 1. Pada panel **az104-11-vm0 - Log**, pastikan bahwa ruang kerja Analisis Log yang Anda buat sebelumnya di lab ini dipilih dalam daftar menurun **Pilih Ruang Kerja Analisis Log** dan klik **Aktifkan**.
 
@@ -188,13 +188,13 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
     >**Catatan**: Daftar tersebut mencakup metrik tingkat tamu tambahan yang tidak tersedia jika hanya mengandalkan pemantauan tingkat host.
 
-1. Di daftar menurun **Metrik**, pilih **Memori\\ Bytes yang Tersedia**, di daftar menurun **Agregasi**, pilih **Maks**, dan tinjau bagan yang dihasilkan.
+1. Di daftar menurun **Metrik**, pilih **Memori\\ Byte yang Tersedia**, di daftar menurun **Agregasi**, pilih **Maks**, dan tinjau bagan yang dihasilkan.
 
 #### <a name="task-6-review-azure-monitor-functionality"></a>Tugas 6: Meninjau fungsionalitas Azure Monitor
 
-1. Di portal Azure, telusuri dan pilih **Monitor** dan, pada panel **Monitor \| Tinjau**, klik **Metrics**.
+1. Di portal Azure, telusuri dan pilih **Monitor** dan, pada panel **Monitor \| Tinjau**, klik **Metrik**.
 
-1. Pada panel **Pilih cakupan**, pada tab **Telusuri**, navigasikan ke grup sumber daya **az104-11-rg0**, perluas, centang kotak di sebelah **az104-11-vm0** entri komputer virtual dalam grup sumber daya tersebut, dan klik **Terapkan**.
+1. Pada panel **Pilih cakupan**, pada tab **Telusuri**, navigasikan ke grup sumber daya **az104-11-rg0**, perluas, centang kotak di sebelah **az104-11-vm0** entri mesin virtual dalam grup sumber daya tersebut, dan klik **Terapkan**.
 
     >**Catatan**: Ini memberi Anda tampilan dan opsi yang sama seperti yang tersedia dari bilah **az104-11-vm0 - Metrik**.
 
@@ -202,7 +202,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
 1. Pada bilah **Pantau \| Metrik**, pada panel **CPU Persentase Rata-rata untuk az104-11-vm0**, klik **Aturan peringatan baru**.
 
-    >**Catatan**: Membuat aturan peringatan dari Metrik tidak didukung untuk metrik dari ruang nama metrik Tamu (klasik). Ini dapat dilakukan dengan menggunakan templat Azure Resource Manager, seperti yang dijelaskan dalam dokumen [Kirim metrik OS Tamu ke penyimpanan metrik Azure Monitor menggunakan templat Resource Manager untuk komputer virtual Windows](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/collect-custom-metrics-guestos-resource-manager-vm)
+    >**Catatan**: Membuat aturan peringatan dari Metrik tidak didukung untuk metrik dari ruang nama metrik Tamu (klasik). Ini dapat dilakukan dengan menggunakan templat Azure Resource Manager, seperti yang dijelaskan dalam dokumen [Kirim metrik OS Tamu ke penyimpanan metrik Azure Monitor menggunakan templat Resource Manager untuk mesin virtual Windows](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/collect-custom-metrics-guestos-resource-manager-vm)
 
 1. Pada bilah **Buat aturan peringatan**, di bagian **Kondisi**, klik entri ketentuan yang ada.
 
@@ -232,7 +232,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
 1. Pada panel **Email/pesan SMS/Push/Suara**, pilih kotak centang **Email**, ketik alamat email Anda di kotak teks **Email**, biarkan yang lain dengan nilai defaultnya, klik **OK**, kembali ke tab **Notifikasi** pada panel **Buat grup tindakan**, pilih **Berikutnya: Tindakan >** .
 
-1. Pada tab **Tindakan** panel **Buat grup tindakan**, tinjau item yang tersedia di daftar menurun **Jenis tindakan** tanpa membuat perubahan apa pun dan pilih **Tinjau + buat**.
+1. Pada tab **Tindakan** panel **Buat grup tindakan**, tinjau item yang tersedia di daftar menurun **Jenis tindakan** tanpa membuat perubahan apa pun dan pilih **Tinjauan + buat**.
 
 1. Pada tab **Tinjau + buat** panel **Buat grup tindakan**, pilih **Buat**.
 
@@ -245,7 +245,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
     | Tingkat keparahan | **Sev 3** |
     | Aktifkan saat pembuatan | **Ya** |
 
-1. Klik **Tinjau + buat** dan pada tab **Tinjau + buat** klik **Buat**.
+1. Klik **Tinjauan + buat** dan pada tab **Tinjauan + buat** klik **Buat**.
 
     >**Catatan**: Dibutuhkan waktu hingga 10 menit agar aturan pemberitahuan metrik menjadi aktif.
 
@@ -255,7 +255,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
     >**Catatan**: Langkah ini mengacu pada menghubungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
 
-    >**Catatan**: Anda dapat mengabaikan permintaan peringatan apa pun saat menghubungkan ke komputer virtual target.
+    >**Catatan**: Anda dapat mengabaikan permintaan peringatan apa pun saat menghubungkan ke mesin virtual target.
 
 1. Saat diminta, masuk dengan menggunakan nama pengguna **Siswa** dan sandi dari file parameter.
 
@@ -275,7 +275,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
 1. Catat jumlah peringatan **Sev 3** lalu klik baris **Sev 3**.
 
-    >**Catatan**: Anda mungkin perlu menunggu beberapa menit dan mengeklik **Segarkan**.
+    >**Catatan**: Anda mungkin perlu menunggu beberapa menit dan mengeklik **Refresh**.
 
 1. Pada bilah **Semua Peringatan**, tinjau peringatan yang dihasilkan.
 
@@ -336,13 +336,13 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 
 + Memprovisikan lingkungan lab
 + Membuat dan mengonfigurasi ruang kerja Azure Log Analytics dan solusi berbasis Azure Automation
-+ Meninjau pengaturan pemantauan default komputer virtual Azure
-+ Pengaturan diagnostik komputer virtual Azure yang dikonfigurasi
++ Meninjau pengaturan pemantauan default mesin virtual Azure
++ Pengaturan diagnostik mesin virtual Azure yang dikonfigurasi
 + Meninjau fungsionalitas Azure Monitor
 + Meninjau fungsionalitas Azure Log Analytics

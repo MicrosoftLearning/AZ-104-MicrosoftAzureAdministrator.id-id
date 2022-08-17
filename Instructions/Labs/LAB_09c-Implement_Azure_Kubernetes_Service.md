@@ -14,7 +14,7 @@ ms.locfileid: "146587475"
 
 ## <a name="lab-scenario"></a>Skenario lab
 
-Contoso memiliki sejumlah aplikasi multitingkat yang tidak cocok untuk dijalankan dengan menggunakan Azure Container Instances. Untuk menentukan apakah mereka dapat dijalankan sebagai beban kerja dalam kontainer, Anda ingin mengevaluasi menggunakan Kubernetes sebagai orkestra kontainer. Untuk lebih meminimalkan overhead manajemen, Anda ingin menguji Azure Kubernetes Service, termasuk pengalaman penyebaran yang disederhanakan dan kemampuan penskalaannya.
+Contoso memiliki sejumlah aplikasi multi-tingkat yang tidak cocok untuk dijalankan dengan menggunakan Azure Container Instances. Untuk menentukan apakah mereka dapat dijalankan sebagai beban kerja dalam kontainer, Anda ingin mengevaluasi menggunakan Kubernetes sebagai orkestra kontainer. Untuk lebih meminimalkan overhead manajemen, Anda ingin menguji Azure Kubernetes Service, termasuk pengalaman penyebaran yang disederhanakan dan kemampuan penskalaannya.
 
 ## <a name="objectives"></a>Tujuan
 
@@ -45,7 +45,7 @@ Dalam tugas ini, Anda akan mendaftarkan penyedia sumber daya yang diperlukan unt
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk mendaftarkan penyedia sumber daya Microsoft.Kubernetes dan Microsoft.KubernetesConfiguration.
 
@@ -73,7 +73,7 @@ Dalam tugas ini, Anda akan menyebarkan kluster Azure Kubernetes Services menggun
     | Wilayah | nama wilayah tempat Anda dapat menyediakan kluster Kubernetes |
     | Zona Ketersediaan | **Tidak ada** (hapus centang semua kotak) |
     | Versi Kube | menerima default |
-    | Ukuran simpul | menerima default |
+    | Ukuran node | menerima default |
     | Metode skala | **Manual** |
     | Jumlah simpul | **1** |
 
@@ -97,7 +97,7 @@ Dalam tugas ini, Anda akan menyebarkan kluster Azure Kubernetes Services menggun
     | Konfigurasi jaringan | **kubenet** |
     | Awalan nama DNS | nama host DNS yang valid dan unik secara global |
 
-1. Klik **Berikutnya: Integrasi >** , pada tab **Integrasi** bilah **Buat kluster Kubernetes**, atur **Pemantauan penampung** ke **Nonaktif**, klik **Tinjau + buat**, pastikan validasi lulus dan klik **Buat**.
+1. Klik **Berikutnya: Integrasi >** , pada tab **Integrasi** bilah **Buat kluster Kubernetes**, atur **Pemantauan penampung** ke **Nonaktif**, klik **Tinjauan + buat**, pastikan validasi lulus dan klik **Buat**.
 
     >**Catatan**: Dalam skenario produksi, Anda ingin mengaktifkan pemantauan. Pemantauan dinonaktifkan dalam kasus ini karena tidak tercakup dalam lab.
 
@@ -187,7 +187,7 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
     kubectl get pods
     ```
 
-    > **Catatan**: Tinjau output dari perintah dan verifikasi bahwa jumlah pod meningkat menjadi 2.
+    > **Catatan**: Tinjauan output dari perintah dan verifikasi bahwa jumlah pod meningkat menjadi 2.
 
 1. Dari panel **Cloud Shell**, jalankan perintah berikut untuk menskalakan kluster dengan menambah jumlah simpul menjadi 2:
 
@@ -207,7 +207,7 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
     kubectl get nodes
     ```
 
-    > **Catatan**: Tinjau output dari perintah dan verifikasi bahwa jumlah simpul meningkat menjadi 2.
+    > **Catatan**: Tinjauan output dari perintah dan verifikasi bahwa jumlah simpul meningkat menjadi 2.
 
 1. Dari panel **Cloud Shell**, jalankan perintah berikut untuk menskalakan penyebaran:
 
@@ -221,7 +221,7 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
     kubectl get pods
     ```
 
-    > **Catatan**: Tinjau output dari perintah dan verifikasi bahwa jumlah pod meningkat menjadi 10.
+    > **Catatan**: Tinjauan output dari perintah dan verifikasi bahwa jumlah pod meningkat menjadi 10.
 
 1. Dari panel **Cloud Shell**, jalankan perintah berikut untuk meninjau distribusi pod di seluruh simpul kluster:
 
@@ -229,7 +229,7 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
     kubectl get pod -o=custom-columns=NODE:.spec.nodeName,POD:.metadata.name
     ```
 
-    > **Catatan**: Tinjau output dari perintah dan verifikasi bahwa pod didistribusikan di kedua simpul.
+    > **Catatan**: Tinjauan output dari perintah dan verifikasi bahwa pod didistribusikan di kedua simpul.
 
 1. Dari panel **Cloud Shell**, jalankan perintah berikut untuk menghapus penyebaran:
 
@@ -261,7 +261,7 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
 
     >**Catatan**: Perintah dijalankan secara tidak sinkron (seperti yang ditentukan oleh parameter --nowait), jadi sementara Anda akan dapat menjalankan perintah Azure CLI lain segera setelah itu dalam sesi Bash yang sama, itu akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### <a name="review"></a>Tinjauan
 
 Di lab ini, Anda telah:
 
