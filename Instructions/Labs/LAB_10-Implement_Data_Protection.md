@@ -141,7 +141,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure.
     | Nama kebijakan | **az104-10-backup-policy** |
     | Frekuensi | **Harian** |
     | Waktu | **12:00 Siang** |
-    | Timezone | nama zona waktu lokal Anda |
+    | Zona waktu | nama zona waktu lokal Anda |
     | Pertahankan snapshot pemulihan instans untuk | **2** Hari |
 
 1. Klik **OK** untuk membuat kebijakan, lalu di bagian **Virtual Machines**, pilih **Tambah**.

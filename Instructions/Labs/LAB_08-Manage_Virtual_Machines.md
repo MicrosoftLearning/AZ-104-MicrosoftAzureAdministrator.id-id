@@ -14,7 +14,7 @@ ms.locfileid: "146587448"
 
 ## <a name="lab-scenario"></a>Skenario lab
 
-Anda ditugaskan untuk mengidentifikasi berbagai opsi untuk menyebarkan dan mengonfigurasi mesin virtual Azure. Pertama, Anda perlu menentukan opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang berbeda yang dapat Anda terapkan saat menggunakan mesin virtual Azure. Selanjutnya, Anda perlu menyelidiki opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang tersedia saat menggunakan kumpulan skala mesin virtual Azure. Anda juga ingin menjelajahi kemampuan untuk secara otomatis mengonfigurasi mesin virtual dan kumpulan skala mesin virtual menggunakan ekstensi Skrip Kustom Komputer Virtual Azure.
+Anda ditugaskan untuk mengidentifikasi berbagai opsi untuk menyebarkan dan mengonfigurasi mesin virtual Azure. Pertama, Anda perlu menentukan opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang berbeda yang dapat Anda terapkan saat menggunakan mesin virtual Azure. Selanjutnya, Anda perlu menyelidiki opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang tersedia saat menggunakan kumpulan skala mesin virtual Azure. Anda juga ingin menjelajahi kemampuan untuk secara otomatis mengonfigurasi mesin virtual dan kumpulan skala mesin virtual menggunakan ekstensi Skrip Kustom Mesin Virtual Azure.
 
 ## <a name="objectives"></a>Tujuan
 
@@ -525,7 +525,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
     | --- |--- |
     | Sumber metrik | **Sumber daya saat ini (az10480vmss0)** |
     | Agregasi waktu | **Rata-rata** |
-    | Namespace layanan metrik | **Host Komputer Virtual** |
+    | Namespace layanan metrik | **Host Mesin Virtual** |
     | Nama metrik | **Total Jaringan Masuk** |
     | Operator | **Lebih besar dari** |
     | Ambang metrik untuk memicu tindakan skala | **10** |

@@ -14,7 +14,7 @@ ms.locfileid: "146587475"
 
 ## <a name="lab-scenario"></a>Skenario lab
 
-Contoso memiliki sejumlah aplikasi multi-tingkat yang tidak cocok untuk dijalankan dengan menggunakan Azure Container Instances. Untuk menentukan apakah mereka dapat dijalankan sebagai beban kerja dalam kontainer, Anda ingin mengevaluasi menggunakan Kubernetes sebagai orkestra kontainer. Untuk lebih meminimalkan overhead manajemen, Anda ingin menguji Azure Kubernetes Service, termasuk pengalaman penyebaran yang disederhanakan dan kemampuan penskalaannya.
+Contoso memiliki sejumlah aplikasi multitingkat yang tidak cocok untuk dijalankan dengan menggunakan Azure Container Instances. Untuk menentukan apakah mereka dapat dijalankan sebagai beban kerja dalam kontainer, Anda ingin mengevaluasi menggunakan Kubernetes sebagai orkestra kontainer. Untuk lebih meminimalkan overhead manajemen, Anda ingin menguji Azure Kubernetes Service, termasuk pengalaman penyebaran yang disederhanakan dan kemampuan penskalaannya.
 
 ## <a name="objectives"></a>Tujuan
 
