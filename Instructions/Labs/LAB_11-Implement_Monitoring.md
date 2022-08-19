@@ -52,7 +52,7 @@ Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk m
 
 1. Dari panel Cloud Shell, jalankan elemen berikut ini untuk membuat grup sumber daya yang akan menghosting mesin virtual (ganti `[Azure_region]` tempat penampung dengan nama wilayah Azure tempat Anda ingin menerapkan mesin virtual Azure):
 
-    >**Catatan**: Pastikan untuk memilih salah satu wilayah yang terdaftar sebagai **should be translated** dalam referensi di [dokumentasi pemetaan Ruang Kerja](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)
+    >**Catatan**: Pastikan untuk memilih salah satu wilayah yang terdaftar sebagai **Log Analytics Workspace Region** dalam referensi di [dokumentasi pemetaan Ruang Kerja](https://docs.microsoft.com/en-us/azure/automation/how-to/region-mappings)
 
    ```powershell
    $location = '[Azure_region]'
