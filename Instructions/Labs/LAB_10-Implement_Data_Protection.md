@@ -80,7 +80,7 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan unt
 
 #### <a name="task-2-create-a-recovery-services-vault"></a>Tugas 2: Membuat vault Recovery Service
 
-Dalam tugas ini, Anda akan membuat recovery service vault.
+Dalam tugas ini, Anda akan membuat brankas layanan pemulihan.
 
 1. Di portal Microsoft Azure, cari dan pilih **Recovery Services vaults** dan, pada bilah **Recovery Services vaults**, klik **+ Buat**.
 

@@ -649,8 +649,8 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 Di lab ini, Anda telah:
 
 + Menyebarkan mesin virtual Azure dalam zona yang tahan menggunakan portal Azure dan templat Azure Resource Manager
-+ Mesin virtual Azure yang dikonfigurasi menggunakan ekstensi mesin virtual
++ Mesin virtual Azure yang dikonfigurasi dengan menggunakan ekstensi mesin virtual
 + Komputasi dan penyimpanan berskala untuk mesin virtual Azure
-+ Menyebarkan kumpulan skala mesin virtual Azure dalam zona yang tahan menggunakan portal Azure
-+ Kumpulan skala mesin virtual Azure yang dikonfigurasi menggunakan ekstensi mesin virtual
-+ Komputasi dan penyimpanan yang diskalakan untuk kumpulan skala mesin virtual Azure
++ Menyebarkan set skala mesin virtual Azure yang tahan zona dengan menggunakan portal Azure
++ Set skala mesin virtual Azure yang dikonfigurasi dengan menggunakan ekstensi mesin virtual
++ Komputasi dan penyimpanan berskala untuk set skala mesin virtual Azure

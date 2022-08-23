@@ -404,7 +404,7 @@ Di lab ini, Anda telah:
 
 + Membuat dan mengonfigurasi jaringan virtual
 + Menyebarkan mesin virtual ke dalam jaringan virtual
-+ Alamat IP pribadi dan publik yang dikonfigurasi dari VM Azure
-+ Kelompok keamanan jaringan yang dikonfigurasi
++ Alamat IP pribadi dan publik yang dikonfigurasi dari Azure VMs
++ Grup keamanan jaringan yang dikonfigurasi
 + Azure DNS yang dikonfigurasi untuk resolusi nama internal
 + Azure DNS yang dikonfigurasi untuk resolusi nama eksternal

@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 02b - Mengatur Tata Kelola melalui Azure Policy
+  title: 02b - Mengelola Tata Kelola melalui Azure Policy
   module: Module 02 - Governance and Compliance
 ms.openlocfilehash: 2bf92c914983a28dc2d3f85abed917a95e88c04f
 ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f

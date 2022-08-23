@@ -339,6 +339,6 @@ Di lab ini, Anda telah:
 - Memprovisikan lingkungan lab
 - Membuat dan mengonfigurasi akun Azure Storage
 - Penyimpanan blob terkelola
-- Autentikasi dan otorisasi terkelola untuk Azure Storage
-- Membuat dan mengonfigurasi berbagi file Azure
+- Otentikasi dan otorisasi terkelola untuk Azure Storage
+- Membuat dan mengonfigurasi berbagi Azure Files
 - Akses jaringan terkelola untuk Azure Storage

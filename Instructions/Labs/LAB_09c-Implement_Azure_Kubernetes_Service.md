@@ -267,4 +267,4 @@ Di lab ini, Anda telah:
 
 + Menyebarkan kluster Azure Kubernetes Service
 + Menyebarkan pod ke dalam kluster Azure Kubernetes Service
-+ Beban kerja dalam kontainer yang diskalakan di kluster layanan Azure Kubernetes
++ Beban kerja dalam container yang diskalakan di kluster layanan Azure Kubernetes

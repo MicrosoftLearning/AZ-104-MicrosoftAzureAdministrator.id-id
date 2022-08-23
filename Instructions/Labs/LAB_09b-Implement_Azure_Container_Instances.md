@@ -58,7 +58,7 @@ Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
     | --- | --- |
     | Label nama DNS | nama host DNS yang valid dan unik secara global |
 
-    >**Catatan**: Kontainer Anda akan dapat dijangkau publik di dns-name-label.region.azurecontainer.io. Jika Anda menerima pesan error **DNS name label not available**, tentukan nilai yang berbeda.
+    >**Catatan**: Kontainer Anda akan dapat dijangkau publik di dns-name-label.region.azurecontainer.io. Jika Anda menerima pesan error **Label nama DNS tidak tersedia**, tentukan nilai yang berbeda.
 
 1. Klik **Berikutnya: Lanjutan >** , tinjauan pengaturan pada tab **Lanjutan** pada bilah **Buat instans penampung** tanpa membuat perubahan apa pun, klik **Tinjauan + Buat**, pastikan validasi lulus dan klik **Buat**.
 
