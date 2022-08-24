@@ -210,7 +210,7 @@ Dalam tugas ini, Anda akan membuat penyewa Azure AD baru.
 
    > **Catatan**: **Nama domain awal** tidak boleh menjadi nama yang sah yang berpotensi cocok dengan organisasi Anda atau yang lain. Tanda centang hijau di kotak teks **Nama domain awal** akan menunjukkan bahwa nama domain yang Anda ketikkan valid dan unik.
 
-1. Klik **Tinjau + buat**, lalu klik **Create**.
+1. Klik **Tinjau + buat**, lalu klik **Buat**.
 
 1. Tampilkan panel penyewa Azure AD yang baru dibuat dengan menggunakan **Klik di sini untuk menavigasi ke penyewa baru Anda: Tautan Contoso Lab** atau tombol **Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Azure.
 
