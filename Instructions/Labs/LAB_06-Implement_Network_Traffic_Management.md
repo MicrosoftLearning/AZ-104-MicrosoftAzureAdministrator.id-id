@@ -1,20 +1,17 @@
 ---
 lab:
   title: 06 - Menerapkan Manajemen Lalu Lintas
-  module: Module 06 - Network Traffic Management
-ms.openlocfilehash: 81fd0fefc28cbf9eb59935e93bb548c69d677cf5
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587457"
+  module: Administer Network Traffic Management
 ---
+
 # <a name="lab-06---implement-traffic-management"></a>Lab 06 - Menerapkan Manajemen Lalu Lintas
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
 Anda ditugaskan untuk menguji pengelolaan lalu lintas jaringan yang menargetkan mesin virtual Azure di topologi jaringan hub dan spoke, yang Contoso pertimbangkan untuk diterapkan di lingkungan Azure-nya (sebagai ganti membuat topologi mesh, yang Anda uji di lab sebelumnya). Pengujian ini perlu menyertakan penerapan konektivitas antar spoke dengan mengandalkan rute yang ditentukan pengguna yang memaksa lalu lintas mengalir melalui hub, serta distribusi lalu lintas di seluruh mesin virtual dengan menggunakan load balancer lapisan 4 dan lapisan 7. Untuk tujuan ini, Anda ingin menggunakan Azure Load Balancer (lapisan 4) dan Azure Application Gateway (lapisan 7).
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 >**Catatan**: Lab ini, secara default, memerlukan total 8 vCPU yang tersedia dalam seri Standard_Dsv3 di wilayah yang Anda pilih untuk penerapan, karena melibatkan penerapan empat VM Azure dari SKU Standard_D2s_v3. Jika siswa Anda menggunakan akun uji coba, dengan batas 4 vCPU, Anda dapat menggunakan ukuran VM yang hanya memerlukan satu vCPU (seperti Standard_B1s).
 
@@ -36,7 +33,7 @@ Di lab ini Anda akan:
 ![gambar](../media/lab06.png)
 
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -54,7 +51,7 @@ Dalam tugas ini, Anda akan menyebarkan empat mesin virtual ke wilayah Azure yang
 
 1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** dan **\\Allfiles\\Labs\\06\\az104-06-vms-loop -parameters.json** ke dalam direktori beranda Cloud Shell.
 
-1. Edit file **Parameter** yang baru saja Anda unggah dan ubah kata sandinya. Jika memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
+1. Edit file **Parameter** yang baru saja Anda unggah dan ubah kata sandinya. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
 
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk membuat grup sumber daya pertama yang akan menghosting lingkungan lab (ganti tempat penampung '[Azure_region]' dengan nama wilayah Azure tempat Anda ingin menyebarkan mesin virtual Azure)(Anda dapat menggunakan cmdlet "(Get-AzLocation).Location" untuk mendapatkan daftar wilayah):
 
@@ -202,12 +199,14 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
 
 1. Pada bilah **Network Watcher - Pemecahan masalah koneksi**, lakukan pemeriksaan dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
 
+    > **Catatan** : Mungkin perlu waktu beberapa menit untuk mencantumkan grup sumber daya. Jika Anda tidak ingin menunggu, coba ini: hapus Network Watcher, buat Network Watcher baru, lalu coba lagi Pemecahan Masalah Koneksi. 
+
     | Pengaturan | Nilai |
     | --- | --- |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | **az104-06-rg1** |
     | Jenis sumber | **Mesin virtual** |
-    | Mesin virtual | **az104-06-vm0** |
+    | Komputer virtual | **az104-06-vm0** |
     | Tujuan | **Tentukan secara manual** |
     | URI, FQDN atau IPv4 | **10.62.0.4** |
     | Protokol | **TCP** |
@@ -226,7 +225,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | **az104-06-rg1** |
     | Jenis sumber | **Mesin virtual** |
-    | Mesin virtual | **az104-06-vm0** |
+    | Komputer virtual | **az104-06-vm0** |
     | Tujuan | **Tentukan secara manual** |
     | URI, FQDN atau IPv4 | **10.63.0.4** |
     | Protokol | **TCP** |
@@ -245,7 +244,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | **az104-06-rg1** |
     | Jenis sumber | **Mesin virtual** |
-    | Mesin virtual | **az104-06-vm2** |
+    | Komputer virtual | **az104-06-vm2** |
     | Tujuan | **Tentukan secara manual** |
     | URI, FQDN atau IPv4 | **10.63.0.4** |
     | Protokol | **TCP** |
@@ -396,7 +395,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | **az104-06-rg1** |
     | Jenis sumber | **Mesin virtual** |
-    | Mesin virtual | **az104-06-vm2** |
+    | Komputer virtual | **az104-06-vm2** |
     | Tujuan | **Tentukan secara manual** |
     | URI, FQDN atau IPv4 | **10.63.0.4** |
     | Protokol | **TCP** |
@@ -410,95 +409,81 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
 
 #### <a name="task-5-implement-azure-load-balancer"></a>Tugas 5: Menerapkan Azure Load Balancer
 
-Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin virtual Azure di jaringan virtual hub
+Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin virtual Azure di jaringan virtual hub.
 
-1. Di portal Microsoft Azure, cari dan pilih **Load balancer** dan, pada panel **Load balancer**, klik **+ Buat**.
+1. Di portal Microsoft Azure, cari dan pilih **Load balancer** dan, pada bilah **Load balancer**, klik **+ Buat**.
 
 1. Buat load balancer dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya) lalu klik **Berikutnya : Konfigurasi IP frontend**:
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup sumber daya | **az104-06-rg1** |
+    | Grup sumber daya | **az104-06-rg4** |
     | Nama | **az104-06-lb4** |
-    | Wilayah| nama wilayah Azure tempat Anda menyebarkan semua sumber daya lainnya di lab ini |
-    | SKU | **Standard** |
+    | Wilayah | nama wilayah Azure tempat Anda menyebarkan semua sumber daya lainnya di lab ini |
+    | SKU  | **Standard** |
     | Jenis | **Publik** |
+    | Tingkat | **Wilayah** |
     
-1. Pada tab **Konfigurasi IP frontend**, klik **Tambahkan konfigurasi IP frontend** dan gunakan pengaturan berikut sebelum mengeklik **Tambahkan**.   
+1. Pada tab **Konfigurasi IP frontend**, klik **Tambahkan konfigurasi IP frontend** dan gunakan pengaturan berikut sebelum mengklik **OK** lalu **Tambahkan**. Setelah selesai klik **Berikutnya: Kumpulan backend**. 
      
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | nama unik apa pun |
+    | Versi IP | IPv4 |
+    | Jenis IP | Alamat IP |
     | Alamat IP publik | **Buat baru** |
-    | Nama alamat IP publik | **az104-06-pip4** |
+    | Nama | **az104-06-pip4** |
+    | Zona ketersediaan | **Tidak Ada Zona** | 
 
-1. Klik **Tinjauan dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** untuk mengirimkan penyebaran Anda.
-
-    > **Catatan**: Tunggu hingga load balancer Azure diprovisikan. Proses ini memerlukan waktu sekitar 2 menit.
-
-1. Pada panel penyebaran, klik **Buka sumber daya**.
-
-1. Pada panel load balancer **az104-06-lb4**, di bagian **Pengaturan**, klik **Kumpulan backend**, dan klik **+ Tambahkan**.
-
-1. Tambahkan kumpulan backend dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Pada tab **Kumpulan backend**, klik **Tambahkan kumpulan backend** dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Klik **+ Tambahkan** (dua kali) lalu klik **Berikutnya: Aturan masuk**. 
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | **az104-06-lb4-be1** |
     | Jaringan virtual | **az104-06-vnet01** |
+    | Konfigurasi Kumpulan Backend | **NIC** | 
     | Versi IP | **IPv4** |
-    | Mesin virtual | **az104-06-vm0** |
-    | Alamat IP mesin virtual | **ipconfig1 (10.60.0.4)** |
-    | Mesin virtual | **az104-06-vm1** |
-    | Alamat IP mesin virtual | **ipconfig1 (10.60.1.4)** |
+    | Klik **Tambahkan** untuk menambahkan mesin virtual |  |
+    | az104-06-vm0 | **centang kotak** |
+    | az104-06-vm1 | **centang kotak** |
 
-1. Klik **Tambahkan**
 
-1. Tunggu hingga kumpulan backend dibuat, di bagian **Pengaturan**, klik **Pemeriksaan kesehatan**, lalu klik **+ Tambahkan**.
-
-1. Tambahkan pemeriksaan kesehatan dengan pengaturan berikut:
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama | **az104-06-lb4-hp1** |
-    | Protokol | **TCP** |
-    | Port | **80** |
-    | Interval | **5** |
-    | Ambang tidak sehat | **2** |
-
-1. Klik **Tambahkan**
-
-1. Tunggu hingga pemeriksaan kesehatan dibuat, di bagian **Pengaturan**, klik **Aturan penyeimbangan beban**, lalu klik **+ Tambahkan**.
-
-1. Tambahkan aturan penyeimbangan beban dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Pada tab **Aturan masuk**, klik **Tambahkan aturan penyeimbangan beban**. Tambahkan aturan penyeimbangan beban dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai klik **Tambahkan**.
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | **az104-06-lb4-lbrule1** |
     | Versi IP | **IPv4** |
-    | Alamat IP Frontend | **pilih LoadBalancerFrontEnd dari dropdown**
+    | Alamat IP Frontend | **az104-06-pip4** |
+    | Kumpulan Backend | **az104-06-lb4-be1** |    
     | Protokol | **TCP** |
     | Port | **80** |
     | Port Backend | **80** |
-    | Kumpulan Backend | **az104-06-lb4-be1** |
-    | Pemeriksaan kesehatan | **az104-06-lb4-hp1** |
+    | Pemeriksaan kesehatan | **Buat baru** |
+    | Nama | **az104-06-lb4-hp1** |
+    | Protokol | **TCP** |
+    | Port | **80** |
+    | Interval | **5** |
+    | Ambang tidak sehat | **2** |
+    | Tutup jendela buat pemeriksaan kesehatan | **OK** | 
     | Persistensi sesi | **Tidak ada** |
     | Waktu idle habis (menit) | **4** |
     | Reset TCP | **Nonaktif** |
-    | Floating IP (pengembalian server langsung) | **Nonaktif** |
+    | IP Mengambang | **Nonaktif** |
+    | Terjemahan alamat jaringan sumber keluar (SNAT) | **Disarankan** |
 
-1. Klik **Tambahkan**
+1. Saat luang, tinjau tab lainnya, lalu klik **Tinjau dan buat**. Pastikan tidak ada kesalahan validasi, lalu klik **Buat**. 
 
-1. Tunggu hingga aturan penyeimbangan beban dibuat, di bagian **Pengaturan**, klik **Konfigurasi IP Frontend**, dan catat nilai **Alamat IP Publik**.
+1. Tunggu hingga penyeimbang beban diterapkan, lalu klik **Buka sumber daya**.  
 
-1. Buka jendela browser lain dan navigasikan ke alamat IP yang Anda identifikasi di langkah sebelumnya.
+1. Pilih **Konfigurasi IP frontend** dari halaman sumber daya Load Balancer. Salin alamat IP.
 
-1. Pastikan jendela browser menampilkan pesan **Halo Dunia dari az104-06-vm0** atau **Halo Dunia dari az104-06-vm1**.
+1. Buka tab browser lain dan arahkan ke alamat IP. Pastikan jendela browser menampilkan pesan **Halo Dunia dari az104-06-vm0** atau **Halo Dunia dari az104-06-vm1**.
 
-1. Buka jendela browser lain tetapi kali ini dengan menggunakan mode InPrivate dan verifikasi apakah target vm berubah (seperti yang ditunjukkan oleh pesan).
+1. Refresh jendela untuk memverifikasi perubahan pesan ke mesin virtual lainnya. Hal ini menunjukkan load balancer berputar melalui mesin virtual.
 
-    > **Catatan**: Anda mungkin perlu merefresh jendela browser atau membukanya lagi dengan menggunakan mode InPrivate.
+    > **Catatan**: Anda mungkin perlu merefresh lebih dari sekali atau membuka jendela browser baru dalam mode InPrivate.
 
 #### <a name="task-6-implement-azure-application-gateway"></a>Tugas 6: Menerapkan Azure Application Gateway
 
@@ -523,43 +508,43 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
 1. Di portal Microsoft Azure, cari dan pilih **Application Gateway** dan, pada panel **Application Gateway**, klik **+ Buat**.
 
-1. Pada tab **Dasar** panel **Buat gateway aplikasi**, tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Pada tab **Dasar**, tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup sumber daya | **az104-06-rg1** |
+    | Grup sumber daya | **az104-06-rg6** |
     | Nama gateway aplikasi | **az104-06-appgw5** |
     | Wilayah | nama wilayah Azure tempat Anda menyebarkan semua sumber daya lainnya di lab ini |
     | Tingkat | **Standard V2** |
     | Aktifkan penskalaan otomatis | **Tidak** |
+    | Jumlah instans | **2** |
+    | Zona ketersediaan | **Tidak ada** |
     | HTTP2 | **Nonaktif** |
     | Jaringan virtual | **az104-06-vnet01** |
-    | Subnet | **subnet-appgw** |
+    | Subnet | **subnet-appgw (10.60.3.224/27)** |
 
-1. Klik **Berikutnya: Frontend >** dan, pada tab **Frontend** panel **Buat gateway aplikasi**, klik **Tambahkan baru**, dan tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Klik **Berikutnya: Frontend >** dan tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai, klik **OKE**. 
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Jenis alamat IP frontend | **Publik** |
-    | Alamat IP publik| nama alamat ip publik baru **az104-06-pip5** |
+    | Alamat IP publik| **Tambah** yang baru | 
+    | Nama | **az104-06-pip5** |
+    | Zona ketersediaan | **Tidak ada** |
 
-1. Klik **Berikutnya: Backend >** , pada tab **Backend** panel **Buat gateway aplikasi**, klik **Tambahkan kumpulan backend**, dan, di **Tambahkan kumpulan backend**, tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Klik **Berikutnya: Backend >** lalu **Tambahkan kumpulan backend**. Tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai klik **Tambahkan**.
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | **az104-06-appgw5-be1** |
     | Menambahkan kumpulan backend tanpa target | **Tidak** |
-    | Jenis target | **Alamat IP atau FQDN** |
-    | Target | **10.62.0.4** |
-    | Jenis target | **Alamat IP atau FQDN** |
-    | Target | **10.63.0.4** |
+    | Alamat IP atau FQDN | **10.62.0.4** | 
+    | Alamat IP atau FQDN | **10.63.0.4** |
 
     > **Catatan**: Target mewakili alamat IP privat mesin virtual di jaringan virtual spoke **az104-06-vm2** dan **az104-06-vm3**.
 
-1. Klik **Tambahkan**, klik **Berikutnya: Konfigurasi >** dan, pada tab **Konfigurasi** pada panel **Buat gateway aplikasi**, klik **+ Tambahkan aturan perutean**.
-
-1. Pada panel **Tambahkan aturan perutean**, pada tab **Pendengar**, tentukan pengaturan berikut:
+1. Klik **Berikutnya: Konfigurasi >** lalu **+ Tambahkan aturan perutean**. Tentukan pengaturan berikut:
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -572,25 +557,18 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
     | Tipe listener | **Dasar** |
     | URL halaman kesalahan | **Tidak** |
 
-1. Beralih ke tab **Target backend** dari panel **Tambahkan aturan perutean** dan tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Beralih ke tab **Target backend** dan tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai klik **Tambahkan** (dua kali).  
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Jenis target | **Kumpulan backend** |
     | Target ujung belakang | **az104-06-appgw5-be1** |
-
-1. Klik **Tambahkan baru** di bawah kotak teks **Pengaturan backend**, dan, pada panel **Tambahkan pengaturan Backend**, tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya) :
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama pengaturan HTTP | **az104-06-appgw5-http1** |
+    | Pengaturan backend | **Tambah** yang baru |
+    | Nama pengaturan backend | **az104-06-appgw5-http1** |
     | Protokol backend | **HTTP** |
     | Port Backend | **80** |
-    | Afinitas berbasis Cookie | **Nonaktifkan** |
-    | Pengurasan koneksi | **Nonaktifkan** |
-    | Batas waktu permintaan (detik) | **20** |
-
-1. Klik **Tambahkan** pada panel **Tambahkan pengaturan HTTP**, dan kembali pada panel **Tambahkan aturan perutean**, klik **Tambahkan**.
+    | Pengaturan tambahan | **biarkan default** |
+    | Nama Host | **biarkan default** |
 
 1. Klik **Berikutnya: Tag >** , diikuti dengan **Berikutnya: Tinjauan + buat >** lalu klik **Buat**.
 
@@ -598,15 +576,15 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
 1. Di portal Microsoft Azure, cari dan pilih **Application Gateway** dan, pada panel **Application Gateway**, klik **az104-06-appgw5**.
 
-1. Pada panel Application Gateway **az104-06-appgw5**, catat nilai **Alamat IP publik Frontend**.
+1. Pada blade Application Gateway **az104-06-appgw5**, salin nilai **alamat IP publik Frontend**.
 
 1. Buka jendela browser lain dan navigasikan ke alamat IP yang Anda identifikasi di langkah sebelumnya.
 
 1. Pastikan jendela browser menampilkan pesan **Halo Dunia dari az104-06-vm2** atau **Halo Dunia dari az104-06-vm3**.
 
-1. Buka jendela browser lain tetapi kali ini dengan menggunakan mode InPrivate dan verifikasi apakah vm target berubah (berdasarkan pesan yang ditampilkan di halaman web).
+1. Refresh jendela untuk memverifikasi perubahan pesan ke mesin virtual lainnya. 
 
-    > **Catatan**: Anda mungkin perlu merefresh jendela browser atau membukanya lagi dengan menggunakan mode InPrivate.
+    > **Catatan**: Anda mungkin perlu merefresh lebih dari sekali atau membuka jendela browser baru dalam mode InPrivate.
 
     > **Catatan**: Menargetkan mesin virtual pada beberapa jaringan virtual bukanlah konfigurasi umum, tetapi hal ini dimaksudkan untuk menggambarkan poin bahwa Application Gateway mampu menargetkan mesin virtual pada beberapa jaringan virtual (serta titik akhir di wilayah Azure lain atau bahkan di luar Azure), tidak seperti Azure Load Balancer, yang memuat keseimbangan di seluruh mesin virtual di jaringan virtual yang sama.
 
@@ -632,13 +610,13 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 
 + Memprovisikan lingkungan lab
 + Mengonfigurasi topologi jaringan hub dan spoke
 + Menguji transitivitas peering jaringan virtual
-+ Mengonfigurasi perutean di topologi spoke dan hub
++ Konfigurasi perutean di topologi hub dan spoke
 + Menerapkan Azure Load Balancer
 + Menerapkan Azure Application Gateway

@@ -1,14 +1,9 @@
 ---
 lab:
   title: 04 - Menerapkan Jaringan Virtual
-  module: Module 04 - Virtual Networking
-ms.openlocfilehash: 383f88f2dddb48d498efb3d868330e4bba15c92b
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "145198224"
+  module: Administer Virtual Networking
 ---
+
 # <a name="lab-04---implement-virtual-networking"></a>Lab 04 - Menerapkan Jaringan Virtual
 
 # <a name="student-lab-manual"></a>Panduan lab siswa
@@ -16,6 +11,8 @@ ms.locfileid: "145198224"
 ## <a name="lab-scenario"></a>Skenario lab
 
 Anda perlu menjelajahi kemampuan jaringan virtual Azure. Untuk memulai, Anda berencana membuat jaringan virtual di Azure yang akan menghosting beberapa mesin virtual Azure. Karena Anda bermaksud menerapkan segmentasi berbasis jaringan, Anda akan menerapkannya ke subnet yang berbeda dari jaringan virtual. Anda juga ingin memastikan bahwa alamat IP pribadi dan publik mereka tidak akan berubah seiring waktu. Untuk mematuhi persyaratan keamanan Contoso, Anda perlu melindungi titik akhir publik dari mesin virtual Azure yang dapat diakses dari Internet. Terakhir, Anda perlu menerapkan resolusi nama DNS untuk mesin virtual Azure baik di dalam jaringan virtual maupun dari Internet.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -34,7 +31,7 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab04.png)
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -55,13 +52,9 @@ Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet mengg
     | Nama | **az104-04-vnet1** |
     | Wilayah | nama wilayah Azure yang tersedia dalam langganan yang akan Anda gunakan di lab ini |
 
-1. Klik **Berikutnya : Alamat IP** dan masukkan nilai berikut
+1. Klik **Berikutnya: Alamat IP** dan hapus **ruang alamat IPv4** yang ada. Di kotak teks **ruang alamat IPv4** ketik **10.40.0.0/20**.
 
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Ruang alamat IPv4 | **10.40.0.0/20** |
-
-1. Klik **+ Tambahkan subnet** masukkan nilai berikut lalu klik **Tambah**
+1. Klik **+ Tambahkan subnet** masukkan nilai berikut lalu klik **Tambahkan**.
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -95,11 +88,11 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke subnet yang berbed
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
-1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Lab\\04\\az104-04-vms-loop-template.json** dan **\\Allfiles\\Lab\\04\\az104-04-vms-loop-parameters.json** ke dalam direktori beranda Cloud Shell.
+1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, lalu klik **Unggah** di menu dropdown. Unggah **\\Allfiles\\Labs\\04\\az104-04-vms-loop-template.json** and **\\Allfiles\\Labs\\04\\az104-04-vms-loop-parameters.json** ke direktori beranda Cloud Shell.
 
-    >**Catatan**: Anda mungkin perlu mengunggah setiap file secara terpisah.
+    >**Catatan** : Anda harus mengunggah setiap file secara terpisah. Setelah mengunggah, gunakan **dir** untuk memastikan kedua file berhasil diunggah.
 
 1. Edit file Parameter, dan ubah kata sandi. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Untuk praktik terbaik, rahasia, seperti kata sandi, harus disimpan lebih aman di Key Vault. 
 
@@ -141,7 +134,7 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
 1. Klik **az104-04-nic0** dan, pada panel **az104-04-nic0**, klik **Konfigurasi IP**.
 
-    >**Catatan**: Verifikasi bahwa **ipconfig1** saat ini disiapkan dengan alamat IP privat dinamis.
+    >**Catatan**: Verifikasi bahwa **ipconfig1** saat ini disiapkan dengan alamat IP pribadi dinamis.
 
 1. Di daftar konfigurasi IP, klik **ipconfig1**.
 
@@ -398,7 +391,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 
