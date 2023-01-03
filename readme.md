@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: a106aae9e7c3de7b5154ce5e889ee057a1b9dff3
-ms.sourcegitcommit: 69083589fed0a226499b3067222e444d3fe0bac8
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "146458132"
----
 # <a name="az-104-microsoft-azure-administrator"></a>AZ-104: Microsoft Azure Administrator
 
 ## <a name="welcome"></a>Selamat datang
@@ -14,6 +6,7 @@ Repositori ini untuk instruktur yang mengajar kursus Microsoft. Jika Anda berada
 
 - **[Tautan ke lab (format HTML)](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)**
 - **Apakah Anda seorang MCT?** - Lihat [Panduan Pengguna GitHub untuk MCT](https://microsoftlearning.github.io/MCT-User-Guide/) kami
+- Untuk melihat pratinjau kursus ini dalam format mandiri, lihat **[simulasi lab interaktif kami](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator)** . Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama.
 
 ## <a name="security-issue---february-2022"></a>Masalah Keamanan - Februari 2022
 

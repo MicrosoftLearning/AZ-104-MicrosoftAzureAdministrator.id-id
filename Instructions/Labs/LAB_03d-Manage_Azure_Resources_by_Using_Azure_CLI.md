@@ -1,20 +1,17 @@
 ---
 lab:
   title: 03d - Mengelola sumber daya Azure dengan Menggunakan Azure CLI
-  module: Module 03 - Azure Administration
-ms.openlocfilehash: e673423e49d49629c72f1b28a234d82eb776190f
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "145198196"
+  module: Administer Azure Resources
 ---
+
 # <a name="lab-03d---manage-azure-resources-by-using-azure-cli"></a>Lab 03d - Mengelola sumber daya Azure dengan Menggunakan Azure CLI
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
 Sekarang, setelah menjelajahi kemampuan administrasi dasar Azure yang terkait dengan provisi dan pengelolaan sumber daya berdasarkan grup sumber daya menggunakan portal Microsoft Azure, templat Azure Resource Manager, dan Azure PowerShell, Anda perlu melakukan tugas yang setara menggunakan Azure CLI. Untuk menghindari menginstal Azure CLI, Anda akan memanfaatkan lingkungan Bash yang tersedia di Azure Cloud Shell.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -26,7 +23,11 @@ Di lab ini Anda akan:
 
 ## <a name="estimated-timing-20-minutes"></a>Perkiraan waktu: 20 menit
 
-## <a name="instructions"></a>Instruksi
+## <a name="architecture-diagram"></a>Diagram arsitektur
+
+![gambar](../media/lab03d.png)
+
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -131,7 +132,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
 
     >**Catatan**: Perintah dijalankan secara tidak sinkron (seperti yang ditentukan oleh parameter --nowait), jadi sementara Anda akan dapat menjalankan perintah Azure CLI lain segera setelah itu dalam sesi Bash yang sama, itu akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

@@ -1,20 +1,17 @@
 ---
 lab:
   title: 08 - Mengelola Mesin Virtual
-  module: Module 08 - Virtual Machines
-ms.openlocfilehash: a710fbaf4ea888651012bad592d34667a190c68f
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587448"
+  module: Administer Virtual Machines
 ---
+
 # <a name="lab-08---manage-virtual-machines"></a>Lab 08 - Mengelola Mesin Virtual
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
 Anda ditugaskan untuk mengidentifikasi berbagai opsi untuk menyebarkan dan mengonfigurasi mesin virtual Azure. Pertama, Anda perlu menentukan opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang berbeda yang dapat Anda terapkan saat menggunakan mesin virtual Azure. Selanjutnya, Anda perlu menyelidiki opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang tersedia saat menggunakan kumpulan skala mesin virtual Azure. Anda juga ingin menjelajahi kemampuan untuk secara otomatis mengonfigurasi mesin virtual dan kumpulan skala mesin virtual menggunakan ekstensi Skrip Kustom Mesin Virtual Azure.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -35,7 +32,7 @@ Di lab ini Anda akan:
 ![gambar](../media/lab08.png)
 
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -53,7 +50,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
     | --- | --- |
     | Langganan | nama langganan Azure yang akan Anda gunakan di lab ini |
     | Grup sumber daya | nama grup sumber daya baru **az104-08-rg01** |
-    | Nama mesin virtual | **az104-08-vm0** |
+    | Nama komputer virtual | **az104-08-vm0** |
     | Wilayah | pilih salah satu wilayah yang mendukung zona ketersediaan dan lokasi Anda dapat menyediakan mesin virtual Azure |
     | Opsi ketersediaan | **Zona ketersediaan** |
     | Zona ketersediaan | **Zona 1** |
@@ -98,9 +95,14 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Diagnostik boot | **Aktifkan dengan akun penyimpanan kustom** |
-    | Akun penyimpanan diagnostik | menerima nilai default |
     | Opsi orkestrasi patch | **Pembaruan secara manual** |  
+
+1. Klik **Berikutnya: Pemantauan >** dan, pada tab **Pemantauan** dari blade **Buat mesin virtual**, tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Diagnostik boot | **Aktifkan dengan akun penyimpanan kustom** |
+    | Akun penyimpanan diagnostik | **menerima nilai default** |
 
     >**Catatan**: Jika perlu, pilih akun penyimpanan yang ada di daftar menurun atau buat akun penyimpanan baru. Catat nama akun penyimpanan. Anda akan menggunakannya dalam tugas berikutnya.
 
@@ -621,7 +623,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
->**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+>**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
 
 1. Hapus az104-08-configure_VMSS_disks.ps1 dengan menjalankan perintah berikut:
@@ -644,7 +646,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

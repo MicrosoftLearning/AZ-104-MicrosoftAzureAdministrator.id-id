@@ -1,20 +1,17 @@
 ---
 lab:
   title: 03a - Kelola sumber daya Azure dengan Menggunakan Portal Azure
-  module: Module 03 - Azure Administration
-ms.openlocfilehash: 020f28742779dab36777e2ae7b8bddb43ebb46be
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "145198186"
+  module: Administer Azure Resources
 ---
+
 # <a name="lab-03a---manage-azure-resources-by-using-the-azure-portal"></a>Lab 03a - Kelola sumber daya Azure dengan Menggunakan Portal Azure
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
 Anda perlu menjelajahi kemampuan administrasi Azure dasar yang terkait dengan penyediaan sumber daya dan mengaturnya berdasarkan grup sumber daya, termasuk memindahkan sumber daya di antara grup sumber daya. Anda juga ingin menjelajahi opsi untuk melindungi sumber daya disk agar tidak terhapus secara tidak sengaja, sambil tetap memungkinkan untuk memodifikasi karakteristik dan ukuran kinerjanya.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -30,7 +27,7 @@ Di lab ini, kami akan:
 
 ![gambar](../media/lab03a.png)
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -117,7 +114,7 @@ Dalam tugas ini, Anda akan menerapkan kunci sumber daya ke grup sumber daya Azur
 
 1. Navigasikan kembali ke daftar sumber daya grup sumber daya **az104-03a-rg3** dan klik entri yang mewakili sumber daya **az104-03a-disk2**. 
 
-1. Pada panel **az104-03a-disk2**, di bagian **Pengaturan**, klik **Ukuran + kinerja**, atur jenis dan ukuran disk ke **SSD Premium** dan **64 GiB**, masing-masing, dan klik **Ubah ukuran** untuk menerapkan perubahan. Verifikasi bahwa perubahan berhasil.
+1. Pada blade **az104-03a-disk2**, di bagian **Pengaturan**, klik **Ukuran + performa**, atur jenis dan ukuran disk ke **SSD Premium** dan **64 GiB**, dan klik **Simpan** untuk menerapkan perubahan. Verifikasi bahwa perubahan berhasil.
 
     >**Catatan**: Hal ini diharapkan, karena kunci tingkat grup sumber daya hanya berlaku untuk operasi penghapusan. 
 
