@@ -1,20 +1,17 @@
 ---
 lab:
   title: 09b - Menerapkan Azure Container Instances
-  module: Module 09 - Serverless Computing
-ms.openlocfilehash: 603b8b0b4777e3879c00f95771e519a5843ccbac
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "145198177"
+  module: Administer Serverless Computing
 ---
+
 # <a name="lab-09b---implement-azure-container-instances"></a>Lab 09b - Menerapkan Azure Container Instances
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
 Contoso ingin menemukan platform baru untuk beban kerja virtualnya. Anda mengidentifikasi sejumlah gambar kontainer yang dapat dimanfaatkan untuk mencapai tujuan ini. Karena Anda ingin meminimalkan manajemen kontainer, Anda berencana untuk mengevaluasi penggunaan Azure Container Instances untuk penyebaran gambar Docker.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -29,7 +26,7 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab09b.png)
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -104,7 +101,7 @@ Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

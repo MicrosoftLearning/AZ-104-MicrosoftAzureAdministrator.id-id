@@ -1,14 +1,9 @@
 ---
 lab:
   title: 01 - Mengelola Identitas Azure Active Directory
-  module: Module 01 - Identity
-ms.openlocfilehash: 589e423af0901c93ef685905e4a01a7246e3c791
-ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 07/05/2022
-ms.locfileid: "146973693"
+  module: Administer Identity
 ---
+
 # <a name="lab-01---manage-azure-active-directory-identities"></a>Lab 01 - Mengelola Identitas Azure Active Directory
 
 # <a name="student-lab-manual"></a>Panduan lab siswa
@@ -17,12 +12,14 @@ ms.locfileid: "146973693"
 
 Untuk mengizinkan pengguna Contoso melakukan autentikasi menggunakan Azure AD, Anda telah ditugaskan untuk memprovisikan akun pengguna dan grup. Keanggotaan grup harus diperbarui secara otomatis berdasarkan jabatan pengguna. Anda juga perlu membuat penyewa Azure AD uji coba dengan akun pengguna uji coba dan memberi akun tersebut izin terbatas ke sumber daya dalam langganan Azure Contoso.
 
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama.
+
 ## <a name="objectives"></a>Tujuan
 
 Di lab ini Anda akan:
 
 + Tugas 1: Membuat dan mengonfigurasikan pengguna Azure AD
-+ Tugas 2: Membuat grup Azure AD dengan keanggotaan yang ditetapkan dan dinamis
++ Tugas 2: Buat grup Azure AD dengan keanggotaan yang ditetapkan dan dinamis
 + Tugas 3: Membuat penyewa Azure Active Directory (AD) (Opsional - masalah lingkungan lab)
 + Tugas 4: Mengelola pengguna tamu Azure Active Directory (Opsional - masalah lingkungan lab)
 
@@ -210,7 +207,7 @@ Dalam tugas ini, Anda akan membuat penyewa Azure AD baru.
 
    > **Catatan**: **Nama domain awal** tidak boleh menjadi nama yang sah yang berpotensi cocok dengan organisasi Anda atau yang lain. Tanda centang hijau di kotak teks **Nama domain awal** akan menunjukkan bahwa nama domain yang Anda ketikkan valid dan unik.
 
-1. Klik **Tinjau + buat**, lalu klik **Buat**.
+1. Klik **Review + create**, lalu klik **Create**.
 
 1. Tampilkan panel penyewa Azure AD yang baru dibuat dengan menggunakan **Klik di sini untuk menavigasi ke penyewa baru Anda: Tautan Contoso Lab** atau tombol **Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Azure.
 
@@ -237,7 +234,7 @@ Dalam tugas ini, Anda akan membuat Azure AD pengguna tamu dan memberi mereka aks
 
 1. Beralih kembali ke penyewa Azure AD default Anda dengan menggunakan tombol **Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Microsoft Azure.
 
-1. Navigasikan kembali ke panel **Pengguna - Semua pengguna**, lalu klik **+ Pengguna tamu baru**.
+1. Arahkan kembali ke blade **Pengguna - Semua pengguna**, lalu klik **+ Undang pengguna eksternal**.
 
 1. Undang pengguna tamu baru dengan pengaturan berikut (biarkan yang lain dengan default):
 
@@ -282,7 +279,7 @@ Dalam tugas ini, Anda akan membuat Azure AD pengguna tamu dan memberi mereka aks
 
 > **Catatan**: Jika penyewa memiliki lisensi uji coba, maka Anda harus menunggu kedaluwarsa lisensi uji coba sebelum Anda dapat menghapus penyewa. Ini tidak akan dikenakan biaya tambahan.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

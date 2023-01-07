@@ -1,20 +1,17 @@
 ---
 lab:
   title: 03c - Mengelola sumber daya Azure dengan Menggunakan Azure PowerShell
-  module: Module 03 - Azure Administration
-ms.openlocfilehash: 4210a06af5b873e1031e2224239dd8738e97f23d
-ms.sourcegitcommit: a8c7d995806dcf8eaad35b204e87bde178f28443
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 02/08/2022
-ms.locfileid: "145198181"
+  module: Administer Azure Resources
 ---
+
 # <a name="lab-03c---manage-azure-resources-by-using-azure-powershell"></a>Lab 03c - Mengelola sumber daya Azure dengan Menggunakan Azure PowerShell
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
 Sekarang setelah Anda menjelajahi kemampuan administrasi Azure dasar yang terkait dengan penyediaan sumber daya dan mengaturnya berdasarkan grup sumber daya menggunakan portal Azure dan templat Azure Resource Manager, Anda perlu melakukan tugas yang setara dengan menggunakan Azure PowerShell. Untuk menghindari penginstalan modul Azure PowerShell, Anda akan memanfaatkan lingkungan PowerShell yang tersedia di Azure Cloud Shell.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%206)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -44,7 +41,7 @@ Dalam tugas ini, Anda akan membuka sesi PowerShell di Cloud Shell.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**. 
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
 
 1. Jika diminta, klik **Buat penyimpanan**, dan tunggu hingga panel Azure Cloud Shell ditampilkan. 
 
@@ -129,7 +126,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
 
    >**Catatan**: Jangan hapus sumber daya yang Anda terapkan di lab ini. Anda akan merujuknya di lab berikutnya dari modul ini.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

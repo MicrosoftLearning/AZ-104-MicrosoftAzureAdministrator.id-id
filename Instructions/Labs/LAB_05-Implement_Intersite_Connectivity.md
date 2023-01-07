@@ -1,20 +1,17 @@
 ---
 lab:
   title: 05 - Menerapkan Konektivitas Antarsitus
-  module: Module 05 - Intersite Connectivity
-ms.openlocfilehash: 6254f1b47aacdb2b0e01f090ca182feacba5e076
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "145198215"
+  module: Administer Intersite Connectivity
 ---
+
 # <a name="lab-05---implement-intersite-connectivity"></a>Lab 05 - Menerapkan Konektivitas Antarsitus
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
 Pusat data Contoso terletak di kantor Boston, New York, dan Seattle yang tersambung melalui tautan jaringan area luas mesh, dengan konektivitas penuh di antaranya. Anda perlu menerapkan lingkungan lab yang akan mencerminkan topologi jaringan lokal Contoso dan memverifikasi fungsinya.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -208,7 +205,7 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
 
 Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga jaringan virtual yang Anda sambungkan melalui peering lokal dan global di tugas sebelumnya.
 
-1. Di portal Microsoft Azure, cari dan pilih **Mesin virtual.**
+1. Di portal Microsoft Azure, cari dan pilih **Komputer virtual.**
 
 1. Dalam daftar mesin virtual, klik **az104-05-vm0**.
 
@@ -284,7 +281,7 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

@@ -1,20 +1,17 @@
 ---
 lab:
   title: 07 - Mengelola penyimpanan Azure
-  module: Module 07 - Azure Storage
-ms.openlocfilehash: 34b6dba73d87731df935f80a1b5909e44075e871
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587466"
+  module: Administer Azure Storage
 ---
+
 # <a name="lab-07---manage-azure-storage"></a>Lab 07 - Mengelola Azure Storage
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
 Anda perlu mengevaluasi penggunaan penyimpanan Azure untuk menyimpan file yang saat ini berada di penyimpanan data lokal. Meskipun sebagian besar file ini tidak sering diakses, ada beberapa pengecualian. Anda ingin meminimalkan biaya penyimpanan dengan menempatkan file yang jarang diakses di tingkat penyimpanan dengan harga lebih rendah. Anda juga berencana untuk menjelajahi berbagai mekanisme perlindungan yang ditawarkan Azure Storage, termasuk akses jaringan, autentikasi, otorisasi, dan replikasi. Terakhir, Anda ingin menentukan sejauh mana layanan Azure Files mungkin cocok untuk menghosting berbagi file lokal Anda.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -34,7 +31,7 @@ Di lab ini Anda akan:
 ![gambar](../media/lab07.png)
 
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -52,7 +49,7 @@ Dalam tugas ini, Anda akan menerapkan komputer virtual Azure yang akan Anda guna
 
 1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** dan **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** ke direktori beranda Cloud Shell.
 
-1. Edit file **Parameter** yang baru saja Anda unggah dan ubah kata sandinya. Jika memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
+1. Edit file **Parameter** yang baru saja Anda unggah dan ubah kata sandinya. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
 
 1. Dari panel Cloud Shell, jalankan elemen berikut ini untuk membuat grup sumber daya yang akan menghosting komputer virtual (ganti tempat penampung '[Azure_region]' dengan nama wilayah Azure tempat Anda ingin menerapkan komputer virtual Azure)
 
@@ -119,13 +116,11 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun Azure Storage.
 
 1. Pada bilah penerapan, klik **Buka sumber daya** untuk menampilkan bilah akun Azure Storage.
 
-1. Pada bilah akun Penyimpanan, di bagian **Pengelolaan data**, klik **Replikasi geografis** dan catat lokasi sekundernya. 
+1. Pada bilah akun Penyimpanan, di bagian **Manajemen data**, klik **Redundansi** dan catat lokasi sekunder. 
 
-1. Pada panel akun Penyimpanan, di bagian **Pengaturan**, pilih **Konfigurasi**, di daftar menurun **Replikasi** pilih **Penyimpanan redundan secara lokal (LRS)** dan simpan perubahannya.
+1. Di daftar menu dropdown **Redundansi** pilih **Penyimpanan yang berlebihan secara lokal (LRS)** dan simpan perubahannya. Perhatikan bahwa, saat ini, akun Penyimpanan hanya memiliki lokasi primer.
 
-1. Beralih kembali ke bilah **replika geografis** dan perhatikan bahwa, pada titik ini, akun Penyimpanan hanya memiliki lokasi utama.
-
-1. Tampilkan kembali bilah **Konfigurasi** akun Penyimpanan, atur **Tingkat akses blob (default)** ke **dingin**, dan simpan perubahannya.
+1. Pada bilah akun Penyimpanan, di bagian **Pengaturan**, pilih **Konfigurasi**. Tetapkan **tingkat akses Blob (default)** ke **Cool**, dan simpan perubahannya.
 
     > **Catatan**: Tingkat akses dingin optimal untuk data yang tidak sering diakses.
 
@@ -247,7 +242,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files.
 
 1. Klik berbagi file yang baru dibuat dan klik **Hubungkan**.
 
-1. Pada panel **Hubungkan**, pastikan tab **Windows** dipilih. Di bawah ini Anda akan menemukan kotak teks abu-abu dengan skrip, di sudut kanan bawah kotak itu arahkan kursor ke ikon laman dan klik **Salin ke clipboard**.
+1. Pada panel **Hubungkan**, pastikan tab **Windows** dipilih. Di bawah ini Anda akan menemukan tombol dengan label **Tampilkan Skrip**. Klik pada tombol dan Anda akan menemukan kotak teks abu-abu dengan skrip, di sudut kanan bawah kotak tersebut arahkan kursor ke ikon halaman dan klik **Salin ke papan klip**.
 
 1. Di portal Azure, cari dan pilih **Mesin virtual**, dan, dalam daftar komputer virtual, klik **az104-07-vm0**.
 
@@ -332,7 +327,7 @@ Dalam tugas ini, Anda akan mengonfigurasi akses jaringan Azure Storage.
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

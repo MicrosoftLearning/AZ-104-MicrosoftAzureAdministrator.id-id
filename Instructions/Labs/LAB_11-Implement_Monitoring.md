@@ -1,20 +1,17 @@
 ---
 lab:
   title: 11 - Implementasi Pemantauan
-  module: Module 11 - Monitoring
-ms.openlocfilehash: 10c3fe049aaf037892a34299c21dfd8213ce40b2
-ms.sourcegitcommit: be14e4ff5bc638e8aee13ec4b8be29525d404028
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "145198182"
+  module: Administer Monitoring
 ---
+
 # <a name="lab-11---implement-monitoring"></a>Lab 11 - Implementasi Pemantauan
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
 Anda perlu mengevaluasi fungsionalitas Azure yang akan memberikan wawasan tentang kinerja dan konfigurasi sumber daya Azure, dengan fokus khususnya pada mesin virtual Azure. Untuk mencapai ini, Anda bermaksud untuk memeriksa kemampuan Azure Monitor, termasuk Analisis Log.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -30,7 +27,11 @@ Di lab ini Anda akan:
 
 ## <a name="estimated-timing-45-minutes"></a>Perkiraan waktu: 45 menit
 
-## <a name="instructions"></a>Instruksi
+## <a name="architecture-diagram"></a>Diagram arsitektur
+
+![gambar](../media/lab11.png)
+
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -40,7 +41,7 @@ Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk m
 
 1. Masuk ke [portal Microsoft Azure](https://portal.azure.com).
 
-1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Microsoft Azure.
+1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
@@ -48,7 +49,7 @@ Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk m
 
 1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\11\\az104-11-vm-template.json** dan **\\Allfiles\\Labs\\11\\az104-11-vm-parameters.json** ke direktori beranda Cloud Shell.
 
-1. Edit file Parameter yang baru saja Anda unggah dan ubah kata sandinya. Jika memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
+1. Edit file Parameter yang baru saja Anda unggah dan ubah kata sandinya. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
 
 1. Dari panel Cloud Shell, jalankan elemen berikut ini untuk membuat grup sumber daya yang akan menghosting mesin virtual (ganti `[Azure_region]` tempat penampung dengan nama wilayah Azure tempat Anda ingin menerapkan mesin virtual Azure):
 
@@ -170,7 +171,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
     >**Catatan**: Secara default, pengumpulan log mencakup entri kritis, kesalahan, dan peringatan dari Log Aplikasi dan log Sistem, serta entri kegagalan Audit dari log Keamanan. Di sini Anda juga dapat beralih ke tampilan **Kustom** untuk pengaturan konfigurasi yang lebih detail.
 
-1. Pada bilah **az104-11-vm0**, di bagian **Pemantauan**, klik **Log** lalu klik **Aktifkan**.
+1. Pada bilah **az104-11-vm0**, di bagian **Pemantauan**, klik **Agen Analitik Log** lalu klik **Aktifkan**.
 
 1. Pada panel **az104-11-vm0 - Log**, pastikan bahwa ruang kerja Analisis Log yang Anda buat sebelumnya di lab ini dipilih dalam daftar menurun **Pilih Ruang Kerja Analisis Log** dan klik **Aktifkan**.
 
@@ -318,7 +319,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
->**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Memantau penggunaan sumber daya adalah tugas Administrator yang umum, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+>**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
 1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
 
@@ -336,7 +337,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

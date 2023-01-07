@@ -1,20 +1,17 @@
 ---
 lab:
   title: 09c - Menerapkan Azure Kubernetes Service
-  module: Module 09 - Serverless Computing
-ms.openlocfilehash: 929e2dfa4aba9df613e8d5ac594d903ede2f9934
-ms.sourcegitcommit: 6df80c7697689bcee3616cdd665da0a38cdce6cb
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 06/26/2022
-ms.locfileid: "146587475"
+  module: Administer Serverless Computing
 ---
+
 # <a name="lab-09c---implement-azure-kubernetes-service"></a>Lab 09c - Menerapkan Azure Kubernetes Service
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 
 Contoso memiliki sejumlah aplikasi multitingkat yang tidak cocok untuk dijalankan dengan menggunakan Azure Container Instances. Untuk menentukan apakah mereka dapat dijalankan sebagai beban kerja dalam kontainer, Anda ingin mengevaluasi menggunakan Kubernetes sebagai orkestra kontainer. Untuk lebih meminimalkan overhead manajemen, Anda ingin menguji Azure Kubernetes Service, termasuk pengalaman penyebaran yang disederhanakan dan kemampuan penskalaannya.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2015)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -31,7 +28,7 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab09c.png)
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -69,10 +66,12 @@ Dalam tugas ini, Anda akan menyebarkan kluster Azure Kubernetes Services menggun
     | ---- | ---- |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | nama grup sumber daya baru **az104-09c-rg1** |
+    | Konfigurasi preset kluster | **Dev/Test ($)** |
     | Nama kluster Arc Kube | **az104-9c-aks1** |
     | Wilayah | nama wilayah tempat Anda dapat menyediakan kluster Kubernetes |
     | Zona Ketersediaan | **Tidak ada** (hapus centang semua kotak) |
     | Versi Kube | menerima default |
+    | Ketersediaan server API | menerima default |
     | Ukuran node | menerima default |
     | Metode skala | **Manual** |
     | Jumlah simpul | **1** |
@@ -83,19 +82,19 @@ Dalam tugas ini, Anda akan menyebarkan kluster Azure Kubernetes Services menggun
     | ---- | ---- |
     | Mengaktifkan simpul virtual | **Dinonaktifkan** (bawaan) |
 
-1. Klik **Berikutnya: Akses >** dan, pada tab **Akses** bilah **Buat kluster Kubernetes**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Klik **Berikutnya: Akses >** dan, pada tab **Akses** pada bilah **Buat kluster Kubernetes**, biarkan pengaturan diatur ke nilai defaultnya:
 
     | Pengaturan | Nilai |
     | ---- | ---- |
-    | Metode autentikasi | **Identitas terkelola yang ditetapkan sistem** (default - tidak ada perubahan) | 
-    | Kontrol akses berbasis peran (RBAC) | **Aktif** |
+    | Identitas sumber daya | **Identitas terkelola yang ditetapkan sistem** |
+    | Metode autentikasi | **Akun lokal dengan RBAC Kubernetes** |
 
 1. Klik **Berikutnya: Jaringan >** dan, pada tab **Jaringan** bilah **Buat kluster Kubernetes**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | ---- | ---- |
     | Konfigurasi jaringan | **kubenet** |
-    | Awalan nama DNS | nama host DNS yang valid dan unik secara global |
+    | Awalan nama DNS | setiap awalan DNS yang valid dan unik secara global|
 
 1. Klik **Berikutnya: Integrasi >** , pada tab **Integrasi** bilah **Buat kluster Kubernetes**, atur **Pemantauan penampung** ke **Nonaktif**, klik **Tinjauan + buat**, pastikan validasi lulus dan klik **Buat**.
 
@@ -261,7 +260,7 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
 
     >**Catatan**: Perintah dijalankan secara tidak sinkron (seperti yang ditentukan oleh parameter --nowait), jadi sementara Anda akan dapat menjalankan perintah Azure CLI lain segera setelah itu dalam sesi Bash yang sama, itu akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

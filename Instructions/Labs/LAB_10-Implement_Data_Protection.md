@@ -1,14 +1,9 @@
 ---
 lab:
   title: 10 - Menerapkan Perlindungan Data
-  module: Module 10 - Data Protection
-ms.openlocfilehash: f4e79a18ee68068147de54a2bca65e0e879f0419
-ms.sourcegitcommit: e8161696e61bdf61f6fac5641cdf6d5ba65f4739
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 06/03/2022
-ms.locfileid: "146066372"
+  module: Administer Data Protection
 ---
+
 # <a name="lab-10---backup-virtual-machines"></a>Lab 10 - Mencadangkan mesin virtual
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
@@ -16,11 +11,13 @@ ms.locfileid: "146066372"
 
 Anda telah ditugaskan untuk mengevaluasi penggunaan Layanan Pemulihan Azure untuk pencadangan dan pemulihan file yang di-hosting di mesin virtual Azure dan komputer lokal. Selain itu, Anda ingin mengidentifikasi metode untuk melindungi data yang disimpan di Recovery Services vault dari kehilangan data yang tidak disengaja atau berbahaya.
 
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
+
 ## <a name="objectives"></a>Tujuan
 
 Di lab ini Anda akan:
 
-+ Tugas 1: Memprovisikan lingkungan lab
++ Tugas 1: Menyediakan lingkungan lab
 + Tugas 2: Membuat vault Recovery Service
 + Tugas 3: Menerapkan pencadangan tingkat mesin virtual Azure
 + Tugas 4: Menerapkan pencadangan File dan Folder
@@ -29,6 +26,10 @@ Di lab ini Anda akan:
 + Tugas 7: Meninjau fungsionalitas penghapusan permanen Layanan Pemulihan Azure (opsional)
 
 ## <a name="estimated-timing-50-minutes"></a>Perkiraan waktu: 50 menit
+
+## <a name="architecture-diagram"></a>Diagram arsitektur
+
+![gambar](../media/lab10.png)
 
 ## <a name="instructions"></a>Petunjuk
 
@@ -48,7 +49,7 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan unt
 
 1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** ke dalam direktori beranda Cloud Shell.
 
-1. Edit file Parameter yang baru saja Anda unggah dan ubah kata sandinya. Jika memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Untuk praktik terbaik, rahasia, seperti kata sandi, harus disimpan lebih aman di Key Vault. 
+1. Edit file Parameter yang baru saja Anda unggah dan ubah kata sandinya. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Untuk praktik terbaik, rahasia, seperti kata sandi, harus disimpan lebih aman di Key Vault. 
 
 1. Dari panel Cloud Shell, jalankan cara berikut ini untuk membuat grup sumber daya yang akan meng-hosting mesin virtual (ganti tempat penampung `[Azure_region]` dengan nama wilayah Azure tempat Anda ingin menyebarkan mesin virtual Azure). Ketikkan setiap baris perintah secara terpisah dan jalankan secara terpisah:
 
@@ -141,7 +142,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure.
     | Nama kebijakan | **az104-10-backup-policy** |
     | Frekuensi | **Harian** |
     | Waktu | **12:00 Siang** |
-    | Zona waktu | nama zona waktu lokal Anda |
+    | Timezone | nama zona waktu lokal Anda |
     | Pertahankan snapshot pemulihan instans untuk | **2** Hari |
 
 1. Klik **OK** untuk membuat kebijakan, lalu di bagian **Virtual Machines**, pilih **Tambah**.
@@ -445,7 +446,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
->**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+>**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
 1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
 
@@ -465,7 +466,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

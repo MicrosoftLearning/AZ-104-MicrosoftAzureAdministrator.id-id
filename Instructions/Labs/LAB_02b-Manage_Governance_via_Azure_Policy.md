@@ -1,14 +1,9 @@
 ---
 lab:
   title: 02b - Mengelola Tata Kelola melalui Azure Policy
-  module: Module 02 - Governance and Compliance
-ms.openlocfilehash: 2bf92c914983a28dc2d3f85abed917a95e88c04f
-ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 07/05/2022
-ms.locfileid: "146973675"
+  module: Administer Governance and Compliance
 ---
+
 # <a name="lab-02b---manage-governance-via-azure-policy"></a>Lab 02b - Mengelola Tata Kelola melalui Azure Policy
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
@@ -20,7 +15,9 @@ Untuk meningkatkan pengelolaan sumber daya Azure di Contoso, Anda telah ditugask
 
 - memastikan bahwa hanya sumber daya infrastruktur yang diberi tag dengan benar yang dapat ditambahkan ke grup sumber daya infrastruktur
 
-- meremediasi sumber daya yang tidak patuh 
+- meremediasi sumber daya yang tidak patuh
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -28,7 +25,7 @@ Di lab ini, kita akan:
 
 + Tugas 1: Membuat dan menetapkan tag melalui portal Microsoft Azure
 + Tugas 2: Menegakkan pemberian tag melalui Azure Policy
-+ Tugas 3: Menerapkan tag melalui kebijakan Azure
++ Tugas 3: Terapkan penandaan melalui kebijakan Azure
 
 ## <a name="estimated-timing-30-minutes"></a>Perkiraan waktu: 30 menit
 
@@ -179,7 +176,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
     | Pengaturan | Nilai |
     | --- | --- |
     | Buat tugas remediasi | diaktifkan |
-    | Kebijakan yang akan diremediasi | **Mewarisi tag dari langganan jika tidak ada** |
+    | Kebijakan yang akan diremediasi | **Mewarisi tag dari grup sumber daya jika tidak ada** |
 
     >**Catatan**: Definisi kebijakan ini mencakup efek **Modifikasi**.
 
@@ -203,7 +200,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
 
 1. Setelah akun penyimpanan baru disediakan, klik tombol **Buka sumber daya** dan, pada panel **Gambaran Umum** akun penyimpanan yang baru dibuat, perhatikan bahwa **Peran** tag dengan nilai **Infra** telah secara otomatis ditetapkan ke sumber daya.
 
-#### <a name="task-4-clean-up-resources"></a>Tugas 4: Membersihkan sumber daya
+#### <a name="task-4-clean-up-resources"></a>Tugas 4: Bersihkan sumber daya
 
    >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan memastikan Anda tidak akan melihat biaya tak terduga, meskipun perlu diingat bahwa kebijakan Azure tidak dikenakan biaya tambahan.
    
@@ -219,7 +216,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
 
 1. Klik **Gambaran Umum** dan klik **Hapus** di bagian atas panel akun penyimpanan. Saat dimintai konfirmasi, di panel **Hapus akun penyimpanan**, ketik nama akun penyimpanan untuk mengonfirmasi dan klik **Hapus**. 
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

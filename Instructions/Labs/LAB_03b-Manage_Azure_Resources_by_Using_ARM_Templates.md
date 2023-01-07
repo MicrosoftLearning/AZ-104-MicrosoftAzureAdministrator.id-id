@@ -1,19 +1,16 @@
 ---
 lab:
   title: 03b - Mengelola sumber daya Azure dengan Menggunakan Template ARM
-  module: Module 03 - Azure Administration
-ms.openlocfilehash: 602da542fdf20f6b1be637e792ec47daaa0de04b
-ms.sourcegitcommit: 8282cbcee5f7cd46bdc73d781c460d6a078049bb
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 04/19/2022
-ms.locfileid: "145198183"
+  module: Administer Azure Resources
 ---
+
 # <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>Lab 03b - Mengelola sumber daya Azure dengan Menggunakan Template ARM
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
 ## <a name="lab-scenario"></a>Skenario lab
 Sekarang setelah Anda menjelajahi kemampuan administrasi Azure dasar yang terkait dengan penyediaan sumber daya dan mengaturnya berdasarkan grup sumber daya menggunakan portal Azure, Anda perlu melakukan tugas yang setara dengan menggunakan templat Azure Resource Manager.
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
 ## <a name="objectives"></a>Tujuan
 
@@ -29,13 +26,11 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab03b.png)
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
 #### <a name="task-1-review-an-arm-template-for-deployment-of-an-azure-managed-disk"></a>Tugas 1: Meninjau template ARM untuk penyebaran disk yang dikelola Azure
-
-Dalam tugas ini, Anda akan membuat sumber daya disk Azure dengan menggunakan template Azure Resource Manager.
 
 1. Masuk ke [**portal Microsoft Azure**](http://portal.azure.com).
 
@@ -77,12 +72,6 @@ Dalam tugas ini, Anda akan membuat sumber daya disk Azure dengan menggunakan tem
    "sourceResourceId": {
        "type": "String"
    },
-   "sourceUri": {
-       "type": "String"
-   },
-   "osType": {
-       "type": "String"
-   },
    ```
 
    ```json
@@ -90,10 +79,6 @@ Dalam tugas ini, Anda akan membuat sumber daya disk Azure dengan menggunakan tem
        "defaultValue": "V1",
        "type": "String"
    },      
-   ```
-
-   ```json
-   "osType": "[parameters('osType')]",
    ```
 
     >**Catatan**: Parameter ini dihapus karena tidak berlaku untuk penyebaran saat ini. Secara khusus, parameter sourceResourceId, sourceUri, osType, dan hyperVGeneration berlaku untuk membuat disk Azure dari file VHD yang ada.
@@ -137,7 +122,7 @@ Dalam tugas ini, Anda akan membuat sumber daya disk Azure dengan menggunakan tem
 
    >**Catatan**: Jangan hapus sumber daya yang Anda terapkan di lab ini. Anda akan merujuknya di lab berikutnya dari modul ini.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 

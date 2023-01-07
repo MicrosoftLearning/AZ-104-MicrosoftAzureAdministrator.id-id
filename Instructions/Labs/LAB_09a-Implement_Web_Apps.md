@@ -1,14 +1,9 @@
 ---
 lab:
   title: 09a - Menerapkan Web Apps
-  module: Module 09 - Serverless Computing
-ms.openlocfilehash: af243b0cfa2b011dd419516139b5200ba349bcb4
-ms.sourcegitcommit: c360d3abaa6e09814f051b2568340e80d0d0e953
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "145198199"
+  module: Administer Serverless Computing
 ---
+
 # <a name="lab-09a---implement-web-apps"></a>Lab 09a - Menerapkan Aplikasi Web
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
@@ -16,14 +11,16 @@ ms.locfileid: "145198199"
 
 Anda perlu mengevaluasi penggunaan aplikasi Web Azure untuk menghosting situs web Contoso, yang saat ini dihosting di pusat data lokal perusahaan. Situs web berjalan di server Windows menggunakan tumpukan runtime PHP. Anda juga perlu menentukan bagaimana Anda dapat menerapkan praktik DevOps dengan memanfaatkan slot penyebaran aplikasi web Azure.
 
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
+
 ## <a name="objectives"></a>Tujuan
 
 Di lab ini Anda akan:
 
 + Tugas 1: Membuat aplikasi web Azure
 + Tugas 2: Membuat slot penyebaran pentahapan
-+ Tugas 3: Mengonfigurasikan pengaturan penyebaran aplikasi web
-+ Tugas 4: Menyebarkan kode ke slot pentahapan pementasan
++ Tugas 3: Konfigurasikan pengaturan penyebaran aplikasi web
++ Tugas 4: Sebarkan kode ke slot pentahapan pementasan
 + Tugas 5: Menukar slot pentahapan
 + Tugas 6: Mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure
 
@@ -33,7 +30,7 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab09a.png)
 
-## <a name="instructions"></a>Instruksi
+## <a name="instructions"></a>Petunjuk
 
 ### <a name="exercise-1"></a>Latihan 1
 
@@ -53,8 +50,8 @@ Dalam tugas ini, Anda akan membuat aplikasi web Azure.
     | Grup sumber daya | nama grup sumber daya baru **az104-09a-rg1** |
     | Nama aplikasi web | nama unik global apa pun |
     | Terbitkan | **Kode** |
-    | Tumpukan runtime | **PHP 7.4** |
-    | Sistem operasi | **Windows** |
+    | Tumpukan runtime | **PHP 8.0** |
+    | Sistem operasi | **Linux** |
     | Wilayah | nama wilayah Azure tempat Anda dapat memprovisikan aplikasi web Azure |
     | Paket App service | menerima konfigurasi default |
 
@@ -107,8 +104,6 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran aplikasi web.
     | --- | ---|
     | Nama pengguna | nama unik global apa pun (tidak boleh berisi karakter `@`) |
     | Kata sandi | kata sandi apa pun yang memenuhi persyaratan kompleksitas|
-
-    >**Catatan:** Kata sandi harus setidaknya delapan karakter, dengan dua dari tiga elemen berikut: huruf, angka, dan karakter non-alfanumerik.
 
     >**Catatan:** Anda akan memerlukan informasi masuk ini dalam tugas lab ini selanjutnya.
 
@@ -180,25 +175,25 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
     >**Catatan**: Anda juga memiliki opsi untuk menskalakan aplikasi web secara manual.
 
-1. Biarkan opsi default **Menskalakan berdasarkan metrik** yang dipilih dan klik **+ Tambahkan aturan**
+1. Pilih **Skala berdasarkan metrik** dan klik **+ Tambahkan aturan**
 
 1. Pada panel **Aturan skala**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- |--- |
     | Sumber metrik | **Sumber daya saat ini** |
-    | Agregasi waktu | **Maksimum** |
-    | Namespace layanan metrik | **Metrik standar paket App Service** |
+    | Namespace layanan metrik | **metrik standar** |
     | Nama metrik | **Persentase CPU** |
     | Operator | **Lebih besar dari** |
     | Ambang metrik untuk memicu tindakan skala | **10** |
     | Durasi (dalam menit) | **1** |
     | Statistik butir waktu | **Maksimum** |
+    | Agregasi waktu | **Maksimum** |
     | Operasi | **Tingkatkan jumlah sebesar** |
     | Jumlah instans | **1** |
     | Pendinginan (menit) | **5** |
 
-    >**Catatan**: Jelas nilai-nilai ini tidak mewakili konfigurasi yang realistis, karena tujuannya adalah untuk memicu penskalaan otomatis sesegera mungkin, tanpa masa tunggu yang diperpanjang.
+    >**Catatan**: Nilai ini tidak menunjukkan konfigurasi yang realistis, karena tujuannya adalah untuk memicu penskalaan otomatis sesegera mungkin, tanpa masa tunggu yang diperpanjang.
 
 1. Klik **Tambahkan** dan, kembali pada panel penskalaan paket App Service, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
@@ -230,11 +225,11 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
    while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
    ```
 
-1. Minimalkan panel Cloud Shell (tetapi jangan tutup) dan, pada panel aplikasi web, di bagian **Pemantauan**, klik **Penjelajah proses**.
+1. Perkecil panel Cloud Shell (namun jangan ditutup) dan, di bilah aplikasi web, di bagian Pengaturan, klik **Skalakan (Paket App Service)** .
 
-    >**Catatan**: Penjelajah proses memfasilitasi pemantauan jumlah instans dan pemanfaatan sumber dayanya.
+1. Pilih tab **Jalankan riwayat**, dan centang **Jumlah instans sumber daya yang diamati**.
 
-1. Pantau pemanfaatan dan jumlah instans selama beberapa menit.
+1. Pantau pemanfaatan dan jumlah instans selama beberapa menit. 
 
     >**Catatan**: Anda mungkin perlu melakukan **Refresh** halamannya.
 
@@ -246,7 +241,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
->**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+>**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
 1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
 
@@ -264,7 +259,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjauan
+#### <a name="review"></a>Tinjau
 
 Di lab ini, Anda telah:
 
