@@ -1,14 +1,9 @@
 ---
 lab:
   title: 02a - Mengelola Langganan dan RBAC
-  module: Module 02 - Governance and Compliance
-ms.openlocfilehash: e8b6f60a421222db74d93715ed63860e3ca3c78d
-ms.sourcegitcommit: d49dae6990730896bd0ea09ba68592d23d4b135f
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 07/05/2022
-ms.locfileid: "146973684"
+  module: Administer Governance and Compliance
 ---
+
 # <a name="lab-02a---manage-subscriptions-and-rbac"></a>Lab 02a - Mengelola Langganan dan RBAC
 # <a name="student-lab-manual"></a>Panduan lab siswa
 
@@ -25,7 +20,9 @@ Untuk meningkatkan pengelolaan sumber daya Azure di Contoso, Anda telah ditugask
 - memberikan izin untuk mengirimkan permintaan dukungan untuk semua langganan dalam grup manajemen ke pengguna Azure Active Directory yang ditunjuk. Izin pengguna tersebut harus dibatasi hanya untuk: 
 
     - membuat tiket permintaan dukungan
-    - melihat grup sumber daya 
+    - melihat grup sumber daya
+
+**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama.
 
 ## <a name="objectives"></a>Tujuan
 
@@ -146,7 +143,11 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
 
 1. Di portal Azure, navigasikan kembali ke grup pengelolaan **az104-02-mg1** dan tampilkan **detailnya**.
 
-1. Klik **Kontrol akses (IAM)** , klik **+ Tambahkan** lalu **Tambahkan penetapan peran**, pilih **Anggota**, masukkan **Tinjau+Tetapkan**, lalu tetapkan peran **Kontributor Permintaan Dukungan (Kustom)** ke akun pengguna yang baru dibuat.
+1. Klik **Access Control (IAM)** , klik **+ Tambahkan** lalu **Tambahkan penetapan peran**. Pada tab **Peran**, cari **Kontributor Permintaan Dukungan (Kustom)** . 
+
+    >**Catatan**: jika peran kustom Anda tidak terlihat, diperlukan waktu hingga 10 menit agar peran kustom muncul setelah dibuat.
+
+1. Pilih **Peran** dan klik **Berikutnya**. Pada tab **Anggota**, klik **+ Pilih anggota** dan **pilih** akun pengguna Anda az104-**************** *******.**********.onmicrosoft.com. Klik **Berikutnya** lalu **Tinjau dan tetapkan**.
 
 1. Buka jendela browser **InPrivate** dan masuk ke [portal Azure](https://portal.azure.com) menggunakan akun pengguna yang baru dibuat. Saat diminta untuk memperbarui kata sandi, ubah kata sandi untuk pengguna.
 
@@ -206,7 +207,7 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
 1. Pilih **Refresh** untuk memverifikasi bahwa langganan telah berhasil dipindahkan ke **grup pengelolaan Penyewa Root**.
 
 1. Navigasikan kembali ke panel **Grup manajemen**, klik ikon **elipsis** di sebelah kanan grup manajemen **az104-02-mg1** dan klik **Hapus**.
-  >**Catatan**: Jika Anda tidak dapat menghapus **Grup manajemen Akar Penyewa**, kemungkinan **Langganan Azure** akan berada di bagian grup sumber daya. Anda perlu memindahkan **Langganan Azure** dari **grup manajemen Akar Penyewa** lalu menghapus grup.
+  >**Catatan**: Jika Anda tidak dapat menghapus **grup manajemen Akar Penyewa**, kemungkinan **Langganan Azure** berada di bawah grup manajemen. Anda perlu memindahkan **Langganan Azure** dari **grup manajemen Akar Penyewa** lalu menghapus grup.
 
 #### <a name="review"></a>Tinjau
 
