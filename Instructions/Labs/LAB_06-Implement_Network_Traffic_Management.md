@@ -429,11 +429,10 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
      
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama | nama unik apa pun |
+    | Nama | **az104-06-pip4** |
     | Versi IP | IPv4 |
     | Jenis IP | Alamat IP |
     | Alamat IP publik | **Buat baru** |
-    | Nama | **az104-06-pip4** |
     | Zona ketersediaan | **Tidak Ada Zona** | 
 
 1. Pada tab **Kumpulan backend**, klik **Tambahkan kumpulan backend** dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Klik **+ Tambahkan** (dua kali) lalu klik **Berikutnya: Aturan masuk**. 
@@ -513,7 +512,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
     | Pengaturan | Nilai |
     | --- | --- |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup sumber daya | **az104-06-rg6** |
+    | Grup sumber daya | **az104-06-rg5** (buat baru) |
     | Nama gateway aplikasi | **az104-06-appgw5** |
     | Wilayah | nama wilayah Azure tempat Anda menyebarkan semua sumber daya lainnya di lab ini |
     | Tingkat | **Standard V2** |
