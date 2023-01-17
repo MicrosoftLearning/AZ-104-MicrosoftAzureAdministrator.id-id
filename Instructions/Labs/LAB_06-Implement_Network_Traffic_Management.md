@@ -330,7 +330,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | Tipe Lompatan Berikutnya | **Appliance virtual** |
     | Alamat lompatan berikutnya | **10.60.0.4** |
 
-1. Klik **OK**
+1. Klik **Tambahkan**
 
 1. Kembali ke panel tabel rute **az104-06-rt23**, di bagian **Pengaturan**, klik **Subnet**, lalu klik **+ Kaitkan**.
 
@@ -341,7 +341,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | Jaringan virtual | **az104-06-vnet2** |
     | Subnet | **subnet0** |
 
-1. Klik **OK**
+1. Klik **Tambahkan**
 
 1. Navigasikan kembali ke panel **Tabel rute** dan klik **+ Buat**.
 
