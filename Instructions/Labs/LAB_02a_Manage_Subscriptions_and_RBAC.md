@@ -147,7 +147,7 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
 
     >**Catatan**: jika peran kustom Anda tidak terlihat, diperlukan waktu hingga 10 menit agar peran kustom muncul setelah dibuat.
 
-1. Pilih **Peran** dan klik **Berikutnya**. Pada tab **Anggota**, klik **+ Pilih anggota** dan **pilih** akun pengguna Anda az104-**************** *******.**********.onmicrosoft.com. Klik **Berikutnya** lalu **Tinjau dan tetapkan**.
+1. Pilih **Peran** dan klik **Berikutnya**. Pada tab **Anggota**, klik **+ Pilih anggota** dan **pilih** akun pengguna az104-****************** *******.**********.onmicrosoft.com. Klik **Berikutnya** lalu **Tinjau dan tetapkan**.
 
 1. Buka jendela browser **InPrivate** dan masuk ke [portal Azure](https://portal.azure.com) menggunakan akun pengguna yang baru dibuat. Saat diminta untuk memperbarui kata sandi, ubah kata sandi untuk pengguna.
 
@@ -159,7 +159,7 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
 
 1. Di jendela browser **InPrivate**, di portal Azure, telusuri dan pilih **Bantuan + dukungan** lalu klik **+ Buat permintaan dukungan**. 
 
-1. Di jendela peramban **InPrivate**, pada tab **Deskripsi/Ringkasan Masalah** panel **Bantuan + dukungan - Permintaan dukungan baru**, ketik **Batas layanan dan langganan**  di bidang Ringkasan dan pilih jenis masalah **Batas langganan (kuota)** . Perhatikan bahwa langganan yang Anda gunakan di lab ini tercantum dalam daftar dropdown **Langganan**.
+1. Di jendela browser **InPrivate**, pada tab **Deskripsi/Ringkasan Masalah** dari **Bantuan + dukungan - Blade permintaan dukungan baru**, ketik **Batas layanan dan langganan** di bidang Ringkasan dan pilih jenis masalah **Batas layanan dan langganan (kuota)** . Perhatikan bahwa langganan yang Anda gunakan di lab ini tercantum dalam daftar dropdown **Langganan**.
 
     >**Catatan**: Kehadiran langganan yang Anda gunakan di lab ini dalam daftar dropdown **Langganan** menunjukkan bahwa akun yang Anda gunakan memiliki izin yang diperlukan untuk membuat permintaan dukungan khusus langganan.
 
@@ -185,9 +185,9 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
 
    ```powershell
    
-   $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes[0]
-
-   Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
+    $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes | Where-Object {$_ -like '*managementgroup*'}
+    
+    Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
    ```
 
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk menghapus definisi peran kustom:
