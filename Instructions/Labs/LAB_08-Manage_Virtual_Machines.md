@@ -290,7 +290,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
 
     >**Catatan**: Bagian templat ini menentukan ukuran mesin virtual Azure yang sama dengan yang Anda tentukan untuk mesin virtual pertama melalui portal Azure.
 
-1. Pada bilah **Edit templat**, di bagian yang menampilkan isi templat, ganti baris **51** (baris `"dataDisks": [ ]`) dengan kode berikut :
+1. Pada blade **Edit template**, di bagian yang menampilkan konten template, ganti baris (baris `"dataDisks": [ ]`) dengan kode berikut :
 
    ```json
                     "dataDisks": [
@@ -479,7 +479,7 @@ Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada conto
 
 1. Di portal Microsoft Azure, navigasikan kembali ke bilah **Kumpulan skala mesin virtual** dan klik **az10408vmss0**.
 
-1. Pada bilah **az10408vmss0**, di bagian **Pengaturan**, klik **Ekstensi**, dan klik **+ Tambahkan**.
+1. Pada bilah **az10408vmss0**, di bagian **Pengaturan**, klik **Ekstensi dan aplikasi**, dan klik **+ Tambahkan**.
 
 1. Pada bilah **Sumber daya baru**, klik **Ekstensi Skrip Khusus**, lalu klik **Berikutnya**.
 
@@ -589,7 +589,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
     >**Catatan**: Disk yang terpasang pada langkah sebelumnya adalah disk mentah. Sebelum dapat digunakan, Anda perlu membuat partisi, membuat sistem file, dan memasangnya. Agar dapat melakukannya, Anda akan menggunakan ekstensi Skrip Kustom mesin virtual Azure. Pertama, Anda harus menghapus Ekstensi Skrip Kustom yang ada.
 
-1. Di bagian **Pengaturan** pada bilah **az10408vmss0**, klik **Ekstensi**, klik **CustomScriptExtension**, lalu klik **Hapus instalan**.
+1. Di bagian **Pengaturan** blade **az10408vmss0**, klik **Ekstensi dan aplikasi**, klik **CustomScriptExtension**, lalu klik **Uninstall**.
 
     >**Catatan**: Tunggu hingga penghapusan instalan selesai.
 
