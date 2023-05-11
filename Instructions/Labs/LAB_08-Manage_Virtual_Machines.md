@@ -4,16 +4,16 @@ lab:
   module: Administer Virtual Machines
 ---
 
-# <a name="lab-08---manage-virtual-machines"></a>Lab 08 - Mengelola Mesin Virtual
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 08 - Mengelola Mesin Virtual
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Anda ditugaskan untuk mengidentifikasi berbagai opsi untuk menyebarkan dan mengonfigurasi mesin virtual Azure. Pertama, Anda perlu menentukan opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang berbeda yang dapat Anda terapkan saat menggunakan mesin virtual Azure. Selanjutnya, Anda perlu menyelidiki opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang tersedia saat menggunakan kumpulan skala mesin virtual Azure. Anda juga ingin menjelajahi kemampuan untuk secara otomatis mengonfigurasi mesin virtual dan kumpulan skala mesin virtual menggunakan ekstensi Skrip Kustom Mesin Virtual Azure.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2012)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -25,18 +25,18 @@ Di lab ini Anda akan:
 + Tugas 6: Konfigurasikan kumpulan skala mesin virtual Azure menggunakan ekstensi mesin virtual
 + Tugas 7: Skala komputasi dan penyimpanan untuk kumpulan skala mesin virtual Azure (opsional)
 
-## <a name="estimated-timing-50-minutes"></a>Perkiraan waktu: 50 menit
+## Perkiraan waktu: 50 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab08.png)
 
 
-## <a name="instructions"></a>Petunjuk
+## Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+### Latihan 1
 
-#### <a name="task-1-deploy-zone-resilient-azure-virtual-machines-by-using-the-azure-portal-and-an-azure-resource-manager-template"></a>Tugas 1: Sebarkan mesin virtual Azure dalam zona yang tahan menggunakan portal Azure dan templat Azure Resource Manager
+#### Tugas 1: Sebarkan mesin virtual Azure dalam zona yang tahan menggunakan portal Azure dan templat Azure Resource Manager
 
 Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan yang berbeda menggunakan portal Azure dan templat Azure Resource Manager.
 
@@ -136,7 +136,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
 
     >**Catatan**: Tunggu hingga kedua penyebaran selesai sebelum Anda melanjutkan ke tugas berikutnya. Proses ini mungkin perlu waktu sekitar 5 menit.
 
-#### <a name="task-2-configure-azure-virtual-machines-by-using-virtual-machine-extensions"></a>Tugas 2: Konfigurasikan mesin virtual Azure menggunakan ekstensi mesin virtual
+#### Tugas 2: Konfigurasikan mesin virtual Azure menggunakan ekstensi mesin virtual
 
 Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada dua mesin virtual Azure yang Anda gunakan di tugas sebelumnya menggunakan ekstensi mesin virtual Skrip Kustom.
 
@@ -223,7 +223,7 @@ Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada dua m
 
     >**Catatan**: Anda juga dapat terhubung ke **az104-08-vm0** dan menjalankan `Invoke-WebRequest -URI http://10.80.0.5 -UseBasicParsing` untuk mengakses situs web yang di-hosting di **az104-08-vm1**.
 
-#### <a name="task-3-scale-compute-and-storage-for-azure-virtual-machines"></a>Tugas 3: Skalakan komputasi dan penyimpanan untuk mesin virtual Azure
+#### Tugas 3: Skalakan komputasi dan penyimpanan untuk mesin virtual Azure
 
 Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure dengan mengubah ukurannya dan menskalakan penyimpanannya dengan melampirkan dan mengonfigurasi disk datanya.
 
@@ -262,7 +262,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
    ```powershell
    New-StoragePool -FriendlyName storagepool1 -StorageSubsystemFriendlyName "Windows Storage*" -PhysicalDisks (Get-PhysicalDisk -CanPool $true)
 
-   New-VirtualDisk -StoragePoolFriendlyName storagepool1 -FriendlyName virtualdisk1 -Size 2046GB -ResiliencySettingName Simple -ProvisioningType Fixed
+   New-VirtualDisk -StoragePoolFriendlyName storagepool1 -FriendlyName virtualdisk1 -Size 64GB -ResiliencySettingName Simple -ProvisioningType Fixed
 
    Initialize-Disk -VirtualDisk (Get-VirtualDisk -FriendlyName virtualdisk1)
 
@@ -336,7 +336,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
 
     > **Catatan**: Tunggu konfirmasi bahwa perintah berhasil diselesaikan.
 
-#### <a name="task-4-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>Tugas 4: Daftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement
+#### Tugas 4: Daftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement
 
 1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
 
@@ -352,7 +352,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
    Register-AzResourceProvider -ProviderNamespace Microsoft.AlertsManagement
    ```
 
-#### <a name="task-5-deploy-zone-resilient-azure-virtual-machine-scale-sets-by-using-the-azure-portal"></a>Tugas 5: Sebarkan kumpulan skala mesin virtual Azure dalam zona yang tahan menggunakan portal Microsoft Azure
+#### Tugas 5: Sebarkan kumpulan skala mesin virtual Azure dalam zona yang tahan menggunakan portal Microsoft Azure
 
 Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan di seluruh zona ketersediaan menggunakan portal Microsoft Azure.
 
@@ -456,7 +456,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
 
     >**Catatan**: Tunggu hingga penyebaran kumpulan skala mesin virtual selesai. Proses ini memerlukan waktu sekitar 5 menit.
 
-#### <a name="task-6-configure-azure-virtual-machine-scale-sets-by-using-virtual-machine-extensions"></a>Tugas 6: Konfigurasikan kumpulan skala mesin virtual Azure menggunakan ekstensi mesin virtual
+#### Tugas 6: Konfigurasikan kumpulan skala mesin virtual Azure menggunakan ekstensi mesin virtual
 
 Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada contoh skala mesin virtual Azure yang Anda gunakan di tugas sebelumnya menggunakan ekstensi mesin virtual skrip kustom.
 
@@ -497,7 +497,7 @@ Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada conto
 
     >**Catatan**: Pastikan halaman browser menampilkan nama salah satu contoh kumpulan skala mesin virtual Azure **az10408vmss0**.
 
-#### <a name="task-7-scale-compute-and-storage-for-azure-virtual-machine-scale-sets"></a>Tugas 7: Skala komputasi dan penyimpanan untuk kumpulan skala mesin virtual Azure
+#### Tugas 7: Skala komputasi dan penyimpanan untuk kumpulan skala mesin virtual Azure
 
 Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual, mengonfigurasi pengaturan penskalaan otomatisnya, dan melampirkan disk ke dalamnya.
 
@@ -619,7 +619,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
 1. Di bagian **Pengaturan** pada bilah **az10408vmss0**, klik **Instans**, beri centang kotak di samping instans kumpulan skala mesin virtual, klik **Tingkatkan**, lalu saat diminta konfirmasi, klik **Ya**.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+#### Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -646,7 +646,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### Tinjau
 
 Di lab ini, Anda telah:
 

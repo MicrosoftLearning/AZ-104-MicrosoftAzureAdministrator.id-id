@@ -4,10 +4,10 @@ lab:
   module: Administer Network Traffic Management
 ---
 
-# <a name="lab-06---implement-traffic-management"></a>Lab 06 - Menerapkan Manajemen Lalu Lintas
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 06 - Menerapkan Manajemen Lalu Lintas
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Anda ditugaskan untuk menguji pengelolaan lalu lintas jaringan yang menargetkan mesin virtual Azure di topologi jaringan hub dan spoke, yang Contoso pertimbangkan untuk diterapkan di lingkungan Azure-nya (sebagai ganti membuat topologi mesh, yang Anda uji di lab sebelumnya). Pengujian ini perlu menyertakan penerapan konektivitas antar spoke dengan mengandalkan rute yang ditentukan pengguna yang memaksa lalu lintas mengalir melalui hub, serta distribusi lalu lintas di seluruh mesin virtual dengan menggunakan load balancer lapisan 4 dan lapisan 7. Untuk tujuan ini, Anda ingin menggunakan Azure Load Balancer (lapisan 4) dan Azure Application Gateway (lapisan 7).
 
@@ -15,7 +15,7 @@ Anda ditugaskan untuk menguji pengelolaan lalu lintas jaringan yang menargetkan 
 
 >**Catatan**: Lab ini, secara default, memerlukan total 8 vCPU yang tersedia dalam seri Standard_Dsv3 di wilayah yang Anda pilih untuk penerapan, karena melibatkan penerapan empat VM Azure dari SKU Standard_D2s_v3. Jika siswa Anda menggunakan akun uji coba, dengan batas 4 vCPU, Anda dapat menggunakan ukuran VM yang hanya memerlukan satu vCPU (seperti Standard_B1s).
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -26,18 +26,18 @@ Di lab ini Anda akan:
 + Tugas 5: Menerapkan Azure Load Balancer
 + Tugas 6: Menerapkan Azure Application Gateway
 
-## <a name="estimated-timing-60-minutes"></a>Perkiraan waktu: 60 menit
+## Perkiraan waktu: 60 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab06.png)
 
 
-## <a name="instructions"></a>Petunjuk
+## Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+### Latihan 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tugas 1: Memprovisikan lingkungan lab
+#### Tugas 1: Memprovisikan lingkungan lab
 
 Dalam tugas ini, Anda akan menyebarkan empat mesin virtual ke wilayah Azure yang sama. Dua yang pertama akan berada di jaringan virtual hub, sementara masing-masing dari dua sisanya akan berada di jaringan virtual spoke yang terpisah.
 
@@ -50,8 +50,6 @@ Dalam tugas ini, Anda akan menyebarkan empat mesin virtual ke wilayah Azure yang
     >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
 1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** dan **\\Allfiles\\Labs\\06\\az104-06-vms-loop -parameters.json** ke dalam direktori beranda Cloud Shell.
-
-1. Edit file **Parameter** yang baru saja Anda unggah dan ubah kata sandinya. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
 
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk membuat grup sumber daya pertama yang akan menghosting lingkungan lab (ganti tempat penampung '[Azure_region]' dengan nama wilayah Azure tempat Anda ingin menyebarkan mesin virtual Azure)(Anda dapat menggunakan cmdlet "(Get-AzLocation).Location" untuk mendapatkan daftar wilayah):
 
@@ -71,6 +69,8 @@ Dalam tugas ini, Anda akan menyebarkan empat mesin virtual ke wilayah Azure yang
 
 
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk membuat tiga jaringan virtual dan empat VM Azure ke dalamnya dengan menggunakan template dan file parameter yang Anda unggah:
+
+    >**Catatan**: Anda akan diminta untuk memberikan kata sandi Admin.
 
    ```powershell
    New-AzResourceGroupDeployment `
@@ -113,7 +113,7 @@ Dalam tugas ini, Anda akan menyebarkan empat mesin virtual ke wilayah Azure yang
 
 1. Tutup panel Cloud Shell.
 
-#### <a name="task-2-configure-the-hub-and-spoke-network-topology"></a>Tugas 2: Mengonfigurasi topologi jaringan spoke dan hub
+#### Tugas 2: Mengonfigurasi topologi jaringan spoke dan hub
 
 Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual yang Anda sebarkan di tugas sebelumnya untuk membuat topologi jaringan hub dan spoke.
 
@@ -187,7 +187,7 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual 
 
     >**Catatan**: **Izinkan lalu lintas yang diteruskan** harus diaktifkan untuk memfasilitasi perutean antara jaringan virtual spoke, yang akan Anda terapkan nanti di lab ini.
 
-#### <a name="task-3-test-transitivity-of-virtual-network-peering"></a>Tugas 3: Menguji transitivitas peering jaringan virtual
+#### Tugas 3: Menguji transitivitas peering jaringan virtual
 
 Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan menggunakan Network Watcher.
 
@@ -254,7 +254,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
 
     > **Catatan**: Hal ini diharapkan, karena kedua jaringan virtual spoke tidak di-peering satu sama lain (peering jaringan virtual tidak transitif).
 
-#### <a name="task-4-configure-routing-in-the-hub-and-spoke-topology"></a>Tugas 4: Mengonfigurasi perutean di topologi spoke dan hub
+#### Tugas 4: Mengonfigurasi perutean di topologi spoke dan hub
 
 Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaringan virtual spoke dengan mengaktifkan penerusan IP pada antarmuka jaringan mesin virtual **az104-06-vm0**, mengaktifkan perutean dalam sistem operasinya, dan mengonfigurasi pengguna rute yang ditentukan pada jaringan virtual spoke.
 
@@ -407,7 +407,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
 
     > **Catatan**: Anda dapat menggunakan **Network Watcher** untuk melihat topologi jaringan.
 
-#### <a name="task-5-implement-azure-load-balancer"></a>Tugas 5: Menerapkan Azure Load Balancer
+#### Tugas 5: Menerapkan Azure Load Balancer
 
 Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin virtual Azure di jaringan virtual hub.
 
@@ -418,7 +418,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
     | Pengaturan | Nilai |
     | --- | --- |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup sumber daya | **az104-06-rg4** |
+    | Grup sumber daya | **az104-06-rg4** (jika perlu buat) |
     | Nama | **az104-06-lb4** |
     | Wilayah | nama wilayah Azure tempat Anda menyebarkan semua sumber daya lainnya di lab ini |
     | SKU  | **Standard** |
@@ -431,9 +431,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
     | --- | --- |
     | Nama | **az104-06-pip4** |
     | Versi IP | IPv4 |
-    | Jenis IP | Alamat IP |
     | Alamat IP publik | **Buat baru** |
-    | Zona ketersediaan | **Tidak Ada Zona** | 
 
 1. Pada tab **Kumpulan backend**, klik **Tambahkan kumpulan backend** dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Klik **+ Tambahkan** (dua kali) lalu klik **Berikutnya: Aturan masuk**. 
 
@@ -484,7 +482,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
 
     > **Catatan**: Anda mungkin perlu merefresh lebih dari sekali atau membuka jendela browser baru dalam mode InPrivate.
 
-#### <a name="task-6-implement-azure-application-gateway"></a>Tugas 6: Menerapkan Azure Application Gateway
+#### Tugas 6: Menerapkan Azure Application Gateway
 
 Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mesin virtual Azure di jaringan virtual spoke.
 
@@ -587,7 +585,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
     > **Catatan**: Menargetkan mesin virtual pada beberapa jaringan virtual bukanlah konfigurasi umum, tetapi hal ini dimaksudkan untuk menggambarkan poin bahwa Application Gateway mampu menargetkan mesin virtual pada beberapa jaringan virtual (serta titik akhir di wilayah Azure lain atau bahkan di luar Azure), tidak seperti Azure Load Balancer, yang memuat keseimbangan di seluruh mesin virtual di jaringan virtual yang sama.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+#### Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -609,7 +607,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### Tinjau
 
 Di lab ini, Anda telah:
 

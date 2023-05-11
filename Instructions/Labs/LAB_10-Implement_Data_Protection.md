@@ -4,16 +4,16 @@ lab:
   module: Administer Data Protection
 ---
 
-# <a name="lab-10---backup-virtual-machines"></a>Lab 10 - Mencadangkan mesin virtual
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 10 - Mencadangkan mesin virtual
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Anda telah ditugaskan untuk mengevaluasi penggunaan Layanan Pemulihan Azure untuk pencadangan dan pemulihan file yang di-hosting di mesin virtual Azure dan komputer lokal. Selain itu, Anda ingin mengidentifikasi metode untuk melindungi data yang disimpan di Recovery Services vault dari kehilangan data yang tidak disengaja atau berbahaya.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -25,17 +25,17 @@ Di lab ini Anda akan:
 + Tugas 6: Melakukan pemulihan file menggunakan snapshot mesin virtual Azure (opsional)
 + Tugas 7: Meninjau fungsionalitas penghapusan permanen Layanan Pemulihan Azure (opsional)
 
-## <a name="estimated-timing-50-minutes"></a>Perkiraan waktu: 50 menit
+## Perkiraan waktu: 50 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab10.png)
 
-## <a name="instructions"></a>Petunjuk
+## Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+### Latihan 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tugas 1: Menyediakan lingkungan lab
+#### Tugas 1: Menyediakan lingkungan lab
 
 Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan untuk menguji skenario pencadangan yang berbeda.
 
@@ -48,8 +48,6 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan unt
     >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
 1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** ke dalam direktori beranda Cloud Shell.
-
-1. Edit file Parameter yang baru saja Anda unggah dan ubah kata sandinya. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Untuk praktik terbaik, rahasia, seperti kata sandi, harus disimpan lebih aman di Key Vault. 
 
 1. Dari panel Cloud Shell, jalankan cara berikut ini untuk membuat grup sumber daya yang akan meng-hosting mesin virtual (ganti tempat penampung `[Azure_region]` dengan nama wilayah Azure tempat Anda ingin menyebarkan mesin virtual Azure). Ketikkan setiap baris perintah secara terpisah dan jalankan secara terpisah:
 
@@ -66,7 +64,8 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan unt
    ```
 
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk membuat jaringan virtual pertama dan menyebarkan mesin virtual ke dalamnya menggunakan file templat dan parameter yang Anda unggah:
-
+    >**Catatan**: Anda akan diminta untuk memberikan kata sandi Admin.
+    
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -79,7 +78,7 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan unt
 
     >**Catatan**: Jangan menunggu penyebaran selesai tetapi lanjutkan ke tugas berikutnya. Penyebaran akan memakan waktu sekitar 5 menit.
 
-#### <a name="task-2-create-a-recovery-services-vault"></a>Tugas 2: Membuat vault Recovery Service
+#### Tugas 2: Membuat vault Recovery Service
 
 Dalam tugas ini, Anda akan membuat brankas layanan pemulihan.
 
@@ -116,7 +115,7 @@ Dalam tugas ini, Anda akan membuat brankas layanan pemulihan.
 
 1. Tutup bilah **Pengaturan Keamanan** dan, kembali ke bilah vault **az104-10-rsv1** Layanan Pemulihan, klik **Ringkasan**.
 
-#### <a name="task-3-implement-azure-virtual-machine-level-backup"></a>Tugas 3: Menerapkan pencadangan tingkat mesin virtual Azure
+#### Tugas 3: Menerapkan pencadangan tingkat mesin virtual Azure
 
 Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure.
 
@@ -159,7 +158,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure.
 
     >**Catatan**: Jangan menunggu hingga pencadangan selesai, tetapi lanjutkan ke tugas berikutnya.
 
-#### <a name="task-4-implement-file-and-folder-backup"></a>Tugas 4: Menerapkan pencadangan File dan Folder
+#### Tugas 4: Menerapkan pencadangan File dan Folder
 
 Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan Layanan Pemulihan Azure.
 
@@ -258,7 +257,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Pada bilah **Item Cadangan (Agen Azure Backup)** , pastikan ada entri yang merujuk pada drive **C:\\** dari **az104-10-vm1.** .
 
-#### <a name="task-5-perform-file-recovery-by-using-azure-recovery-services-agent-optional"></a>Tugas 5: Lakukan pemulihan file menggunakan agen Layanan Pemulihan Azure (opsional)
+#### Tugas 5: Lakukan pemulihan file menggunakan agen Layanan Pemulihan Azure (opsional)
 
 Dalam tugas ini, Anda akan melakukan pemulihan file menggunakan agen Layanan Pemulihan Azure.
 
@@ -288,7 +287,7 @@ Dalam tugas ini, Anda akan melakukan pemulihan file menggunakan agen Layanan Pem
 
 1. Hentikan sesi Desktop Jarak Jauh.
 
-#### <a name="task-6-perform-file-recovery-by-using-azure-virtual-machine-snapshots-optional"></a>Tugas 6: Melakukan pemulihan file menggunakan snapshot mesin virtual Azure (opsional)
+#### Tugas 6: Melakukan pemulihan file menggunakan snapshot mesin virtual Azure (opsional)
 
 Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingkat mesin virtual Azure.
 
@@ -360,7 +359,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Hentikan sesi Desktop Jarak Jauh.
 
-#### <a name="task-7-review-the-azure-recovery-services-soft-delete-functionality"></a>Tugas 7: Tinjau fungsionalitas penghapusan sementara Layanan Pemulihan Azure
+#### Tugas 7: Tinjau fungsionalitas penghapusan sementara Layanan Pemulihan Azure
 
 1. Di komputer lab, di portal Microsoft Azure, cari dan pilih **Recovery Services vaults** dan, di **Recovery Services vaults**, klik **az104-10-rsv1**.
 
@@ -442,7 +441,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Ulangi langkah-langkah di awal tugas ini untuk menghapus item cadangan untuk **az104-10-vm1**.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+#### Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -466,7 +465,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### Tinjau
 
 Di lab ini, Anda telah:
 

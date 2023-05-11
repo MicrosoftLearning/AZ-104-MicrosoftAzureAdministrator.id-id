@@ -4,17 +4,17 @@ lab:
   module: Administer Virtual Networking
 ---
 
-# <a name="lab-04---implement-virtual-networking"></a>Lab 04 - Menerapkan Jaringan Virtual
+# Lab 04 - Menerapkan Jaringan Virtual
 
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Anda perlu menjelajahi kemampuan jaringan virtual Azure. Untuk memulai, Anda berencana membuat jaringan virtual di Azure yang akan menghosting beberapa mesin virtual Azure. Karena Anda bermaksud menerapkan segmentasi berbasis jaringan, Anda akan menerapkannya ke subnet yang berbeda dari jaringan virtual. Anda juga ingin memastikan bahwa alamat IP pribadi dan publik mereka tidak akan berubah seiring waktu. Untuk mematuhi persyaratan keamanan Contoso, Anda perlu melindungi titik akhir publik dari mesin virtual Azure yang dapat diakses dari Internet. Terakhir, Anda perlu menerapkan resolusi nama DNS untuk mesin virtual Azure baik di dalam jaringan virtual maupun dari Internet.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -25,17 +25,17 @@ Di lab ini Anda akan:
 + Tugas 5: Mengonfigurasi Azure DNS untuk resolusi nama internal
 + Tugas 6: Mengonfigurasi Azure DNS untuk resolusi nama eksternal
 
-## <a name="estimated-timing-40-minutes"></a>Perkiraan waktu: 40 menit
+## Perkiraan waktu: 40 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab04.png)
 
-## <a name="instructions"></a>Petunjuk
+## Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+### Latihan 1
 
-#### <a name="task-1-create-and-configure-a-virtual-network"></a>Tugas 1: Membuat dan mengonfigurasikan jaringan virtual
+#### Tugas 1: Membuat dan mengonfigurasikan jaringan virtual
 
 Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet menggunakan portal Microsoft Azure
 
@@ -52,14 +52,15 @@ Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet mengg
     | Nama | **az104-04-vnet1** |
     | Wilayah | nama wilayah Azure yang tersedia dalam langganan yang akan Anda gunakan di lab ini |
 
-1. Klik **Berikutnya: Alamat IP** dan hapus **ruang alamat IPv4** yang ada. Di kotak teks **ruang alamat IPv4** ketik **10.40.0.0/20**.
+1. Klik **Berikutnya: Alamat IP**. **Alamat awal** adalah **10.40.0.0**. **Ukuran ruang Alamat** adalah **/20**. Pastikan untuk mengklik **Tambahkan**. 
 
 1. Klik **+ Tambahkan subnet** masukkan nilai berikut lalu klik **Tambahkan**.
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama subnet | **subnet0** |
-    | Rentang alamat subnet | **10.40.0.0/24** |
+    | Alamat awal | **10.40.0.0/24** |
+    | Alamat awal | **/24 (256 alamat)** |
 
 1. Terima defaultnya dan klik **Tinjauan dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
 
@@ -80,7 +81,7 @@ Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet mengg
 
 1. Klik **Simpan**
 
-#### <a name="task-2-deploy-virtual-machines-into-the-virtual-network"></a>Tugas 2: Menyebarkan mesin virtual ke dalam jaringan virtual
+#### Tugas 2: Menyebarkan mesin virtual ke dalam jaringan virtual
 
 Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke subnet yang berbeda dari jaringan virtual dengan menggunakan template ARM
 
@@ -94,10 +95,9 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke subnet yang berbed
 
     >**Catatan** : Anda harus mengunggah setiap file secara terpisah. Setelah mengunggah, gunakan **dir** untuk memastikan kedua file berhasil diunggah.
 
-1. Edit file Parameter, dan ubah kata sandi. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Untuk praktik terbaik, rahasia, seperti kata sandi, harus disimpan lebih aman di Key Vault. 
-
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk menyebarkan dua mesin virtual menggunakan file template dan parameter:
-
+    >**Catatan**: Anda akan diminta untuk memberikan kata sandi Admin.
+    
    ```powershell
    $rgName = 'az104-04-rg1'
 
@@ -106,7 +106,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke subnet yang berbed
       -TemplateFile $HOME/az104-04-vms-loop-template.json `
       -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
    ```
-
+   
     >**Catatan**: Metode penyebaran template ARM ini menggunakan Azure PowerShell. Anda dapat melakukan tugas yang sama dengan menjalankan perintah Azure CLI yang setara **az deployment create** (untuk informasi selengkapnya, lihat [Menyebarkan sumber daya dengan template Resource Manager dan Azure CLI](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli).
 
     >**Catatan**: Tunggu hingga penyebaran selesai sebelum melanjutkan ke tugas berikutnya. Proses ini memerlukan waktu sekitar 2 menit.
@@ -120,7 +120,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke subnet yang berbed
 
 1. Tutup panel Cloud Shell.
 
-#### <a name="task-3-configure-private-and-public-ip-addresses-of-azure-vms"></a>Tugas 3: Mengonfigurasi alamat IP pribadi dan publik dari VM Azure
+#### Tugas 3: Mengonfigurasi alamat IP pribadi dan publik dari VM Azure
 
 Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan pribadi yang ditetapkan ke antarmuka jaringan mesin virtual Azure.
 
@@ -174,7 +174,7 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
     >**Catatan**: Anda akan memerlukan kedua alamat IP dalam tugas terakhir lab ini.
 
-#### <a name="task-4-configure-network-security-groups"></a>Tugas 4: Mengonfigurasi kelompok keamanan jaringan
+#### Tugas 4: Mengonfigurasi kelompok keamanan jaringan
 
 Dalam tugas ini, Anda akan mengonfigurasi kelompok keamanan jaringan untuk mengizinkan konektivitas terbatas ke mesin virtual Azure.
 
@@ -243,7 +243,7 @@ Dalam tugas ini, Anda akan mengonfigurasi kelompok keamanan jaringan untuk mengi
 
     >**Catatan**: Biarkan sesi Desktop Jauh terbuka. Anda akan membutuhkannya di tugas berikutnya.
 
-#### <a name="task-5-configure-azure-dns-for-internal-name-resolution"></a>Tugas 5: Mengonfigurasi Azure DNS untuk resolusi nama internal
+#### Tugas 5: Mengonfigurasi Azure DNS untuk resolusi nama internal
 
 Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS dalam jaringan virtual dengan menggunakan zona DNS privat Azure.
 
@@ -295,7 +295,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS dalam jaringan virtu
 
 1. Verifikasi bahwa output perintah menyertakan alamat IP pribadi **az104-04-vm1** (**10.40.1.4**).
 
-#### <a name="task-6-configure-azure-dns-for-external-name-resolution"></a>Tugas 6: Mengonfigurasi Azure DNS untuk resolusi nama eksternal
+#### Tugas 6: Mengonfigurasi Azure DNS untuk resolusi nama eksternal
 
 Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan menggunakan zona DNS publik Azure.
 
@@ -369,7 +369,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
 
 1. Verifikasi bahwa output perintah menyertakan alamat IP publik **az104-04-vm1**.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+#### Membersihkan sumber daya
 
  > **Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -391,7 +391,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+#### Tinjau
 
 Di lab ini, Anda telah:
 
