@@ -31,11 +31,11 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab10.png)
 
-## Petunjuk
+### Petunjuk
 
-### Latihan 1
+## Latihan 1
 
-#### Tugas 1: Menyediakan lingkungan lab
+## Tugas 1: Menyediakan lingkungan lab
 
 Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan untuk menguji skenario pencadangan yang berbeda.
 
@@ -78,7 +78,7 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan unt
 
     >**Catatan**: Jangan menunggu penyebaran selesai tetapi lanjutkan ke tugas berikutnya. Penyebaran akan memakan waktu sekitar 5 menit.
 
-#### Tugas 2: Membuat vault Recovery Service
+## Tugas 2: Membuat vault Recovery Service
 
 Dalam tugas ini, Anda akan membuat brankas layanan pemulihan.
 
@@ -115,7 +115,7 @@ Dalam tugas ini, Anda akan membuat brankas layanan pemulihan.
 
 1. Tutup bilah **Pengaturan Keamanan** dan, kembali ke bilah vault **az104-10-rsv1** Layanan Pemulihan, klik **Ringkasan**.
 
-#### Tugas 3: Menerapkan pencadangan tingkat mesin virtual Azure
+## Tugas 3: Menerapkan pencadangan tingkat mesin virtual Azure
 
 Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure.
 
@@ -158,7 +158,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure.
 
     >**Catatan**: Jangan menunggu hingga pencadangan selesai, tetapi lanjutkan ke tugas berikutnya.
 
-#### Tugas 4: Menerapkan pencadangan File dan Folder
+## Tugas 4: Menerapkan pencadangan File dan Folder
 
 Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan Layanan Pemulihan Azure.
 
@@ -257,7 +257,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Pada bilah **Item Cadangan (Agen Azure Backup)** , pastikan ada entri yang merujuk pada drive **C:\\** dari **az104-10-vm1.** .
 
-#### Tugas 5: Lakukan pemulihan file menggunakan agen Layanan Pemulihan Azure (opsional)
+## Tugas 5: Lakukan pemulihan file menggunakan agen Layanan Pemulihan Azure (opsional)
 
 Dalam tugas ini, Anda akan melakukan pemulihan file menggunakan agen Layanan Pemulihan Azure.
 
@@ -287,7 +287,7 @@ Dalam tugas ini, Anda akan melakukan pemulihan file menggunakan agen Layanan Pem
 
 1. Hentikan sesi Desktop Jarak Jauh.
 
-#### Tugas 6: Melakukan pemulihan file menggunakan snapshot mesin virtual Azure (opsional)
+## Tugas 6: Melakukan pemulihan file menggunakan snapshot mesin virtual Azure (opsional)
 
 Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingkat mesin virtual Azure.
 
@@ -359,7 +359,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Hentikan sesi Desktop Jarak Jauh.
 
-#### Tugas 7: Tinjau fungsionalitas penghapusan sementara Layanan Pemulihan Azure
+## Tugas 7: Tinjau fungsionalitas penghapusan sementara Layanan Pemulihan Azure
 
 1. Di komputer lab, di portal Microsoft Azure, cari dan pilih **Recovery Services vaults** dan, di **Recovery Services vaults**, klik **az104-10-rsv1**.
 
@@ -441,7 +441,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Ulangi langkah-langkah di awal tugas ini untuk menghapus item cadangan untuk **az104-10-vm1**.
 
-#### Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -465,7 +465,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 
