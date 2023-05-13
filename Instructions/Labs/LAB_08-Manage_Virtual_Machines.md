@@ -32,11 +32,11 @@ Di lab ini Anda akan:
 ![gambar](../media/lab08.png)
 
 
-## Petunjuk
+### Petunjuk
 
-### Latihan 1
+## Latihan 1
 
-#### Tugas 1: Sebarkan mesin virtual Azure dalam zona yang tahan menggunakan portal Azure dan templat Azure Resource Manager
+## Tugas 1: Sebarkan mesin virtual Azure dalam zona yang tahan menggunakan portal Azure dan templat Azure Resource Manager
 
 Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan yang berbeda menggunakan portal Azure dan templat Azure Resource Manager.
 
@@ -136,7 +136,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
 
     >**Catatan**: Tunggu hingga kedua penyebaran selesai sebelum Anda melanjutkan ke tugas berikutnya. Proses ini mungkin perlu waktu sekitar 5 menit.
 
-#### Tugas 2: Konfigurasikan mesin virtual Azure menggunakan ekstensi mesin virtual
+## Tugas 2: Konfigurasikan mesin virtual Azure menggunakan ekstensi mesin virtual
 
 Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada dua mesin virtual Azure yang Anda gunakan di tugas sebelumnya menggunakan ekstensi mesin virtual Skrip Kustom.
 
@@ -223,7 +223,7 @@ Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada dua m
 
     >**Catatan**: Anda juga dapat terhubung ke **az104-08-vm0** dan menjalankan `Invoke-WebRequest -URI http://10.80.0.5 -UseBasicParsing` untuk mengakses situs web yang di-hosting di **az104-08-vm1**.
 
-#### Tugas 3: Skalakan komputasi dan penyimpanan untuk mesin virtual Azure
+## Tugas 3: Skalakan komputasi dan penyimpanan untuk mesin virtual Azure
 
 Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure dengan mengubah ukurannya dan menskalakan penyimpanannya dengan melampirkan dan mengonfigurasi disk datanya.
 
@@ -336,7 +336,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
 
     > **Catatan**: Tunggu konfirmasi bahwa perintah berhasil diselesaikan.
 
-#### Tugas 4: Daftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement
+## Tugas 4: Daftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement
 
 1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
 
@@ -352,7 +352,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
    Register-AzResourceProvider -ProviderNamespace Microsoft.AlertsManagement
    ```
 
-#### Tugas 5: Sebarkan kumpulan skala mesin virtual Azure dalam zona yang tahan menggunakan portal Microsoft Azure
+## Tugas 5: Sebarkan kumpulan skala mesin virtual Azure dalam zona yang tahan menggunakan portal Microsoft Azure
 
 Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan di seluruh zona ketersediaan menggunakan portal Microsoft Azure.
 
@@ -456,7 +456,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
 
     >**Catatan**: Tunggu hingga penyebaran kumpulan skala mesin virtual selesai. Proses ini memerlukan waktu sekitar 5 menit.
 
-#### Tugas 6: Konfigurasikan kumpulan skala mesin virtual Azure menggunakan ekstensi mesin virtual
+## Tugas 6: Konfigurasikan kumpulan skala mesin virtual Azure menggunakan ekstensi mesin virtual
 
 Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada contoh skala mesin virtual Azure yang Anda gunakan di tugas sebelumnya menggunakan ekstensi mesin virtual skrip kustom.
 
@@ -497,7 +497,7 @@ Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada conto
 
     >**Catatan**: Pastikan halaman browser menampilkan nama salah satu contoh kumpulan skala mesin virtual Azure **az10408vmss0**.
 
-#### Tugas 7: Skala komputasi dan penyimpanan untuk kumpulan skala mesin virtual Azure
+## Tugas 7: Skala komputasi dan penyimpanan untuk kumpulan skala mesin virtual Azure
 
 Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual, mengonfigurasi pengaturan penskalaan otomatisnya, dan melampirkan disk ke dalamnya.
 
@@ -619,7 +619,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
 1. Di bagian **Pengaturan** pada bilah **az10408vmss0**, klik **Instans**, beri centang kotak di samping instans kumpulan skala mesin virtual, klik **Tingkatkan**, lalu saat diminta konfirmasi, klik **Ya**.
 
-#### Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -646,7 +646,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

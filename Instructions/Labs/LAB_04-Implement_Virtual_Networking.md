@@ -31,11 +31,11 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab04.png)
 
-## Petunjuk
+### Petunjuk
 
-### Latihan 1
+## Latihan 1
 
-#### Tugas 1: Membuat dan mengonfigurasikan jaringan virtual
+## Tugas 1: Membuat dan mengonfigurasikan jaringan virtual
 
 Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet menggunakan portal Microsoft Azure
 
@@ -81,7 +81,7 @@ Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet mengg
 
 1. Klik **Simpan**
 
-#### Tugas 2: Menyebarkan mesin virtual ke dalam jaringan virtual
+## Tugas 2: Menyebarkan mesin virtual ke dalam jaringan virtual
 
 Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke subnet yang berbeda dari jaringan virtual dengan menggunakan template ARM
 
@@ -174,7 +174,7 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
     >**Catatan**: Anda akan memerlukan kedua alamat IP dalam tugas terakhir lab ini.
 
-#### Tugas 4: Mengonfigurasi kelompok keamanan jaringan
+## Tugas 4: Mengonfigurasi kelompok keamanan jaringan
 
 Dalam tugas ini, Anda akan mengonfigurasi kelompok keamanan jaringan untuk mengizinkan konektivitas terbatas ke mesin virtual Azure.
 
@@ -295,7 +295,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS dalam jaringan virtu
 
 1. Verifikasi bahwa output perintah menyertakan alamat IP pribadi **az104-04-vm1** (**10.40.1.4**).
 
-#### Tugas 6: Mengonfigurasi Azure DNS untuk resolusi nama eksternal
+## Tugas 6: Mengonfigurasi Azure DNS untuk resolusi nama eksternal
 
 Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan menggunakan zona DNS publik Azure.
 
@@ -369,7 +369,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
 
 1. Verifikasi bahwa output perintah menyertakan alamat IP publik **az104-04-vm1**.
 
-#### Membersihkan sumber daya
+## Membersihkan sumber daya
 
  > **Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -391,7 +391,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

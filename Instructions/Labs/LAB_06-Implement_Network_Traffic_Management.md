@@ -33,11 +33,11 @@ Di lab ini Anda akan:
 ![gambar](../media/lab06.png)
 
 
-## Petunjuk
+### Petunjuk
 
-### Latihan 1
+## Latihan 1
 
-#### Tugas 1: Memprovisikan lingkungan lab
+## Tugas 1: Memprovisikan lingkungan lab
 
 Dalam tugas ini, Anda akan menyebarkan empat mesin virtual ke wilayah Azure yang sama. Dua yang pertama akan berada di jaringan virtual hub, sementara masing-masing dari dua sisanya akan berada di jaringan virtual spoke yang terpisah.
 
@@ -113,7 +113,7 @@ Dalam tugas ini, Anda akan menyebarkan empat mesin virtual ke wilayah Azure yang
 
 1. Tutup panel Cloud Shell.
 
-#### Tugas 2: Mengonfigurasi topologi jaringan spoke dan hub
+## Tugas 2: Mengonfigurasi topologi jaringan spoke dan hub
 
 Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual yang Anda sebarkan di tugas sebelumnya untuk membuat topologi jaringan hub dan spoke.
 
@@ -187,7 +187,7 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual 
 
     >**Catatan**: **Izinkan lalu lintas yang diteruskan** harus diaktifkan untuk memfasilitasi perutean antara jaringan virtual spoke, yang akan Anda terapkan nanti di lab ini.
 
-#### Tugas 3: Menguji transitivitas peering jaringan virtual
+## Tugas 3: Menguji transitivitas peering jaringan virtual
 
 Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan menggunakan Network Watcher.
 
@@ -254,7 +254,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
 
     > **Catatan**: Hal ini diharapkan, karena kedua jaringan virtual spoke tidak di-peering satu sama lain (peering jaringan virtual tidak transitif).
 
-#### Tugas 4: Mengonfigurasi perutean di topologi spoke dan hub
+## Tugas 4: Mengonfigurasi perutean di topologi spoke dan hub
 
 Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaringan virtual spoke dengan mengaktifkan penerusan IP pada antarmuka jaringan mesin virtual **az104-06-vm0**, mengaktifkan perutean dalam sistem operasinya, dan mengonfigurasi pengguna rute yang ditentukan pada jaringan virtual spoke.
 
@@ -407,7 +407,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
 
     > **Catatan**: Anda dapat menggunakan **Network Watcher** untuk melihat topologi jaringan.
 
-#### Tugas 5: Menerapkan Azure Load Balancer
+## Tugas 5: Menerapkan Azure Load Balancer
 
 Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin virtual Azure di jaringan virtual hub.
 
@@ -482,7 +482,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
 
     > **Catatan**: Anda mungkin perlu merefresh lebih dari sekali atau membuka jendela browser baru dalam mode InPrivate.
 
-#### Tugas 6: Menerapkan Azure Application Gateway
+## Tugas 6: Menerapkan Azure Application Gateway
 
 Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mesin virtual Azure di jaringan virtual spoke.
 
@@ -585,7 +585,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
     > **Catatan**: Menargetkan mesin virtual pada beberapa jaringan virtual bukanlah konfigurasi umum, tetapi hal ini dimaksudkan untuk menggambarkan poin bahwa Application Gateway mampu menargetkan mesin virtual pada beberapa jaringan virtual (serta titik akhir di wilayah Azure lain atau bahkan di luar Azure), tidak seperti Azure Load Balancer, yang memuat keseimbangan di seluruh mesin virtual di jaringan virtual yang sama.
 
-#### Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -607,7 +607,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

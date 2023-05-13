@@ -31,11 +31,11 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab11.png)
 
-## Petunjuk
+### Petunjuk
 
-### Latihan 1
+## Latihan 1
 
-#### Tugas 1: Memprovisikan lingkungan lab
+## Tugas 1: Memprovisikan lingkungan lab
 
 Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk menguji skenario pemantauan.
 
@@ -75,7 +75,7 @@ Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk m
 
     >**Catatan**: Jangan menunggu penerapan selesai tetapi lanjutkan ke tugas berikutnya. Penyebaran akan memakan waktu sekitar 3 menit.
 
-#### Tugas 2: Daftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement.
+## Tugas 2: Daftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement.
 
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk mendaftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement.
 
@@ -87,7 +87,7 @@ Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk m
 
 1. Kecilkan panel Cloud Shell (tetapi jangan tutup).
 
-#### Tugas 3: Membuat dan mengonfigurasi ruang kerja Azure Log Analytics dan solusi berbasis Azure Automation
+## Tugas 3: Membuat dan mengonfigurasi ruang kerja Azure Log Analytics dan solusi berbasis Azure Automation
 
 Dalam tugas ini, Anda akan membuat dan mengonfigurasi ruang kerja Azure Log Analytics dan solusi berbasis Azure Automation
 
@@ -135,7 +135,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi ruang kerja Azure Log Anal
 
     >**Catatan**: Tunggu hingga penginstalan selesai. Proses ini mungkin perlu waktu sekitar 5 menit.
 
-#### Tugas 4: Meninjau pengaturan pemantauan default mesin virtual Azure
+## Tugas 4: Meninjau pengaturan pemantauan default mesin virtual Azure
 
 Dalam tugas ini, Anda akan meninjau pengaturan pemantauan default mesin virtual Azure
 
@@ -153,7 +153,7 @@ Dalam tugas ini, Anda akan meninjau pengaturan pemantauan default mesin virtual 
 
 1. Di daftar menurun **Metrik**, pilih **Persentase CPU**, di daftar menurun **Agregasi**, pilih **Rata-rata**, dan tinjau grafik yang dihasilkan.
 
-#### Tugas 5: Mengonfigurasi pengaturan diagnostik mesin virtual Azure
+## Tugas 5: Mengonfigurasi pengaturan diagnostik mesin virtual Azure
 
 Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Azure.
 
@@ -191,7 +191,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
 1. Di daftar menurun **Metrik**, pilih **Memori\\ Byte yang Tersedia**, di daftar menurun **Agregasi**, pilih **Maks**, dan tinjau bagan yang dihasilkan.
 
-#### Tugas 6: Meninjau fungsionalitas Azure Monitor
+## Tugas 6: Meninjau fungsionalitas Azure Monitor
 
 1. Di portal Azure, telusuri dan pilih **Monitor** dan, pada panel **Monitor \| Tinjau**, klik **Metrik**.
 
@@ -280,7 +280,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
 1. Pada bilah **Semua Peringatan**, tinjau peringatan yang dihasilkan.
 
-#### Tugas 7: Meninjau fungsionalitas Azure Log Analytics
+## Tugas 7: Meninjau fungsionalitas Azure Log Analytics
 
 1. Di portal Azure, navigasikan kembali ke bilah **Monitor**, klik **Log**.
 
@@ -315,7 +315,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
     >**Catatan**: Anda mungkin perlu menunggu beberapa menit sebelum data pembaruan tersedia.
 
-#### Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -337,7 +337,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

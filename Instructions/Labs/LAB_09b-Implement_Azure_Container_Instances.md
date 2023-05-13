@@ -26,11 +26,11 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab09b.png)
 
-## Petunjuk
+### Petunjuk
 
-### Latihan 1
+## Latihan 1
 
-#### Tugas 1: Terapkan gambar Docker dengan menggunakan Azure Container Instance
+## Tugas 1: Terapkan gambar Docker dengan menggunakan Azure Container Instance
 
 Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
 
@@ -63,7 +63,7 @@ Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
 
     >**Catatan**: Sambil menunggu, Anda mungkin tertarik untuk melihat [kode di balik contoh aplikasi](https://github.com/Azure-Samples/aci-helloworld). Untuk melihatnya, jelajahi \\folder aplikasi.
 
-#### Tugas 2: Tinjauan fungsionalitas Instans Kontainer Azure
+## Tugas 2: Tinjauan fungsionalitas Instans Kontainer Azure
 
 Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
@@ -79,7 +79,7 @@ Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
 1. Verifikasi bahwa Anda melihat entri log yang mewakili permintaan HTTP GET yang dihasilkan dengan menampilkan aplikasi di browser.
 
-#### Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -103,7 +103,7 @@ Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 
