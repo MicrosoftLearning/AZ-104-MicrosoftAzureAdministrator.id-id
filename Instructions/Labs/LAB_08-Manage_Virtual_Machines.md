@@ -367,8 +367,9 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
     | Nama set skala mesin virtual | **az10408vmss0** |
     | Wilayah | pilih salah satu wilayah yang mendukung zona ketersediaan dan tempat Anda dapat menyediakan mesin virtual Azure yang berbeda dari yang Anda gunakan untuk menyebarkan mesin virtual sebelumnya di lab ini |
     | Zona ketersediaan | **Zona 1, 2, 3** |
+    | Mode Orkestrasi | **Seragam** |
     | Gambar | **Pusat Data Windows Server 2019 - Gen2** |
-    | Instans Azure Spot | **Tidak** |
+    | Jalankan dengan diskon Azure Spot | **Tidak** |
     | Ukuran | **D2s_v3 standar** |
     | Nama Pengguna | **Siswa** |
     | Kata sandi | **Berikan kata sandi yang aman**  |
@@ -378,7 +379,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
 
 1. Pada tab **Disk** pada bilah **Buat kumpulan skala mesin virtual**, terima nilai default dan klik **Berikutnya : Jaringan >** .
 
-1. Pada tab **Jaringan** pada bilah **Buat kumpulan skala mesin virtual**, klik tautan **Buat jaringan virtual** pada kotak teks **Jaringan virtual** dan buat jaringan virtual baru dengan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Pada tab **Jaringan** dari bilah **Buat set skala komputer virtual** , klik tautan **Buat jaringan virtual** di bawah kotak teks **Jaringan** virtual dan buat jaringan virtual baru dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya). 
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -416,13 +417,18 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
 
 1. Kembali ke bilah **Edit antarmuka jaringan**, di bagian **Alamat IP Publik**, klik **Aktif** dan klik **OK**.
 
-1. Kembali ke tab **Jaringan** pada bilah **Buat kumpulan skala mesin virtual**, pada bagian **Penyeimbang beban**, pastikan bahwa entri **Gunakan penyeimbang beban** dipilih dan tentukan **Pengaturan penyeimbang beban** berikut (biarkan opsi yang lain dengan nilai defaultnya) dan klik **Berikutnya : Penskalaan >** :
+1. Kembali ke tab **Jaringan** dari bilah **Buat set skala komputer virtual** , di bawah bagian **Penyeimbangan beban** , tentukan yang berikut ini (biarkan yang lain dengan nilai defaultnya).
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Opsi load balancer | **Azure load balancer** |
-    | Memilih load balancer | **(baru) az10408vmss0-lb** |
-    | Memilih kumpulan backend | **(baru) bepool** |
+    | Memilih load balancer | **Membuat load balancer** |
+    
+1.  Pada halaman **Buat load balancer** , tentukan nama load balancer dan ambil default. Klik **Buat** ketika Anda selesai lalu **Berikutnya: Penskalakan >**.
+    
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Nama load balancer | **az10408vmss0-lb** |
 
 1. Pada tab **Penskalaan** bilah **Buat kumpulan skala mesin virtual**, tentukan pengaturan berikut (biarkan opsi yang lain dengan nilai defaultnya) dan klik **Berikutnya: Pengelolaan >** :
 

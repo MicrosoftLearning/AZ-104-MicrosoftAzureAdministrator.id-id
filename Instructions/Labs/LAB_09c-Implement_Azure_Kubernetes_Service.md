@@ -28,11 +28,11 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab09c.png)
 
-## Petunjuk
+### Petunjuk
 
-### Latihan 1
+## Latihan 1
 
-#### Tugas 1: Daftarkan penyedia sumber daya Microsoft.Kubernetes dan Microsoft.KubernetesConfiguration.
+## Tugas 1: Daftarkan penyedia sumber daya Microsoft.Kubernetes dan Microsoft.KubernetesConfiguration.
 
 Dalam tugas ini, Anda akan mendaftarkan penyedia sumber daya yang diperlukan untuk menyebarkan kluster Azure Kubernetes Services.
 
@@ -54,7 +54,7 @@ Dalam tugas ini, Anda akan mendaftarkan penyedia sumber daya yang diperlukan unt
 
 1. Tutup panel Cloud Shell.
 
-#### Tugas 2: Terapkan kluster Azure Kubernetes Service
+## Tugas 2: Terapkan kluster Azure Kubernetes Service
 
 Dalam tugas ini, Anda akan menyebarkan kluster Azure Kubernetes Services menggunakan portal Microsoft Azure.
 
@@ -96,7 +96,7 @@ Dalam tugas ini, Anda akan menyebarkan kluster Azure Kubernetes Services menggun
     | Konfigurasi jaringan | **kubenet** |
     | Awalan nama DNS | **setiap awalan DNS yang valid dan unik secara global** |
 
-1. Klik **Berikutnya: Integrasi >**, pada tab **Integrasi** dari bilah **Buat kluster Kubernetes** , tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Klik **Berikutnya: Integrasi >**, pada tab **Integrasi** dari bilah **Buat kluster Kubernetes** , tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | ---- | ---- |
@@ -109,7 +109,7 @@ Dalam tugas ini, Anda akan menyebarkan kluster Azure Kubernetes Services menggun
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Ini akan memakan waktu sekitar 10 menit.
 
-#### Tugas 3: Menyebarkan pod ke dalam kluster Azure Kubernetes Service
+## Tugas 3: Menyebarkan pod ke dalam kluster Azure Kubernetes Service
 
 Dalam tugas ini, Anda akan menyebarkan pod ke dalam kluster Azure Kubernetes Service.
 
@@ -177,7 +177,7 @@ Dalam tugas ini, Anda akan menyebarkan pod ke dalam kluster Azure Kubernetes Ser
 
 1. Buka jendela browser dan arahkan ke alamat IP yang Anda peroleh di langkah sebelumnya. Verifikasi bahwa halaman browser menampilkan **Selamat datang di nginx!** pesan.
 
-#### Tugas 4: Skalakan beban kerja dalam kontainer di kluster layanan Azure Kubernetes
+## Tugas 4: Skalakan beban kerja dalam kontainer di kluster layanan Azure Kubernetes
 
 Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian jumlah simpul kluster.
 
@@ -245,7 +245,7 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
 
 1. Tutup panel **Cloud Shell**.
 
-#### Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -267,7 +267,7 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
 
     >**Catatan**: Perintah dijalankan secara tidak sinkron (seperti yang ditentukan oleh parameter --nowait), jadi sementara Anda akan dapat menjalankan perintah Azure CLI lain segera setelah itu dalam sesi Bash yang sama, itu akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

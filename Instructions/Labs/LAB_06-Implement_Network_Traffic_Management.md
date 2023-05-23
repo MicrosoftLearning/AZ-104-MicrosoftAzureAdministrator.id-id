@@ -214,7 +214,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
 
     > **Catatan**: **10.62.0.4** mewakili alamat IP privat **az104-06-vm2**
 
-1. Klik **Periksa** dan tunggu hingga hasil pemeriksaan konektivitas ditampilkan. Verifikasi bahwa statusnya **Dapat dijangkau**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **Adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
 
     > **Catatan**: Hal ini diharapkan, karena jaringan virtual hub di-peering langsung dengan jaringan virtual spoke pertama.
 
@@ -233,7 +233,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
 
     > **Catatan**: **10.63.0.4** mewakili alamat IP pribadi **az104-06-vm3**
 
-1. Klik **Periksa** dan tunggu hingga hasil pemeriksaan konektivitas ditampilkan. Verifikasi bahwa statusnya **Dapat dijangkau**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **Adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
 
     > **Catatan**: Hal ini diharapkan, karena jaringan virtual hub di-peering langsung dengan jaringan virtual spoke kedua.
 
@@ -250,7 +250,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
     | Protokol | **TCP** |
     | Port Tujuan | **3389** |
 
-1. Klik **Periksa** dan tunggu hingga hasil pemeriksaan konektivitas ditampilkan. Perhatikan bahwa statusnya **Tidak dapat dijangkau**.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Perhatikan bahwa statusnya **Gagal**.
 
     > **Catatan**: Hal ini diharapkan, karena kedua jaringan virtual spoke tidak di-peering satu sama lain (peering jaringan virtual tidak transitif).
 
@@ -388,7 +388,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
 
 1. Di portal Microsoft Azure, navigasikan kembali ke panel **Network Watcher - Pemecahan masalah koneksi**.
 
-1. Pada bilah **Network Watcher - Pemecahan masalah koneksi**, lakukan pemeriksaan dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Pada bilah **Network Watcher - Pemecahan masalah koneksi**, gunakan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -401,7 +401,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | Protokol | **TCP** |
     | Port Tujuan | **3389** |
 
-1. Klik **Periksa** dan tunggu hingga hasil pemeriksaan konektivitas ditampilkan. Verifikasi bahwa statusnya **Dapat dijangkau**. Tinjauan jalur jaringan dan perhatikan bahwa lalu lintas dirutekan melalui **10.60.0.4**, ditetapkan ke adaptor jaringan **az104-06-nic0**. Jika statusnya **Tidak dapat dijangkau**, Anda harus berhenti, lalu memulai az104-06-vm0.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa lalu lintas dirutekan melalui **10.60.0.4**, ditetapkan ke adaptor jaringan **az104-06-nic0**. Jika status **Gagal**, Anda harus berhenti lalu mulai az104-06-vm0.
 
     > **Catatan**: Hal ini diharapkan, karena lalu lintas antara jaringan virtual spoke sekarang dirutekan melalui mesin virtual yang terletak di jaringan virtual hub, yang berfungsi sebagai router.
 
@@ -425,13 +425,24 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
     | Jenis | **Publik** |
     | Tingkat | **Wilayah** |
     
-1. Pada tab **Konfigurasi IP frontend**, klik **Tambahkan konfigurasi IP frontend** dan gunakan pengaturan berikut sebelum mengklik **OK** lalu **Tambahkan**. Setelah selesai klik **Berikutnya: Kumpulan backend**. 
+1. Pada tab **Konfigurasi IP Frontend** , klik **Tambahkan konfigurasi IP frontend** dan gunakan pengaturan berikut:  
+     
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Nama | **az104-06-fe4** |
+    | Jenis IP | Alamat IP |
+    | Alamat IP publik | Pilih **Create new** |
+    | Penyeimbang Beban Gateway | Tidak ada |
+    
+1. Pada popup **Tambahkan alamat IP publik** , gunakan pengaturan berikut sebelum mengklik **OK** lalu **Tambahkan**. Setelah selesai klik **Berikutnya: Kumpulan backend**. 
      
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | **az104-06-pip4** |
-    | Versi IP | IPv4 |
-    | Alamat IP publik | **Buat baru** |
+    | SKU | Standard |
+    | Tingkat | Wilayah |
+    | Penugasan | Statis |
+    | Preferensi Perutean | **Jaringan Microsoft** |
 
 1. Pada tab **Kumpulan backend**, klik **Tambahkan kumpulan backend** dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Klik **+ Tambahkan** (dua kali) lalu klik **Berikutnya: Aturan masuk**. 
 

@@ -4,16 +4,16 @@ lab:
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03d---manage-azure-resources-by-using-azure-cli"></a>Lab 03d - Mengelola sumber daya Azure dengan Menggunakan Azure CLI
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 03d - Mengelola sumber daya Azure dengan Menggunakan Azure CLI
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Sekarang, setelah menjelajahi kemampuan administrasi dasar Azure yang terkait dengan provisi dan pengelolaan sumber daya berdasarkan grup sumber daya menggunakan portal Microsoft Azure, templat Azure Resource Manager, dan Azure PowerShell, Anda perlu melakukan tugas yang setara menggunakan Azure CLI. Untuk menghindari menginstal Azure CLI, Anda akan memanfaatkan lingkungan Bash yang tersedia di Azure Cloud Shell.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -21,17 +21,17 @@ Di lab ini Anda akan:
 + Tugas 2: Membuat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure CLI
 + Tugas 3: Mengonfigurasi disk yang dikelola dengan menggunakan Azure CLI
 
-## <a name="estimated-timing-20-minutes"></a>Perkiraan waktu: 20 menit
+## Perkiraan waktu: 20 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab03d.png)
 
-## <a name="instructions"></a>Petunjuk
+### Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+## Latihan 1
 
-#### <a name="task-1-start-a-bash-session-in-azure-cloud-shell"></a>Tugas 1: Memulai sesi Bash di Azure Cloud Shell
+## Tugas 1: Memulai sesi Bash di Azure Cloud Shell
 
 Dalam tugas ini, Anda akan membuka sesi Bash di Cloud Shell. 
 
@@ -45,7 +45,7 @@ Dalam tugas ini, Anda akan membuka sesi Bash di Cloud Shell.
 
 1. Pastikan **Bash** muncul di menu menurun di sudut kiri atas panel Cloud Shell.
 
-#### <a name="task-2-create-a-resource-group-and-an-azure-managed-disk-by-using-azure-cli"></a>Tugas 2: Membuat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure CLI
+## Tugas 2: Membuat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure CLI
 
 Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure dengan menggunakan sesi Azure CLI dalam Cloud Shell.
 
@@ -82,7 +82,7 @@ Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure
    az disk show --resource-group $RGNAME --name $DISKNAME
    ```
 
-#### <a name="task-3-configure-the-managed-disk-by-using-azure-cli"></a>Tugas 3: Mengonfigurasi disk yang dikelola dengan menggunakan Azure CLI
+## Tugas 3: Mengonfigurasi disk yang dikelola dengan menggunakan Azure CLI
 
 Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan menggunakan sesi Azure CLI dalam Cloud Shell. 
 
@@ -110,7 +110,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
    az disk show --resource-group $RGNAME --name $DISKNAME --query sku
    ```
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+## Membersihkan sumber daya
 
  > **Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -132,7 +132,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
 
     >**Catatan**: Perintah dijalankan secara tidak sinkron (seperti yang ditentukan oleh parameter --nowait), jadi sementara Anda akan dapat menjalankan perintah Azure CLI lain segera setelah itu dalam sesi Bash yang sama, itu akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

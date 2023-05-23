@@ -4,15 +4,15 @@ lab:
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03b---manage-azure-resources-by-using-arm-templates"></a>Lab 03b - Mengelola sumber daya Azure dengan Menggunakan Template ARM
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 03b - Mengelola sumber daya Azure dengan Menggunakan Template ARM
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 Sekarang setelah Anda menjelajahi kemampuan administrasi Azure dasar yang terkait dengan penyediaan sumber daya dan mengaturnya berdasarkan grup sumber daya menggunakan portal Azure, Anda perlu melakukan tugas yang setara dengan menggunakan templat Azure Resource Manager.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -20,17 +20,17 @@ Di lab ini Anda akan:
 + Tugas 2: Membuat disk terkelola Azure dengan menggunakan template ARM
 + Tugas 3: Meninjau penyebaran berbasis template ARM dari disk yang dikelola
 
-## <a name="estimated-timing-20-minutes"></a>Perkiraan waktu: 20 menit
+## Perkiraan waktu: 20 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab03b.png)
 
-## <a name="instructions"></a>Petunjuk
+### Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+## Latihan 1
 
-#### <a name="task-1-review-an-arm-template-for-deployment-of-an-azure-managed-disk"></a>Tugas 1: Meninjau template ARM untuk penyebaran disk yang dikelola Azure
+## Tugas 1: Meninjau template ARM untuk penyebaran disk yang dikelola Azure
 
 1. Masuk ke [**portal Microsoft Azure**](http://portal.azure.com).
 
@@ -58,7 +58,7 @@ Di lab ini Anda akan:
     
 1. Tutup semua jendela **File Explorer**.
 
-#### <a name="task-2-create-an-azure-managed-disk-by-using-an-arm-template"></a>Tugas 2: Membuat disk terkelola Azure dengan menggunakan template ARM
+## Tugas 2: Membuat disk terkelola Azure dengan menggunakan template ARM
 
 1. Di portal Azure, cari **Menyebarkan templat kustom**.
 
@@ -108,7 +108,7 @@ Di lab ini Anda akan:
 
 1. Verifikasi bahwa penerapan berhasil diselesaikan.
 
-#### <a name="task-3-review-the-arm-template-based-deployment-of-the-managed-disk"></a>Tugas 3: Meninjau penyebaran berbasis template ARM dari disk yang dikelola
+## Tugas 3: Meninjau penyebaran berbasis template ARM dari disk yang dikelola
 
 1. Di portal Microsoft Azure, cari dan pilih **Grup sumber daya**. 
 
@@ -118,11 +118,11 @@ Di lab ini Anda akan:
 
 1. Dari panel **az104-03b-rg1 - Penyebaran**, klik entri pertama dalam daftar penyebaran dan tinjauan konten bilah **Input** dan **Template**.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+## Membersihkan sumber daya
 
    >**Catatan**: Jangan hapus sumber daya yang Anda terapkan di lab ini. Anda akan merujuknya di lab berikutnya dari modul ini.
 
-#### <a name="review"></a>Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 
