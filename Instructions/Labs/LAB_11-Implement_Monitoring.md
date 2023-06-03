@@ -4,16 +4,16 @@ lab:
   module: Administer Monitoring
 ---
 
-# <a name="lab-11---implement-monitoring"></a>Lab 11 - Implementasi Pemantauan
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 11 - Implementasi Pemantauan
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Anda perlu mengevaluasi fungsionalitas Azure yang akan memberikan wawasan tentang kinerja dan konfigurasi sumber daya Azure, dengan fokus khususnya pada mesin virtual Azure. Untuk mencapai ini, Anda bermaksud untuk memeriksa kemampuan Azure Monitor, termasuk Analisis Log.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -25,17 +25,17 @@ Di lab ini Anda akan:
 + Tugas 6: Meninjau fungsionalitas Azure Monitor
 + Tugas 7: Meninjau fungsionalitas Azure Log Analytics
 
-## <a name="estimated-timing-45-minutes"></a>Perkiraan waktu: 45 menit
+## Perkiraan waktu: 45 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab11.png)
 
-## <a name="instructions"></a>Petunjuk
+### Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+## Latihan 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tugas 1: Memprovisikan lingkungan lab
+## Tugas 1: Memprovisikan lingkungan lab
 
 Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk menguji skenario pemantauan.
 
@@ -48,8 +48,6 @@ Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk m
     >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
 1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\11\\az104-11-vm-template.json** dan **\\Allfiles\\Labs\\11\\az104-11-vm-parameters.json** ke direktori beranda Cloud Shell.
-
-1. Edit file Parameter yang baru saja Anda unggah dan ubah kata sandinya. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
 
 1. Dari panel Cloud Shell, jalankan elemen berikut ini untuk membuat grup sumber daya yang akan menghosting mesin virtual (ganti `[Azure_region]` tempat penampung dengan nama wilayah Azure tempat Anda ingin menerapkan mesin virtual Azure):
 
@@ -65,6 +63,8 @@ Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk m
 
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk membuat jaringan virtual pertama dan menerapkan mesin virtual ke dalamnya dengan menggunakan file templat dan parameter yang Anda unggah:
 
+    >**Catatan**: Anda akan diminta untuk memberikan kata sandi Admin.
+    
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -75,7 +75,7 @@ Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk m
 
     >**Catatan**: Jangan menunggu penerapan selesai tetapi lanjutkan ke tugas berikutnya. Penyebaran akan memakan waktu sekitar 3 menit.
 
-#### <a name="task-2-register-the-microsoftinsights-and-microsoftalertsmanagement-resource-providers"></a>Tugas 2: Daftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement.
+## Tugas 2: Daftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement.
 
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk mendaftarkan penyedia sumber daya Microsoft.Insights dan Microsoft.AlertsManagement.
 
@@ -87,7 +87,7 @@ Dalam tugas ini, Anda akan menggunakan mesin virtual yang akan digunakan untuk m
 
 1. Kecilkan panel Cloud Shell (tetapi jangan tutup).
 
-#### <a name="task-3-create-and-configure-an-azure-log-analytics-workspace-and-azure-automation-based-solutions"></a>Tugas 3: Membuat dan mengonfigurasi ruang kerja Azure Log Analytics dan solusi berbasis Azure Automation
+## Tugas 3: Membuat dan mengonfigurasi ruang kerja Azure Log Analytics dan solusi berbasis Azure Automation
 
 Dalam tugas ini, Anda akan membuat dan mengonfigurasi ruang kerja Azure Log Analytics dan solusi berbasis Azure Automation
 
@@ -135,7 +135,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi ruang kerja Azure Log Anal
 
     >**Catatan**: Tunggu hingga penginstalan selesai. Proses ini mungkin perlu waktu sekitar 5 menit.
 
-#### <a name="task-4-review-default-monitoring-settings-of-azure-virtual-machines"></a>Tugas 4: Meninjau pengaturan pemantauan default mesin virtual Azure
+## Tugas 4: Meninjau pengaturan pemantauan default mesin virtual Azure
 
 Dalam tugas ini, Anda akan meninjau pengaturan pemantauan default mesin virtual Azure
 
@@ -153,15 +153,15 @@ Dalam tugas ini, Anda akan meninjau pengaturan pemantauan default mesin virtual 
 
 1. Di daftar menurun **Metrik**, pilih **Persentase CPU**, di daftar menurun **Agregasi**, pilih **Rata-rata**, dan tinjau grafik yang dihasilkan.
 
-#### <a name="task-5-configure-azure-virtual-machine-diagnostic-settings"></a>Tugas 5: Mengonfigurasi pengaturan diagnostik mesin virtual Azure
+## Tugas 5: Mengonfigurasi pengaturan diagnostik mesin virtual Azure
 
 Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Azure.
 
 1. Pada bilah **az104-11-vm0**, di bagian **Pemantauan**, klik **Pengaturan diagnostik**.
 
-1. Pada tab **Ringkasan** bilah **az104-11-vm0 \| Pengaturan diagnostik**, klik **Aktifkan pemantauan tingkat tamu**.
+1. Pada tab **Gambaran Umum** dari bilah **pengaturan Diagnostik az104-11-vm0\|**, pilih **akun penyimpanan Diagnostik**, lalu klik **Aktifkan pemantauan tingkat tamu**.
 
-    >**Catatan**: Tunggu hingga operasi berlaku. Penginstalan mungkin memakan waktu sekitar 3 menit.
+    >**Catatan**: Tunggu hingga ekstensi pengaturan diagnostik diinstal. Penginstalan mungkin memakan waktu sekitar 3 menit.
 
 1. Beralih ke tab **Penghitung kinerja** bilah **az104-11-vm0 \| Pengaturan diagnostik** dan tinjau penghitung yang tersedia.
 
@@ -171,9 +171,9 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
     >**Catatan**: Secara default, pengumpulan log mencakup entri kritis, kesalahan, dan peringatan dari Log Aplikasi dan log Sistem, serta entri kegagalan Audit dari log Keamanan. Di sini Anda juga dapat beralih ke tampilan **Kustom** untuk pengaturan konfigurasi yang lebih detail.
 
-1. Pada bilah **az104-11-vm0**, di bagian **Pemantauan**, klik **Agen Analitik Log** lalu klik **Aktifkan**.
+1. Pada bilah **az104-11-vm0**, di bagian **Pemantauan**, klik **Log** lalu klik **Aktifkan**.
 
-1. Pada panel **az104-11-vm0 - Log**, pastikan bahwa ruang kerja Analisis Log yang Anda buat sebelumnya di lab ini dipilih dalam daftar menurun **Pilih Ruang Kerja Analisis Log** dan klik **Aktifkan**.
+1. Pada bilah **az104-11-vm0 - Logs** , pastikan **agen Azure Monitor (Disarankan)** dipilih, lalu klik **Konfigurasikan**.  
 
     >**Catatan**: Jangan menunggu operasi selesai, tetapi lanjutkan ke langkah berikutnya. Operasi mungkin memakan waktu sekitar 5 menit.
 
@@ -191,7 +191,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
 1. Di daftar menurun **Metrik**, pilih **Memori\\ Byte yang Tersedia**, di daftar menurun **Agregasi**, pilih **Maks**, dan tinjau bagan yang dihasilkan.
 
-#### <a name="task-6-review-azure-monitor-functionality"></a>Tugas 6: Meninjau fungsionalitas Azure Monitor
+## Tugas 6: Meninjau fungsionalitas Azure Monitor
 
 1. Di portal Azure, telusuri dan pilih **Monitor** dan, pada panel **Monitor \| Tinjau**, klik **Metrik**.
 
@@ -280,7 +280,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
 1. Pada bilah **Semua Peringatan**, tinjau peringatan yang dihasilkan.
 
-#### <a name="task-7-review-azure-log-analytics-functionality"></a>Tugas 7: Meninjau fungsionalitas Azure Log Analytics
+## Tugas 7: Meninjau fungsionalitas Azure Log Analytics
 
 1. Di portal Azure, navigasikan kembali ke bilah **Monitor**, klik **Log**.
 
@@ -315,7 +315,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
     >**Catatan**: Anda mungkin perlu menunggu beberapa menit sebelum data pembaruan tersedia.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -337,7 +337,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik mesin virtual Az
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

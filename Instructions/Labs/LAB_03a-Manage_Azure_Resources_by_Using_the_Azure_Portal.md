@@ -4,16 +4,16 @@ lab:
   module: Administer Azure Resources
 ---
 
-# <a name="lab-03a---manage-azure-resources-by-using-the-azure-portal"></a>Lab 03a - Kelola sumber daya Azure dengan Menggunakan Portal Azure
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 03a - Kelola sumber daya Azure dengan Menggunakan Portal Azure
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Anda perlu menjelajahi kemampuan administrasi Azure dasar yang terkait dengan penyediaan sumber daya dan mengaturnya berdasarkan grup sumber daya, termasuk memindahkan sumber daya di antara grup sumber daya. Anda juga ingin menjelajahi opsi untuk melindungi sumber daya disk agar tidak terhapus secara tidak sengaja, sambil tetap memungkinkan untuk memodifikasi karakteristik dan ukuran kinerjanya.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%204)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini, kami akan:
 
@@ -21,17 +21,17 @@ Di lab ini, kami akan:
 + Tugas 2: Pindahkan sumber daya antar kelompok sumber daya
 + Tugas 3: Menerapkan dan menguji kunci sumber daya
 
-## <a name="estimated-timing-20-minutes"></a>Perkiraan waktu: 20 menit
+## Perkiraan waktu: 20 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab03a.png)
 
-## <a name="instructions"></a>Petunjuk
+### Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+## Latihan 1
 
-#### <a name="task-1-create-resource-groups-and-deploy-resources-to-resource-groups"></a>Tugas 1: Buat grup sumber daya dan sebarkan sumber daya ke grup sumber daya
+## Tugas 1: Buat grup sumber daya dan sebarkan sumber daya ke grup sumber daya
 
 Dalam tugas ini, Anda akan menggunakan portal Azure untuk membuat grup sumber daya dan membuat disk di grup sumber daya.
 
@@ -56,7 +56,7 @@ Dalam tugas ini, Anda akan menggunakan portal Azure untuk membuat grup sumber da
 
     >**Catatan**: Tunggu hingga disk dibuat. Ini seharusnya memakan waktu kurang dari satu menit.
 
-#### <a name="task-2-move-resources-between-resource-groups"></a>Tugas 2: Pindahkan sumber daya antar kelompok sumber daya 
+## Tugas 2: Pindahkan sumber daya antar kelompok sumber daya 
 
 Dalam tugas ini, kami akan memindahkan sumber daya disk yang Anda buat di tugas sebelumnya ke grup sumber daya baru. 
 
@@ -72,7 +72,7 @@ Dalam tugas ini, kami akan memindahkan sumber daya disk yang Anda buat di tugas 
 
     >**Catatan**: Jangan menunggu pemindahan selesai tetapi lanjutkan ke tugas berikutnya. Perpindahan ini mungkin memakan waktu sekitar 10 menit. Anda dapat menentukan bahwa operasi telah selesai dengan memantau entri log aktivitas sumber atau grup sumber daya target. Tinjau kembali langkah ini setelah Anda menyelesaikan tugas berikutnya.
 
-#### <a name="task-3-implement-resource-locks"></a>Tugas 3: Terapkan kunci sumber daya
+## Tugas 3: Terapkan kunci sumber daya
 
 Dalam tugas ini, Anda akan menerapkan kunci sumber daya ke grup sumber daya Azure yang berisi sumber daya disk.
 
@@ -118,13 +118,13 @@ Dalam tugas ini, Anda akan menerapkan kunci sumber daya ke grup sumber daya Azur
 
     >**Catatan**: Hal ini diharapkan, karena kunci tingkat grup sumber daya hanya berlaku untuk operasi penghapusan. 
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+## Membersihkan sumber daya
 
    >**Catatan**: Jangan hapus sumber daya yang Anda terapkan di lab ini. Anda akan menggunakannya di lab berikutnya dari modul ini. Hapus hanya kunci sumber daya yang Anda buat di lab ini.
 
 1. Navigasikan ke panel grup sumber daya **az104-03a-rg3**, tampilkan panel **Kunci**, dan lepaskan kunci **az104-03a-delete-lock** dengan mengeklik **Hapus** tautan di sisi kanan entri kunci **Hapus**.
 
-#### <a name="review"></a>Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

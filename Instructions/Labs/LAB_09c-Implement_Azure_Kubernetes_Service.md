@@ -4,16 +4,16 @@ lab:
   module: Administer Serverless Computing
 ---
 
-# <a name="lab-09c---implement-azure-kubernetes-service"></a>Lab 09c - Menerapkan Azure Kubernetes Service
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 09c - Menerapkan Azure Kubernetes Service
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Contoso memiliki sejumlah aplikasi multitingkat yang tidak cocok untuk dijalankan dengan menggunakan Azure Container Instances. Untuk menentukan apakah mereka dapat dijalankan sebagai beban kerja dalam kontainer, Anda ingin mengevaluasi menggunakan Kubernetes sebagai orkestra kontainer. Untuk lebih meminimalkan overhead manajemen, Anda ingin menguji Azure Kubernetes Service, termasuk pengalaman penyebaran yang disederhanakan dan kemampuan penskalaannya.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2015)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -22,17 +22,17 @@ Di lab ini Anda akan:
 + Tugas 3: Menyebarkan pod ke dalam kluster Azure Kubernetes Service
 + Tugas 4: Skalakan beban kerja dalam kontainer di kluster layanan Azure Kubernetes
 
-## <a name="estimated-timing-40-minutes"></a>Perkiraan waktu: 40 menit
+## Perkiraan waktu: 40 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab09c.png)
 
-## <a name="instructions"></a>Petunjuk
+### Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+## Latihan 1
 
-#### <a name="task-1-register-the-microsoftkubernetes-and-microsoftkubernetesconfiguration-resource-providers"></a>Tugas 1: Daftarkan penyedia sumber daya Microsoft.Kubernetes dan Microsoft.KubernetesConfiguration.
+## Tugas 1: Daftarkan penyedia sumber daya Microsoft.Kubernetes dan Microsoft.KubernetesConfiguration.
 
 Dalam tugas ini, Anda akan mendaftarkan penyedia sumber daya yang diperlukan untuk menyebarkan kluster Azure Kubernetes Services.
 
@@ -54,7 +54,7 @@ Dalam tugas ini, Anda akan mendaftarkan penyedia sumber daya yang diperlukan unt
 
 1. Tutup panel Cloud Shell.
 
-#### <a name="task-2-deploy-an-azure-kubernetes-service-cluster"></a>Tugas 2: Terapkan kluster Azure Kubernetes Service
+## Tugas 2: Terapkan kluster Azure Kubernetes Service
 
 Dalam tugas ini, Anda akan menyebarkan kluster Azure Kubernetes Services menggunakan portal Microsoft Azure.
 
@@ -94,15 +94,22 @@ Dalam tugas ini, Anda akan menyebarkan kluster Azure Kubernetes Services menggun
     | Pengaturan | Nilai |
     | ---- | ---- |
     | Konfigurasi jaringan | **kubenet** |
-    | Awalan nama DNS | setiap awalan DNS yang valid dan unik secara global|
+    | Awalan nama DNS | **setiap awalan DNS yang valid dan unik secara global** |
 
-1. Klik **Berikutnya: Integrasi >** , pada tab **Integrasi** bilah **Buat kluster Kubernetes**, atur **Pemantauan penampung** ke **Nonaktif**, klik **Tinjauan + buat**, pastikan validasi lulus dan klik **Buat**.
+1. Klik **Berikutnya: Integrasi >**, pada tab **Integrasi** dari bilah **Buat kluster Kubernetes** , tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
+
+    | Pengaturan | Nilai |
+    | ---- | ---- |
+    | Pemantauan kontainer | **Nonaktifkan** |
+    | Mengaktifkan aturan pemberitahuan yang direkomendasikan | **Hapus centang ** |
+    
+1.  Klik **Tinjau + buat**, pastikan validasi lulus dan klik **Buat**.
 
     >**Catatan**: Dalam skenario produksi, Anda ingin mengaktifkan pemantauan. Pemantauan dinonaktifkan dalam kasus ini karena tidak tercakup dalam lab.
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Ini akan memakan waktu sekitar 10 menit.
 
-#### <a name="task-3-deploy-pods-into-the-azure-kubernetes-service-cluster"></a>Tugas 3: Menyebarkan pod ke dalam kluster Azure Kubernetes Service
+## Tugas 3: Menyebarkan pod ke dalam kluster Azure Kubernetes Service
 
 Dalam tugas ini, Anda akan menyebarkan pod ke dalam kluster Azure Kubernetes Service.
 
@@ -170,7 +177,7 @@ Dalam tugas ini, Anda akan menyebarkan pod ke dalam kluster Azure Kubernetes Ser
 
 1. Buka jendela browser dan arahkan ke alamat IP yang Anda peroleh di langkah sebelumnya. Verifikasi bahwa halaman browser menampilkan **Selamat datang di nginx!** pesan.
 
-#### <a name="task-4-scale-containerized-workloads-in-the-azure-kubernetes-service-cluster"></a>Tugas 4: Skalakan beban kerja dalam kontainer di kluster layanan Azure Kubernetes
+## Tugas 4: Skalakan beban kerja dalam kontainer di kluster layanan Azure Kubernetes
 
 Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian jumlah simpul kluster.
 
@@ -238,7 +245,7 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
 
 1. Tutup panel **Cloud Shell**.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -260,7 +267,7 @@ Dalam tugas ini, Anda akan menskalakan secara horizontal jumlah pod dan kemudian
 
     >**Catatan**: Perintah dijalankan secara tidak sinkron (seperti yang ditentukan oleh parameter --nowait), jadi sementara Anda akan dapat menjalankan perintah Azure CLI lain segera setelah itu dalam sesi Bash yang sama, itu akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

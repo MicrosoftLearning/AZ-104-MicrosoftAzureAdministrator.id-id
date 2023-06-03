@@ -4,16 +4,16 @@ lab:
   module: Administer Intersite Connectivity
 ---
 
-# <a name="lab-05---implement-intersite-connectivity"></a>Lab 05 - Menerapkan Konektivitas Antarsitus
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 05 - Menerapkan Konektivitas Antar Situs
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Pusat data Contoso terletak di kantor Boston, New York, dan Seattle yang tersambung melalui tautan jaringan area luas mesh, dengan konektivitas penuh di antaranya. Anda perlu menerapkan lingkungan lab yang akan mencerminkan topologi jaringan lokal Contoso dan memverifikasi fungsinya.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -21,15 +21,17 @@ Di lab ini Anda akan:
 + Tugas 2: Mengonfigurasi peering jaringan virtual lokal dan global
 + Tugas 3: Menguji konektivitas antar situs
 
-## <a name="estimated-timing-30-minutes"></a>Perkiraan waktu: 30 menit
+## Perkiraan waktu: 30 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab05.png)
 
-### <a name="instructions"></a>Instruksi
+### Petunjuk
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tugas 1: Menyediakan lingkungan lab
+## Latihan 1
+
+## Tugas 1: Menyediakan lingkungan lab
 
 Dalam tugas ini, Anda akan menyebarkan tiga mesin virtual, masing-masing ke dalam jaringan virtual terpisah, dengan dua di antaranya di wilayah Azure yang sama dan yang ketiga di wilayah Azure lainnya.
 
@@ -41,9 +43,7 @@ Dalam tugas ini, Anda akan menyebarkan tiga mesin virtual, masing-masing ke dala
 
     >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
-1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu tarik-turun, klik **Unggah** dan unggah file **\\Semua file \\Lab\\05\\az104-05-vnetvm-loop-template.json** dan **\\Semua file\\Lab\\05\\az104-05-vnetvm-loop -parameters.json** ke dalam direktori beranda Cloud Shell.
-
-1. Edit file **Parameter** yang baru saja Anda unggah dan ubah kata sandinya. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Untuk praktik terbaik, rahasia, seperti kata sandi, harus disimpan lebih aman di Key Vault. 
+1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu tarik-turun, klik **Unggah** dan unggah file **\\Semua file \\Lab\\05\\az104-05-vnetvm-loop-template.json** dan **\\Semua file\\Lab\\05\\az104-05-vnetvm-loop -parameters.json** ke dalam direktori beranda Cloud Shell. 
 
 1. Dari panel Cloud Shell, jalankan yang berikut ini untuk membuat grup sumber daya yang akan menghosting lingkungan lab. Dua jaringan virtual pertama dan sepasang mesin virtual akan disebarkan di [Azure_region_1]. Jaringan virtual ketiga dan mesin virtual ketiga akan disebarkan dalam grup sumber daya yang sama tetapi [Azure_region_2] lainnya. (ganti tempat penampung [Azure_region_1] dan [Azure_region_2], termasuk kurung siku, dengan nama dua wilayah Azure yang berbeda tempat Anda ingin menyebarkan mesin virtual Azure ini. Contohnya adalah $location1 = 'eastus'. Anda dapat menggunakan Get-AzLocation untuk mencantumkan semua lokasi.):
 
@@ -68,6 +68,8 @@ Dalam tugas ini, Anda akan menyebarkan tiga mesin virtual, masing-masing ke dala
    >Jika perintah tidak mengembalikan hasil, maka Anda perlu memilih wilayah lain. Setelah mengidentifikasi dua wilayah yang sesuai, Anda dapat menyesuaikan wilayah di blok kode di atas.
 
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk membuat tiga jaringan virtual dan menerapkan mesin virtual ke dalamnya dengan menggunakan file template dan parameter yang Anda unggah:
+    
+    >**Catatan**: Anda akan diminta untuk memberikan kata sandi Admin.
 
    ```powershell
    New-AzResourceGroupDeployment `
@@ -82,7 +84,7 @@ Dalam tugas ini, Anda akan menyebarkan tiga mesin virtual, masing-masing ke dala
 
 1. Tutup panel Cloud Shell.
 
-#### <a name="task-2-configure-local-and-global-virtual-network-peering"></a>Tugas 2: Mengonfigurasi peering jaringan virtual lokal dan global
+## Tugas 2: Mengonfigurasi peering jaringan virtual lokal dan global
 
 Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaringan virtual yang Anda sebarkan di tugas sebelumnya.
 
@@ -201,7 +203,7 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
    Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
    ``` 
 
-#### <a name="task-3-test-intersite-connectivity"></a>Tugas 3: Menguji konektivitas antar situs
+## Tugas 3: Menguji konektivitas antar situs
 
 Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga jaringan virtual yang Anda sambungkan melalui peering lokal dan global di tugas sebelumnya.
 
@@ -259,7 +261,7 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
 
 1. Periksa output perintah dan verifikasi bahwa koneksi berhasil.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -281,7 +283,7 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

@@ -4,16 +4,16 @@ lab:
   module: Administer Azure Storage
 ---
 
-# <a name="lab-07---manage-azure-storage"></a>Lab 07 - Mengelola Azure Storage
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 07 - Mengelola Azure Storage
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Anda perlu mengevaluasi penggunaan penyimpanan Azure untuk menyimpan file yang saat ini berada di penyimpanan data lokal. Meskipun sebagian besar file ini tidak sering diakses, ada beberapa pengecualian. Anda ingin meminimalkan biaya penyimpanan dengan menempatkan file yang jarang diakses di tingkat penyimpanan dengan harga lebih rendah. Anda juga berencana untuk menjelajahi berbagai mekanisme perlindungan yang ditawarkan Azure Storage, termasuk akses jaringan, autentikasi, otorisasi, dan replikasi. Terakhir, Anda ingin menentukan sejauh mana layanan Azure Files mungkin cocok untuk menghosting berbagi file lokal Anda.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -24,18 +24,18 @@ Di lab ini Anda akan:
 + Tugas 5: Membuat dan mengonfigurasi berbagi Azure Files
 + Tugas 6: Mengelola akses jaringan Azure Storage
 
-## <a name="estimated-timing-40-minutes"></a>Perkiraan waktu: 40 menit
+## Perkiraan waktu: 40 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab07.png)
 
 
-## <a name="instructions"></a>Petunjuk
+### Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+## Latihan 1
 
-#### <a name="task-1-provision-the-lab-environment"></a>Tugas 1: Memprovisikan lingkungan lab
+## Tugas 1: Memprovisikan lingkungan lab
 
 Dalam tugas ini, Anda akan menerapkan komputer virtual Azure yang akan Anda gunakan nanti di lab ini.
 
@@ -48,8 +48,6 @@ Dalam tugas ini, Anda akan menerapkan komputer virtual Azure yang akan Anda guna
     >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
 1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** dan **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** ke direktori beranda Cloud Shell.
-
-1. Edit file **Parameter** yang baru saja Anda unggah dan ubah kata sandinya. Jika Anda memerlukan bantuan untuk mengedit file di Shell, mintalah bantuan instruktur Anda. Sebagai praktik terbaik, rahasia, seperti kata sandi, harus disimpan dengan lebih aman di Key Vault. 
 
 1. Dari panel Cloud Shell, jalankan elemen berikut ini untuk membuat grup sumber daya yang akan menghosting komputer virtual (ganti tempat penampung '[Azure_region]' dengan nama wilayah Azure tempat Anda ingin menerapkan komputer virtual Azure)
 
@@ -70,6 +68,8 @@ Dalam tugas ini, Anda akan menerapkan komputer virtual Azure yang akan Anda guna
     
 1. Dari panel Cloud Shell, jalankan perintah berikut untuk menyebarkan komputer virtual menggunakan templat yang diupload dan file parameter:
 
+    >**Catatan**: Anda akan diminta untuk memberikan kata sandi Admin.
+
    ```powershell
    New-AzResourceGroupDeployment `
       -ResourceGroupName $rgName `
@@ -89,7 +89,7 @@ Dalam tugas ini, Anda akan menerapkan komputer virtual Azure yang akan Anda guna
 
 1. Tutup panel Cloud Shell.
 
-#### <a name="task-2-create-and-configure-azure-storage-accounts"></a>Tugas 2: Membuat dan mengonfigurasi akun Azure Storage
+## Tugas 2: Membuat dan mengonfigurasi akun Azure Storage
 
 Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun Azure Storage.
 
@@ -124,7 +124,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun Azure Storage.
 
     > **Catatan**: Tingkat akses dingin optimal untuk data yang tidak sering diakses.
 
-#### <a name="task-3-manage-blob-storage"></a>Tugas 3: Mengelola penyimpanan blob
+## Tugas 3: Mengelola penyimpanan blob
 
 Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamnya.
 
@@ -145,7 +145,6 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamny
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Jenis autentikasi | **Kunci akun**  |
     | Jenis blob | **Blob blok** |
     | Ukuran blok | **4 MB** |
     | Tingkat penyimpanan | **Populer** |
@@ -163,7 +162,7 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamny
 
     > **Catatan**: Anda memiliki opsi untuk mengunduh blob, mengubah tingkat aksesnya (saat ini diatur ke **Panas**), memperoleh sewa, yang akan mengubah status sewanya menjadi **Terkunci** (saat ini atur ke **Tidak Terkunci**) dan lindungi blob agar tidak dimodifikasi atau dihapus, serta tetapkan metadata khusus (dengan menentukan pasangan kunci dan nilai arbitrer). Anda juga memiliki kemampuan untuk **Mengedit** file secara langsung di antarmuka portal Azure, tanpa mengunduhnya terlebih dahulu. Anda juga dapat membuat snapshot, serta menghasilkan token SAS (Anda akan menjelajahi opsi ini di tugas berikutnya).
 
-#### <a name="task-4-manage-authentication-and-authorization-for-azure-storage"></a>Tugas 4: Mengelola autentikasi dan otorisasi Azure Storage
+## Tugas 4: Mengelola autentikasi dan otorisasi Azure Storage
 
 Dalam tugas ini, Anda akan mengonfigurasi autentikasi dan otorisasi Azure Storage.
 
@@ -226,7 +225,7 @@ Dalam tugas ini, Anda akan mengonfigurasi autentikasi dan otorisasi Azure Storag
 
     > **Catatan**: Mungkin perlu waktu sekitar 5 menit agar perubahan diterapkan.
 
-#### <a name="task-5-create-and-configure-an-azure-files-shares"></a>Tugas 5: Membuat dan mengonfigurasi berbagi Azure Files
+## Tugas 5: Membuat dan mengonfigurasi berbagi Azure Files
 
 Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files.
 
@@ -268,7 +267,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files.
 
 1. Klik **az104-07-folder** dan verifikasi bahwa **az104-07-file.txt** muncul dalam daftar file.
 
-#### <a name="task-6-manage-network-access-for-azure-storage"></a>Tugas 6: Mengelola akses jaringan Azure Storage
+## Tugas 6: Mengelola akses jaringan Azure Storage
 
 Dalam tugas ini, Anda akan mengonfigurasi akses jaringan Azure Storage.
 
@@ -305,7 +304,7 @@ Dalam tugas ini, Anda akan mengonfigurasi akses jaringan Azure Storage.
 
 1. Tutup panel Cloud Shell.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -327,7 +326,7 @@ Dalam tugas ini, Anda akan mengonfigurasi akses jaringan Azure Storage.
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

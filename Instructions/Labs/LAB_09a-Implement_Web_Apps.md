@@ -4,16 +4,16 @@ lab:
   module: Administer Serverless Computing
 ---
 
-# <a name="lab-09a---implement-web-apps"></a>Lab 09a - Menerapkan Aplikasi Web
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 09a - Menerapkan Aplikasi Web
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Anda perlu mengevaluasi penggunaan aplikasi Web Azure untuk menghosting situs web Contoso, yang saat ini dihosting di pusat data lokal perusahaan. Situs web berjalan di server Windows menggunakan tumpukan runtime PHP. Anda juga perlu menentukan bagaimana Anda dapat menerapkan praktik DevOps dengan memanfaatkan slot penyebaran aplikasi web Azure.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -24,17 +24,17 @@ Di lab ini Anda akan:
 + Tugas 5: Menukar slot pentahapan
 + Tugas 6: Mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure
 
-## <a name="estimated-timing-30-minutes"></a>Perkiraan waktu: 30 menit
+## Perkiraan waktu: 30 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab09a.png)
 
-## <a name="instructions"></a>Petunjuk
+### Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+## Latihan 1
 
-#### <a name="task-1-create-an-azure-web-app"></a>Tugas 1: Membuat aplikasi web Azure
+## Tugas 1: Membuat aplikasi web Azure
 
 Dalam tugas ini, Anda akan membuat aplikasi web Azure.
 
@@ -61,7 +61,7 @@ Dalam tugas ini, Anda akan membuat aplikasi web Azure.
 
 1. Pada panel penyebaran, klik **Buka sumber daya**.
 
-#### <a name="task-2-create-a-staging-deployment-slot"></a>Tugas 2: Membuat slot penyebaran pentahapan
+## Tugas 2: Membuat slot penyebaran pentahapan
 
 Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan.
 
@@ -84,7 +84,7 @@ Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan.
 
 1. Tinjauan panel slot pentahapan dan perhatikan bahwa URL-nya berbeda dari yang ditetapkan ke slot produksi.
 
-#### <a name="task-3-configure-web-app-deployment-settings"></a>Tugas 3: Konfigurasikan pengaturan penyebaran aplikasi web
+## Tugas 3: Konfigurasikan pengaturan penyebaran aplikasi web
 
 Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran aplikasi web.
 
@@ -107,7 +107,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran aplikasi web.
 
     >**Catatan:** Anda akan memerlukan informasi masuk ini dalam tugas lab ini selanjutnya.
 
-#### <a name="task-4-deploy-code-to-the-staging-deployment-slot"></a>Tugas 4: Sebarkan kode ke slot pentahapan pementasan
+## Tugas 4: Sebarkan kode ke slot pentahapan pementasan
 
 Dalam tugas ini, Anda akan menyebarkan kode ke slot penyebaran pentahapan.
 
@@ -151,7 +151,7 @@ Dalam tugas ini, Anda akan menyebarkan kode ke slot penyebaran pentahapan.
 
 1. Verifikasi bahwa halaman browser menampilkan **Halo Dunia** pesan dan tutup tab baru.
 
-#### <a name="task-5-swap-the-staging-slots"></a>Tugas 5: Menukar slot pentahapan
+## Tugas 5: Menukar slot pentahapan
 
 Dalam tugas ini, Anda akan menukar slot pentahapan dengan slot produksi
 
@@ -165,7 +165,7 @@ Dalam tugas ini, Anda akan menukar slot pentahapan dengan slot produksi
 
 1. Pastikan halaman web default telah diganti dengan **Halo Dunia!** halaman.
 
-#### <a name="task-6-configure-and-test-autoscaling-of-the-azure-web-app"></a>Tugas 6: Mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure
+## Tugas 6: Mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure
 
 Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure.
 
@@ -237,7 +237,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
 1. Tutup panel Cloud Shell.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
@@ -259,7 +259,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 

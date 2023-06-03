@@ -4,33 +4,33 @@ lab:
   module: Administer Serverless Computing
 ---
 
-# <a name="lab-09b---implement-azure-container-instances"></a>Lab 09b - Menerapkan Azure Container Instances
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 09b - Menerapkan Azure Container Instances
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Contoso ingin menemukan platform baru untuk beban kerja virtualnya. Anda mengidentifikasi sejumlah gambar kontainer yang dapat dimanfaatkan untuk mencapai tujuan ini. Karena Anda ingin meminimalkan manajemen kontainer, Anda berencana untuk mengevaluasi penggunaan Azure Container Instances untuk penyebaran gambar Docker.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
 - Tugas 1: Terapkan gambar Docker dengan menggunakan Azure Container Instance
 - Tugas 2: Tinjauan fungsionalitas Instans Kontainer Azure
 
-## <a name="estimated-timing-20-minutes"></a>Perkiraan waktu: 20 menit
+## Perkiraan waktu: 20 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab09b.png)
 
-## <a name="instructions"></a>Petunjuk
+### Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+## Latihan 1
 
-#### <a name="task-1-deploy-a-docker-image-by-using-the-azure-container-instance"></a>Tugas 1: Terapkan gambar Docker dengan menggunakan Azure Container Instance
+## Tugas 1: Terapkan gambar Docker dengan menggunakan Azure Container Instance
 
 Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
 
@@ -63,7 +63,7 @@ Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
 
     >**Catatan**: Sambil menunggu, Anda mungkin tertarik untuk melihat [kode di balik contoh aplikasi](https://github.com/Azure-Samples/aci-helloworld). Untuk melihatnya, jelajahi \\folder aplikasi.
 
-#### <a name="task-2-review-the-functionality-of-the-azure-container-instance"></a>Tugas 2: Tinjauan fungsionalitas Instans Kontainer Azure
+## Tugas 2: Tinjauan fungsionalitas Instans Kontainer Azure
 
 Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
@@ -79,13 +79,15 @@ Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
 1. Verifikasi bahwa Anda melihat entri log yang mewakili permintaan HTTP GET yang dihasilkan dengan menampilkan aplikasi di browser.
 
-#### <a name="clean-up-resources"></a>Membersihkan sumber daya
+## Membersihkan sumber daya
 
 >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
 
 >**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
 1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
+
+    >**Catatan**: penyimpanan Cloud Shell harus dibuat agar perintah ini berfungsi. 
 
 1. Buat daftar semua grup sumber daya yang dibuat di seluruh lab modul ini dengan menjalankan perintah berikut:
 
@@ -101,7 +103,7 @@ Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
     >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-#### <a name="review"></a>Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 
