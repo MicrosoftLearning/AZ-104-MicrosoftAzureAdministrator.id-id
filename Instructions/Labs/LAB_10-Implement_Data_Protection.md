@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 10 - Menerapkan Perlindungan Data
+  title: 'Lab 10: Menerapkan Perlindungan Data'
   module: Administer Data Protection
 ---
 

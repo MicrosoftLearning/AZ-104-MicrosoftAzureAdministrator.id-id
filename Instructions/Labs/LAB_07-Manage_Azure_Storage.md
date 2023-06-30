@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 07 - Mengelola penyimpanan Azure
+  title: 'Lab 07: Mengelola penyimpanan Azure'
   module: Administer Azure Storage
 ---
 

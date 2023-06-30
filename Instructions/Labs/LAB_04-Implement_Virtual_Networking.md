@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 04 - Menerapkan Jaringan Virtual
+  title: 'Lab 04: Menerapkan Virtual Networking'
   module: Administer Virtual Networking
 ---
 
@@ -126,6 +126,24 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
    >**Catatan**: Alamat IP pribadi dan publik sebenarnya ditetapkan ke antarmuka jaringan, yang, pada gilirannya, dilampirkan ke mesin virtual Azure, namun, cukup umum untuk merujuk ke alamat IP yang ditetapkan ke VM Azure.
 
+   >**Catatan**: Anda akan memerlukan **dua** alamat IP publik untuk menyelesaikan lab ini. 
+
+1. Di portal Azure, cari dan pilih **Alamat IP publik**, lalu pilih **+ Buat**.
+
+1. Pastikan **grup sumber daya** **adalah az104-04-rg1**,
+
+1. Dalam **Detail Konfigurasi** pastikan **namanya** **adalah az104-04-pip0**.
+
+1. Pilih **Tinjau dan buat** lalu **Buat**.
+
+1. Di portal Azure, cari dan pilih **Alamat IP publik**, lalu pilih **+ Buat**.
+
+1. Pastikan **grup sumber daya** **adalah az104-04-rg1**,
+
+1. Dalam **Detail Konfigurasi** pastikan **namanya** **adalah az104-04-pip1**.
+
+1. Pilih **Tinjau dan buat** lalu **Buat**.
+
 1. Di portal Microsoft Azure, cari dan pilih **Grup sumber daya**, dan, pada panel **Grup sumber daya**, klik **az104-04-rg1**.
 
 1. Pada panel grup sumber daya **az104-04-rg1**, dalam daftar sumber dayanya, klik **az104-04-vnet1**.
@@ -138,18 +156,13 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
 1. Di daftar konfigurasi IP, klik **ipconfig1**.
 
-1. Pada panel **ipconfig1**, di bagian **Pengaturan alamat IP publik**, pilih **Asosiasi**, klik **+ Buat baru**, tentukan pengaturan berikut, dan klik **Oke**:
+1. Pastikan **Alokasi** **Statis**.
 
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama | **az104-04-pip0** |
-    | SKU | **Standard** |
+1. Pilih **Kaitkan alamat IP publik** dan di drop-down **Alamat IP publik** pilih **az104-04-pip0**.
 
-1. Pada panel **ipconfig1**, atur **Penugasan** ke **Static**, biarkan nilai default **alamat IP** diatur ke **10.40.0.4**.
+1. Pilih **Simpan**.
 
-1. Kembali ke panel **ipconfig1**, simpan perubahannya. Pastikan untuk menunggu operasi penyimpanan selesai sebelum Anda melanjutkan ke langkah berikutnya.
-
-1. Navigasikan kembali ke panel **az104-04-vnet1**
+1. Navigasi kembali ke bilah **az104-04-vnet1** .
 
 1. Klik **az104-04-nic1** dan, pada panel **az104-04-nic1**, klik **Konfigurasi IP**.
 
@@ -157,17 +170,12 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
 1. Di daftar konfigurasi IP, klik **ipconfig1**.
 
-1. Pada panel **ipconfig1**, di bagian **Pengaturan alamat IP publik**, pilih **Asosiasi**, klik **+ Buat baru**, tentukan pengaturan berikut, dan klik **Oke**:
+1. Pastikan **Alokasi** **Statis**.
 
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama | **az104-04-pip1** |
-    | SKU | **Standard** |
+1. Pilih **Kaitkan alamat IP publik** dan di drop-down **Alamat IP publik** pilih **az104-04-pip1**.
 
-1. Pada panel **ipconfig1**, atur **Penugasan** ke **Static**, biarkan nilai default **alamat IP** diatur ke **10.40.1.4**.
-
-1. Kembali ke panel **ipconfig1**, simpan perubahannya.
-
+1. Pilih **Simpan**.
+   
 1. Navigasikan kembali ke panel grup sumber daya **az104-04-rg1**, dalam daftar sumber dayanya, klik **az104-04-vm0**, dan dari panel mesin virtual **az104-04-vm0** , perhatikan entri alamat IP publik.
 
 1. Navigasikan kembali ke panel grup sumber daya **az104-04-rg1**, dalam daftar sumber dayanya, klik **az104-04-vm1**, dan dari panel mesin virtual **az104-04-vm1** , perhatikan entri alamat IP publik.
@@ -353,7 +361,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
 
 1. Di portal Azure, buka sesi **PowerShell** di **Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
 
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk menguji resolusi nama eksternal dari rangkaian data DNS **az104-04-vm0** di zona DNS yang baru dibuat (ganti tempat penampung `[Name server 1]` dengan nama **Name server 1** yang Anda catat sebelumnya dalam tugas ini dan `[domain name]` tempat penampung dengan nama domain DNS yang Anda buat sebelumnya dalam tugas ini):
+1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menguji resolusi nama eksternal dari kumpulan catatan DNS **az104-04-vm0** di zona DNS yang baru dibuat (ganti tempat penampung `[Name server 1]` dengan nama **server Nama 1 yang** Anda catat sebelumnya dalam tugas ini dan `[domain name]` tempat penampung dengan nama domain DNS yang Anda buat sebelumnya dalam tugas ini):
 
    ```powershell
    nslookup az104-04-vm0.[domain name] [Name server 1]
@@ -361,7 +369,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
 
 1. Verifikasi bahwa output perintah menyertakan alamat IP publik **az104-04-vm0**.
 
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk menguji resolusi nama eksternal dari rangkaian data DNS **az104-04-vm1** di zona DNS yang baru dibuat (ganti tempat penampung `[Name server 1]` dengan nama **Name server 1** yang Anda catat sebelumnya dalam tugas ini dan tempat penampung `[domain name]` dengan nama domain DNS yang Anda buat sebelumnya dalam tugas ini):
+1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menguji resolusi nama eksternal dari kumpulan catatan DNS **az104-04-vm1** di zona DNS yang baru dibuat (ganti tempat penampung `[Name server 1]` dengan nama **server Nama 1 yang** Anda catat sebelumnya dalam tugas ini dan `[domain name]` tempat penampung dengan nama domain DNS yang Anda buat sebelumnya dalam tugas ini):
 
    ```powershell
    nslookup az104-04-vm1.[domain name] [Name server 1]

@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 03a - Kelola sumber daya Azure dengan Menggunakan Portal Azure
+  title: 'Lab 03a: Mengelola sumber daya Azure dengan Menggunakan Portal Microsoft Azure'
   module: Administer Azure Resources
 ---
 

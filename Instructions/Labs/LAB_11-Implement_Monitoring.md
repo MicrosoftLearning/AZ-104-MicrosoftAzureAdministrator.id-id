@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 11 - Implementasi Pemantauan
+  title: 'Lab 11: Menerapkan Pemantauan'
   module: Administer Monitoring
 ---
 
