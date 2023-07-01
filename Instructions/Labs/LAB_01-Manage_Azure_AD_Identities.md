@@ -1,20 +1,20 @@
 ---
 lab:
-  title: 01 - Mengelola Identitas Azure Active Directory
+  title: 'Lab 01: Mengelola Identitas Azure Active Directory'
   module: Administer Identity
 ---
 
-# <a name="lab-01---manage-azure-active-directory-identities"></a>Lab 01 - Mengelola Identitas Azure Active Directory
+# Lab 01 - Mengelola Identitas Azure Active Directory
 
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Panduan lab siswa
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Untuk mengizinkan pengguna Contoso melakukan autentikasi menggunakan Azure AD, Anda telah ditugaskan untuk memprovisikan akun pengguna dan grup. Keanggotaan grup harus diperbarui secara otomatis berdasarkan jabatan pengguna. Anda juga perlu membuat penyewa Azure AD uji coba dengan akun pengguna uji coba dan memberi akun tersebut izin terbatas ke sumber daya dalam langganan Azure Contoso.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama.
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -23,16 +23,16 @@ Di lab ini Anda akan:
 + Tugas 3: Membuat penyewa Azure Active Directory (AD) (Opsional - masalah lingkungan lab)
 + Tugas 4: Mengelola pengguna tamu Azure Active Directory (Opsional - masalah lingkungan lab)
 
-## <a name="estimated-timing-30-minutes"></a>Perkiraan waktu: 30 menit
+## Perkiraan waktu: 30 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 ![gambar](../media/lab01.png)
 
-## <a name="instructions"></a>Petunjuk
+### Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+## Latihan 1
 
-#### <a name="task-1-create-and-configure-azure-ad-users"></a>Tugas 1: Membuat dan mengonfigurasikan pengguna Azure AD
+## Tugas 1: Membuat dan mengonfigurasikan pengguna Azure AD
 
 Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna Azure AD.
 
@@ -46,7 +46,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna Azure AD.
 
 1. Pada panel Azure Active Directory, di bagian **Kelola**, klik **Pengguna**, lalu klik akun pengguna Anda untuk menampilkan pengaturan **Profil**. 
 
-1. Klik **edit**, di bagian **Pengaturan**, atur **Lokasi penggunaan** ke **Amerika Serikat** dan klik **simpan** untuk menerapkan perubahan.
+1. Klik **Edit properti**, lalu di tab **Pengaturan**, atur **Lokasi penggunaan** ke **Amerika Serikat** dan klik **Simpan** untuk menerapkan perubahan.
 
     >**Catatan**: Ini diperlukan untuk menetapkan lisensi Azure AD Premium P2 ke akun pengguna Anda nanti di lab ini.
 
@@ -56,13 +56,13 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna Azure AD.
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama pengguna | **az104-01a-aaduser1** |
-    | Nama | **az104-01a-aaduser1** |
-    | Izinkan saya membuat kata sandi | diaktifkan |
+    | Nama principal pengguna | **az104-01a-aaduser1** |
+    | Nama tampilan | **az104-01a-aaduser1** |
+    | Buat kata sandi secara otomatis | batal pilih |
     | Kata sandi awal | **Berikan kata sandi yang aman** |
-    | Lokasi penggunaan | **Amerika Serikat** |
     | Judul pekerjaan | **Administrator Cloud** |
     | Departemen | **TI** |
+    | Lokasi penggunaan | **Amerika Serikat** |
 
     >**Catatan**: **Salin ke clipboard** **Nama Prinsipal Pengguna** lengkap (nama pengguna plus domain). Anda akan membutuhkannya nanti dalam tugas ini.
 
@@ -90,17 +90,17 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna Azure AD.
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama pengguna | **az104-01a-aaduser2** |
-    | Nama | **az104-01a-aaduser2** |
-    | Izinkan saya membuat kata sandi | diaktifkan |
+    | Nama principal pengguna | **az104-01a-aaduser2** |
+    | Nama tampilan | **az104-01a-aaduser2** |
+    | Buat kata sandi secara otomatis | batal pilih  |
     | Kata sandi awal | **Berikan kata sandi yang aman** |
-    | Lokasi penggunaan | **Amerika Serikat** |
     | Judul pekerjaan | **Administrator Sistem** |
     | Departemen | **TI** |
-
+    | Lokasi penggunaan | **Amerika Serikat** |
+    
 1. Keluar sebagai pengguna az104-01a-aaduser1 dari portal Microsoft Azure dan tutup jendela browser InPrivate.
 
-#### <a name="task-2-create-azure-ad-groups-with-assigned-and-dynamic-membership"></a>Tugas 2: Buat grup Azure AD dengan keanggotaan yang ditetapkan dan dinamis
+## Tugas 2: Buat grup Azure AD dengan keanggotaan yang ditetapkan dan dinamis
 
 Dalam tugas ini, Anda akan membuat grup Azure Active Directory dengan keanggotaan yang ditetapkan dan dinamis.
 
@@ -183,13 +183,18 @@ Dalam tugas ini, Anda akan membuat grup Azure Active Directory dengan keanggotaa
 
 1. Navigasikan kembali ke panel **Grup - Semua grup**, klik entri yang mewakili grup **Administrator Sistem TI**, lalu tampilkan panel **Anggota**. Verifikasi bahwa **az104-01a-aaduser2** muncul dalam daftar anggota grup.
 
-#### <a name="task-3-create-an-azure-active-directory-ad-tenant-optional---lab-environment-issue"></a>Tugas 3: Membuat penyewa Azure Active Directory (AD) (Opsional - Masalah lingkungan lab)
+## Tugas 3: Membuat penyewa Azure Active Directory (AD) (Opsional - Masalah lingkungan lab)
 
 Dalam tugas ini, Anda akan membuat penyewa Azure AD baru.
-
-   >**Catatan**: Ada masalah yang diketahui dengan verifikasi Captcha di lingkungan lab. Jika Anda mengalami masalah ini, lewati tugas ini dan tugas berikutnya. Kami sedang berusaha memperbaikinya.
-
+    
 1. Di portal Microsoft Azure, cari dan pilih **Azure Active Directory**.
+
+    >**Catatan**: Ada masalah yang diketahui dengan verifikasi Captcha di lingkungan lab. Jika Anda menerima kesalahan **Pembuatan gagal. Terlalu banyak permintaan, silakan coba nanti**, lakukan hal berikut:<br>
+    - Coba pembuatan beberapa kali.<br>
+    - Periksa bagian **Kelola penyewa** untuk memastikan penyewa tidak dibuat di latar belakang. <br>
+    - Buka jendela **InPrivate** baru dan gunakan Portal Microsoft Azure dan coba buat penyewa dari sana.<br>
+     Tingkatkan masalah dengan pelatih, lalu gunakan **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** untuk melihat langkah-langkahnya. <br>
+    - Anda dapat mencoba tugas ini nanti, tetapi membuat penyewa tidak diperlukan di lab lain. 
 
 1. Klik **Kelola penyewa**, lalu pada layar berikutnya, klik **+ Buat**, dan tentukan pengaturan berikut:
 
@@ -211,7 +216,7 @@ Dalam tugas ini, Anda akan membuat penyewa Azure AD baru.
 
 1. Tampilkan panel penyewa Azure AD yang baru dibuat dengan menggunakan **Klik di sini untuk menavigasi ke penyewa baru Anda: Tautan Contoso Lab** atau tombol **Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Azure.
 
-#### <a name="task-4-manage-azure-ad-guest-users"></a>Tugas 4: Mengelola pengguna tamu Azure AD.
+## Tugas 4: Mengelola pengguna tamu Azure AD.
 
 Dalam tugas ini, Anda akan membuat Azure AD pengguna tamu dan memberi mereka akses ke sumber daya dalam langganan Azure.
 
@@ -221,9 +226,9 @@ Dalam tugas ini, Anda akan membuat Azure AD pengguna tamu dan memberi mereka aks
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama pengguna | **az104-01b-aaduser1** |
-    | Nama | **az104-01b-aaduser1** |
-    | Izinkan saya membuat kata sandi | diaktifkan |
+    | Nama principal pengguna | **az104-01b-aaduser1** |
+    | Nama tampilan | **az104-01b-aaduser1** |
+    | Buat kata sandi secara otomatis | batal pilih  |
     | Kata sandi awal | **Berikan kata sandi yang aman** |
     | Judul pekerjaan | **Administrator Sistem** |
     | Departemen | **TI** |
@@ -240,11 +245,11 @@ Dalam tugas ini, Anda akan membuat Azure AD pengguna tamu dan memberi mereka aks
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama | **az104-01b-aaduser1** |
-    | Alamat email | Nama Prinsipal Pengguna yang Anda salin sebelumnya dalam tugas ini |
-    | Lokasi penggunaan | **Amerika Serikat** |
+    | Email | Nama Prinsipal Pengguna yang Anda salin sebelumnya dalam tugas ini |
+    | Nama Tampilan | **az104-01b-aaduser1** |
     | Judul pekerjaan | **Administrator Lab** |
     | Departemen | **TI** |
+    | Lokasi penggunaan | **Amerika Serikat** |
 
 1. Klik **Undang**. 
 
@@ -255,7 +260,7 @@ Dalam tugas ini, Anda akan membuat Azure AD pengguna tamu dan memberi mereka aks
 1. Klik **+ Tambahkan keanggotaan** dan tambahkan akun pengguna tamu ke grup **Administrator Lab TI**.
 
 
-#### <a name="task-5-clean-up-resources"></a>Tugas 5: Menghapus sumber daya
+## Tugas 5: Menghapus sumber daya
 
 > **Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak terpakai memastikan Anda tidak akan dikenakan biaya tak terduga. Meskipun, dalam hal ini, tidak ada biaya tambahan yang terkait dengan penyewa Azure Active Directory dan objeknya, Anda mungkin ingin mempertimbangkan untuk menghapus akun pengguna, akun grup, dan penyewa Azure Active Directory yang Anda buat di lab ini.
 
@@ -279,7 +284,7 @@ Dalam tugas ini, Anda akan membuat Azure AD pengguna tamu dan memberi mereka aks
 
 > **Catatan**: Jika penyewa memiliki lisensi uji coba, maka Anda harus menunggu kedaluwarsa lisensi uji coba sebelum Anda dapat menghapus penyewa. Ini tidak akan dikenakan biaya tambahan.
 
-#### <a name="review"></a>Tinjau
+#### Tinjau
 
 Di lab ini, Anda telah:
 

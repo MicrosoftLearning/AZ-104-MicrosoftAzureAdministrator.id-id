@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 02b - Mengelola Tata Kelola melalui Azure Policy
+  title: 'Lab 02b: Mengelola Tata Kelola melalui Azure Policy'
   module: Administer Governance and Compliance
 ---
 

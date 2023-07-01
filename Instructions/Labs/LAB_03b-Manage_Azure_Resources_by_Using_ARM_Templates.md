@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 03b - Mengelola sumber daya Azure dengan Menggunakan Template ARM
+  title: 'Lab 03b: Mengelola sumber daya Azure dengan Menggunakan Templat ARM'
   module: Administer Azure Resources
 ---
 
@@ -102,7 +102,9 @@ Di lab ini Anda akan:
     | Ukuran Disk Gb | **32** |
     | Buat Opsi | **empty** |
     | Jenis Set Enkripsi Disk | **EncryptionAtRestWithPlatformKey** |
+    | Mode Autentikasi Akses Data | Tidak ada |
     | Azure Policy Akses Jaringan | **IzinkanSemua** |
+    | Akses Jaringan Publik | Nonaktif |
 
 1. Pilih **Ulas + buat**, lalu pilih **Buat**.
 

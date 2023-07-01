@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 08 - Mengelola Mesin Virtual
+  title: 'Lab 08: Mengelola Virtual Machines'
   module: Administer Virtual Machines
 ---
 
@@ -379,7 +379,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
 
 1. Pada tab **Disk** pada bilah **Buat kumpulan skala mesin virtual**, terima nilai default dan klik **Berikutnya : Jaringan >** .
 
-1. Pada tab **Jaringan** dari bilah **Buat set skala komputer virtual** , klik tautan **Buat jaringan virtual** di bawah kotak teks **Jaringan** virtual dan buat jaringan virtual baru dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya). 
+1. Pada tab **Jaringan** dari bilah **Buat set skala komputer virtual** , klik tautan **Buat jaringan virtual** di bawah kotak teks **Jaringan** virtual dan buat jaringan virtual baru dengan pengaturan berikut (biarkan yang lain dengan nilai defaultnya). 
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -424,7 +424,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
     | Opsi load balancer | **Azure load balancer** |
     | Memilih load balancer | **Membuat load balancer** |
     
-1.  Pada halaman **Buat load balancer** , tentukan nama load balancer dan ambil default. Klik **Buat** ketika Anda selesai lalu **Berikutnya: Penskalakan >**.
+1.  Pada halaman **Buat load balancer** , tentukan nama load balancer dan ambil default. Klik **Buat** ketika Anda selesai lalu **Berikutnya : Penskalakan >**.
     
     | Pengaturan | Nilai |
     | --- | --- |

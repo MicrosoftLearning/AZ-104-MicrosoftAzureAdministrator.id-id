@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 09b - Menerapkan Azure Container Instances
+  title: 'Lab 09b: Menerapkan Azure Container Instances'
   module: Administer Serverless Computing
 ---
 
@@ -17,7 +17,7 @@ Contoso ingin menemukan platform baru untuk beban kerja virtualnya. Anda mengide
 
 Di lab ini Anda akan:
 
-- Tugas 1: Terapkan gambar Docker dengan menggunakan Azure Container Instance
+- Tugas 1: Menyebarkan Azure Container Instance menggunakan gambar Docker
 - Tugas 2: Tinjauan fungsionalitas Instans Kontainer Azure
 
 ## Perkiraan waktu: 20 menit
@@ -30,7 +30,7 @@ Di lab ini Anda akan:
 
 ## Latihan 1
 
-## Tugas 1: Terapkan gambar Docker dengan menggunakan Azure Container Instance
+## Tugas 1: Menyebarkan Azure Container Instance menggunakan gambar Docker
 
 Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
 

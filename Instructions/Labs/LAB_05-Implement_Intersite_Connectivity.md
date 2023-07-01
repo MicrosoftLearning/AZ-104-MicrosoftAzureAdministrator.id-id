@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 05 - Menerapkan Konektivitas Antarsitus
+  title: 'Lab 05: Menerapkan Konektivitas AntarSitus'
   module: Administer Intersite Connectivity
 ---
 

@@ -1,17 +1,17 @@
 ---
 lab:
-  title: 02a - Mengelola Langganan dan RBAC
+  title: 'Lab 02a: Mengelola Langganan dan RBAC'
   module: Administer Governance and Compliance
 ---
 
-# <a name="lab-02a---manage-subscriptions-and-rbac"></a>Lab 02a - Mengelola Langganan dan RBAC
-# <a name="student-lab-manual"></a>Panduan lab siswa
+# Lab 02a - Mengelola Langganan dan RBAC
+# Panduan lab siswa
 
-## <a name="lab-requirements"></a>Persyaratan laboratorium
+## Persyaratan laboratorium
 
-Lab ini memerlukan izin untuk membuat pengguna Azure Active Directory (Azure AD), membuat peran Azure Role Based Access Control (RBAC) kustom, dan menetapkan peran ini ke pengguna Azure AD. Tidak semua hoster lab dapat menyediakan kemampuan ini. Tanyakan kepada instruktur Anda untuk ketersediaan lab ini.
+Lab ini memerlukan izin untuk membuat pengguna Azure Active Directory (Azure AD), membuat peran Kontrol Akses Berbasis Peran (RBAC) Azure kustom, dan menetapkan peran ini ke pengguna Azure AD. Tidak semua hoster lab dapat menyediakan kemampuan ini. Tanyakan kepada instruktur Anda untuk ketersediaan lab ini.
 
-## <a name="lab-scenario"></a>Skenario lab
+## Skenario lab
 
 Untuk meningkatkan pengelolaan sumber daya Azure di Contoso, Anda telah ditugaskan untuk menerapkan fungsionalitas berikut:
 
@@ -24,7 +24,7 @@ Untuk meningkatkan pengelolaan sumber daya Azure di Contoso, Anda telah ditugask
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama.
 
-## <a name="objectives"></a>Tujuan
+## Tujuan
 
 Di lab ini Anda akan:
 
@@ -33,18 +33,18 @@ Di lab ini Anda akan:
 + Tugas 3: Menetapkan peran RBAC
 
 
-## <a name="estimated-timing-30-minutes"></a>Perkiraan waktu: 30 menit
+## Perkiraan waktu: 30 menit
 
-## <a name="architecture-diagram"></a>Diagram arsitektur
+## Diagram arsitektur
 
 ![gambar](../media/lab02a.png)
 
 
-## <a name="instructions"></a>Petunjuk
+### Petunjuk
 
-### <a name="exercise-1"></a>Latihan 1
+## Latihan 1
 
-#### <a name="task-1-implement-management-groups"></a>Tugas 1: Menerapkan Grup Manajemen
+## Tugas 1: Menerapkan Grup Manajemen
 
 Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. 
 
@@ -52,7 +52,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen.
 
 1. Telusuri dan pilih **Grup manajemen** untuk menavigasi ke panel **Grup manajemen**.
 
-1. Tinjau pesan di bagian atas panel **Grup manajemen**. Jika Anda melihat pesan yang menyatakan **Anda terdaftar sebagai admin direktori tetapi tidak memiliki izin yang diperlukan untuk mengakses grup manajemen root**, lakukan urutan langkah-langkah berikut:
+1. Tinjauan pesan di bagian atas panel **Grup manajemen**. Jika Anda melihat pesan yang menyatakan **Anda terdaftar sebagai admin direktori tetapi tidak memiliki izin yang diperlukan untuk mengakses grup manajemen root**, lakukan urutan langkah-langkah berikut:
 
     1. Di portal Microsoft Azure, cari dan pilih **Azure Active Directory**.
     
@@ -81,11 +81,11 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen.
 
     >**Catatan**: Pada panel **az104-02-mg1 \| Langganan**, salin ID langganan Azure Anda ke Clipboard. Anda akan membutuhkannya di tugas berikutnya.
 
-#### <a name="task-2-create-custom-rbac-roles"></a>Tugas 2: Membuat peran RBAC kustom
+## Tugas 2: Membuat peran RBAC kustom
 
 Dalam tugas ini, Anda akan membuat definisi peran RBAC kustom.
 
-1. Dari komputer lab, buka file **\\Allfiles\\Labs\\02\\az104-02a-customRoleDefinition.json** di Notepad dan tinjau kontennya:
+1. Dari komputer lab, buka file **\\Allfiles\\Labs\\02\\az104-02a-customRoleDefinition.json** di Notepad dan tinjau isinya:
 
    ```json
    {
@@ -112,7 +112,7 @@ Dalam tugas ini, Anda akan membuat definisi peran RBAC kustom.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**. 
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
+    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
 
 1. Di panel alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu dropdown klik **Unggah**, dan unggah file **\\Allfiles\\Lab\\02\\az104-02a-customRoleDefinition.json** ke dalam direktori beranda Cloud Shell.
 
@@ -124,7 +124,7 @@ Dalam tugas ini, Anda akan membuat definisi peran RBAC kustom.
 
 1. Tutup panel Cloud Shell.
 
-#### <a name="task-3-assign-rbac-roles"></a>Tugas 3: Menetapkan peran RBAC
+## Tugas 3: Menetapkan peran RBAC
 
 Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan peran RBAC yang Anda buat di tugas sebelumnya kepada pengguna tersebut, dan memverifikasi bahwa pengguna dapat melakukan tugas yang ditentukan dalam definisi peran RBAC.
 
@@ -139,7 +139,7 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
     | Izinkan saya membuat kata sandi | diaktifkan |
     | Kata sandi awal | **Berikan kata sandi yang aman** |
 
-    >**Catatan**: **Salin ke papan klip** **Nama pengguna** lengkap. Anda akan membutuhkannya nanti di lab ini.
+    >**Catatan**: **Salin ke clipboard** **Nama pengguna** lengkap. Anda akan membutuhkannya nanti di lab ini.
 
 1. Di portal Azure, navigasikan kembali ke grup pengelolaan **az104-02-mg1** dan tampilkan **detailnya**.
 
@@ -147,7 +147,7 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
 
     >**Catatan**: jika peran kustom Anda tidak terlihat, diperlukan waktu hingga 10 menit agar peran kustom muncul setelah dibuat.
 
-1. Pilih **Peran** dan klik **Berikutnya**. Pada tab **Anggota**, klik **+ Pilih anggota** dan **pilih** akun pengguna az104-****************** *******.**********.onmicrosoft.com. Klik **Berikutnya** lalu **Tinjau dan tetapkan**.
+1. Pilih **Peran** dan klik **Berikutnya**. Pada tab **Anggota**, klik **+ Pilih anggota** dan **pilih** akun pengguna az104-****************** *******.**********.onmicrosoft.com. Klik **Berikutnya** lalu **Tinjauan dan tetapkan**.
 
 1. Buka jendela browser **InPrivate** dan masuk ke [portal Azure](https://portal.azure.com) menggunakan akun pengguna yang baru dibuat. Saat diminta untuk memperbarui kata sandi, ubah kata sandi untuk pengguna.
 
@@ -161,17 +161,17 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
 
 1. Di jendela browser **InPrivate**, pada tab **Deskripsi/Ringkasan Masalah** dari **Bantuan + dukungan - Blade permintaan dukungan baru**, ketik **Batas layanan dan langganan** di bidang Ringkasan dan pilih jenis masalah **Batas layanan dan langganan (kuota)** . Perhatikan bahwa langganan yang Anda gunakan di lab ini tercantum dalam daftar dropdown **Langganan**.
 
-    >**Catatan**: Kehadiran langganan yang Anda gunakan di lab ini dalam daftar dropdown **Langganan** menunjukkan bahwa akun yang Anda gunakan memiliki izin yang diperlukan untuk membuat permintaan dukungan khusus langganan.
+    >**Catatan**: Kehadiran langganan yang Anda gunakan di lab ini dalam daftar menurun **Langganan** menunjukkan bahwa akun yang Anda gunakan memiliki izin yang diperlukan untuk membuat permintaan dukungan khusus langganan.
 
     >**Catatan**: Jika Anda tidak melihat opsi **Layanan dan batas langganan (kuota)** , keluar dari portal Azure dan masuk kembali.
 
 1. Jangan lanjutkan dengan membuat permintaan dukungan. Sebagai gantinya, keluar sebagai pengguna az104-02-aaduser1 dari portal Azure dan tutup jendela browser InPrivate.
 
-#### <a name="task-4-clean-up-resources"></a>Tugas 4: Bersihkan sumber daya
+## Tugas 4: Membersihkan sumber daya
 
    >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan memastikan Anda tidak akan melihat biaya tak terduga, meskipun, sumber daya yang dibuat di lab ini tidak dikenakan biaya tambahan.
 
-   >**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Memantau penggunaan sumber daya adalah tugas Administrator yang umum, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya.
+   >**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Memantau penggunaan sumber daya adalah tugas Administrator yang umum, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya.
 
 1. Di portal Azure, cari dan pilih **Azure Active Directory**, pada panel Azure Active Directory, klik **Pengguna**.
 
@@ -209,7 +209,7 @@ Dalam tugas ini, Anda akan membuat pengguna Azure Active Directory, menetapkan p
 1. Navigasikan kembali ke panel **Grup manajemen**, klik ikon **elipsis** di sebelah kanan grup manajemen **az104-02-mg1** dan klik **Hapus**.
   >**Catatan**: Jika Anda tidak dapat menghapus **grup manajemen Akar Penyewa**, kemungkinan **Langganan Azure** berada di bawah grup manajemen. Anda perlu memindahkan **Langganan Azure** dari **grup manajemen Akar Penyewa** lalu menghapus grup.
 
-#### <a name="review"></a>Tinjau
+## Tinjau
 
 Di lab ini, Anda telah:
 
