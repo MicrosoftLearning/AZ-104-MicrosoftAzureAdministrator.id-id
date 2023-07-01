@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 06 - Menerapkan Manajemen Lalu Lintas
+  title: 'Lab 06: Menerapkan Manajemen Lalu Lintas'
   module: Administer Network Traffic Management
 ---
 
@@ -250,7 +250,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
     | Protokol | **TCP** |
     | Port Tujuan | **3389** |
 
-1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Perhatikan bahwa statusnya **Gagal**.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Perhatikan bahwa statusnya **Adalah Gagal**.
 
     > **Catatan**: Hal ini diharapkan, karena kedua jaringan virtual spoke tidak di-peering satu sama lain (peering jaringan virtual tidak transitif).
 
@@ -463,7 +463,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
     | --- | --- |
     | Nama | **az104-06-lb4-lbrule1** |
     | Versi IP | **IPv4** |
-    | Alamat IP Frontend | **az104-06-pip4** |
+    | Alamat IP Frontend | **az104-06-fe4** |
     | Kumpulan Backend | **az104-06-lb4-be1** |    
     | Protokol | **TCP** |
     | Port | **80** |
