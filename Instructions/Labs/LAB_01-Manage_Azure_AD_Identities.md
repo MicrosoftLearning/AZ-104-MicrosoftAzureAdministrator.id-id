@@ -60,9 +60,9 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna Azure AD.
     | Nama tampilan | **az104-01a-aaduser1** |
     | Buat kata sandi secara otomatis | batal pilih |
     | Kata sandi awal | **Berikan kata sandi yang aman** |
-    | Judul pekerjaan | **Administrator Cloud** |
-    | Departemen | **TI** |
-    | Lokasi penggunaan | **Amerika Serikat** |
+    | Jabatan pekerjaan (tab Properti) | **Administrator Cloud** |
+    | Departemen (tab Properti) | **TI** |
+    | Lokasi penggunaan (tab Properti) | **Amerika Serikat** |
 
     >**Catatan**: **Salin ke clipboard** **Nama Prinsipal Pengguna** lengkap (nama pengguna plus domain). Anda akan membutuhkannya nanti dalam tugas ini.
 
@@ -193,7 +193,7 @@ Dalam tugas ini, Anda akan membuat penyewa Azure AD baru.
     - Coba pembuatan beberapa kali.<br>
     - Periksa bagian **Kelola penyewa** untuk memastikan penyewa tidak dibuat di latar belakang. <br>
     - Buka jendela **InPrivate** baru dan gunakan Portal Microsoft Azure dan coba buat penyewa dari sana.<br>
-     Tingkatkan masalah dengan pelatih, lalu gunakan **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** untuk melihat langkah-langkahnya. <br>
+     Ajukan masalah dengan pelatih, lalu gunakan **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** untuk melihat langkah-langkahnya. <br>
     - Anda dapat mencoba tugas ini nanti, tetapi membuat penyewa tidak diperlukan di lab lain. 
 
 1. Klik **Kelola penyewa**, lalu pada layar berikutnya, klik **+ Buat**, dan tentukan pengaturan berikut:
@@ -246,10 +246,10 @@ Dalam tugas ini, Anda akan membuat Azure AD pengguna tamu dan memberi mereka aks
     | Pengaturan | Nilai |
     | --- | --- |
     | Email | Nama Prinsipal Pengguna yang Anda salin sebelumnya dalam tugas ini |
-    | Nama Tampilan | **az104-01b-aaduser1** |
-    | Judul pekerjaan | **Administrator Lab** |
-    | Departemen | **TI** |
-    | Lokasi penggunaan | **Amerika Serikat** |
+    | Nama Tampilan (tab Properti)  | **az104-01b-aaduser1** |
+    | Jabatan pekerjaan (tab Properti) | **Administrator Lab** |
+    | Departemen (tab Properti) | **TI** |
+    | Lokasi penggunaan (tab Properti) | **Amerika Serikat** |
 
 1. Klik **Undang**. 
 
