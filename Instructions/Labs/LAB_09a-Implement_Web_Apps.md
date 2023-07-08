@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 09a - Menerapkan Web Apps
+  title: 'Lab 09a: Menerapkan Web Apps'
   module: Administer Serverless Computing
 ---
 
@@ -170,6 +170,8 @@ Dalam tugas ini, Anda akan menukar slot pentahapan dengan slot produksi
 Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure.
 
 1. Pada panel yang menampilkan slot produksi aplikasi web, di bagian **Pengaturan**, klik **Peluasan skala (paket App Service)** .
+
+1. Dari **bagian Penskalakan** pilih opsi **Berbasis Aturan** , lalu klik tautan **Kelola penskalakan berbasis aturan** .
 
 1. Klik **Skala otomatis kustom**.
 
