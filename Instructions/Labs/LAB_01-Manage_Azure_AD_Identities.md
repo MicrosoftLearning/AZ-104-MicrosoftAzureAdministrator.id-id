@@ -193,7 +193,7 @@ Dalam tugas ini, Anda akan membuat penyewa Azure AD baru.
     - Coba pembuatan beberapa kali.<br>
     - Periksa bagian **Kelola penyewa** untuk memastikan penyewa tidak dibuat di latar belakang. <br>
     - Buka jendela **InPrivate** baru dan gunakan Portal Microsoft Azure dan coba buat penyewa dari sana.<br>
-     Ajukan masalah dengan pelatih, lalu gunakan **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** untuk melihat langkah-langkahnya. <br>
+     Tingkatkan masalah dengan pelatih, lalu gunakan **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** untuk melihat langkah-langkahnya. <br>
     - Anda dapat mencoba tugas ini nanti, tetapi membuat penyewa tidak diperlukan di lab lain. 
 
 1. Klik **Kelola penyewa**, lalu pada layar berikutnya, klik **+ Buat**, dan tentukan pengaturan berikut:
@@ -237,7 +237,7 @@ Dalam tugas ini, Anda akan membuat Azure AD pengguna tamu dan memberi mereka aks
 
     >**Catatan**: **Salin ke clipboard** **Nama Prinsipal Pengguna** lengkap (nama pengguna plus domain). Anda akan membutuhkannya nanti dalam tugas ini.
 
-1. Beralih kembali ke penyewa Azure AD default Anda dengan menggunakan tombol **Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Microsoft Azure.
+1. Beralih kembali ke penyewa Azure AD default (pertama) Anda dengan menggunakan tombol **Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Azure.
 
 1. Arahkan kembali ke blade **Pengguna - Semua pengguna**, lalu klik **+ Undang pengguna eksternal**.
 
