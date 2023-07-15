@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 'Lab 09d: Menyebarkan aplikasi kontainer di portal'
+  title: 'Lab 09c: Menyebarkan aplikasi kontainer di portal'
   module: Administer PaaS Compute Options
 ---
 
@@ -16,7 +16,7 @@ Mulailah dengan masuk ke [portal Microsoft Azure](https://portal.azure.com).
 
 Untuk membuat aplikasi kontainer Anda, mulai di halaman beranda portal Microsoft Azure.
 
-1. Cari **Aplikasi Kontainer** di bilah pencarian teratas.
+1. Cari `Container Apps` di bilah pencarian atas.
 1. Pilih **Aplikasi Kontainer** di hasil pencarian.
 1. Pilih tombol **Buat**.
 
@@ -29,8 +29,8 @@ Pada tab *Dasar*, lakukan hal berikut.
     | Pengaturan | Tindakan |
     |---|---|
     | Langganan | Pilih langganan Azure Anda. |
-    | Grup sumber daya | Pilih **Buat baru** dan masukkan **my-container-apps**. |
-    | Nama aplikasi kontainer |  Masukkan **my-container-app**. |
+    | Grup sumber daya | Pilih **Buat baru** dan masukkan `az104-09c-rg1`. |
+    | Nama aplikasi kontainer |  Masukkan `my-container-app`. |
 
 #### Membuat lingkungan
 
@@ -47,7 +47,7 @@ Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
 
     | Pengaturan | Nilai |
     |--|--|
-    | Nama lingkungan | Masukkan **my-environment**. |
+    | Nama lingkungan | Masukkan `my-environment`. |
     | Redundansi zona | Pilih **Dinonaktifkan** |
 
 1. Pilih tab **Pemantauan** untuk membuat ruang kerja Analitik Log.
@@ -55,9 +55,9 @@ Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
 
     | Pengaturan | Nilai |
     |--|--|
-    | Nama | Masukkan **my-container-apps-logs**. |
+    | Nama | Masukkan `my-container-apps-logs` |
   
-    Bidang *Lokasi* telah diisi sebelumnya dengan *US Tengah* untuk Anda.
+    Bidang *Lokasi* telah diisi sebelumnya dengan wilayah Anda untuk Anda.
 
 1. Pilih**OK**.
 
@@ -84,6 +84,6 @@ Jika Anda tidak akan terus menggunakan aplikasi ini, Anda dapat menghapus instan
 
 1. Pilih grup sumber daya **my-container-apps** dari bagian *Gambaran Umum*.
 1. Pilih tombol **Hapus grup sumber daya** di bagian atas *Gambaran Umum* grup sumber daya.
-1. Masukkan nama grup sumber daya **my-container-apps** di dialog konfirmasi *Anda yakin ingin menghapus "my-container-apps"* .
+1. Masukkan nama grup sumber daya dan konfirmasikan bahwa Anda ingin menghapus aplikasi. 
 1. Pilih **Hapus**.
 1. Proses untuk menghapus grup sumber daya mungkin memerlukan waktu beberapa menit untuk diselesaikan.
