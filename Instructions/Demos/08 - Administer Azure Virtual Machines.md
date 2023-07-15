@@ -37,11 +37,11 @@ Dalam demonstrasi ini, kita akan membuat dan mengakses komputer virtual Azure di
 
 1. Ada beberapa cara untuk **Menyambungkan** ke komputer virtual. 
 
-1. Untuk server Windows, Anda dapat menggunakan **RDP**, seperti yang ditunjukkan dalam tutorial. Anda dapat melangkah lebih jauh dengan menginstal server web dan melihat halaman selamat datang IIS. 
+1. Untuk server Windows, Anda dapat menggunakan **RDP**, seperti yang diperlihatkan dalam Mulai Cepat. 
 
-1. Untuk server Linux, Anda dapat **menggunakan SSH**, seperti yang ditunjukkan dalam tutorial. Anda dapat melangkah lebih jauh dengan menginstal server web dan melihat server web dalam tindakan.
+1. Untuk server Linux, Anda dapat **SSH**, seperti yang ditunjukkan di Mulai Cepat. 
 
-1. Untuk salah satu server, Anda dapat terhubung dengan layanan **Bastion** (tutorial). Tinjau mengapa Bastion lebih disukai daripada RDP atau SSH. 
+1. Untuk salah satu server, Anda dapat tersambung dengan layanan **Bastion** (Mulai Cepat). Tinjau mengapa Bastion lebih disukai daripada RDP atau SSH. 
 
 ## Mengonfigurasi Ketersediaan Virtual Machines
 

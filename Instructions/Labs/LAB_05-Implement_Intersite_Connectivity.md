@@ -217,7 +217,7 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
 
     >**Catatan**: Anda dapat mengabaikan permintaan peringatan apa pun saat menghubungkan ke mesin virtual target.
 
-1. Saat diminta, masuk dengan menggunakan nama pengguna **Siswa** dan sandi dari file parameter Anda. 
+1. Saat diminta, masuk dengan menggunakan nama pengguna **Siswa** dan kata sandi yang Anda konfigurasi saat menyebarkan komputer virtual Anda melalui CloudShell. 
 
 1. Dalam sesi Desktop Jarak Jauh ke **az104-05-vm0**, klik kanan tombol **Mulai** dan, di menu klik kanan, klik **Windows PowerShell (Admin)** .
 

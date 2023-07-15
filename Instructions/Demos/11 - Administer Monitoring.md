@@ -32,8 +32,6 @@ Dalam demonstrasi ini, kami akan membuat aturan pemberitahuan.
 
 Dalam demonstrasi ini, Anda akan bekerja dengan bahasa kueri Analitik Log.
 
-**Referensi**: [Tutorial Analitik Log - Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/logs/log-analytics-tutorial)
-
 1. Menggunakan portal Microsoft Azure.
 
 1. Cari dan pilih **Pantau** lalu **Log**.

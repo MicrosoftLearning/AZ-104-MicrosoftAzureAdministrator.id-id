@@ -10,11 +10,11 @@ demo:
 
 Dalam demonstrasi ini, Anda akan membuat jaringan virtual.
 
-**Referensi**: [Mulai cepat: Membuat jaringan virtual - portal Microsoft Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+**Referensi**: [Mulai Cepat: Membuat jaringan virtual - portal Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 
 ## Membuat jaringan virtual di portal
 
-1.  Masuk ke portal Azure dan cari **Virtual Network.**
+1.  Masuk ke portal Azure dan cari **Virtual Networks**.
 
 1.  Buat jaringan virtual, menjelaskan pengaturan dasar saat Anda pergi. Pastikan setidaknya satu subnet dibuat. 
 
@@ -46,7 +46,7 @@ Dalam demonstrasi ini, Anda akan menjelajahi NSG dan titik akhir layanan.
 
 1. Tinjau aturan masuk dan keluar default. 
 
-1. Buat aturan baru, menjelaskan pengaturan saat Anda pergi. Secara khusus diskusikan pemilihan layanan (seperti HTTPS) dan pengaturan prioritas. 
+1. Buat aturan baru, menjelaskan pengaturan saat Anda pergi. Secara khusus membahas pemilihan layanan (seperti HTTPS) dan pengaturan prioritas. 
 
 ## Mengonfigurasi Azure DNS
 
@@ -71,7 +71,7 @@ Dalam demonstrasi ini, Anda akan menjelajahi Azure DNS.
 
 1. Setelah zona Anda dibuat, pilih **+Kumpulan Catatan**.
 
-1. Gunakan drop-down **Jenis** untuk melihat berbagai jenis rekaman. Tinjau bagaimana berbagai jenis catatan digunakan. Perhatikan bagaimana informasi rekaman berubah saat Anda memilih jenis catatan yang berbeda.
+1. Gunakan drop-down **Jenis** untuk menampilkan berbagai jenis rekaman. Tinjau bagaimana berbagai jenis rekaman digunakan. Perhatikan bagaimana informasi rekaman berubah saat Anda memilih jenis rekaman yang berbeda.
 
 1. Buat rekaman **A** sebagai contoh. 
 
