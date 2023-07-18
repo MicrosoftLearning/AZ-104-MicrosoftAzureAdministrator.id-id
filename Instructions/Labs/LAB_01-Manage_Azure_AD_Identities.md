@@ -237,7 +237,7 @@ Dalam tugas ini, Anda akan membuat Azure AD pengguna tamu dan memberi mereka aks
 
     >**Catatan**: **Salin ke clipboard** **Nama Prinsipal Pengguna** lengkap (nama pengguna plus domain). Anda akan membutuhkannya nanti dalam tugas ini.
 
-1. Beralih kembali ke penyewa Azure AD default (pertama) Anda dengan menggunakan tombol **Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Azure.
+1. Kembali ke penyewa pertama yang Anda buat sebelumnya. Lakukan ini dengan menggunakan tombol **Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Azure.
 
 1. Arahkan kembali ke blade **Pengguna - Semua pengguna**, lalu klik **+ Undang pengguna eksternal**.
 
