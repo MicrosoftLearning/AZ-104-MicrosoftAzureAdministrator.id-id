@@ -1,18 +1,27 @@
 ---
 lab:
-  title: 'Lab 09c: Menyebarkan aplikasi kontainer di portal'
+  title: 'Lab 09c: Menerapkan Azure Container Apps'
   module: Administer PaaS Compute Options
 ---
 
-# Lab 09c: Menyebarkan aplikasi kontainer di portal
+# Lab 09c: Menerapkan Azure Container Apps
+# Panduan lab siswa
 
+## Skenario lab
 Azure Container Apps memungkinkan Anda menjalankan layanan mikro dan aplikasi dalam kontainer pada platform tanpa server. Dengan Container Apps, Anda bisa mendapatkan manfaat menjalankan kontainer tanpa repot mengonfigurasi infrastruktur cloud dan orkestrator kontainer yang kompleks secara manual.
 
-Di lab ini, Anda membuat lingkungan Container Apps yang aman dan menyebarkan aplikasi kontainer pertama Anda menggunakan portal Azure.
+## Tujuan
+
+Di lab ini, kita akan:
+- Tugas 1: Membuat aplikasi dan lingkungan kontainer
+- Tugas 2: Menyebarkan aplikasi kontainer
+- Tugas 3: Menguji dan memverifikasi penyebaran aplikasi kontainer
 
 Mulailah dengan masuk ke [portal Microsoft Azure](https://portal.azure.com).
 
-## Membuat aplikasi kontainer
+## Perkiraan waktu: 20 menit
+
+## Tugas 1: Membuat aplikasi dan lingkungan kontainer
 
 Untuk membuat aplikasi kontainer Anda, mulai di halaman beranda portal Microsoft Azure.
 
@@ -62,7 +71,7 @@ Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
 1. Pilih**OK**.
 
 
-### Menyebarkan aplikasi kontainer
+## Tugas 2: Menyebarkan aplikasi kontainer
 
 1. Pilih tombol **Tinjau + buat** di bagian bawah halaman.  
 
@@ -74,7 +83,7 @@ Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
 
     Halaman dengan pesan *Penyebaran sedang berlangsung* ditampilkan.  Setelah penyebaran berhasil diselesaikan, Anda akan melihat pesan *Penyebaran Anda selesai*.
    
-### Memverifikasi penerapan
+## Tugas 3: Menguji dan memverifikasi penyebaran aplikasi kontainer
 
 Pilih **Buka sumber daya** untuk melihat aplikasi kontainer baru Anda.  Pilih tautan di samping *URL Aplikasi* untuk melihat aplikasi Anda. Verifikasi bahwa Anda memiliki pesan *Selamat Datang di Azure Container Apps* .
 

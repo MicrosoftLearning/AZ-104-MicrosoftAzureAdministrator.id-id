@@ -214,7 +214,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
 
     > **Catatan**: **10.62.0.4** mewakili alamat IP privat **az104-06-vm2**
 
-1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **Adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
 
     > **Catatan**: Hal ini diharapkan, karena jaringan virtual hub di-peering langsung dengan jaringan virtual spoke pertama.
 
@@ -233,7 +233,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
 
     > **Catatan**: **10.63.0.4** mewakili alamat IP pribadi **az104-06-vm3**
 
-1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **Adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
 
     > **Catatan**: Hal ini diharapkan, karena jaringan virtual hub di-peering langsung dengan jaringan virtual spoke kedua.
 
@@ -250,7 +250,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
     | Protokol | **TCP** |
     | Port Tujuan | **3389** |
 
-1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Perhatikan bahwa statusnya **Adalah Gagal**.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Perhatikan bahwa statusnya **Gagal**.
 
     > **Catatan**: Hal ini diharapkan, karena kedua jaringan virtual spoke tidak di-peering satu sama lain (peering jaringan virtual tidak transitif).
 
@@ -473,7 +473,6 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
     | Protokol | **TCP** |
     | Port | **80** |
     | Interval | **5** |
-    | Ambang tidak sehat | **2** |
     | Tutup jendela buat pemeriksaan kesehatan | **OK** | 
     | Persistensi sesi | **Tidak ada** |
     | Waktu idle habis (menit) | **4** |
