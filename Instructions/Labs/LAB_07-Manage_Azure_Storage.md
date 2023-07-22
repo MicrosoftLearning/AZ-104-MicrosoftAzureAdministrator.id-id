@@ -233,11 +233,11 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files.
 
 1. Di portal Azure, navigasikan kembali ke bilah akun penyimpanan yang Anda buat di tugas pertama lab ini dan, di bagian **Penyimpanan data**, klik **Berbagi file**.
 
-1. Klik **+ Berbagi file** dan buat berbagi file dengan pengaturan berikut:
+1. Klik **+ Berbagi file** dan pada tab **Dasar-dasar** beri nama berbagi file, **az104-07-share**. Tinjau pengaturan lain pada tab ini. 
 
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama | **az104-07-bagikan** |
+1. Pindahkan ke tab **Cadangan** , dan pastikan **Aktifkan Pencadangan** **tidak** dicentang.
+
+1. Klik **Tinjau dan buat**, lalu **Buat**. Tunggu hingga berbagi file disebarkan. 
 
 1. Klik berbagi file yang baru dibuat dan klik **Hubungkan**.
 

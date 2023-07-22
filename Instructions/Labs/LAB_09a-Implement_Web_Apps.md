@@ -1,7 +1,7 @@
 ---
 lab:
   title: 'Lab 09a: Menerapkan Web Apps'
-  module: Administer Serverless Computing
+  module: Administer PaaS Compute Options
 ---
 
 # Lab 09a - Menerapkan Aplikasi Web
