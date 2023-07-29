@@ -59,8 +59,8 @@ Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet mengg
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama subnet | **subnet0** |
-    | Alamat awal | **10.40.0.0/24** |
-    | Alamat awal | **/24 (256 alamat)** |
+    | Alamat awal | **10.40.0.0** |
+    | Ukuran subnet | **/24 (256 alamat)** |
 
 1. Terima defaultnya dan klik **Tinjauan dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
 
@@ -130,17 +130,17 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
 1. Di portal Azure, cari dan pilih **Alamat IP publik**, lalu pilih **+ Buat**.
 
-1. Pastikan **grup sumber daya** **adalah az104-04-rg1**,
+1. Pastikan **grup sumber daya** **az104-04-rg1**,
 
-1. Dalam **Detail Konfigurasi** pastikan **namanya** **adalah az104-04-pip0**.
+1. Dalam **Detail Konfigurasi** pastikan **nama** **az104-04-pip0**.
 
 1. Pilih **Tinjau dan buat** lalu **Buat**.
 
 1. Di portal Azure, cari dan pilih **Alamat IP publik**, lalu pilih **+ Buat**.
 
-1. Pastikan **grup sumber daya** **adalah az104-04-rg1**,
+1. Pastikan **grup sumber daya** **az104-04-rg1**,
 
-1. Dalam **Detail Konfigurasi** pastikan **namanya** **adalah az104-04-pip1**.
+1. Dalam **Detail Konfigurasi** pastikan **nama** **az104-04-pip1**.
 
 1. Pilih **Tinjau dan buat** lalu **Buat**.
 

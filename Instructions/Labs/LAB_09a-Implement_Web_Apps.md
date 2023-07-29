@@ -1,7 +1,7 @@
 ---
 lab:
   title: 'Lab 09a: Menerapkan Web Apps'
-  module: Administer Serverless Computing
+  module: Administer PaaS Compute Options
 ---
 
 # Lab 09a - Menerapkan Aplikasi Web
@@ -171,7 +171,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
 1. Pada panel yang menampilkan slot produksi aplikasi web, di bagian **Pengaturan**, klik **Peluasan skala (paket App Service)** .
 
-1. Dari **bagian Penskalakan** pilih opsi **Berbasis Aturan** , lalu klik tautan **Kelola penskalakan berbasis aturan** .
+1. Dari **bagian Penskalakan** pilih opsi **Berbasis Aturan** , lalu klik tautan **Kelola penskalan berbasis aturan** .
 
 1. Klik **Skala otomatis kustom**.
 
@@ -229,7 +229,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
 1. Perkecil panel Cloud Shell (namun jangan ditutup) dan, di bilah aplikasi web, di bagian Pengaturan, klik **Skalakan (Paket App Service)** .
 
-1. Pilih tab **Jalankan riwayat**, dan centang **Jumlah instans sumber daya yang diamati**.
+1. Pilih **Pengaturan Skala Otomatis**, pilih tab **Jalankan riwayat** , dan periksa **jumlah instans sumber daya yang diamati**.
 
 1. Pantau pemanfaatan dan jumlah instans selama beberapa menit. 
 
