@@ -90,7 +90,7 @@ Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
 
 1. Pilih tautan di samping *URL Aplikasi* untuk melihat aplikasi Anda.
 
-1. Verifikasi bahwa Anda menerima pesan *aplikasi Azure Container Apps Anda adalah live**.
+1. Verifikasi bahwa Anda menerima **pesan langsung aplikasi Azure Container Apps Anda** .
 
 ## Membersihkan sumber daya
 
