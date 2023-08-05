@@ -68,14 +68,15 @@ Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
   
     Bidang *Lokasi* telah diisi sebelumnya dengan wilayah Anda untuk Anda.
 
-1. Pilih**OK**.
+1. Pilih **OK** lalu **Buat**. 
 
+1. Klik **Berikutnya: Kontainer**.
 
-## Tugas 2: Menyebarkan aplikasi kontainer
+1. Centang kotak di samping **Gunakan gambar mulai cepat**.
 
-1. Pilih tombol **Tinjau + buat** di bagian bawah halaman.  
+1. Pilih tombol **Tinjau + buat** di bagian bawah halaman. Langkah ini mungkin memakan waktu beberapa menit. 
 
-    Selanjutnya, pengaturan di Aplikasi Kontainer diverifikasi. Jika tidak ada kesalahan yang ditemukan, tombol *Buat* diaktifkan.  
+    Pengaturan di Aplikasi Kontainer diverifikasi. Jika tidak ada kesalahan yang ditemukan, tombol *Buat* diaktifkan.  
 
     Jika ada kesalahan, tab apa pun yang berisi kesalahan ditandai dengan titik merah.  Buka tab yang sesuai. Bidang yang berisi kesalahan akan disorot dengan warna merah.  Setelah semua kesalahan diperbaiki, pilih **Tinjau dan buat** lagi.
 
@@ -83,9 +84,13 @@ Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
 
     Halaman dengan pesan *Penyebaran sedang berlangsung* ditampilkan.  Setelah penyebaran berhasil diselesaikan, Anda akan melihat pesan *Penyebaran Anda selesai*.
    
-## Tugas 3: Menguji dan memverifikasi penyebaran aplikasi kontainer
+## Tugas 2: Menguji dan memverifikasi penyebaran aplikasi kontainer
 
-Pilih **Buka sumber daya** untuk melihat aplikasi kontainer baru Anda.  Pilih tautan di samping *URL Aplikasi* untuk melihat aplikasi Anda. Verifikasi bahwa Anda memiliki pesan *Selamat Datang di Azure Container Apps* .
+1. Pilih **Buka sumber daya** untuk melihat aplikasi kontainer baru Anda.
+
+1. Pilih tautan di samping *URL Aplikasi* untuk melihat aplikasi Anda.
+
+1. Verifikasi bahwa Anda menerima **pesan langsung aplikasi Azure Container Apps Anda** .
 
 ## Membersihkan sumber daya
 
