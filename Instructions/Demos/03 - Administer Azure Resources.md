@@ -21,9 +21,15 @@ Dalam demonstrasi ini, kita akan menjelajahi portal Azure.
 
 1. Pilih ikon **Pengaturan** di banner atas.  Tinjau pengaturan **Tampilan + tampilan startup** . 
 
-1. Gunakan menu sisi kiri dan pilih **Dasbor**. **Edit** dasbor menggunakan **Galeri Petak.** Diskusikan opsi kustomisasi. 
+1. Gunakan menu sisi kiri dan pilih **Dasbor**. **Edit** dasbor menggunakan **Galeri Petak.** Diskusikan opsi kustomisasi.
 
-1. Tanyakan apakah siswa memiliki pertanyaan tentang cara menggunakan portal Azure. 
+1. Perlihatkan cara mencari dan menemukan sumber daya.
+
+1. Gunakan menu kiri atas untuk menemukan **Semua layanan**. 
+
+1. Karena Anda memiliki waktu meninjau fitur lain.
+   
+1. Tanyakan apakah siswa memiliki pertanyaan.
 
 ## Demonstrasi -- Cloud Shell
 
