@@ -114,7 +114,7 @@ Dalam tugas ini, Anda akan membuat grup Azure Active Directory dengan keanggotaa
 
 1. Refresh jendela browser untuk memverifikasi bahwa aktivasi berhasil. 
 
- >**Catatan**: Diperlukan waktu hingga 10 menit untuk mengaktifkan lisensi. Lanjutkan menyegarkan halaman hingga halaman muncul. Jangan lanjutkan sampai lisensi diaktifkan.
+    >**Catatan**: Diperlukan waktu hingga 10 menit untuk mengaktifkan lisensi. Lanjutkan menyegarkan halaman hingga halaman muncul. Jangan lanjutkan sampai lisensi diaktifkan.
 
 1. Dari panel **Lisensi - Semua produk**, pilih entri **Azure Active Directory Premium P2**, dan tetapkan semua opsi lisensi Azure AD Premium P2 ke akun pengguna Anda dan dua akun pengguna yang baru dibuat.
 
