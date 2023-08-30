@@ -52,7 +52,7 @@ Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet mengg
     | Nama | **az104-04-vnet1** |
     | Wilayah | nama wilayah Azure yang tersedia dalam langganan yang akan Anda gunakan di lab ini |
 
-1. Klik **Berikutnya: Alamat IP**. **Alamat awal** adalah **10.40.0.0**. **Ukuran ruang Alamat** adalah **/20**. Pastikan untuk mengklik **Tambahkan**. 
+1. Klik **Berikutnya: Alamat IP**. **Alamat Awal** adalah **10.40.0.0**. **Ukuran ruang Alamat** adalah **/20**. Pastikan untuk mengklik **Tambahkan**. 
 
 1. Klik **+ Tambahkan subnet** masukkan nilai berikut lalu klik **Tambahkan**.
 
@@ -120,7 +120,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke subnet yang berbed
 
 1. Tutup panel Cloud Shell.
 
-#### Tugas 3: Mengonfigurasi alamat IP pribadi dan publik dari VM Azure
+## Tugas 3: Mengonfigurasi alamat IP pribadi dan publik dari VM Azure
 
 Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan pribadi yang ditetapkan ke antarmuka jaringan mesin virtual Azure.
 
@@ -247,11 +247,11 @@ Dalam tugas ini, Anda akan mengonfigurasi kelompok keamanan jaringan untuk mengi
 
     >**Catatan**: Anda dapat mengabaikan permintaan peringatan apa pun saat menghubungkan ke mesin virtual target.
 
-1. Saat diminta, masuk dengan pengguna dan kata sandi di file parameter.
+1. Saat diminta, masuk dengan pengguna dan kata sandi.
 
     >**Catatan**: Biarkan sesi Desktop Jauh terbuka. Anda akan membutuhkannya di tugas berikutnya.
 
-#### Tugas 5: Mengonfigurasi Azure DNS untuk resolusi nama internal
+## Tugas 5: Mengonfigurasi Azure DNS untuk resolusi nama internal
 
 Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS dalam jaringan virtual dengan menggunakan zona DNS privat Azure.
 
