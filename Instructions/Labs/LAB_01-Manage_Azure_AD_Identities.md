@@ -116,7 +116,7 @@ Dalam tugas ini, Anda akan membuat grup Azure Active Directory dengan keanggotaa
 
     >**Catatan**: Diperlukan waktu hingga 10 menit untuk mengaktifkan lisensi. Lanjutkan menyegarkan halaman hingga halaman muncul. Jangan lanjutkan sampai lisensi diaktifkan.
 
-1. Dari panel **Lisensi - Semua produk**, pilih entri **Azure Active Directory Premium P2**, dan tetapkan semua opsi lisensi Azure AD Premium P2 ke akun pengguna Anda dan dua akun pengguna yang baru dibuat.
+1. Dari bilah **Lisensi - Semua produk**, pilih entri **Microsoft Entra ID P2**, dan tetapkan semua opsi lisensi ke akun pengguna Anda dan dua akun pengguna yang baru dibuat.
 
 1. Di portal Microsoft Azure, navigasikan kembali ke panel penyewa Azure AD dan klik **Grup**.
 
@@ -193,7 +193,7 @@ Dalam tugas ini, Anda akan membuat penyewa Azure AD baru.
     - Coba pembuatan beberapa kali.<br>
     - Periksa bagian **Kelola penyewa** untuk memastikan penyewa tidak dibuat di latar belakang. <br>
     - Buka jendela **InPrivate** baru dan gunakan Portal Microsoft Azure dan coba buat penyewa dari sana.<br>
-     Tingkatkan masalah dengan pelatih, lalu gunakan **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** untuk melihat langkah-langkahnya. <br>
+     Ajukan masalah dengan pelatih, lalu gunakan **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** untuk melihat langkah-langkahnya. <br>
     - Anda dapat mencoba tugas ini nanti, tetapi membuat penyewa tidak diperlukan di lab lain. 
 
 1. Klik **Kelola penyewa**, lalu pada layar berikutnya, klik **+ Buat**, dan tentukan pengaturan berikut:
