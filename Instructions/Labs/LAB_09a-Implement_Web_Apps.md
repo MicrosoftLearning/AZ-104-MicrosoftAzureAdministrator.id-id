@@ -102,11 +102,13 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran aplikasi web.
 
     | Pengaturan | Nilai |
     | --- | ---|
-    | Nama pengguna | nama unik global apa pun (tidak boleh berisi karakter `@`) |
-    | Kata sandi | kata sandi apa pun yang memenuhi persyaratan kompleksitas|
+    | Nama pengguna | nama unik global apa pun (lihat catatan)  |
+    | Kata sandi | kata sandi apa pun yang memenuhi persyaratan kompleksitas (lihat catatan) |
 
-    >**Catatan:** Anda akan memerlukan informasi masuk ini dalam tugas lab ini selanjutnya.
-
+    >**Catatan:** Salin kredensial ini ke Notepad. Anda akan membutuhkannya nanti.
+    
+    >**Catatan:** Kredensial ini akan diteruskan melalui URI. Jangan sertakan pesona khusus yang memengaruhi interpretasi URI. Misalnya, @, $, atau #. Tanda asterick atau plus (di tengah string) akan berfungsi.
+    
 ## Tugas 4: Sebarkan kode ke slot pentahapan pementasan
 
 Dalam tugas ini, Anda akan menyebarkan kode ke slot penyebaran pentahapan.
@@ -140,10 +142,8 @@ Dalam tugas ini, Anda akan menyebarkan kode ke slot penyebaran pentahapan.
 1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mendorong sampel kode aplikasi web dari repositori lokal ke slot penyebaran penahapan aplikasi web Azure (pastikan untuk mengganti tempat penampung `[deployment_user_name]` dengan nilai nama pengguna **Informasi masuk Penyebaran**, yang Anda identifikasi di tugas sebelumnya):
 
    ```powershell
-   git push [deployment_user_name] master
+    git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
    ```
-
-1. Jika diminta untuk mengautentikasi, ketik `[deployment_user_name]` dan sandi yang sesuai (yang Anda tetapkan di tugas sebelumnya).
 
 1. Tutup panel Cloud Shell.
 

@@ -20,13 +20,13 @@ Dalam demonstrasi ini, kita akan membuat dan bekerja dengan rencana Azure App Se
 
 1. Cari dan pilih  **App Service paket**.
 
-1. Buat rencana App Service sederhana. Diskusikan kebutuhan untuk memilih Windows atau Linux. Diskusikan paket harga sekarang atau di langkah berikutnya. 
+1. Buat paket App Service sederhana. Diskusikan kebutuhan untuk memilih Windows atau Linux. Diskusikan paket harga sekarang atau di langkah berikutnya. 
 
 1. Sebarkan paket layanan aplikasi baru Anda. 
 
-1. Tinjau bilah **Skalakan (paket App Service).** Diskusikan perbedaan antara paket **Dev/Test** dan **Production** . Tinjau daftar fitur. 
+1. Tinjau bilah **Skalakan (Paket App Service).** Diskusikan perbedaan antara paket **Dev/Test** dan **Produksi** . Tinjau daftar fitur. 
 
-1. Tinjau bilah **Peluasan skala (paket App Service).** Tinjau perbedaan antara **Manual** dan **Rule=based**. 
+1. Tinjau bilah **Peluasan skala (paket App Service).** Tinjau perbedaan antara **Manual** dan **Berbasis aturan**. 
 
 ## Mengonfigurasi Azure App Services
 
@@ -34,7 +34,7 @@ Dalam demonstrasi ini, kami akan membuat aplikasi web baru yang menjalankan kont
 
 **Referensi**: [Membuat Aplikasi Web](https://learn.microsoft.com/training/modules/host-a-web-app-with-azure-app-service/3-exercise-create-a-web-app-in-the-azure-portal?pivots=csharp)
 
-Dalam tugas ini, kita akan membuat Azure App Service Web App.
+Dalam tugas ini, kita akan membuat Aplikasi Web Azure App Service.
 
 1. Menggunakan portal Microsoft Azure. 
 
@@ -54,7 +54,7 @@ Dalam tugas ini, kita akan membuat Azure App Service Web App.
 
 1. Pilih **URL** dan pastikan halaman tempat penampung default dimuat.
 
-1. Saat Anda punya waktu, jelajahi opsi **Slot penyebaran** .
+1. Seiring waktu, jelajahi opsi **Slot penyebaran** .
    
 ## Mengonfigurasi Azure Container Instances
 
@@ -80,7 +80,7 @@ Dalam demonstrasi ini kami membuat, mengonfigurasi, dan menyebarkan kontainer de
 
 1. Tunggu hingga sumber daya disebarkan.
 
-1. Pada halaman **Gambaran Umum** untuk sumber daya, pastikan **Status** **Berjalan**.
+1. Pada halaman **Gambaran Umum** untuk resoure, pastikan **Status** **Sedang Berjalan**.
 
 1. Navigasikan ke **FQDN** untuk instans kontainer dan pastikan halaman selamat datang ditampilkan. 
 

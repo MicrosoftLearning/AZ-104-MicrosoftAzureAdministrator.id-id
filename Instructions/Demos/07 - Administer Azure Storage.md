@@ -9,7 +9,7 @@ demo:
 
 ## Mengonfigurasi Akun Penyimpanan
 
-Dalam demonstrasi ini, kami akan membuat akun penyimpanan.
+Dalam demonstrasi ini, kita akan membuat akun penyimpanan.
 
 **Referensi**: [Membuat akun penyimpanan](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal)
 
@@ -48,23 +48,6 @@ Dalam demonstrasi ini, kita akan menjelajahi penyimpanan blob.
 
 1. Unggah blob ke kontainer. Karena Anda memiliki waktu untuk meninjau pengaturan tingkat lanjut. Misalnya, jenis blob dan ukuran blob. 
 
-## Mengonfigurasi Azure Files 
-
-Dalam demonstrasi ini, kita akan bekerja dengan berbagi file dan snapshot.
-
-**Catatan:** Langkah-langkah ini memerlukan akun penyimpanan.
-
-**Referensi**: [Mulai cepat untuk mengelola berbagi file Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-portal?tabs=azure-portal)
-
-1. Tinjau tujuan berbagi file. 
-
-1. Akses akun penyimpanan dan klik **File**.
-
-1. Buat berbagi file. Tinjau kuota, unggah file, dan tambahkan direktori untuk mengatur informasi. 
-
-1. Buat rekam jepret berbagi file. Tinjau kapan harus menggunakan rekam jepret dan perbedaannya dengan cadangan. Saat Anda memiliki waktu, unggah file, ambil rekam jepret, hapus file, dan pulihkan rekam jepret. 
-
-
 ## Mengonfigurasi Keamanan Penyimpanan
 
 Dalam demonstrasi ini, kami akan membuat tanda tangan akses bersama.
@@ -77,7 +60,24 @@ Dalam demonstrasi ini, kami akan membuat tanda tangan akses bersama.
 
 1. Buat tanda tangan akses bersama (SAS). Tinjau izin, waktu mulai dan kedaluwarsa, dan protokol yang diizinkan.
 
-1. Gunakan URL SAS untuk memastikan tampilan sumber daya. 
+1. Gunakan URL SAS untuk memastikan sumber daya ditampilkan. 
+
+
+## Mengonfigurasi Azure Files 
+
+Dalam demonstrasi ini, kita akan bekerja dengan berbagi file dan snapshot.
+
+**Catatan:** Langkah-langkah ini memerlukan akun penyimpanan.
+
+**Referensi**: [Mulai cepat untuk mengelola berbagi file Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-use-files-portal?tabs=azure-portal)
+
+1. Tinjau tujuan berbagi file. 
+
+1. Akses akun penyimpanan dan klik **File**.
+
+1. Membuat berbagi file. Tinjau kuota, unggah file, dan tambahkan direktori untuk mengatur informasi. 
+
+1. Buat rekam jepret berbagi file. Tinjau kapan harus menggunakan rekam jepret dan perbedaannya dengan cadangan. Saat Anda memiliki waktu, unggah file, ambil rekam jepret, hapus file, dan pulihkan rekam jepret.
 
 
 ## Alat Penyimpanan (opsional)
@@ -92,9 +92,9 @@ Dalam demonstrasi ini, kami akan meninjau beberapa alat penyimpanan Azure umum.
 
 **Referensi**: [Menyalin atau memindahkan data ke Azure Storage dengan menggunakan AzCopy v10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=/azure/storage/files/toc.json)
 
-1. Diskusikan kapan harus menggunakan AzCopy. Lihat bantuan, **azcopy /?**.
+1. Diskusikan kapan menggunakan AzCopy. Lihat bantuan, **azcopy /?**.
 
-1. Gulir ke bawah bagian **Sampel** . Saat Anda memiliki waktu, cobalah salah satu contohnya. 
+1. Gulir ke bawah bagian **Sampel** . Saat Anda punya waktu, cobalah salah satu contohnya. 
     
 
 
