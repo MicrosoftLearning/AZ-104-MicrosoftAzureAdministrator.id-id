@@ -148,22 +148,18 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual 
     | Pengaturan | Nilai |
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-06-vnet01_to_az104-06-vnet2** |
-    | Lalu lintas untuk jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Lalu lintas yang diteruskan dari jaringan virtual jarak jauh | **Memblokir lalu lintas yang berasal dari luar jaringan virtual ini** |
-    | Gateway jaringan virtual | **Tidak ada (default)** |
+    | Perbolehkan akses ke jaringan virtual jarak jauh | **Pastikan kotak dicentang (default)** |
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-06-vnet2_to_az104-06-vnet01** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | diaktifkan |
-    | ID sumber daya | nilai parameter resourceID **az104-06-vnet2** yang Anda catat sebelumnya dalam tugas ini |
-    | Lalu lintas untuk jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Lalu lintas yang diteruskan dari jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Gateway jaringan virtual | **Tidak ada (default)** |
+    | ID sumber daya | Nilai parameter resourceID **az104-06-vnet2** yang Anda rekam sebelumnya dalam tugas ini. |
+    | Perbolehkan akses ke jaringan virtual saat ini | **Pastikan kotak dicentang (default)** |
+    | Perbolehkan lalu lintas ke jaringan virtual jarak jauh | **Pastikan kotak dicentang (default)** |
+    
 
     >**Catatan**: Tunggu hingga operasi selesai.
 
     >**Catatan**: Langkah ini membuat dua peering lokal - satu dari az104-06-vnet01 ke az104-06-vnet2 dan yang lainnya dari az104-06-vnet2 ke az104-06-vnet01.
-
-    >**Catatan**: **Izinkan lalu lintas yang diteruskan** harus diaktifkan untuk memfasilitasi perutean antara jaringan virtual spoke, yang akan Anda terapkan nanti di lab ini.
 
 1. Pada panel jaringan virtual **az104-06-vnet01**, di bagian **Pengaturan**, klik **Peering** lalu klik **+ Tambahkan**.
 
@@ -172,20 +168,17 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual 
     | Pengaturan | Nilai |
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-06-vnet01_to_az104-06-vnet3** |
-    | Lalu lintas untuk jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Lalu lintas yang diteruskan dari jaringan virtual jarak jauh | **Memblokir lalu lintas yang berasal dari luar jaringan virtual ini** |
-    | Gateway jaringan virtual | **Tidak ada (default)** |
+    | Perbolehkan akses ke jaringan virtual jarak jauh | **Pastikan kotak dicentang (default)** |    
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-06-vnet3_to_az104-06-vnet01** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | diaktifkan |
     | ID sumber daya | nilai parameter resourceID **az104-06-vnet3** yang Anda catat sebelumnya dalam tugas ini |
-    | Lalu lintas untuk jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Lalu lintas yang diteruskan dari jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Gateway jaringan virtual | **Tidak ada (default)** |
+    | Perbolehkan akses ke jaringan virtual saat ini | **Pastikan kotak dicentang (default)** |
+    | Perbolehkan lalu lintas ke jaringan virtual jarak jauh | **Pastikan kotak dicentang (default)** |
 
+    >**Catatan**: Tunggu hingga operasi selesai.
+    
     >**Catatan**: Langkah ini membuat dua peering lokal - satu dari az104-06-vnet01 ke az104-06-vnet3 dan yang lainnya dari az104-06-vnet3 ke az104-06-vnet01. Langkah ini menyelesaikan pengaturan hub dan topologi spoke (dengan dua jaringan virtual spoke).
-
-    >**Catatan**: **Izinkan lalu lintas yang diteruskan** harus diaktifkan untuk memfasilitasi perutean antara jaringan virtual spoke, yang akan Anda terapkan nanti di lab ini.
 
 ## Tugas 3: Menguji transitivitas peering jaringan virtual
 
