@@ -209,6 +209,8 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Kembali ke halaman **Identifikasi Vault**, klik **Berikutnya**.
 
+1. Pastikan **Simpan frasa sandi dengan aman ke Azure Key Vault** tidak diperiksa. 
+
 1. Pada halaman **Pengaturan Enkripsi** dari **Daftarkan Wizard Server**, klik **Buat Frasa Sandi**.
 
 1. Pada halaman **Pengaturan Enkripsi** dari **Daftarkan Wizard Server**, klik tombol **Jelajahi** di sebelah **Masukkan lokasi untuk menyimpan frasa sandi**.
