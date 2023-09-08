@@ -45,7 +45,7 @@ Dalam tugas ini, Anda akan menggunakan portal Azure untuk membuat grup sumber da
     |Grup Sumber Daya| nama grup sumber daya baru **az104-03a-rg1** |
     |Nama disk| **az104-03a-disk1** |
     |Wilayah| **(AS) AS Timur** |
-    |Zona ketersediaan| **Tidak ada** |
+    |Zona ketersediaan| **Tidak ada redundansi infrastruktur yang diperlukan** |
     |Jenis sumber| **Tidak ada** |
 
     >**Catatan**: Saat membuat sumber daya, Anda memiliki opsi untuk membuat grup sumber daya baru atau menggunakan yang sudah ada.
@@ -84,7 +84,7 @@ Dalam tugas ini, Anda akan menerapkan kunci sumber daya ke grup sumber daya Azur
     |Grup Sumber Daya| klik **buat baru** grup sumber daya dan beri nama **az104-03a-rg3** |
     |Nama disk| **az104-03a-disk2** |
     |Wilayah| nama wilayah Azure tempat Anda membuat grup sumber daya lain di lab ini |
-    |Zona ketersediaan| **Tidak ada** |
+    |Zona ketersediaan| **Tidak ada redundansi infrastruktur yang diperlukan** |
     |Jenis sumber| **Tidak ada** |
 
 1. Atur jenis dan ukuran disk masing-masing ke **HDD Standar** dan **32 GiB**.
