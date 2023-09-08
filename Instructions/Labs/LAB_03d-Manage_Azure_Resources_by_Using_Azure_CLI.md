@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 'Lab 03d: Mengelola sumber daya Azure dengan Menggunakan Azure CLI'
+  title: 'Lab 03d: Mengelola sumber daya Azure dengan Menggunakan Azure CLI (opsional)'
   module: Administer Azure Resources
 ---
 
