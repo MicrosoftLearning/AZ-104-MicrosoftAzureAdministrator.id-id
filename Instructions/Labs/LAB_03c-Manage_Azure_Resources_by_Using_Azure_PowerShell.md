@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 'Lab 03c: Mengelola sumber daya Azure dengan Menggunakan Azure PowerShell'
+  title: 'Lab 03c: Mengelola sumber daya Azure dengan Menggunakan Azure PowerShell (opsional)'
   module: Administer Azure Resources
 ---
 
@@ -12,6 +12,8 @@ lab:
 Sekarang setelah Anda menjelajahi kemampuan administrasi Azure dasar yang terkait dengan penyediaan sumber daya dan mengaturnya berdasarkan grup sumber daya menggunakan portal Azure dan templat Azure Resource Manager, Anda perlu melakukan tugas yang setara dengan menggunakan Azure PowerShell. Untuk menghindari penginstalan modul Azure PowerShell, Anda akan memanfaatkan lingkungan PowerShell yang tersedia di Azure Cloud Shell.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%206)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
+
+>**Catatan:** Lab ini mengharuskan Lab 03b selesai. 
 
 ## Tujuan
 
@@ -72,7 +74,7 @@ Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure
     -Location $location `
     -CreateOption Empty `
     -DiskSizeGB 32 `
-    -Sku Standard_LRS
+    -SkuName Standard_LRS
 
    $diskName = 'az104-03c-disk1'
 
@@ -113,7 +115,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
 1. Untuk mengubah SKU kinerja disk ke **Premium_LRS**, dari sesi PowerShell dalam Cloud Shell, jalankan berikut ini:
 
    ```powershell
-   New-AzDiskUpdateConfig -Sku Premium_LRS | Update-AzDisk -ResourceGroupName $rgName -DiskName $diskName
+   New-AzDiskUpdateConfig -SkuName Premium_LRS | Update-AzDisk -ResourceGroupName $rgName -DiskName $diskName
    ```
 
 1. Untuk memverifikasi bahwa perubahan diterapkan, jalankan berikut ini:

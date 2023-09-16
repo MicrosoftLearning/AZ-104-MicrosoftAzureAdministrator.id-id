@@ -103,17 +103,14 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
     | Pengaturan | Nilai|
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-05-vnet0_to_az104-05-vnet1** |
-    | Jaringan virtual ini: Lalu lintas ke jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Jaringan virtual ini: Lalu lintas diteruskan dari jaringan virtual jarak jauh | **Memblokir lalu lintas yang berasal dari luar jaringan virtual ini** |
-    | Gateway jaringan virtual | **Tidak ada** |
+    | Izinkan akses ke jaringan virtual jarak jauh | **Pastikan kotak dicentang (default)** |
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-05-vnet1_to_az104-05-vnet0** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | tidak dipilih |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Jaringan virtual | **az104-05-vnet1** |
-    | Lalu lintas untuk jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Lalu lintas yang diteruskan dari jaringan virtual jarak jauh | **Memblokir lalu lintas yang berasal dari luar jaringan virtual ini** |
-    | Gateway jaringan virtual | **Tidak ada** |
+    | Perbolehkan akses ke jaringan virtual saat ini |  **Pastikan kotak dicentang (default)** |
+
 
     >**Catatan**: Langkah ini membuat dua peering lokal - satu dari az104-05-vnet0 hingga az104-05-vnet1 dan yang lainnya dari az104-05-vnet1 hingga az104-05-vnet0.
 
@@ -138,17 +135,13 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
     | Pengaturan | Nilai|
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-05-vnet0_to_az104-05-vnet2** |
-    | Jaringan virtual ini: Lalu lintas ke jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Jaringan virtual ini: Lalu lintas diteruskan dari jaringan virtual jarak jauh | **Memblokir lalu lintas yang berasal dari luar jaringan virtual ini** |
-    | Gateway jaringan virtual | **Tidak ada** |
+    | Izinkan akses ke jaringan virtual jarak jauh |**Pastikan kotak dicentang (default)** |
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-05-vnet2_to_az104-05-vnet0** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | tidak dipilih |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Jaringan virtual | **az104-05-vnet2** |
-    | Lalu lintas untuk jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Lalu lintas yang diteruskan dari jaringan virtual jarak jauh | **Memblokir lalu lintas yang berasal dari luar jaringan virtual ini** |
-    | Gateway jaringan virtual | **Tidak ada** |
+    | Perbolehkan akses ke jaringan virtual saat ini |**Pastikan kotak dicentang (default)** |
 
     >**Catatan**: Langkah ini membuat dua peering global - satu dari az104-05-vnet0 hingga az104-05-vnet2 dan yang lainnya dari az104-05-vnet2 hingga az104-05-vnet0.
 
@@ -175,17 +168,13 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
     | Pengaturan | Nilai|
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-05-vnet1_to_az104-05-vnet2** |
-    | Jaringan virtual ini: Lalu lintas ke jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Jaringan virtual ini: Lalu lintas diteruskan dari jaringan virtual jarak jauh | **Memblokir lalu lintas yang berasal dari luar jaringan virtual ini** |
-    | Gateway jaringan virtual | **Tidak ada** |
+    | Izinkan akses ke jaringan virtual jarak jauh | **Pastikan kotak dicentang (default)** |
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-05-vnet2_to_az104-05-vnet1** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | tidak dipilih |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Jaringan virtual | **az104-05-vnet2** |
-    | Lalu lintas untuk jaringan virtual jarak jauh | **Izinkan (default)** |
-    | Lalu lintas yang diteruskan dari jaringan virtual jarak jauh | **Memblokir lalu lintas yang berasal dari luar jaringan virtual ini** |
-    | Gateway jaringan virtual | **Tidak ada** |
+    | Perbolehkan akses ke jaringan virtual saat ini | **Pastikan kotak dicentang (default)** |
 
     >**Catatan**: Langkah ini membuat dua peering global - satu dari az104-05-vnet1 hingga az104-05-vnet2 dan yang lainnya dari az104-05-vnet2 hingga az104-05-vnet1.
 

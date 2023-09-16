@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 'Lab 03d: Mengelola sumber daya Azure dengan Menggunakan Azure CLI'
+  title: 'Lab 03d: Mengelola sumber daya Azure dengan Menggunakan Azure CLI (opsional)'
   module: Administer Azure Resources
 ---
 
@@ -12,6 +12,8 @@ lab:
 Sekarang, setelah menjelajahi kemampuan administrasi dasar Azure yang terkait dengan provisi dan pengelolaan sumber daya berdasarkan grup sumber daya menggunakan portal Microsoft Azure, templat Azure Resource Manager, dan Azure PowerShell, Anda perlu melakukan tugas yang setara menggunakan Azure CLI. Untuk menghindari menginstal Azure CLI, Anda akan memanfaatkan lingkungan Bash yang tersedia di Azure Cloud Shell.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%207)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
+
+>**Catatan:** Lab ini mengharuskan Lab 03b selesai.
 
 ## Tujuan
 
@@ -95,7 +97,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
 1. Untuk memverifikasi bahwa perubahan diterapkan, jalankan yang berikut ini:
 
    ```sh
-   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGb
+   az disk show --resource-group $RGNAME --name $DISKNAME --query diskSizeGB
    ```
 
 1. Untuk mengubah SKU kinerja disk ke **Premium_LRS**, dari sesi Bash dalam Cloud Shell, jalankan yang berikut:
