@@ -50,7 +50,7 @@ Dalam tugas ini, Anda akan membuat aplikasi web Azure.
     | Grup sumber daya | nama grup sumber daya baru **az104-09a-rg1** |
     | Nama aplikasi web | nama unik global apa pun |
     | Terbitkan | **Kode** |
-    | Tumpukan runtime | **PHP 8.0** |
+    | Tumpukan runtime | **PHP 8.2** |
     | Sistem operasi | **Linux** |
     | Wilayah | nama wilayah Azure tempat Anda dapat memprovisikan aplikasi web Azure |
     | Paket App service | menerima konfigurasi default |
@@ -94,9 +94,9 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran aplikasi web.
     
 1. Pada tab **Pengaturan**, di daftar menurun **Sumber**, pilih **Git Lokal** dan klik tombol **Simpan**
 
-1. Pada panel **Pusat Penyebaran**, salin entri **Url Klon Git** ke Notepad.
+1. Pada bilah **Pusat Penyebaran** , salin entri **Uri Klon Git** ke Notepad.
 
-    >**Catatan:** Anda akan membutuhkan nilai Git Clone Url dalam tugas lab ini selanjutnya.
+    >**Catatan:** Anda akan memerlukan nilai Git Clone Uri dalam tugas berikutnya dari lab ini.
 
 1. Pada panel **Pusat Penyebaran**, pilih tab **Informasi masuk Git/FTPS Lokal**, di bagian **Cakupan Pengguna**, tentukan pengaturan berikut, dan klik **Simpan**.
 
@@ -131,10 +131,10 @@ Dalam tugas ini, Anda akan menyebarkan kode ke slot penyebaran pentahapan.
    Set-Location -Path $HOME/php-docs-hello-world/
    ```
 
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk menambahkan git jarak jauh (pastikan untuk mengganti tempat penampung `[deployment_user_name]` dan `[git_clone_url]` dengan nilai nama pengguna **Informasi masuk Penyebaran** dan **Git Clone Url** , masing-masing, yang Anda identifikasi di tugas sebelumnya):
+1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menambahkan git jarak jauh (pastikan untuk mengganti `[deployment_user_name]` tempat penampung dan `[git_clone_uri]` dengan nilai nama pengguna **Kredensial Penyebaran** dan **Git Clone Uri**, yang Anda identifikasi di tugas sebelumnya):
 
    ```powershell
-   git remote add [deployment_user_name] [git_clone_url]
+   git remote add [deployment_user_name] [git_clone_uri]
    ```
 
     >**Catatan**: Nilai berikut `git remote add` ini tidak harus cocok dengan nama pengguna **Informasi Masuk Penyebaran**, tetapi harus unik
@@ -171,7 +171,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
 1. Pada panel yang menampilkan slot produksi aplikasi web, di bagian **Pengaturan**, klik **Peluasan skala (paket App Service)** .
 
-1. Dari **bagian Penskalakan** pilih opsi **Berbasis Aturan** , lalu klik tautan **Kelola penskalan berbasis aturan** .
+1. Dari **bagian Penskalakan** pilih opsi **Berbasis Aturan** , lalu klik tautan **Kelola penskalakan berbasis aturan** .
 
 1. Klik **Skala otomatis kustom**.
 
