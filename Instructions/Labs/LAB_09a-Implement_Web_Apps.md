@@ -96,7 +96,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran aplikasi web.
 
 1. Pada bilah **Pusat Penyebaran** , salin entri **Uri Klon Git** ke Notepad.
 
-    >**Catatan:** Anda akan memerlukan nilai Git Clone Uri dalam tugas berikutnya dari lab ini.
+    >**Catatan:** Anda akan memerlukan nilai Uri Klon Git dalam tugas lab ini berikutnya.
 
 1. Pada panel **Pusat Penyebaran**, pilih tab **Informasi masuk Git/FTPS Lokal**, di bagian **Cakupan Pengguna**, tentukan pengaturan berikut, dan klik **Simpan**.
 
@@ -107,7 +107,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran aplikasi web.
 
     >**Catatan:** Salin kredensial ini ke Notepad. Anda akan membutuhkannya nanti.
     
-    >**Catatan:** Kredensial ini akan diteruskan melalui URI. Jangan sertakan pesona khusus yang memengaruhi interpretasi URI. Misalnya, @, $, atau #. Tanda asterick atau plus (di tengah string) akan berfungsi.
+    >**Catatan:** Kredensial ini akan diteruskan melalui URI. Jangan sertakan pesuruh khusus yang memengaruhi interpretasi URI. Misalnya, @, $, atau #. Tanda asterick atau plus (di tengah string) akan berfungsi.
     
 ## Tugas 4: Sebarkan kode ke slot pentahapan pementasan
 
@@ -131,7 +131,7 @@ Dalam tugas ini, Anda akan menyebarkan kode ke slot penyebaran pentahapan.
    Set-Location -Path $HOME/php-docs-hello-world/
    ```
 
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menambahkan git jarak jauh (pastikan untuk mengganti `[deployment_user_name]` tempat penampung dan `[git_clone_uri]` dengan nilai nama pengguna **Kredensial Penyebaran** dan **Git Clone Uri**, yang Anda identifikasi di tugas sebelumnya):
+1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menambahkan git jarak jauh (pastikan untuk mengganti `[deployment_user_name]` tempat penampung dan `[git_clone_uri]` dengan nilai nama pengguna **Kredensial Penyebaran** dan **Git Clone Uri**, masing-masing, yang Anda identifikasi di tugas sebelumnya):
 
    ```powershell
    git remote add [deployment_user_name] [git_clone_uri]
@@ -139,7 +139,7 @@ Dalam tugas ini, Anda akan menyebarkan kode ke slot penyebaran pentahapan.
 
     >**Catatan**: Nilai berikut `git remote add` ini tidak harus cocok dengan nama pengguna **Informasi Masuk Penyebaran**, tetapi harus unik
 
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mendorong sampel kode aplikasi web dari repositori lokal ke slot penyebaran penahapan aplikasi web Azure (pastikan untuk mengganti tempat penampung `[deployment_user_name]` dengan nilai nama pengguna **Informasi masuk Penyebaran**, yang Anda identifikasi di tugas sebelumnya):
+1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mendorong contoh kode aplikasi web dari repositori lokal ke slot penyebaran penahapan aplikasi web Azure (pastikan untuk mengganti nilai tempat penampung dengan nilai nama pengguna dan kata sandi **Kredensial Penyebaran** dan nama aplikasi, yang Anda identifikasi di tugas sebelumnya):
 
    ```powershell
     git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
