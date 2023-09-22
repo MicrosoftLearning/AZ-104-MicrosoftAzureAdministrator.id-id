@@ -53,7 +53,7 @@ Dalam tugas ini, Anda akan membuat aplikasi web Azure.
     | Tumpukan runtime | **PHP 8.2** |
     | Sistem operasi | **Linux** |
     | Wilayah | nama wilayah Azure tempat Anda dapat memprovisikan aplikasi web Azure |
-    | Paket App service | menerima konfigurasi default |
+    | Paket harga | menerima konfigurasi default |
 
 1. Klik **Tinjauan + buat**. Pada tab **Tinjauan + buat** panel **Buat Aplikasi Web**, pastikan validasi lulus dan klik **Buat**.
 
