@@ -13,8 +13,6 @@ Sekarang setelah Anda menjelajahi kemampuan administrasi Azure dasar yang terkai
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%206)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
 
->**Catatan:** Lab ini mengharuskan Lab 03b selesai. 
-
 ## Tujuan
 
 Di lab ini Anda akan:

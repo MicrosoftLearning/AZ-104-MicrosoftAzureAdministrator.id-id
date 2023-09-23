@@ -39,7 +39,7 @@ Di lab ini Anda akan:
 
 Dalam tugas ini, Anda akan menerapkan komputer virtual Azure yang akan Anda gunakan nanti di lab ini.
 
-1. Masuk ke [portal Microsoft Azure](https://portal.azure.com).
+1. Masuk ke **[portal Microsoft Azure](https://portal.azure.com)**.
 
 1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
 
@@ -239,7 +239,9 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files.
 
 1. Klik **Tinjau dan buat**, lalu **Buat**. Tunggu hingga berbagi file disebarkan. 
 
-1. Klik berbagi file yang baru dibuat dan klik **Hubungkan**.
+1. Klik berbagi file yang baru dibuat dan catat informasi yang tersedia di bilah **az104-07-share** .
+
+1. Klik **Telusuri** dan perhatikan bahwa tidak ada file atau folder di berbagi file baru. Klik **Sambungkan.**
 
 1. Pada panel **Hubungkan**, pastikan tab **Windows** dipilih. Di bawah ini Anda akan menemukan tombol dengan label **Tampilkan Skrip**. Klik pada tombol dan Anda akan menemukan kotak teks abu-abu dengan skrip, di sudut kanan bawah kotak tersebut arahkan kursor ke ikon halaman dan klik **Salin ke papan klip**.
 
@@ -263,7 +265,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files.
 
 1. Verifikasi bahwa skrip berhasil diselesaikan.
 
-1. Navigasikan kembali ke bilah berbagi file **az104-07-berbagi**, klik **Refresh**, dan verifikasi bahwa **az104-07-folder** muncul dalam daftar folder.
+1. Navigasi kembali ke bilah **az104-07-share \| Telusuri** berbagi file, klik **Refresh**, dan verifikasi bahwa **folder az104-07** muncul dalam daftar folder.
 
 1. Klik **az104-07-folder** dan verifikasi bahwa **az104-07-file.txt** muncul dalam daftar file.
 
