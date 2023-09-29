@@ -75,7 +75,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama | **az104-08-rg01-vnet** |
+    | Nama | **az104-08-vnet01** |
     | Rentang alamat | **10.80.0.0/20** |
     | Nama subnet | **subnet0** |
     | Rentang subnet | **10.80.0.0/24** |
@@ -290,7 +290,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
 
     >**Catatan**: Bagian templat ini menentukan ukuran mesin virtual Azure yang sama dengan yang Anda tentukan untuk mesin virtual pertama melalui portal Azure.
 
-1. Pada blade **Edit template**, di bagian yang menampilkan konten template, ganti baris (baris `"dataDisks": [ ]`) dengan kode berikut :
+1. Pada bilah **Edit templat** , di bagian yang menampilkan konten templat, ganti baris **51** (`"dataDisks": [ ],`) dengan kode berikut :
 
    ```json
                     "dataDisks": [
@@ -308,7 +308,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
                         "caching": "ReadOnly",
                         "createOption": "Empty"
                       }
-                    ]
+                    ],
    ```
 
     >**Catatan**: Jika Anda menggunakan alat yang menempelkan kode baris demi baris, intellisense dapat menambahkan tanda kurung tambahan yang menyebabkan kesalahan validasi. Anda mungkin ingin menempelkan kode ke notepad terlebih dahulu lalu menempelkannya ke baris 49.

@@ -65,7 +65,7 @@ Dalam tugas ini, Anda akan membuat aplikasi web Azure.
 
 Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan.
 
-1. Pada panel aplikasi web yang baru disebarkan, klik tautan **URL** untuk menampilkan halaman web default di tab browser baru.
+1. Pada bilah aplikasi web yang baru disebarkan, klik tautan **Domain default** untuk menampilkan halaman web default di tab browser baru.
 
 1. Tutup tab browser baru dan, kembali ke portal Microsoft Azure, di bagian **Penyebaran** panel aplikasi web, klik **Slot penyebaran**.
 
@@ -142,12 +142,12 @@ Dalam tugas ini, Anda akan menyebarkan kode ke slot penyebaran pentahapan.
 1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mendorong contoh kode aplikasi web dari repositori lokal ke slot penyebaran penahapan aplikasi web Azure (pastikan untuk mengganti nilai tempat penampung dengan nilai nama pengguna dan kata sandi **Kredensial Penyebaran** dan nama aplikasi, yang Anda identifikasi di tugas sebelumnya):
 
    ```powershell
-    git push https://<deployment-username>:<deployment-password>@<app-name>.scm.azurewebsites.net/<app-name>.git master
+    git push https://<deployment-username>:<deployment-password>@<app-name>-staging.scm.azurewebsites.net/<app-name>.git master
    ```
 
 1. Tutup panel Cloud Shell.
 
-1. Pada panel slot pentahapan, klik **Ringkasan** lalu klik tautan **URL** untuk menampilkan laman web bawaan di tab browser baru.
+1. Pada bilah slot penahapan, klik **Gambaran Umum** lalu klik tautan **Domain default** untuk menampilkan halaman web default di tab browser baru.
 
 1. Verifikasi bahwa halaman browser menampilkan **Halo Dunia** pesan dan tutup tab baru.
 
@@ -161,7 +161,7 @@ Dalam tugas ini, Anda akan menukar slot pentahapan dengan slot produksi
 
 1. Pada panel **Tukar**, tinjau pengaturan default dan klik **Tukar**.
 
-1. Klik **Gambaran Umum** pada panel slot produksi aplikasi web lalu klik tautan **URL** untuk menampilkan halaman beranda situs web di tab browser baru.
+1. Klik **Gambaran Umum** pada bilah slot produksi aplikasi web lalu klik tautan **Domain default** untuk menampilkan halaman beranda situs web di tab browser baru.
 
 1. Pastikan halaman web default telah diganti dengan **Halo Dunia!** halaman.
 
@@ -171,7 +171,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
 1. Pada panel yang menampilkan slot produksi aplikasi web, di bagian **Pengaturan**, klik **Peluasan skala (paket App Service)** .
 
-1. Dari **bagian Penskalakan** pilih opsi **Berbasis Aturan** , lalu klik tautan **Kelola penskalakan berbasis aturan** .
+1. Dari **bagian Penskalakan** pilih opsi **Berbasis Aturan** , lalu klik tautan **Kelola penskalan berbasis aturan** .
 
 1. Klik **Skala otomatis kustom**.
 
@@ -229,7 +229,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
 1. Perkecil panel Cloud Shell (namun jangan ditutup) dan, di bilah aplikasi web, di bagian Pengaturan, klik **Skalakan (Paket App Service)** .
 
-1. Pilih **Pengaturan Skala Otomatis**, pilih tab **Jalankan riwayat** , dan periksa **jumlah instans sumber daya yang diamati**.
+1. Pilih **Pengaturan Skala Otomatis**, pilih tab **Jalankan riwayat** . Di bawah **Tampilkan data untuk yang terakhir**, pilih **1 jam** dan periksa **jumlah instans sumber daya yang diamati**.
 
 1. Pantau pemanfaatan dan jumlah instans selama beberapa menit. 
 

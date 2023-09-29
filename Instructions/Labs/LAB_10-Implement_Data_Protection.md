@@ -105,7 +105,7 @@ Dalam tugas ini, Anda akan membuat brankas layanan pemulihan.
 
 1. Pada bilah **az104-10-rsv1 - Properti**, klik tautan **Perbarui** pada label **Konfigurasi Cadangan**.
 
-1. Pada bilah **Konfigurasi Cadangan**, perhatikan bahwa Anda dapat mengatur **Jenis replikasi penyimpanan** menjadi **Locally-redundant** atau **Geo-redundan**. Biarkan pengaturan default **Geo-redundan** di tempatnya dan tutup bilah.
+1. Pada bilah **Konfigurasi Cadangan** , tinjau pilihan untuk **Jenis replikasi penyimpanan**. Biarkan pengaturan default **Geo-redundan** di tempatnya dan tutup bilah.
 
     >**Catatan**: Pengaturan ini hanya dapat dikonfigurasi jika tidak ada item cadangan yang ada.
 

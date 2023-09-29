@@ -195,7 +195,7 @@ Dalam tugas ini, Anda akan mengonfigurasi autentikasi dan otorisasi Azure Storag
 
 1. Buka jendela browser lain dengan menggunakan mode InPrivate dan arahkan ke URL yang Anda salin di langkah sebelumnya.
 
-    > **Catatan**: Jika Anda menggunakan Microsoft Edge, Anda akan dihadapkan pada halaman **Lisensi MIT (MIT)** . Jika Anda menggunakan Chrome, Microsoft Edge (Chromium) atau Firefox, Anda seharusnya dapat melihat konten file dengan mengunduhnya dan membukanya dengan Notepad.
+    > **Catatan**: Anda harus dapat melihat konten file dengan mengunduhnya dan membukanya dengan Notepad.
 
     > **Catatan**: Ini diharapkan, karena sekarang akses Anda diotorisasi berdasarkan token SAS yang baru dibuat.
 
