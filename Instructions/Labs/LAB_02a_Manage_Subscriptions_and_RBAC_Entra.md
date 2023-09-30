@@ -1,6 +1,6 @@
 ---
 lab:
-  title: 'Lab 02a: Mengelola Langganan dan RBAC (pengujian rebranding)'
+  title: 'Lab 02a: Mengelola Langganan dan RBAC'
   module: Administer Governance and Compliance
 ---
 
@@ -196,7 +196,7 @@ Dalam tugas ini, Anda akan membuat pengguna, menetapkan peran RBAC yang Anda bua
    Remove-AzRoleDefinition -Name 'Support Request Contributor (Custom)' -Force
    ```
 
-1. Di portal Azure, navigasikan kembali ke bilah **Pengguna - Semua pengguna** dari **ID Microsoft Entra**, dan hapus akun pengguna **az104-02-aaduser1**.
+1. Di portal Azure, navigasikan kembali ke bilah **Pengguna - Semua pengguna** **dari ID Microsoft Entra**, dan hapus akun pengguna **az104-02-aaduser1**.
 
 1. Di portal Azure, navigasikan kembali ke panel **Grup manajemen**. 
 
