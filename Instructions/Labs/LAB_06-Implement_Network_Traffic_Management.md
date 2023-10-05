@@ -148,13 +148,12 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual 
     | Pengaturan | Nilai |
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-06-vnet01_to_az104-06-vnet2** |
-    | Perbolehkan akses ke jaringan virtual jarak jauh | **Pastikan kotak dicentang (default)** |
-    | Perbolehkan lalu lintas ke jaringan virtual jarak jauh | **Pastikan kotak dicentang** |
+    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-06-vnet2_to_az104-06-vnet01** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | diaktifkan |
     | ID sumber daya | Nilai parameter resourceID **az104-06-vnet2** yang Anda rekam sebelumnya dalam tugas ini. |
-    | Perbolehkan akses ke jaringan virtual saat ini | **Pastikan kotak dicentang (default)** |
+    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
     
 
     >**Catatan**: Tunggu hingga operasi selesai.
@@ -168,13 +167,12 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual 
     | Pengaturan | Nilai |
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-06-vnet01_to_az104-06-vnet3** |
-    | Perbolehkan akses ke jaringan virtual jarak jauh | **Pastikan kotak dicentang (default)** |
-    | Perbolehkan lalu lintas ke jaringan virtual jarak jauh | **Pastikan kotak dicentang** | 
+    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-06-vnet3_to_az104-06-vnet01** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | diaktifkan |
     | ID sumber daya | nilai parameter resourceID **az104-06-vnet3** yang Anda catat sebelumnya dalam tugas ini |
-    | Perbolehkan akses ke jaringan virtual saat ini | **Pastikan kotak dicentang (default)** |
+    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
 
     >**Catatan**: Tunggu hingga operasi selesai.
     
@@ -381,7 +379,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
 
 1. Di portal Microsoft Azure, navigasikan kembali ke panel **Network Watcher - Pemecahan masalah koneksi**.
 
-1. Pada bilah **Network Watcher - Pemecahan masalah koneksi**, gunakan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
+1. Pada **bilah Network Watcher - Pemecahan masalah koneksi**, gunakan pengaturan berikut (biarkan pengaturan lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- | --- |
