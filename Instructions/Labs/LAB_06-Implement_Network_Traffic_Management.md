@@ -148,13 +148,14 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual 
     | Pengaturan | Nilai |
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-06-vnet01_to_az104-06-vnet2** |
-    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
+    | Izinkan 'az104-06-vnet01' untuk mengakses jaringan virtual yang di-peering | **Pastikan kotak dicentang (default)** |
+    | Izinkan gateway di 'az104-06-vnet01' untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | **Pastikan kotak dicentang** 
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-06-vnet2_to_az104-06-vnet01** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | diaktifkan |
     | ID sumber daya | Nilai parameter resourceID **az104-06-vnet2** yang Anda rekam sebelumnya dalam tugas ini. |
-    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
-    
+    | Izinkan az104-06-vnet2 untuk mengakses az104-06-vnet01 | **Pastikan kotak dicentang (default)** |
+    | Izinkan az104-06-vnet2 menerima lalu lintas yang diteruskan dari az104-06-vnet01 | **Pastikan kotak dicentang** |
 
     >**Catatan**: Tunggu hingga operasi selesai.
 
@@ -205,7 +206,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
 
     > **Catatan**: **10.62.0.4** mewakili alamat IP privat **az104-06-vm2**
 
-1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **Adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
 
     > **Catatan**: Hal ini diharapkan, karena jaringan virtual hub di-peering langsung dengan jaringan virtual spoke pertama.
 
@@ -224,7 +225,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
 
     > **Catatan**: **10.63.0.4** mewakili alamat IP pribadi **az104-06-vm3**
 
-1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **Adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa koneksinya langsung, tanpa lompatan perantara di antara VM.
 
     > **Catatan**: Hal ini diharapkan, karena jaringan virtual hub di-peering langsung dengan jaringan virtual spoke kedua.
 
@@ -241,7 +242,7 @@ Dalam tugas ini, Anda akan menguji transitivitas peering jaringan virtual dengan
     | Protokol | **TCP** |
     | Port Tujuan | **3389** |
 
-1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Perhatikan bahwa statusnya **Adalah Gagal**.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Perhatikan bahwa statusnya **Gagal**.
 
     > **Catatan**: Hal ini diharapkan, karena kedua jaringan virtual spoke tidak di-peering satu sama lain (peering jaringan virtual tidak transitif).
 
@@ -379,7 +380,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
 
 1. Di portal Microsoft Azure, navigasikan kembali ke panel **Network Watcher - Pemecahan masalah koneksi**.
 
-1. Pada **bilah Network Watcher - Pemecahan masalah koneksi**, gunakan pengaturan berikut (biarkan pengaturan lain dengan nilai defaultnya):
+1. Pada bilah **Network Watcher - Pemecahan masalah koneksi**, gunakan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -392,7 +393,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | Protokol | **TCP** |
     | Port Tujuan | **3389** |
 
-1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **Adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa lalu lintas dirutekan melalui **10.60.0.4**, ditetapkan ke adaptor jaringan **az104-06-nic0**. Jika status **Gagal**, Anda harus berhenti dan kemudian mulai az104-06-vm0.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa lalu lintas dirutekan melalui **10.60.0.4**, ditetapkan ke adaptor jaringan **az104-06-nic0**. Jika status **Gagal**, Anda harus berhenti lalu mulai az104-06-vm0.
 
     > **Catatan**: Hal ini diharapkan, karena lalu lintas antara jaringan virtual spoke sekarang dirutekan melalui mesin virtual yang terletak di jaringan virtual hub, yang berfungsi sebagai router.
 
@@ -416,7 +417,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
     | Jenis | **Publik** |
     | Tingkat | **Wilayah** |
     
-1. Pada tab **Konfigurasi IP frontend** , klik **Tambahkan konfigurasi IP frontend** dan gunakan pengaturan berikut:  
+1. Pada tab **Konfigurasi IP Frontend** , klik **Tambahkan konfigurasi IP frontend** dan gunakan pengaturan berikut:  
      
     | Pengaturan | Nilai |
     | --- | --- |
