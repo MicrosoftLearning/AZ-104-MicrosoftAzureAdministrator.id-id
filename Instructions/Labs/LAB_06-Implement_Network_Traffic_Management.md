@@ -149,12 +149,12 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual 
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-06-vnet01_to_az104-06-vnet2** |
     | Izinkan 'az104-06-vnet01' untuk mengakses jaringan virtual yang di-peering | **Pastikan kotak dicentang (default)** |
-    | Izinkan gateway di 'az104-06-vnet01' untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | **Pastikan kotak dicentang** 
+    | Izinkan gateway di 'az104-06-vnet01' untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | **Pastikan kotak dicentang** |
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-06-vnet2_to_az104-06-vnet01** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | diaktifkan |
     | ID sumber daya | Nilai parameter resourceID **az104-06-vnet2** yang Anda rekam sebelumnya dalam tugas ini. |
-    | Izinkan az104-06-vnet2 untuk mengakses az104-06-vnet01 | **Pastikan kotak dicentang (default)** |
+    | Izinkan az104-06-vnet2 mengakses az104-06-vnet01 | **Pastikan kotak dicentang (default)** |
     | Izinkan az104-06-vnet2 menerima lalu lintas yang diteruskan dari az104-06-vnet01 | **Pastikan kotak dicentang** |
 
     >**Catatan**: Tunggu hingga operasi selesai.
@@ -168,12 +168,15 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal antara jaringan virtual 
     | Pengaturan | Nilai |
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-06-vnet01_to_az104-06-vnet3** |
-    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
+    | Izinkan 'az104-06-vnet01' untuk mengakses jaringan virtual yang di-peering | **Pastikan kotak dicentang (default)** |
+    | Izinkan gateway di 'az104-06-vnet01' untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | **Pastikan kotak dicentang** |
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-06-vnet3_to_az104-06-vnet01** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | diaktifkan |
-    | ID sumber daya | nilai parameter resourceID **az104-06-vnet3** yang Anda catat sebelumnya dalam tugas ini |
-    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
+    | ID sumber daya | Nilai parameter resourceID **az104-06-vnet3** yang Anda rekam sebelumnya dalam tugas ini. |
+    | Izinkan az104-06-vnet3 untuk mengakses az104-06-vnet01 | **Pastikan kotak dicentang (default)** |
+    | Izinkan az104-06-vnet3 menerima lalu lintas yang diteruskan dari az104-06-vnet01 | **Pastikan kotak dicentang** |
+
 
     >**Catatan**: Tunggu hingga operasi selesai.
     
@@ -393,7 +396,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji perutean antara dua jaring
     | Protokol | **TCP** |
     | Port Tujuan | **3389** |
 
-1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa lalu lintas dirutekan melalui **10.60.0.4**, ditetapkan ke adaptor jaringan **az104-06-nic0**. Jika status **Gagal**, Anda harus berhenti lalu mulai az104-06-vm0.
+1. Klik **Jalankan pengujian diagnostik** dan tunggu hingga hasil pemeriksaan konektivitas dikembalikan. Verifikasi bahwa statusnya **Adalah Berhasil**. Tinjauan jalur jaringan dan perhatikan bahwa lalu lintas dirutekan melalui **10.60.0.4**, ditetapkan ke adaptor jaringan **az104-06-nic0**. Jika status **Gagal**, Anda harus berhenti dan kemudian mulai az104-06-vm0.
 
     > **Catatan**: Hal ini diharapkan, karena lalu lintas antara jaringan virtual spoke sekarang dirutekan melalui mesin virtual yang terletak di jaringan virtual hub, yang berfungsi sebagai router.
 
@@ -417,7 +420,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
     | Jenis | **Publik** |
     | Tingkat | **Wilayah** |
     
-1. Pada tab **Konfigurasi IP Frontend** , klik **Tambahkan konfigurasi IP frontend** dan gunakan pengaturan berikut:  
+1. Pada tab **Konfigurasi IP frontend** , klik **Tambahkan konfigurasi IP frontend** dan gunakan pengaturan berikut:  
      
     | Pengaturan | Nilai |
     | --- | --- |
