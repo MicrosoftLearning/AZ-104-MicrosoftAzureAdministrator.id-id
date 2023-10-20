@@ -617,7 +617,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
     >**Catatan**: Skrip menginstal ekstensi skrip kustom yang mengonfigurasi disk terlampir.
 
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk menjalankan skrip dan mengonfigurasi disk kumpulan skala mesin virtual Azure:
+1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menjalankan skrip dan mengonfigurasi disk set skala komputer virtual Azure:
 
    ```powershell
    ./az104-08-configure_VMSS_disks.ps1
