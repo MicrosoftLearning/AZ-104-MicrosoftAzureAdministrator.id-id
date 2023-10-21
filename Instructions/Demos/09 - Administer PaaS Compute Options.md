@@ -80,7 +80,7 @@ Dalam demonstrasi ini kami membuat, mengonfigurasi, dan menyebarkan kontainer de
 
 1. Tunggu hingga sumber daya disebarkan.
 
-1. Pada halaman **Gambaran Umum** untuk resoure, pastikan **Status** **Sedang Berjalan**.
+1. Pada halaman **Gambaran Umum** untuk sumber daya, pastikan **Status** **Berjalan**.
 
 1. Navigasikan ke **FQDN** untuk instans kontainer dan pastikan halaman selamat datang ditampilkan. 
 

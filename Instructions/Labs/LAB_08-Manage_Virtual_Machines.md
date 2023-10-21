@@ -213,13 +213,15 @@ Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada dua m
 
 1. Untuk memastikan bahwa konfigurasi berbasis ekstensi Skrip Kustom berhasil, navigasikan kembali pada bilah **az104-08-vm1**, di bagian **Operasi**, klik **Jalankan perintah**, dan dalam daftar perintah, klik **RunPowerShellScript**.
 
-1. Pada bilah **Jalankan Skrip Perintah**, ketikkan berikut ini dan klik **Jalankan** untuk mengakses situs web yang di-hosting di **az104-08-vm0**:
+1. Pada bilah **Jalankan Skrip Perintah** , ketik yang berikut ini dan klik **Jalankan** untuk mengakses situs web yang dihosting di **az104-08-vm1**:
 
    ```powershell
    Invoke-WebRequest -URI http://10.80.0.4 -UseBasicParsing
    ```
 
     >**Catatan**: Parameter **-UseBasicParsing** diperlukan untuk menghilangkan ketergantungan pada Internet Explorer untuk menyelesaikan eksekusi cmdlet
+
+    >**Catatan**: Parameter **-URI** adalah **alamat IP Privat** VM. Navigasi ke bilah **az104-08-vm1** , di bagian **Jaringan** , dan klik **Pengaturan jaringan**
 
     >**Catatan**: Anda juga dapat terhubung ke **az104-08-vm0** dan menjalankan `Invoke-WebRequest -URI http://10.80.0.5 -UseBasicParsing` untuk mengakses situs web yang di-hosting di **az104-08-vm1**.
 
@@ -379,7 +381,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
 
 1. Pada tab **Disk** pada bilah **Buat kumpulan skala mesin virtual**, terima nilai default dan klik **Berikutnya : Jaringan >** .
 
-1. Pada tab **Jaringan** dari bilah **Buat set skala komputer virtual** , klik tautan **Buat jaringan virtual** di bawah kotak teks **Jaringan** virtual dan buat jaringan virtual baru dengan pengaturan berikut (biarkan yang lain dengan nilai defaultnya). 
+1. Pada tab **Jaringan** dari bilah **Buat set skala komputer virtual** , klik tautan **Buat jaringan virtual** di bawah kotak teks **Jaringan** virtual dan buat jaringan virtual baru dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya). 
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -424,7 +426,7 @@ Dalam tugas ini, Anda akan menggunakan skala mesin virtual Azure yang ditetapkan
     | Opsi load balancer | **Azure load balancer** |
     | Memilih load balancer | **Membuat load balancer** |
     
-1.  Pada halaman **Buat load balancer** , tentukan nama load balancer dan ambil default. Klik **Buat** ketika Anda selesai lalu **Berikutnya : Penskalakan >**.
+1.  Pada halaman **Buat load balancer** , tentukan nama load balancer dan ambil default. Klik **Buat** ketika Anda selesai lalu **Berikutnya: Penskalakan >**.
     
     | Pengaturan | Nilai |
     | --- | --- |
@@ -615,7 +617,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
     >**Catatan**: Skrip menginstal ekstensi skrip kustom yang mengonfigurasi disk terlampir.
 
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk menjalankan skrip dan mengonfigurasi disk kumpulan skala mesin virtual Azure:
+1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menjalankan skrip dan mengonfigurasi disk set skala komputer virtual Azure:
 
    ```powershell
    ./az104-08-configure_VMSS_disks.ps1

@@ -52,7 +52,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen.
 
 1. Telusuri dan pilih **Grup manajemen** untuk menavigasi ke panel **Grup manajemen**.
 
-1. Tinjauan pesan di bagian atas panel **Grup manajemen**. Jika Anda melihat pesan yang menyatakan **Anda terdaftar sebagai admin direktori tetapi tidak memiliki izin yang diperlukan untuk mengakses grup manajemen root**, lakukan urutan langkah-langkah berikut:
+1. Tinjauan pesan di bagian atas panel **Grup manajemen**. Jika Anda melihat pesan yang menyatakan **Anda terdaftar sebagai admin direktori tetapi tidak memiliki izin yang diperlukan untuk mengakses grup manajemen akar**, lakukan urutan langkah-langkah berikut:
 
     1. Di portal Azure, cari dan pilih **ID Microsoft Entra**.
     

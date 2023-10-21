@@ -102,7 +102,7 @@ Dalam demonstrasi ini, kita akan belajar tentang tugas peran.
 
 1.  Buat pengguna atau pilih pengguna yang sudah ada.
 
-1.  Pilih **Tambahkan penetapan peran** dan pilih peran. Untuk exmaple, *pemilik*.
+1.  Pilih **Tambahkan penetapan peran** dan pilih peran. Misalnya, *pemilik*.
 
 1.  Pilih **Periksa akses**.
 

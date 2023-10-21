@@ -107,7 +107,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran aplikasi web.
 
     >**Catatan:** Salin kredensial ini ke Notepad. Anda akan membutuhkannya nanti.
     
-    >**Catatan:** Kredensial ini akan diteruskan melalui URI. Jangan sertakan pesuruh khusus yang memengaruhi interpretasi URI. Misalnya, @, $, atau #. Tanda asterick atau plus (di tengah string) akan berfungsi.
+    >**Catatan:** Kredensial ini akan diteruskan melalui URI. Jangan sertakan karakter khusus yang memengaruhi interpretasi URI. Misalnya, @, $, atau #. Tanda asterick atau plus (di tengah string) akan berfungsi.
     
 ## Tugas 4: Sebarkan kode ke slot pentahapan pementasan
 
