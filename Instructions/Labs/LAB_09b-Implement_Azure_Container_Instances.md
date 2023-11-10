@@ -7,7 +7,7 @@ lab:
 # Lab 09b - Menerapkan Azure Container Instances
 # Panduan lab siswa
 
-## Skenario lab
+## Skenario laboratorium
 
 Contoso ingin menemukan platform baru untuk beban kerja virtualnya. Anda mengidentifikasi sejumlah gambar kontainer yang dapat dimanfaatkan untuk mencapai tujuan ini. Karena Anda ingin meminimalkan manajemen kontainer, Anda berencana untuk mengevaluasi penggunaan Azure Container Instances untuk penyebaran gambar Docker.
 
@@ -18,7 +18,7 @@ Contoso ingin menemukan platform baru untuk beban kerja virtualnya. Anda mengide
 Di lab ini Anda akan:
 
 - Tugas 1: Menyebarkan Azure Container Instance menggunakan gambar Docker
-- Tugas 2: Tinjauan fungsionalitas Instans Kontainer Azure
+- Tugas 2: Tinjau fungsionalitas Azure Container Instance
 
 ## Perkiraan waktu: 20 menit
 
@@ -34,11 +34,11 @@ Di lab ini Anda akan:
 
 Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
 
-1. Masuk ke [portal Microsoft Azure](https://portal.azure.com).
+1. Masuk ke [portal Azure](https://portal.azure.com).
 
 1. Di portal Azure, jelajahi **Instans kontainer** lalu, pada bilah **Instans kontainer**, klik **+ Buat**.
 
-1. Pada tab **Dasar** pada bilah **Buat instans penampung**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Pada tab **Dasar-dasar** pada bilah **Buat instans penampung**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | ---- | ---- |
@@ -49,21 +49,21 @@ Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
     | Sumber Gambar | **Gambar memulai cepat** |
     | Gambar | **mcr.microsoft.com/azuredocs/aci-helloworld:latest (Linux)** |
 
-1. Klik **Berikutnya: Jaringan >** dan, pada tab **Jaringan** bilah **Buat instans penampung**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Klik **Berikutnya: Jaringan >** dan, pada tab **Jaringan** dari bilah **Buat instans** kontainer, tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Label nama DNS | nama host DNS yang valid dan unik secara global |
 
-    >**Catatan**: Kontainer Anda akan dapat dijangkau publik di dns-name-label.region.azurecontainer.io. Jika Anda menerima pesan error **Label nama DNS tidak tersedia**, tentukan nilai yang berbeda.
+    >**Catatan**: Kontainer Anda akan dapat dijangkau secara publik pada dns-name-label.region.azurecontainer.io. Jika Anda menerima pesan galat **DNS name label not available**, tentukan nilai yang berbeda.
 
-1. Klik **Berikutnya: Lanjutan >** , tinjauan pengaturan pada tab **Lanjutan** pada bilah **Buat instans penampung** tanpa membuat perubahan apa pun, klik **Tinjauan + Buat**, pastikan validasi lulus dan klik **Buat**.
+1. Klik **Berikutnya: >** Tingkat Lanjut, tinjau pengaturan pada tab Tingkat Lanjut** dari ****bilah Buat instans** kontainer tanpa membuat perubahan apa pun, klik **Tinjau + Buat**, pastikan validasi lulus dan klik **Buat**.
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Ini akan memakan waktu sekitar 3 menit.
 
-    >**Catatan**: Sambil menunggu, Anda mungkin tertarik untuk melihat [kode di balik contoh aplikasi](https://github.com/Azure-Samples/aci-helloworld). Untuk melihatnya, jelajahi \\folder aplikasi.
+    >**Catatan**: Saat menunggu, Anda mungkin tertarik untuk melihat [kode di belakang aplikasi](https://github.com/Azure-Samples/aci-helloworld) sampel. Untuk melihatnya, jelajahi \\folder aplikasi.
 
-## Tugas 2: Tinjauan fungsionalitas Instans Kontainer Azure
+## Tugas 2: Tinjau fungsionalitas Azure Container Instance
 
 Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
@@ -81,13 +81,13 @@ Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
 ## Membersihkan sumber daya
 
->**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
+>**Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Dengan menghapus sumber daya yang tidak digunakan, Anda tidak akan melihat biaya yang tak terduga.
 
->**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+>**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
-1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
+1. Di portal Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
 
-    >**Catatan**: penyimpanan Cloud Shell harus dibuat agar perintah ini berfungsi. 
+    >**Catatan**: Penyimpanan Cloud Shell harus dibuat agar perintah ini berfungsi. 
 
 1. Buat daftar semua grup sumber daya yang dibuat di seluruh lab modul ini dengan menjalankan perintah berikut:
 
@@ -101,7 +101,7 @@ Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
    Get-AzResourceGroup -Name 'az104-09b*' | Remove-AzResourceGroup -Force -AsJob
    ```
 
-    >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
+    >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
 ## Tinjau
 

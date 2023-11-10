@@ -13,11 +13,11 @@ Dalam demonstrasi ini, kita akan membuat akun penyimpanan.
 
 **Referensi**: [Membuat akun penyimpanan](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal)
 
-1. Menggunakan portal Microsoft Azure.
+1. Gunakan portal Azure.
 
 1. Tinjau tujuan akun penyimpanan. 
    
-1. Cari dan pilih **Akun Penyimpanan**. 
+1. Cari dan pilih **Akun** Penyimpanan. 
  
 1. Buat akun penyimpanan dasar. 
 
@@ -27,7 +27,7 @@ Dalam demonstrasi ini, kita akan membuat akun penyimpanan.
 
     - Tinjau pilihan tingkat akses. Misalnya, tingkat dingin dan panas. 
 
-    - Tab dan pengaturan lain akan tercakup dalam demonstrasi lain. 
+    - Tab dan pengaturan lain akan dibahas dalam demonstrasi lain. 
 
 1. Buat akun penyimpanan dan tunggu hingga sumber daya disebarkan. 
 
@@ -75,9 +75,9 @@ Dalam demonstrasi ini, kita akan bekerja dengan berbagi file dan snapshot.
 
 1. Akses akun penyimpanan dan klik **File**.
 
-1. Membuat berbagi file. Tinjau kuota, unggah file, dan tambahkan direktori untuk mengatur informasi. 
+1. Buat berbagi file. Tinjau kuota, unggah file, dan tambahkan direktori untuk mengatur informasi. 
 
-1. Buat rekam jepret berbagi file. Tinjau kapan harus menggunakan rekam jepret dan perbedaannya dengan cadangan. Saat Anda memiliki waktu, unggah file, ambil rekam jepret, hapus file, dan pulihkan rekam jepret.
+1. Buat rekam jepret berbagi file. Tinjau kapan menggunakan rekam jepret dan perbedaannya dengan cadangan. Saat Anda memiliki waktu, unggah file, ambil rekam jepret, hapus file, dan pulihkan rekam jepret.
 
 
 ## Alat Penyimpanan (opsional)
@@ -92,9 +92,9 @@ Dalam demonstrasi ini, kami akan meninjau beberapa alat penyimpanan Azure umum.
 
 **Referensi**: [Menyalin atau memindahkan data ke Azure Storage dengan menggunakan AzCopy v10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=/azure/storage/files/toc.json)
 
-1. Diskusikan kapan menggunakan AzCopy. Lihat bantuan, **azcopy /?**.
+1. Diskusikan kapan harus menggunakan AzCopy. Lihat bantuan, **azcopy /?**.
 
-1. Gulir ke bawah bagian **Sampel** . Saat Anda punya waktu, cobalah salah satu contohnya. 
+1. Gulir ke bawah bagian **Sampel** . Saat Anda punya waktu, coba salah satu contohnya. 
     
 
 

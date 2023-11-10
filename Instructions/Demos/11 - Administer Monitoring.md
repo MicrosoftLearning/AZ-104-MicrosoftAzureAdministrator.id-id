@@ -6,19 +6,19 @@ demo:
 
 # 11 - Mengelola Pemantauan
 
-## Mengonfigurasi Peringatan Azure
+## Mengonfigurasi Pemberitahuan Azure
 
 Dalam demonstrasi ini, kami akan membuat aturan pemberitahuan.
 
-**Referensi**: [Membuat, melihat, dan mengelola Pemberitahuan Metrik Menggunakan Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-metric)
+**Referensi**: [Membuat, menampilkan, dan mengelola Pemberitahuan Metrik Menggunakan Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-metric)
 
-**Buat Aturan Pemberitahuan**
+**Buat aturan peringatan**
 
-1. Menggunakan portal Microsoft Azure.
+1. Gunakan portal Azure.
 
 1. Cari dan pilih **Pantau** lalu **Pemberitahuan**.
 
-1. Pilih cakupan untuk aturan pemberitahuan. Diskusikan bagaimana Anda bisa memfilter berdasarkan langganan, jenis sumber daya, atau lokasi sumber daya.
+1. Pilih cakupan untuk aturan pemberitahuan. Diskusikan bagaimana Anda dapat memfilter berdasarkan langganan, jenis sumber daya, atau lokasi sumber daya.
 
 1. Atur kondisi untuk aturan pemberitahuan. Diskusikan bagaimana sinyal menentukan apa yang ingin Anda ukur. 
 
@@ -32,7 +32,7 @@ Dalam demonstrasi ini, kami akan membuat aturan pemberitahuan.
 
 Dalam demonstrasi ini, Anda akan bekerja dengan bahasa kueri Analitik Log.
 
-1. Menggunakan portal Microsoft Azure.
+1. Gunakan portal Azure.
 
 1. Cari dan pilih **Pantau** lalu **Log**.
 
@@ -42,11 +42,11 @@ Dalam demonstrasi ini, Anda akan bekerja dengan bahasa kueri Analitik Log.
 
 1. Tinjau bagaimana informasi log diatur dalam tabel. Telusuri beberapa tabel.
 
-1. Pindah ke tab **kueri** . Pilih kueri dan **muat ke editor**. Diskusikan berapa banyak kueri umum yang telah dibuat.
+1. Pindah ke **tab kueri** . Pilih kueri dan **muat ke editor**. Diskusikan berapa banyak kueri umum yang telah dibuat.
 
 1. Tinjau sintaks KQL secara singkat. 
 
-1. Saat Anda memiliki waktu, bereksperimenlah dengan **Favorit**dan **Kueri Tersimpan** .
+1. Saat Anda memiliki waktu, bereksperimenlah dengan **Favorit dan **Kueri** Tersimpan** .
 
 
 

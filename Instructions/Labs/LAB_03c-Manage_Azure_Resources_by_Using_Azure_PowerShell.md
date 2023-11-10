@@ -4,10 +4,10 @@ lab:
   module: Administer Azure Resources
 ---
 
-# Lab 03c - Mengelola sumber daya Azure dengan Menggunakan Azure PowerShell
+# Lab 03c - Kelola sumber daya Azure dengan Menggunakan Azure PowerShell
 # Panduan lab siswa
 
-## Skenario lab
+## Skenario laboratorium
 
 Sekarang setelah Anda menjelajahi kemampuan administrasi Azure dasar yang terkait dengan penyediaan sumber daya dan mengaturnya berdasarkan grup sumber daya menggunakan portal Azure dan templat Azure Resource Manager, Anda perlu melakukan tugas yang setara dengan menggunakan Azure PowerShell. Untuk menghindari penginstalan modul Azure PowerShell, Anda akan memanfaatkan lingkungan PowerShell yang tersedia di Azure Cloud Shell.
 
@@ -27,9 +27,9 @@ Di lab ini Anda akan:
 
 ![gambar](../media/lab03c.png)
 
-### Instruksi
+### Petunjuk
 
-> **Catatan**:  Selalu buat kata sandi aman Anda sendiri untuk mesin virtual atau akun pengguna apa pun yang Anda buat. Jika mesin virtual dibuat untuk Anda, gunakan **Atur ulang kata sandi** di Portal untuk memperbarui kata sandi. 
+> **Catatan**: Selalu buat kata sandi aman Anda sendiri untuk komputer virtual atau akun pengguna apa pun yang Anda buat. Jika mesin virtual dibuat untuk Anda, gunakan **Setel ulang kata sandi** di Portal untuk memperbarui kata sandi. 
 
 ## Latihan 1
 
@@ -41,7 +41,7 @@ Dalam tugas ini, Anda akan membuka sesi PowerShell di Cloud Shell.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**. 
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
+    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
 
 1. Jika diminta, klik **Buat penyimpanan**, dan tunggu hingga panel Azure Cloud Shell ditampilkan. 
 
@@ -51,7 +51,7 @@ Dalam tugas ini, Anda akan membuka sesi PowerShell di Cloud Shell.
 
 Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure dengan menggunakan sesi Azure PowerShell dalam Cloud Shell
 
-1. Untuk membuat grup sumber daya di wilayah Azure yang sama dengan grup sumber daya **az104-03b-rg1** yang Anda buat di lab sebelumnya, dari sesi PowerShell dalam Cloud Shell, jalankan berikut ini:
+1. Untuk membuat grup sumber daya di region Azure yang sama dengan grup sumber daya **az104-03b-rg1** yang Anda buat di lab sebelumnya, dari sesi PowerShell dalam Cloud Shell, jalankan berikut ini:
 
    ```powershell
    $location = (Get-AzResourceGroup -Name az104-03b-rg1).Location
@@ -82,7 +82,7 @@ Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure
     -Disk $diskConfig
    ```
 
-1. Untuk mengambil properti dari disk yang baru dibuat, jalankan berikut ini:
+1. Untuk mengambil properti dari disk yang baru dibuat, jalankan yang berikut ini:
 
    ```powershell
    Get-AzDisk -ResourceGroupName $rgName -Name $diskName
@@ -98,7 +98,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
    New-AzDiskUpdateConfig -DiskSizeGB 64 | Update-AzDisk -ResourceGroupName $rgName -DiskName $diskName
    ```
 
-1. Untuk memverifikasi bahwa perubahan diterapkan, jalankan berikut ini:
+1. Untuk memverifikasi bahwa perubahan diterapkan, jalankan yang berikut ini:
 
    ```powershell
    Get-AzDisk -ResourceGroupName $rgName -Name $diskName
@@ -116,7 +116,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
    New-AzDiskUpdateConfig -SkuName Premium_LRS | Update-AzDisk -ResourceGroupName $rgName -DiskName $diskName
    ```
 
-1. Untuk memverifikasi bahwa perubahan diterapkan, jalankan berikut ini:
+1. Untuk memverifikasi bahwa perubahan diterapkan, jalankan yang berikut ini:
 
    ```powershell
    (Get-AzDisk -ResourceGroupName $rgName -Name $diskName).Sku
@@ -124,7 +124,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
 
 ## Membersihkan sumber daya
 
-   >**Catatan**: Jangan hapus sumber daya yang Anda terapkan di lab ini. Anda akan merujuknya di lab berikutnya dari modul ini.
+   >**Catatan**: Jangan hapus sumber daya yang Anda sebarkan di lab ini. Anda akan merujuknya di lab berikutnya dari modul ini.
 
 ## Tinjau
 

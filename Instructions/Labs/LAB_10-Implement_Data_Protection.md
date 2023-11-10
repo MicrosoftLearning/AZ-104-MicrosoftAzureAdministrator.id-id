@@ -7,7 +7,7 @@ lab:
 # Lab 10 - Mencadangkan mesin virtual
 # Panduan lab siswa
 
-## Skenario lab
+## Skenario laboratorium
 
 Anda telah ditugaskan untuk mengevaluasi penggunaan Layanan Pemulihan Azure untuk pencadangan dan pemulihan file yang di-hosting di mesin virtual Azure dan komputer lokal. Selain itu, Anda ingin mengidentifikasi metode untuk melindungi data yang disimpan di Recovery Services vault dari kehilangan data yang tidak disengaja atau berbahaya.
 
@@ -17,13 +17,13 @@ Anda telah ditugaskan untuk mengevaluasi penggunaan Layanan Pemulihan Azure untu
 
 Di lab ini Anda akan:
 
-+ Tugas 1: Menyediakan lingkungan lab
-+ Tugas 2: Membuat vault Recovery Service
-+ Tugas 3: Menerapkan pencadangan tingkat mesin virtual Azure
++ Tugas 1: Memprovisikan lingkungan lab
++ Tugas 2: Membuat vault Layanan Pemulihan
++ Tugas 3: Menerapkan pencadangan tingkat komputer virtual Azure
 + Tugas 4: Menerapkan pencadangan File dan Folder
-+ Tugas 5: Melakukan pemulihan file menggunakan agen Layanan Pemulihan Azure
-+ Tugas 6: Melakukan pemulihan file menggunakan snapshot mesin virtual Azure (opsional)
-+ Tugas 7: Meninjau fungsionalitas penghapusan permanen Layanan Pemulihan Azure (opsional)
++ Tugas 5: Melakukan pemulihan file dengan menggunakan agen Azure Recovery Services
++ Tugas 6: Lakukan pemulihan file dengan menggunakan rekam jepret komputer virtual Azure (opsional)
++ Tugas 7: Tinjau fungsionalitas penghapusan sementara Azure Recovery Services (opsional)
 
 ## Perkiraan waktu: 50 menit
 
@@ -35,19 +35,19 @@ Di lab ini Anda akan:
 
 ## Latihan 1
 
-## Tugas 1: Menyediakan lingkungan lab
+## Tugas 1: Memprovisikan lingkungan lab
 
 Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan untuk menguji skenario pencadangan yang berbeda.
 
-1. Masuk ke [portal Microsoft Azure](https://portal.azure.com).
+1. Masuk ke [portal Azure](https://portal.azure.com).
 
 1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
-1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** ke dalam direktori beranda Cloud Shell.
+1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu dropdown, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** ke dalam direktori beranda Cloud Shell.
 
 1. Dari panel Cloud Shell, jalankan cara berikut ini untuk membuat grup sumber daya yang akan meng-hosting mesin virtual (ganti tempat penampung `[Azure_region]` dengan nama wilayah Azure tempat Anda ingin menyebarkan mesin virtual Azure). Ketikkan setiap baris perintah secara terpisah dan jalankan secara terpisah:
 
@@ -76,11 +76,11 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual yang akan digunakan unt
 
 1. Kecilkan Cloud Shell (tetapi jangan tutup).
 
-    >**Catatan**: Jangan menunggu penyebaran selesai tetapi lanjutkan ke tugas berikutnya. Penyebaran akan memakan waktu sekitar 5 menit.
+    >**Catatan**: Jangan tunggu penyebaran selesai tetapi lanjutkan ke tugas berikutnya. Penyebaran akan memakan waktu sekitar 5 menit.
 
-## Tugas 2: Membuat vault Recovery Service
+## Tugas 2: Membuat vault Layanan Pemulihan
 
-Dalam tugas ini, Anda akan membuat brankas layanan pemulihan.
+Dalam tugas ini, Anda akan membuat recovery service vault.
 
 1. Di portal Microsoft Azure, cari dan pilih **Recovery Services vaults** dan, pada bilah **Recovery Services vaults**, klik **+ Buat**.
 
@@ -93,9 +93,9 @@ Dalam tugas ini, Anda akan membuat brankas layanan pemulihan.
     | Nama Vault | **az104-10-rsv1** |
     | Wilayah | nama wilayah tempat Anda menggunakan dua mesin virtual di tugas sebelumnya |
 
-    >**Catatan**: Pastikan Anda menentukan wilayah yang sama tempat Anda menyebarkan mesin virtual di tugas sebelumnya.
+    >**Catatan**: Pastikan Anda menentukan wilayah yang sama tempat Anda menyebarkan komputer virtual di tugas sebelumnya.
 
-1. Klik **Tinjauan + Buat**, pastikan validasi lulus dan klik **Buat**.
+1. Klik **Tinjau + Buat**, pastikan validasi lulus dan klik **Buat**.
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Penyebaran akan memakan waktu kurang dari 1 menit.
 
@@ -105,7 +105,7 @@ Dalam tugas ini, Anda akan membuat brankas layanan pemulihan.
 
 1. Pada bilah **az104-10-rsv1 - Properti**, klik tautan **Perbarui** pada label **Konfigurasi Cadangan**.
 
-1. Pada bilah **Konfigurasi Cadangan** , tinjau pilihan untuk **Jenis replikasi penyimpanan**. Biarkan pengaturan default **Geo-redundan** di tempatnya dan tutup bilah.
+1. Pada bilah **Konfigurasi** Cadangan, tinjau pilihan untuk **Jenis** replikasi Penyimpanan. Biarkan pengaturan default **Geo-redundant** di tempatnya dan tutup bilah.
 
     >**Catatan**: Pengaturan ini hanya dapat dikonfigurasi jika tidak ada item cadangan yang ada.
 
@@ -115,11 +115,11 @@ Dalam tugas ini, Anda akan membuat brankas layanan pemulihan.
 
 1. Tutup bilah **Pengaturan Keamanan** dan, kembali ke bilah vault **az104-10-rsv1** Layanan Pemulihan, klik **Ringkasan**.
 
-## Tugas 3: Menerapkan pencadangan tingkat mesin virtual Azure
+## Tugas 3: Menerapkan pencadangan tingkat komputer virtual Azure
 
 Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure.
 
-   >**Catatan**: Sebelum Anda memulai tugas ini, pastikan penyebaran yang Anda mulai di tugas pertama lab ini telah berhasil diselesaikan.
+   >**Catatan**: Sebelum Anda memulai tugas ini, pastikan bahwa penyebaran yang Anda mulai di tugas pertama lab ini telah berhasil diselesaikan.
 
 1. Pada bilah Recovery Services vault **az104-10-rsv1**, klik **Ringkasan**, lalu klik **+ Cadangan**.
 
@@ -138,7 +138,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure.
 
     | Pengaturan | Nilai |
     | ---- | ---- |
-    | Nama kebijakan | **az104-10-backup-policy** |
+    | Nama Azure Policy | **az104-10-backup-policy** |
     | Frekuensi | **Harian** |
     | Waktu | **12:00 Siang** |
     | Timezone | nama zona waktu lokal Anda |
@@ -156,7 +156,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure.
 
 1. Pada bilah **az104-10-vm0** Item Cadangan, klik **Cadangkan sekarang**, terima nilai default di daftar dropdown **Pertahankan Pencadagan Sampai**, dan klik **Ok**.
 
-    >**Catatan**: Jangan menunggu hingga pencadangan selesai, tetapi lanjutkan ke tugas berikutnya.
+    >**Catatan**: Jangan tunggu hingga pencadangan selesai tetapi lanjutkan ke tugas berikutnya.
 
 ## Tugas 4: Menerapkan pencadangan File dan Folder
 
@@ -164,15 +164,15 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Di portal Microsoft Azure, cari dan pilih **Mesin Virtual**, dan pada bilah **Mesin Virtual**, klik **az104-10-vm1**.
 
-1. Pada bilah **az104-10-vm1**, klik **Hubungkan**, di menu menurun, klik **RDP**, di bilah **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
+1. Pada bilah **az104-10-vm1**, klik **Hubungkan**, di menu dropdown, klik **RDP**, di bilah **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
 
-    >**Catatan**: Langkah ini mengacu pada menghubungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
+    >**Catatan**: Langkah ini mengacu pada menyambungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
 
-    >**Catatan**: Anda dapat mengabaikan permintaan peringatan apa pun saat menghubungkan ke mesin virtual target.
+    >**Catatan**: Anda dapat mengabaikan perintah peringatan saat menyambungkan ke komputer virtual target.
 
 1. Saat diminta, masuk menggunakan nama pengguna **Siswa** dan sandi dari file parameter.
 
-    >**Catatan:** Karena portal Microsoft Azure tidak mendukung IE11 lagi, Anda harus menggunakan Browser Microsoft Edge untuk tugas ini.
+    >**Catatan:** Karena portal Azure tidak mendukung IE11 lagi, Anda harus menggunakan Browser Microsoft Edge untuk tugas ini.
 
 1. Dalam sesi Desktop Jarak Jauh ke mesin virtual Azure **az104-10-vm1**, mulai browser web Edge, jelajahi [portal Microsoft Azure](https://portal.azure.com), dan masuk menggunakan kredensial Anda.
 
@@ -187,7 +187,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
     | Di mana beban kerja Anda berjalan? | **Lokal** |
     | Apa yang ingin Anda cadangkan? | **File dan folder** |
 
-    >**Catatan**: Meskipun mesin virtual yang Anda gunakan dalam tugas ini berjalan di Azure, Anda dapat memanfaatkannya untuk mengevaluasi kemampuan pencadangan yang berlaku untuk komputer lokal mana pun yang menjalankan sistem operasi Windows Server.
+    >**Catatan**: Meskipun komputer virtual yang Anda gunakan dalam tugas ini berjalan di Azure, Anda dapat memanfaatkannya untuk mengevaluasi kemampuan pencadangan yang berlaku untuk komputer lokal yang menjalankan sistem operasi Windows Server.
 
 1. Pada bilah **Sasaran Cadangan**, klik **Siapkan infrastruktur**.
 
@@ -195,7 +195,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Saat diminta, klik **Jalankan** untuk memulai penginstalan **MARSAgentInstaller.exe** dengan pengaturan default.
 
-    >**Catatan**: Pada halaman **Opsi Ikut Serta Pembaruan Microsoft** pada **Wizard Penyiapan Agen Layanan Pemulihan Microsoft Azure**, pilih opsi penginstalan **Saya tidak ingin menggunakan Pembaruan Microsoft**.
+    >**Catatan**: Pada **halaman Keikutsertaan** Pembaruan Microsoft dari **Wizard** Penyetelan Agen Layanan Pemulihan Microsoft Azure, pilih **opsi Saya tidak ingin menggunakan penginstalan Pembaruan** Microsoft.
 
 1. Pada halaman **Penginstalan** **Wizard Penyiapan Agen Layanan Pemulihan Microsoft Azure**, klik **Lanjutkan ke Pendaftaran**. Operasi ini akan memulai **Daftarkan Wizard Server**.
 
@@ -209,7 +209,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Kembali ke halaman **Identifikasi Vault**, klik **Berikutnya**.
 
-1. Pastikan **Simpan frasa sandi dengan aman ke Azure Key Vault** tidak diperiksa. 
+1. Pastikan **Simpan frase sandi dengan aman ke Azure Key Vault** tidak dicentang. 
 
 1. Pada halaman **Pengaturan Enkripsi** dari **Daftarkan Wizard Server**, klik **Buat Frasa Sandi**.
 
@@ -229,11 +229,11 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Pada halaman **Pilih Item untuk Dicadangkan**, klik **Tambahkan Item**.
 
-1. Di kotak dialog **Pilih Item**, perluas **C:\\Windows\\System32\\drivers\\etc\\** , pilih **host** , lalu klik **OK**:
+1. Di kotak dialog **Pilih Item**, perluas **C:\\Windows\\System32\\drivers\\etc\\**, pilih **hosts** , lalu klik **OK**:
 
 1. Pada halaman **Pilih Item untuk Dicadangkan**, klik **Berikutnya**.
 
-1. Pada halaman **Tentukan Jadwal Pencadangan**, pastikan bahwa opsi **Hari** dipilih, pada kotak daftar dropdown pertama pada **Pada waktu berikut (Nilai maksimum yang diizinkan adalah tiga kali sehari)** , pilih **04:30 Pagi**, lalu klik **Berikutnya**.
+1. Pada halaman **Tentukan Jadwal Pencadangan**, pastikan bahwa opsi **Hari** dipilih, pada kotak daftar dropdown pertama pada **Pada waktu berikut (Nilai maksimum yang diizinkan adalah tiga kali sehari)**, pilih **04:30 Pagi**, lalu klik **Berikutnya**.
 
 1. Pada halaman **Pilih Kebijakan Retensi**, terima nilai defaultnya, lalu klik **Berikutnya**.
 
@@ -243,7 +243,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Di konsol **Microsoft Azure Backup**, di panel Tindakan, klik **Cadangkan Sekarang**.
 
-    >**Catatan**: Opsi untuk menjalankan pencadangan sesuai permintaan tersedia setelah Anda membuat pencadangan terjadwal.
+    >**Catatan**: Opsi untuk menjalankan pencadangan sesuai permintaan menjadi tersedia setelah Anda membuat cadangan terjadwal.
 
 1. Di Wizard Pencadangan Sekarang, pada halaman **Pilih Item Cadangan**, pastikan bahwa opsi **File dan Folder** dipilih dan klik **Berikutnya**.
 
@@ -257,13 +257,13 @@ Dalam tugas ini, Anda akan menerapkan pencadangan file dan folder menggunakan La
 
 1. Pada bilah **az104-10-rsv1 - Cadangan item**, klik **Agen Azure Backup**.
 
-1. Pada bilah **Item Cadangan (Agen Azure Backup)** , pastikan ada entri yang merujuk pada drive **C:\\** dari **az104-10-vm1.** .
+1. Pada bilah **Item Cadangan (Agen Azure Backup)**, pastikan ada entri yang merujuk pada drive **C:\\** dari **az104-10-vm1.** .
 
-## Tugas 5: Lakukan pemulihan file menggunakan agen Layanan Pemulihan Azure (opsional)
+## Tugas 5: Lakukan pemulihan file dengan menggunakan agen Azure Recovery Services (opsional)
 
 Dalam tugas ini, Anda akan melakukan pemulihan file menggunakan agen Layanan Pemulihan Azure.
 
-1. Dalam sesi Desktop Jarak Jauh ke **az104-10-vm1**, buka File Explorer, navigasikan ke folder **C:\\Windows\\System32\\drivers\\etc\\** dan hapus file **host**.
+1. Dalam sesi Desktop Jarak Jauh ke **az104-10-vm1**, buka File Explorer, navigasikan ke folder **C:\\Windows\\System32\\drivers\\etc\\** dan hapus file **hosts**.
 
 1. Buka Microsoft Azure Backup dan klik **Pulihkan data** di panel **Tindakan**. Cara ini akan memulai **Wizard Pemulihan Data**.
 
@@ -271,15 +271,15 @@ Dalam tugas ini, Anda akan melakukan pemulihan file menggunakan agen Layanan Pem
 
 1. Pada halaman **Pilih Mode Pemulihan**, pastikan opsi **Berkas dan folder individual** dipilih, lalu klik **Berikutnya**.
 
-1. Pada halaman **Pilih Volume dan Tanggal**, dalam daftar dropdown **Pilih volume**, pilih **C:\\** , terima pilihan default dari cadangan yang tersedia , dan klik **Pasang**.
+1. Pada halaman **Pilih Volume dan Tanggal**, dalam daftar dropdown **Pilih volume**, pilih **C:\\**, terima pilihan default dari cadangan yang tersedia , dan klik **Pasang**.
 
-    >**Catatan**: Tunggu hingga operasi pemasangan selesai. Operasi ini mungkin perlu waktu sekitar 2 menit.
+    >**Catatan**: Tunggu hingga operasi pemasangan selesai. Ini mungkin memakan waktu sekitar 2 menit.
 
 1. Pada halaman **Jelajahi Dan Pulihkan Berkas**, catat huruf drive volume pemulihan dan tinjau tips terkait penggunaan robocopy.
 
 1. Klik **Mulai**, luaskan map **Sistem Windows**, dan klik **Perintah**.
 
-1. Dari Perintah, jalankan perintah berikut untuk menyalin file **host** pemulihan ke lokasi aslinya (ganti `[recovery_volume]` dengan huruf drive volume pemulihan yang Anda identifikasi sebelumnya):
+1. Dari Perintah, jalankan perintah berikut untuk menyalin file **hosts** pemulihan ke lokasi aslinya (ganti `[recovery_volume]` dengan huruf drive volume pemulihan yang Anda identifikasi sebelumnya):
 
    ```sh
    robocopy [recovery_volume]:\Windows\System32\drivers\etc C:\Windows\system32\drivers\etc hosts /r:1 /w:1
@@ -289,7 +289,7 @@ Dalam tugas ini, Anda akan melakukan pemulihan file menggunakan agen Layanan Pem
 
 1. Hentikan sesi Desktop Jarak Jauh.
 
-## Tugas 6: Melakukan pemulihan file menggunakan snapshot mesin virtual Azure (opsional)
+## Tugas 6: Lakukan pemulihan file dengan menggunakan rekam jepret komputer virtual Azure (opsional)
 
 Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingkat mesin virtual Azure.
 
@@ -297,25 +297,25 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Di portal Microsoft Azure, cari dan pilih **Mesin virtual**, dan pada bilah **Mesin virtual**, klik **az104-10-vm0**.
 
-1. Pada bilah **az104-10-vm0**, klik **Hubungkan**, di menu menurun, klik **RDP**, di bilah **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
+1. Pada bilah **az104-10-vm0**, klik **Hubungkan**, di menu dropdown, klik **RDP**, di bilah **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
 
-    >**Catatan**: Langkah ini mengacu pada menghubungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
+    >**Catatan**: Langkah ini mengacu pada menyambungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
 
-    >**Catatan**: Anda dapat mengabaikan permintaan peringatan apa pun saat menghubungkan ke mesin virtual target.
+    >**Catatan**: Anda dapat mengabaikan perintah peringatan saat menyambungkan ke komputer virtual target.
 
 1. Saat diminta, masuk menggunakan nama pengguna **Siswa** dan sandi dari file parameter.
 
-   >**Catatan:** Karena portal Microsoft Azure tidak mendukung IE11 lagi, Anda harus menggunakan Browser Microsoft Edge untuk tugas ini.
+   >**Catatan:** Karena portal Azure tidak mendukung IE11 lagi, Anda harus menggunakan Browser Microsoft Edge untuk tugas ini.
 
 1. Dalam sesi Desktop Jarak Jauh ke **az104-10-vm0**, klik **Mulai**, luaskan folder **Sistem Windows**, dan klik **Perintah**.
 
-1. Dari Perintah, jalankan perintah berikut untuk menghapus file **host**:
+1. Dari Perintah, jalankan perintah berikut untuk menghapus file **hosts**:
 
    ```sh
    del C:\Windows\system32\drivers\etc\hosts
    ```
 
-   >**Catatan**: Anda akan memulihkan file ini dari cadangan berbasis snapshot tingkat mesin virtual Azure nanti dalam tugas ini.
+   >**Catatan**: Anda akan memulihkan file ini dari cadangan berbasis rekam jepret tingkat komputer virtual Azure nanti dalam tugas ini.
 
 1. Dalam sesi Desktop Jarak Jauh ke mesin virtual Azure **az104-10-vm0**, mulai browser web Edge, jelajahi [portal Microsoft Azure](https://portal.azure.com), dan masuk menggunakan kredensial Anda.
 
@@ -325,11 +325,11 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Pada bilah **az104-10-rsv1 - Cadangan item**, klik **Mesin Virtual Azure**.
 
-1. Pada bilah **Item Cadangan (Mesin Virtual Azure)** , pilih **Lihat detail** untuk **az104-10-vm0**.
+1. Pada bilah **Item Cadangan (Mesin Virtual Azure)**, pilih **Lihat detail** untuk **az104-10-vm0**.
 
 1. Pada bilah **az104-10-vm0** Item Cadangan, klik **Pemulihan File**.
 
-    >**Catatan**: Anda memiliki opsi untuk menjalankan pemulihan segera setelah pencadangan dimulai berdasarkan snapshot aplikasi yang konsisten.
+    >**Catatan**: Anda memiliki opsi untuk menjalankan pemulihan segera setelah pencadangan dimulai berdasarkan rekam jepret yang konsisten dengan aplikasi.
 
 1. Pada bilah **Pemulihan File**, terima titik pemulihan default dan klik **Unduh yang Dapat Dieksekusi**.
 
@@ -341,9 +341,9 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Saat diminta untuk memberikan sandi dari portal, salin sandi dari kotak teks **Kata sandi untuk menjalankan skrip** pada bilah **Pemulihan File**, tempel kata sandi di Perintah, dan tekan **Enter**.
 
-    >**Catatan**: Upaya ini akan membuka jendela Windows PowerShell yang menampilkan progres pemasangan.
+    >**Catatan**: Ini akan membuka jendela Windows PowerShell yang menampilkan kemajuan pemasangan.
 
-    >**Catatan**: Jika Anda menerima pesan kesalahan saat ini, refresh jendela browser web dan ulangi tiga langkah terakhir.
+    >**Catatan**: Jika Anda menerima pesan kesalahan pada saat ini, refresh jendela browser web dan ulangi tiga langkah terakhir.
 
 1. Tunggu hingga proses pemasangan selesai, tinjau pesan informasi di jendela Windows PowerShell, catat huruf drive yang ditetapkan untuk hosting volume **Windows**, dan mulai File Explorer.
 
@@ -351,7 +351,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Beralih ke jendela **Perintah**.
 
-1. Dari Perintah, jalankan perintah berikut untuk menyalin file **host** pemulihan ke lokasi aslinya (ganti `[os_volume]` dengan huruf drive volume sistem operasi yang Anda identifikasi sebelumnya):
+1. Dari Perintah, jalankan perintah berikut untuk menyalin file **hosts** pemulihan ke lokasi aslinya (ganti `[os_volume]` dengan huruf drive volume sistem operasi yang Anda identifikasi sebelumnya):
 
    ```sh
    robocopy [os_volume]:\Windows\System32\drivers\etc C:\Windows\system32\drivers\etc hosts /r:1 /w:1
@@ -361,7 +361,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Hentikan sesi Desktop Jarak Jauh.
 
-## Tugas 7: Tinjau fungsionalitas penghapusan sementara Layanan Pemulihan Azure
+## Tugas 7: Meninjau fungsionalitas penghapusan sementara Azure Recovery Services
 
 1. Di komputer lab, di portal Microsoft Azure, cari dan pilih **Recovery Services vaults** dan, di **Recovery Services vaults**, klik **az104-10-rsv1**.
 
@@ -369,7 +369,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Pada bilah **az104-10-rsv1 - Cadangan item**, klik **Agen Azure Backup**.
 
-1. Pada bilah **Item Cadangan (Agen Azure Backup)** , klik entri yang mewakili cadangan **az104-10-vm1**.
+1. Pada bilah **Item Cadangan (Agen Azure Backup)**, klik entri yang mewakili cadangan **az104-10-vm1**.
 
 1. Di **C:\\ pada bilah az104-10-vm1.** , pilih **Lihat detail** untuk **az104-10-vm1.** .
 
@@ -385,17 +385,17 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
     | Alasan | **Mendaur ulang server Dev/Uji** |
     | Komentar | **az104 10 lab** |
 
-    >**Catatan**: Pastikan untuk menyertakan titik di akhir saat mengetikkan nama server
+    >**Catatan**: Pastikan untuk menyertakan periode berikutnya saat mengetik nama server
 
-1. Aktifkan kotak centang di sebelah label **Ada data cadangan dari 1 item cadangan yang terkait dengan server ini. Saya memahami bahwa mengeklik "Konfirmasi" akan menghapus semua data cadangan cloud secara permanen. Tindakan ini tidak bisa dibatalkan. Peringatan mungkin dikirimkan ke administrator langganan ini yang memberitahukan mereka tentang penghapusan ini** dan klik **Hapus**.
+1. Aktifkan kotak centang di samping label **Ada data cadangan 1 item cadangan yang terkait dengan server ini. Saya memahami bahwa mengklik "Konfirmasi" akan menghapus semua data cadangan cloud secara permanen. Tindakan ini tidak dapat dibatalkan. Pemberitahuan dapat dikirim ke administrator langganan ini yang memberi tahu mereka tentang penghapusan** ini dan klik **Hapus**.
 
-    >**Catatan**: Cara ini akan gagal karena fitur **Penghapusan sementara** harus dinonaktifkan.
+    >**Catatan**: Ini akan gagal karena **fitur Penghapusan** sementara harus dinonaktifkan.
 
 1. Navigasikan kembali ke bilah **az104-10-rsv1 - Cadangan item** dan klik **Azure Virtual Machines**.
 
 1. Pada bilah **az104-10-rsv1 - Cadangan item**, klik **Mesin Virtual Azure**.
 
-1. Pada bilah **Item Cadangan (Mesin Virtual Azure)** , pilih **Lihat detail** untuk **az104-10-vm0**.
+1. Pada bilah **Item Cadangan (Mesin Virtual Azure)**, pilih **Lihat detail** untuk **az104-10-vm0**.
 
 1. Pada bilah **az104-10-vm0** Item Cadangan, klik **Hentikan pencadangan**.
 
@@ -409,13 +409,13 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Navigasikan kembali ke bilah **az104-10-rsv1 - Cadangan item** dan klik **Refresh**.
 
-    >**Catatan**: Entri **Mesin Virtual Azure** masih mencantumkan **1** item cadangan.
+    >**Catatan**: Entri **Azure Virtual Machine** masih mencantumkan **1** item cadangan.
 
-1. Klik entri **Mesin Virtual Azure** dan, pada bilah **Item Cadangan (Mesin Virtual Azure)** , klik entri **az104-10-vm0**.
+1. Klik entri **Mesin Virtual Azure** dan, pada bilah **Item Cadangan (Mesin Virtual Azure)**, klik entri **az104-10-vm0**.
 
 1. Pada bilah **az104-10-vm0** Item Cadangan, perhatikan bahwa Anda memiliki opsi untuk **Membatalkan penghapusan** cadangan yang dihapus.
 
-    >**Catatan**: Fungsionalitas ini disediakan oleh fitur penghapusan sementara, yang secara default, diaktifkan untuk pencadangan mesin virtual Azure.
+    >**Catatan**: Fungsionalitas ini disediakan oleh fitur penghapusan sementara, yaitu, secara default, diaktifkan untuk cadangan komputer virtual Azure.
 
 1. Navigasikan kembali ke bilah Recovery Services vault **az104-10-rsv1**, dan di bagian **Pengaturan**, klik **Properti**.
 
@@ -423,7 +423,7 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 1. Pada bilah **Pengaturan Keamanan**, Nonaktifkan **Penghapusan Sementara (Untuk beban kerja yang berjalan di Azure)** dan juga nonaktifkan **Fitur Keamanan (Untuk beban kerja yang berjalan di tempat)** dan klik **Simpan**.
 
-    >**Catatan**: Cara ini tidak akan memengaruhi item yang sudah dalam status hapus sementara.
+    >**Catatan**: Ini tidak akan memengaruhi item yang sudah dalam status penghapusan sementara.
 
 1. Tutup bilah **Pengaturan Keamanan** dan, kembali ke bilah vault **az104-10-rsv1** Layanan Pemulihan, klik **Ringkasan**.
 
@@ -445,11 +445,11 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
 
 ## Membersihkan sumber daya
 
->**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
+>**Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Dengan menghapus sumber daya yang tidak digunakan, Anda tidak akan melihat biaya yang tak terduga.
 
->**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+>**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
-1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
+1. Di portal Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
 
 1. Buat daftar semua grup sumber daya yang dibuat di seluruh lab modul ini dengan menjalankan perintah berikut:
 
@@ -463,15 +463,15 @@ Dalam tugas ini, Anda akan memulihkan file dari cadangan berbasis snapshot tingk
    Get-AzResourceGroup -Name 'az104-10*' | Remove-AzResourceGroup -Force -AsJob
    ```
 
-   >**Catatan**: Secara opsional, Anda dapat mempertimbangkan untuk menghapus grup sumber daya yang dibuat secara otomatis dengan awalan **AzureBackupRG_** (tidak ada biaya tambahan yang terkait dengan keberadaannya).
+   >**Catatan**: Secara opsional, Anda mungkin mempertimbangkan untuk menghapus grup sumber daya yang dihasilkan secara otomatis dengan awalan **AzureBackupRG_** (tidak ada biaya tambahan yang terkait dengan keberadaannya).
 
-    >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
+    >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
 ## Tinjau
 
 Di lab ini, Anda telah:
 
-+ Menyediakan lingkungan lab
++ Memprovisikan lingkungan lab
 + Membuat Recovery Services vault
 + Menerapkan pencadangan tingkat mesin virtual Azure
 + Menerapkan pencadangan File dan Folder

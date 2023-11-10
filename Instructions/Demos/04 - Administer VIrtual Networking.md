@@ -1,16 +1,16 @@
 ---
 demo:
-  title: 'Demonstrasi 04: Mengelola Virtual Networking'
+  title: 'Demonstrasi 04: Mengelola Jaringan Virtual'
   module: Administer Virtual Networking
 ---
 
-# 04 - Mengelola Virtual Networking
+# 04 - Mengelola Jaringan Virtual
 
 ## Mengonfigurasi Jaringan Virtual
 
 Dalam demonstrasi ini, Anda akan membuat jaringan virtual.
 
-**Referensi**: [Mulai Cepat: Membuat jaringan virtual - portal Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+**Referensi**: [Mulai cepat: Membuat jaringan virtual - portal Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 
 ## Membuat jaringan virtual di portal
 
@@ -26,11 +26,11 @@ Dalam demonstrasi ini, Anda akan menjelajahi NSG dan titik akhir layanan.
 
 **Referensi**: [Membatasi akses ke sumber daya PaaS - tutorial - portal Azure](https://docs.microsoft.com/azure/virtual-network/tutorial-restrict-network-access-to-resources)
 
-**Buat grup keamanan jaringan**
+**Membuat grup keamanan jaringan**
 
-1. Akses portal Microsoft Azure.
+1. Mengakses Portal Azure.
 
-1. Cari dan pilih **Kelompok Keamanan Jaringan**.
+1. Cari dan pilih **Kelompok** Keamanan Jaringan.
 
 1. Buat NSG yang menjelaskan pengaturan saat Anda pergi. 
  
@@ -46,7 +46,7 @@ Dalam demonstrasi ini, Anda akan menjelajahi NSG dan titik akhir layanan.
 
 1. Tinjau aturan masuk dan keluar default. 
 
-1. Buat aturan baru, menjelaskan pengaturan saat Anda pergi. Secara khusus membahas pemilihan layanan (seperti HTTPS) dan pengaturan prioritas. 
+1. Buat aturan baru, menjelaskan pengaturan saat Anda pergi. Secara khusus diskusikan pemilihan layanan (seperti HTTPS) dan pengaturan prioritas. 
 
 ## Mengonfigurasi Azure DNS
 
@@ -57,21 +57,21 @@ Dalam demonstrasi ini, Anda akan menjelajahi Azure DNS.
 
 **Membuat zona DNS**
 
-1. Akses portal Microsoft Azure.
+1. Mengakses Portal Azure.
 
-1. Cari layanan **zona** DNS.
+1. Cari **layanan zona** DNS.
 
-1. Buat **zona DNS** dan jelaskan tujuan zona tersebut. Untuk nama, Anda dapat menggunakan contoso.internal.com.
+1. Buat **zona** DNS dan jelaskan tujuan zona tersebut. Untuk nama, Anda dapat menggunakan contoso.internal.com.
 
-1.  Tunggu hingga zona DNS dibuat. Anda mungkin perlu **Merefresh** halaman.
+1.  Tunggu hingga zona DNS dibuat. Anda mungkin perlu **Menyegarkan** halaman.
 
-**Menambahkan rangkaian data DNS**
+**Menambahkan kumpulan catatan DNS**
 
 **Referensi**: [Tutorial: Membuat catatan alias untuk merujuk ke rekaman sumber daya zona](https://learn.microsoft.com/azure/dns/tutorial-alias-rr)
 
-1. Setelah zona Anda dibuat, pilih **+Kumpulan Catatan**.
+1. Setelah zona Anda dibuat, pilih **+Kumpulan** Catatan.
 
-1. Gunakan drop-down **Jenis** untuk menampilkan berbagai jenis rekaman. Tinjau bagaimana berbagai jenis rekaman digunakan. Perhatikan bagaimana informasi rekaman berubah saat Anda memilih jenis rekaman yang berbeda.
+1.  **Gunakan menu drop-down Jenis** untuk melihat berbagai jenis rekaman. Tinjau bagaimana berbagai jenis rekaman digunakan. Perhatikan bagaimana informasi rekaman berubah saat Anda memilih jenis rekaman yang berbeda.
 
-1. Buat rekaman **A** sebagai contoh. 
+1. Buat **catatan A** sebagai contoh. 
 

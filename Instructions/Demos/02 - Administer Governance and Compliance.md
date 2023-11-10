@@ -8,11 +8,11 @@ demo:
 
 ## Mengonfigurasi Langganan
 
-Area ini tidak memiliki demonstrasi formal.  
+Area ini tidak memiliki demonstrasi formal. 
 
 **Referensi**: [Membuat langganan Azure tambahan](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription)
 
-## Mengonfigurasi Azure Policy
+## Mengonfigurasi kebijakan Azure
 
 Dalam demonstrasi ini, kita akan bekerja dengan kebijakan Azure.
 
@@ -26,11 +26,11 @@ Dalam demonstrasi ini, kita akan bekerja dengan kebijakan Azure.
 
 3.  Pilih **Penugasan** lalu **Tetapkan Kebijakan**.
 
-5.  Diskusikan **Cakupan** yang menentukan sumber daya atau pengelompokan sumber daya apa yang diberlakukan oleh penetapan kebijakan.
+5.  Diskusikan **Cakupan** yang menentukan sumber daya atau pengelompokan sumber daya tempat penetapan kebijakan diberlakukan.
 
-6.  Pilih elipsis **Definisi kebijakan** untuk membuka daftar definisi yang tersedia. Luangkan waktu untuk meninjau definisi kebijakan bawaan.
+6.   **Pilih elipsis Definisi kebijakan** untuk membuka daftar definisi yang tersedia. Luangkan waktu untuk meninjau definisi kebijakan bawaan.
 
-7.  Cari dan pilih kebijakan **Lokasi yang diizinkan** . Kebijakan ini memungkinkan Anda membatasi lokasi yang dapat ditentukan oleh organisasi Anda saat menggunakan sumber daya.
+7.  Cari dan pilih **kebijakan Lokasi yang** diizinkan. Kebijakan ini memungkinkan Anda membatasi lokasi yang dapat ditentukan oleh organisasi Anda saat menggunakan sumber daya.
 
 8.  Pindahkan tab **Parameter** dan gunakan menu drop-down pilih satu atau beberapa lokasi yang diizinkan.
 
@@ -40,19 +40,19 @@ Dalam demonstrasi ini, kita akan bekerja dengan kebijakan Azure.
 
 1.  Kembali ke halaman Azure Policy dan pilih **Definisi** di bawah Penulisan.
 
-2.  Pilih Definisi   **Inisiatif**di bagian atas halaman.
+2.  Pilih **Definisi** Inisiatif di bagian atas halaman.
 
 3.  Berikan **Nama** dan **Deskripsi**.
 
-4.  **Buat baru** Kategori.
+4.  **Buat Kategori baru** .
 
-5.  Dari panel kanan **Tambahkan** kebijakan **Lokasi yang** diizinkan.
+5.  Dari panel **kanan Tambahkan **kebijakan Lokasi yang **** diizinkan.
 
 6.  Tambahkan satu kebijakan tambahan yang Anda pilih.
 
-7.  **Menyimpan** perubahan Anda lalu **Tetapkan** definisi inisiatif Anda ke langganan Anda.
+7.  **Simpan** perubahan Anda lalu **Tetapkan** definisi inisiatif Anda ke langganan Anda.
 
-**Memeriksa kepatuhan**
+**Periksa kepatuhan**
 
 1.  Kembali ke halaman layanan Azure Policy.
 
@@ -60,7 +60,7 @@ Dalam demonstrasi ini, kita akan bekerja dengan kebijakan Azure.
 
 3.  Tinjau status kebijakan dan definisi Anda.
 
-**Memeriksa tugas remediasi**
+**Periksa tugas remediasi**
 
 1.  Kembali ke halaman layanan Azure Policy.
 
@@ -80,9 +80,9 @@ Dalam demonstrasi ini, kita akan belajar tentang tugas peran.
 
 **Temukan lokasi bilah Kontrol Akses**
 
-1.  Akses portal Microsoft Azure dan pilih grup sumber daya.  Catat grup sumber daya apa yang Anda gunakan.
+1.  Akses portal Microsoft Azure dan pilih grup sumber daya. Catat grup sumber daya apa yang Anda gunakan.
 
-2.  Pilih bilah  **Access Control (IAM)** .
+2.  Pilih bilah **Kontrol Akses (IAM)**  .
 
 3.  Bilah ini akan tersedia untuk banyak sumber daya yang berbeda sehingga Anda dapat mengontrol izin.
 
@@ -92,17 +92,17 @@ Dalam demonstrasi ini, kita akan belajar tentang tugas peran.
 
 1.  Tinjau peran bawaan dalam jumlah besar yang tersedia.
 
-1.  Klik dua kali peran, lalu pilih **Izin** (atas) .
+1.  Klik dua kali peran, lalu pilih **Izin** (atas).
 
-1.  Lanjutkan menelusuri peran hingga Anda dapat melihat tindakan **Baca, Tulis, dan Hapus** untuk peran tersebut.
+1.  Lanjutkan menelusuri peran hingga Anda dapat melihat tindakan Baca, Tulis, dan Hapus ** untuk peran tersebut**.
 
-1.  Kembali ke bilah  **Access Control (IAM).** 
+1.  Kembali ke bilah **Access Control (IAM).** 
 
-**Menambahkan penetapan peran**
+**Tambahkan penetapan peran**
 
 1.  Buat pengguna atau pilih pengguna yang sudah ada.
 
-1.  Pilih **Tambahkan penetapan peran** dan pilih peran. Misalnya, *pemilik*.
+1.  Pilih **Tambahkan penetapan** peran dan pilih peran. Misalnya, *pemilik*.
 
 1.  Pilih **Periksa akses**.
 

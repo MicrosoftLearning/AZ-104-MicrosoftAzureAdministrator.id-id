@@ -1,5 +1,5 @@
 ---
-title: Petunjuk Host Online
+title: Instruksi yang Dihosting Online
 permalink: index.html
 layout: home
 ---
@@ -13,7 +13,7 @@ File lab yang diperlukan dapat [DIUNDUH DI SINI](https://github.com/MicrosoftLea
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %}
 | Modul | Laboratorium |
 | --- | --- | 
-{% for activity in labs  %}| {{ activity.lab.module }} | [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
+{% untuk aktivitas di lab %}| {{ activity.lab.module }} | [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
 
 ## Demonstrasi
@@ -21,5 +21,5 @@ File lab yang diperlukan dapat [DIUNDUH DI SINI](https://github.com/MicrosoftLea
 {% assign demos = site.pages | where_exp:"page", "page.url berisi '/Instructions/Demos'" %}
 | Modul | Demonstrasi |
 | --- | --- | 
-{% for activity in demos  %}| {{ activity.demo.module }} | [{{ activity.demo.title }}]({{ site.github.url }}{{ activity.url }}) |
+{% untuk aktivitas dalam demo %}| {{ activity.demo.module }} | [{{ activity.demo.title }}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
