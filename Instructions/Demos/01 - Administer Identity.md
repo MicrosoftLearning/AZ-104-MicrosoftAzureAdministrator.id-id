@@ -8,13 +8,13 @@ demo:
 
 ## Mengonfigurasi Identitas ID Entra
 
-Area ini tidak memiliki demonstrasi formal.  Pertimbangkan untuk menelusuri simulasi lab interaktif untuk siswa Lab 01. 
+Area ini tidak memiliki demonstrasi formal. Pertimbangkan untuk menelusuri simulasi lab interaktif untuk Lab 01 siswa. 
 
-[Lab Interaktif Simulasi Lab 01](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)
+[Lab Simulasi Lab Interaktif 01](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)
 
 Atau, Anda dapat menggunakan salah satu Mulai Cepat ini. 
 
-**Referensi**: [Mulai Cepat - Akses & membuat penyewa baru di ID Microsoft Entra](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+**Referensi**: [Mulai Cepat - Akses & buat penyewa baru di ID Microsoft Entra](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
 
 **Referensi**: [Mulai Cepat - Membuat grup dengan anggota dan menampilkan semua grup dan anggota](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-view-azure-portal)
 
@@ -30,26 +30,26 @@ Dalam demonstrasi ini, kita akan menjelajahi identitas Id Entra.
 
 **Meninjau informasi lisensi dan domain**
 
-1.  Akses portal Azure dan navigasikan ke bilah  **ID** Microsoft Entra.
+1.  Akses portal Azure dan navigasikan ke bilah **ID** Microsoft Entra.
 
-2.  Pada bilah Gambaran Umum, tinjau informasi   **Penyewa**termasuk lisensi dan domain utama.
+2.  Pada bilah Gambaran Umum, tinjau **informasi** Penyewa termasuk lisensi dan domain utama.
 
 **Menjelajahi akun pengguna**
 
 1.  Pilih bilah **Pengguna** .
 
-2.  Jelaskan pilihan untuk **Pengguna** baru dan **Pengguna tamu baru**.
+2.  Jelaskan pilihan untuk **Pengguna** baru dan **Pengguna** tamu baru.
 
-3.  Pilih **Pengguna** baru dan diskusikan perbedaan antara **Buat pengguna** dan **Undang pengguna**.
+3.  Pilih **Pengguna **baru dan diskusikan perbedaan antara **Buat pengguna** dan **Undang pengguna**.
 
-4.  Buat **pengguna** Baru yang meninjau parameter **Identitas**,  **Grup, dan peran**,  **Pengaturan**, dan **Info** Pekerjaan.
+4.  Buat pengguna  **Baru yang**meninjau **parameter Identitas**, Grup, ** dan peran**, ** Pengaturan**, dan **Info** Pekerjaan.
 
-5.  Setelah pengguna dibuat, tinjau **Reset kata sandi**,  **Hapus pengguna**, dan **Masuk**.
+5.  Setelah pengguna dibuat, tinjau **Reset kata sandi**, ** Hapus pengguna**, dan **Masuk**.
 
 **Menjelajahi akun grup**
 
-1.  Kembali ke halaman  **ID** Microsoft Entra dan pilih bilah **Grup** .
+1.  Kembali ke **halaman ID** Microsoft Entra dan pilih bilah **Grup** .
 
-2.  Buat **Grup** baru atau pilih grup yang sudah ada untuk ditinjau.
+2.  Buat **grup** Baru atau pilih grup yang sudah ada untuk ditinjau.
 
 3.  Tinjau informasi tentang grup termasuk **Jenis** keanggotaan dan **Jenis**.
