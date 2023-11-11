@@ -7,12 +7,12 @@ lab:
 # Lab 09c: Menerapkan Azure Container Apps
 # Panduan lab siswa
 
-## Skenario lab
+## Skenario laboratorium
 Azure Container Apps memungkinkan Anda menjalankan layanan mikro dan aplikasi dalam kontainer pada platform tanpa server. Dengan Container Apps, Anda bisa mendapatkan manfaat menjalankan kontainer tanpa repot mengonfigurasi infrastruktur cloud dan orkestrator kontainer yang kompleks secara manual.
 
 ## Tujuan
 
-Di lab ini, kita akan:
+Di lab ini, kami akan:
 - Tugas 1: Membuat aplikasi dan lingkungan kontainer
 - Tugas 2: Menyebarkan aplikasi kontainer
 - Tugas 3: Menguji dan memverifikasi penyebaran aplikasi kontainer
@@ -39,7 +39,7 @@ Pada tab *Dasar*, lakukan hal berikut.
     |---|---|
     | Langganan | Pilih langganan Azure Anda. |
     | Grup sumber daya | Pilih **Buat baru** dan masukkan `az104-09c-rg1`. |
-    | Nama aplikasi kontainer |  Masukkan `my-container-app`. |
+    | Nama aplikasi kontainer |  Memasuki `my-container-app`. |
 
 #### Membuat lingkungan
 
@@ -56,7 +56,7 @@ Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
 
     | Pengaturan | Nilai |
     |--|--|
-    | Nama lingkungan | Masukkan `my-environment`. |
+    | Nama lingkungan | Memasuki `my-environment`. |
     | Redundansi zona | Pilih **Dinonaktifkan** |
 
 1. Pilih tab **Pemantauan** untuk membuat ruang kerja Analitik Log.
@@ -72,7 +72,7 @@ Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
 
 1. Klik **Berikutnya: Kontainer**.
 
-1. Centang kotak di samping **Gunakan gambar mulai cepat**.
+1. Centang kotak di samping **Gunakan gambar** mulai cepat.
 
 1. Pilih tombol **Tinjau + buat** di bagian bawah halaman. Langkah ini mungkin memakan waktu beberapa menit. 
 
@@ -90,7 +90,7 @@ Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
 
 1. Pilih tautan di samping *URL Aplikasi* untuk melihat aplikasi Anda.
 
-1. Verifikasi bahwa Anda menerima **pesan langsung aplikasi Azure Container Apps Anda** .
+1. Verifikasi bahwa Anda menerima **aplikasi Azure Container Apps Anda adalah pesan langsung** .
 
 ## Membersihkan sumber daya
 

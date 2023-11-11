@@ -4,10 +4,10 @@ lab:
   module: Administer Azure Resources
 ---
 
-# Lab 03b - Mengelola sumber daya Azure dengan Menggunakan Template ARM
+# Lab 03b - Kelola sumber daya Azure dengan Menggunakan Template ARM
 # Panduan lab siswa
 
-## Skenario lab
+## Skenario laboratorium
 Sekarang setelah Anda menjelajahi kemampuan administrasi Azure dasar yang terkait dengan penyediaan sumber daya dan mengaturnya berdasarkan grup sumber daya menggunakan portal Azure, Anda perlu melakukan tugas yang setara dengan menggunakan templat Azure Resource Manager.
 
 **Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
@@ -16,9 +16,9 @@ Sekarang setelah Anda menjelajahi kemampuan administrasi Azure dasar yang terkai
 
 Di lab ini Anda akan:
 
-+ Tugas 1: Meninjau template ARM untuk penyebaran disk yang dikelola Azure
-+ Tugas 2: Membuat disk terkelola Azure dengan menggunakan template ARM
-+ Tugas 3: Meninjau penyebaran berbasis template ARM dari disk yang dikelola
++ Tugas 1: Meninjau templat ARM untuk penyebaran disk terkelola Azure
++ Tugas 2: Membuat disk terkelola Azure dengan menggunakan templat ARM
++ Tugas 3: Tinjau penyebaran berbasis templat ARM dari disk terkelola
 
 ## Perkiraan waktu: 20 menit
 
@@ -30,9 +30,9 @@ Di lab ini Anda akan:
 
 ## Latihan 1
 
-## Tugas 1: Meninjau template ARM untuk penyebaran disk yang dikelola Azure
+## Tugas 1: Meninjau templat ARM untuk penyebaran disk terkelola Azure
 
-1. Masuk ke [**portal Microsoft Azure**](http://portal.azure.com).
+1. Masuk ke [**portal Azure**](http://portal.azure.com).
 
 1. Di portal Microsoft Azure, cari dan pilih **Grup sumber daya**. 
 
@@ -44,25 +44,25 @@ Di lab ini Anda akan:
 
 1. Pada bilah **Microsoft.ManagedDisk-* XXXXXXXXX* \| panel**, klik **Templat**.
 
-    >**Catatan**: Tinjauan konten template dan perhatikan bahwa Anda memiliki opsi untuk **Mengunduh** ke komputer lokal, **Tambahkan ke pustaka**, atau **Sebarkan** lagi.
+    >**Catatan**: Tinjau konten templat dan perhatikan bahwa Anda memiliki opsi untuk **Mengunduhnya** ke komputer lokal, **Menambahkan ke pustaka**, atau **Menyebarkannya** lagi.
 
 1. Klik **Unduh** dan simpan berkas terkompresi yang berisi template dan file parameter ke map **Unduhan** di komputer lab Anda.
 
 1. Pada panel **Microsoft.ManagedDisk-* XXXXXXXXX* \| Template**, klik **Input**.
 
-1. Perhatikan nilai parameter **lokasi**. Anda akan membutuhkannya di tugas berikutnya.
+1. Perhatikan nilai parameter **lokasi**. Anda akan membutuhkannya dalam tugas berikutnya.
 
 1. Ekstrak konten file yang diunduh ke dalam folder **Unduhan** di komputer lab Anda.
 
-    >**Catatan**: File ini juga tersedia sebagai **\\Allfiles\\Labs\\03\\az104-03b-md-template.json** dan **\\Allfiles\\Labs\\ 03\\az104-03b-md-parameters.json**
+    >**Catatan**: File-file ini juga tersedia sebagai **\\Allfiles\\Labs\\03\\az104-03b-md-template.json** dan\\** Allfiles\\Labs\\03\\az104-03b-md-parameters.json**
     
 1. Tutup semua jendela **File Explorer**.
 
-## Tugas 2: Membuat disk terkelola Azure dengan menggunakan template ARM
+## Tugas 2: Membuat disk terkelola Azure dengan menggunakan templat ARM
 
 1. Di portal Azure, cari **Menyebarkan templat kustom**.
 
-1. Pada panel **Penyebaran Kustom**, klik **Buat template Anda sendiri di editor**.
+1. Pada panel **Penyebaran Kustom**, klik **Buat template Anda sendiri di penyunting**.
 
 1. Pada panel **Edit template**, klik **Muat file** dan unggah file **template.json** yang Anda unduh di tugas sebelumnya.
 
@@ -85,7 +85,7 @@ Di lab ini Anda akan:
 
 1. **Simpan** perubahan.
 
-1. Kembali ke bilah **Penyebaran Kustom**, klik **Edit parameter**. 
+1. Kembali ke bilah **Penyebaran kustom**, klik **Edit parameter**. 
 
 1. Pada panel **Edit parameter**, klik **Muat file** dan unggah file **parameters.json** yang Anda unduh di tugas sebelumnya, dan **Simpan** perubahan.
 
@@ -98,9 +98,9 @@ Di lab ini Anda akan:
     | Wilayah | nama wilayah Azure yang tersedia dalam langganan yang Anda gunakan di lab ini |
     | Nama Disk | **az104-03b-disk1** |
     | Lokasi | nilai parameter lokasi yang Anda catat di tugas sebelumnya |
-    | Sku | **Standar_LRS** |
+    | SKU | **Standar_LRS** |
     | Ukuran Disk Gb | **32** |
-    | Buat Opsi | **empty** |
+    | Buat Opsi | **kosong** |
     | Jenis Set Enkripsi Disk | **EncryptionAtRestWithPlatformKey** |
     | Mode Autentikasi Akses Data | Tidak ada |
     | Azure Policy Akses Jaringan | **IzinkanSemua** |
@@ -110,7 +110,7 @@ Di lab ini Anda akan:
 
 1. Verifikasi bahwa penerapan berhasil diselesaikan.
 
-## Tugas 3: Meninjau penyebaran berbasis template ARM dari disk yang dikelola
+## Tugas 3: Tinjau penyebaran berbasis templat ARM dari disk terkelola
 
 1. Di portal Microsoft Azure, cari dan pilih **Grup sumber daya**. 
 
@@ -118,16 +118,16 @@ Di lab ini Anda akan:
 
 1. Pada bilah grup sumber daya **az104-03b-rg1**, di bagian **Pengaturan**, klik **Penyebaran**.
 
-1. Dari panel **az104-03b-rg1 - Penyebaran**, klik entri pertama dalam daftar penyebaran dan tinjauan konten bilah **Input** dan **Template**.
+1. Dari panel **az104-03b-rg1 - Penyebaran**, klik entri pertama dalam daftar penyebaran dan ulas konten bilah **Input** dan **Template**.
 
 ## Membersihkan sumber daya
 
-   >**Catatan**: Jangan hapus sumber daya yang Anda terapkan di lab ini. Anda akan merujuknya di lab berikutnya dari modul ini.
+   >**Catatan**: Jangan hapus sumber daya yang Anda sebarkan di lab ini. Anda akan merujuknya di lab berikutnya dari modul ini.
 
 ## Tinjau
 
 Di lab ini, Anda telah:
 
-- Meninjau templat ARM untuk penyebaran disk terkelola Azure
+- Ulas template ARM untuk penyebaran disk yang dikelola Azure
 - Membuat disk terkelola Azure dengan menggunakan template ARM
-- Meninjau penyebaran berbasis template ARM dari disk yang dikelola
+- Ulas penyebaran berbasis template ARM dari disk yang dikelola

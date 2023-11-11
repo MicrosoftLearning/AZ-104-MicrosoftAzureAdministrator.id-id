@@ -7,7 +7,7 @@ lab:
 # Lab 02b - Mengelola Tata Kelola melalui Azure Policy
 # Panduan lab siswa
 
-## Skenario lab
+## Skenario laboratorium
 
 Untuk meningkatkan pengelolaan sumber daya Azure di Contoso, Anda telah ditugaskan untuk menerapkan fungsionalitas berikut:
 
@@ -21,11 +21,11 @@ Untuk meningkatkan pengelolaan sumber daya Azure di Contoso, Anda telah ditugask
 
 ## Tujuan
 
-Di lab ini, kita akan:
+Di lab ini, kami akan:
 
-+ Tugas 1: Membuat dan menetapkan tag melalui portal Microsoft Azure
-+ Tugas 2: Menegakkan pemberian tag melalui Azure Policy
-+ Tugas 3: Terapkan penandaan melalui kebijakan Azure
++ Tugas 1: Membuat dan menetapkan tag melalui portal Azure
++ Tugas 2: Menerapkan pemberian tag melalui kebijakan Azure
++ Tugas 3: Menerapkan pemberian tag melalui kebijakan Azure
 
 ## Perkiraan waktu: 30 menit
 
@@ -37,13 +37,13 @@ Di lab ini, kita akan:
 
 ## Latihan 1
 
-## Tugas 1: Tetapkan tag melalui portal Microsoft Azure
+## Tugas 1: Menetapkan tag melalui portal Azure
 
 Dalam tugas ini, Anda akan membuat dan menetapkan tag ke grup sumber daya Azure melalui portal Microsoft Azure.
 
-1. Di portal Microsoft Azure, mulai sesi **PowerShell** dalam **Cloud Shell**.
+1. Di portal Azure, mulai sesi **PowerShell** dalam **Cloud Shell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
+    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
 
 1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mengidentifikasi nama akun penyimpanan yang digunakan oleh Cloud Shell:
 
@@ -72,17 +72,17 @@ Dalam tugas ini, Anda akan membuat dan menetapkan tag ke grup sumber daya Azure 
     | Nama | **Peran** |
     | Nilai | **Infra** |
 
-1. Klik **Terapkan** dan tutup jendela edisi tag untuk menavigasi kembali ke bilah akun penyimpanan. klik elipsis pada akun penyimpanan dan pilih **Edit tag** untuk dicatat bahwa tag baru tidak secara otomatis ditetapkan ke akun penyimpanan. 
+1. Klik **Terapkan** dan tutup jendela edisi tag untuk menavigasi kembali ke bilah akun penyimpanan. klik elipsis pada akun penyimpanan dan pilih **Edit tag** untuk mencatat bahwa tag baru tidak secara otomatis ditetapkan ke akun penyimpanan. 
 
-## Tugas 2: Menegakkan pemberian tag melalui Azure Policy
+## Tugas 2: Menerapkan pemberian tag melalui kebijakan Azure
 
 Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada kebijakan sumber daya* ke grup sumber daya dan mengevaluasi hasilnya. 
 
 1. Di portal Microsoft Azure, telusuri dan pilih **Kebijakan**. 
 
-1. Di bagian **Penulisan**, klik **Definisi**. Luangkan waktu sejenak untuk menelusuri daftar definisi kebijakan bawaan yang tersedia untuk Anda gunakan. Cantumkan semua kebijakan bawaan yang melibatkan penggunaan tag dengan memilih entri **Tag** (dan membatalkan pemilihan semua entri lainnya) di daftar menurun **Kategori**. 
+1. Di bagian **Penulisan**, klik **Definisi**. Luangkan waktu sejenak untuk menelusuri daftar definisi kebijakan bawaan yang tersedia untuk Anda gunakan. Cantumkan semua kebijakan bawaan yang melibatkan penggunaan tag dengan memilih entri **Tag** (dan membatalkan pemilihan semua entri lainnya) di daftar drop-down **Kategori**. 
 
-1. Klik entri yang mewakili kebijakan bawaan **Memerlukan tag dan nilainya pada sumber daya** dan tinjauan definisinya.
+1. Klik entri yang mewakili kebijakan bawaan **Memerlukan tag dan nilainya pada sumber daya** dan tinjau definisinya.
 
 1. Pada panel **Memerlukan tag dan nilainya pada definisi** kebijakan bawaan sumber daya, klik **Tetapkan**.
 
@@ -101,9 +101,9 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
     | --- | --- |
     | Nama penetapan | **Memerlukan tag Peran dengan nilai Infra**|
     | Deskripsi | **Memerlukan tag Peran dengan nilai Infra untuk semua sumber daya dalam grup sumber daya Cloud Shell**|
-    | Pemberlakuan kebijakan | Aktif |
+    | Pemberlakuan kebijakan | Diaktifkan |
 
-    >**Catatan**: **Nama tugas** secara otomatis diisi dengan nama kebijakan yang Anda pilih, tetapi Anda dapat mengubahnya. Anda juga dapat menambahkan **Deskripsi** opsional. **Ditetapkan oleh** diisi secara otomatis berdasarkan nama pengguna yang membuat penugasan. 
+    >**Catatan**: Nama **** Penugasan secara otomatis diisi dengan nama kebijakan yang Anda pilih, tetapi Anda dapat mengubahnya. Anda juga dapat menambahkan **Deskripsi** opsional. **Ditetapkan oleh** diisi secara otomatis berdasarkan nama pengguna yang membuat penugasan. 
 
 1. Klik **Berikutnya** dua kali dan atur **Parameter** ke nilai berikut:
 
@@ -112,21 +112,21 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
     | Nama Tag | **Peran** |
     | Nilai Tag | **Infra** |
 
-1. Klik **Berikutnya** dan tinjauan tab **Perbaikan**. Biarkan kotak centang **Buat Identitas Terkelola** tidak dicentang. 
+1. Klik **Berikutnya** dan tinjau tab **Remediasi** . Biarkan kotak **centang Buat Identitas** Terkelola tidak dicentang. 
 
-    >**Catatan**: Pengaturan ini dapat digunakan saat kebijakan atau inisiatif menyertakan efek **deployIfNotExists** atau **Modifikasi**.
+    >**Catatan**: Pengaturan ini dapat digunakan saat kebijakan atau inisiatif menyertakan **efek deployIfNotExists** atau **Modifikasi** .
 
 1. Klik **Tinjau + Buat**, lalu klik **Buat**.
 
     >**Catatan**: Sekarang Anda akan memverifikasi bahwa penetapan kebijakan baru berlaku dengan mencoba membuat akun Azure Storage lain di grup sumber daya tanpa secara eksplisit menambahkan tag yang diperlukan. 
     
-    >**Catatan**: Mungkin perlu waktu antara 5 dan 15 menit agar kebijakan berlaku.
+    >**Catatan**: Mungkin diperlukan waktu antara 5 dan 15 menit agar kebijakan diterapkan.
 
 1. Navigasi kembali ke panel grup sumber daya yang menghosting akun penyimpanan yang digunakan untuk Cloud Shell home drive, yang Anda identifikasi di tugas sebelumnya.
 
 1. Pada panel grup sumber daya, klik **+ Buat** lalu cari **Akun Storage**, dan klik **+ Buat**. 
 
-1. Pada tab **Dasar** dari bilah **Buat akun penyimpanan** , verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Kebijakan diterapkan dan tentukan pengaturan berikut (biarkan orang lain dengan defaultnya), klik **Tinjau** lalu klik **Buat**:
+1. Pada tab **Dasar** dari bilah **Buat akun** penyimpanan, verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Kebijakan diterapkan dan tentukan pengaturan berikut (biarkan orang lain dengan defaultnya), klik **Tinjau** lalu klik **Buat**:
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -134,19 +134,19 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
     >**Catatan**: Anda mungkin menerima **Validasi gagal. Klik di sini untuk kesalahan detail** ; Jika demikian, klik pesan kesalahan untuk mengidentifikasi alasan kegagalan dan melewati langkah berikutnya. 
 
-1. Setelah membuat penyebaran, Anda akan melihat pesan **Penyebaran gagal** di daftar **Pemberitahuan** portal. Dari daftar **Pemberitahuan**, navigasikan ke ikhtisar penyebaran dan klik **Penyebaran gagal. Klik di sini untuk detail** pesan untuk mengidentifikasi alasan kegagalan. 
+1. Setelah membuat penyebaran, Anda akan melihat pesan **Penyebaran gagal** di daftar **Pemberitahuan** portal. Dari **daftar Pemberitahuan** , navigasikan ke gambaran umum penyebaran dan klik **Penyebaran gagal. Klik di sini untuk pesan detail** untuk mengidentifikasi alasan kegagalan tersebut. 
 
     >**Catatan**: Verifikasi apakah pesan kesalahan menyatakan bahwa penyebaran sumber daya tidak diizinkan oleh kebijakan. 
 
-    >**Catatan**: Dengan mengklik tab **Kesalahan Mentah**, Anda dapat menemukan detail selengkapnya tentang kesalahan tersebut, termasuk nama definisi peran **Memerlukan tag Peran dengan nilai Infra**. Penyebaran gagal karena akun penyimpanan yang Anda coba buat tidak memiliki tag bernama **Peran** dengan nilainya yang diatur ke **Infra**.
+    >**Catatan**: Dengan mengklik tab **Kesalahan** Mentah, Anda dapat menemukan detail selengkapnya tentang kesalahan, termasuk nama definisi **peran Memerlukan tag Peran dengan nilai** Infra. Penyebaran gagal karena akun penyimpanan yang Anda coba buat tidak memiliki tag bernama **Peran** dengan nilainya yang diatur ke **Infra**.
 
-## Tugas 3: Menerapkan tag melalui kebijakan Azure
+## Tugas 3: Menerapkan pemberian tag melalui kebijakan Azure
 
 Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk memulihkan sumber daya yang tidak patuh. 
 
 1. Di portal Microsoft Azure, telusuri dan pilih **Kebijakan**. 
 
-1. Di bagian **Penulisan**, klik **Tugas**. 
+1. Di bagian **Authoring**, klik **Tugas**. 
 
 1. Dalam daftar penetapan, klik ikon elipsis di baris yang mewakili penetapan kebijakan **Memerlukan tag Peran dengan nilai Infra** dan gunakan item menu **Hapus penetapan** untuk menghapus penetapan.
 
@@ -165,7 +165,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
     | --- | --- |
     | Nama penetapan | **Mewarisi tag Peran dan nilai Infra-nya dari grup sumber daya Cloud Shell jika hilang**|
     | Deskripsi | **Mewarisi tag Peran dan nilai Infra-nya dari grup sumber daya Cloud Shell jika hilang**|
-    | Pemberlakuan kebijakan | Aktif |
+    | Pemberlakuan kebijakan | Diaktifkan |
 
 1. Klik **Berikutnya** dua kali dan atur **Parameter** ke nilai berikut:
 
@@ -180,19 +180,19 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
     | Buat tugas remediasi | diaktifkan |
     | Kebijakan yang akan diremediasi | **Mewarisi tag dari grup sumber daya jika tidak ada** |
 
-    >**Catatan**: Definisi kebijakan ini mencakup efek **Modifikasi**.
+    >**Catatan**: Definisi kebijakan ini mencakup **efek Ubah** .
 
 1. Klik **Tinjau + Buat**, lalu klik **Buat**.
 
     >**Catatan**: Untuk memverifikasi bahwa penetapan kebijakan baru berlaku, Anda akan membuat akun Azure Storage lain di grup sumber daya yang sama tanpa secara eksplisit menambahkan tag yang diperlukan. 
     
-    >**Catatan**: Mungkin perlu waktu antara 5 dan 15 menit agar kebijakan berlaku.
+    >**Catatan**: Mungkin diperlukan waktu antara 5 dan 15 menit agar kebijakan diterapkan.
 
 1. Navigasikan kembali ke panel grup sumber daya yang menghosting akun penyimpanan yang digunakan untuk drive beranda Cloud Shell, yang Anda identifikasi di tugas pertama.
 
 1. Pada panel grup sumber daya, klik **+ Buat** lalu cari **Akun Storage**, dan klik **+ Buat**. 
 
-1. Pada tab **Dasar** dari bilah **Buat akun penyimpanan** , verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Kebijakan diterapkan dan tentukan pengaturan berikut (biarkan orang lain dengan defaultnya) dan klik **Tinjau**:
+1. Pada tab **Dasar dari bilah **Buat akun** penyimpanan, verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Kebijakan diterapkan dan tentukan pengaturan berikut (biarkan orang lain dengan defaultnya) dan klik **Tinjau**:**
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -202,11 +202,11 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
 
 1. Setelah akun penyimpanan baru disediakan, klik tombol **Buka sumber daya** dan, pada panel **Gambaran Umum** akun penyimpanan yang baru dibuat, perhatikan bahwa **Peran** tag dengan nilai **Infra** telah secara otomatis ditetapkan ke sumber daya.
 
-## Tugas 4: Membersihkan sumber daya
+## Tugas 4: Bersihkan sumber daya
 
-   >**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan memastikan Anda tidak akan melihat biaya tak terduga, meskipun perlu diingat bahwa kebijakan Azure tidak dikenakan biaya tambahan.
+   >**Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Menghapus sumber daya yang tidak digunakan memastikan Anda tidak akan melihat biaya tak terduga, meskipun perlu diingat bahwa kebijakan Azure tidak dikenakan biaya tambahan.
    
-   >**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+   >**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
 1. Di portal, telusuri dan pilih **Kebijakan**.
 

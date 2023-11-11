@@ -1,13 +1,13 @@
 ---
 lab:
-  title: 'Lab 05: Menerapkan Konektivitas AntarSitus'
+  title: 'Lab 05: Menerapkan intersite Koneksi ivity'
   module: Administer Intersite Connectivity
 ---
 
 # Lab 05 - Menerapkan Konektivitas Antar Situs
 # Panduan lab siswa
 
-## Skenario lab
+## Skenario laboratorium
 
 Pusat data Contoso terletak di kantor Boston, New York, dan Seattle yang tersambung melalui tautan jaringan area luas mesh, dengan konektivitas penuh di antaranya. Anda perlu menerapkan lingkungan lab yang akan mencerminkan topologi jaringan lokal Contoso dan memverifikasi fungsinya.
 
@@ -17,9 +17,9 @@ Pusat data Contoso terletak di kantor Boston, New York, dan Seattle yang tersamb
 
 Di lab ini Anda akan:
 
-+ Tugas 1: Menyediakan lingkungan lab
++ Tugas 1: Memprovisikan lingkungan lab
 + Tugas 2: Mengonfigurasi peering jaringan virtual lokal dan global
-+ Tugas 3: Menguji konektivitas antar situs
++ Tugas 3: Menguji konektivitas antarsitus
 
 ## Perkiraan waktu: 30 menit
 
@@ -31,17 +31,17 @@ Di lab ini Anda akan:
 
 ## Latihan 1
 
-## Tugas 1: Menyediakan lingkungan lab
+## Tugas 1: Memprovisikan lingkungan lab
 
 Dalam tugas ini, Anda akan menyebarkan tiga mesin virtual, masing-masing ke dalam jaringan virtual terpisah, dengan dua di antaranya di wilayah Azure yang sama dan yang ketiga di wilayah Azure lainnya.
 
-1. Masuk ke [portal Microsoft Azure](https://portal.azure.com).
+1. Masuk ke [portal Azure](https://portal.azure.com).
 
 1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terpasang**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
 
 1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu tarik-turun, klik **Unggah** dan unggah file **\\Semua file \\Lab\\05\\az104-05-vnetvm-loop-template.json** dan **\\Semua file\\Lab\\05\\az104-05-vnetvm-loop -parameters.json** ke dalam direktori beranda Cloud Shell. 
 
@@ -57,7 +57,7 @@ Dalam tugas ini, Anda akan menyebarkan tiga mesin virtual, masing-masing ke dala
    New-AzResourceGroup -Name $rgName -Location $location1
    ```
 
-   >**Catatan**: Wilayah yang digunakan di atas telah diuji dan diketahui berfungsi saat lab ini terakhir kali ditinjau secara resmi. Jika Anda lebih suka menggunakan lokasi yang berbeda, atau tidak lagi berfungsi, Anda harus mengidentifikasi dua wilayah berbeda tempat mesin virtual Standard D2Sv3 dapat disebarkan.
+   >**Catatan**: Wilayah yang digunakan di atas diuji dan diketahui berfungsi ketika lab ini terakhir kali ditinjau secara resmi. Jika Anda lebih suka menggunakan lokasi yang berbeda, atau tidak lagi berfungsi, Anda harus mengidentifikasi dua wilayah berbeda tempat mesin virtual Standard D2Sv3 dapat disebarkan.
    >
    >Untuk mengidentifikasi wilayah Azure, dari sesi PowerShell di Cloud Shell, jalankan **(Get-AzLocation).Location**
    >
@@ -90,7 +90,7 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
 
 1. Di portal Microsoft Azure, cari dan pilih **Jaringan virtual**.
 
-1. Tinjauan jaringan virtual yang Anda buat di tugas sebelumnya dan verifikasi bahwa dua jaringan pertama terletak di wilayah Azure yang sama dan yang ketiga di wilayah Azure yang berbeda.
+1. Tinjau jaringan virtual yang Anda buat di tugas sebelumnya dan verifikasi bahwa dua jaringan pertama terletak di wilayah Azure yang sama dan yang ketiga di wilayah Azure yang berbeda.
 
     >**Catatan**: Templat yang Anda gunakan untuk penyebaran tiga jaringan virtual memastikan bahwa rentang alamat IP dari tiga jaringan virtual tidak tumpang tindih.
 
@@ -103,18 +103,18 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
     | Pengaturan | Nilai|
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-05-vnet0_to_az104-05-vnet1** |
-    | Izinkan akses ke jaringan virtual jarak jauh | **Pastikan kotak dicentang (default)** |
+    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-05-vnet1_to_az104-05-vnet0** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | tidak dipilih |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Jaringan virtual | **az104-05-vnet1** |
     | Perbolehkan akses ke jaringan virtual saat ini |  **Pastikan kotak dicentang (default)** |
+    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
 
+    >**Catatan**: Langkah ini menetapkan dua peering lokal - satu dari az104-05-vnet0 ke az104-05-vnet1 dan yang lainnya dari az104-05-vnet1 ke az104-05-vnet0.
 
-    >**Catatan**: Langkah ini membuat dua peering lokal - satu dari az104-05-vnet0 hingga az104-05-vnet1 dan yang lainnya dari az104-05-vnet1 hingga az104-05-vnet0.
-
-    >**Catatan**: Jika Anda mengalami masalah dengan antarmuka portal Microsoft Azure yang tidak menampilkan jaringan virtual yang dibuat di tugas sebelumnya, Anda dapat mengonfigurasi peering dengan menjalankan perintah PowerShell berikut dari Cloud Shell:
+    >**Catatan**: Jika Anda mengalami masalah dengan antarmuka portal Azure yang tidak menampilkan jaringan virtual yang dibuat di tugas sebelumnya, Anda dapat mengonfigurasi peering dengan menjalankan perintah PowerShell berikut dari Cloud Shell:
     
    ```powershell
    $rgName = 'az104-05-rg1'
@@ -143,9 +143,9 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
     | Jaringan virtual | **az104-05-vnet2** |
     | Perbolehkan akses ke jaringan virtual saat ini |**Pastikan kotak dicentang (default)** |
 
-    >**Catatan**: Langkah ini membuat dua peering global - satu dari az104-05-vnet0 hingga az104-05-vnet2 dan yang lainnya dari az104-05-vnet2 hingga az104-05-vnet0.
+    >**Catatan**: Langkah ini menetapkan dua peering global - satu dari az104-05-vnet0 ke az104-05-vnet2 dan yang lainnya dari az104-05-vnet2 ke az104-05-vnet0.
 
-    >**Catatan**: Jika Anda mengalami masalah dengan antarmuka portal Microsoft Azure yang tidak menampilkan jaringan virtual yang dibuat di tugas sebelumnya, Anda dapat mengonfigurasi peering dengan menjalankan perintah PowerShell berikut dari Cloud Shell:
+    >**Catatan**: Jika Anda mengalami masalah dengan antarmuka portal Azure yang tidak menampilkan jaringan virtual yang dibuat di tugas sebelumnya, Anda dapat mengonfigurasi peering dengan menjalankan perintah PowerShell berikut dari Cloud Shell:
     
    ```powershell
    $rgName = 'az104-05-rg1'
@@ -161,7 +161,7 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
 
 1. Navigasi kembali ke panel **Jaringan virtual** dan, dalam daftar jaringan virtual, klik **az104-05-vnet1**.
 
-1. Pada panel jaringan virtual **az104-05-vnet1**, di bagian **Pengaturan**, klik **Peering** lalu klik **+ Tambahkan**.
+1. Pada panel jaringan virtual **az104-05-vnet1**, di bagian **Setelan**, klik **Peering** lalu klik **+ Tambahkan**.
 
 1. Tambahkan peering dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya) dan klik **Tambahkan**:
 
@@ -176,9 +176,9 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
     | Jaringan virtual | **az104-05-vnet2** |
     | Perbolehkan akses ke jaringan virtual saat ini | **Pastikan kotak dicentang (default)** |
 
-    >**Catatan**: Langkah ini membuat dua peering global - satu dari az104-05-vnet1 hingga az104-05-vnet2 dan yang lainnya dari az104-05-vnet2 hingga az104-05-vnet1.
+    >**Catatan**: Langkah ini menetapkan dua peering global - satu dari az104-05-vnet1 ke az104-05-vnet2 dan yang lainnya dari az104-05-vnet2 ke az104-05-vnet1.
 
-    >**Catatan**: Jika Anda mengalami masalah dengan antarmuka portal Microsoft Azure yang tidak menampilkan jaringan virtual yang dibuat di tugas sebelumnya, Anda dapat mengonfigurasi peering dengan menjalankan perintah PowerShell berikut dari Cloud Shell:
+    >**Catatan**: Jika Anda mengalami masalah dengan antarmuka portal Azure yang tidak menampilkan jaringan virtual yang dibuat di tugas sebelumnya, Anda dapat mengonfigurasi peering dengan menjalankan perintah PowerShell berikut dari Cloud Shell:
     
    ```powershell
    $rgName = 'az104-05-rg1'
@@ -192,7 +192,7 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
    Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
    ``` 
 
-## Tugas 3: Menguji konektivitas antar situs
+## Tugas 3: Menguji konektivitas antarsitus
 
 Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga jaringan virtual yang Anda sambungkan melalui peering lokal dan global di tugas sebelumnya.
 
@@ -200,15 +200,15 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
 
 1. Dalam daftar mesin virtual, klik **az104-05-vm0**.
 
-1. Pada panel **az104-05-vm0**, klik **Hubungkan**, di menu menurun, klik **RDP**, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jauh.
+1. Pada panel **az104-05-vm0**, klik **Hubungkan**, di menu drop-down, klik **RDP**, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jauh.
 
-    >**Catatan**: Langkah ini mengacu pada menghubungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
+    >**Catatan**: Langkah ini mengacu pada menyambungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
 
-    >**Catatan**: Anda dapat mengabaikan permintaan peringatan apa pun saat menghubungkan ke mesin virtual target.
+    >**Catatan**: Anda dapat mengabaikan perintah peringatan saat menyambungkan ke komputer virtual target.
 
-1. Saat diminta, masuk dengan menggunakan nama pengguna **Siswa** dan kata sandi yang Anda konfigurasi saat menyebarkan komputer virtual Anda melalui CloudShell. 
+1. Saat diminta, masuk dengan menggunakan **Nama pengguna siswa** dan kata sandi yang Anda konfigurasi saat menyebarkan komputer virtual Anda melalui CloudShell. 
 
-1. Dalam sesi Desktop Jarak Jauh ke **az104-05-vm0**, klik kanan tombol **Mulai** dan, di menu klik kanan, klik **Windows PowerShell (Admin)** .
+1. Dalam sesi Desktop Jarak Jauh ke **az104-05-vm0**, klik kanan tombol **Mulai** dan, di menu klik kanan, klik **Windows PowerShell (Admin)**.
 
 1. Di jendela konsol Windows PowerShell, jalankan hal berikut untuk menguji konektivitas ke **az104-05-vm1** (yang memiliki alamat IP privat **10.51.0.4**) melalui port TCP 3389:
 
@@ -216,7 +216,7 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
    Test-NetConnection -ComputerName 10.51.0.4 -Port 3389 -InformationLevel 'Detailed'
    ```
 
-    >**Catatan**: Pengujian menggunakan TCP 3389 karena port ini diizinkan secara default oleh firewall sistem operasi.
+    >**Catatan**: Pengujian menggunakan TCP 3389 karena ini adalah port ini diizinkan secara default oleh firewall sistem operasi.
 
 1. Periksa output perintah dan verifikasi bahwa koneksi berhasil.
 
@@ -230,15 +230,15 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
 
 1. Dalam daftar mesin virtual, klik **az104-05-vm1**.
 
-1. Pada panel **az104-05-vm1**, klik **Hubungkan**, di menu menurun, klik **RDP**, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
+1. Pada panel **az104-05-vm1**, klik **Hubungkan**, di menu drop-down, klik **RDP**, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
 
-    >**Catatan**: Langkah ini mengacu pada menghubungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
+    >**Catatan**: Langkah ini mengacu pada menyambungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
 
-    >**Catatan**: Anda dapat mengabaikan permintaan peringatan apa pun saat menghubungkan ke mesin virtual target.
+    >**Catatan**: Anda dapat mengabaikan perintah peringatan saat menyambungkan ke komputer virtual target.
 
 1. Saat diminta, masuk dengan menggunakan nama pengguna **Siswa** dan sandi dari file parameter Anda. 
 
-1. Dalam sesi Desktop Jauh ke **az104-05-vm1**, klik kanan tombol **Mulai** dan, di menu klik kanan, klik **Windows PowerShell (Admin)** .
+1. Dalam sesi Desktop Jauh ke **az104-05-vm1**, klik kanan tombol **Mulai** dan, di menu klik kanan, klik **Windows PowerShell (Admin)**.
 
 1. Di jendela konsol Windows PowerShell, jalankan yang berikut ini untuk menguji konektivitas ke **az104-05-vm2** (yang memiliki alamat IP pribadi **10.52.0.4**) melalui port TCP 3389:
 
@@ -246,17 +246,17 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
    Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
    ```
 
-    >**Catatan**: Pengujian menggunakan TCP 3389 karena port ini diizinkan secara default oleh firewall sistem operasi.
+    >**Catatan**: Pengujian menggunakan TCP 3389 karena ini adalah port ini diizinkan secara default oleh firewall sistem operasi.
 
 1. Periksa output perintah dan verifikasi bahwa koneksi berhasil.
 
 ## Membersihkan sumber daya
 
->**Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
+>**Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Dengan menghapus sumber daya yang tidak digunakan, Anda tidak akan melihat biaya yang tak terduga.
 
->**Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjauan sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+>**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
-1. Di portal Microsoft Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
+1. Di portal Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
 
 1. Buat daftar semua grup sumber daya yang dibuat di seluruh lab modul ini dengan menjalankan perintah berikut:
 
@@ -270,12 +270,12 @@ Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga j
    Get-AzResourceGroup -Name 'az104-05*' | Remove-AzResourceGroup -Force -AsJob
    ```
 
-    >**Catatan**: Perintah dijalankan secara asinkron (sebagaimana yang ditentukan oleh parameter -AsJob), jadi saat Anda akan dapat menjalankan perintah PowerShell lain langsung setelahnya dalam sesi PowerShell yang sama, proses ini akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
+    >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
 ## Tinjau
 
 Di lab ini, Anda telah:
 
-+ Menyediakan lingkungan lab
++ Memprovisikan lingkungan lab
 + Mengonfigurasi peering jaringan virtual lokal dan global
 + Menguji konektivitas antar situs

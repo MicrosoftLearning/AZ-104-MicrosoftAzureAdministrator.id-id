@@ -7,23 +7,23 @@ demo:
 
 # 08 - Mengelola Azure Virtual Machines
 
-## Demonstrasi -- Buat Virtual Machines di portal
+## Demonstrasi -- Membuat Komputer Virtual di portal
 
 Dalam demonstrasi ini, kita akan membuat dan mengakses komputer virtual Azure di portal.
 
 **Referensi**
 
-[Mulai cepat - Membuat VM Windows di portal Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
+[Mulai Cepat - Membuat VM Windows di portal Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
 
-[Mulai cepat - Membuat VM Linux di portal Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal)
+[Mulai Cepat - Membuat VM Linux di portal Azure](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal)
 
-[Menyambungkan ke komputer virtual dengan Bastion](https://learn.microsoft.com/azure/bastion/tutorial-create-host-portal#connect)
+[Koneksi ke komputer virtual dengan Bastion](https://learn.microsoft.com/azure/bastion/tutorial-create-host-portal#connect)
 
 **Membuat komputer virtual**
 
-**Catatan:** Langkah-langkah ini hanya mencakup beberapa parameter komputer virtual. Jangan ragu untuk menjelajahi dan mencakup area lain.  Anda dapat membuat komputer virtual Windows atau Linux, tergantung audiens Anda.
+**Catatan: **Langkah-langkah ini hanya mencakup beberapa parameter mesin virtual. Jangan ragu untuk menjelajahi dan mencakup area lain. Anda dapat membuat komputer virtual Windows atau Linux, tergantung audiens Anda.
 
-1. Menggunakan portal Microsoft Azure.
+1. Gunakan portal Azure.
 
 1. Cari **Komputer virtual**. 
 
@@ -33,35 +33,35 @@ Dalam demonstrasi ini, kita akan membuat dan mengakses komputer virtual Azure di
 
 1. Buat komputer virtual dan tunggu hingga sumber daya disebarkan.  
 
-**Menyambungkan ke komputer virtual**
+**Koneksi ke komputer virtual**
 
-1. Ada beberapa cara untuk **Menyambungkan** ke komputer virtual. 
+1. Ada beberapa cara untuk **Koneksi** ke komputer virtual. 
 
 1. Untuk server Windows, Anda dapat menggunakan **RDP**, seperti yang diperlihatkan dalam Mulai Cepat. 
 
 1. Untuk server Linux, Anda dapat **SSH**, seperti yang ditunjukkan di Mulai Cepat. 
 
-1. Untuk salah satu server, Anda dapat tersambung dengan layanan **Bastion** (Mulai Cepat). Tinjau mengapa Bastion lebih disukai daripada RDP atau SSH. 
+1. Untuk salah satu server, Anda dapat tersambung dengan **layanan Bastion** (Mulai Cepat). Tinjau mengapa Bastion lebih disukai untuk RDP atau SSH. 
 
-## Mengonfigurasi Ketersediaan Virtual Machines
+## Mengonfigurasi Ketersediaan Mesin Virtual
 
 Dalam demonstrasi ini, kita akan menjelajahi opsi penskalaan mesin virtual.
 
 **Referensi**
 
-[Membuat mesin virtual dalam set skala menggunakan portal Microsoft Azure](https://learn.microsoft.com/azure/virtual-machine-scale-sets/flexible-virtual-machine-scale-sets-portal)
+[Membuat komputer virtual dalam set skala menggunakan portal Azure](https://learn.microsoft.com/azure/virtual-machine-scale-sets/flexible-virtual-machine-scale-sets-portal)
 
 1. Gunakan Portal Microsoft Azure.
 
 1. Cari dan pilih **Virtual Machine Scale Sets**. 
 
-1. Buat **Virtual Machine Scale Sets**. Tinjau tujuan set skala komputer virtual. Tinjau perbedaan antara mode orkestrasi **Uniform** dan **Flexible** . Jelaskan pilihan Anda dapat memengaruhi opsi penskalakan Anda. 
+1. Buat **Set** Skala Komputer Virtual. Tinjau tujuan set skala komputer virtual. Tinjau perbedaan antara **mode orkestrasi Uniform** dan **Flexible** . Jelaskan pilihan Anda dapat memengaruhi opsi penskalakan Anda. 
 
-1. Pindah ke tab **Penskalakan** . 
+1. Pindah ke **tab Penskalakan** . 
 
-1. Tinjau cara kebijakan **Skala** manual dan **Penyempurnaan** skala digunakan. 
+1. Tinjau bagaimana **kebijakan** Skala** manual dan **Penyempurnaan skala digunakan. 
 
-1. Ubah ke Kebijakan **penskalakan kustom** . 
+1. Ubah ke **kebijakan Penskalakan kustom** . 
 
 1. Tinjau bagaimana **ambang CPU (%)** digunakan untuk meluaskan skala dan menskalakan dalam instans komputer virtual. 
 

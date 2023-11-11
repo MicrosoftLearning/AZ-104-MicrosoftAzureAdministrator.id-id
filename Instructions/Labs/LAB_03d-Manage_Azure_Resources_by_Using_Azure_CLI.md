@@ -7,7 +7,7 @@ lab:
 # Lab 03d - Mengelola sumber daya Azure dengan Menggunakan Azure CLI
 # Panduan lab siswa
 
-## Skenario lab
+## Skenario laboratorium
 
 Sekarang, setelah menjelajahi kemampuan administrasi dasar Azure yang terkait dengan provisi dan pengelolaan sumber daya berdasarkan grup sumber daya menggunakan portal Microsoft Azure, templat Azure Resource Manager, dan Azure PowerShell, Anda perlu melakukan tugas yang setara menggunakan Azure CLI. Untuk menghindari menginstal Azure CLI, Anda akan memanfaatkan lingkungan Bash yang tersedia di Azure Cloud Shell.
 
@@ -19,7 +19,7 @@ Di lab ini Anda akan:
 
 + Tugas 1: Memulai sesi Bash di Azure Cloud Shell
 + Tugas 2: Membuat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure CLI
-+ Tugas 3: Mengonfigurasi disk yang dikelola dengan menggunakan Azure CLI
++ Tugas 3: Mengonfigurasi disk terkelola dengan menggunakan Azure CLI
 
 ## Perkiraan waktu: 20 menit
 
@@ -39,11 +39,11 @@ Dalam tugas ini, Anda akan membuka sesi Bash di Cloud Shell.
 
 1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **Bash**. 
 
-    >**Catatan**: Jika ini pertama kalinya Anda memulai **Cloud Shell** dan Anda melihat pesan **Anda tidak memiliki penyimpanan yang terinstal**, pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
+    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
 
 1. Jika diminta, klik **Buat penyimpanan**, dan tunggu hingga panel Azure Cloud Shell ditampilkan. 
 
-1. Pastikan **Bash** muncul di menu menurun di sudut kiri atas panel Cloud Shell.
+1. Pastikan **Bash** muncul di menu tarik-turun di sudut kiri atas panel Cloud Shell.
 
 ## Tugas 2: Membuat grup sumber daya dan disk terkelola Azure dengan menggunakan Azure CLI
 
@@ -58,7 +58,7 @@ Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure
 
    az group create --name $RGNAME --location $LOCATION
    ```
-1. Untuk mengambil properti grup sumber daya yang baru dibuat, jalankan yang berikut ini:
+1. Untuk mengambil properti grup sumber daya yang baru dibuat, jalankan berikut ini:
 
    ```sh
    az group show --name $RGNAME
@@ -74,7 +74,7 @@ Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure
    --sku 'Standard_LRS' \
    --size-gb 32
    ```
-    >**Catatan**: Saat menggunakan sintaks multi-baris, pastikan bahwa setiap baris diakhiri dengan garis miring terbalik (`\`) tanpa spasi tambahan dan tidak ada spasi awal di awal setiap baris.
+    >**Catatan**: Saat menggunakan sintaks multibaris, pastikan bahwa setiap baris diakhir dengan garis miring belakang (`\`) tanpa spasi berikutnya dan tidak ada spasi di awal setiap baris.
 
 1. Untuk mengambil properti dari disk yang baru dibuat, jalankan yang berikut ini:
 
@@ -82,7 +82,7 @@ Dalam tugas ini, Anda akan membuat grup sumber daya dan disk yang dikelola Azure
    az disk show --resource-group $RGNAME --name $DISKNAME
    ```
 
-## Tugas 3: Mengonfigurasi disk yang dikelola dengan menggunakan Azure CLI
+## Tugas 3: Mengonfigurasi disk terkelola dengan menggunakan Azure CLI
 
 Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan menggunakan sesi Azure CLI dalam Cloud Shell. 
 
@@ -112,9 +112,9 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
 
 ## Membersihkan sumber daya
 
- > **Catatan**: Jangan lupa untuk menghapus sumber daya Azure yang baru dibuat dan yang tidak diperlukan lagi. Menghapus sumber daya yang tidak digunakan akan memastikan bahwa Anda tidak akan melihat biaya yang tidak diharapkan.
+ > **Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Dengan menghapus sumber daya yang tidak digunakan, Anda tidak akan melihat biaya yang tak terduga.
 
- > **Catatan**:  Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+ > **Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
 1. Di portal Microsoft Azure, buka sesi shell **Bash** dalam panel **Cloud Shell**.
 
@@ -130,7 +130,7 @@ Dalam tugas ini, Anda akan mengelola konfigurasi disk terkelola Azure dengan men
    az group list --query "[?starts_with(name,'az104-03')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
    ```
 
-    >**Catatan**: Perintah dijalankan secara tidak sinkron (seperti yang ditentukan oleh parameter --nowait), jadi sementara Anda akan dapat menjalankan perintah Azure CLI lain segera setelah itu dalam sesi Bash yang sama, itu akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
+    >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter --nowait), jadi sementara Anda akan dapat menjalankan perintah Azure CLI lain segera setelah itu dalam sesi Bash yang sama, itu akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
 ## Tinjau
 
