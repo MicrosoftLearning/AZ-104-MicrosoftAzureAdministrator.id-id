@@ -139,7 +139,7 @@ Dalam tugas ini, Anda akan membuat grup dengan keanggotaan yang ditetapkan dan d
     | --- | --- |
     | Properti | **jobTitle** |
     | Operator | **Sama dengan** |
-    | Nilai | **Administrator Cloud** |
+    | Value | **Administrator Cloud** |
 
 1. Simpan aturan dengan mengklik **+Tambahkan ekspresi** dan **Simpan**. Kembali ke bilah **Grup Baru**, klik **Buat**. 
 
@@ -160,7 +160,7 @@ Dalam tugas ini, Anda akan membuat grup dengan keanggotaan yang ditetapkan dan d
     | --- | --- |
     | Properti | **jobTitle** |
     | Operator | **Sama dengan** |
-    | Nilai | **Administrator Sistem** |
+    | Value | **Administrator Sistem** |
 
 1. Simpan aturan dengan mengklik **+Tambahkan ekspresi** dan **Simpan**. Kembali ke bilah **Grup Baru**, klik **Buat**. 
 
@@ -183,13 +183,13 @@ Dalam tugas ini, Anda akan membuat grup dengan keanggotaan yang ditetapkan dan d
 
 1. Navigasikan kembali ke panel **Grup - Semua grup**, klik entri yang mewakili grup **IT System Administrators**, lalu tampilkan panel **Anggota**. Verifikasi bahwa **az104-01a-aaduser2** muncul dalam daftar anggota grup.
 
-## Tugas 3: Membuat penyewa (Opsional - Masalah lingkungan lab)
+## Tugas 3: Buat penyewa (Opsional - Kemungkinan masalah captcha, langganan berbayar diperlukan)
 
 Dalam tugas ini, Anda akan membuat penyewa baru.
     
 1. Di portal Azure, cari dan pilih **ID** Microsoft Entra.
 
-    >**Catatan**: Ada masalah yang diketahui dengan verifikasi Captcha di lingkungan lab. Jika Anda menerima kesalahan **Pembuatan gagal. Terlalu banyak permintaan, silakan coba nanti**, lakukan hal berikut:<br>
+    >**Catatan**: Ada masalah yang diketahui dengan verifikasi Captcha di lingkungan lab. Jika Anda menerima kesalahan **Pembuatan gagal. Terlalu banyak permintaan, silakan coba nanti**, lakukan hal berikut:
     - Coba pembuatan beberapa kali.<br>
     - Periksa bagian **Kelola penyewa** untuk memastikan penyewa tidak dibuat di latar belakang. <br>
     - Buka jendela InPrivate** baru **dan gunakan Portal Microsoft Azure dan coba buat penyewa dari sana.<br>
@@ -237,7 +237,10 @@ Dalam tugas ini, Anda akan membuat pengguna tamu dan memberi mereka akses ke sum
 
     >**Catatan**: **Salin ke clipboard** Nama** Prinsipal Pengguna lengkap **(nama pengguna plus domain). Anda akan membutuhkannya nanti dalam tugas ini.
 
-1. Kembali ke penyewa pertama yang Anda buat sebelumnya. Lakukan ini dengan menggunakan tombol **Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Azure.
+1. Kembali ke penyewa pertama yang Anda buat sebelumnya.
+2. Pilih **Gambaran Umum** di panel navigasi.
+3. Klik **Kelola penyewa**.
+4. Centang kotak di samping penyewa pertama yang Anda buat sebelumnya, lalu pilih **Beralih**.
 
 1. Arahkan kembali ke blade **Pengguna - Semua pengguna**, lalu klik **+ Undang pengguna eksternal**.
 
