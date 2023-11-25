@@ -54,11 +54,11 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
     | Wilayah | pilih salah satu wilayah yang mendukung zona ketersediaan dan lokasi Anda dapat menyediakan mesin virtual Azure |
     | Opsi ketersediaan | **Zona ketersediaan** |
     | Zona ketersediaan | **Zona 1** |
-    | Gambar | **Pusta Data Windows Server 2019 - Gen1/Gen2** |
+    | Gambar | **Pusat Data Windows Server 2019 - Gen2** |
     | Instans Azure Spot | **Tidak** |
     | Ukuran | **Standar D2s v3** |
     | Nama Pengguna | **Mahasiswa** |
-    | Kata sandi | **Berikan kata sandi yang aman** |
+    | Kata sandi | **Berikan kata sandi yang aman, minimal 12 karakter** |
     | Port masuk publik | **Tidak ada** |
     | Apakah Anda ingin menggunakan lisensi Windows Server yang sudah ada? | **Tidak Dicentang** |
 
@@ -89,7 +89,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
     | kelompok keamanan jaringan NIC | **dasar** |
     | Port masuk publik | **Tidak ada** |
     | Jaringan yang dipercepat | **Off**
-    | Tempatkan komputer virtual ini di belakang solusi penyeimbang muatan yang ada? | **Tidak Dicentang** |
+    | Opsi penyeimbangan muatan | **Tidak ada** |
 
 1. Klik **Berikutnya: Manajemen >** dan, pada tab **Manajemen** dari bilah **Buat komputer** virtual, tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
@@ -237,7 +237,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
 
 1. Pada bilah mesin virtual **az104-08-vm0**, klik **Disk**, Pada **Data disk** klik **+ Buat dan lampirkan disk baru**.
 
-1. Buat disk terkelola dengan pengaturan berikut (biarkan opsi yang lain dengan nilai defaultnya):
+1. Buat disk terkelola dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya) dan klik **Terapkan**:
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -247,7 +247,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
 
 1. Kembali ke bilah **az104-08-vm0 - Disk**, Pada **Data disk** klik **+ Buat dan lampirkan disk baru**.
 
-1. Buat disk terkelola dengan pengaturan berikut (biarkan opsi yang lain dengan nilai defaultnya) dan Simpan perubahan:
+1. Buat disk terkelola dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya) dan klik **Terapkan**:
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -255,7 +255,6 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
     | Jenis penyimpanan | **SSD Premium** |
     | Ukuran (GiB)| **1024 GiB** |
 
-1. Kembali ke bilah **az104-08-vm0 - Disk**, klik **Simpan**.
 
 1. Pada bilah **az104-08-vm0**, di bagian **Operasi**, klik **Jalankan perintah**, dan dalam daftar perintah, klik **RunPowerShellScript**.
 
@@ -292,7 +291,7 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk mesin virtual Azure denga
 
     >**Catatan**: Bagian templat ini mendefinisikan ukuran komputer virtual Azure yang sama dengan yang Anda tentukan untuk komputer virtual pertama melalui portal Azure.
 
-1. Pada bilah **Edit templat** , di bagian yang menampilkan konten templat, ganti baris **51** (`"dataDisks": [ ],`) dengan kode berikut :
+1. Pada bilah **Edit templat** , di bagian yang menampilkan konten templat, ganti baris **54** (`"dataDisks": [ ],`) dengan kode berikut :
 
    ```json
                     "dataDisks": [
@@ -535,13 +534,13 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
     | Pengaturan | Nilai |
     | --- |--- |
     | Sumber metrik | **Sumber daya saat ini (az10480vmss0)** |
-    | Agregasi waktu | **Tengah** |
     | Namespace metrik | **Host Mesin Virtual** |
     | Nama metrik | **Total Jaringan** |
     | Operator | **Lebih besar dari** |
     | Ambang batas metrik untuk memicu tindakan penskalaan | **10** |
     | Durasi (dalam menit) | **1** |
     | Statistik butir waktu | **Tengah** |
+    | Agregasi waktu | **Tengah** |
     | Operasi | **Tingkatkan jumlah sebesar** |
     | Jumlah Instans | **1** |
     | Pendinginan (menit) | **5**
@@ -596,7 +595,9 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
     | Jenis penyimpanan | **HDD Standar** |
     | Ukuran (GiB) | **32** |
 
-1. Simpan perubahan, di bagian **Pengaturan** pada bilah **az10408vmss0**, klik **Instans**, pilih kotak centang di sebelah instans kumpulan skala mesin virtual, klik **Tingkatkan**, lalu saat dimintai konfirmasi, klik **Ya**.
+1. Terapkan perubahan
+
+1. Di bagian **Pengaturan** pada bilah **az10408vmss0**, klik **Instans**, beri centang kotak di samping instans kumpulan skala mesin virtual, klik **Tingkatkan**, lalu saat diminta konfirmasi, klik **Ya**.
 
     >**Catatan**: Disk yang terpasang pada langkah sebelumnya adalah disk mentah. Sebelum dapat digunakan, Anda perlu membuat partisi, membuat sistem file, dan memasangnya. Agar dapat melakukannya, Anda akan menggunakan ekstensi Skrip Kustom mesin virtual Azure. Pertama, Anda harus menghapus Ekstensi Skrip Kustom yang ada.
 

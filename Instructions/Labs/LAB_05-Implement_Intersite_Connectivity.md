@@ -103,14 +103,14 @@ Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaring
     | Pengaturan | Nilai|
     | --- | --- |
     | Jaringan virtual ini: Nama tautan peering | **az104-05-vnet0_to_az104-05-vnet1** |
-    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
+    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan hanya tiga kotak pertama yang dicentang** |
     | Jaringan virtual jarak jauh: Nama tautan peering | **az104-05-vnet1_to_az104-05-vnet0** |
     | Model penyebaran jaringan virtual | **Manajer sumber daya** |
     | Saya mengetahui ID sumber daya saya | tidak dipilih |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Jaringan virtual | **az104-05-vnet1** |
     | Perbolehkan akses ke jaringan virtual saat ini |  **Pastikan kotak dicentang (default)** |
-    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan semua kotak dicentang** |
+    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan hanya tiga kotak pertama yang dicentang** |
 
     >**Catatan**: Langkah ini menetapkan dua peering lokal - satu dari az104-05-vnet0 ke az104-05-vnet1 dan yang lainnya dari az104-05-vnet1 ke az104-05-vnet0.
 

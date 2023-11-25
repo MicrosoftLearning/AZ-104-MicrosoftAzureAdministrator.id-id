@@ -230,8 +230,6 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplika
 
 1. Perkecil panel Cloud Shell (namun jangan ditutup) dan, di bilah aplikasi web, di bagian Pengaturan, klik **Skalakan (Paket App Service)**.
 
-1. Pilih **Autoscale Pengaturan**, pilih tab **Jalankan riwayat**. Di bawah **Perlihatkan data untuk yang terakhir**, pilih **1 jam** dan periksa **jumlah** instans sumber daya yang diamati.
-
 1. Pantau pemanfaatan dan jumlah instans selama beberapa menit. 
 
     >**Catatan**: Anda mungkin perlu **Merefresh** halaman.

@@ -95,7 +95,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi ruang kerja Azure Log Anal
 
 1. Pada tab **Dasar** bilah **Buat ruang kerja Analytics Log**, masukkan pengaturan berikut, klik **Tinjau + Buat**, lalu klik **Buat**:
 
-    | Pengaturan | Nilai |
+    | Pengaturan | Value |
     | --- | --- |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | nama grup sumber daya baru **az104-11-rg1** |
@@ -110,7 +110,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi ruang kerja Azure Log Anal
 
 1. Pada bilah **Buat Akun Azure Automation**, tentukan pengaturan berikut, dan klik **Tinjau + Buat** setelah validasi, klik **Buat**:
 
-    | Pengaturan | Nilai |
+    | Pengaturan | Value |
     | --- | --- |
     | Nama akun Automation | nama unik apa pun |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
@@ -173,7 +173,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
 1. Pada bilah **az104-11-vm0**, di bagian **Monitoring**, klik **Log** lalu klik **Aktifkan**.
 
-1. Pada bilah **az104-11-vm0 - Logs, pastikan **agen Azure Monitor (Disarankan**)** dipilih, lalu klik **Konfigurasikan**.  
+1. Pada bilah **az104-11-vm0 - Logs** , perhatikan **agen** Azure Monitor akan diinstal, lalu klik **Konfigurasikan**.  
 
     >**Catatan**: Jangan tunggu hingga operasi selesai, tetapi lanjutkan ke langkah berikutnya. Operasi mungkin memakan waktu sekitar 5 menit.
 
@@ -209,7 +209,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
 1. Pada bilah **Konfigurasi logika sinyal**, dalam daftar sinyal, di bagian **Logika peringatan**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya) dan klik **Selesai**:
 
-    | Pengaturan | Nilai |
+    | Pengaturan | Value |
     | --- | --- |
     | Ambang | **Statik** |
     | Jenis agregasi | **Tengah** |
@@ -222,7 +222,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
 1. Pada tab **Dasar dari bilah **Buat grup** tindakan, tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya) dan pilih **Berikutnya: Pemberitahuan >****:
 
-    | Pengaturan | Nilai |
+    | Pengaturan | Value |
     | --- | --- |
     | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
     | Grup sumber daya | **az104-11-rg1** |
@@ -239,7 +239,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan diagnostik komputer virtual
 
 1. Kembali ke bilah **Buat aturan** pemberitahuan, klik **Berikutnya: Detail >**, dan di bagian **Detail** aturan pemberitahuan, tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
-    | Pengaturan | Nilai |
+    | Pengaturan | Value |
     | --- | --- |
     | Nama aturan pemberitahuan | **Persentase CPU di atas ambang pengujian** |
     | Deskripsi aturan peringatan | **Persentase CPU di atas ambang pengujian** |
