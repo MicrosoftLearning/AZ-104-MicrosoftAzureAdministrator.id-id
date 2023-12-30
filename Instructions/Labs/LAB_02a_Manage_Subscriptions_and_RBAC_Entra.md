@@ -33,7 +33,7 @@ Di lab ini Anda akan:
 + Tugas 3: Menetapkan peran RBAC
 
 
-## Perkiraan waktu: 30 menit
+## Perkiraan waktu: 60 menit
 
 ## Diagram arsitektur
 
