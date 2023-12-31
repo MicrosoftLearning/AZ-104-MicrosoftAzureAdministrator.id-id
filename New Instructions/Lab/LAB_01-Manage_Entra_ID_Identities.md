@@ -8,7 +8,9 @@ lab:
 
 ## Pengenalan lab
 
-Ini adalah yang pertama dalam serangkaian lab untuk Administrator Azure. Di lab ini, Anda mempelajari tentang pengguna dan grup. Pengguna dan grup adalah blok penyusun dasar untuk solusi identitas. Anda juga terbiasa dengan alat administrator dasar. Alat-alat ini termasuk portal Azure, Cloud Shell, Azure PowerShell, dan Antarmuka Baris Perintah (CLI). Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditampilkan di US Timur.
+Ini adalah yang pertama dalam serangkaian lab untuk Administrator Azure. Di lab ini, Anda mempelajari tentang pengguna dan grup. Pengguna dan grup adalah blok penyusun dasar untuk solusi identitas. Anda juga terbiasa dengan alat administrator dasar. 
+
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditampilkan di US Timur.
 
 ## Perkiraan waktu: 40 menit
 
@@ -27,37 +29,24 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 
 ## Tugas
 
-+ Tugas 1: Biasakan diri Anda dengan portal Azure.
-+ Tugas 2: Membuat grup sumber daya.
-+ Tugas 3: Biasakan diri Anda dengan akun pengguna.
-+ Tugas 4: Buat grup dan tambahkan anggota.
-+ Tugas 5: Biasakan diri Anda dengan Cloud Shell.
-+ Tugas 6: Berlatih dengan Azure PowerShell.
-+ Tugas 7: Berlatihlah dengan shell Bash.
++ Tugas 1: Membuat grup sumber daya.
++ Tugas 2: Membuat dan mengonfigurasi akun pengguna.
++ Tugas 3: Buat grup dan tambahkan anggota.
++ Tugas 4: Biasakan diri Anda dengan Cloud Shell.
++ Tugas 5: Berlatih dengan Azure PowerShell.
++ Tugas 6: Berlatihlah dengan shell Bash.
 
-## Tugas 1: Biasakan diri Anda dengan portal Azure
+## Tugas 1: Membuat grup sumber daya
 
-Dalam tugas ini, Anda membiaskan diri dengan portal Azure. portal Microsoft Azure adalah konsol terpadu berbasis web yang menyediakan alternatif untuk alat baris perintah. Dengan portal Microsoft Azure, Anda dapat mengelola langganan Azure menggunakan antarmuka pengguna grafis. Anda dapat membangun, mengelola, dan memantau semuanya, mulai dari aplikasi web sederhana hingga penyebaran cloud yang kompleks di portal. 
+Dalam tugas ini, Anda membuat grup sumber daya. Grup sumber daya adalah pengelompokan sumber daya terkait. Misalnya, semua sumber daya untuk proyek, departemen, atau aplikasi. 
+
+>**Catatan:** Untuk setiap lab dalam kursus ini, Anda akan membuat grup sumber daya baru. Ini memungkinkan Anda dengan cepat menemukan dan mengelola sumber daya lab Anda. 
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Mulai tur Anda dari portal Azure, dengan memilih ikon menu kiri atas. 
-
-   + Pilih **Beranda** untuk melihat layanan dan sumber daya terbaru. Anda juga dapat membuat favorit. 
-   + Pilih **Dasbor** untuk tampilan yang dikustomisasi. [Dasbor adalah tampilan sumber daya cloud Anda yang terfokus](https://learn.microsoft.com/zure/azure-portal/azure-portal-dashboards) dan terorganisir di portal Azure. Gunakan dasbor sebagai ruang kerja tempat Anda dapat memantau sumber daya dan meluncurkan tugas dengan cepat untuk operasi sehari-hari.
-   + Pilih **Semua layanan** untuk melihat daftar layanan Azure yang dikategorikan.
-
-1. Anda mungkin menemukannya lebih cepat untuk **Mencari sumber daya, layanan, dan dokumen** menggunakan kotak pencarian di tengah atas portal. Kotak pencarian menyediakan pelengkapan otomatis dan saran untuk layanan atau sumber daya. Misalnya, coba `virt` dan perhatikan kecocokan yang disarankan.
-
-1. Di sisi kanan bilah menu atas, pilih **ikon Pengaturan**. Pengaturan memungkinkan Anda menyesuaikan tampilan portal.
-
-1. Terakhir, di sudut kanan atas adalah informasi akun pengguna Anda.
+    >**Catatan:** portal Azure digunakan di semua lab. Jika Anda baru menggunakan Azure, ketik `Quickstart Center` di kotak pencarian teratas. Kemudian beberapa menit untuk menonton **video Memulai di portal Azure**. Bahkan jika Anda telah menggunakan portal sebelumnya, Anda akan menemukan beberapa tips dan trik tentang menavigasi dan menyesuaikan antarface. 
    
-## Tugas 2: Membuat grup sumber daya baru
-
-Dalam tugas ini, Anda membuat grup sumber daya baru. Grup sumber daya adalah pengelompokan sumber daya terkait (seperti semua sumber daya untuk proyek, departemen, atau aplikasi). Untuk setiap lab dalam kursus ini, Anda membuat grup sumber daya. 
-    
-1. Di portal Microsoft Azure, cari dan pilih **Grup sumber daya**.
+1. Di portal Azure, cari dan pilih `Resource groups`.
    
 1. Pada bilah **Grup** sumber daya, klik **+ Buat**, dan berikan informasi yang diperlukan. 
 
@@ -65,33 +54,43 @@ Dalam tugas ini, Anda membuat grup sumber daya baru. Grup sumber daya adalah pen
     | --- | --- |
     | Nama langganan | langganan Anda |
     | Nama grup sumber daya | `az104-rg1` |
-    | Lokasi | wilayah Anda |
+    | Lokasi | **US Timur** |
+
+    >**Catatan:** Semua lab menggunakan **US** Timur. **Tonton video Pilih wilayah** terbaik di Pusat** Mulai Cepat untuk mempelajari apa yang harus dipertimbangkan **saat memilih wilayah.  
     
 1. Klik **Tinjau + buat** lalu klik **Buat**.
 
     >**Catatan**: Tunggu hingga grup sumber daya disebarkan. **Gunakan ikon Pemberitahuan** (kanan atas) untuk melacak kemajuan penyebaran.
 
-1. Kembali ke bilah **Grup sumber daya**, segarkan laman dan verifikasi bahwa grup sumber daya baru Anda muncul dalam daftar grup sumber daya.
+1. Pilih **Buka sumber daya**, refresh halaman dan verifikasi grup sumber daya baru Anda muncul dalam daftar grup sumber daya.
 
     ![Cuplikan layar daftar grup sumber daya.](../media/az104-lab01-create-resource-group.png)
 
-## Tugas 3: Biasakan diri Anda dengan akun pengguna.
+## Tugas 2: Membuat dan mengonfigurasi akun pengguna
 
-Dalam tugas ini, Anda membiasakan diri dengan akun dan profil pengguna. Anda juga melihat keanggotaan grup.
+Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun pengguna. Akun pengguna akan menyimpan data pengguna seperti nama, departemen, lokasi, dan informasi kontak.
 
-1. Di portal Azure, cari dan pilih `Microsoft Entra ID`.
+1. Lanjutkan di portal Azure. 
 
-1. Di bagian **Kelola** , pilih bilah **Pengguna** . 
+1. Cari dan pilih `Microsoft Entra ID`.
 
-1. Pilih **Pengguna** baru dari menu atas. Perhatikan pilihan untuk **Membuat pengguna** baru dan **Mengundang pengguna** eksternal. Membuat pengguna berada di luar lingkup lab ini. 
+1. Pada bilah ID Microsoft Entra, gulir ke bawah ke bagian **Kelola** , klik **Pengaturan** pengguna, dan tinjau opsi konfigurasi yang tersedia.
 
-1. **Cari** dan pilih akun pengguna Anda. Informasi akun pengguna Anda ditampilkan di sudut kanan atas portal. 
+1. Navigasi kembali ke panel **Pengguna - Semua pengguna**, lalu klik **+ Pengguna baru**.
 
-1. Pilih tab **Properti** dan tinjau semua informasi profil yang dapat disediakan untuk akun pengguna. 
+1. Buat pengguna baru dengan pengaturan berikut (biarkan pengguna lain dengan default mereka). Perhatikan semua jenis data yang dapat disertakan dalam akun pengguna. 
 
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Nama principal pengguna | `az104-user1` |
+    | Nama tampilan | `az104-user1` |
+    | Buat Kata Sandi secara otomatis | batal pilih |
+    | Kata sandi awal | **Berikan kata sandi yang aman** |
+    | Jabatan pekerjaan (tab Properti) | `Cloud Administrator` |
+    | Departemen (tab Properti) | `IT` |
+    | Lokasi penggunaan (tab Properti) | **Amerika Serikat** |
 
-
-## Tugas 4: Membuat grup dan menambahkan anggota
+### Tugas 4: Membuat grup dan menambahkan anggota
 
 Dalam tugas ini, Anda membuat grup. Grup digunakan untuk akun pengguna atau perangkat. Beberapa grup memiliki anggota yang ditetapkan secara statis. Beberapa grup memiliki anggota yang ditetapkan secara dinamis. Grup dinamis diperbarui secara otomatis berdasarkan properti akun atau perangkat pengguna. Grup statis memerlukan lebih banyak overhead administratif (administrator harus menambahkan dan menghapus anggota secara manual).
 
