@@ -94,7 +94,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun pengguna. Akun penggu
 
 Dalam tugas ini, Anda membuat grup. Grup digunakan untuk akun pengguna atau perangkat. Beberapa grup memiliki anggota yang ditetapkan secara statis. Beberapa grup memiliki anggota yang ditetapkan secara dinamis. Grup dinamis diperbarui secara otomatis berdasarkan properti akun atau perangkat pengguna. Grup statis memerlukan lebih banyak overhead administratif (administrator harus menambahkan dan menghapus anggota secara manual).
 
-1. Di portal Azure, cari dan pilih **Grup**.
+1. Di portal Azure, cari dan pilih `Groups`.
 
 1. Perhatikan informasi grup seperti **Jenis** keanggotaan, **Sumber**, dan **Jenis**. Perhatikan juga, jumlah anggota dalam grup. 
 
@@ -113,7 +113,7 @@ Dalam tugas ini, Anda membuat grup. Grup digunakan untuk akun pengguna atau pera
 
 1. Klik **Tidak ada anggota yang dipilih**.
 
-1. Dari bilah **Tambahkan anggota** , cari akun pengguna Anda. **Pilih** akun pengguna Anda untuk ditambahkan ke grup. 
+1. Dari bilah **Tambahkan anggota** , cari akun pengguna Anda. **Pilih** **az104-user1** dan tambahkan ke grup. 
 
 1. Klik **Buat** untuk menyelesaikan pembuatan grup. 
 
