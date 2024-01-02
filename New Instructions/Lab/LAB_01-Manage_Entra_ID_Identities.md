@@ -22,7 +22,7 @@ Organisasi Anda sedang membangun lingkungan lab baru untuk pengujian pra-produks
 
 Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
 
-+ [Kelola Identitas](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201) ID Entra*. Membuat dan mengonfigurasi pengguna dan menetapkan ke grup. Buat penyewa Azure dan kelola akun tamu. 
++ [Mengelola Identitas](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201) ID Entra. Membuat dan mengonfigurasi pengguna dan menetapkan ke grup. Buat penyewa Azure dan kelola akun tamu. 
 
 ## Diagram arsitektur
 ![Diagram arsitektur lab 01.](../media/az104-lab01-user-and-groups2.png)
@@ -113,7 +113,7 @@ Dalam tugas ini, Anda membuat grup. Grup digunakan untuk akun pengguna atau pera
 
 1. Klik **Tidak ada anggota yang dipilih**.
 
-1. Dari bilah **Tambahkan anggota** , cari akun pengguna Anda. **Pilih** **az104-user1** dan tambahkan ke grup. 
+1. Dari bilah **Tambahkan anggota** , cari dan pilih **az104-user1** dan tambahkan ke grup. 
 
 1. Klik **Buat** untuk menyelesaikan pembuatan grup. 
 
