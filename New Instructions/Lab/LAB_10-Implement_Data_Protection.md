@@ -14,7 +14,7 @@ Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi keter
 
 ## Perkiraan waktu: 40 menit
 
-## Skenario laboratorium
+## Skenario lab
 
 Organisasi Anda sedang mengevaluasi Azure Recovery Services untuk pencadangan dan pemulihan file yang dihosting di komputer virtual Azure. Mereka ingin mengidentifikasi metode melindungi data yang disimpan di vault Layanan Pemulihan dari kehilangan data yang tidak disengaja atau berbahaya.
 
@@ -42,23 +42,27 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 
 Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan komputer virtual. VM akan digunakan untuk menguji skenario cadangan yang berbeda.
 
-1. Jika perlu, unduh **\\file lab Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan\\** Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** ke komputer Anda.
+1. Jika perlu, unduh **file lab Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json**.\\
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Dari portal Azure, cari dan pilih `Deploy a custom template`.
+1. Cari dan pilih `Deploy a custom template`.
 
 1. Pada halaman penyebaran kustom, pilih **Bangun templat Anda sendiri di editor**.
 
 1. Pada halaman edit templat, pilih **Muat file**.
 
-1. Temukan dan pilih **\\file Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan pilih **Buka**.
+1. Temukan dan pilih **\\file Allfiles\\Lab10\\az104-10-vms-edge-template.json** dan pilih **Buka**.
+2. 
+   >**Catatan:** Luangkan waktu sejenak untuk meninjau templat. Berapa banyak komputer virtual dan jaringan virtual yang sedang dibuat? 
 
 1. Pilih **Simpan**.
 
 1. Pada halaman penyebaran kustom, pilih **Edit parameter**.
 
-1. Pada halaman edit parameter, pilih **Muat file**. Temukan dan pilih **\\file Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json** dan pilih **Buka**.
+1. Pada halaman edit parameter, pilih **Muat file**. Temukan dan pilih **\\file Allfiles\Lab10\\az104-10-vms-edge-parameters.json** dan pilih **Buka**.
+   
+   >**Catatan:** Perhatikan bahwa Anda dapat memutuskan parameter mana yang dapat diubah administrator. Dalam hal ini, ada banyak fleksibilitas untuk membuat perubahan. 
 
 1. Pilih **Simpan**.
 
@@ -73,6 +77,8 @@ Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan komputer virtua
     | Kata sandi      | Berikan kata sandi yang kompleks |
 
 1. Pilih **Tinjau + Buat**, kemudian pilih **Buat**.
+
+    >**Catatan:** Tunggu hingga templat disebarkan, lalu pilih **Buka sumber daya**. Anda harus memiliki satu komputer virtual dalam satu jaringan virtual. 
 
 ## Tugas 2: Membuat vault Layanan Pemulihan
 

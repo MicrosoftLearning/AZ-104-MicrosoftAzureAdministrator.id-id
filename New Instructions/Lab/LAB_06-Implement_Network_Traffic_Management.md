@@ -8,13 +8,13 @@ lab:
 
 ## Pengenalan lab
 
-Di lab ini, Anda mempelajari cara mengonfigurasi dan menguji Load Balancer publik. Anda juga mempelajari cara mengonfigurasi dan menguji Application Gateway. 
+Di lab ini, Anda mempelajari cara mengonfigurasi dan menguji Load Balancer publik dan Application Gateway. 
 
 Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan US Timur.
 
 ## Perkiraan waktu: 40 menit
 
-## Skenario laboratorium
+## Skenario lab
 
 Organisasi Anda baru-baru ini selesai menguji pengelolaan lalu lintas jaringan untuk komputer virtual Azure di topologi jaringan hub dan spoke. Sekarang, Anda ingin menguji distribusi lalu lintas di seluruh komputer virtual dengan menggunakan load balancer lapisan 4 dan lapisan 7. Untuk tujuan ini, Anda ingin menggunakan Azure Load Balancer (lapisan 4) dan Azure Application Gateway (lapisan 7).
 
@@ -31,7 +31,6 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 + Tugas 1: Memprovisikan lingkungan lab
 + Tugas 2: Menerapkan Azure Load Balancer
 + Tugas 3: Menerapkan Azure Application Gateway
-+ Tugas 4: Menguji konektivitas jaringan dengan menggunakan Network Watcher
 
 
 
@@ -39,7 +38,7 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 
 Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan satu jaringan virtual, satu grup keamanan jaringan, dan dua komputer virtual bersama dengan kartu antarmuka jaringan virtual terkait. VM akan berada di jaringan virtual hub bernama **az104-vnet1**.
 
-1. Jika perlu, unduh **\\file lab Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** dan\\** Allfiles\\Labs\\06\\az104-06-vms-loop-parameters.json** ke komputer Anda.
+1. Jika perlu, unduh **\\file lab Allfiles\\Lab06\\az104-06-vms-loop-template.json** dan\\** Allfiles\\Labs\\06\\az104-06-vms-loop-parameters.json** ke komputer Anda.
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
@@ -49,7 +48,9 @@ Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan satu jaringan v
 
 1. Pada halaman edit templat, pilih **Muat file**.
 
-1. Temukan dan pilih **\\file Allfiles\\Labs\\06\\az104-06-vms-loop-template.json** dan pilih **Buka**.
+1. Temukan dan pilih **\\file Allfiles\\Lab06\\az104-06-vms-loop-template.json** dan pilih **Buka**.
+
+   >**Catatan:** Perhatikan bahwa file ini menyertakan Parameter di bagian atas file. Jadi, file Parameter terpisah tidak diperlukan. 
 
 1. Pilih **Simpan**.
 
@@ -200,8 +201,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
 ## Diagram arsitektur - Application Gateway
 
->**Catatan**: Perhatikan bahwa Application Gateway mendistribusikan di dua komputer virtual di dua jaringan virtual yang berbeda. 
-
+>**Catatan**: Application Gateway ini berfungsi di jaringan virtual yang sama dengan Load Balancer di tugas sebelumnya. Ini tidak khas di lingkungan produksi.
 
 ![Diagram tugas lab.](../media/az104-lab06gw-architecture-diagram.png)
 
@@ -220,7 +220,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
 1. Klik **Simpan**
 
-    > **Catatan**: Subnet ini akan digunakan oleh instans Azure Application Gateway, yang akan Anda sebarkan nanti dalam tugas ini. Application Gateway memerlukan subnet khusus dengan ukuran /27 atau lebih besar. Langkah ini bisa dilakukan selama pembuatan Application Gateway. 
+    > **Catatan**: Subnet ini akan digunakan oleh instans Azure Application Gateway. Application Gateway memerlukan subnet khusus dengan ukuran /27 atau lebih besar. 
 
 1. Di portal Azure, cari dan pilih `Application Gateways` dan, pada bilah **Application Gateways**, klik **+ Buat**.
 
@@ -251,22 +251,20 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
     | Nama | `az104-gwpip` |
     | Zona ketersediaan | **Tidak** |
 
-1. Klik **Berikutnya: Backend >** lalu **Tambahkan kumpulan backend**. Tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai klik **Tambahkan**.
+1. Klik **Berikutnya: Backend >** lalu **Tambahkan kumpulan backend**. Ini adalah kumpulan backend untuk **gambar**. Tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai klik **Tambahkan**.
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | `az104-appgwbe` |
     | Menambahkan kumpulan backend tanpa target | **Tidak** |
-    | Alamat IP atau FQDN | **10.62.0.4** | 
-    | Alamat IP atau FQDN | **10.63.0.4** |
-
-    > **Catatan**: Target mewakili alamat IP privat komputer **virtual az104-vm0** dan **az104-vm1**.
+    | Komputer virtual | **az104-rg6-nic1 (10.60.1.4)** |
+    | Komputer virtual | **az104-rg6-nic2 (10.60.2.4)** | 
 
 1. Klik **Berikutnya: Konfigurasi >** lalu **+ Tambahkan aturan perutean**. Tentukan pengaturan berikut:
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama aturan | `az104-rule` |
+    | Nama aturan | `az104-gwrule` |
     | Prioritas | `10` |
     | Nama listener | `az104-listener` |
     | IP Frontend | **Publik** |
@@ -276,7 +274,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
     ![Cuplikan layar halaman buat aturan gateway aplikasi.](../media/az104-lab06-appgw-rule.png)
 
-1. Beralih ke tab **Target backend** dan tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai, klik **Tambahkan** (dua kali).  
+1. Beralih ke tab **Target backend** dan tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). 
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -289,7 +287,31 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
     | Pengaturan tambahan | **biarkan default** |
     | Nama Host | **biarkan default** |
 
-1. Klik **Berikutnya: Tag >**, diikuti oleh **Berikutnya: Tinjau + buat >** lalu klik **Buat**.
+   >**Catatan:** Gunakan ikon informasi untuk mempelajari selengkapnya tentang **pengurasan afinitas** dan **Koneksi ion** berbasis Cookie. 
+
+1. Pilih **Tambahkan beberapa target untuk membuat aturan** berbasis jalur. Anda akan membuat dua aturan.
+
+**Aturan 1 - perutean ke backend gambar**
+
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Jalur | `images/*` |
+    | Nama target | `images` |
+    | Pengaturan backend | **appgw-settings** |
+    | Target ujung belakang | `az104-appgw-images` |
+
+**Aturan 2 - perutean ke backend video**
+
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Jalur | `video/*` |
+    | Nama target | `videos` |
+    | Pengaturan backend | **appgw-settings** |
+    | Target ujung belakang | `az104-appgw-videos` |
+
+1. Pilih **Tambahkan** dua kali lalu pilih **Berikutnya: Tag >**.
+
+1. Pilih **Berikutnya: Tinjau + buat >** lalu klik **Buat**.
 
     > **Catatan**: Tunggu hingga instans Application Gateway dibuat. Ini akan memakan waktu sekitar 5-10 menit.
 
@@ -297,69 +319,20 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
 1. Pada bilah **Application Gateway az104-appgw** , salin nilai **alamat** IP publik Frontend.
 
-1. Buka jendela browser lain dan navigasikan ke alamat IP yang Anda identifikasi di langkah sebelumnya.
+1. Mulai jendela browser lain dan uji URL ini - `http://<frontend ip address>/image/`.
 
-1. Verifikasi bahwa jendela browser menampilkan Halo Dunia pesan **dari az104-vm0** atau **Halo Dunia dari az104-vm1**.
+1. Verifikasi bahwa Anda diarahkan ke server gambar (vm1). 
 
-1. Refresh jendela untuk memverifikasi perubahan pesan ke mesin virtual lainnya. 
+1. Mulai jendela browser lain dan uji URL ini - `http://<frontend ip address>/video/`.
 
-    > **Catatan**: Anda mungkin perlu merefresh lebih dari sekali atau membuka jendela browser baru dalam mode InPrivate.
+1. Verifikasi bahwa Anda diarahkan ke server gambar (vm2). 
 
-## Tugas 4: Menguji konektivitas jaringan dengan menggunakan Network Watcher
+> **Catatan**: Anda mungkin perlu merefresh lebih dari sekali atau membuka jendela browser baru dalam mode InPrivate.
 
-Dalam tugas ini, Anda akan menggunakan Network Watcher di portal Azure untuk menguji konektivitas antara mesin vritual. Network Watcher menyediakan pemecahan masalah dan informasi tambahan sekeliling *mengapa* koneksi gagal. Network Watcher berisi beberapa alat yang dapat membantu dalam memecahkan masalah jaringan.
+1. **Di Application Gateway** pilih **Kesehatan** backend.
 
-### Menguji koneksi antara vm0 dan vm1 
+1. Pastikan kedua server di kumpulan backend menampilkan **Sehat**. 
 
-1. Dari portal Azure, cari dan pilih `Network Watcher`.
-
-1. Dari Network Watcher, di menu Alat diagnostik jaringan, pilih **pemecahan masalah** Koneksi ion.
-
-1. Gunakan informasi berikut untuk menyelesaikan bidang di **halaman pemecahan masalah** Koneksi ion.
-
-    | Bidang | Nilai | 
-    | --- | --- |
-    | Jenis sumber           | **Mesin virtual**   |
-    | Komputer virtual       | **vm0**    | 
-    | Tipe tujuan      | **Mesin virtual**   |
-    | Komputer virtual       | **vm1**   | 
-    | Versi IP Pilihan  | **Kedua**              | 
-    | Protokol              | **TCP**               |
-    | Port tujuan      | `3389`                |  
-    | Port Sumber           | *Kosong*         |
-    | Tes diagnostik      | *Default*      |
-
-    ![Portal Microsoft Azure memperlihatkan pengaturan Pemecahan Masalah Koneksi ion.](../media/az104-lab05-connection-troubleshoot.png)
-
-1. Pilih **Jalankan pengujian** diagnostik.
-
-    >**Catatan**: Mungkin perlu waktu beberapa menit agar hasilnya kembali. Pilihan layar akan berwarna abu-abu saat hasilnya sedang dikumpulkan. Perhatikan bahwa **pengujian Koneksi ivity menunjukkan Dapat Dijangkau****.** Ini masuk akal karena komputer virtual berada dalam jaringan virtual yang sama. 
-
-### Menguji koneksi antara vm2 dan vm3 
-
-1. FContinue dengan **Network Watcher**.
-
-1. Pilih **pemecahan masalah** Koneksi ion.
-
-1. Gunakan informasi berikut untuk menyelesaikan bidang di **halaman pemecahan masalah** Koneksi ion.
-
-    | Bidang | Nilai | 
-    | --- | --- |
-    | Jenis sumber           | **Mesin virtual**   |
-    | Komputer virtual       | **vm0**    | 
-    | Tipe tujuan      | **Mesin virtual**   |
-    | Komputer virtual       | **vm3**   | 
-    | Versi IP Pilihan  | **Kedua**              | 
-    | Protokol              | **TCP**               |
-    | Port tujuan      | `3389`                |  
-    | Port Sumber           | *Kosong*         |
-    | Tes diagnostik      | *Default*      |
-
-    ![Portal Microsoft Azure memperlihatkan pengaturan Pemecahan Masalah Koneksi ion.](../media/az104-lab05-connection-troubleshoot.png)
-
-1. Pilih **Jalankan pengujian** diagnostik.
-
-    >**Catatan**: Perhatikan **bahwa pengujian** Koneksi ivity menunjukkan **Tidak Dapat Dijangkau**. Ini masuk akal karena komputer virtual berada di jaringan virtual yang berbeda. 
 
 ## Tinjau titik utama lab
 

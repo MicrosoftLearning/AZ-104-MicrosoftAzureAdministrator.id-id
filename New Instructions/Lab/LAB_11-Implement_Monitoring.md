@@ -14,7 +14,7 @@ Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi keter
 
 ## Perkiraan waktu: 40 menit
 
-## Skenario laboratorium
+## Skenario lab
 
 Organisasi Anda telah memigrasikan infrastruktur mereka ke Azure. Penting bagi Administrator untuk diberi tahu tentang perubahan infrastruktur yang signifikan. Anda berencana untuk memeriksa kemampuan Azure Monitor, termasuk Analitik Log.
 
@@ -40,7 +40,7 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 
 Dalam tugas ini, Anda akan menggunakan komputer virtual yang akan digunakan untuk menguji skenario monitoring.
 
-1. Jika perlu, unduh **\\file lab Allfiles\\Labs\\11\\az104-11-vm-template.json** dan\\** Allfiles\\Labs\\11\\az104-11-vm-parameters.json** ke komputer Anda.
+1. Jika perlu, unduh **\\file lab Allfiles\\Lab11\\az104-11-vm-template.json** dan\\** Allfiles\\Labs\\11\\az104-11-vm-parameters.json** ke komputer Anda.
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
@@ -50,13 +50,7 @@ Dalam tugas ini, Anda akan menggunakan komputer virtual yang akan digunakan untu
 
 1. Pada halaman edit templat, pilih **Muat file**.
 
-1. Temukan dan pilih **\\file Allfiles\\Labs\\11\\az104-11-vm-template.json** dan pilih **Buka**.
-
-1. Pilih **Simpan**.
-
-1. Pada halaman penyebaran kustom, pilih **Edit parameter**.
-
-1. Pada halaman edit parameter, pilih **Muat file**. Temukan dan pilih **\\file Allfiles\\Labs\\11\\az104-11-vm-parameters.json** dan pilih **Buka**.
+1. Temukan dan pilih **\\file Allfiles\\Labs11\\az104-11-vm-template.json** dan pilih **Buka**.
 
 1. Pilih **Simpan**.
 
@@ -76,39 +70,43 @@ Dalam tugas ini, Anda akan menggunakan komputer virtual yang akan digunakan untu
 
 1. Tinjau sumber daya apa yang disebarkan termasuk komputer virtual dan jaringan virtual.
 
-    >**Catatan:** Nanti di lab kita akan menggunakan Azure Monitor jadi luangkan waktu satu menit untuk menginstal agen komputer virtual
+**Mengonfigurasi Azure Monitor (ini akan digunakan dalam tugas terakhir)**
 
 1. Di portal, cari dan pilih **Pantau**.
 
 1. Luangkan waktu satu menit untuk meninjau semua wawasan, deteksi, triase, dan alat diagnosis yang tersedia.
 
-1. Pilih **Tampilan** Wawasan VM, lalu pilih **Konfigurasikan Wawasan**.
+1. Pilih **Tampilkan** di kotak **Wawasan** VM, lalu pilih **Konfigurasikan Wawasan**.
 
 1. Pilih komputer virtual Anda, lalu **Aktifkan** (dua kali).
 
-1. Dibutuhkan beberapa menit bagi agen untuk menginstal dan mengonfigurasi, lanjutkan ke langkah berikutnya. 
+1. Ambil default untuk aturan langganan dan pengumpulan data, lalu pilih **Konfigurasikan**. 
+
+1. Dibutuhkan beberapa menit bagi agen komputer virtual untuk menginstal dan mengonfigurasi, lanjutkan ke langkah berikutnya. 
    
 ## Tugas 2: Membuat pemberitahuan log aktivitas Azure
+
+Dalam tugas ini, Anda membuat pemberitahuan saat komputer virtual dihapus. 
 
 1. Pada portal Azure cari dan pilih **Pantau**. 
 
 1. Di menu Monitor, pilih **Peringatan**. 
 
-1. Pilih **Buat +** dan pilih **Aturan** pemberitahuan. Panel **Buat aturan peringatan** muncul dengan bagian **Cakupan** terbuka dan panel **Pilih sumber daya** terbuka di sebelah kanan.
+1. Pilih **Buat +** dan pilih **Aturan** pemberitahuan. 
 
-1. Di panel **Pilih sumber daya** , **bidang Filter menurut langganan** harus sudah diisi. Di daftar dropdown **Filter berdasarkan jenis sumber daya**, cari dan pilih **Mesin virtual**.
-
-1. Anda ingin peringatan ketika mesin virtual di grup sumber daya Anda dihapus. Pilih kotak untuk **grup sumber daya az104-rg11** , lalu pilih **Terapkan**.
+1. Pilih kotak untuk **grup sumber daya az104-rg11** , lalu pilih **Terapkan**. Pemberitahuan ini akan berlaku untuk komputer virtual apa pun di grup sumber daya. Atau, Anda hanya dapat menentukan satu komputer tertentu. 
 
 1. Pilih tab **Kondisi** lalu pilih **tautan Lihat semua sinyal** .
 
-1. Cari dan pilih **Hapus Komputer Virtual (Komputer Virtual)**. Pilih **Terapkan**
+1. Cari dan pilih **Hapus Komputer Virtual (Komputer Virtual)**. Perhatikan sinyal bawaan lainnya. Pilih **Terapkan**
 
-1. Anda ingin menerima peringatan dari semua jenis, jadi biarkan setelan **Logika peringatan** pada default **Semua yang dipilih**. Biarkan panel **Buat aturan peringatan** terbuka untuk bagian berikutnya.
+1. Anda ingin menerima peringatan dari semua jenis, jadi biarkan setelan **Logika peringatan** pada default **Semua yang dipilih**.
+
+1. Biarkan panel **Buat aturan peringatan** terbuka untuk bagian berikutnya.
 
 ## Tugas 3: Menambahkan tindakan pemberitahuan email
 
-Untuk peringatan pantauan peringatan Azure, Anda tidak perlu menambahhkan tindakan lain. Anda baru saja melihat peringatan yang terpicu di portal Azure. Tindakan memungkinkan Anda mengirim email untuk pemberitahuan, untuk memicu fungsi Azure, atau memanggil webhook. Dalam latihan ini, kami menambahkan pemberitahuan email saat VM dihapus.
+Dalam tugas ini, jika pemberitahuan dipicu, pemberitahuan email akan dikirim ke tim operasi. 
 
 1. Pada panel **Buat aturan** pemberitahuan, pilih tombol **Berikutnya: Tindakan** , dan pilih **Buat grup** tindakan. 
 
@@ -121,8 +119,8 @@ Untuk peringatan pantauan peringatan Azure, Anda tidak perlu menambahhkan tindak
     | Grup sumber daya | **az104-rg11** |
     | Wilayah | **Global** (default) |
     | **Detail instans** |
-    | Nama grup tindakan | **Tim operasi peringatan** |
-    | Nama tampilan | **tim operasi peringatan** |
+    | Nama grup tindakan | `Alert the operations team` (harus unik dalam grup sumber daya) |
+    | Nama tampilan | `AlertOps Team` |
 
 1. Pilih **Berikutnya: Pemberitahuan** dan masukkan nilai berikut untuk setiap pengaturan.
 
@@ -133,10 +131,7 @@ Untuk peringatan pantauan peringatan Azure, Anda tidak perlu menambahhkan tindak
 
 1. Pilih **Email**, dan di kotak **Email**, masukkan alamat email Anda, lalu pilih **OK**. 
 
-1. Pilih **Tinjau + buat** untuk memvalidasi input Anda.
 
-1. Pilih **Buat**.
- 
 1. Panel **Buat aturan peringatan ** muncul kembali. Pilih tombol **Berikutnya: Detail** dan masukkan nilai berikut untuk setiap pengaturan.
 
     | Pengaturan | Nilai |
@@ -144,19 +139,13 @@ Untuk peringatan pantauan peringatan Azure, Anda tidak perlu menambahhkan tindak
     | Nama aturan pemberitahuan | **VM sudah di hapus** |
     | Deskripsi | **VM di grup sumber daya Anda dihapus** |
 
-1. Perluas bagian **Opsi** tingkat lanjut dan konfirmasikan bahwa **Aktifkan aturan pemberitahuan saat pembuatan** dipilih.
-
 1. Pilih **Tinjau + buat** untuk memvalidasi input Anda, lalu pilih **Buat**.
 
-    >**Catatan:** Penerima yang ditambahkan ke grup tindakan (tim operasi) yang dikonfigurasi menerima pemberitahuan:
-
-    - Saat mereka ditambahkan ke grup aksi
-    - Saat peringatan diaktifkan
-    - Saat peringatan dipicu
+    >**Catatan:** Anda akan menerima pemberitahuan email yang mengatakan bahwa Anda ditambahkan ke grup tindakan. 
 
 ## Tugas 4: Memicu pemberitahuan
 
-Untuk memicu pemberitahuan, hapus komputer virtual di grup sumber daya.
+Dalam tugas ini, Anda memicu pemberitahuan dan mengonfirmasi pemberitahuan dikirim. 
 
 >**Catatan:** Diperlukan waktu hingga lima menit agar aturan pemberitahuan log aktivitas aktif. Dalam latihan ini, jika Anda menghapus komputer virtual sebelum aturan disebarkan, aturan pemberitahuan mungkin tidak dipicu. 
 
@@ -182,27 +171,27 @@ Untuk memicu pemberitahuan, hapus komputer virtual di grup sumber daya.
 
 ## Tugas 5: Menambahkan aturan pemberitahuan
 
-Kita akan menjadwalkan satu kali, semalam, pemeliharaan terencana. Dimulai pada malam hari dan berlanjut hingga pagi berikutnya.
+Dalam tugas ini, Anda membuat aturan pemberitahuan untuk menekan pemberitahuan selama periode pemeliharaan. 
 
 1. Di menu sumber daya portal Azure, pilih **Pantau**, pilih **Pemberitahuan** di menu di sebelah kiri, dan pilih **Aturan** pemrosesan pemberitahuan di bilah menu.
    
 1. Pilih **+ Buat.**
    
-1. Centang kotak untuk grup sumber daya kotak pasir Anda sebagai cakupan aturan pemrosesan pemberitahuan, lalu pilih **Terapkan**.
+1. Pilih grup** sumber daya Anda**, lalu pilih **Terapkan**.
    
 1. Pilih **Berikutnya: Pengaturan aturan**, lalu pilih **Sembunyikan pemberitahuan**.
    
 1. Pilih **Berikutnya: Penjadwalan**.
    
-1. Secara default, aturan berfungsi sepanjang waktu, kecuali Anda menonaktifkannya. Kita akan menentukan aturan untuk menekan pemberitahuan untuk pemeliharaan terencana satu kali semalam.
+1. Secara default, aturan berfungsi sepanjang waktu, kecuali Anda menonaktifkannya. Kita akan menentukan aturan untuk menekan pemberitahuan selama pemeliharaan terencana semalam.
 Masukkan pengaturan ini untuk penjadwalan aturan pemrosesan pemberitahuan:
 
     | Pengaturan | Nilai |
     |---------|---------|
-    |Menerapkan aturan |Pada waktu tertentu|
-    |Mulai|Masukkan tanggal hari ini pukul 22.00.|
-    |End|Masukkan tanggal besok pukul 07.00.|
-    |Zona waktu|Pilih zona waktu lokal.|
+    | Menerapkan aturan | Pada waktu tertentu |
+    | Mulai | Masukkan tanggal hari ini pukul 22.00. |
+    | End | Masukkan tanggal besok pukul 07.00. |
+    | Zona waktu | Pilih zona waktu lokal. |
 
     ![Cuplikan layar bagian penjadwalan aturan pemrosesan pemberitahuan](../media/az104-lab11-alert-processing-rule-schedule.png)
 
@@ -210,9 +199,9 @@ Masukkan pengaturan ini untuk penjadwalan aturan pemrosesan pemberitahuan:
 
     | Pengaturan | Nilai |
     |---------|---------|
-    |Grup sumber daya |Pilih grup sumber daya kotak pasir Anda. |
-    |Nama aturan|**Pemeliharaan Terencana**|
-    |Deskripsi|**Sembunyikan pemberitahuan selama pemeliharaan terencana.**|
+    | Grup sumber daya | Pilih grup sumber daya kotak pasir Anda. |
+    | Nama aturan | `Planned Maintenance` |
+    | Deskripsi | `Suppress notifications during planned maintenance.` |
 
 1. Pilih **Tinjau + buat** untuk memvalidasi input Anda, lalu pilih **Buat**.
 
