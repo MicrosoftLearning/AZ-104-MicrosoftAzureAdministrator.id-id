@@ -10,11 +10,11 @@ lab:
 
 Ini adalah yang pertama dalam serangkaian lab untuk Administrator Azure. Di lab ini, Anda mempelajari tentang pengguna dan grup. Pengguna dan grup adalah blok penyusun dasar untuk solusi identitas. Anda juga terbiasa dengan alat administrator dasar. 
 
-Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditampilkan di US Timur.
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditampilkan di **US** Timur.
 
 ## Perkiraan waktu: 40 menit
 
-## Skenario laboratorium
+## Skenario lab
 
 Organisasi Anda sedang membangun lingkungan lab baru untuk pengujian pra-produksi aplikasi dan layanan.  Beberapa teknisi sedang dipekerjakan untuk mengelola lingkungan lab, termasuk komputer virtual. Untuk mengizinkan insinyur mengautentikasi dengan menggunakan ID Microsoft Entra, Anda telah ditugaskan untuk menyediakan pengguna dan akun grup. Untuk meminimalkan overhead administratif, keanggotaan grup harus diperbarui secara otomatis berdasarkan jabatan. Anda juga perlu tahu cara menghapus pengguna untuk mencegah akses setelah teknisi meninggalkan organisasi Anda.
 
@@ -74,11 +74,15 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun pengguna. Akun penggu
 
 1. Cari dan pilih `Microsoft Entra ID`.
 
-1. Pada bilah ID Microsoft Entra, gulir ke bawah ke bagian **Kelola** , klik **Pengaturan** pengguna, dan tinjau opsi konfigurasi yang tersedia.
+1. ID Microsoft Entra adalah solusi manajemen identitas dan akses berbasis cloud Azure. Luangkan beberapa menit untuk membiasakan diri dengan beberapa fitur yang tercantum di panel. 
 
-1. Navigasi kembali ke panel **Pengguna - Semua pengguna**, lalu klik **+ Pengguna baru**.
+   + **Unit administratif** memungkinkan Anda mengelompokkan pengguna, grup, atau perangkat ke dalam satu unit yang dapat dikelola.
+   + **** Lisensi memungkinkan Anda melakukan tugas seperti uji coba gte atau membeli lisensi, mengelola lisensi yang Anda miliki, dan menetapkan lisensi kepada pengguna dan grup.
+   + **Pengaturan ulang** kata sandi layanan mandiri memungkinkan pengguna Anda mengelola kata sandi mereka dari perangkat apa pun, kapan saja, dari lokasi mana pun.
 
-1. Buat pengguna baru dengan pengaturan berikut (biarkan pengguna lain dengan default mereka). Perhatikan semua jenis data yang dapat disertakan dalam akun pengguna. 
+1. Pilih **Pengguna**, lalu di **menu drop-down Pengguna** baru pilih **Buat pengguna** baru. Perhatikan pilihan untuk **Mengundang dan pengguna** eksternal. 
+
+1. Buat pengguna baru dengan pengaturan berikut (biarkan pengguna lain dengan default mereka). Pada tab **Properti** , perhatikan semua jenis informasi berbeda yang dapat disertakan dalam akun pengguna. 
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -90,13 +94,15 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun pengguna. Akun penggu
     | Departemen (tab Properti) | `IT` |
     | Lokasi penggunaan (tab Properti) | **Amerika Serikat** |
 
+1. Setelah Anda selesai meninjau, pilih **Tinjau + buat** lalu **Buat**.
+
+>**Catatan:** Tidak mungkin Anda akan membuat akun pengguna satu per satu. Apakah Anda tahu bagaimana organisasi Anda berencana untuk membuat dan mengelola akun pengguna?
+
 ### Tugas 4: Membuat grup dan menambahkan anggota
 
-Dalam tugas ini, Anda membuat grup. Grup digunakan untuk akun pengguna atau perangkat. Beberapa grup memiliki anggota yang ditetapkan secara statis. Beberapa grup memiliki anggota yang ditetapkan secara dinamis. Grup dinamis diperbarui secara otomatis berdasarkan properti akun atau perangkat pengguna. Grup statis memerlukan lebih banyak overhead administratif (administrator harus menambahkan dan menghapus anggota secara manual).
+Dalam tugas ini, Anda membuat akun grup. Akun grup dapat menyertakan akun pengguna atau perangkat. Ini adalah dua cara dasar anggota ditetapkan ke grup: Secara Statis dan Dinamis. Grup statis mengharuskan administrator untuk menambahkan dan menghapus anggota secara manual.  Grup dinamis diperbarui secara otomatis berdasarkan properti akun pengguna atau perangkat. Misalnya, jabatan. 
 
 1. Di portal Azure, cari dan pilih `Groups`.
-
-1. Perhatikan informasi grup seperti **Jenis** keanggotaan, **Sumber**, dan **Jenis**. Perhatikan juga, jumlah anggota dalam grup. 
 
 1. Pilih **+ Grup** baru dan buat grup baru. 
 
@@ -107,7 +113,7 @@ Dalam tugas ini, Anda membuat grup. Grup digunakan untuk akun pengguna atau pera
     | Deskripsi grup | `Administrators that manage the IT lab` |
     | Jenis keanggotaan | **Ditetapkan** |
 
-    >**Catatan**: Daftar drop-down Jenis** keanggotaan Anda **mungkin berwarna abu-abu. Di sinilah Anda dapat beralih dari grup yang ditetapkan ke grup dinamis. Ini memerlukan lisensi Entra ID Premium P1 atau P2.
+    >**Catatan**: Daftar drop-down Jenis** keanggotaan Anda **mungkin berwarna abu-abu. Jika Anda memiliki lisensi Entra ID Premium P1 atau P2 di sinilah Anda dapat memilih grup dinamis. 
 
     ![Cuplikan layar buat grup yang ditetapkan.](../media/az104-lab01-create-assigned-group.png)
 
@@ -115,15 +121,22 @@ Dalam tugas ini, Anda membuat grup. Grup digunakan untuk akun pengguna atau pera
 
 1. Dari bilah **Tambahkan anggota** , cari dan pilih **az104-user1** dan tambahkan ke grup. 
 
-1. Klik **Buat** untuk menyelesaikan pembuatan grup. 
+1. Klik **Buat** untuk menyebarkan grup.
+
+1. Luangkan beberapa menit lagi untuk membiasakan diri dengan pengaturan grup lain.
+
+   + **Kedaluwarsa** memungkinkan Anda mengonfigurasi masa pakai grup dalam hari. Grup harus diperbarui oleh pemilik.
+   + **Kebijakan penamaan** memungkinkan Anda mengonfigurasi kata yang diblokir dan menambahkan awalan atau akhiran ke nama grup.
+
+>**Catatan:** Kemungkinan Anda akan mengelola sejumlah besar grup. Apakah organisasi Anda memiliki rencana untuk membuat grup dan menambahkan anggota?
 
 ## Tugas 5: Biasakan diri Anda dengan Cloud Shell.
 
-Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell. Azure Cloud Shell adalah terminal interaktif, diautentikasi, dan dapat diakses browser untuk mengelola sumber daya Azure. Ini memberi fleksibilitas untuk memilih pengalaman shell yang paling sesuai dengan cara Anda bekerja, baik Bash atau PowerShell. 
+Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell. Azure Cloud Shell adalah terminal interaktif, diautentikasi, dan dapat diakses browser untuk mengelola sumber daya Azure. Ini memberi fleksibilitas untuk memilih pengalaman shell yang paling sesuai dengan cara Anda bekerja, baik Bash atau PowerShell. Anda akan sering menggunakan alat ini dalam kursus ini. 
 
 1. **Pilih ikon Cloud Shell** di kanan atas Portal Microsoft Azure. Secara bergantian, Anda dapat menavigasi langsung ke `https://shell.azure.com`.
 
-1. Saat diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**. Bash digunakan dalam tugas berikutnya.
+1. Saat diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**. 
 
     >**Apakah Anda tahu?**  Jika Anda sebagian besar bekerja dengan sistem Linux, Azure CLI terasa lebih alami. Jika Anda sebagian besar bekerja dengan sistem Windows, Azure PowerShell terasa lebih alami. 
 
@@ -135,13 +148,11 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell. Azure Cloud Shell adalah
     | Akun penyimpanan (Buat akun baru menggunakan nama unik global (misalnya: cloudshellstoragemystorage)) | **cloudshellxxxxxxx** |
     | Berbagi file (buat baru) | **shellstorage** |
 
-    >**Catatan:** Jika Anda bekerja di lingkungan lab yang dihosting, Anda perlu mengonfigurasi penyimpanan cloud shell setiap kali lingkungan lab baru dibuat.
-
     >**Catatan:** Tugas 6 memungkinkan Anda berlatih dengan Azure PowerShell. Tugas 7 memungkinkan Anda berlatih dengan CLI. Anda dapat melakukan kedua tugas atau hanya tugas yang paling Anda minati. 
 
 ## Tugas 6: Berlatih dengan Azure PowerShell
 
-Dalam tugas ini, Anda membuat grup sumber daya dan grup Microsoft Azure AD dengan menggunakan sesi Azure PowerShell dalam Cloud Shell.
+Dalam tugas ini, Anda membuat grup sumber daya dan grup Microsoft Azure AD dengan menggunakan sesi Azure PowerShell dalam Cloud Shell. Anda dapat menggunakan skrip Azure PowerShell di seluruh kursus. 
 
     >**Note:** Use the arrow keys to move through the command history. Use the tab key to autocomplete commands and parameters.
 
@@ -183,7 +194,7 @@ Dalam tugas ini, Anda membuat grup sumber daya dan grup Microsoft Azure AD denga
 
 ## Tugas 7: Berlatih dengan shell Bash
 
-Dalam tugas ini, Anda membuat grup sumber daya dan grup Azure dengan menggunakan sesi Azure CLI dalam Cloud Shell.
+Dalam tugas ini, Anda membuat grup sumber daya dan grup Azure dengan menggunakan sesi Azure CLI dalam Cloud Shell. Anda dapat menggunakan skrip Azure CLI di seluruh kursus. 
 
 1. Lanjutkan di Cloud Shell. Gunakan menu drop-down untuk beralih ke **Bash**.
 
@@ -223,7 +234,7 @@ Dalam tugas ini, Anda membuat grup sumber daya dan grup Azure dengan menggunakan
 
 1. Kembali ke portal Microsoft Azure. Konfirmasikan bahwa Anda memiliki grup sumber daya baru dan grup Azure baru. Anda mungkin perlu Menyegarkan halaman.   
     
-## Tinjau titik utama lab
+## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah beberapa jalur utama untuk lab ini:
 
@@ -239,8 +250,6 @@ Selamat atas penyelesaian lab. Berikut adalah beberapa jalur utama untuk lab ini
 Jika Anda bekerja dengan langganan Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
-
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 

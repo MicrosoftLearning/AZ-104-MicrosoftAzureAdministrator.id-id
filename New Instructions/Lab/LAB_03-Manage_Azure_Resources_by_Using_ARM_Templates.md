@@ -22,7 +22,7 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
   
 + [Mengelola sumber daya Azure dengan menggunakan templat](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205) Azure Resource Manager. Tinjau, buat, dan sebarkan disk terkelola dengan templat.
 
-## Skenario laboratorium
+## Skenario lab
 
 Tim Anda telah menjelajahi kemampuan administratif Azure dasar seperti menyediakan sumber daya dan mengaturnya berdasarkan grup sumber daya. Selanjutnya, tim Anda ingin melihat cara untuk mengotomatiskan dan menyederhanakan penyebaran. Organisasi sering mencari otomatisasi untuk mengurangi overhead administratif, mengurangi kesalahan manusia atau meningkatkan konsistensi, dan sebagai cara untuk memungkinkan administrator mengerjakan tugas yang lebih kompleks atau kreatif.
 
@@ -237,7 +237,7 @@ Dalam tugas ini, Anda akan menggunakan file Bicep untuk menyebarkan akun penyimp
 
 
 
-## Tinjau titik utama lab
+## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 

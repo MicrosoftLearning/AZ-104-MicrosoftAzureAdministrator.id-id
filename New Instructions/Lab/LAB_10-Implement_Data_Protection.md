@@ -8,15 +8,15 @@ lab:
 
 ## Pengenalan lab    
 
-Di lab ini, Anda mempelajari tentang pencadangan dan pemulihan komputer virtual Azure. Anda belajar membuat vault Layanan Pemulihan dan kebijakan pencadangan untuk komputer virtual Azure. Anda mempelajari tentang pemulihan bencana dengan Azure Site Recovery untuk komputer virtual. 
+Di lab ini, Anda mempelajari tentang pencadangan dan pemulihan komputer virtual Azure. Anda belajar membuat vault Layanan Pemulihan dan kebijakan pencadangan untuk komputer virtual Azure. Anda mempelajari tentang pemulihan bencana dengan Azure Site Recovery. 
 
-Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan US Timur dan AS Barat.
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US** Timur dan **AS** Barat.
 
 ## Perkiraan waktu: 40 menit
 
 ## Skenario lab
 
-Organisasi Anda sedang mengevaluasi Azure Recovery Services untuk pencadangan dan pemulihan file yang dihosting di komputer virtual Azure. Mereka ingin mengidentifikasi metode melindungi data yang disimpan di vault Layanan Pemulihan dari kehilangan data yang tidak disengaja atau berbahaya.
+Organisasi Anda sedang mengevaluasi Azure Recovery Services untuk pencadangan dan pemulihan komputer virtual Azure. Organisasi ingin mengidentifikasi metode melindungi data dari kehilangan data yang tidak disengaja atau berbahaya.
 
 ## Simulasi lab interaktif
 
@@ -40,9 +40,9 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 
 ## Tugas 1: Memprovisikan lingkungan lab
 
-Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan komputer virtual. VM akan digunakan untuk menguji skenario cadangan yang berbeda.
+Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan komputer virtual. Komputer virtual akan digunakan untuk menguji skenario pencadangan yang berbeda.
 
-1. Jika perlu, unduh **file lab Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** dan **\\Allfiles\\Labs\\10\\az104-10-vms-edge-parameters.json**.\\
+1. Jika perlu, unduh **\\file lab Allfiles\\Labs\\10\\az104-10-vms-edge-template.json** .
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
@@ -54,17 +54,11 @@ Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan komputer virtua
 
 1. Temukan dan pilih **\\file Allfiles\\Lab10\\az104-10-vms-edge-template.json** dan pilih **Buka**.
 2. 
-   >**Catatan:** Luangkan waktu sejenak untuk meninjau templat. Berapa banyak komputer virtual dan jaringan virtual yang sedang dibuat? 
+   >**Catatan:** Luangkan waktu sejenak untuk meninjau templat. Berapa banyak komputer virtual dan jaringan virtual yang sedang disebarkan? 
 
 1. Pilih **Simpan**.
-
-1. Pada halaman penyebaran kustom, pilih **Edit parameter**.
-
-1. Pada halaman edit parameter, pilih **Muat file**. Temukan dan pilih **\\file Allfiles\Lab10\\az104-10-vms-edge-parameters.json** dan pilih **Buka**.
-   
-   >**Catatan:** Perhatikan bahwa Anda dapat memutuskan parameter mana yang dapat diubah administrator. Dalam hal ini, ada banyak fleksibilitas untuk membuat perubahan. 
-
-1. Pilih **Simpan**.
+ 
+   >**Catatan:** Perhatikan bahwa templat ini memiliki banyak pemisah yang dapat diubah administrator. 
 
 1. Gunakan informasi berikut untuk menyelesaikan bidang penyebaran kustom, meninggalkan semua bidang lain dengan nilai defaultnya:
 
@@ -82,7 +76,7 @@ Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan komputer virtua
 
 ## Tugas 2: Membuat vault Layanan Pemulihan
 
-Dalam tugas ini, Anda akan membuat vault Layanan Pemulihan. Vault Layanan Pemulihan menyediakan layanan cadangan untuk Azure VM.
+Dalam tugas ini, Anda akan membuat vault Layanan Pemulihan. Vault Layanan Pemulihan menyediakan data cadangan untuk komputer virtual Azure.
 
 1. Di portal Azure, cari dan pilih `Recovery Services vaults` dan, pada bilah **vault** Layanan Pemulihan, klik **+ Buat**.
 
@@ -99,7 +93,7 @@ Dalam tugas ini, Anda akan membuat vault Layanan Pemulihan. Vault Layanan Pemuli
 
     ![Cuplikan layar vault layanan pemulihan.](../media/az104-lab10-create-rsv.png)
 
-1. Klik **Tinjau + Buat**, pastikan validasi lulus dan klik **Buat**.
+1. Klik **Tinjau + Buat**, pastikan validasi lolos lalu klik **Buat**.
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Penyebaran akan memakan waktu kurang dari 1 menit.
 
@@ -261,20 +255,15 @@ Dalam tugas ini,
     **Apakah Anda tahu?** Ini adalah praktik yang baik untuk [menguji failover VM](https://learn.microsoft.com/azure/site-recovery/tutorial-dr-drill-azure#run-a-test-failover-for-a-single-vm) yang dilindungi.
 
 
-## Tinjau titik utama lab
+## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 
 + Layanan Azure Backup menyediakan solusi sederhana, aman, dan hemat biaya untuk mencadangkan dan memulihkan data Anda.
-
 + Azure Backup dapat melindungi sumber daya lokal dan cloud termasuk komputer virtual dan berbagi file.
-
 + Kebijakan Azure Backup mengonfigurasi frekuensi pencadangan dan periode retensi untuk titik pemulihan. 
-
 + Azure Site Recovery adalah solusi pemulihan bencana yang memberikan perlindungan untuk komputer virtual dan aplikasi Anda.
-
 + Azure Site Recovery mereplikasi beban kerja Anda ke situs sekunder, dan jika terjadi pemadaman atau bencana, Anda dapat melakukan failover ke situs sekunder dan melanjutkan operasi dengan waktu henti minimal.
-
 + Vault Layanan Pemulihan menyimpan data cadangan Anda dan meminimalkan overhead manajemen.
 
 

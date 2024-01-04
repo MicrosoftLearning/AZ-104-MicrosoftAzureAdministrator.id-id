@@ -14,7 +14,7 @@ Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi keter
 
 ## Perkiraan waktu: 30 menit
 
-## Skenario laboratorium
+## Skenario lab
 
 Jejak cloud organisasi Anda telah berkembang pesat dalam setahun terakhir. Selama audit baru-baru ini, Anda menemukan sejumlah besar sumber daya yang tidak memiliki pemilik, proyek, atau pusat biaya yang ditentukan. Untuk meningkatkan manajemen sumber daya Azure di organisasi Anda, Anda memutuskan untuk menerapkan fungsionalitas berikut:
 
@@ -208,7 +208,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan baru untuk memulihkan 
 
 1. Setelah akun penyimpanan baru disediakan, klik **tombol Buka sumber daya** . Pada bilah **Gambaran Umum**, perhatikan bahwa Peran** tag **dengan nilai **Infra** telah ditetapkan secara otomatis ke sumber daya.
 
-## Tinjau titik utama lab
+## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 

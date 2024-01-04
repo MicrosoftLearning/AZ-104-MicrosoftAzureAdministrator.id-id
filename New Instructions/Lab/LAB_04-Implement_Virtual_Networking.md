@@ -8,7 +8,7 @@ Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi keter
 
 ## Perkiraan waktu: 40 menit
 
-## Skenario laboratorium 
+## Skenario lab 
 
 Organisasi global Anda berencana untuk menerapkan jaringan virtual. Jaringan ini berada di US Timur, Eropa Barat, dan Asia Tenggara. Tujuan langsungnya adalah untuk mengakomodasi semua sumber daya yang ada. Namun, organisasi berada dalam fase pertumbuhan dan ingin memastikan ada kapasitas tambahan untuk pertumbuhan tersebut.
 
@@ -109,7 +109,11 @@ Organisasi merencanakan sejumlah besar pertumbuhan untuk layanan inti. Dalam tug
 
 Dalam tugas ini, Anda membuat jaringan virtual ManufacturingVnet dan subnet terkait. Organisasi mengantisipasi pertumbuhan untuk kantor manufaktur sehingga subnet berukuran untuk pertumbuhan yang diharapkan.
 
-1. Edit file template.json** lokal **di **folder Unduhan**. Jika Anda menggunakan Visual Studio Code, pastikan Anda bekerja di **jendela** tepercaya dan bukan dalam **mode** terbatas. 
+1. **Temukan file template.json** yang diekspor di tugas sebelumnya. Seharusnya ada di folder Unduhan** Anda**.
+
+1. Edit file menggunakan editor pilihan Anda. Jika Anda menggunakan Visual Studio Code, pastikan Anda bekerja di **jendela** tepercaya dan bukan dalam **mode** terbatas.
+
+   >**Catatan:** Untuk tugas ini kami menunjukkan cara mengedit dan menyebarkan ulang templat. Jika terlalu membingungkan, templat yang sudah selesai disediakan. 
 
 ### Membuat perubahan untuk jaringan virtual ManufacturingVnet
 
@@ -133,68 +137,17 @@ Dalam tugas ini, Anda membuat jaringan virtual ManufacturingVnet dan subnet terk
 
 1. Pastikan untuk **Menyimpan** perubahan Anda.
 
-    >**Catatan:** Jika ini semakin sulit, file akhir yang selesai berada di folder Unduhan Lab 04. 
+### Menyebarkan templat kustom
 
-## Membuat perubahan pada file parameters.json
+1. Di portal, cari dan pilih **Sebarkan templat** kustom.
 
-1. Edit file parameters.json** lokal **dan ubah **CoreServicesVnet** menjadi `ManufacturingVnet`.
+1. Pilih **Bangun templat Anda sendiri di editor** lalu **Muat file**.
 
-1. Pastikan semuanya terlihat benar dan **Simpan** perubahan Anda. 
+1. **Pilih file templates.json** dengan perubahan Manufaktur Anda, lalu pilih **Simpan**.
 
-    >**Catatan:** Anda sekarang dapat menyebarkan templat dengan Azure PowerShell (opsi 1) atau shell Bash (opsi 2). Pilihan Anda, tetapi hanya melakukan satu jenis penyebaran. 
+1. Pilih **Ulas + buat**, lalu pilih **Buat**.
 
-### Menyebarkan templat dengan Azure Powershell (opsi 1)
-
-1. Buka Cloud Shell dan pilih **PowerShell**.
-
-1. Jika perlu, gunakan **pengaturan Tingkat Lanjut** untuk membuat penyimpanan disk untuk Cloud Shell. Langkah-langkah terperinci ada di Lab 03. 
-
-1. Di Cloud Shell, gunakan **ikon Unggah** untuk mengunggah file templat dan parameter. Anda harus mengunggah masing-masing secara terpisah.
-
-1. Verifikasi file Anda tersedia di penyimpanan Cloud Shell.
-
-    ```powershell
-    dir
-    ```
-
-1. Sebarkan templat ke grup sumber daya az104-rg4.
-
-    ```powershell
-    New-AzResourceGroupDeployment -ResourceGroupName az104-rg4 -TemplateFile template.json -TemplateParameterFile parameters.json
-    ```
-1. Pastikan perintah selesai dan ProvisioningState **Berhasil**.
-
-    >**Catatan:** Jika Anda perlu membuat perubahan pada file, pastikan **rm** (menghapus) file lama sebelum mengunggah yang baru. 
-    
-
-
-1. Sebelum melanjutkan, kembali ke portal dan pastikan **jaringan virtual ManufacturingVnet** dan subnet dibuat. Anda mungkin perlu **menyegarkan** halaman jaringan virtual. 
-
-
-### Menyebarkan templat dengan Bash (opsi 2)
-
-
-1. Buka Cloud Shell dan pilih **Bash**.
-
-1. Jika perlu, gunakan **pengaturan Tingkat Lanjut** untuk membuat penyimpanan disk untuk Cloud Shell.
-
-1. Di Cloud Shell, gunakan **ikon Unggah** untuk mengunggah file templat dan parameter. Anda harus mengunggah masing-masing secara terpisah.
-
-1. Verifikasi file Anda tersedia di penyimpanan Cloud Shell.
-
-    ```bash
-    ls
-    ```
-
-1. Sebarkan templat ke grup sumber daya az104-rg4.
-
-    ```bash
-    az deployment group create --resource-group az104-rg4 --template-file template.json --parameters parameters.json
-    ```
-    
-1. Pastikan perintah selesai dan ProvisioningState **Berhasil**.
-
-1. Kembali ke portal dan pastikan **ManufacturingVnet** dan subnet terkait dibuat. Anda mungkin perlu **menyegarkan** halaman jaringan virtual. 
+1. Tunggu hingga templat disebarkan, lalu konfirmasikan (di portal) jaringan virtual Manufaktur dibuat. 
    
 ## Tugas 4: Mengonfigurasi komunikasi antara Kelompok Keamanan Aplikasi dan Kelompok Keamanan Jaringan 
 
@@ -267,7 +220,7 @@ Dalam tugas ini, kami membuat Kelompok Keamanan Aplikasi dan Kelompok Keamanan J
 
 1. Setelah membuat aturan NSG Anda, luangkan waktu satu menit untuk meninjau aturan** keamanan Keluar default**.
 
-## Tinjau titik utama lab
+## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 

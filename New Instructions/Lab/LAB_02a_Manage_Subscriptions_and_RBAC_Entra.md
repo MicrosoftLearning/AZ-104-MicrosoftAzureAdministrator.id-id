@@ -6,7 +6,7 @@ lab:
 
 # Lab 02a - Mengelola Langganan dan RBAC
 
-## Pengenalan Lab
+## Pengenalan lab
 
 Di lab ini, Anda mempelajari tentang kontrol akses berbasis peran. Anda mempelajari cara menggunakan izin dan cakupan untuk mengontrol identitas tindakan apa yang dapat dan tidak dapat dilakukan. Anda juga mempelajari cara mempermudah manajemen langganan menggunakan grup manajemen. 
 
@@ -14,7 +14,7 @@ Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi keter
 
 ## Perkiraan waktu: 30 menit
 
-## Skenario laboratorium
+## Skenario lab
 
 Untuk menyederhanakan manajemen sumber daya Azure di organisasi Anda, Anda telah ditugaskan untuk menerapkan fungsionalitas berikut:
 
@@ -194,7 +194,7 @@ Dalam tugas ini, Anda melihat log aktivitas untuk menentukan apakah ada yang tel
 
 3. Verifikasi log Aktivitas memperlihatkan aktivitas pembuatan peran. 
 
-## Tinjau titik utama lab
+## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 

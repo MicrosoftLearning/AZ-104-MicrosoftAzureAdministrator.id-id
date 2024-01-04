@@ -15,7 +15,7 @@ Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi keter
 
 ## Perkiraan waktu: 30 menit
 
-## Skenario laboratorium
+## Skenario lab
 
 Organisasi Anda tertarik dengan aplikasi Web Azure untuk menghosting situs web organisasi Anda. Situs web saat ini dihosting di pusat data lokal perusahaan. Situs web berjalan di server Windows menggunakan tumpukan runtime PHP. Perangkat keras mendekati akhir masa pakai dan akan segera membutuhkan penggantian. Organisasi Anda ingin menyelesaikan pengujian untuk memfasilitasi perpindahan ke Azure sebelum tanggal akhir masa pakai.
 
@@ -169,7 +169,7 @@ Dalam tugas ini, Anda akan mengonfigurasi penskalaan otomatis aplikasi web Azure
 
 1. Pilih **Hentikan** untuk menyelesaikan eksekusi pengujian.
    
-## Tinjau titik utama lab
+## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 

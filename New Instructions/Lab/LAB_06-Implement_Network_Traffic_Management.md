@@ -16,7 +16,7 @@ Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi keter
 
 ## Skenario lab
 
-Organisasi Anda baru-baru ini selesai menguji pengelolaan lalu lintas jaringan untuk komputer virtual Azure di topologi jaringan hub dan spoke. Sekarang, Anda ingin menguji distribusi lalu lintas di seluruh komputer virtual dengan menggunakan load balancer lapisan 4 dan lapisan 7. Untuk tujuan ini, Anda ingin menggunakan Azure Load Balancer (lapisan 4) dan Azure Application Gateway (lapisan 7).
+Organisasi Anda memiliki situs web publik. Anda perlu menyeimbangkan beban permintaan publik yang masuk di berbagai komputer virtual. Anda juga perlu menyediakan gambar dan video dari komputer virtual yang berbeda. Anda berencana menerapkan dan Azure Load Balancer dan Azure Application Gateway. Semua sumber daya berada di wilayah yang sama. 
 
 ## Simulasi lab interaktif
 
@@ -38,7 +38,7 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 
 Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan satu jaringan virtual, satu grup keamanan jaringan, dan dua komputer virtual bersama dengan kartu antarmuka jaringan virtual terkait. VM akan berada di jaringan virtual hub bernama **az104-vnet1**.
 
-1. Jika perlu, unduh **\\file lab Allfiles\\Lab06\\az104-06-vms-loop-template.json** dan\\** Allfiles\\Labs\\06\\az104-06-vms-loop-parameters.json** ke komputer Anda.
+1. Jika perlu, unduh **\\file lab Allfiles\\Lab06\\az104-06-vms-loop-template.json** . 
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
@@ -189,7 +189,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
     | Port Sumber           | *Kosong*         |
     | Tes diagnostik      | *Default*      |
 
-    ![Portal Microsoft Azure memperlihatkan pengaturan Pemecahan Masalah Koneksi ion.](../media/az104-lab05-connection-troubleshoot.png)
+    ![Portal Microsoft Azure memperlihatkan pengaturan Pemecahan Masalah Koneksi ion.](../media/az104-lab06-connection-troubleshoot.png)
 
 1. Pilih **Jalankan pengujian** diagnostik.
 
@@ -197,7 +197,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Load Balancer di depan dua mesin vir
 
 ## Tugas 3: Menerapkan Azure Application Gateway
 
-Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mesin virtual Azure di jaringan virtual spoke. Application Gateway menyediakan penyeimbangan beban lapisan 7, Web Application Firewall (WAF), penghentian SSL, dan enkripsi end-to-end ke sumber daya yang ditentukan dalam kumpulan backend. 
+Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua komputer virtual Azure. Application Gateway menyediakan penyeimbangan beban lapisan 7, Web Application Firewall (WAF), penghentian SSL, dan enkripsi end-to-end ke sumber daya yang ditentukan dalam kumpulan backend. Application Gateway akan merutekan gambar ke satu komputer virtual dan video ke komputer virtual lainnya. 
 
 ## Diagram arsitektur - Application Gateway
 
@@ -291,7 +291,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
 1. Pilih **Tambahkan beberapa target untuk membuat aturan** berbasis jalur. Anda akan membuat dua aturan.
 
-**Aturan 1 - perutean ke backend gambar**
+    **Aturan - perutean ke backend gambar**
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -300,7 +300,7 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
     | Pengaturan backend | **appgw-settings** |
     | Target ujung belakang | `az104-appgw-images` |
 
-**Aturan 2 - perutean ke backend video**
+    **Aturan - perutean ke backend video**
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -317,24 +317,23 @@ Dalam tugas ini, Anda akan menerapkan Azure Application Gateway di depan dua mes
 
 1. Di portal Azure, cari dan pilih **az104-appgw**.
 
+1. **Di Application Gateway** pilih **Kesehatan** backend.
+
+1. Pastikan kedua server di kumpulan backend menampilkan **Sehat**. 
+
 1. Pada bilah **Application Gateway az104-appgw** , salin nilai **alamat** IP publik Frontend.
 
-1. Mulai jendela browser lain dan uji URL ini - `http://<frontend ip address>/image/`.
+1. Mulai jendela browser lain dan uji URL - `http://<frontend ip address>/image/`.
 
 1. Verifikasi bahwa Anda diarahkan ke server gambar (vm1). 
 
-1. Mulai jendela browser lain dan uji URL ini - `http://<frontend ip address>/video/`.
+1. Mulai jendela browser lain dan uji URL - `http://<frontend ip address>/video/`.
 
 1. Verifikasi bahwa Anda diarahkan ke server gambar (vm2). 
 
 > **Catatan**: Anda mungkin perlu merefresh lebih dari sekali atau membuka jendela browser baru dalam mode InPrivate.
 
-1. **Di Application Gateway** pilih **Kesehatan** backend.
-
-1. Pastikan kedua server di kumpulan backend menampilkan **Sehat**. 
-
-
-## Tinjau titik utama lab
+## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 

@@ -15,7 +15,7 @@ Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi keter
 
 ## Perkiraan waktu: 30 menit
 
-## Skenario laboratorium
+## Skenario lab
 
 Organisasi Anda memiliki aplikasi web yang berjalan pada komputer virtual di pusat data lokal Anda. Organisasi ingin memindahkan semua aplikasi ke cloud tetapi tidak ingin memiliki sejumlah besar server untuk dikelola. Anda memutuskan untuk mengevaluasi Azure Container Instances dan Docker. Selain itu, Anda ingin menyebarkan dan menguji aplikasi kontainer Azure.
 
@@ -134,7 +134,7 @@ Secara default, aplikasi kontainer Azure yang Anda buat akan menerima lalu linta
 
 1. Verifikasi bahwa Anda menerima **aplikasi Azure Container Apps Anda adalah pesan langsung** .
 
-## Tinjau titik utama lab
+## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 
