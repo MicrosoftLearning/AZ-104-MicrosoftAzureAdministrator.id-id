@@ -12,7 +12,7 @@ Ini adalah yang pertama dalam serangkaian lab untuk Administrator Azure. Di lab 
 
 Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditampilkan di **US** Timur.
 
-## Perkiraan waktu: 40 menit
+## Perkiraan waktu: 30 menit
 
 ## Skenario lab
 
@@ -44,7 +44,7 @@ Dalam tugas ini, Anda membuat grup sumber daya. Grup sumber daya adalah pengelom
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-    >**Catatan:** portal Azure digunakan di semua lab. Jika Anda baru menggunakan Azure, ketik `Quickstart Center` di kotak pencarian teratas. Kemudian beberapa menit untuk menonton **video Memulai di portal Azure**. Bahkan jika Anda telah menggunakan portal sebelumnya, Anda akan menemukan beberapa tips dan trik tentang menavigasi dan menyesuaikan antarface. 
+    >**Catatan:** portal Azure digunakan di semua lab. Jika Anda baru menggunakan Azure, cari dan pilih `Quickstart Center`. Luangkan beberapa menit untuk menonton **video Memulai di portal Azure**. Bahkan jika Anda telah menggunakan portal sebelumnya, Anda akan menemukan beberapa tips dan trik tentang menavigasi dan menyesuaikan antarface. 
    
 1. Di portal Azure, cari dan pilih `Resource groups`.
    
@@ -62,10 +62,6 @@ Dalam tugas ini, Anda membuat grup sumber daya. Grup sumber daya adalah pengelom
 
     >**Catatan**: Tunggu hingga grup sumber daya disebarkan. **Gunakan ikon Pemberitahuan** (kanan atas) untuk melacak kemajuan penyebaran.
 
-1. Pilih **Buka sumber daya**, refresh halaman dan verifikasi grup sumber daya baru Anda muncul dalam daftar grup sumber daya.
-
-    ![Cuplikan layar daftar grup sumber daya.](../media/az104-lab01-create-resource-group.png)
-
 ## Tugas 2: Membuat dan mengonfigurasi akun pengguna
 
 Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun pengguna. Akun pengguna akan menyimpan data pengguna seperti nama, departemen, lokasi, dan informasi kontak.
@@ -74,10 +70,10 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun pengguna. Akun penggu
 
 1. Cari dan pilih `Microsoft Entra ID`.
 
-1. ID Microsoft Entra adalah solusi manajemen identitas dan akses berbasis cloud Azure. Luangkan beberapa menit untuk membiasakan diri dengan beberapa fitur yang tercantum di panel. 
+1. ID Microsoft Entra adalah solusi manajemen identitas dan akses berbasis cloud Azure. Luangkan beberapa menit untuk membiasakan diri dengan beberapa fitur yang tercantum di panel kiri. 
 
    + **Unit administratif** memungkinkan Anda mengelompokkan pengguna, grup, atau perangkat ke dalam satu unit yang dapat dikelola.
-   + **** Lisensi memungkinkan Anda melakukan tugas seperti uji coba gte atau membeli lisensi, mengelola lisensi yang Anda miliki, dan menetapkan lisensi kepada pengguna dan grup.
+   + **** Lisensi memungkinkan Anda membeli lisensi, mengelola lisensi yang Anda miliki, dan menetapkan lisensi kepada pengguna dan grup.
    + **Pengaturan ulang** kata sandi layanan mandiri memungkinkan pengguna Anda mengelola kata sandi mereka dari perangkat apa pun, kapan saja, dari lokasi mana pun.
 
 1. Pilih **Pengguna**, lalu di **menu drop-down Pengguna** baru pilih **Buat pengguna** baru. Perhatikan pilihan untuk **Mengundang dan pengguna** eksternal. 
@@ -113,7 +109,7 @@ Dalam tugas ini, Anda membuat akun grup. Akun grup dapat menyertakan akun penggu
     | Deskripsi grup | `Administrators that manage the IT lab` |
     | Jenis keanggotaan | **Ditetapkan** |
 
-    >**Catatan**: Daftar drop-down Jenis** keanggotaan Anda **mungkin berwarna abu-abu. Jika Anda memiliki lisensi Entra ID Premium P1 atau P2 di sinilah Anda dapat memilih grup dinamis. 
+    >**Catatan**: Perhatikan opsi di **menu drop-down Jenis** keanggotaan. Lisensi Entra ID Premium P1 atau P2 diperlukan untuk keanggotaan dinamis. 
 
     ![Cuplikan layar buat grup yang ditetapkan.](../media/az104-lab01-create-assigned-group.png)
 
@@ -140,11 +136,13 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell. Azure Cloud Shell adalah
 
     >**Apakah Anda tahu?**  Jika Anda sebagian besar bekerja dengan sistem Linux, Azure CLI terasa lebih alami. Jika Anda sebagian besar bekerja dengan sistem Windows, Azure PowerShell terasa lebih alami. 
 
-1. **Pada layar Anda tidak memiliki penyimpanan yang dipasang** pilih **Tampilkan pengaturan** tingkat lanjut dan berikan informasi yang diperlukan. Setelah selesai, pilih **Buat penyimpanan**. 
+1. **Pada layar Anda tidak memiliki penyimpanan yang dipasang** pilih **Tampilkan pengaturan** tingkat lanjut dan berikan informasi yang diperlukan. Setelah selesai, pilih **Buat penyimpanan**.
+
+    >**Catatan:** Saat Anda bekerja dengan Cloud Shell, diperlukan accound penyimpanan dan berbagi file. 
 
     | Pengaturan | Nilai |
     |  -- | -- |
-    | Grup Sumber Daya | **Membuat grup sumber daya baru** |
+    | Grup Sumber Daya | **az104-rg1** |
     | Akun penyimpanan (Buat akun baru menggunakan nama unik global (misalnya: cloudshellstoragemystorage)) | **cloudshellxxxxxxx** |
     | Berbagi file (buat baru) | **shellstorage** |
 
@@ -154,9 +152,7 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell. Azure Cloud Shell adalah
 
 Dalam tugas ini, Anda membuat grup sumber daya dan grup Microsoft Azure AD dengan menggunakan sesi Azure PowerShell dalam Cloud Shell. Anda dapat menggunakan skrip Azure PowerShell di seluruh kursus. 
 
-    >**Note:** Use the arrow keys to move through the command history. Use the tab key to autocomplete commands and parameters.
-
-1. Lanjutkan bekerja di Cloud Shell. Kapan saja gunakan **cls** untuk menghapus jendela perintah.
+1. Gunakan tombol panah untuk menelusuri riwayat perintah. Gunakan kunci tab untuk melengkapi perintah dan parameter secara otomatis. Kapan saja gunakan **cls** untuk menghapus jendela perintah.
 
 1. Azure PowerShell menggunakan *format Kata Benda Kata Kerja**-* untuk cmdlet. Misalnya, cmdlet untuk membuat grup sumber daya baru adalah **New-AzResourceGroup**. Untuk melihat cara menggunakan cmdlet, jalankan perintah Get-Help.
 

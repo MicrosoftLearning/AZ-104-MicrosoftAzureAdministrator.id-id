@@ -20,6 +20,8 @@ Jaringan virtual **ManufacturingVnet** disebarkan di wilayah **Eropa Barat**, di
 
 Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
 
++ [Mengamankan lalu lintas](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2013) jaringan. Buat komputer virtual, jaringan virtual, dan grup keamanan jaringan. Tambahkan aturan kelompok keamanan jaringan untuk mengizinkan dan melarang lalu lintas.
+  
 + [Buat jaringan](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%204) virtual sederhana. Buat jaringan virtual dengan dua komputer virtual. Menunjukkan komputer virtual dapat berkomunikasi. 
 
 + [Merancang dan mengimplementasikan jaringan virtual di Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure). Buat grup sumber daya dan buat jaringan virtual dengan subnet.  
@@ -164,7 +166,7 @@ Dalam tugas ini, kami membuat Kelompok Keamanan Aplikasi dan Kelompok Keamanan J
     | Langganan | *langganan Anda* |
     | Grup sumber daya | **az104-rg4** |
     | Nama | `asg-web` |
-    | Wilayah | **(AS) AS Timur**  |
+    | Wilayah | **Eropa Barat**  |
 
 1. Klik **Tinjau + buat** lalu setelah validasi klik **Buat**.
 
@@ -235,7 +237,5 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 Jika Anda bekerja dengan langganan Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
-
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-
 + Menggunakan CLI, `az group delete --name resourceGroupName`.

@@ -43,8 +43,9 @@ Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik 
 
 + Tugas 1: Menerapkan grup manajemen.
 + Tugas 2: Tinjau dan tetapkan peran Azure bawaan.
-+ Tugas 3: Membuat dan menetapkan peran RBAC kustom. 
-+ Tugas 4: Memantau penetapan peran dengan Log Aktivitas.
++ Tugas 3: Buat peran RBAC kustom untuk staf dukungan.
++ Tugas 4: Uji peran kustom untuk memastikan memiliki izin yang benar
++ Tugas 5: Pantau penetapan peran dengan Log Aktivitas.
 
 ## Tugas 1: Menerapkan Grup Manajemen
 
@@ -52,7 +53,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. Grup manaj
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Telusuri dan pilih **Grup manajemen** untuk menavigasi ke panel **Grup manajemen**.
+1. Cari dan pilih `Management groups`.
 
 1. Tinjau pesan di bagian atas panel **Grup manajemen**. Jika Anda melihat pesan yang menyatakan **Anda terdaftar sebagai admin direktori tetapi tidak memiliki izin yang diperlukan untuk mengakses grup** manajemen akar, lakukan urutan langkah-langkah berikut:
 
@@ -77,13 +78,13 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. Grup manaj
 
 ## Tugas 2: Meninjau dan menetapkan peran Azure bawaan
 
-Dalam tugas ini, Anda akan menetapkan peran Kontributor VM ke akun pengguna Anda.  
+Dalam tugas ini, Anda akan meninjau peran bawaan dan menetapkan peran Kontributor VM ke akun pengguna Anda. Azure menyediakan sejumlah besar peran bawaan[](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles).
 
 1. Di portal, cari dan **grup manajemen az104-mg1** .
 
 1. Pilih bilah **Kontrol akses (IAM),** lalu tab **Peran** .
 
-1. Gulir definisi peran yang tersedia. **Lihat** peran untuk mendapatkan informasi terperinci tentang **Izin**, **JSON**, dan **Penugasan**.
+1. Gulir definisi peran yang tersedia. **Lihat** peran untuk mendapatkan informasi terperinci tentang **Izin**, **JSON**, dan **Penugasan**. 
 
 1. Pilih **+ Tambahkan**, dari menu drop-down, pilih **Tambahkan penetapan** peran. 
 
@@ -91,7 +92,7 @@ Dalam tugas ini, Anda akan menetapkan peran Kontributor VM ke akun pengguna Anda
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Peran di tab pencarian | **Kontributor Komputer Virtual** |
+    | Pilih peran ini | **Kontributor Komputer Virtual** |
     | Tetapkan akses ke (di bawah panel Anggota) | **Pengguna, grup, atau perwakilan layanan** |
     | Pilih (+Pilih Anggota) | *akun* pengguna Anda (ditampilkan di sudut kanan atas portal) |
 
@@ -102,19 +103,17 @@ Dalam tugas ini, Anda akan menetapkan peran Kontributor VM ke akun pengguna Anda
     >**Catatan:** Penugasan ini mungkin tidak benar-benar memberi Anda provilese tambahan. Jika Anda sudah memiliki peran Pemilik, peran ini menyertakan semua hak istimewa yang terkait dengan peran Kontributor.
 
 
-## Tugas 3: Membuat peran RBAC kustom
+## Tugas 3: Membuat peran RBAC kustom untuk staf dukungan
 
 Dalam tugas ini, Anda akan membuat peran RBAC kustom. Peran kustom adalah bagian inti dari menerapkan prinsip hak istimewa paling sedikit untuk lingkungan. Peran bawaan mungkin memiliki terlalu banyak izin untuk organisasi Anda. Dalam tugas ini kita akan membuat peran baru dan menghapus izin yang tidak diperlukan.
 
-### Membuat peran RBAC kustom untuk pengguna Staf Dukungan
-
 1. Di portal, cari dan pilih **grup manajemen az104-mg1** .
 
-1. Pilih bilah **Kontrol akses (IAM),** lalu tab **Peran** .
+1. Pilih bilah **Kontrol akses (IAM),** lalu tab **Periksa akses** .
 
-1. Pilih tab **Periksa akses** , lalu di kotak **Buat peran** kustom, pilih **Tambahkan**.
+ 1. Dalam kotak **Buat peran** kustom, pilih **Tambahkan**.
 
-1. Pada tab Dasar dari Buat peran kustom, berikan nama `Custom Support Request`. Di bidang Deskripsi, masukkan `A custom contributor role for support requests.`
+1. Pada tab Dasar dari **Buat peran** kustom, berikan nama `Custom Support Request`. Di bidang Deskripsi, masukkan `A custom contributor role for support requests.` 
 
 1. Di bidang Izin garis besar, pilih **Kloning peran**. Di menu drop-down Peran untuk mengkloning, pilih **Kontributor** Permintaan Dukungan.
 
@@ -126,6 +125,8 @@ Dalam tugas ini, Anda akan membuat peran RBAC kustom. Peran kustom adalah bagian
 
 1. Dalam daftar izin, letakkan kotak centang di samping **Lainnya: Mendaftarkan Penyedia** Sumber Daya Dukungan lalu pilih **Tambahkan**. Peran harus diperbarui untuk menyertakan izin ini sebagai *NotAction*.
 
+    >**Catatan:** Penyedia sumber daya Azure adalah sekumpulan operasi REST yang memungkinkan fungsionalitas untuk layanan Azure tertentu. Kami tidak ingin bantuan meja untuk dapat memiliki kemampuan ini, sehingga sedang dihapus dari peran. 
+
 1. Pilih tab **Cakupan** yang dapat ditetapkan. Pilih **ikon Hapus** pada baris untuk langganan.
 
 1. Pilih **+ Tambahkan cakupan** yang dapat ditetapkan. **Pilih grup manajemen az104-mg1**, lalu klik **Pilih**.
@@ -136,37 +137,39 @@ Dalam tugas ini, Anda akan membuat peran RBAC kustom. Peran kustom adalah bagian
 
     >**Catatan:** Pada titik ini, Anda telah membuat peran kustom. Langkah Anda selanjutnya adalah menetapkan peran ke pengguna Help Desk. 
 
-### Identitas akun pengguna Help Desk yang akan Anda gunakan untuk menguji peran baru dan menetapkan peran kustom. 
+Tugas 4: Tetapkan dan uji peran RBAC kustom.
+
+Dalam tugas ini, Anda menambahkan peran kustom ke pengguna uji dan mengonfirmasi izin mereka. 
 
 1. Di portal Azure, cari dan pilih **ID** Microsoft Entra, lalu pilih bilah **Pengguna**.
 
-    >**Catatan**: Tugas ini memerlukan akun pengguna untuk pengujian. Untuk lab ini, kami akan menggunakan HelpDesk-user1****. Silakan luangkan waktu satu menit untuk mengidentifikasi pengguna uji, jika perlu **Tambahkan** pengguna baru. Jika Anda membuat pengguna baru, wajibkan kata sandi diatur saat mereka masuk. 
+    >**Catatan**: Tugas ini memerlukan akun pengguna untuk pengujian. Untuk lab ini kami akan menggunakan, **helpdesk-user1**. Silakan luangkan waktu satu menit untuk mengidentifikasi pengguna uji. Jika perlu, Anda dapat **Menambahkan** pengguna baru. Jika Anda membuat pengguna baru, wajibkan kata sandi diatur saat mereka masuk. 
 
 1. Sebelum melanjutkan, pastikan Anda memiliki **Nama** prinsipal pengguna untuk akun pengujian Anda. Anda akan memerlukan ini untuk masuk ke portal. Gunakan ikon untuk menyalin informasi ini ke clipboard. 
 
-1. Di portal Azure, navigasikan kembali ke **grup manajemen az104-mg1** dan tampilkan detailnya.
+1. Di portal Azure, navigasikan kembali ke **grup manajemen az104-mg1**.
 
 1. Klik **Access Control (IAM)**, klik **+ Tambahkan** lalu **Tambahkan penetapan peran**. 
 
 1. Pada tab **Peran** , cari `Custom Support Request`. 
 
-    >**Catatan**: jika peran kustom Anda tidak terlihat, diperlukan waktu hingga 10 menit agar peran kustom muncul setelah dibuat.
+    >**Catatan**: jika peran kustom Anda tidak terlihat, diperlukan waktu hingga 5 menit agar peran kustom muncul setelah pembuatan. **Refresh** halaman. 
 
-1. Pilih **Peran** dan klik **Berikutnya**. Pada tab **Anggota** , klik **+ Pilih anggota** dan **pilih** akun **pengguna HelpDesk-user1**.  
+1. Pilih **Peran** dan klik **Berikutnya**. Pada tab **Anggota** , klik **+ Pilih anggota** dan **pilih** akun **pengguna hellpdesk-user1**.  
 
 1. Pilih **Tinjau + tetapkan** dua kali.
 
     >**Catatan:** Pada titik ini, Anda memiliki akun pengguna Help Desk dengan hak istimewa khusus untuk membuat tiket dukungan. Langkah Anda selanjutnya adalah menguji akun.
     
-### Uji akun pengguna Help Desk untuk memastikan akun tersebut memiliki hak istimewa yang benar
+## Tugas 4: Uji peran kustom untuk memastikan memiliki izin yang benar
 
-1. **Buka jendela browser InPrivate** dan masuk ke portal Azure saat `https://portal.azure.com` menggunakan akun pengguna uji. Jika diminta untuk memperbarui kata sandi, ubah kata sandi untuk pengguna.
+1. **Buka jendela browser InPrivate** dan navigasikan ke portal Azure di `https://portal.azure.com`.
 
-    >**Catatan**: Daripada mengetik nama pengguna, Anda dapat menempelkan konten clipboard.
+1. Berikan nama prinsip pengguna untuk helpdesk-user1. Saat diminta untuk memperbarui kata sandi, ubah kata sandi untuk pengguna.
 
-1. Di jendela **browser InPrivate**, di portal Azure, cari dan pilih **Grup** sumber daya untuk memverifikasi bahwa pengguna Help Desk dapat melihat semua grup sumber daya.
+1. Di jendela **browser InPrivate**, di portal Azure, cari dan pilih **Grup** sumber daya untuk memverifikasi bahwa pengguna Help Desk dapat melihat grup sumber daya.
 
-1. Di jendela **browser InPrivate**, di portal Azure, cari dan pilih **Semua sumber daya** untuk memverifikasi bahwa pengguna Help Desk tidak dapat melihat sumber daya apa pun.
+1. Di jendela **browser InPrivate**, di portal Azure, cari dan pilih **Semua sumber daya** untuk memverifikasi bahwa pengguna Help Desk tidak dapat melihat sumber daya individual apa pun.
 
 1. Di jendela browser **InPrivate**, di portal Azure, telusuri dan pilih **Bantuan + dukungan** lalu klik **+ Buat permintaan dukungan**. 
 
@@ -174,19 +177,17 @@ Dalam tugas ini, Anda akan membuat peran RBAC kustom. Peran kustom adalah bagian
 
 1. Di jendela browser **InPrivate**, pada tab **Deskripsi/Ringkasan Masalah** dari **Bantuan + dukungan - Blade permintaan dukungan baru**, ketik **Batas layanan dan langganan** di bidang Ringkasan dan pilih jenis masalah **Batas layanan dan langganan (kuota)**. Perhatikan bahwa langganan yang Anda gunakan di lab ini tercantum dalam daftar dropdown **Langganan**.
 
-    >**Catatan**: Kehadiran langganan yang Anda gunakan di lab ini di **daftar drop-down Langganan** menunjukkan bahwa akun yang Anda gunakan memiliki izin yang diperlukan untuk membuat permintaan dukungan khusus langganan.
-
-    >**Catatan**: Jika Anda tidak melihat **opsi Layanan dan batas langganan (kuota),** keluar dari portal Azure dan masuk kembali.
+    >**Catatan**: Karena peran ditetapkan ke grup manajemen, semua langganan harus tersedia untuk dek bantuan. Jika Anda tidak melihat opsi **Layanan dan batas langganan (kuota)**, keluar dari portal Azure dan masuk kembali.
 
 1. Luangkan beberapa menit untuk menjelajahi pembuatan **permintaan** dukungan Baru, tetapi jangan lanjutkan dengan membuat permintaan dukungan. Sebagai gantinya, keluar sebagai pengguna Help Desk dari portal Azure dan tutup jendela browser InPrivate.
 
-1. Anda telah selesai menguji peran kustom Anda dan meninjau cara membuat tiket dukungan. 
+    >**Catatan:** Anda sekarang telah memverifikasi pengguna staf dukungan yang memiliki izin yang benar. Pada titik ini Anda akan membuat grup staf dukungan dan menambahkan anggota. 
 
-## Tugas 4: Memantau penetapan peran dengan Log Aktivitas
+## Tugas 5: Memantau penetapan peran dengan Log Aktivitas
 
 Dalam tugas ini, Anda melihat log aktivitas untuk menentukan apakah ada yang telah membuat peran baru. 
 
-1. Kembali ke **sumber daya az104-mg1** dan pilih **Log aktivitas**.
+1. Kembali ke portal dan di **sumber daya az104-mg1** pilih **Log aktivitas**.
 
 2. Pilih **Tambahkan filter**, pilih **Operasi**, lalu Buat penetapan **** peran.
 
@@ -209,9 +210,7 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 Jika Anda bekerja dengan langganan Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
-
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
 

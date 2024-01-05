@@ -151,7 +151,7 @@ Dalam tugas ini, Anda memverifikasi bahwa penyebaran telah berhasil diselesaikan
 
     >**Catatan:** Anda juga dapat menyebarkan templat dari baris perintah. Tugas 4, opsi 1, memperlihatkan cara menggunakan PowerShell. Tugas 5, opsi 2, memperlihatkan cara menggunakan CLI.
 
-## Tugas 3: Menyebarkan sumber daya dengan menggunakan Azure Bicep
+## Tugas 4: Menyebarkan sumber daya dengan menggunakan Azure Bicep
 
 Dalam tugas ini, Anda akan menggunakan file Bicep untuk menyebarkan akun penyimpanan ke grup sumber daya Anda. Bicep adalah alat otomatisasi deklaratif yang dibangun di atas templat ARM, tetapi lebih mudah dibaca dan dikerjakan.
 
@@ -251,7 +251,5 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 Jika Anda bekerja dengan langganan Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
-
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-
 + Menggunakan CLI, `az group delete --name resourceGroupName`.

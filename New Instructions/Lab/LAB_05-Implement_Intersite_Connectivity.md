@@ -8,13 +8,13 @@ lab:
 
 ## Pengenalan lab
 
-Di lab ini Anda akan menjelajahi komunikasi antara jaringan virtual. Anda akan menerapkan peering jaringan virtual dan menjalankan perintah jarak jauh untuk menguji koneksi. Anda juga akan mempelajari tentang alat Network Watcher.  
+Di lab ini Anda akan menjelajahi komunikasi antara jaringan virtual. Anda akan menerapkan peering jaringan virtual dan menjalankan perintah jarak jauh untuk menguji koneksi.   
 
 Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US** Timur. 
 
 ## Perkiraan waktu: 30 menit
 
-## Skenario laboratorium 
+## Skenario lab 
 
 Organisasi Anda mengegmentasi aplikasi dan layanan IT inti (seperti DNS dan layanan keamanan) dari bagian lain dari bisnis, termasuk departemen manufaktur Anda. Namun, dalam beberapa skenario, aplikasi dan layanan di area inti perlu berkomunikasi dengan aplikasi dan layanan di area manufaktur. Di lab ini, Anda mengonfigurasi konektivitas antara area tersegmentasi. Ini adalah skenario umum untuk memisahkan produksi dari pengembangan atau memisahkan satu anak perusahaan dari anak perusahaan lainnya.
 
@@ -225,8 +225,6 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 Jika Anda bekerja dengan langganan Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
-
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
