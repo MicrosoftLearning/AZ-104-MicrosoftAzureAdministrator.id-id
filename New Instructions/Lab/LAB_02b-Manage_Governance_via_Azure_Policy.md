@@ -85,14 +85,14 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
 1. Pada panel **Memerlukan tag dan nilainya pada definisi** kebijakan bawaan sumber daya, klik **Tetapkan**.
 
-1. Tentukan **Cakupan** dengan mengklik tombol elipsis dan memilih nilai berikut:
+1. **Tentukan Cakupan** dengan mengklik tombol elipsis dan memilih nilai berikut. Klik **Pilih** saat Anda selesai. 
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Langganan | *langganan Anda* |
-    | Grup Sumber Daya | **az-rg2b** |
+    | Grup Sumber Daya | **az-rg2** |
 
-    >**Catatan**: Cakupan menentukan sumber daya atau grup sumber daya tempat penetapan kebijakan berlaku. Anda dapat menetapkan kebijakan pada tingkat grup manajemen, langganan, atau grup sumber daya. Anda juga memiliki opsi untuk menentukan pengecualian, seperti langganan individual, grup sumber daya, atau sumber daya (tergantung pada cakupan penugasan).
+    >**Catatan**: Cakupan menentukan sumber daya atau grup sumber daya tempat penetapan kebijakan berlaku. Anda dapat menetapkan kebijakan pada tingkat grup manajemen, langganan, atau grup sumber daya. Anda juga memiliki opsi untuk menentukan pengecualian, seperti langganan individual, grup sumber daya, atau sumber daya.
 
 1. Konfigurasikan properti **Dasar** penugasan dengan menentukan pengaturan berikut (biarkan yang lain dengan defaultnya):
 
@@ -102,7 +102,7 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
     | Deskripsi | `Require Cost Center tag with default value for all resources in the resource group`|
     | Pemberlakuan kebijakan | Diaktifkan |
 
-    >**Catatan**: Nama **** Penugasan secara otomatis diisi dengan nama kebijakan yang Anda pilih, tetapi Anda dapat mengubahnya. **Deskripsi** bersifat opsional. **Ditetapkan oleh** secara otomatis diisi berdasarkan nama pengguna yang membuat penugasan. 
+    >**Catatan**: Nama **** Penugasan secara otomatis diisi dengan nama kebijakan yang Anda pilih, tetapi Anda dapat mengubahnya. **Deskripsi** bersifat opsional. 
 
 1. Klik **Berikutnya** dua kali dan atur **Parameter** ke nilai berikut:
 
@@ -125,7 +125,7 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Grup sumber daya | **az104-rg2b** |
+    | Grup sumber daya | **az104-rg2** |
     | Nama akun penyimpanan | *kombinasi unik global antara 3 dan 24 huruf kecil dan digit, dimulai dengan huruf* |
 
     >**Catatan**: Anda mungkin menerima **Validasi gagal. Klik di sini untuk kesalahan detail** . Jika demikian, klik pesan kesalahan untuk mengidentifikasi alasan kegagalan dan melewati langkah berikutnya. 
@@ -152,19 +152,17 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan baru untuk memulihkan 
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup Sumber Daya | nama grup sumber daya yang berisi akun Cloud Shell yang Anda identifikasi di tugas pertama |
-
-    ![Cuplikan layar halaman cakupan kebijakan. ](../media/az104-lab02b-policyscope2.png) 
+    | Langganan | langganan Azure Anda |
+    | Grup Sumber Daya | `az104-rg2` |
 
 1. Untuk menentukan **Definisi kebijakan**, klik tombol elipsis lalu cari dan pilih `Inherit a tag from the resource group if missing`.
 
-1. Konfigurasikan properti **Dasar** yang tersisa dari penetapan dengan menetapkan setelan berikut (biarkan yang lain dengan default):
+1. Pilih **Tambahkan** lalu konfigurasikan properti Dasar** yang tersisa **dari penugasan.
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama penetapan | **Mewarisi tag Peran dan nilai Infra-nya dari grup sumber daya jika hilang**|
-    | Deskripsi | **Mewarisi tag Peran dan nilai Infra-nya dari grup sumber daya jika hilang**|
+    | Nama penetapan | `Inherit the Role tag and its Infra value from the resource group if missing` |
+    | Deskripsi | `Inherit the Role tag and its Infra value from the resource group if missing` |
     | Pemberlakuan kebijakan | Diaktifkan |
 
 1. Klik **Berikutnya** dua kali dan atur **Parameter** ke nilai berikut:
@@ -180,7 +178,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan baru untuk memulihkan 
     | Buat tugas remediasi | diaktifkan |
     | Kebijakan yang akan diremediasi | **Mewarisi tag dari grup sumber daya jika tidak ada** |
 
-    >**Catatan**: Definisi kebijakan ini mencakup **efek Ubah** .
+    >**Catatan**: Definisi kebijakan ini mencakup **efek Ubah** . Jadi, identitas terkelola diperlukan. 
 
     ![Cuplikan layar halaman remediasi kebijakan. ](../media/az104-lab02b-policyremediation.png) 
 
@@ -190,9 +188,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan baru untuk memulihkan 
     
     >**Catatan**: Mungkin diperlukan waktu antara 5 dan 15 menit agar kebijakan diterapkan.
 
-1. Navigasikan kembali ke bilah grup sumber daya yang Anda buat di tugas pertama.
-
-1. Pada panel grup sumber daya, klik **+ Buat** lalu cari **Akun Storage**, dan klik **+ Buat**. 
+1. Cari dan pilih `Storage Account`, dan klik **+ Buat**. 
 
 1. Pada tab **Dasar dari bilah **Buat akun** penyimpanan, verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Kebijakan diterapkan dan tentukan pengaturan berikut (biarkan orang lain dengan defaultnya) dan klik **Tinjau**:**
 
@@ -204,7 +200,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan baru untuk memulihkan 
 
 1. Setelah akun penyimpanan baru disediakan, klik **Buka sumber daya**.
 
-1. Pada bilah **Gambaran Umum**, perhatikan bahwa Peran** tag **dengan nilai **Infra** telah ditetapkan secara otomatis ke sumber daya.
+1. Pada bilah **Tag**, perhatikan bahwa Peran** tag **dengan nilai **Infra** telah secara otomatis ditetapkan ke sumber daya.
 
 ## Poin penting
 

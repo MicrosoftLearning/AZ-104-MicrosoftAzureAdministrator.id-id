@@ -35,9 +35,10 @@ Tim Anda telah menjelajahi kemampuan administratif Azure dasar seperti menyediak
 + Tugas 1: Buat templat Azure Resource Manager untuk penyebaran disk terkelola Azure.
 + Tugas 2: Edit templat Azure Resource Manager lalu buat disk terkelola Azure dengan menggunakan templat.
 + Tugas 3: Tinjau penyebaran berbasis templat Azure Resource Manager dari disk terkelola.
-+ Tugas 4: Sebarkan disk terkelola dengan menggunakan Azure Bicep.
-+ Tugas 5: Sebarkan templat dengan Azure PowerShell (opsi 1).
++ Tugas 4: Sebarkan templat dengan Azure PowerShell (opsi 1).
 + Tugas 5: Sebarkan templat dengan CLI (opsi 2). 
++ Tugas 6: Sebarkan disk terkelola dengan menggunakan Azure Bicep.
+
 
 
 ## Tugas 1: Membuat templat Azure Resource Manager untuk penyebaran disk terkelola Azure
@@ -60,8 +61,9 @@ Dalam tugas ini, Anda menggunakan portal Azure untuk menghasilkan templat Azure 
     | Wilayah | **US Timur** |
     | Zona ketersediaan | **Tidak ada redundansi infrastruktur yang diperlukan** | 
     | Jenis sumber | **Tidak** |
-    | Ukuran | **32 Gb** | 
     | Performa | **HDD Standar** |
+    | Ukuran | **32 Gib** | 
+
 
 1. Klik **Tinjau + Buat** *sekali*. Jangan **** sebarkan sumber daya.
 
@@ -69,7 +71,7 @@ Dalam tugas ini, Anda menggunakan portal Azure untuk menghasilkan templat Azure 
 
 1. Tinjau informasi yang diperlihatkan dalam templat. Tinjau tab **Templat** dan **Parameter** .
 
-1. Klik **Unduh** dan simpan templat ke komputer Anda.
+1. Klik **Unduh** dan simpan templat ke drive lokal. Ini membuat file zip terkompresi. 
 
 1. Ekstrak konten file yang diunduh ke **folder Unduhan** di komputer Anda. Perhatikan ada dua file JSON (templat dan parameter). 
 
@@ -77,13 +79,15 @@ Dalam tugas ini, Anda menggunakan portal Azure untuk menghasilkan templat Azure 
 
 1. Di portal Azure, batalkan penyebaran disk terkelola.
 
+   >**Catatan:**  Anda dapat mengekspor seluruh grup sumber daya atau hanya sumber daya tertentu dalam grup sumber daya tersebut.
+
 ## Tugas 2: Edit templat Azure Resource Manager lalu buat disk terkelola Azure dengan menggunakan templat
 
 Dalam tugas ini, Anda menggunakan templat yang Anda buat untuk menyebarkan disk terkelola baru. Tugas ini menguraikan proses umum memiliki penyebaran berbasis templat sehingga Anda dapat dengan cepat dan mudah mengulangi penyebaran. Jika Anda perlu mengubah parameter atau dua, Anda dapat dengan mudah memodifikasi templat di masa mendatang.
 
 1. Di portal Azure, cari dan pilih `Deploy a custom template`.
 
-1. Pada bilah **Penyebaran** kustom, perhatikan ada kemampuan untuk menggunakan **templat** Mulai Cepat. Ada banyak templat bawaan. Memilih templat apa pun akan memberikan deskripsi singkat.
+1. Pada bilah **Penyebaran** kustom, perhatikan ada kemampuan untuk menggunakan **templat** Mulai Cepat. Ada banyak templat bawaan seperti yang ditunjukkan di menu drop-down. 
 
 1. Alih-alih menggunakan Mulai Cepat, pilih **Bangun templat Anda sendiri di editor**.
 
@@ -149,15 +153,72 @@ Dalam tugas ini, Anda memverifikasi bahwa penyebaran telah berhasil diselesaikan
 
 1. Perhatikan bahwa disk terkelola Anda telah dibuat.
 
-    >**Catatan:** Anda juga dapat menyebarkan templat dari baris perintah. Tugas 4, opsi 1, memperlihatkan cara menggunakan PowerShell. Tugas 5, opsi 2, memperlihatkan cara menggunakan CLI.
+    >**Catatan:** Anda juga dapat menyebarkan templat dari baris perintah. Tugas 4 memperlihatkan cara menyebarkan menggunakan PowerShell. Tugas 5 memperlihatkan cara menyebarkan menggunakan CLI.
 
-## Tugas 4: Menyebarkan sumber daya dengan menggunakan Azure Bicep
+
+## Tugas 4. Sebarkan templat dengan Azure PowerShell (opsi 1).
+
+1. Buka Cloud Shell dan pilih **PowerShell**.
+
+1. Jika perlu, gunakan **pengaturan Tingkat Lanjut** untuk membuat penyimpanan disk untuk Cloud Shell.
+
+1. Di Cloud Shell, gunakan **ikon Unggah** untuk mengunggah file templat dan parameter. Anda harus mengunggah setiap file secara terpisah.
+
+1. Verifikasi file Anda tersedia di penyimpanan Cloud Shell.
+
+    ```powershell
+    dir
+    ```
+
+1. Di Cloud Shell, pilih **ikon Editor** (kurung kurawal) dan navigasikan ke file JSON parameter.
+
+1. Mengubah. Misalnya, ubah nama disk menjadi **az104-disk2**. Gunakan **Ctrl +S** atau kanan atas **menu Lainnya** untuk menyimpan perubahan Anda. 
+
+    >**Catatan**: Anda dapat menargetkan penyebaran templat anda ke grup sumber daya, langganan, grup manajemen, atau penyewa. Tergantung pada lingkup penyebaran, Anda menggunakan perintah yang berbeda.
+
+1. Untuk menyebarkan ke grup sumber daya, gunakan **New-AzResourceGroupDeployment**.
+
+    ```powershell
+    New-AzResourceGroupDeployment -ResourceGroupName az104-rg3 -TemplateFile template.json -TemplateParameterFile parameters.json
+    ```
+1. Pastikan perintah selesai dan ProvisioningState **Berhasil**.
+
+1. Anda dapat mengonfirmasi bahwa disk dibuat dengan memeriksa portal atau menggunakan **perintah Get-AzDisk** . 
+   
+## Tugas 5: Menyebarkan templat dengan CLI (opsi 2)
+
+1. Buka Cloud Shell dan pilih **Bash**.
+
+1. Jika perlu, gunakan **pengaturan Tingkat Lanjut** untuk membuat penyimpanan disk untuk Cloud Shell.
+
+1. Di Cloud Shell, gunakan **ikon Unggah** untuk mengunggah file templat dan parameter. Anda harus mengunggah setiap file secara terpisah.
+
+1. Verifikasi file Anda tersedia di penyimpanan Cloud Shell.
+
+    ```sh
+    ls
+    ```
+
+1. Di Cloud Shell, pilih **ikon Editor** (kurung kurawal) dan navigasikan ke file JSON parameter.
+
+1. Mengubah. Misalnya, ubah nama disk menjadi **az104-disk3**. Gunakan **Ctrl +S** atau kanan atas **menu Lainnya** untuk menyimpan perubahan Anda. 
+
+    >**Catatan**: Anda dapat menargetkan penyebaran templat anda ke grup sumber daya, langganan, grup manajemen, atau penyewa. Tergantung pada lingkup penyebaran, Anda menggunakan perintah yang berbeda.
+
+1. Untuk menyebarkan ke grup sumber daya, gunakan **buat grup penyebaran az**.
+
+    ```sh
+    az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
+    ```
+1. Pastikan perintah selesai dan ProvisioningState **Berhasil**.
+
+1. Anda dapat mengonfirmasi bahwa disk dibuat dengan memeriksa portal atau menggunakan **perintah az disk list** .
+   
+## Tugas 6: Menyebarkan sumber daya dengan menggunakan Azure Bicep
 
 Dalam tugas ini, Anda akan menggunakan file Bicep untuk menyebarkan akun penyimpanan ke grup sumber daya Anda. Bicep adalah alat otomatisasi deklaratif yang dibangun di atas templat ARM, tetapi lebih mudah dibaca dan dikerjakan.
 
-1. Buka sesi Cloud Shell **Bash** . Jika perlu, gunakan **tautan Tingkat Lanjut** untuk mengonfigurasi penyimpanan. 
-
-1. Pilih **ikon Unggah/Unduh File** di bilah menu Cloud Shell. Ini diwakili oleh ikon dokumen dengan panah atas dan bawah.
+1. Buka sesi Cloud Shell **Bash** . 
 
 1. Pilih **Unggah**. Temukan direktori \Allfiles\Lab03 dan pilih file **templat Bicep azuredeploy.bicep**.
 
@@ -180,62 +241,6 @@ Dalam tugas ini, Anda akan menggunakan file Bicep untuk menyebarkan akun penyimp
 1. Tutup Cloud Shell dan kembali ke Portal Microsoft Azure lengkap. 
 
 1. Cari dan pilih **Akun** Penyimpanan. Verifikasi bahwa akun penyimpanan bernama az104** telah dibuat di **grup sumber daya az104-rg3**.**
-
-## Tugas 5. Sebarkan templat dengan Azure PowerShell (opsi 1).
-
-1. Buka Cloud Shell dan pilih **PowerShell**.
-
-1. Jika perlu, gunakan **pengaturan Tingkat Lanjut** untuk membuat penyimpanan disk untuk Cloud Shell.
-
-1. Di Cloud Shell, gunakan **ikon Unggah** untuk mengunggah file templat dan parameter. Anda harus mengunggah setiap file secara terpisah.
-
-1. Verifikasi file Anda tersedia di penyimpanan Cloud Shell.
-
-    ```powershell
-    dir
-    ```
-
-1. Di Cloud Shell, pilih **ikon Editor** dan navigasikan ke file JSON parameter.
-
-1. Mengubah. Misalnya, ubah nama disk menjadi **az104-disk2**. 
-
-    >**Catatan**: Anda dapat menargetkan penyebaran templat anda ke grup sumber daya, langganan, grup manajemen, atau penyewa. Tergantung pada lingkup penyebaran, Anda menggunakan perintah yang berbeda.
-
-1. Untuk menyebarkan ke grup sumber daya, gunakan **New-AzResourceGroupDeployment**.
-
-    ```powershell
-    New-AzResourceGroupDeployment -ResourceGroupName az104-rg3 -TemplateFile template.json -TemplateParameterFile parameters.json
-    ```
-1. Pastikan perintah selesai dan ProvisioningState **Berhasil**.
-   
-## Tugas 6: Menyebarkan templat dengan CLI (opsi 2)
-
-1. Buka Cloud Shell dan pilih **Bash**.
-
-1. Jika perlu, gunakan **pengaturan Tingkat Lanjut** untuk membuat penyimpanan disk untuk Cloud Shell.
-
-1. Di Cloud Shell, gunakan **ikon Unggah** untuk mengunggah file templat dan parameter. Anda harus mengunggah setiap file secara terpisah.
-
-1. Verifikasi file Anda tersedia di penyimpanan Cloud Shell.
-
-    ```sh
-    dir
-    ```
-
-1. Di Cloud Shell, pilih **ikon Editor** dan navigasikan ke file JSON parameter.
-
-1. Mengubah. Misalnya, ubah nama disk menjadi **az104-disk2**. 
-
-    >**Catatan**: Anda dapat menargetkan penyebaran templat anda ke grup sumber daya, langganan, grup manajemen, atau penyewa. Tergantung pada lingkup penyebaran, Anda menggunakan perintah yang berbeda.
-
-1. Untuk menyebarkan ke grup sumber daya, gunakan **buat grup penyebaran az**.
-
-    ```sh
-    az deployment group create --resource-group az104-rg3 --template-file template.json --parameters parameters.json
-    ```
-1. Pastikan perintah selesai dan ProvisioningState **Berhasil**.
-
-
 
 ## Poin penting
 
