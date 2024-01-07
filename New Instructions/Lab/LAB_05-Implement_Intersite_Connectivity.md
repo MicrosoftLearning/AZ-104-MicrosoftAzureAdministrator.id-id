@@ -12,7 +12,7 @@ Di lab ini Anda akan menjelajahi komunikasi antara jaringan virtual. Anda akan m
 
 Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US** Timur. 
 
-## Perkiraan waktu: 30 menit
+## Perkiraan waktu: 40 menit
 
 ## Skenario lab 
 
@@ -126,7 +126,7 @@ Dalam tugas ini, kami membuat jaringan virtual layanan manufaktur dengan kompute
 
 ## Tugas 3: Uji koneksi antara komputer virtual
 
-Dalam tugas ini, Anda menguji koneksi antara komputer virtual di jaringan virtual yang berbeda.
+Dalam tugas ini, Anda menguji koneksi antara komputer virtual di jaringan virtual yang berbeda. Sebelum melanjutkan, pastikan kedua komputer virtual telah disebarkan dan sedang berjalan. 
 
 ### Memverifikasi alamat IP privat CoreServicesVM
 
@@ -136,7 +136,7 @@ Dalam tugas ini, Anda menguji koneksi antara komputer virtual di jaringan virtua
    
 ### Uji koneksi ke CoreServicesVM dari **ManufacturingVM**.
 
-1. Di portal, pilih dan pilih komputer `ManufacturingVM` virtual.
+1. Beralih ke komputer `ManufacturingVM` virtual.
 
 1. Di bagian **Operasi** , pilih bilah **Jalankan perintah** .
 
@@ -171,6 +171,7 @@ Dalam tugas ini, Anda membuat peering jaringan virtual untuk mengaktifkan komuni
     |                                      | Nama tautan penyerekan                             | `CoreServicesVnet-to-ManufacturingVnet` |
     |                                      | Izinkan Izinkan CoreServicesVNet mengakses jaringan virtual yang di-peering            | dipilih (default)                       |
     |                                      | Izinkan CoreServicesVNet menerima lalu lintas yang diteruskan dari jaringan virtual yang di-peering | dipilih                       |
+    |                                      | Mengizinkan gateway di CoreServicesVNet untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | Tidak dipilih (default) |
     |                                      | Aktifkan CoreServicesVNet untuk menggunakan gateway jarak jauh jaringan virtual yang di-peering       | Tidak dipilih (default)                        |
     | Jaringan virtual jarak jauh               |                                               |                                       |
     |                                      | Nama tautan penyerekan                             | `ManufacturingVnet-to-CoreServicesVnet` |
@@ -180,6 +181,7 @@ Dalam tugas ini, Anda membuat peering jaringan virtual untuk mengaktifkan komuni
     |                                      | Jaringan virtual                               | **ManufacturingVnet**                     |
     |                                      | Izinkan ManufacturingVNet mengakses CoreServicesVNet  | dipilih (default)                       |
     |                                      | Izinkan ManufacturingVNet menerima lalu lintas yang diteruskan dari CoreServicesVNet | dipilih                        |
+   |                                      | Mengizinkan gateway di CoreServicesVNet untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | Tidak dipilih (default) |
     |                                      | Mengaktifkan ManufacturingVNet untuk menggunakan gateway jarak jauh CoreServicesVNet       | Tidak dipilih (default)                        |
 
 1. Tinjau pengaturan Anda dan pilih **Tambahkan**.
@@ -188,7 +190,7 @@ Dalam tugas ini, Anda membuat peering jaringan virtual untuk mengaktifkan komuni
  
 1. Di CoreServicesVnet | Peering, verifikasi bahwa peering **CoreServicesVnet-to-ManufacturingVnet** dicantumkan. Refresh halaman untuk memastikan **status** **Peering Koneksi**.
 
-1. Beralih ke **ManufacturingVnet** dan verifikasi **peering ManufacturingVnet-to-CoreServicesVnet** tercantum. **Pastikan status** **Peering Koneksi**.
+1. Beralih ke **ManufacturingVnet** dan verifikasi **peering ManufacturingVnet-to-CoreServicesVnet** tercantum. **Pastikan status** **Peering Koneksi**. Anda mungkin perlu melakukan **Refresh** halamannya. 
 
  
 ## Tugas 5: Uji koneksi antara VM

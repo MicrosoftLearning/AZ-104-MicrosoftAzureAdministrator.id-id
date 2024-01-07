@@ -38,7 +38,7 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 
 ## Tugas 1: Membuat dan mengonfigurasi akun penyimpanan privat. 
 
-Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan.
+Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun penyimpanan akan menggunakan penyimpanan geo-redundan dan tidak akan memiliki akses publik. 
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
@@ -72,19 +72,19 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan.
 
 1. Di bagian **Keamanan + Jaringan** , pilih **Jaringan**. Perhatikan bahwa akses jaringan publik dinonaktifkan.
 
-+ **Ubah tingkat** akses publik menjadi **Diaktifkan dari jaringan virtual dan alamat** IP yang dipilih.
-+ Di bagian **Firewall** , centang kotak untuk **Tambahkan alamat IP klien Anda.**
-+ Pastikan untuk **Menyimpan** perubahan Anda. 
+    + **Ubah tingkat** akses publik menjadi **Diaktifkan dari jaringan virtual dan alamat** IP yang dipilih.
+    + Di bagian **Firewall** , centang kotak untuk **Tambahkan alamat IP klien Anda.**
+    + Pastikan untuk **Menyimpan** perubahan Anda. 
   
 1. Di bagian **Manajemen data** , lihat bilah **Redundansi** . Perhatikan informasi tentang lokasi pusat data primer dan sekunder Anda.
 
 1. Di bagian **Manajemen data** , pilih **Manajemen** siklus hidup, lalu pilih **Tambahkan aturan**.
 
-+ **Beri nama** aturan `Movetocool`. Perhatikan opsi Anda untuk membatasi cakupan aturan.
-
-+ Pada tab **Blob** dasar, *jika* blob berbasis terakhir dimodifikasi lebih dari `30 days` yang lalu *, pindahkan* **ke penyimpanan** dingin.
-
-+ Perhatikan bahwa Anda dapat mengonfigurasi kondisi lain. Pilih **Tambahkan** saat Anda selesai menjelajahi.
+    + **Beri nama** aturan `Movetocool`. Perhatikan opsi Anda untuk membatasi cakupan aturan.
+    
+    + Pada tab **Blob** dasar, *jika* blob berbasis terakhir dimodifikasi lebih dari `30 days` yang lalu *, pindahkan* **ke penyimpanan** dingin.
+    
+    + Perhatikan bahwa Anda dapat mengonfigurasi kondisi lain. Pilih **Tambahkan** saat Anda selesai menjelajahi.
 
     ![Cuplikan layar berpindah ke kondisi aturan dingin.](../media/az104-lab07-movetocool.png)
 
@@ -124,7 +124,7 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob. Kontainer
 
 1. Pada bilah **Unggah blob** , perluas bagian **Tingkat Lanjut** .
 
-   >**Catatan**: Temukan file untuk diunggah. Ini bisa berupa semua jenis file, tetapi file kecil adalah yang terbaik. 
+>**Catatan**: Temukan file untuk diunggah. Ini bisa berupa semua jenis file, tetapi file kecil adalah yang terbaik. 
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -134,8 +134,6 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob. Kontainer
     | Tingkat penyimpanan | **Panas**  (perhatikan opsi lainnya) |
     | Unggah ke folder | `securitytest` |
     | Cakupan enkripsi | Gunakan lingkup kontainer default yang ada |
-
-    > **Catatan**: Tingkat akses dapat diatur untuk blob individual.
 
 1. Klik **Unggah**.
 
@@ -173,7 +171,7 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob. Kontainer
 
 ## Tugas 5: Membuat dan mengonfigurasi berbagi File Azure
 
-Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files. 
+Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files. Anda akan menggunakan Browser Penyimpanan untuk mengelola berbagi file. 
 
 ### Membuat berbagi file dan mengunggah file
 

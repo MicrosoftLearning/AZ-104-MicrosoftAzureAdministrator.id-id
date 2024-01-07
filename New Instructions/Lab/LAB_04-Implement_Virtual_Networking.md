@@ -66,9 +66,9 @@ Jaringan virtual dan subnet ini disusun dengan cara yang mengakomodasi sumber da
 
 Organisasi merencanakan sejumlah besar pertumbuhan untuk layanan inti. Dalam tugas ini, Anda membuat jaringan virtual dan subnet terkait untuk mengakomodasi sumber daya yang ada dan pertumbuhan yang direncanakan.
 
-1. Cari dan pilih **Virtual Networks**.
+1. Cari dan pilih `Virtual Networks`.
 
-1. Pilih **Buat** di halaman Jaringan virtual dan lengkapi **alamat** Dasar** dan **IPv4. 
+1. Pilih **Buat** di halaman Jaringan virtual dan lengkapi **tab Dasar** dan **alamat** IP. 
 
 1. Gunakan informasi dalam tabel berikut untuk membuat jaringan virtual CoreServicesVnet.  
 
@@ -77,10 +77,8 @@ Organisasi merencanakan sejumlah besar pertumbuhan untuk layanan inti. Dalam tug
     | Dasar       | Grup Sumber Daya     | **az104-rg4** |
     |              | Nama               | `CoreServicesVnet`     |
     |              | Wilayah             | (US) **US Timur**         |
-    | Alamat IP | Ruang alamat IPv4 | `10.20.0.0/16` (Hapus atau timpa ruang alamat IP)     |
+    | Alamat IP | Ruang alamat IPv4 | `10.20.0.0/16` (pisahkan entri)    |
 
-
-1. Di area subnet, hapus **subnet default** .
 
 1. Pilih **+ Tambahkan subnet**. Lengkapi informasi nama dan alamat untuk setiap subnet. Pastikan untuk memilih **Tambahkan** untuk setiap subnet baru. 
 
@@ -204,7 +202,7 @@ Dalam tugas ini, kami membuat Kelompok Keamanan Aplikasi dan Kelompok Keamanan J
 
 1. Pilih **+ Tambah**.
 
-1. Pada bilah **Tambahkan aturan** port masuk, gunakan informasi berikut untuk menambahkan aturan port masuk, lalu pilih **Tambahkan**.
+1. Pada bilah **Tambahkan aturan** keamanan masuk, gunakan informasi berikut untuk menambahkan aturan port masuk, lalu pilih **Tambahkan**.
 
     | Pengaturan | Nilai |
     | -- | -- |
