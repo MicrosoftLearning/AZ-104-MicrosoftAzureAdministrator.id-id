@@ -16,7 +16,7 @@ Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi keter
 
 ## Skenario lab
 
-Organisasi Anda sedang mengevaluasi Azure Recovery Services untuk pencadangan dan pemulihan komputer virtual Azure. Organisasi ingin mengidentifikasi metode melindungi data dari kehilangan data yang tidak disengaja atau berbahaya.
+Organisasi Anda sedang mengevaluasi cara mencadangkan dan memulihkan komputer virtual Azure dari kehilangan data yang tidak disengaja atau berbahaya. Selain itu, organisasi ingin menjelajahi menggunakan Azure Site Recovery untuk skenario pemulihan bencana. 
 
 ## Simulasi lab interaktif
 

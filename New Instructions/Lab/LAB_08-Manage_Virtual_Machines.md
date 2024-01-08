@@ -8,7 +8,7 @@ lab:
 
 ## Pengenalan lab
 
-Di lab ini, Anda membandingkan penskalaan manual komputer virtual dengan penskalaan otomatis komputer virtual. Anda mempelajari cara mengonfigurasi dan mengubah ukuran satu komputer virtual. Anda mempelajari cara membuat set skala komputer virtual dan mengonfigurasi penskalakan otomatis.
+Di lab ini, Anda membuat dan membandingkan komputer virtual dengan set skala komputer virtual. Anda mempelajari cara meng-creeate, mengonfigurasi, dan mengubah ukuran satu komputer virtual. Anda mempelajari cara membuat set skala komputer virtual dan mengonfigurasi penskalakan otomatis.
 
 Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan US Timur.
 
@@ -16,7 +16,7 @@ Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi keter
 
 ## Skenario lab
 
-Organisasi Anda ingin menjelajahi penyebaran dan konfigurasi komputer virtual Azure. Pertama, Anda perlu menentukan opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang berbeda yang dapat Anda terapkan saat menggunakan mesin virtual Azure. Selanjutnya, Anda perlu menyelidiki opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang tersedia saat menggunakan kumpulan skala mesin virtual Azure.
+Organisasi Anda ingin menjelajahi penyebaran dan konfigurasi komputer virtual Azure. Pertama, Anda menerapkan komputer virtual Azure dengan penskalakan manual. Selanjutnya, terapkan Virtual Machine Scale Set dan jelajahi autoscaling.
 
 ## Simulasi lab interaktif
 
@@ -36,9 +36,6 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 + Tugas 5: Membuat komputer virtual menggunakan Azure PowerShell (opsi 1)
 + Tugas 6: Membuat komputer virtual menggunakan CLI (opsi 2) 
 
-
-
-
 ## Tugas 1 dan 2: Diagram Arsitektur Azure Virtual Machines
 
 ![Diagram tugas arsitektur.](../media/az104-lab08a-architecture-diagram.png)
@@ -49,13 +46,13 @@ Dalam tugas ini, Anda akan menyebarkan dua komputer virtual Azure ke zona keters
 
 1. Masuk ke portal Azure - `https://portal.azure.com`.
 
-1. Cari dan pilih `Virtual machines` dan, pada bilah **Komputer** virtual, klik **+ Buat**, lalu pilih di menu drop-down **+ komputer virtual** Azure.
+1. Cari dan pilih `Virtual machines`, pada bilah **Komputer** virtual, klik **+ Buat**, lalu pilih di menu drop-down **+ komputer** virtual Azure. Perhatikan pilihan Anda yang lain. 
 
-1. Pada tab **Dasar dari bilah **Buat komputer** virtual, di menu drop-down Zona** ketersediaan, letakkan tanda centang di **samping **Zona 2**.** Ini harus memilih **Zona 1** dan **Zona 2**.
+1. Pada tab **Dasar, di **menu drop-down Zona** ketersediaan, letakkan tanda centang di samping **Zona 2****. Ini harus memilih **Zona 1** dan **Zona 2**.
 
-    >**Catatan**: Ini akan menyebarkan dua komputer virtual di wilayah yang dipilih, satu di setiap zona. Anda mencapai SLA waktu aktif 99,99% karena Anda memiliki setidaknya dua VM yang didistribusikan di setidaknya dua zona. Dalam skenario di mana Anda mungkin hanya memerlukan satu VM, ini adalah praktik terbaik untuk masih menyebarkan VM ke zona untuk memastikan bahwa disk dan sumber daya yang sesuai terletak di zona yang sama.
+    >**Catatan**: Ini akan menyebarkan dua komputer virtual di wilayah yang dipilih, satu di setiap zona. Anda mencapai SLA waktu aktif 99,99% karena Anda memiliki setidaknya dua VM yang didistribusikan di setidaknya dua zona. Dalam skenario di mana Anda mungkin hanya memerlukan satu VM, ini adalah praktik terbaik untuk masih menyebarkan VM ke zona lain.
 
-1. Pada tab Dasar, gunakan pengaturan berikut untuk menyelesaikan bidang (biarkan bidang lain dengan nilai defaultnya):
+1. Pada tab Dasar, lanjutkan menyelesaikan konfigurasi:
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -83,6 +80,7 @@ Dalam tugas ini, Anda akan menyebarkan dua komputer virtual Azure ke zona keters
     | Pengaturan | Nilai |
     | --- | --- |
     | Jenis disk OS | **SSD Premium** |
+    | Hapus dengan VM | **dicentang** (default) |
     | Mengaktifkan kompatibilitas Ultra Disk | **Tidak Dicentang** |
 
 1. Klik **Berikutnya: Jaringan >** mengambil default tetapi tidak menyediakan load balancer. 
@@ -105,13 +103,15 @@ Dalam tugas ini, Anda akan menyebarkan dua komputer virtual Azure ke zona keters
 
 1. Pada bilah **Tinjau + Buat**, klik **Buat**.
 
-    >**Catatan:** Pantau **pesan Pemberitahuan** dan tunggu hingga penyebaran selesai. 
+    >**Catatan:** Pantau **pesan Pemberitahuan** .
+
+1. Tunggu hingga penyebaran selesai, lalu pilih **Buka sumber daya**. 
 
 ## Tugas 2: Mengelola komputasi dan penskalaan penyimpanan untuk komputer virtual
 
-Dalam tugas ini, Anda akan menskalakan komputasi untuk komputer virtual dengan menyesuaikan ukurannya ke SKU yang berbeda. Azure memberikan fleksibilitas dalam pemilihan ukuran VM sehingga Anda dapat menyesuaikan VM untuk jangka waktu tertentu jika membutuhkan lebih banyak komputasi (atau kurang) dan memori yang dialokasikan. Konsep ini diperluas ke disk, di mana Anda dapat memodifikasi performa disk, atau meningkatkan kapasitas yang dialokasikan.
+Dalam tugas ini, Anda akan menskalakan komputer virtual dengan menyesuaikan ukurannya ke SKU yang berbeda. Azure memberikan fleksibilitas dalam pemilihan ukuran VM sehingga Anda dapat menyesuaikan VM untuk jangka waktu tertentu jika membutuhkan lebih banyak komputasi (atau kurang) dan memori yang dialokasikan. Konsep ini diperluas ke disk, di mana Anda dapat memodifikasi performa disk, atau meningkatkan kapasitas yang dialokasikan.
 
-1. Di portal Azure, cari dan pilih **az104-vm1**.
+1. Lanjutkan bekerja dengan **komputer virtual az104-vm1** .
 
 1. Pada bilah **komputer virtual az104-vm1** , klik **Ukuran** dan atur ukuran komputer virtual ke **DS1_v2** dan klik **Mengubah Ukuran**
 
@@ -119,9 +119,9 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk komputer virtual dengan m
 
     ![Cuplikan layar mengubah ukuran komputer virtual.](../media/az104-lab08-resize-vm.png)
 
-1. Pada bilah **komputer virtual az104-vm1** , klik **Disk**, Di bawah **Disk data** klik **+ Buat dan lampirkan disk** baru.
+1. **Di area Pengaturan**, pilih **Disk**.
 
-1. Buat disk terkelola dengan pengaturan berikut (biarkan opsi yang lain dengan nilai defaultnya):
+1. Di bawah **Disk data** pilih **+ Buat dan lampirkan disk** baru. Konfigurasikan pengaturan (biarkan pengaturan lain pada nilai defaultnya). 
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -131,23 +131,23 @@ Dalam tugas ini, Anda akan menskalakan komputasi untuk komputer virtual dengan m
 
 1. Klik **Terapkan**.
 
-1. Setelah disk dibuat, klik **Lepaskan**, lalu klik **Terapkan**.
-    
-    >**Catatan**: Anda mungkin perlu menggulir ke kanan untuk melihat ikon lepaskan**.
+1. Setelah disk dibuat, klik **Lepaskan** (jika perlu gulir ke kanan untuk melihat ikon lepas), lalu klik **Terapkan**.
 
-1. Dari portal Azure, cari dan pilih `Disks`.
+    >**Catatan**: Melepaskan menghapus disk dari VM, tetapi menyimpannya di penyimpanan untuk digunakan nanti.. 
 
-1. Dari daftar disk, pilih **objek vm1-disk1** .
+1. Cari dan pilih `Disks`. Dari daftar disk, pilih **objek vm1-disk1** .
 
-1. Dari vm1-disk1, pilih **Ukuran + performa**.
+    >**Catatan:** Bilah **Gambaran Umum** menyediakan informasi performa dan penggunaan untuk disk. 
 
-1. Dari Ukuran + performa, atur jenis penyimpanan ke **SSD** Standar, lalu klik **Simpan**.
+1. Di bilah **Pengaturan, pilih **Ukuran + performa****.
 
-    >**Catatan**: Anda tidak dapat mengubah jenis penyimpanan disk saat dilampirkan atau saat VM berjalan. 
+1. Atur jenis penyimpanan ke **SSD** Standar, lalu klik **Simpan**.
 
 1. Navigasi kembali ke **komputer virtual az104-vm1** dan pilih **Disk**.
 
-1. Verifikasi disk sekarang **HDD** Standar.
+1. Verifikasi bahwa disk sekarang **adalah SSD** Standar.
+
+>**Catatan:** Anda sekarang telah membuat komputer virtual, mengubah SKU dan ukuran disk data. Dalam tugas berikutnya kita menggunakan Virtual Machine Scale Sets untuk mengotomatiskan proses penskalakan. 
 
 ## Tugas 3 dan 4: Diagram Arsitektur Set Skala Komputer Virtual Azure
 
@@ -267,13 +267,16 @@ Dalam tugas ini, Anda menskalakan set skala komputer virtual menggunakan aturan 
 
 1. Pilih **Penskalaan** dari menu di sisi kiri dari jendela set skala.
 
-1. **Perhatikan bahwa mode** Skala dapat berupa **Skala berdasarkan metrik atau **Skalakan ke jumlah** instans** tertentu. Dalam set skala dengan sejumlah kecil instans VM, meningkatkan atau mengurangi jumlah instans mungkin yang terbaik. Dalam set skala dengan sejumlah besar instans VM, penskalaan berdasarkan metrik mungkin lebih tepat.
+>**Catatan:** Perhatikan bahwa Anda dapat **menskalakan**** manual atau **Skala otomatis kustom. Dalam set skala dengan sejumlah kecil instans VM, meningkatkan atau mengurangi jumlah instans (Skala manual) mungkin yang terbaik. Dalam set skala dengan sejumlah besar instans VM, penskalaan berdasarkan metrik (Skala otomatis kustom) mungkin lebih sesuai.
 
-1. Pilih tombol untuk **Skala otomatis kustom**. Lalu pilih **Tambahkan aturan**. 
+
 
 ### Aturan peluasan skala
 
-1. Mari kita buat aturan peluasan skala yang secara otomatis meningkatkan jumlah instans VM. Aturan ini diskalakan ketika beban CPU rata-rata lebih besar dari 70% selama periode 10 menit. Ketika aturan memicu, jumlah instans VM bertambah sebanyak 20%. Klik **Tambahkan** setelah membuat pilihan Anda. 
+1. Pilih **Skala otomatis kustom**. lalu ubah **mode Skala menjadi **Skala berdasarkan metrik****. Lalu pilih **Tambahkan aturan**.
+   
+1. Mari kita buat aturan yang secara otomatis meningkatkan jumlah instans VM. Aturan ini diskalakan ketika beban CPU rata-rata lebih besar dari 70% selama periode 10 menit. Ketika aturan memicu, jumlah instans VM bertambah sebanyak 20%.
+
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -295,7 +298,9 @@ Dalam tugas ini, Anda menskalakan set skala komputer virtual menggunakan aturan 
 
 1. Selama malam atau akhir pekan, permintaan dapat menurun sehingga penting untuk membuat aturan skala.
 
-1. Mari kita buat aturan yang mengurangi jumlah instans VM dalam set skala. Jumlah instans harus berkurang ketika beban CPU rata-rata turun di bawah 30% selama periode 10 menit. Ketika aturan memicu, jumlah instans VM berkurang sebanyak 20%. Sesuaikan pengaturan, lalu pilih **Tambahkan**.
+1. Mari kita buat aturan yang mengurangi jumlah instans VM dalam set skala. Jumlah instans harus berkurang ketika beban CPU rata-rata turun di bawah 30% selama periode 10 menit. Ketika aturan memicu, jumlah instans VM berkurang sebanyak 20%.
+
+1. Pilih **Tambahkan aturan**, sesuaikan pengaturan, lalu pilih **Tambahkan**.
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -320,6 +325,8 @@ Dalam tugas ini, Anda menskalakan set skala komputer virtual menggunakan aturan 
 
 1. Pada halaman **vmss1** , pilih **Instans**. Di sinilah Anda akan memantau jumlah instans komputer virtual. 
 
+>**Catatan:** Jika Anda tertarik menggunakan Azure PowerShell untuk pembuatan komputer virtual, coba Tugas 5. Jika tertarik menggunakan CLI untuk membuat komputer virtual, coba Tugas 6. 
+
 ## Tugas 5: Membuat komputer virtual menggunakan Azure PowerShell (opsi 1)
 
 1. Masuk ke portal Azure - `https://portal.azure.com`.
@@ -339,23 +346,26 @@ Dalam tugas ini, Anda menskalakan set skala komputer virtual menggunakan aturan 
     -Zone '1' `
     -Size 'Standard_D2s_v3' 
     -Credential '(Get-Credential)' `
-
-1. Once the command completes, use **Get-AzVM** to list the virtual machines in your resource group. 
+    ```
+    
+1. Setelah perintah selesai, gunakan **Get-AzVM** untuk mencantumkan komputer virtual di grup sumber daya Anda. 
 
     ```powershell
     Get-AzVM `
     -ResourceGroupName 'az104-rg8'
     -Status
+    ```
+    
+1. Verifikasi bahwa komputer virtual baru Anda tercantum dan **Status** Sedang **Berjalan**.
 
-1. Verify your new virtual machine is listed and the **Status** is **Running**.
-
-1. Use **Stop-AzVM** to deallocate your virtual machine. Type **Yes** to confirm. 
+1. Gunakan **Stop-AzVM** untuk membatalkan alokasi komputer virtual Anda. Ketik **Ya** untuk mengonfirmasi. 
 
     ```
     Stop-AzVM `
     -ResourceGroupName 'az104-rg8'
     -Name 'myPSVM' `
-
+    ```
+    
 1. Gunakan Get-AzVM** dengan **parameter -Status** untuk memverifikasi bahwa komputer dibatalkan alokasinya****.**
 
     >**Apakah Anda tahu?** Saat Anda menggunakan Azure untuk menghentikan komputer virtual Anda, status dibatalkan alokasinya**. Ini berarti bahwa IP publik non-statis dirilis, dan Anda berhenti membayar biaya komputasi VM.
