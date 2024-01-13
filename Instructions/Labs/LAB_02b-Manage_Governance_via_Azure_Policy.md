@@ -27,7 +27,7 @@ Di lab ini, kami akan:
 + Tugas 2: Menerapkan pemberian tag melalui kebijakan Azure
 + Tugas 3: Menerapkan pemberian tag melalui kebijakan Azure
 
-## Perkiraan waktu: 30 menit
+## Perkiraan waktu: 60 menit
 
 ## Diagram arsitektur
 
@@ -70,7 +70,7 @@ Dalam tugas ini, Anda akan membuat dan menetapkan tag ke grup sumber daya Azure 
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | **Peran** |
-    | Nilai | **Infra** |
+    | Value | **Infra** |
 
 1. Klik **Terapkan** dan tutup jendela edisi tag untuk menavigasi kembali ke bilah akun penyimpanan. klik elipsis pada akun penyimpanan dan pilih **Edit tag** untuk mencatat bahwa tag baru tidak secara otomatis ditetapkan ke akun penyimpanan. 
 
