@@ -8,7 +8,7 @@ lab:
 
 # Panduan lab siswa
 
-## Skenario laboratorium
+## Skenario lab
 
 Anda perlu menjelajahi kemampuan jaringan virtual Azure. Untuk memulai, Anda berencana membuat jaringan virtual di Azure yang akan menghosting beberapa mesin virtual Azure. Karena Anda bermaksud menerapkan segmentasi berbasis jaringan, Anda akan menerapkannya ke subnet yang berbeda dari jaringan virtual. Anda juga ingin memastikan bahwa alamat IP pribadi dan publik mereka tidak akan berubah seiring waktu. Untuk mematuhi persyaratan keamanan Contoso, Anda perlu melindungi titik akhir publik dari mesin virtual Azure yang dapat diakses dari internet. Terakhir, Anda perlu menerapkan resolusi nama DNS untuk mesin virtual Azure baik di dalam jaringan virtual maupun dari Internet.
 
@@ -76,8 +76,8 @@ Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet mengg
     | --- | --- |
     | Nama | **subnet1** |
     | Rentang alamat (blok CIDR) | **10.40.1.0/24** |
-    | Grup keamanan jaringan | **Tidak ada** |
-    | Tabel rute | **Tidak ada** |
+    | Grup keamanan jaringan | **Tidak** |
+    | Tabel rute | **Tidak** |
 
 1. Klik **Simpan**
 
@@ -160,6 +160,8 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
 1. Pilih **Kaitkan alamat** IP publik dan di **drop-down Alamat** IP publik pilih **az104-04-pip0**.
 
+>**Catatan:** Jika Anda menerima kesalahan, *nama domain sudah digunakan*, ini adalah masalah yang diketahui. Anda harus menemukan alamat IP publik dan mengaitkannya ke NIC secara terpisah. 
+
 1. Pilih **Simpan**.
 
 1. Navigasi kembali ke bilah **az104-04-vnet1** .
@@ -173,6 +175,8 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 1. Pastikan Alokasi** Statis****.**
 
 1. Pilih **Kaitkan alamat** IP publik dan di **drop-down Alamat** IP publik pilih **az104-04-pip1**.
+
+>**Catatan:** Jika Anda menerima kesalahan, *nama domain sudah digunakan*, ini adalah masalah yang diketahui. Anda harus menemukan alamat IP publik dan mengaitkannya ke NIC secara terpisah. 
 
 1. Pilih **Simpan**.
    
@@ -224,7 +228,7 @@ Dalam tugas ini, Anda akan mengonfigurasi kelompok keamanan jaringan untuk mengi
     | Sumber | **Mana pun** |
     | Source port ranges | * |
     | Tujuan | **Mana pun** |
-    | Layanan | **RDP** |
+    | Service | **RDP** |
     | Tindakan
            | **Izinkan** |
     | Prioritas | **300** |
@@ -335,8 +339,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | **az104-04-vm0** |
-    | Jenis | **A**
-           |
+    | Jenis | **A** |
     | Kumpulan catatan alias | **Tidak** |
     | TTL | **1** |
     | Unit TTL | **Jam** |
@@ -351,8 +354,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | **az104-04-vm1** |
-    | Jenis | **A**
-           |
+    | Jenis | **A** |
     | Kumpulan catatan alias | **Tidak** |
     | TTL | **1** |
     | Unit TTL | **Jam** |
@@ -402,7 +404,7 @@ Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan men
 
     >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-## Tinjau
+## Tinjauan
 
 Di lab ini, Anda telah:
 
