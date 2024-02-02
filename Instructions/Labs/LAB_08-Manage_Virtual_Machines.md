@@ -7,7 +7,7 @@ lab:
 # Lab 08 - Kelola Virtual Machines
 # Panduan lab siswa
 
-## Skenario laboratorium
+## Skenario lab
 
 Anda ditugaskan untuk mengidentifikasi berbagai opsi untuk menyebarkan dan mengonfigurasi mesin virtual Azure. Pertama, Anda perlu menentukan opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang berbeda yang dapat Anda terapkan saat menggunakan mesin virtual Azure. Selanjutnya, Anda perlu menyelidiki opsi ketahanan dan skalabilitas komputasi dan penyimpanan yang tersedia saat menggunakan kumpulan skala mesin virtual Azure. Anda juga ingin menjelajahi kemampuan untuk secara otomatis mengonfigurasi mesin virtual dan kumpulan skala mesin virtual menggunakan ekstensi Skrip Kustom Komputer Virtual Azure.
 
@@ -59,7 +59,7 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
     | Ukuran | **Standar D2s v3** |
     | Nama Pengguna | **Mahasiswa** |
     | Kata sandi | **Berikan kata sandi yang aman, minimal 12 karakter** |
-    | Port masuk publik | **Tidak ada** |
+    | Port masuk publik | **Tidak** |
     | Apakah Anda ingin menggunakan lisensi Windows Server yang sudah ada? | **Tidak Dicentang** |
 
 1. Klik **Berikutnya: Disk >** dan, pada tab **Disk** dari bilah **Buat komputer** virtual, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
@@ -87,9 +87,9 @@ Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke zona ketersediaan 
     | Subnet | **subnet0** |
     | IP Publik | **Default** |
     | kelompok keamanan jaringan NIC | **dasar** |
-    | Port masuk publik | **Tidak ada** |
+    | Port masuk publik | **Tidak** |
     | Jaringan yang dipercepat | **Off**
-    | Opsi penyeimbangan muatan | **Tidak ada** |
+    | Opsi penyeimbangan muatan | **Tidak** |
 
 1. Klik **Berikutnya: Manajemen >** dan, pada tab **Manajemen** dari bilah **Buat komputer** virtual, tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
@@ -495,7 +495,7 @@ Dalam tugas ini, Anda akan menginstal peran Windows Server Web Server pada conto
 
     >**Catatan**: Tunggu hingga penginstalan ekstensi selesai sebelum melanjutkan ke langkah berikutnya.
 
-1. Di bagian **Pengaturan** pada bilah **az10408vmss0**, klik **Instans**, beri centang kotak di samping dua instans kumpulan skala mesin virtual, klik **Tingkatkan**, lalu saat diminta konfirmasi, klik **Ya**.
+1. Di bagian **Gambaran Umum** bilah **az10408vmss0** , klik **Instans**, pilih kotak centang di samping dua instans set skala komputer virtual, klik **Tingkatkan**, lalu, saat dimintai konfirmasi, klik **Ya**.
 
     >**Catatan**: Tunggu hingga peningkatan selesai sebelum melanjutkan ke langkah berikutnya.
 
@@ -658,7 +658,7 @@ Dalam tugas ini, Anda akan mengubah ukuran instans kumpulan skala mesin virtual,
 
     >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-## Tinjau
+## Tinjauan
 
 Di lab ini, Anda telah:
 
