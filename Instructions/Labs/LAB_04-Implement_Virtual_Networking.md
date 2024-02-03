@@ -52,9 +52,9 @@ Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet mengg
     | Nama | **az104-04-vnet1** |
     | Wilayah | nama wilayah Azure yang tersedia dalam langganan yang akan Anda gunakan di lab ini |
 
-1. Klik **Berikutnya: Alamat IP**. Alamat **** awal adalah **10.40.0.0**. Ukuran **** ruang Alamat adalah **/20**. Pastikan untuk mengklik **Tambahkan**. 
+1. Klik **Berikutnya: Alamat IP**. Alamat **** awal adalah **10.40.0.0**. Ukuran **** ruang Alamat adalah **/20**. 
 
-1. Klik **+ Tambahkan subnet** masukkan nilai berikut lalu klik **Tambahkan**.
+1. Klik **+ Tambahkan subnet**. Hapus subnet default** yang **ada. Masukkan nilai berikut lalu klik **Tambahkan**. 
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -160,7 +160,14 @@ Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan 
 
 1. Pilih **Kaitkan alamat** IP publik dan di **drop-down Alamat** IP publik pilih **az104-04-pip0**.
 
->**Catatan:** Jika Anda menerima kesalahan, *nama domain sudah digunakan*, ini adalah masalah yang diketahui. Anda harus menemukan alamat IP publik dan mengaitkannya ke NIC secara terpisah. 
+    >**Catatan:** Jika Anda menerima kesalahan, *nama domain sudah digunakan*, ini adalah masalah yang diketahui. Anda harus menemukan alamat IP publik dan mengaitkannya ke NIC secara terpisah.
+    >
+    > + **Buka Alamat IP publik**
+    > + Klik **az104-04-pip0**
+    > + Di panel **Gambaran Umum** klik **Kaitkan IP**
+    > + Atur **Jenis** sumber daya ke **Antarmuka jaringan**
+    > + Atur **Antarmuka jaringan** ke **az104-04-nic0**
+    > + Ulangi untuk **az104-04-pip1** dan **az104-04-nic1**
 
 1. Pilih **Simpan**.
 
