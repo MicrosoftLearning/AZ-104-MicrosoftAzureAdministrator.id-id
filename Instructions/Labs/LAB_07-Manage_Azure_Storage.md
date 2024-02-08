@@ -7,7 +7,7 @@ lab:
 # Lab 07 - Mengelola Azure Storage
 # Panduan lab siswa
 
-## Skenario laboratorium
+## Skenario lab
 
 Anda perlu mengevaluasi penggunaan penyimpanan Azure untuk menyimpan file yang saat ini berada di penyimpanan data lokal. Meskipun sebagian besar file ini tidak sering diakses, ada beberapa pengecualian. Anda ingin meminimalkan biaya penyimpanan dengan menempatkan file yang jarang diakses di tingkat penyimpanan dengan harga lebih rendah. Selain itu, rencanakan untuk menjelajahi berbagai mekanisme perlindungan yang ditawarkan Azure Storage, termasuk akses jaringan, autentikasi, otorisasi, dan replikasi. Terakhir, Anda ingin menentukan sejauh mana layanan Azure Files mungkin cocok untuk menghosting berbagi file lokal Anda.
 
@@ -204,9 +204,9 @@ Dalam tugas ini, Anda akan mengonfigurasi autentikasi dan otorisasi Azure Storag
 
 1. Tutup jendela browser mode InPrivate, kembali ke jendela browser yang menampilkan bilah **lisensi/LICENSE** dari kontainer Azure Storage, dan dari sana, navigasikan kembali ke bilah **az104-07-container**.
 
-1. Klik tautan **Beralih ke Akun Pengguna Azure AD** di samping label **Metode autentikasi**.
+1. **Klik tautan Beralih ke Akun** Pengguna Microsoft Entra di **samping label Metode** autentikasi.
 
-    > **Catatan**: Anda dapat melihat kesalahan saat mengubah metode autentikasi (kesalahannya adalah *"Anda tidak memiliki izin untuk mencantumkan data menggunakan akun pengguna Anda dengan Microsoft Azure AD"*). Hal ini diharapkan.  
+    > **Catatan**: Anda dapat melihat kesalahan saat mengubah metode autentikasi (kesalahannya adalah *"Anda tidak memiliki izin untuk mencantumkan data menggunakan akun pengguna Anda dengan Microsoft Entra"*). Hal ini diharapkan.  
 
     > **Catatan**: Pada titik ini, Anda tidak memiliki izin untuk mengubah metode Autentikasi.
 
@@ -222,7 +222,7 @@ Dalam tugas ini, Anda akan mengonfigurasi autentikasi dan otorisasi Azure Storag
     | Tetapkan akses ke | **Pengguna, grup, atau perwakilan layanan** |
     | Anggota | nama akun pengguna Anda |
 
-1. Klik **Tinjau + Tetapkan** lalu **Tinjau + tetapkan**, dan kembali ke bilah **Ringkasan** dari wadah **az104-07-container** dan verifikasi bahwa Anda dapat mengubah metode Autentikasi ke (Beralih ke Akun Pengguna Azure AD).
+1. Klik **Tinjau + Tetapkan** lalu **Tinjau + tetapkan**, dan kembali ke **bilah **Gambaran Umum** kontainer az104-07-container** dan verifikasi bahwa Anda dapat mengubah metode Autentikasi menjadi (Beralih ke Akun Pengguna Microsoft Entra).
 
     > **Catatan**: Mungkin perlu waktu sekitar 5 menit agar perubahan diterapkan.
 
@@ -329,7 +329,7 @@ Dalam tugas ini, Anda akan mengonfigurasi akses jaringan Azure Storage.
 
     >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
 
-## Tinjau
+## Tinjauan
 
 Di lab ini, Anda telah:
 
