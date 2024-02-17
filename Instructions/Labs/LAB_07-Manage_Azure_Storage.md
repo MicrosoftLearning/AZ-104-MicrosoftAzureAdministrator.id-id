@@ -286,17 +286,17 @@ Dalam tugas ini, Anda akan mengonfigurasi akses jaringan Azure Storage.
 
     > **Catatan**: Jika Anda tidak merekam URL SAS dari tugas 4, Anda harus membuat url baru dengan konfigurasi yang sama. Gunakan Tugas 4 langkah 4-6 sebagai panduan untuk membuat URL blob SAS baru. 
 
-1. Anda akan disajikan dengan konten laman **Lisensi MIT (MIT)**.
+1. Anda harus dapat mengunduh file LICENSE.txt.
 
     > **Catatan**: Ini diharapkan, karena Anda terhubung dari alamat IP klien Anda.
 
 1. Tutup jendela browser mode InPrivate, kembali ke jendela browser yang menampilkan bilah **Jaringan** akun Azure Storage.
 
-1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
+1. Di portal Azure, cari dan pilih **Komputer virtual**, dan, dalam daftar komputer virtual, klik **az104-07-vm0**.
 
-1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
+1. Pada bilah **az104-07-vm0**, di bagian **Operasi**, klik **Jalankan perintah**.
 
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk mencoba mengunduh blob LICENSE dari penampung **az104-07-kontainer** akun penyimpanan (ganti `[blob SAS URL]` tempat penampung dengan URL blob SAS yang Anda buat di tugas sebelumnya):
+1. Pada bilah **Jalankan Skrip** Perintah, jalankan yang berikut ini di **panel Skrip** PowerShell untuk mencoba mengunduh blob LISENSI dari **kontainer az104-07-container** akun penyimpanan (ganti `[blob SAS URL]` tempat penampung dengan URL SAS blob yang Anda buat di tugas sebelumnya):
 
    ```powershell
    Invoke-WebRequest -URI '[blob SAS URL]'
@@ -304,8 +304,6 @@ Dalam tugas ini, Anda akan mengonfigurasi akses jaringan Azure Storage.
 1. Verifikasi bahwa upaya pengunduhan gagal.
 
     > **Catatan**: Anda harus menerima pesan yang menyatakan **AuthorizationFailure: Permintaan ini tidak berwenang untuk melakukan operasi** ini. Hal ini diharapkan, karena Anda terhubung dari alamat IP yang ditetapkan ke Azure VM yang menghosting instans Cloud Shell.
-
-1. Tutup panel Cloud Shell.
 
 ## Membersihkan sumber daya
 
