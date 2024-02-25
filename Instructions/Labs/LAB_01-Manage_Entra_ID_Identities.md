@@ -6,292 +6,156 @@ lab:
 
 # Lab 01 - Mengelola Identitas ID Microsoft Entra
 
-# Panduan lab siswa
+## Pengenalan lab
 
-## Skenario laboratorium
-
-Untuk mengizinkan pengguna Contoso mengautentikasi dengan menggunakan ID Microsoft Entra, Anda telah ditugaskan untuk menyediakan pengguna dan akun grup. Keanggotaan grup harus diperbarui secara otomatis berdasarkan jabatan pengguna. Anda juga perlu membuat penyewa pengujian dengan akun pengguna uji dan memberikan izin terbatas akun tersebut ke sumber daya di langganan Contoso Azure.
-
-**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama.
-
-## Tujuan
-
-Di lab ini Anda akan:
-
-+ Tugas 1: Membuat dan mengonfigurasi pengguna
-+ Tugas 2: Membuat grup dengan keanggotaan yang ditetapkan dan dinamis
-+ Tugas 3: Membuat penyewa (Opsional - masalah lingkungan lab)
-+ Tugas 4: Mengelola pengguna tamu (Opsional - masalah lingkungan lab)
+Ini adalah yang pertama dalam serangkaian lab untuk Administrator Azure. Di lab ini, Anda mempelajari tentang pengguna dan grup. Pengguna dan grup adalah blok penyusun dasar untuk solusi identitas. 
 
 ## Perkiraan waktu: 30 menit
 
+## Skenario lab
+
+Organisasi Anda sedang membangun lingkungan lab baru untuk pengujian pra-produksi aplikasi dan layanan.  Beberapa teknisi sedang dipekerjakan untuk mengelola lingkungan lab, termasuk komputer virtual. Untuk memungkinkan teknisi mengautentikasi dengan menggunakan ID Microsoft Entra, Anda telah ditugaskan untuk menyediakan pengguna dan grup. Untuk meminimalkan overhead administratif, keanggotaan grup harus diperbarui secara otomatis berdasarkan jabatan. 
+
+## Simulasi lab interaktif
+
+Lab ini menggunakan simulasi lab interaktif. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
+
+>**Catatan:** Simulasi ini sedang diperbarui. ID Microsoft Entra adalah nama baru untuk Azure Active Directory (Azure AD). 
+
++ [Mengelola Identitas](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201) ID Entra. Membuat dan mengonfigurasi pengguna dan menetapkan ke grup. Buat penyewa Azure dan kelola akun tamu. 
+
 ## Diagram arsitektur
-![gambar](../media/lab01entra.png)
+![Diagram arsitektur lab 01.](../media/az104-lab01-architecture.png)
 
-### Petunjuk
+## Keterampilan pekerjaan
 
-## Latihan 1
++ Tugas 1: Membuat dan mengonfigurasi akun pengguna.
++ Tugas 2: Buat grup dan tambahkan anggota.
 
-## Tugas 1: Membuat dan mengonfigurasi pengguna
+## Tugas 1: Membuat dan mengonfigurasi akun pengguna
 
-Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna.
+Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun pengguna. Akun pengguna akan menyimpan data pengguna seperti nama, departemen, lokasi, dan informasi kontak.
 
->**Catatan**: Jika sebelumnya Anda telah menggunakan lisensi Uji Coba untuk ID Microsoft Entra pada penyewa ini, Anda akan memerlukan penyewa baru dan melakukan Tugas 2 setelah Tugas 3 di penyewa baru.
+1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Masuk ke [portal Azure](https://portal.azure.com).
+    >**Catatan:** portal Azure digunakan di semua lab. Jika Anda baru menggunakan Azure, cari dan pilih `Quickstart Center`. Luangkan beberapa menit untuk menonton **video Memulai di portal Azure**. Bahkan jika Anda telah menggunakan portal sebelumnya, Anda akan menemukan beberapa tips dan trik tentang menavigasi dan menyesuaikan antarmuka.
+    
+1. Cari dan pilih `Microsoft Entra ID`. ID Microsoft Entra adalah solusi manajemen identitas dan akses berbasis cloud Azure. Luangkan beberapa menit untuk membiasakan diri dengan beberapa fitur yang tercantum di panel kiri. 
 
-1. Di portal Azure, cari dan pilih **ID** Microsoft Entra.
+1. Pilih bilah **Gambaran Umum** lalu tab **Kelola penyewa** . 
 
-1. Pada bilah ID Microsoft Entra, gulir ke bawah ke bagian **Kelola** , klik **Pengaturan** pengguna, dan tinjau opsi konfigurasi yang tersedia.
+    >**Apakah Anda tahu?** Penyewa adalah instans tertentu dari ID Microsoft Entra yang berisi akun dan grup. Bergantung pada situasi Anda, Anda dapat membuat lebih banyak penyewa dan **Beralih** di antara mereka. 
 
-1. Pada bilah ID Microsoft Entra, di bagian **Kelola, klik **Pengguna**, lalu klik akun pengguna Anda untuk menampilkan pengaturan Profilnya****.** 
+1. Kembali ke **halaman ID** Entra dan pilih **Lisensi**. Dari sini Anda dapat membeli lisensi, mengelola lisensi yang Anda miliki, dan menetapkan lisensi untuk pengguna dan grup. Pilih **Fitur berlisensi** untuk melihat apa yang tersedia.
+   
+###  Buat pengguna baru 
 
-1. Klik **Edit properti**, lalu di tab **Pengaturan**, atur **Lokasi** penggunaan ke **Amerika Serikat** dan klik **Simpan** untuk menerapkan perubahan.
+1. Pilih **Pengguna**, lalu di **menu drop-down Pengguna** baru pilih **Buat pengguna** baru. 
 
-    >**Catatan**: Ini diperlukan untuk menetapkan lisensi Microsoft Entra ID P2 ke akun pengguna Anda nanti di lab ini.
-
-1. Navigasi kembali ke panel **Pengguna - Semua pengguna**, lalu klik **+ Pengguna baru**.
-
-1. Buat pengguna baru dengan pengaturan berikut (biarkan yang lain dengan default):
+1. Buat pengguna baru dengan pengaturan berikut (biarkan pengguna lain dengan default mereka). Pada tab **Properti** , perhatikan semua jenis informasi berbeda yang dapat disertakan dalam akun pengguna. 
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama principal pengguna | **az104-01a-aaduser1** |
-    | Nama tampilan | **az104-01a-aaduser1** |
-    | Buat Kata Sandi secara otomatis | batal pilih |
-    | Kata sandi awal | **Berikan kata sandi yang aman** |
-    | Jabatan pekerjaan (tab Properti) | **Administrator Cloud** |
-    | Departemen (tab Properti) | **TI** |
+    | Nama principal pengguna | `az104-user1` |
+    | Nama tampilan | `az104-user1` |
+    | Buat Kata Sandi secara otomatis | **dicentang** |
+    | Akun diaktifkan | **dicentang** |
+    | Jabatan pekerjaan (tab Properti) | `IT Lab Administrator` |
+    | Departemen (tab Properti) | `IT` |
     | Lokasi penggunaan (tab Properti) | **Amerika Serikat** |
 
-    >**Catatan**: **Salin ke clipboard** Nama** Prinsipal Pengguna lengkap **(nama pengguna plus domain). Anda akan membutuhkannya nanti dalam tugas ini.
+1. Setelah Anda selesai meninjau, pilih **Tinjau + buat** lalu **Buat**.
 
-1. Dalam daftar pengguna, klik akun pengguna yang baru dibuat untuk menampilkan panelnya.
+1. Refresh halaman dan konfirmasikan bahwa pengguna baru Anda telah dibuat. 
 
-1. Tinjau opsi yang tersedia di bagian **Kelola** dan perhatikan bahwa Anda dapat mengidentifikasi peran yang ditetapkan ke akun pengguna serta izin akun pengguna ke sumber daya Azure.
+### Mengundang pengguna eksternal
 
-1. Di bagian **Kelola**, klik **Peran yang ditetapkan**, lalu klik tombol **+ Tambahkan tugas** dan tetapkan peran **Administrator pengguna** ke **az104 -01a-aaduser1**.
-
-    >**Catatan**: Anda juga memiliki opsi untuk menetapkan peran saat memprovisikan pengguna baru.
-
-1. Buka jendela browser **InPrivate** dan masuk ke [portal Azure](https://portal.azure.com) menggunakan akun pengguna yang baru dibuat. Ketika diminta untuk memperbarui kata sandi, ubah kata sandi menjadi kata sandi aman yang Anda pilih. 
-
-    >**Catatan**: Daripada mengetik nama pengguna (termasuk nama domain), Anda dapat menempelkan konten Clipboard.
-
-1. Di jendela **browser InPrivate**, di portal Azure, cari dan pilih **ID** Microsoft Entra.
-
-    >**Catatan**: Meskipun akun pengguna ini dapat mengakses penyewa, akun tersebut tidak memiliki akses apa pun ke sumber daya Azure. Ini diharapkan, karena akses tersebut perlu diberikan secara eksplisit dengan menggunakan Azure Role-Based Access Control. 
-
-1. Di jendela **browser InPrivate** , pada bilah ID Microsoft Entra, gulir ke bawah ke **bagian Kelola** , klik **Pengaturan** pengguna, dan perhatikan bahwa Anda tidak memiliki izin untuk mengubah opsi konfigurasi apa pun.
-
-1. Di jendela **browser InPrivate** , pada bilah ID Microsoft Entra, di bagian **Kelola** , klik **Pengguna**, lalu klik **+ Pengguna** baru.
-
-1. Buat pengguna baru dengan pengaturan berikut (biarkan yang lain dengan default):
+1. **Di menu drop-down Pengguna** baru pilih **Undang pengguna** eksternal. 
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama principal pengguna | **az104-01a-aaduser2** |
-    | Nama tampilan | **az104-01a-aaduser2** |
-    | Buat Kata Sandi secara otomatis | batal pilih  |
-    | Kata sandi awal | **Berikan kata sandi yang aman** |
-    | Judul pekerjaan | **Administrator Sistem** |
-    | Departemen | **TI** |
-    | Lokasi penggunaan | **Amerika Serikat** |
+    | Email | alamat email anda |
+    | Nama tampilan | Namamu |
+    | Kirim pesan undangan | **centang kotak** |
+    | Pesan | `Welcome to Azure and our group project` |
+
+1. Pindah ke tab **Properti** . Lengkapi informasi dasar, termasuk bidang ini. 
+
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Judul pekerjaan  | `IT Lab Administrator` |
+    | Departemen  | `IT` |
+    | Lokasi penggunaan (tab Properti) | **Amerika Serikat** |
+
+1. Pilih **Tinjau + undang**, lalu **Undang**.
+
+1. **Refresh** halaman dan konfirmasikan bahwa pengguna yang diundang telah dibuat. Anda akan segera menerima email undangan. 
+
+    >**Catatan:** Tidak mungkin Anda akan membuat akun pengguna satu per satu. Apakah Anda tahu bagaimana organisasi Anda berencana untuk membuat dan mengelola akun pengguna?
     
-1. Keluar sebagai pengguna az104-01a-aaduser1 dari portal Microsoft Azure dan tutup jendela browser InPrivate.
+## Tugas 2: Membuat grup dan menambahkan anggota
 
-## Tugas 2: Membuat grup dengan keanggotaan yang ditetapkan dan dinamis
+Dalam tugas ini, Anda membuat akun grup. Akun grup dapat menyertakan akun pengguna atau perangkat. Ini adalah dua cara dasar anggota ditetapkan ke grup: Secara Statis dan Dinamis. Grup statis mengharuskan administrator untuk menambahkan dan menghapus anggota secara manual.  Grup dinamis diperbarui secara otomatis berdasarkan properti akun pengguna atau perangkat. Misalnya, jabatan. 
 
-Dalam tugas ini, Anda akan membuat grup dengan keanggotaan yang ditetapkan dan dinamis.
+1. Di portal Azure, cari dan pilih `Groups`.
 
-1. Kembali ke portal Azure tempat Anda masuk dengan akun pengguna Anda **, navigasikan kembali ke bilah **Gambaran Umum** penyewa dan, di bagian **Kelola**, klik **Lisensi**.**
+1. Luangkan waktu semenit untuk membiasakan diri dengan pengaturan grup di panel kiri.
 
-    >**Catatan**: Lisensi Microsoft Entra ID Premium P1 atau P2 diperlukan untuk menerapkan grup dinamis.
+   + **Kedaluwarsa** memungkinkan Anda mengonfigurasi masa pakai grup dalam hari. Setelah itu grup harus diperbarui oleh pemilik.
+   + **Kebijakan penamaan** memungkinkan Anda mengonfigurasi kata yang diblokir dan menambahkan awalan atau akhiran ke nama grup.
 
-1. Di bagian **Kelola**, klik **Semua produk**.
-
-1. Klik **+ Coba/Beli** dan aktifkan uji coba gratis Microsoft Entra ID Premium P2.
-
-1. Refresh jendela browser untuk memverifikasi bahwa aktivasi berhasil. 
-
-    >**Catatan**: Dibutuhkan waktu hingga 10 menit agar lisensi diaktifkan. Lanjutkan menyegarkan halaman hingga halaman muncul. Jangan lanjutkan sampai lisensi diaktifkan.
-
-1. Dari bilah **Lisensi - Semua produk** , pilih **entri Microsoft Entra ID P2** , dan tetapkan semua opsi lisensi ke akun pengguna Anda dan dua akun pengguna yang baru dibuat.
-
-1. Di portal Azure, navigasi kembali ke bilah penyewa MICROSOFT Entra ID dan klik **Grup**.
-
-1. Gunakan tombol **+ Grup baru** untuk membuat grup baru dengan pengaturan berikut:
+1. Di bilah **Semua grup** , pilih **+ Grup** baru dan buat grup baru.     
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Jenis grup | **Keamanan** |
-    | Nama grup | **Administrator Cloud TI** |
-    | Deskripsi grup | **Administrator cloud TI Contoso** |
-    | Jenis keanggotaan | **Pengguna Dinamis** |
-
-    >**Catatan**: Jika **daftar drop-down Jenis** keanggotaan berwarna abu-abu, tunggu beberapa menit dan refresh halaman browser.
-
-1. Klik **Tambahkan kueri dinamis**.
-
-1. Pada tab **Konfigurasi Aturan** dari panel **Aturan keanggotaan dinamis**, buat aturan baru dengan pengaturan berikut:
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Properti | **jobTitle** |
-    | Operator | **Sama dengan** |
-    | Value | **Administrator Cloud** |
-
-1. Simpan aturan dengan mengklik **+Tambahkan ekspresi** dan **Simpan**. Kembali ke bilah **Grup Baru**, klik **Buat**. 
-
-1. Kembali ke bilah **Grup - Semua grup** penyewa, klik tombol **+ Grup** baru dan buat grup baru dengan pengaturan berikut:
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Jenis grup | **Keamanan** |
-    | Nama grup | **Administrator Sistem TI** |
-    | Deskripsi grup | **Administrator sistem TI Contoso** |
-    | Jenis keanggotaan | **Pengguna Dinamis** |
-
-1. Klik **Tambahkan kueri dinamis**.
-
-1. Pada tab **Konfigurasi Aturan** dari panel **Aturan keanggotaan dinamis**, buat aturan baru dengan pengaturan berikut:
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Properti | **jobTitle** |
-    | Operator | **Sama dengan** |
-    | Value | **Administrator Sistem** |
-
-1. Simpan aturan dengan mengklik **+Tambahkan ekspresi** dan **Simpan**. Kembali ke bilah **Grup Baru**, klik **Buat**. 
-
-1. Kembali ke bilah **Grup - Semua grup** penyewa, klik tombol **+ Grup** baru, dan buat grup baru dengan pengaturan berikut:
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Jenis grup | **Keamanan** |
-    | Nama grup | **Administrator Lab TI** |
-    | Deskripsi grup | **Administrator Lab TI Contoso** |
+    | Nama grup | `IT Lab Administrators` |
+    | Deskripsi grup | `Administrators that manage the IT lab` |
     | Jenis keanggotaan | **Ditetapkan** |
+
+    >**Catatan**: Lisensi Entra ID Premium P1 atau P2 diperlukan untuk keanggotaan dinamis. Jika jenis** Keanggotaan lainnya **tersedia, opsi akan muncul di menu drop-down. 
     
-1. Klik **Tidak ada anggota yang dipilih**.
+    ![Cuplikan layar buat grup yang ditetapkan.](../media/az104-lab01-create-assigned-group.png)
 
-1. Dari panel **Tambahkan anggota**, cari dan pilih **grup Administrator Cloud TI** dan **Administrator Sistem TI** dan, kembali ke panel **Grup Baru**, klik **Buat**.
+1. Pilih **Tidak ada pemilik yang dipilih**.
 
-1. Kembali ke panel **Grup - Semua grup**, klik entri yang mewakili grup **Administrator Cloud TI** dan, lalu tampilkan panel **Anggotanya**. Verifikasi bahwa **az104-01a-aaduser1** muncul dalam daftar anggota grup.
+1. Di halaman **Tambahkan pemilik** , cari dan **pilih** diri Anda sebagai pemilik. Perhatikan bahwa Anda dapat memiliki lebih dari satu pemilik. 
 
-    >**Catatan**: Anda mungkin mengalami penundaan dengan pembaruan grup keanggotaan dinamis. Untuk mempercepat pembaruan, navigasikan ke panel grup, tampilkan panel **Aturan keanggotaan Dinamis**, **Edit** aturan yang tercantum dalam kotak teks **Sintaks aturan** dengan menambahkan spasi kosong di akhir, dan **Simpan** perubahan.
+1. Pilih **Tidak ada anggota yang dipilih**.
 
-1. Navigasikan kembali ke panel **Grup - Semua grup**, klik entri yang mewakili grup **IT System Administrators**, lalu tampilkan panel **Anggota**. Verifikasi bahwa **az104-01a-aaduser2** muncul dalam daftar anggota grup.
+1. Di panel **Tambahkan anggota**, cari dan **pilih** **az104-user1** dan pengguna** tamu yang **Anda undang. Tambahkan kedua pengguna ke grup. 
 
-## Tugas 3: Buat penyewa (Opsional - Kemungkinan masalah captcha, langganan berbayar diperlukan)
+1. Pilih **Buat** untuk menyebarkan grup.
 
-Dalam tugas ini, Anda akan membuat penyewa baru.
-    
-1. Di portal Azure, cari dan pilih **ID** Microsoft Entra.
+1. **Refresh** halaman dan pastikan grup Anda dibuat.
 
-    >**Catatan**: Ada masalah yang diketahui dengan verifikasi Captcha di lingkungan lab. Jika Anda menerima kesalahan **Pembuatan gagal. Terlalu banyak permintaan, silakan coba nanti**, lakukan hal berikut:
-    - Coba pembuatan beberapa kali.<br>
-    - Periksa bagian **Kelola penyewa** untuk memastikan penyewa tidak dibuat di latar belakang. <br>
-    - Buka jendela InPrivate** baru **dan gunakan Portal Microsoft Azure dan coba buat penyewa dari sana.<br>
-     Ajukan masalah dengan pelatih, lalu gunakan **[simulasi](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)** lab interaktif untuk melihat langkah-langkahnya. <br>
-    - Anda dapat mencoba tugas ini nanti, tetapi membuat penyewa tidak diperlukan di lab lain. 
+1. Pilih grup baru dan tinjau **informasi Anggota** dan **Pemilik** .
 
-1. Klik **Kelola penyewa**, lalu pada layar berikutnya, klik **+ Buat**, dan tentukan pengaturan berikut:
+>**Catatan:** Anda mungkin mengelola sejumlah besar grup. Apakah organisasi Anda memiliki rencana untuk membuat grup dan menambahkan anggota?
+   
+## Membersihkan sumber daya Anda
 
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Jenis direktori | **Microsoft Entra ID** |
-    
-1. Klik **Berikutnya : Konfigurasi**
+Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama organisasi | **Lab Contoso** |
-    | Nama domain awal | semua nama DNS valid yang terdiri dari huruf kecil dan digit serta dimulai dengan huruf | 
-    | Negara/Wilayah | **Amerika Serikat** |
++ Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
++ Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Menggunakan CLI, `az group delete --name resourceGroupName`.
+  
+## Poin penting
 
-   > **Catatan**: Nama **** domain awal tidak boleh menjadi nama yang sah yang berpotensi cocok dengan organisasi Anda atau yang lain. Tanda centang hijau di kotak teks **Nama domain awal** akan menunjukkan bahwa nama domain yang Anda ketikkan valid dan unik.
+Selamat atas penyelesaian lab. Berikut adalah beberapa jalur utama untuk lab ini:
 
-1. Klik **Tinjau + buat** lalu klik **Buat**.
-
-1. Tampilkan bilah penyewa yang baru dibuat dengan menggunakan **tautan Klik di sini untuk menavigasi ke penyewa baru Anda: Contoso Lab** atau **tombol Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Azure.
-
-## Tugas 4: Mengelola pengguna tamu.
-
-Dalam tugas ini, Anda akan membuat pengguna tamu dan memberi mereka akses ke sumber daya dalam langganan Azure.
-
-1. Di portal Azure menampilkan penyewa Contoso Lab, di bagian **Kelola**, klik **Pengguna**, lalu klik **+ Pengguna** baru.
-
-1. Buat pengguna baru dengan pengaturan berikut (biarkan yang lain dengan default):
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama principal pengguna | **az104-01b-aaduser1** |
-    | Nama tampilan | **az104-01b-aaduser1** |
-    | Buat Kata Sandi secara otomatis | batal pilih  |
-    | Kata sandi awal | **Berikan kata sandi yang aman** |
-    | Judul pekerjaan | **Administrator Sistem** |
-    | Departemen | **TI** |
-
-1. Klik profil yang baru dibuat.
-
-    >**Catatan**: **Salin ke clipboard** Nama** Prinsipal Pengguna lengkap **(nama pengguna plus domain). Anda akan membutuhkannya nanti dalam tugas ini.
-
-1. Kembali ke penyewa pertama yang Anda buat sebelumnya.
-2. Pilih **Gambaran Umum** di panel navigasi.
-3. Klik **Kelola penyewa**.
-4. Centang kotak di samping penyewa pertama yang Anda buat sebelumnya, lalu pilih **Beralih**.
-
-1. Arahkan kembali ke blade **Pengguna - Semua pengguna**, lalu klik **+ Undang pengguna eksternal**.
-
-1. Undang pengguna tamu baru dengan pengaturan berikut (biarkan yang lain dengan default):
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | email | Nama Prinsipal Pengguna yang Anda salin sebelumnya dalam tugas ini |
-    | Nama Tampilan (tab Properti)  | **az104-01b-aaduser1** |
-    | Jabatan pekerjaan (tab Properti) | **Administrator Lab** |
-    | Departemen (tab Properti) | **TI** |
-    | Lokasi penggunaan (tab Properti) | **Amerika Serikat** |
-
-1. Klik **Undang**. 
-
-1. Kembali ke panel **Pengguna - Semua pengguna**, klik entri yang mewakili akun pengguna tamu yang baru dibuat.
-
-1. Pada panel **az104-01b-aaduser1 - Profil**, klik **Grup**.
-
-1. Klik **+ Tambahkan keanggotaan** dan tambahkan akun pengguna tamu ke grup **Administrator Lab TI**.
++ Penyewa mewakili organisasi Anda dan membantu Anda mengelola instans layanan cloud Microsoft tertentu untuk pengguna internal dan eksternal Anda.
++ MICROSOFT Entra ID memiliki akun pengguna dan tamu. Setiap akun memiliki tingkat akses khusus untuk cakupan pekerjaan yang diharapkan untuk dilakukan.
++ Grup menggabungkan bersama-sama pengguna atau perangkat terkait. Ada dua jenis grup termasuk Keamanan dan Microsoft 365.
++ Keanggotaan grup dapat ditetapkan secara statis atau dinamis.
 
 
-## Tugas 5: Menghapus sumber daya
+## Pelajari lebih lanjut dengan pelatihan mandiri
 
-> **Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Menghapus sumber daya yang tidak terpakai memastikan Anda tidak akan dikenakan biaya tidak terduga. Meskipun, dalam hal ini, tidak ada biaya tambahan yang terkait dengan penyewa dan objeknya, Anda mungkin ingin mempertimbangkan untuk menghapus akun pengguna, akun grup, dan penyewa yang Anda buat di lab ini.
++ [Memahami ID](https://learn.microsoft.com/training/modules/understand-azure-active-directory/) Microsoft Entra. Bandingkan MICROSOFT Entra ID dengan Active Directory DS, pelajari tentang Microsoft Entra ID P1 dan P2, dan jelajahi Microsoft Entra Domain Services untuk mengelola perangkat dan aplikasi yang bergabung dengan domain di cloud.
++ [Buat pengguna dan grup Azure di ID](https://learn.microsoft.com//training/modules/create-users-and-groups-in-azure-active-directory/) Microsoft Entra. Buat pengguna di ID Microsoft Entra. Pahami berbagai jenis grup. Buat grup dan tambahkan anggota. Kelola akun tamu bisnis ke bisnis.
++ [Izinkan pengguna untuk mengatur ulang kata sandi mereka dengan pengaturan ulang](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/) kata sandi mandiri Microsoft Entra. Evaluasi setel ulang kata sandi layanan mandiri untuk memungkinkan pengguna di organisasi Anda menyetel ulang kata sandi mereka atau membuka kunci akun mereka. Siapkan, konfigurasikan, dan uji setel ulang kata sandi layanan mandiri.
 
- > **Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
-1. Di Portal **** Microsoft Azure cari **ID** Microsoft Entra di bilah pencarian. Di bawah **Kelola** pilih **Lisensi**. Setelah berada di Lisensi** di **bawah **Kelola** pilih **Semua Produk** lalu pilih **item Microsoft Entra ID Premium P2** dalam daftar. Lanjutkan dengan memilih **Pengguna Berlisensi**. Pilih akun pengguna **az104-01a-aaduser1** dan **az104-01a-aaduser2** tempat Anda menetapkan lisensi di lab ini, klik **Hapus lisensi**, dan, saat diminta untuk mengonfirmasi, klik **Ya**.
 
-1. Di portal Microsoft Azure, navigasikan ke panel **Pengguna - Semua pengguna**, klik entri yang mewakili akun pengguna tamu **az104-01b-aaduser1**, di **az104-01b-aaduser1 - Profil** panel klik **Hapus**, dan, saat diminta untuk mengonfirmasi, klik **OK**.
-
-1. Ulangi urutan langkah yang sama untuk menghapus akun pengguna yang tersisa yang Anda buat di lab ini.
-
-1. Navigasi ke panel **Grup - Semua grup**, pilih grup yang Anda buat di lab ini, klik **Hapus**, dan, saat diminta untuk mengonfirmasi, klik **OK**.
-
-1. Di portal Azure, tampilkan bilah penyewa Contoso Lab dengan menggunakan tombol **Direktori + Langganan** (langsung di sebelah kanan tombol Cloud Shell) di toolbar portal Azure.
-
-1. Navigasikan ke panel **Pengguna - Semua pengguna**, klik entri yang mewakili akun pengguna **az104-01b-aaduser1**, pada panel **az104-01b-aaduser1 - Profil** klik **Hapus**, dan, saat diminta untuk mengonfirmasi, klik **OK**.
-
-1. Navigasi ke **bilah Contoso Lab - Gambaran Umum** penyewa Contoso Lab, klik **Kelola penyewa** lalu pada layar berikutnya, pilih kotak di samping **Contoso Lab**, klik **Hapus**, pada **'Contoso Labs' penyewa Hapus?** blade, klik **tautan Dapatkan izin untuk menghapus sumber daya** Azure, pada bilah **Properti** , atur **Manajemen akses untuk sumber daya** Azure ke **Ya** dan klik **Simpan**.
-
-1. Navigasi kembali ke panel **Hapus penyewa 'Contoso Lab'** dan klik **Refresh**, klik **Hapus**.
-
-> **Catatan**: Jika penyewa memiliki lisensi uji coba, Maka Anda harus menunggu kedaluwarsa lisensi uji coba sebelum Anda dapat menghapus penyewa. Ini tidak akan dikenakan biaya tambahan.
-
-#### Tinjau
-
-Di lab ini, Anda telah:
-
-- Pengguna yang dibuat dan dikonfigurasi
-- Membuat grup dengan keanggotaan yang ditetapkan dan dinamis
-- Membuat penyewa
-- Pengguna tamu terkelola 

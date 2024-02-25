@@ -5,277 +5,300 @@ lab:
 ---
 
 # Lab 05 - Menerapkan Konektivitas Antar Situs
-# Panduan lab siswa
 
-## Skenario laboratorium
+## Pengenalan lab
 
-Pusat data Contoso terletak di kantor Boston, New York, dan Seattle yang tersambung melalui tautan jaringan area luas mesh, dengan konektivitas penuh di antaranya. Anda perlu menerapkan lingkungan lab yang akan mencerminkan topologi jaringan lokal Contoso dan memverifikasi fungsinya.
+Di lab ini Anda menjelajahi komunikasi antara jaringan virtual. Anda menerapkan peering jaringan virtual dan menguji koneksi. Anda juga akan membuat rute kustom. 
 
-**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US** Timur. 
 
-## Tujuan
+## Perkiraan waktu: 50 menit
+    
+## Skenario lab 
 
-Di lab ini Anda akan:
+Organisasi Anda mengegmentasi aplikasi dan layanan IT inti (seperti DNS dan layanan keamanan) dari bagian lain dari bisnis, termasuk departemen manufaktur Anda. Namun, dalam beberapa skenario, aplikasi dan layanan di area inti perlu berkomunikasi dengan aplikasi dan layanan di area manufaktur. Di lab ini, Anda mengonfigurasi konektivitas antara area tersegmentasi. Ini adalah skenario umum untuk memisahkan produksi dari pengembangan atau memisahkan satu anak perusahaan dari anak perusahaan lainnya.  
 
-+ Tugas 1: Memprovisikan lingkungan lab
-+ Tugas 2: Mengonfigurasi peering jaringan virtual lokal dan global
-+ Tugas 3: Menguji konektivitas antarsitus
+## Simulasi lab interaktif
 
-## Perkiraan waktu: 30 menit
+Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
+
++ [Koneksi dua jaringan virtual Azure menggunakan peering](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering) jaringan virtual global. Uji koneksi antara dua komputer virtual di jaringan virtual yang berbeda. Buat peering jaringan virtual dan coba lagi.
+
++ [Mengonfigurasi pemantauan untuk jaringan](https://learn.microsoft.com/training/modules/configure-monitoring-virtual-networks/) virtual. Pahami cara menggunakan Azure Network Watcher Koneksi ion Monitor, log alur, diagnostik NSG, dan pengambilan paket untuk memantau konektivitas di seluruh sumber daya jaringan Azure IaaS Anda.
+
++ [Menerapkan konektivitas](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209) antarsitus. Jalankan templat untuk membuat infrastruktur jaringan virtual dengan beberapa komputer virtual. Konfigurasikan peering jaringan virtual dan uji koneksi. 
 
 ## Diagram arsitektur
 
-![gambar](../media/lab05.png)
+![Diagram arsitektur Lab 05](../media/az104-lab05-architecture.png)
 
-### Petunjuk
+## Keterampilan pekerjaan
 
-## Latihan 1
++ Tugas 1: Buat komputer virtual di jaringan virtual.
++ Tugas 2: Buat komputer virtual di jaringan virtual yang berbeda.
++ Tugas 3: Gunakan Network Watcher untuk menguji koneksi antara komputer virtual. 
++ Tugas 4: Mengonfigurasi peering jaringan virtual antara jaringan virtual yang berbeda.
++ Tugas 5: Gunakan Azure PowerShell untuk menguji koneksi antara komputer virtual.
++ Tugas 6: Buat rute kustom. 
 
-## Tugas 1: Memprovisikan lingkungan lab
+## Tugas 1: Membuat komputer virtual layanan inti dan jaringan virtual
 
-Dalam tugas ini, Anda akan menyebarkan tiga mesin virtual, masing-masing ke dalam jaringan virtual terpisah, dengan dua di antaranya di wilayah Azure yang sama dan yang ketiga di wilayah Azure lainnya.
+Dalam tugas ini, Anda membuat jaringan virtual layanan inti dengan komputer virtual. 
 
-1. Masuk ke [portal Azure](https://portal.azure.com).
+1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
+1. Cari dan pilih `Virtual Machines`.
 
-1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
+1. Dari halaman komputer virtual, pilih **Buat lalu pilih **Azure Virtual Machine****.
 
-    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
-
-1. Di toolbar panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu tarik-turun, klik **Unggah** dan unggah file **\\Semua file \\Lab\\05\\az104-05-vnetvm-loop-template.json** dan **\\Semua file\\Lab\\05\\az104-05-vnetvm-loop -parameters.json** ke dalam direktori beranda Cloud Shell. 
-
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk membuat grup sumber daya yang akan menghosting lingkungan lab. Dua jaringan virtual pertama dan sepasang mesin virtual akan disebarkan di [Azure_region_1]. Jaringan virtual ketiga dan mesin virtual ketiga akan disebarkan dalam grup sumber daya yang sama tetapi [Azure_region_2] lainnya. (ganti tempat penampung [Azure_region_1] dan [Azure_region_2], termasuk kurung siku, dengan nama dua wilayah Azure yang berbeda tempat Anda ingin menyebarkan mesin virtual Azure ini. Contohnya adalah $location1 = 'eastus'. Anda dapat menggunakan Get-AzLocation untuk mencantumkan semua lokasi.):
-
-   ```powershell
-   $location1 = 'eastus'
-
-   $location2 = 'westus'
-
-   $rgName = 'az104-05-rg1'
-
-   New-AzResourceGroup -Name $rgName -Location $location1
-   ```
-
-   >**Catatan**: Wilayah yang digunakan di atas diuji dan diketahui berfungsi ketika lab ini terakhir kali ditinjau secara resmi. Jika Anda lebih suka menggunakan lokasi yang berbeda, atau tidak lagi berfungsi, Anda harus mengidentifikasi dua wilayah berbeda tempat mesin virtual Standard D2Sv3 dapat disebarkan.
-   >
-   >Untuk mengidentifikasi wilayah Azure, dari sesi PowerShell di Cloud Shell, jalankan **(Get-AzLocation).Location**
-   >
-   >Setelah Anda mengidentifikasi dua wilayah yang ingin Anda gunakan, jalankan perintah di bawah ini di Cloud Shell untuk setiap wilayah untuk mengonfirmasi bahwa Anda dapat menyebarkan mesin virtual D2Sv3 Stan dar
-   >
-   >```az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name" ```
-   >
-   >Jika perintah tidak mengembalikan hasil, maka Anda perlu memilih wilayah lain. Setelah mengidentifikasi dua wilayah yang sesuai, Anda dapat menyesuaikan wilayah di blok kode di atas.
-
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk membuat tiga jaringan virtual dan menerapkan mesin virtual ke dalamnya dengan menggunakan file template dan parameter yang Anda unggah:
-    
-    >**Catatan**: Anda akan diminta untuk memberikan kata sandi Admin.
-
-   ```powershell
-   New-AzResourceGroupDeployment `
-      -ResourceGroupName $rgName `
-      -TemplateFile $HOME/az104-05-vnetvm-loop-template.json `
-      -TemplateParameterFile $HOME/az104-05-vnetvm-loop-parameters.json `
-      -location1 $location1 `
-      -location2 $location2
-   ```
-
-    >**Catatan**: Tunggu hingga penyebaran selesai sebelum melanjutkan ke langkah berikutnya. Proses ini memerlukan waktu sekitar 2 menit.
-
-1. Tutup panel Cloud Shell.
-
-## Tugas 2: Mengonfigurasi peering jaringan virtual lokal dan global
-
-Dalam tugas ini, Anda akan mengonfigurasi peering lokal dan global antara jaringan virtual yang Anda sebarkan di tugas sebelumnya.
-
-1. Di portal Microsoft Azure, cari dan pilih **Jaringan virtual**.
-
-1. Tinjau jaringan virtual yang Anda buat di tugas sebelumnya dan verifikasi bahwa dua jaringan pertama terletak di wilayah Azure yang sama dan yang ketiga di wilayah Azure yang berbeda.
-
-    >**Catatan**: Templat yang Anda gunakan untuk penyebaran tiga jaringan virtual memastikan bahwa rentang alamat IP dari tiga jaringan virtual tidak tumpang tindih.
-
-1. Dalam daftar jaringan virtual, klik **az104-05-vnet0**.
-
-1. Pada panel jaringan virtual **az104-05-vnet0**, di bagian **Pengaturan**, klik **Peering lalu** klik **+ Tambahkan**.
-
-1. Tambahkan peering dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya) dan klik **Tambahkan**:
-
-    | Pengaturan | Nilai|
+1. Pada tab Dasar, gunakan informasi berikut untuk melengkapi formulir, lalu pilih **Berikutnya: Disk >**. Untuk pengaturan apa pun yang tidak ditentukan, biarkan nilai default.
+ 
+    | Pengaturan | Nilai | 
     | --- | --- |
-    | Jaringan virtual ini: Nama tautan peering | **az104-05-vnet0_to_az104-05-vnet1** |
-    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan hanya tiga kotak pertama yang dicentang** |
-    | Jaringan virtual jarak jauh: Nama tautan peering | **az104-05-vnet1_to_az104-05-vnet0** |
-    | Model penyebaran jaringan virtual | **Manajer sumber daya** |
-    | Saya mengetahui ID sumber daya saya | tidak dipilih |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Jaringan virtual | **az104-05-vnet1** |
-    | Perbolehkan akses ke jaringan virtual saat ini |  **Pastikan kotak dicentang (default)** |
-    | Pengaturan untuk mengizinkan akses, lalu lintas yang diteruskan, dan gateway | **Pastikan hanya tiga kotak pertama yang dicentang** |
+    | Langganan |  *langganan Anda* |
+    | Grup sumber daya |  `az104-rg5` (Jika perlu, **Buat baru**. )
+    | Nama komputer virtual |    `CoreServicesVM` |
+    | Wilayah | **(AS) AS Timur** |
+    | Opsi ketersediaan | Tidak ada redundansi infrastruktur yang diperlukan |
+    | Jenis keamanan | **Standard**
+           |
+    | Gambar | **Pusat Data Windows Server 2019: x64 Gen2** (perhatikan pilihan Anda yang lain) |
+    | Ukuran | **Standard_DS2_v3** |
+    | Nama Pengguna | `localadmin` | 
+    | Kata sandi | **Berikan kata sandi yang kompleks** |
 
-    >**Catatan**: Langkah ini menetapkan dua peering lokal - satu dari az104-05-vnet0 ke az104-05-vnet1 dan yang lainnya dari az104-05-vnet1 ke az104-05-vnet0.
+    ![Cuplikan layar halaman pembuatan komputer virtual Dasar. ](../media/az104-lab05-createcorevm.png)
+   
+1. Pada tab **Disk** , ambil default lalu pilih **Berikutnya: Jaringan >**.
 
-    >**Catatan**: Jika Anda mengalami masalah dengan antarmuka portal Azure yang tidak menampilkan jaringan virtual yang dibuat di tugas sebelumnya, Anda dapat mengonfigurasi peering dengan menjalankan perintah PowerShell berikut dari Cloud Shell:
-    
-   ```powershell
-   $rgName = 'az104-05-rg1'
+1. Pada tab **Jaringan** , untuk Jaringan virtual, pilih **Buat baru**.
 
-   $vnet0 = Get-AzVirtualNetwork -Name 'az104-05-vnet0' -ResourceGroupName $rgname
+1. Gunakan informasi berikut untuk mengonfigurasi jaringan virtual, lalu pilih **Ok**. Jika perlu, hapus atau ganti informasi yang ada.
 
-   $vnet1 = Get-AzVirtualNetwork -Name 'az104-05-vnet1' -ResourceGroupName $rgname
-
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet0_to_az104-05-vnet1' -VirtualNetwork $vnet0 -RemoteVirtualNetworkId $vnet1.Id
-
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet1_to_az104-05-vnet0' -VirtualNetwork $vnet1 -RemoteVirtualNetworkId $vnet0.Id
-   ``` 
-
-1. Pada panel jaringan virtual **az104-05-vnet0**, di bagian **Pengaturan**, klik **Peering lalu** klik **+ Tambahkan**.
-
-1. Tambahkan peering dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya) dan klik **Tambahkan**:
-
-    | Pengaturan | Nilai|
+    | Pengaturan | Nilai | 
     | --- | --- |
-    | Jaringan virtual ini: Nama tautan peering | **az104-05-vnet0_to_az104-05-vnet2** |
-    | Izinkan akses ke jaringan virtual jarak jauh |**Pastikan kotak dicentang (default)** |
-    | Jaringan virtual jarak jauh: Nama tautan peering | **az104-05-vnet2_to_az104-05-vnet0** |
-    | Model penyebaran jaringan virtual | **Manajer sumber daya** |
-    | Saya mengetahui ID sumber daya saya | tidak dipilih |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Jaringan virtual | **az104-05-vnet2** |
-    | Perbolehkan akses ke jaringan virtual saat ini |**Pastikan kotak dicentang (default)** |
+    | Nama | `CoreServicesVNet` (Buat baru) |
+    | Rentang alamat | `10.0.0.0/16`  |
+    | Nama Subnet | `Core` | 
+    | Rentang alamat subnet | `10.0.0.0/24` |
 
-    >**Catatan**: Langkah ini menetapkan dua peering global - satu dari az104-05-vnet0 ke az104-05-vnet2 dan yang lainnya dari az104-05-vnet2 ke az104-05-vnet0.
+1. Pilih tab **Pemantauan** . Untuk Diagnostik Boot, pilih **Nonaktifkan**.
 
-    >**Catatan**: Jika Anda mengalami masalah dengan antarmuka portal Azure yang tidak menampilkan jaringan virtual yang dibuat di tugas sebelumnya, Anda dapat mengonfigurasi peering dengan menjalankan perintah PowerShell berikut dari Cloud Shell:
-    
-   ```powershell
-   $rgName = 'az104-05-rg1'
+1. Pilih **Tinjauan + Buat**, kemudian pilih **Buat**.
 
-   $vnet0 = Get-AzVirtualNetwork -Name 'az104-05-vnet0' -ResourceGroupName $rgname
+1. Anda tidak perlu menunggu sumber daya dibuat. Lanjutkan ke tugas berikutnya.
 
-   $vnet2 = Get-AzVirtualNetwork -Name 'az104-05-vnet2' -ResourceGroupName $rgname
+    >**Catatan:** Apakah Anda melihat dalam tugas ini Anda membuat jaringan virtual saat membuat komputer virtual? Anda juga dapat membuat infrastruktur jaringan virtual lalu menambahkan komputer virtual. 
 
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet0_to_az104-05-vnet2' -VirtualNetwork $vnet0 -RemoteVirtualNetworkId $vnet2.Id
+## Tugas 2: Membuat komputer virtual di jaringan virtual yang berbeda
 
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet0' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet0.Id
-   ``` 
+Dalam tugas ini, Anda membuat jaringan virtual layanan manufaktur dengan komputer virtual. 
 
-1. Navigasi kembali ke panel **Jaringan virtual** dan, dalam daftar jaringan virtual, klik **az104-05-vnet1**.
+1. Dari portal Azure, cari dan navigasi ke **Virtual Machines**.
 
-1. Pada panel jaringan virtual **az104-05-vnet1**, di bagian **Setelan**, klik **Peering** lalu klik **+ Tambahkan**.
+1. Dari halaman komputer virtual, pilih **Buat lalu pilih **Azure Virtual Machine****.
 
-1. Tambahkan peering dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya) dan klik **Tambahkan**:
-
-    | Pengaturan | Nilai|
+1. Pada tab Dasar, gunakan informasi berikut untuk melengkapi formulir, lalu pilih **Berikutnya: Disk >**. Untuk pengaturan apa pun yang tidak ditentukan, biarkan nilai default.
+ 
+    | Pengaturan | Nilai | 
     | --- | --- |
-    | Jaringan virtual ini: Nama tautan peering | **az104-05-vnet1_to_az104-05-vnet2** |
-    | Izinkan akses ke jaringan virtual jarak jauh | **Pastikan kotak dicentang (default)** |
-    | Jaringan virtual jarak jauh: Nama tautan peering | **az104-05-vnet2_to_az104-05-vnet1** |
-    | Model penyebaran jaringan virtual | **Manajer sumber daya** |
-    | Saya mengetahui ID sumber daya saya | tidak dipilih |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Jaringan virtual | **az104-05-vnet2** |
-    | Perbolehkan akses ke jaringan virtual saat ini | **Pastikan kotak dicentang (default)** |
+    | Langganan |  *langganan Anda* |
+    | Grup sumber daya |  `az104-rg5` |
+    | Nama komputer virtual |    `ManufacturingVM` |
+    | Wilayah | **(AS) AS Timur** |
+    | Jenis keamanan | **Standard**
+           |
+    | Opsi ketersediaan | Tidak ada redundansi infrastruktur yang diperlukan |
+    | Gambar | **Pusat Data Windows Server 2019: x64 Gen2** |
+    | Ukuran | **Standard_DS2_v3** | 
+    | Nama Pengguna | `localadmin` | 
+    | Kata sandi | **Berikan kata sandi yang kompleks** |
 
-    >**Catatan**: Langkah ini menetapkan dua peering global - satu dari az104-05-vnet1 ke az104-05-vnet2 dan yang lainnya dari az104-05-vnet2 ke az104-05-vnet1.
+1. Pada tab **Disk** , ambil default lalu pilih **Berikutnya: Jaringan >**.
 
-    >**Catatan**: Jika Anda mengalami masalah dengan antarmuka portal Azure yang tidak menampilkan jaringan virtual yang dibuat di tugas sebelumnya, Anda dapat mengonfigurasi peering dengan menjalankan perintah PowerShell berikut dari Cloud Shell:
-    
-   ```powershell
-   $rgName = 'az104-05-rg1'
+1. Pada tab Jaringan, untuk Jaringan virtual, pilih **Buat baru**.
 
-   $vnet1 = Get-AzVirtualNetwork -Name 'az104-05-vnet1' -ResourceGroupName $rgname
+1. Gunakan informasi berikut untuk mengonfigurasi jaringan virtual, lalu pilih **Ok**.  Jika perlu, hapus atau ganti rentang alamat yang ada.
 
-   $vnet2 = Get-AzVirtualNetwork -Name 'az104-05-vnet2' -ResourceGroupName $rgname
+    | Pengaturan | Nilai | 
+    | --- | --- |
+    | Nama | `ManufacturingVNet` |
+    | Rentang alamat | `172.16.0.0/16`  |
+    | Nama Subnet | `Manufacturing` |
+    | Rentang alamat subnet | `172.16.0.0/24` |
 
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet1_to_az104-05-vnet2' -VirtualNetwork $vnet1 -RemoteVirtualNetworkId $vnet2.Id
+1. Pilih tab **Pemantauan** . Untuk Diagnostik Boot, pilih **Nonaktifkan**.
 
-   Add-AzVirtualNetworkPeering -Name 'az104-05-vnet2_to_az104-05-vnet1' -VirtualNetwork $vnet2 -RemoteVirtualNetworkId $vnet1.Id
-   ``` 
+1. Pilih **Tinjauan + Buat**, kemudian pilih **Buat**.
 
-## Tugas 3: Menguji konektivitas antarsitus
+## Tugas 3: Gunakan Network Watcher untuk menguji koneksi antara komputer virtual 
 
-Dalam tugas ini, Anda akan menguji konektivitas antara mesin virtual pada tiga jaringan virtual yang Anda sambungkan melalui peering lokal dan global di tugas sebelumnya.
 
-1. Di portal Microsoft Azure, cari dan pilih **Komputer virtual.**
+Dalam tugas ini, Anda memverifikasi bahwa sumber daya di jaringan virtual yang di-peering dapat berkomunikasi satu sama lain. Network Watcher akan digunakan untuk menguji koneksi. Sebelum melanjutkan, pastikan kedua komputer virtual telah disebarkan dan sedang berjalan. 
 
-1. Dalam daftar mesin virtual, klik **az104-05-vm0**.
+1. Dari portal Azure, cari dan pilih `Network Watcher`.
 
-1. Pada panel **az104-05-vm0**, klik **Hubungkan**, di menu drop-down, klik **RDP**, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jauh.
+1. Dari Network Watcher, di menu Alat diagnostik jaringan, pilih **pemecahan masalah** Koneksi ion.
 
-    >**Catatan**: Langkah ini mengacu pada menyambungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
+1. Gunakan informasi berikut untuk menyelesaikan bidang di **halaman pemecahan masalah** Koneksi ion.
 
-    >**Catatan**: Anda dapat mengabaikan perintah peringatan saat menyambungkan ke komputer virtual target.
+    | Bidang | Nilai | 
+    | --- | --- |
+    | Jenis sumber           | **Mesin virtual**   |
+    | Komputer virtual       | **CoreServicesVM**    | 
+    | Tipe tujuan      | **Mesin virtual**   |
+    | Komputer virtual       | **ManufacturingVM**   | 
+    | Versi IP Pilihan  | **Kedua**              | 
+    | Protokol              | **TCP**               |
+    | Port tujuan      | `3389`                |  
+    | Port Sumber           | *Kosong*         |
+    | Tes diagnostik      | *Default*      |
 
-1. Saat diminta, masuk dengan menggunakan **Nama pengguna siswa** dan kata sandi yang Anda konfigurasi saat menyebarkan komputer virtual Anda melalui CloudShell. 
+    ![Portal Microsoft Azure memperlihatkan pengaturan Pemecahan Masalah Koneksi ion.](../media/az104-lab05-connection-troubleshoot.png)
 
-1. Dalam sesi Desktop Jarak Jauh ke **az104-05-vm0**, klik kanan tombol **Mulai** dan, di menu klik kanan, klik **Windows PowerShell (Admin)**.
+1. Pilih **Jalankan pengujian** diagnostik.
 
-1. Di jendela konsol Windows PowerShell, jalankan hal berikut untuk menguji konektivitas ke **az104-05-vm1** (yang memiliki alamat IP privat **10.51.0.4**) melalui port TCP 3389:
+    >**Catatan**: Mungkin perlu waktu beberapa menit agar hasilnya dikembalikan. Pilihan layar akan berwarna abu-abu saat hasilnya sedang dikumpulkan. Perhatikan bahwa **pengujian** Koneksi ivity menunjukkan **UnReachable**. Ini masuk akal karena komputer virtual berada di jaringan virtual yang berbeda. 
 
-   ```powershell
-   Test-NetConnection -ComputerName 10.51.0.4 -Port 3389 -InformationLevel 'Detailed'
-   ```
+ 
+## Tugas 4: Mengonfigurasi peering jaringan virtual antara jaringan virtual
 
-    >**Catatan**: Pengujian menggunakan TCP 3389 karena ini adalah port ini diizinkan secara default oleh firewall sistem operasi.
+Dalam tugas ini, Anda membuat peering jaringan virtual untuk mengaktifkan komunikasi antar sumber daya di jaringan virtual. 
 
-1. Periksa output perintah dan verifikasi bahwa koneksi berhasil.
+1. Di portal Azure, pilih `CoreServicesVnet` jaringan virtual.
 
-1. Di jendela konsol Windows PowerShell, jalankan yang berikut ini untuk menguji konektivitas ke **az104-05-vm2** (yang memiliki alamat IP privat **10.52.0.4**):
+1. Di CoreServicesVnet, di bagian **Pengaturan**, pilih **Peering**.
 
-   ```powershell
-   Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
-   ```
+1. Di CoreServicesVnet | Peering, pilih **+ Tambahkan**.
 
-1. Beralih kembali ke portal Azure di komputer lab Anda dan navigasikan kembali ke panel **Mesin virtual**.
+1. Gunakan informasi dalam tabel berikut untuk membuat peering.
 
-1. Dalam daftar mesin virtual, klik **az104-05-vm1**.
+| **Parameter**                                    | **Nilai**                             |
+| --------------------------------------------- | ------------------------------------- |
+| **Jaringan virtual ini**                                       |                                       |
+| Nama tautan penyerekan                             | `CoreServicesVnet-to-ManufacturingVnet` |
+| Izinkan CoreServicesVNet mengakses jaringan virtual yang di-peering            | dipilih (default)                       |
+| Izinkan CoreServicesVNet menerima lalu lintas yang diteruskan dari jaringan virtual yang di-peering | dipilih                       |
+| Mengizinkan gateway di CoreServicesVNet untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | Tidak dipilih (default) |
+| Aktifkan CoreServicesVNet untuk menggunakan gateway jarak jauh jaringan virtual yang di-peering       | Tidak dipilih (default)                        |
+| **Jaringan virtual jarak jauh**                                   |                                       |
+| Nama tautan penyerekan                             | `ManufacturingVnet-to-CoreServicesVnet` |
+| Model penyebaran jaringan virtual              | **Manajer sumber daya**                      |
+| Saya mengetahui ID sumber daya saya                         | Tidak dipilih                          |
+| Langganan                                  | *langganan Anda*    |
+| Jaringan virtual                               | **ManufacturingVnet**                     |
+| Izinkan ManufacturingVNet mengakses CoreServicesVNet  | dipilih (default)                       |
+| Izinkan ManufacturingVNet menerima lalu lintas yang diteruskan dari CoreServicesVNet | dipilih                        |
+| Mengizinkan gateway di CoreServicesVNet untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | Tidak dipilih (default) |
+| Mengaktifkan ManufacturingVNet untuk menggunakan gateway jarak jauh CoreServicesVNet       | Tidak dipilih (default)                        |
 
-1. Pada panel **az104-05-vm1**, klik **Hubungkan**, di menu drop-down, klik **RDP**, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
+1. Tinjau pengaturan Anda dan pilih **Tambahkan**.
 
-    >**Catatan**: Langkah ini mengacu pada menyambungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
+    ![Cuplikan layar halaman peering.](../media/az104-lab05-peering.png)
+ 
+1. Di CoreServicesVnet | Peering, verifikasi bahwa peering **CoreServicesVnet-to-ManufacturingVnet** dicantumkan. Refresh halaman untuk memastikan **status** **Peering Koneksi**.
 
-    >**Catatan**: Anda dapat mengabaikan perintah peringatan saat menyambungkan ke komputer virtual target.
+1. Beralih ke **ManufacturingVnet** dan verifikasi **peering ManufacturingVnet-to-CoreServicesVnet** tercantum. **Pastikan status** **Peering Koneksi**. Anda mungkin perlu melakukan **Refresh** halamannya. 
 
-1. Saat diminta, masuk dengan menggunakan nama pengguna **Siswa** dan sandi dari file parameter Anda. 
 
-1. Dalam sesi Desktop Jauh ke **az104-05-vm1**, klik kanan tombol **Mulai** dan, di menu klik kanan, klik **Windows PowerShell (Admin)**.
+## Tugas 5: Gunakan Azure PowerShell untuk menguji koneksi antara komputer virtual
 
-1. Di jendela konsol Windows PowerShell, jalankan yang berikut ini untuk menguji konektivitas ke **az104-05-vm2** (yang memiliki alamat IP pribadi **10.52.0.4**) melalui port TCP 3389:
+Dalam tugas ini, Anda mencoba kembali koneksi antara komputer virtual di jaringan virtual yang berbeda. 
 
-   ```powershell
-   Test-NetConnection -ComputerName 10.52.0.4 -Port 3389 -InformationLevel 'Detailed'
-   ```
+### Memverifikasi alamat IP privat CoreServicesVM
 
-    >**Catatan**: Pengujian menggunakan TCP 3389 karena ini adalah port ini diizinkan secara default oleh firewall sistem operasi.
+1. Dari portal Azure, cari dan pilih `CoreServicesVM` komputer virtual.
 
-1. Periksa output perintah dan verifikasi bahwa koneksi berhasil.
+1. Pada bilah **Gambaran Umum** , di bagian **Jaringan** , rekam **alamat** IP Privat komputer. Anda memerlukan informasi ini untuk menguji koneksi.
+   
+### Uji koneksi ke CoreServicesVM dari **ManufacturingVM**.
 
-## Membersihkan sumber daya
+>**Apakah Anda tahu?** Ada banyak cara untuk memeriksa koneksi. Dalam tugas ini, Anda menggunakan **perintah** Jalankan. Anda juga dapat terus menggunakan Network Watcher. Atau Anda dapat menggunakan [Koneksi ion](https://learn.microsoft.com/azure/virtual-machines/windows/connect-rdp#connect-to-the-virtual-machine) Desktop Jauh untuk mengakses komputer virtual. Setelah tersambung, gunakan **uji-koneksi**. Karena Anda punya waktu, cobalah RDP. 
 
->**Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Dengan menghapus sumber daya yang tidak digunakan, Anda tidak akan melihat biaya yang tak terduga.
+1. Beralih ke komputer `ManufacturingVM` virtual.
 
->**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+1. Di bilah **Operasi** , pilih bilah **Jalankan perintah** .
 
-1. Di portal Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
+1. Pilih **RunPowerShellScript** dan jalankan **perintah Test-Net Koneksi ion**. Pastikan untuk menggunakan alamat **IP privat CoreServicesVM**.
 
-1. Buat daftar semua grup sumber daya yang dibuat di seluruh lab modul ini dengan menjalankan perintah berikut:
+    ```Powershell
+    Test-NetConnection <CoreServicesVM private IP address> -port 3389
+    ```
+1. Mungkin perlu waktu beberapa menit agar skrip kehabisan waktu. Bagian atas halaman memperlihatkan eksekusi Skrip pesan *informasi yang sedang berlangsung.*
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-05*'
-   ```
+   
+1. Koneksi pengujian harus berhasil karena peering telah dikonfigurasi. Nama komputer dan alamat jarak jauh Anda dalam grafik ini mungkin berbeda. 
+   
+   ![Jendela PowerShell dengan Test-Net Koneksi ion berhasil.](../media/az104-lab05-success.png)
 
-1. Hapus semua grup sumber daya yang Anda buat di seluruh lab modul ini dengan menjalankan perintah berikut:
+## Tugas 6: Membuat rute kustom 
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-05*' | Remove-AzResourceGroup -Force -AsJob
-   ```
+Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perimeter dan subnet layanan inti internal. Appliance jaringan virtual akan diinstal di subnet layanan inti dan semua lalu lintas harus dirutekan di sana. 
 
-    >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
+1. Cari pilih `CoreServicesVnet`.
 
-## Tinjau
+1. Pilih **Subnet** lalu **+ Buat**. Pastikan untuk **Menyimpan** perubahan Anda. 
 
-Di lab ini, Anda telah:
+    | Pengaturan | Nilai | 
+    | --- | --- |
+    | Nama | `perimeter` |
+    | Rentang alamat subnet | `10.0.1.0/24`  |
 
-+ Memprovisikan lingkungan lab
-+ Mengonfigurasi peering jaringan virtual lokal dan global
-+ Menguji konektivitas antar situs
+   
+1. Di portal Azure, cari dan pilih `Route tables`, lalu pilih **Buat**. 
+
+    | Pengaturan | Nilai | 
+    | --- | --- |
+    | Langganan | langganan Anda |
+    | Grup sumber daya | `az104-rg5`  |
+    | Wilayah | **US Timur** |
+    | Nama | `rt-CoreServices` |
+    | Merambat rute gateway | **Tidak** |
+
+1. Setelah tabel rute disebarkan, pilih **Buka sumber daya**.
+
+1. Pilih **Rute** lalu **+ Tambahkan**. Buat rute dari NVA di masa mendatang ke jaringan virtual CoreServices. 
+
+    | Pengaturan | Nilai | 
+    | --- | --- |
+    | Nama rute | `PerimetertoCore` |
+    | Tipe tujuan | **Alamat IP** |
+    | Alamat IP tujuan | `10.0.0.0/16` (jaringan virtual layanan inti) |
+    | Jenis hop berikutnya | **Appliance** virtual (perhatikan pilihan Anda yang lain) |
+    | Alamat lompatan berikutnya | `10.0.1.7` (NVA masa depan) |
+
+1. Pilih **+ Tambahkan** saat rute selesai. Hal terakhir yang harus dilakukan adalah mengaitkan rute dengan subnet.
+
+1. Pilih **Subnet** lalu **Kaitkan**. Selesaikan konfigurasi.
+
+    | Pengaturan | Nilai | 
+    | --- | --- |
+    | Jaringan virtual | **CoreServicesVnet** |
+    | Subnet | **Core** |    
+
+>**Catatan**: Anda telah membuat rute yang ditentukan pengguna untuk mengarahkan lalu lintas dari DMZ ke NVA baru.  
+
+## Membersihkan sumber daya Anda
+
+Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+
++ Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
++ Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Menggunakan CLI, `az group delete --name resourceGroupName`.
+
+
+## Poin penting
+
+Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
+
++ Secara default, sumber daya di jaringan virtual yang berbeda tidak dapat berkomunikasi.
++ Peering jaringan virtual memungkinkan Anda menyambungkan dua jaringan virtual atau lebih dengan lancar di Azure.
++ Jaringan virtual yang di-peering muncul sebagai satu untuk tujuan konektivitas.
++ Lalu lintas antara mesin virtual di jaringan virtual yang di-peering menggunakan infrastruktur backbone Microsoft.
++ Rute yang ditentukan sistem secara otomatis dibuat untuk setiap subnet dalam jaringan virtual. Rute yang ditentukan pengguna mengambil alih atau menambahkan ke rute sistem default. 
++ Azure Network Watcher menyediakan serangkaian alat untuk memantau, mendiagnosis, dan melihat metrik dan log untuk sumber daya Azure IaaS.
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Distribusikan layanan Anda di seluruh jaringan virtual Azure dan integrasikan dengan menggunakan peering](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/) jaringan virtual. Menggunakan peering jaringan virtual untuk memungkinkan komunikasi di seluruh jaringan virtual dengan cara yang aman dan tingkat kerumitan yang kecil.
++ [Mengelola dan mengontrol arus lalu lintas dalam penyebaran Azure Anda dengan rute](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Pelajari cara mengontrol lalu lintas jaringan virtual Azure dengan menerapkan rute kustom.

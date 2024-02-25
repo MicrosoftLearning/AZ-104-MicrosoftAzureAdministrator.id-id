@@ -1,423 +1,367 @@
 ---
 lab:
   title: 'Lab 04: Menerapkan Virtual Networking'
-  module: Administer Virtual Networking
+  module: Implement Virtual Networking
 ---
 
 # Lab 04 - Menerapkan Virtual Network
 
-# Panduan lab siswa
+## Pengenalan lab
 
-## Skenario lab
+Lab ini adalah lab pertama dari tiga lab yang berfokus pada jaringan virtual. Di lab ini, Anda mempelajari dasar-dasar jaringan virtual dan subnet. Anda mempelajari cara melindungi jaringan Anda dengan kelompok keamanan jaringan dan kelompok keamanan aplikasi. Anda juga mempelajari tentang zona dan rekaman DNS. 
 
-Anda perlu menjelajahi kemampuan jaringan virtual Azure. Untuk memulai, Anda berencana membuat jaringan virtual di Azure yang akan menghosting beberapa mesin virtual Azure. Karena Anda bermaksud menerapkan segmentasi berbasis jaringan, Anda akan menerapkannya ke subnet yang berbeda dari jaringan virtual. Anda juga ingin memastikan bahwa alamat IP pribadi dan publik mereka tidak akan berubah seiring waktu. Untuk mematuhi persyaratan keamanan Contoso, Anda perlu melindungi titik akhir publik dari mesin virtual Azure yang dapat diakses dari internet. Terakhir, Anda perlu menerapkan resolusi nama DNS untuk mesin virtual Azure baik di dalam jaringan virtual maupun dari Internet.
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US** Timur.
 
-**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
+## Perkiraan waktu: 50 menit
 
-## Tujuan
+## Skenario lab 
 
-Di lab ini Anda akan:
+Organisasi global Anda berencana untuk menerapkan jaringan virtual. Tujuan langsungnya adalah untuk mengakomodasi semua sumber daya yang ada. Namun, organisasi berada dalam fase pertumbuhan dan ingin memastikan ada kapasitas tambahan untuk pertumbuhan tersebut.
 
-+ Tugas 1: Membuat dan mengonfigurasi jaringan virtual
-+ Tugas 2: Menyebarkan komputer virtual ke jaringan virtual
-+ Tugas 3: Mengonfigurasi alamat IP privat dan publik Azure VM
-+ Tugas 4: Mengonfigurasi grup keamanan jaringan
-+ Tugas 5: Mengonfigurasi Azure DNS untuk resolusi nama internal
-+ Tugas 6: Mengonfigurasi Azure DNS untuk resolusi nama eksternal
+Jaringan **virtual CoreServicesVnet** memiliki jumlah sumber daya terbesar. Sejumlah besar pertumbuhan diantisipasi, sehingga ruang alamat besar diperlukan untuk jaringan virtual ini.
 
-## Perkiraan waktu: 40 menit
+Jaringan **virtual ManufacturingVnet** berisi sistem untuk pengoperasian fasilitas manufaktur. Organisasi ini mengantisipasi sejumlah besar perangkat yang terhubung secara internal agar sistem mereka dapat mengambil data. 
+
+## Simulasi lab interaktif
+
+Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
+
++ [Mengamankan lalu lintas](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2013) jaringan. Buat komputer virtual, jaringan virtual, dan grup keamanan jaringan. Tambahkan aturan kelompok keamanan jaringan untuk mengizinkan dan melarang lalu lintas.
+  
++ [Buat jaringan](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%204) virtual sederhana. Buat jaringan virtual dengan dua komputer virtual. Menunjukkan komputer virtual dapat berkomunikasi. 
+
++ [Merancang dan mengimplementasikan jaringan virtual di Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure). Buat grup sumber daya dan buat jaringan virtual dengan subnet.  
+
++ [Menerapkan jaringan](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208) virtual. Membuat dan mengonfigurasi jaringan virtual, menyebarkan komputer virtual, mengonfigurasi grup keamanan jaringan, dan mengonfigurasi Azure DNS.
 
 ## Diagram arsitektur
 
-![gambar](../media/lab04.png)
+![Tata letak jaringan](../media/az104-lab04-architecture.png)
 
-### Petunjuk
+Jaringan virtual dan subnet ini disusun dengan cara yang mengakomodasi sumber daya yang ada namun memungkinkan pertumbuhan yang diproyeksikan. Mari kita buat jaringan virtual dan subnet ini untuk meletakkan fondasi untuk infrastruktur jaringan kita.
 
-## Latihan 1
+>**Tahukah Anda?**: Ini adalah praktik yang baik untuk menghindari rentang alamat IP yang tumpang tindih untuk mengurangi masalah dan menyederhanakan pemecahan masalah. Tumpang tindih adalah masalah di seluruh jaringan, baik di cloud atau lokal. Banyak organisasi merancang skema alamat IP di seluruh perusahaan untuk menghindari tumpang tindih dan merencanakan pertumbuhan di masa mendatang.
 
-## Tugas 1: Membuat dan mengonfigurasi jaringan virtual
+## Keterampilan pekerjaan
 
-Dalam tugas ini, Anda akan membuat jaringan virtual dengan beberapa subnet menggunakan portal Microsoft Azure
++ Tugas 1: Buat jaringan virtual dengan subnet menggunakan portal.
++ Tugas 2: Buat jaringan virtual dan subnet menggunakan templat.
++ Tugas 3: Membuat dan mengonfigurasi komunikasi antara Kelompok Keamanan Aplikasi dan Grup Keamanan Jaringan.
++ Tugas 4: Mengonfigurasi zona Azure DNS publik dan privat.
+  
+## Tugas 1: Membuat jaringan virtual dengan subnet menggunakan portal
 
-1. Masuk ke [portal Azure](https://portal.azure.com).
+Organisasi merencanakan sejumlah besar pertumbuhan untuk layanan inti. Dalam tugas ini, Anda membuat jaringan virtual dan subnet terkait untuk mengakomodasi sumber daya yang ada dan pertumbuhan yang direncanakan. Dalam tugas ini, Anda akan menggunakan portal Azure. 
 
-1. Di portal Microsoft Azure, cari dan pilih **Jaringan virtual**, dan, pada panel **Jaringan virtual**, klik **+ Buat**.
-
-1. Buat jaringan virtual dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Langganan | nama langganan Azure yang akan Anda gunakan di lab ini |
-    | Grup Sumber Daya | nama grup sumber daya **baru** **az104-04-rg1** |
-    | Nama | **az104-04-vnet1** |
-    | Wilayah | nama wilayah Azure yang tersedia dalam langganan yang akan Anda gunakan di lab ini |
-
-1. Klik **Berikutnya: Alamat IP**. Alamat **** awal adalah **10.40.0.0**. Ukuran **** ruang Alamat adalah **/20**. 
-
-1. Klik **+ Tambahkan subnet**. Hapus subnet default** yang **ada. Masukkan nilai berikut lalu klik **Tambahkan**. 
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama subnet | **subnet0** |
-    | Alamat awal | **10.40.0.0** |
-    | Ukuran subnet | **/24 (256 alamat)** |
-
-1. Terima defaultnya dan klik **Tinjau dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
-
-    >**Catatan:** Tunggu hingga jaringan virtual diprovisikan. Ini seharusnya memakan waktu kurang dari satu menit.
-
-1. Klik **Buka sumber daya**
-
-1. Pada panel jaringan virtual **az104-04-vnet1**, klik **Subnet**, lalu klik **+ Subnet**.
-
-1. Buat subnet dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama | **subnet1** |
-    | Rentang alamat (blok CIDR) | **10.40.1.0/24** |
-    | Grup keamanan jaringan | **Tidak** |
-    | Tabel rute | **Tidak** |
-
-1. Klik **Simpan**
-
-## Tugas 2: Menyebarkan komputer virtual ke jaringan virtual
-
-Dalam tugas ini, Anda akan menyebarkan mesin virtual Azure ke subnet yang berbeda dari jaringan virtual dengan menggunakan template ARM
-
-1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
-
-1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
-
-    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
-
-1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, lalu klik **Unggah** di menu dropdown. Unggah **\\Allfiles\\Labs\\04\\az104-04-vms-loop-template.json** and **\\Allfiles\\Labs\\04\\az104-04-vms-loop-parameters.json** ke direktori beranda Cloud Shell.
-
-    >**Catatan **: Anda harus mengunggah setiap file secara terpisah. Setelah mengunggah, gunakan **dir** untuk memastikan kedua file berhasil diunggah.
-
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk menyebarkan dua mesin virtual menggunakan file template dan parameter:
-    >**Catatan**: Anda akan diminta untuk memberikan kata sandi Admin.
-    
-   ```powershell
-   $rgName = 'az104-04-rg1'
-
-   New-AzResourceGroupDeployment `
-      -ResourceGroupName $rgName `
-      -TemplateFile $HOME/az104-04-vms-loop-template.json `
-      -TemplateParameterFile $HOME/az104-04-vms-loop-parameters.json
-   ```
+1. Masuk ke **portal Azure** - `https://portal.azure.com`.
    
-    >**Catatan**: Metode penyebaran templat ARM ini menggunakan Azure PowerShell. Anda dapat melakukan tugas yang sama dengan menjalankan perintah Azure CLI yang setara **az deployment create** (untuk informasi selengkapnya, lihat [Menyebarkan sumber daya dengan template Resource Manager dan Azure CLI](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-cli).
+1. Cari dan pilih `Virtual Networks`.
 
-    >**Catatan**: Tunggu hingga penyebaran selesai sebelum melanjutkan ke tugas berikutnya. Proses ini memerlukan waktu sekitar 2 menit.
+1. Pilih **Buat** pada halaman Jaringan virtual.
 
-    >**Catatan**: Jika Anda mendapatkan kesalahan yang menyatakan ukuran VM tidak tersedia, silakan minta bantuan instruktur Anda dan coba langkah-langkah berikut:
-    > 1. Klik tombol `{}` di CloudShell Anda, pilih **az104-04-vms-loop-parameters.json** dari panel sisi kiri dan catat nilai parameter `vmSize`.
-    > 1. Periksa lokasi di mana grup sumber daya 'az104-04-rg1' diterapkan. Anda dapat menjalankan `az group show -n az104-04-rg1 --query location` di CloudShell Anda untuk mendapatkannya.
-    > 1. Jalankan `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` di CloudShell Anda. Jika tidak ada SKU yang terdaftar (yaitu tidak ada hasil), maka Anda tidak dapat menyebarkan mesin virtual D2S di wilayah tersebut. Anda perlu menemukan wilayah yang memungkinkan Anda menggunakan mesin virtual D2S. Setelah memilih lokasi yang sesuai, hapus grup sumber daya AZ104-04-rg1 dan mulai ulang lab.
-    > 1. Ganti nilai parameter `vmSize` dengan salah satu nilai yang dikembalikan oleh perintah yang baru saja Anda jalankan.
-    > 1. Sekarang sebarkan ulang template Anda dengan menjalankan perintah `New-AzResourceGroupDeployment` lagi. Anda dapat menekan tombol atas beberapa kali yang akan membawa ke perintah yang dieksekusi terakhir.
+1. Lengkapi tab **Dasar** untuk CoreServicesVnet.  
 
-1. Tutup panel Cloud Shell.
+    |  **Opsi**         | **Nilai**            |
+    | ------------------ | -------------------- |
+    | Grup Sumber Daya     | `az104-rg4` (jika perlu, buat baru) |
+    | Nama               | `CoreServicesVnet`     |
+    | Wilayah             | (US) **US Timur**         |
 
-## Tugas 3: Mengonfigurasi alamat IP privat dan publik Azure VM
+1. Pindahkan ke tab **Alamat** IP.
 
-Dalam tugas ini, Anda akan mengonfigurasi penetapan statis alamat IP publik dan pribadi yang ditetapkan ke antarmuka jaringan mesin virtual Azure.
+    |  **Opsi**         | **Nilai**            |
+    | ------------------ | -------------------- |
 
-   >**Catatan**: Alamat IP privat dan publik benar-benar ditetapkan ke antarmuka jaringan, yang, pada gilirannya dilampirkan ke komputer virtual Azure, namun, cukup umum untuk merujuk ke alamat IP yang ditetapkan ke Azure VM sebagai gantinya.
+    | Ruang alamat IPv4 | `10.20.0.0/16` (pisahkan entri) |
 
-   >**Catatan**: Anda akan memerlukan **dua** alamat IP publik untuk menyelesaikan lab ini. 
+1. Pilih **+ Tambahkan subnet**. Lengkapi informasi nama dan alamat untuk setiap subnet. Pastikan untuk memilih **Tambahkan** untuk setiap subnet baru. 
 
-1. Di portal Azure, cari dan pilih **Alamat** IP publik, lalu pilih **+ Buat**.
+    | **Subnet**             | **Opsi**           | **Nilai**              |
+    | ---------------------- | -------------------- | ---------------------- |
+    | SharedServicesSubnet   | Nama subnet          | `SharedServicesSubnet`   |
+    |                        | Alamat awal     | `10.20.10.0`          |
+    |                        | Ukuran                 | `/24` |
+    | DatabaseSubnet         | Nama subnet          | `DatabaseSubnet`         |
+    |                        | Alamat awal     | `10.20.20.0`        |
+    |                        | Ukuran                 | `/24` |
 
-1. **Pastikan grup** sumber daya adalah **az104-04-rg1**,
+    >**Catatan:** Setiap jaringan virtual harus memiliki setidaknya satu subnet. Pengingat bahwa lima alamat IP akan selalu dicadangkan, jadi pertimbangkan bahwa dalam perencanaan Anda. 
 
-1. Dalam Detail** Konfigurasi pastikan **namanya** **adalah az104-04-pip0**.**
+1. Untuk menyelesaikan pembuatan CoreServicesVnet dan subnet terkait, pilih **Tinjau + buat**.
 
-1. Pilih **Tinjau dan buat** lalu **Buat**.
+1. Verifikasi konfigurasi Anda lulus validasi, lalu pilih **Buat**.
 
-1. Di portal Azure, cari dan pilih **Alamat** IP publik, lalu pilih **+ Buat**.
+1. Tunggu hingga jaringan virtual disebarkan lalu pilih **Buka sumber daya**.
 
-1. **Pastikan grup** sumber daya adalah **az104-04-rg1**,
+1. Luangkan waktu satu menit untuk memverifikasi **ruang** Alamat dan **Subnet**. Perhatikan pilihan Anda yang lain di bilah **Pengaturan**. 
 
-1. Dalam Detail** Konfigurasi pastikan **namanya** **adalah az104-04-pip1**.**
+1. Di bagian **Automation** , pilih **Ekspor templat**, lalu tunggu hingga templat dibuat.
 
-1. Pilih **Tinjau dan buat** lalu **Buat**.
+1. **Unduh** templat.
 
-1. Di portal Microsoft Azure, cari dan pilih **Grup sumber daya**, dan, pada panel **Grup sumber daya**, klik **az104-04-rg1**.
+1. Navigasikan pada komputer lokal ke **folder Unduhan** dan **Ekstrak semua** file dalam file zip yang diunduh. 
 
-1. Pada panel grup sumber daya **az104-04-rg1**, dalam daftar sumber dayanya, klik **az104-04-vnet1**.
+1. Sebelum melanjutkan, pastikan Anda memiliki **file template.json** . Anda akan menggunakan templat ini untuk membuat ManufacturingVnet di tugas berikutnya. 
+ 
+## Tugas 2: Membuat jaringan virtual dan subnet menggunakan templat
 
-1. Pada panel jaringan virtual **az104-04-vnet1**, tinjau bagian **Perangkat yang terhubung** dan verifikasi bahwa ada dua antarmuka jaringan **az104-04-nic0** dan **az104-04-nic1** terpasang ke jaringan virtual.
+Dalam tugas ini, Anda membuat jaringan virtual ManufacturingVnet dan subnet terkait. Organisasi mengantisipasi pertumbuhan untuk kantor manufaktur sehingga subnet berukuran untuk pertumbuhan yang diharapkan. Untuk tugas ini, Anda menggunakan templat untuk membuat sumber daya. 
 
-1. Klik **az104-04-nic0** dan, pada panel **az104-04-nic0**, klik **Konfigurasi IP**.
+1. Temukan file template.json** yang **diekspor di tugas sebelumnya. Seharusnya ada di folder Unduhan** Anda**.
 
-    >**Catatan**: Verifikasi bahwa **ipconfig1** saat ini disiapkan dengan alamat IP privat dinamis.
+1. Edit file menggunakan editor pilihan Anda. Banyak editor memiliki *fitur perubahan semua kemunculan* . Jika Anda menggunakan Visual Studio Code, pastikan Anda bekerja di **jendela** tepercaya dan bukan dalam **mode** terbatas. Lihat diagram arsitektur untuk memverifikasi detailnya. 
 
-1. Di daftar konfigurasi IP, klik **ipconfig1**.
+### Membuat perubahan untuk jaringan virtual ManufacturingVnet
 
-1. Pastikan Alokasi** Statis****.**
+1. Ganti semua kemunculan **CoreServicesVnet** dengan `ManufacturingVnet`. 
 
-1. Pilih **Kaitkan alamat** IP publik dan di **drop-down Alamat** IP publik pilih **az104-04-pip0**.
+1. Ganti semua kemunculan **10.20.0.0/16** dengan `10.30.0.0/16`. 
 
-    >**Catatan:** Jika Anda menerima kesalahan, *nama domain sudah digunakan*, ini adalah masalah yang diketahui. Anda harus menemukan alamat IP publik dan mengaitkannya ke NIC secara terpisah.
-    >
-    > + **Buka Alamat IP publik**
-    > + Klik **az104-04-pip0**
-    > + Di panel **Gambaran Umum** klik **Kaitkan IP**
-    > + Atur **Jenis** sumber daya ke **Antarmuka jaringan**
-    > + Atur **Antarmuka jaringan** ke **az104-04-nic0**
-    > + Ulangi untuk **az104-04-pip1** dan **az104-04-nic1**
+### Membuat perubahan untuk subnet ManufacturingVnet
 
-1. Pilih **Simpan**.
+1. Ubah semua kemunculan **SharedServicesSubnet** menjadi `SensorSubnet1`.
 
-1. Navigasi kembali ke bilah **az104-04-vnet1** .
+1. Ubah semua kemunculan **10.20.10.0/24** menjadi `10.30.20.0/24`.
 
-1. Klik **az104-04-nic1** dan, pada panel **az104-04-nic1**, klik **Konfigurasi IP**.
+1. Ubah semua kemunculan **DatabaseSubnet** menjadi `SensorSubnet2`.
 
-    >**Catatan**: Verifikasi bahwa **ipconfig1** saat ini disiapkan dengan alamat IP privat dinamis.
+1. Ubah semua kemunculan **10.20.20.0/24** menjadi `10.30.21.0/24`.
 
-1. Di daftar konfigurasi IP, klik **ipconfig1**.
+1. Baca kembali file dan pastikan semuanya terlihat benar.
 
-1. Pastikan Alokasi** Statis****.**
+1. Pastikan untuk **Menyimpan** perubahan Anda.
 
-1. Pilih **Kaitkan alamat** IP publik dan di **drop-down Alamat** IP publik pilih **az104-04-pip1**.
+>**Catatan:** Ada file templat yang telah selesai di direktori file lab. 
 
->**Catatan:** Jika Anda menerima kesalahan, *nama domain sudah digunakan*, ini adalah masalah yang diketahui. Anda harus menemukan alamat IP publik dan mengaitkannya ke NIC secara terpisah. 
+### Membuat perubahan pada file parameter
 
-1. Pilih **Simpan**.
+1. Temukan file template.json** yang **diekspor di tugas sebelumnya. Seharusnya ada di folder Unduhan** Anda**.
+
+1. Edit file menggunakan editor pilihan Anda.
+
+1. Ganti satu kemunculan **CoreServicesVnet** dengan `ManufacturingVnet`.
+
+1. **Simpan** perubahan Anda.
    
-1. Navigasikan kembali ke panel grup sumber daya **az104-04-rg1**, dalam daftar sumber dayanya, klik **az104-04-vm0**, dan dari panel mesin virtual **az104-04-vm0 **, perhatikan entri alamat IP publik.
+### Menyebarkan templat kustom
 
-1. Navigasikan kembali ke panel grup sumber daya **az104-04-rg1**, dalam daftar sumber dayanya, klik **az104-04-vm1**, dan dari panel mesin virtual **az104-04-vm1 **, perhatikan entri alamat IP publik.
+1. Di portal, cari dan pilih **Sebarkan templat** kustom.
 
-    >**Catatan**: Anda akan memerlukan kedua alamat IP dalam tugas terakhir lab ini.
+1. Pilih **Bangun templat Anda sendiri di editor** lalu **Muat file**.
 
-## Tugas 4: Mengonfigurasi grup keamanan jaringan
+1. Pilih **file templates.json** dengan perubahan Manufaktur Anda, lalu pilih **Simpan**.
 
-Dalam tugas ini, Anda akan mengonfigurasi kelompok keamanan jaringan untuk mengizinkan konektivitas terbatas ke mesin virtual Azure.
+1. Pilih **Ulas + buat**, lalu pilih **Buat**.
 
-1. Di portal Microsoft Azure, navigasikan kembali ke panel grup sumber daya **az104-04-rg1**, dan dalam daftar sumber dayanya, klik **az104-04-vm0**.
+1. Tunggu hingga templat disebarkan, lalu konfirmasikan (di portal) jaringan virtual Manufaktur dan subnet dibuat.
 
-1. Pada panel ringkasan **az104-04-vm0**, klik **Hubungkan**, klik **RDP** di menu dropdown, di panel **Hubungkan dengan RDP**, klik **Unduh File RDP** menggunakan alamat IP Publik dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
+>**Catatan:** Jika Anda harus menyebarkan lebih dari satu kali Anda mungkin menemukan beberapa sumber daya berhasil diselesaikan dan penyebaran gagal. Anda dapat menghapus sumber daya tersebut secara manual dan mencoba lagi. 
+   
+## Tugas 3: Membuat dan mengonfigurasi komunikasi antara Kelompok Keamanan Aplikasi dan Grup Keamanan Jaringan
 
-1. Perhatikan bahwa upaya koneksi gagal.
+Dalam tugas ini, kami membuat Kelompok Keamanan Aplikasi dan Kelompok Keamanan Jaringan. NSG akan memiliki aturan keamanan masuk yang memungkinkan lalu lintas dari ASG. NSG juga akan memiliki aturan keluar yang menolak akses ke internet. 
 
-    >**Catatan**: Ini diharapkan, karena alamat IP publik SKU Standar, secara default, mengharuskan antarmuka jaringan yang ditetapkan dilindungi oleh kelompok keamanan jaringan. Untuk mengizinkan koneksi Desktop Jarak Jauh, Anda akan membuat kelompok keamanan jaringan yang secara eksplisit mengizinkan lalu lintas RDP masuk dari Internet dan menetapkannya ke antarmuka jaringan kedua mesin virtual.
+### Membuat Kelompok Keamanan Aplikasi (ASG)
 
-1. Hentikan mesin virtual **az104-04-vm0** dan **az104-04-vm1**.
+1. Di portal Azure, cari dan pilih `Application security groups`.
 
-    >**Catatan**: Ini dilakukan untuk kedaluwarsa lab. Jika mesin virtual berjalan saat kelompok keamanan jaringan dilampirkan ke antarmuka jaringan mereka, diperlukan waktu lebih dari 30 menit agar lampiran diterapkan. Setelah kelompok keamanan jaringan dibuat dan dilampirkan, mesin virtual akan dimulai ulang, dan lampiran akan segera diterapkan.
-
-1. Di portal Microsoft Azure, cari dan pilih **Kelompok keamanan jaringan**, dan, pada panel **Kelompok keamanan jaringan**, klik **+ Buat**.
-
-1. Buat kelompok keamanan jaringan dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Klik **Buat** dan berikan informasi dasar.
 
     | Pengaturan | Nilai |
-    | --- | --- |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup Sumber Daya | **az104-04-rg1** |
-    | Nama | **az104-04-nsg01** |
-    | Wilayah | nama wilayah Azure tempat Anda menerapkan semua sumber daya lainnya di lab ini |
+    | -- | -- |
+    | Langganan | *langganan Anda* |
+    | Grup sumber daya | **az104-rg4** |
+    | Nama | `asg-web` |
+    | Wilayah | **US Timur**  |
 
-1. Klik **Tinjau dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** untuk mengirimkan penyebaran Anda.
+1. Klik **Tinjau + buat** lalu setelah validasi klik **Buat**.
 
-    >**Catatan**: Tunggu hingga penyebaran selesai. Proses ini memerlukan waktu sekitar 2 menit.
+### Buat Grup Keamanan Jaringan dan kaitkan dengan subnet ASG
 
-1. Pada panel penyebaran, klik **Buka sumber daya** untuk membuka panel kelompok keamanan jaringan **az104-04-nsg01**.
+1. Di portal Azure, cari dan pilih `Network security groups`.
 
-1. Pada panel kelompok keamanan jaringan **az104-04-nsg01**, di bagian **Pengaturan**, klik **Aturan keamanan masuk**.
-
-1. Tambahkan aturan masuk dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Pilih **+ Buat** dan berikan informasi pada tab **Dasar** . 
 
     | Pengaturan | Nilai |
-    | --- | --- |
-    | Sumber | **Mana pun** |
-    | Source port ranges | * |
+    | -- | -- |
+    | Langganan | *langganan Anda* |
+    | Grup sumber daya | **az104-rg4** |
+    | Nama | `myNSGSecure` |
+    | Wilayah | **US Timur**  |
+
+1. Klik **Tinjau + buat** lalu setelah validasi klik **Buat**.
+
+1. Setelah NSG disebarkan, klik **Buka sumber daya**.
+
+1. Di bawah **Pengaturan** klik **Subnet** lalu **Kaitkan**.
+
+    | Pengaturan | Nilai |
+    | -- | -- |
+    | Jaringan virtual | **CoreServicesVnet (az104-rg4)** |
+    | Subnet | **SharedServicesSubnet** |
+
+1. Klik **OK** untuk menyimpan asosiasi.
+
+### Mengonfigurasi aturan keamanan masuk untuk mengizinkan lalu lintas ASG
+
+1. Lanjutkan bekerja dengan NSG Anda. **Di area Pengaturan**, pilih **Aturan** keamanan masuk.
+
+1. Tinjau aturan masuk default. Perhatikan bahwa hanya jaringan virtual dan load balancer lain yang diizinkan mengakses.
+
+1. Pilih **+ Tambah**.
+
+1. Pada bilah **Tambahkan aturan** keamanan masuk, gunakan informasi berikut untuk menambahkan aturan port masuk. Aturan ini memungkinkan lalu lintas ASG. Setelah selesai, pilih **Tambahkan**.
+
+    | Pengaturan | Nilai |
+    | -- | -- |
+    | Sumber | **Kelompok keamanan aplikasi** |
+    | Grup keamanan aplikasi sumber | **asg-web** |
+    | Source port ranges |  * |
     | Tujuan | **Mana pun** |
-    | Service | **RDP** |
+    | Layanan | **Kustom** (perhatikan pilihan Anda yang lain) |
+    | Rentang port tujuan | **80,443** |
+    | Protokol | **TCP** |
     | Tindakan
            | **Izinkan** |
-    | Prioritas | **300** |
-    | Nama | **AllowRDPInBound** |
+    | Prioritas | **100** |
+    | Nama | `AllowASG` |
 
-1. Pada panel kelompok keamanan jaringan **az104-04-nsg01**, di bagian **Pengaturan**, klik **Antarmuka jaringan** lalu klik **+ Kaitkan**.
+### Mengonfigurasi aturan NSG keluar yang menolak akses Internet
 
-1. Kaitkan kelompok keamanan jaringan **az104-04-nsg01** dengan antarmuka jaringan **az104-04-nic0** dan **az104-04-nic1**.
+1. Setelah membuat aturan NSG masuk Anda, pilih **Aturan** keamanan keluar. 
 
-    >**Catatan**: Mungkin perlu waktu hingga 5 menit agar aturan dari Kelompok Keamanan Jaringan yang baru dibuat diterapkan ke Kartu Antarmuka Jaringan.
+1. **Perhatikan aturan AllowInternetOutboundRule**. Perhatikan juga aturan tidak dapat dihapus dan prioritasnya adalah 65001.
 
-1. Mulai mesin virtual **az104-04-vm0** dan **az104-04-vm1**.
-
-1. Navigasikan kembali ke panel mesin virtual **az104-04-vm0**.
-
-    >**Catatan**: Pada langkah-langkah berikutnya, Anda akan memverifikasi bahwa Anda dapat berhasil terhubung ke komputer virtual target.
-
-1. Pada panel **az104-04-vm0**, klik **Hubungkan**, klik **RDP**, pada panel **Hubungkan dengan RDP**, klik **Unduh File RDP** menggunakan alamat IP Publik dan ikuti petunjuk untuk memulai sesi Desktop Jarak Jauh.
-
-    >**Catatan**: Langkah ini mengacu pada menyambungkan melalui Desktop Jauh dari komputer Windows. Di Mac, Anda dapat menggunakan Klien Desktop Jauh dari Mac App Store dan di komputer Linux Anda dapat menggunakan perangkat lunak klien RDP sumber terbuka.
-
-    >**Catatan**: Anda dapat mengabaikan perintah peringatan saat menyambungkan ke komputer virtual target.
-
-1. Saat diminta, masuk dengan pengguna dan kata sandi.
-
-    >**Catatan**: Biarkan sesi Desktop Jauh terbuka. Anda akan membutuhkannya dalam tugas berikutnya.
-
-## Tugas 5: Mengonfigurasi Azure DNS untuk resolusi nama internal
-
-Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS dalam jaringan virtual dengan menggunakan zona DNS pribadi Azure.
-
-1. Di portal Microsoft Azure, cari dan pilih **Zona DNS Pribadi** dan, pada panel **Zona DNS Pribadi**, klik **+ Buat**.
-
-1. Buat zona DNS pribadi dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Pilih **+ Tambahkan** lalu konfigurasikan aturan keluar yang menolak akses ke internet. Setelah selesai, pilih **Tambahkan**.
 
     | Pengaturan | Nilai |
-    | --- | --- |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup Sumber Daya | **az104-04-rg1** |
-    | Nama | **contoso.org** |
+    | -- | -- |
+    | Sumber | **Mana pun** |
+    | Source port ranges |  * |
+    | Tujuan | **Tag layanan** |
+    | Tag layanan tujuan | **Internet** |
+    | Layanan | **Adat** |
+    | Rentang port tujuan | **8080** |
+    | Protokol | **Mana pun** |
+    | Tindakan
+           | **Tolak** |
+    | Prioritas | **4096** |
+    | Nama | **DenyAnyCustom8080Outbound** |
 
-1. Klik **Tinjau dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
 
-    >**Catatan**: Tunggu hingga zona DNS privat dibuat. Proses ini memerlukan waktu sekitar 2 menit.
+## Tugas 4: Mengonfigurasi zona Azure DNS publik dan privat
 
-1. Klik **Buka sumber daya** untuk membuka panel zona pribadi DNS **contoso.org**.
+Dalam tugas ini, Anda akan membuat dan mengonfigurasi zona DNS publik dan privat. 
 
-1. Pada panel zona DNS pribadi **contoso.org**, di bagian **Pengaturan**, klik **Tautan jaringan virtual**
+### Mengonfigurasi zona DNS publik
 
-1. Klik **+ Tambah** untuk membuat tautan jaringan virtual dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik Anda. Misalnya, jika Anda membeli nama domain contoso.xyz dari pencatat nama domain, Anda dapat mengonfigurasi Azure DNS untuk menghosting `contoso.com` domain dan menyelesaikan www.contoso.xyz ke alamat IP server web atau aplikasi web Anda.
 
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama tautan | **az104-04-vnet1-link** |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Jaringan virtual | **az104-04-vnet1** |
-    | Aktifkan pendaftaran otomatis | diaktifkan |
+1. Di portal, cari dan pilih `DNS zones`.
 
-1. Klik **OK**.
+1. Pilih **+ Buat.**
 
-    >**Catatan:** Tunggu hingga tautan jaringan virtual dibuat. Ini akan memerlukan waktu kurang dari 1 menit.
+1. Konfigurasikan tab **Dasar** .
 
-1. Pada panel zona DNS pribadi **contoso.org**, di panel sisi, klik **Ringkasan**
+    | Properti | Nilai    |
+    |:---------|:---------|
+    | Langganan | **Pilih langganan Anda** |
+    | Grup sumber daya | **az04-rg4** |
+    | Nama | `contoso.com` (jika dipesan sesuaikan nama) |
+    | Wilayah |**US** Timur (tinjau ikon informasi) |
 
-1. Verifikasi bahwa catatan DNS untuk **az104-04-vm0** dan **az104-04-vm1** muncul dalam daftar kumpulan catatan sebagai **Terdaftar otomatis**.
+1. Pilih **Tinjau buat** lalu **Buat**.
+   
+1. Tunggu hingga zona DNS disebarkan lalu pilih **Buka sumber daya**.
 
-    >**Catatan:** Anda mungkin perlu menunggu beberapa menit dan me-refresh halaman jika kumpulan catatan tidak tercantum.
+1. Pada bilah **Gambaran Umum** , perhatikan nama empat server nama Azure DNS yang ditetapkan ke zona tersebut. **Salin** salah satu alamat server nama. Anda akan membutuhkannya di langkah mendatang. 
+  
+1. Pilih **Kumpulan catatan**. Anda menambahkan rekaman tautan jaringan virtual untuk setiap jaringan virtual yang memerlukan dukungan resolusi nama privat.
 
-1. Beralih ke sesi Desktop Jarak Jauh ke **az104-04-vm0**, klik kanan tombol **Mulai** dan, di menu klik kanan, klik **Windows PowerShell (Admin)**.
-
-1. Di jendela konsol Windows PowerShell, jalankan perintah berikut ini untuk menguji resolusi nama internal di zona DNS pribadi yang baru dibuat:
-
-   ```powershell
-   nslookup az104-04-vm0.contoso.org
-   nslookup az104-04-vm1.contoso.org
-   ```
-
-1. Verifikasi bahwa output perintah menyertakan alamat IP pribadi **az104-04-vm1** (**10.40.1.4**).
-
-## Tugas 6: Mengonfigurasi Azure DNS untuk resolusi nama eksternal
-
-Dalam tugas ini, Anda akan mengonfigurasi resolusi nama DNS eksternal dengan menggunakan zona DNS publik Azure.
-
-1. Di browser web, buka tab baru dan navigasikan ke <https://www.godaddy.com/domains/domain-name-search>.
-
-1. Gunakan pencarian nama domain untuk mengidentifikasi nama domain yang tidak digunakan.
-
-1. Di portal Microsoft Azure, cari dan pilih **zona DNS** dan, pada panel **zona DNS**, klik **+ Buat**.
-
-1. Buat zona DNS dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup Sumber Daya | **az104-04-rg1** |
-    | Nama | nama domain DNS yang Anda identifikasi sebelumnya dalam tugas ini |
-
-1. Klik **Tinjau dan Buat**. Biarkan validasi berjalan, dan tekan **Buat** lagi untuk mengirimkan penyebaran Anda.
-
-    >**Catatan**: Tunggu hingga zona DNS dibuat. Proses ini memerlukan waktu sekitar 2 menit.
-
-1. Klik **Buka sumber daya** untuk membuka panel zona DNS yang baru dibuat.
-
-1. Pada panel zona DNS, klik **+ Kumpulan catatan**.
-
-1. Tambahkan kumpulan catatan dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama | **az104-04-vm0** |
+    | Properti | Nilai    |
+    |:---------|:---------|
+    | Nama | **Www** |
     | Jenis | **A** |
-    | Kumpulan catatan alias | **Tidak** |
     | TTL | **1** |
-    | Unit TTL | **Jam** |
-    | Alamat IP | alamat IP publik **az104-04-vm0** yang Anda identifikasi dalam latihan ketiga lab ini |
+    | Alamat IP | **10.1.1.4** |
 
-1. Klik **OK**
+>**Catatan:**  Dalam skenario dunia nyata, Anda akan memasukkan alamat IP publik server web Anda.
 
-1. Pada panel zona DNS, klik **+ Kumpulan catatan**.
+1. Pilih **OK** dan verifikasi **contoso.com** memiliki kumpulan catatan A bernama **www**.
 
-1. Tambahkan kumpulan catatan dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Buka perintah dan jalankan perintah berikut:
 
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama | **az104-04-vm1** |
+   ```sh
+   nslookup www.contoso.com <name server name>
+   ```
+1. Verifikasi nama host www.contoso.com diselesaikan ke alamat IP yang Anda berikan. Ini mengonfirmasi resolusi nama berfungsi dengan benar.
+
+### Mengonfigurasi zona DNS privat
+
+Zona DNS privat menyediakan layanan resolusi nama dalam jaringan virtual. Zona DNS privat hanya dapat diakses dari jaringan virtual yang ditautkan dan tidak dapat diakses dari internet. 
+
+1. Di portal, cari dan pilih `Private dns zones`.
+
+1. Pilih **+ Buat.**
+
+1. Pada tab **Dasar** dari Buat zona DNS privat, masukkan informasi seperti yang tercantum dalam tabel di bawah ini:
+
+    | Properti | Nilai    |
+    |:---------|:---------|
+    | Langganan | **Pilih langganan Anda** |
+    | Grup sumber daya | **az04-rg4** |
+    | Nama | `private.contoso.com` (sesuaikan jika Anda harus mengganti nama) |
+    | Wilayah |**US Timur** |
+
+1. Pilih **Tinjau buat** lalu **Buat**.
+   
+1. Tunggu hingga zona DNS disebarkan lalu pilih **Buka sumber daya**.
+
+1. Perhatikan pada bilah **Gambaran Umum** tidak ada catatan server nama. 
+
+1. Pilih **+ Tautan jaringan virtual** lalu pilih **+ Tambahkan**. 
+
+    | Properti | Nilai    |
+    |:---------|:---------|
+    | Nama tautan | `manufacturing-link` |
+    | Jaringan virtual | `ManufacturingVnet` |
+
+1. Pilih **OK** dan tunggu hingga tautan dibuat. 
+
+1. Dari bilah **Gambaran Umum** pilih **+ Kumpulan catatan**. Anda sekarang akan menambahkan catatan untuk setiap komputer virtual yang membutuhkan dukungan resolusi nama privat.
+
+    | Properti | Nilai    |
+    |:---------|:---------|
+    | Nama | **sensorvm** |
     | Jenis | **A** |
-    | Kumpulan catatan alias | **Tidak** |
     | TTL | **1** |
-    | Unit TTL | **Jam** |
-    | Alamat IP | alamat IP publik **az104-04-vm1** yang Anda identifikasi dalam latihan ketiga lab ini |
+    | Alamat IP | **10.1.1.4** |
 
-1. Klik **OK**
+ >**Catatan:**  Dalam skenario dunia nyata, Anda akan memasukkan alamat IP untuk mesin virtual manufaktur tertentu.
 
-1. Pada panel zona DNS, catat nama entri **Name server 1**.
+## Membersihkan sumber daya Anda
 
-1. Di portal Azure, buka sesi **PowerShell** di **Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
+Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menguji resolusi **nama eksternal dari kumpulan catatan DNS az104-04-vm0** di zona DNS yang baru dibuat (ganti tempat penampung `[Name server 1]` dengan nama **server Nama 1 yang** Anda catat sebelumnya dalam tugas ini dan `[domain name]` tempat penampung dengan nama domain DNS yang Anda buat sebelumnya dalam tugas ini):
++ Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
++ Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Menggunakan CLI, `az group delete --name resourceGroupName`.
+ 
+## Poin penting
 
-   ```powershell
-   nslookup az104-04-vm0.[domain name] [Name server 1]
-   ```
+Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 
-1. Verifikasi bahwa output perintah menyertakan alamat IP publik **az104-04-vm0**.
++ Jaringan virtual adalah representasi jaringan Anda sendiri di cloud. 
++ Saat merancang jaringan virtual, ini adalah praktik yang baik untuk menghindari rentang alamat IP yang tumpang tindih. Ini akan mengurangi masalah dan menyederhanakan pemecahan masalah.
++ Subnet adalah rangkaian alamat IP di jaringan virtual. Anda dapat membagi jaringan virtual menjadi beberapa subnet untuk organisasi dan keamanan.
++ Kelompok keamanan jaringan berisi aturan keamanan yang mengizinkan atau menolak lalu lintas jaringan. Ada aturan masuk dan keluar default yang dapat Anda sesuaikan dengan kebutuhan Anda.
++ Grup keamanan aplikasi digunakan untuk melindungi grup server dengan fungsi umum, seperti server web atau server database.
++ Azure DNS adalah layanan hosting untuk domain DNS yang menyediakan resolusi nama. Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik Anda.  Anda juga dapat menggunakan zona DNS privat untuk menetapkan nama DNS ke komputer virtual (VM) di jaringan virtual Azure Anda.
 
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menguji resolusi **nama eksternal dari kumpulan catatan DNS az104-04-vm1** di zona DNS yang baru dibuat (ganti tempat penampung `[Name server 1]` dengan nama **server Nama 1 yang** Anda catat sebelumnya dalam tugas ini dan `[domain name]` tempat penampung dengan nama domain DNS yang Anda buat sebelumnya dalam tugas ini):
+## Pelajari lebih lanjut dengan pelatihan mandiri
 
-   ```powershell
-   nslookup az104-04-vm1.[domain name] [Name server 1]
-   ```
-
-1. Verifikasi bahwa output perintah menyertakan alamat IP publik **az104-04-vm1**.
-
-## Membersihkan sumber daya
-
- > **Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Dengan menghapus sumber daya yang tidak digunakan, Anda tidak akan melihat biaya yang tak terduga.
-
- > **Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
-
-1. Di portal Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
-
-1. Buat daftar semua grup sumber daya yang dibuat di seluruh lab modul ini dengan menjalankan perintah berikut:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-04*'
-   ```
-
-1. Hapus semua grup sumber daya yang Anda buat di seluruh lab modul ini dengan menjalankan perintah berikut:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-04*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
-
-## Tinjauan
-
-Di lab ini, Anda telah:
-
-+ Membuat dan mengonfigurasi jaringan virtual
-+ Menyebarkan mesin virtual ke dalam jaringan virtual
-+ Alamat IP pribadi dan publik yang dikonfigurasi dari VM Azure
-+ Kelompok keamanan jaringan yang dikonfigurasi
-+ Azure DNS yang dikonfigurasi untuk resolusi nama internal
-+ Azure DNS yang dikonfigurasi untuk resolusi nama eksternal
++ [Pengantar Azure Virtual Networks](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). Merancang dan mengimplementasikan infrastruktur Azure Networking inti seperti jaringan virtual, IP publik dan privat, DNS, peering jaringan virtual, perutean, dan Azure Virtual NAT.
++ [Merancang skema](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/) alamat IP. Identifikasi kemampuan alamat IP privat dan publik Azure dan jaringan virtual lokal.
++ [Mengamankan dan mengisolasi akses ke sumber daya Azure dengan menggunakan grup keamanan jaringan dan titik](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/) akhir layanan. Grup keamanan jaringan dan titik akhir layanan membantu Anda mengamankan komputer virtual dan layanan Azure dari akses jaringan yang tidak sah.
++ [Host domain Anda di Azure DNS](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). Membuat zona DNS untuk nama domain Anda. Buat catatan DNS untuk memetakan domain ke alamat IP. Uji apakah nama domain tersebut ditetapkan ke server web Anda.
+  
