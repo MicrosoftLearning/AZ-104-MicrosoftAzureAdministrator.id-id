@@ -98,7 +98,7 @@ Dalam tugas ini, Anda menggunakan templat yang diunduh untuk menyebarkan disk te
 
 1. **Simpan** perubahan Anda.
 
-1. Dpn tidak lupa file parameter. Pilih **Edit parameter**, klik **Muat file** dan unggah **parameters.json**. 
+1. Jangan lupa file parameter. Pilih **Edit parameter**, klik **Muat file** dan unggah **parameters.json**. 
 
 1. Buat perubahan ini sehingga cocok dengan file templat.
 
@@ -160,7 +160,7 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell dan Azure PowerShell. Azu
     ```
     >**Catatan**: Jika perlu, Anda dapat menggunakan **cls** untuk menghapus jendela perintah. Anda bisa menggunakan tombol panah untuk memindahkan riwayat perintah.
    
-1. **Pilih ikon Editor** (kurung kurawal) dan navigasikan ke file JSON parameter.
+1. **Pilih ikon Editor** (kurung kurawal) dan navigasikan ke file JSON templat.
 
 1. Mengubah. Misalnya, ubah nama disk menjadi **az104-disk3**. Gunakan **Ctrl +S** untuk menyimpan perubahan Anda. 
 
@@ -189,7 +189,7 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell dan Azure PowerShell. Azu
     ls
     ```
 
-1. **Pilih ikon Editor** (kurung kurawal) dan navigasikan ke file JSON parameter.
+1. **Pilih ikon Editor** (kurung kurawal) dan navigasikan ke file JSON templat.
 
 1. Mengubah. Misalnya, ubah nama disk menjadi **az104-disk4**. Gunakan **Ctrl +S** untuk menyimpan perubahan Anda. 
 
