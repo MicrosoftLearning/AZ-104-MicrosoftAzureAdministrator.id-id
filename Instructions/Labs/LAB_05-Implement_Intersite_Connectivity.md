@@ -66,6 +66,7 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan inti dengan komputer virt
     | Ukuran | **Standard_DS2_v3** |
     | Nama Pengguna | `localadmin` | 
     | Kata sandi | **Berikan kata sandi yang kompleks** |
+    | Port masuk publik | **Tidak** |
 
     ![Cuplikan layar halaman pembuatan komputer virtual Dasar. ](../media/az104-lab05-createcorevm.png)
    
@@ -113,6 +114,7 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan manufaktur dengan kompute
     | Ukuran | **Standard_DS2_v3** | 
     | Nama Pengguna | `localadmin` | 
     | Kata sandi | **Berikan kata sandi yang kompleks** |
+    | Port masuk publik | **Tidak** |
 
 1. Pada tab **Disk** , ambil default lalu pilih **Berikutnya: Jaringan >**.
 
