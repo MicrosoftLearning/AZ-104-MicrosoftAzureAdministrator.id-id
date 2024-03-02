@@ -5,268 +5,191 @@ lab:
 ---
 
 # Lab 09a - Menerapkan Aplikasi Web
-# Panduan lab siswa
 
-## Skenario laboratorium
 
-Anda perlu mengevaluasi penggunaan aplikasi Web Azure untuk menghosting situs web Contoso, yang saat ini dihosting di pusat data lokal perusahaan. Situs web berjalan di server Windows menggunakan tumpukan runtime PHP. Anda juga perlu menentukan bagaimana Anda dapat menerapkan praktik DevOps dengan memanfaatkan slot penyebaran aplikasi web Azure.
+## Pengenalan lab
 
-**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
+Di lab ini, Anda mempelajari tentang aplikasi web Azure. Anda belajar mengonfigurasi aplikasi web untuk menampilkan aplikasi Halo Dunia di repositori GitHub eksternal. Anda belajar membuat slot penahapan dan bertukar dengan slot produksi. Anda juga mempelajari tentang autoscaling untuk mengakomodasi perubahan permintaan.
 
-## Tujuan
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan US Timur.
 
-Di lab ini Anda akan:
+## Perkiraan waktu: 20 menit
 
-+ Tugas 1: Membuat aplikasi web Azure
-+ Tugas 2: Membuat slot penyebaran penahapan
-+ Tugas 3: Mengonfigurasi pengaturan penyebaran aplikasi web
-+ Tugas 4: Menyebarkan kode ke slot penyebaran penahapan
-+ Tugas 5: Menukar slot penahapan
-+ Tugas 6: Mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure
+## Skenario lab
 
-## Perkiraan waktu: 30 menit
+Organisasi Anda tertarik dengan aplikasi Web Azure untuk menghosting situs web perusahaan Anda. Situs web saat ini dihosting di pusat data lokal. Situs web berjalan pada server Windows menggunakan tumpukan runtime PHP. Perangkat keras mendekati akhir masa pakai dan akan segera perlu diganti. Organisasi Anda ingin menghindari biaya perangkat keras baru dengan menggunakan Azure untuk menghosting situs web. 
+
+## Simulasi lab interaktif
+
+Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
+
++ [Membuat aplikasi](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202) web. Buat aplikasi web yang menjalankan kontainer Docker.
+    
++ [Menerapkan aplikasi](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2013) web Azure. Buat aplikasi web Azure, kelola penyebaran, dan skalakan aplikasi. 
 
 ## Diagram arsitektur
 
-![gambar](../media/lab09a.png)
+![Diagram tugas.](../media/az104-lab09a-architecture.png)
 
-### Petunjuk
+## Keterampilan pekerjaan
 
-## Latihan 1
++ Tugas 1: Membuat dan mengonfigurasi aplikasi web Azure.
++ Tugas 2: Membuat dan mengonfigurasi slot penyebaran.
++ Tugas 3: Mengonfigurasi pengaturan penyebaran aplikasi web.
++ Tugas 4: Menukar slot penyebaran.
++ Tugas 5: Mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure.
 
-## Tugas 1: Membuat aplikasi web Azure
+## Tugas 1: Membuat dan mengonfigurasi aplikasi web Azure
 
-Dalam tugas ini, Anda akan membuat aplikasi web Azure.
+Dalam tugas ini, Anda membuat aplikasi web Azure. Azure App Services adalah solusi Platform As a Service (PAAS) untuk aplikasi web, seluler, dan berbasis web lainnya. Aplikasi web Azure adalah bagian dari Azure App Services yang menghosting sebagian besar lingkungan runtime, seperti PHP, Java, dan .NET. Paket layanan aplikasi yang Anda pilih menentukan komputasi, penyimpanan, dan fitur aplikasi web. 
 
-1. Masuk ke [**portal Azure**](http://portal.azure.com).
+1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Di portal Microsoft Azure, cari dan pilih **Layanan aplikasi**, dan, pada panel **App Services**, klik **+ Buat**.
+1. Cari dan pilih `App services`.
+
+1. Pilih **+ Buat**, dari menu drop-down, **Aplikasi** Web. Perhatikan pilihan lainnya. 
 
 1. Pada tab **Dasar-dasar** panel **Buat Aplikasi Web**, tentukan setelan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- | ---|
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup sumber daya | nama grup sumber daya baru **az104-09a-rg1** |
+    | Langganan | langganan Azure Anda |
+    | Grup sumber daya | `az104-rg9` (Jika perlu, pilih **Buat baru**) |
     | Nama aplikasi web | nama unik global apa pun |
     | Terbitkan | **Kode** |
     | Tumpukan runtime | **PHP 8.2** |
     | Sistem operasi | **Linux** |
-    | Wilayah | nama wilayah Azure tempat Anda dapat memprovisikan aplikasi web Azure |
-    | Paket harga | menerima konfigurasi default |
+    | Wilayah | **US Timur** |
+    | Paket harga | menerima default |
+    | Redundansi zona | menerima default |
 
-1. Klik **Tinjau + buat**. Pada tab **Tinjau + buat** panel **Buat Aplikasi Web**, pastikan validasi lulus dan klik **Buat**.
+ 1. Klik **Tinjau + buat**, lalu **Buat**.
 
-    >**Catatan**: Tunggu hingga aplikasi web dibuat sebelum Anda melanjutkan ke tugas berikutnya. Ini akan memakan waktu sekitar satu menit.
+    >**Catatan**: Tunggu hingga Aplikasi Web dibuat sebelum Anda melanjutkan ke tugas berikutnya. Ini akan memakan waktu sekitar satu menit.
 
-1. Pada panel penyebaran, klik **Buka sumber daya**.
+1. Setelah penyebaran, pilih **Buka sumber daya**.
 
-## Tugas 2: Membuat slot penyebaran penahapan
+## Tugas 2: Membuat dan mengonfigurasi slot penyebaran
 
-Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan.
+Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan. Slot penyebaran memungkinkan Anda melakukan pengujian sebelum membuat aplikasi Tersedia untuk publik (atau pengguna akhir Anda). Setelah melakukan pengujian, Anda dapat menukar slot dari pengembangan atau penahapan ke produksi. Banyak organisasi menggunakan slot untuk melakukan pengujian pra-produksi. Selain itu, banyak organisasi menjalankan beberapa slot untuk setiap aplikasi (misalnya, pengembangan, QA, pengujian, dan produksi).
 
-1. Pada bilah aplikasi web yang baru disebarkan, klik **tautan Domain** default untuk menampilkan halaman web default di tab browser baru.
+1. Pada bilah Aplikasi Web yang baru disebarkan, klik **tautan Domain** default untuk menampilkan halaman web default di tab browser baru.
 
-1. Tutup tab browser baru dan, kembali ke portal Microsoft Azure, di bagian **Penyebaran** panel aplikasi web, klik **Slot penyebaran**.
+1. Tutup tab browser baru dan, kembali ke portal Azure, di bagian **Penyebaran** bilah Aplikasi Web, klik **Slot** penyebaran.
 
-    >**Catatan**: Aplikasi web, pada titik ini, memiliki satu slot penyebaran berlabel **PRODUKSI**.
+    >**Catatan**: Aplikasi Web, pada saat ini, memiliki satu slot penyebaran berlabel **PRODUKSI**.
 
 1. Klik **+ Tambahkan slot**, dan tambahkan slot baru dengan setelan berikut:
 
     | Pengaturan | Nilai |
     | --- | ---|
-    | Nama | **Pentahapan** |
+    | Nama | `staging` |
     | Klon pengaturan dari | **Jangan klon pengaturan**|
 
-1. Kembali ke penyebaran **Slot penyebaran** aplikasi web, klik entri yang mewakili slot pentahapan yang baru dibuat.
+1. Pilih **Tambahkan**.
+
+1. Kembali ke bilah **Slot** penyebaran Aplikasi Web, klik entri yang mewakili slot penahapan yang baru dibuat.
 
     >**Catatan**: Ini akan membuka bilah yang menampilkan properti slot penahapan.
 
 1. Tinjau panel slot pentahapan dan perhatikan bahwa URL-nya berbeda dari yang ditetapkan ke slot produksi.
 
-## Tugas 3: Mengonfigurasi pengaturan penyebaran aplikasi web
+## Tugas 3: Mengonfigurasi pengaturan penyebaran Aplikasi Web
 
-Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran aplikasi web.
+Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran Aplikasi Web. Pengaturan penyebaran memungkinkan penyebaran berkelanjutan. Ini memastikan bahwa layanan aplikasi memiliki versi terbaru aplikasi.
 
-1. Pada panel slot penyebaran pentahapan, di bagian **Penyebaran**, klik **Pusat Penyebaran** lalu pilih tab **Pengaturan**.
+1. Di slot penahapan, pilih **Pusat** Penyebaran lalu pilih **Pengaturan**.
 
     >**Catatan:** Pastikan Anda berada di bilah slot penahapan (bukan slot produksi).
     
-1. Pada tab **Pengaturan**, di daftar drop-down **Sumber**, pilih **Git Lokal** dan klik tombol **Simpan**
+1. **Di daftar drop-down Sumber**, pilih **Git** Eksternal. Perhatikan pilihan lainnya. 
 
-1. Pada bilah **Pusat** Penyebaran, salin **entri Git Clone Uri** ke Notepad.
+1. Di bidang repositori, masukkan `https://github.com/Azure-Samples/php-docs-hello-world`
 
-    >**Catatan:** Anda akan memerlukan nilai Git Clone Uri dalam tugas berikutnya dari lab ini.
+1. Di bidang cabang, masukkan `master`.
 
-1. Pada panel **Pusat Penyebaran**, pilih tab **Informasi masuk Git/FTPS Lokal**, di bagian **Cakupan Pengguna**, tentukan pengaturan berikut, dan klik **Simpan**.
+1. Pilih **Simpan**.
 
-    | Pengaturan | Nilai |
-    | --- | ---|
-    | Nama pengguna | nama unik global apa pun (lihat catatan)  |
-    | Kata sandi | kata sandi apa pun yang memenuhi persyaratan kompleksitas (lihat catatan) |
+1. Dari slot penahapan, pilih **Gambaran Umum**.
 
-    >**Catatan:** Salin kredensial ini ke Notepad. Anda akan membutuhkannya nanti.
-    
-    >**Catatan:** Kredensial ini akan diteruskan melalui URI. Jangan sertakan karakter khusus yang memengaruhi interpretasi URI. Misalnya, @, $, atau #. Tanda asterick atau plus (di tengah string) akan berfungsi.
-    
-## Tugas 4: Menyebarkan kode ke slot penyebaran penahapan
+1. **Pilih tautan Domain** default, dan buka URL di tab baru. 
 
-Dalam tugas ini, Anda akan menyebarkan kode ke slot penyebaran pentahapan.
+1. Verifikasi bahwa slot penahapan menampilkan **Halo Dunia**.
 
-1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
+>**Catatan:** Penyebaran mungkin memakan waktu satu menit. Pastikan untuk **Merefresh** halaman aplikasi.
 
-1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
+## Tugas 4: Menukar slot penyebaran
 
-    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+Dalam tugas ini, Anda akan menukar slot penahapan dengan slot produksi. Menukar slot memungkinkan Anda menggunakan kode yang telah Anda uji di slot penahapan Anda, dan memindahkannya ke produksi. portal Azure juga akan meminta Anda jika Anda perlu memindahkan pengaturan aplikasi lain yang telah Anda sesuaikan untuk slot. Menukar slot adalah tugas umum untuk tim aplikasi dan tim dukungan aplikasi, terutama yang menyebarkan pembaruan aplikasi rutin dan perbaikan bug.
 
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mengkloning repositori jarak jauh yang berisi kode untuk aplikasi web.
+1. Navigasikan kembali ke bilah **Slot** penyebaran, lalu pilih **Tukar**.
 
-   ```powershell
-   git clone https://github.com/Azure-Samples/php-docs-hello-world
-   ```
+1. Tinjau pengaturan default dan klik **Tukar**.
 
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mengatur lokasi saat ini ke klon repositori lokal yang baru dibuat yang berisi kode aplikasi web sampel.
+1. Pada bilah **Gambaran Umum** Aplikasi Web pilih **tautan Domain** default untuk menampilkan beranda situs web.
 
-   ```powershell
-   Set-Location -Path $HOME/php-docs-hello-world/
-   ```
+1. Verifikasi halaman web produksi menampilkan **Halo Dunia!** halaman.
 
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menambahkan git jarak jauh (pastikan untuk mengganti `[deployment_user_name]` tempat penampung dan `[git_clone_uri]` dengan nilai **nama pengguna Kredensial** Penyebaran dan **Git Clone Uri**, masing-masing, yang Anda identifikasi dalam tugas sebelumnya):
+    >**Catatan:** Salin URL** domain **Default, Anda akan memerlukannya untuk pengujian beban di tugas berikutnya. 
 
-   ```powershell
-   git remote add [deployment_user_name] [git_clone_uri]
-   ```
+## Tugas 5: Mengonfigurasi dan menguji penskalaan otomatis Azure Web App
 
-    >**Catatan**: Nilai berikut `git remote add` ini tidak harus cocok dengan **nama pengguna Kredensial** Penyebaran, tetapi harus unik
+Dalam tugas ini, Anda akan mengonfigurasi penskalaan otomatis Azure Web App. Penskalaan otomatis memungkinkan Anda mempertahankan performa optimal untuk aplikasi web Anda saat lalu lintas ke aplikasi web meningkat. Untuk menentukan kapan aplikasi harus menskalakan, Anda dapat memantau metrik seperti penggunaan CPU, memori, atau bandwidth.
 
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mendorong contoh kode aplikasi web dari repositori lokal ke slot penyebaran penahapan aplikasi web Azure (pastikan untuk mengganti nilai tempat penampung dengan nilai **nama pengguna dan kata sandi Kredensial** Penyebaran dan nama aplikasi, yang Anda identifikasi dalam tugas sebelumnya):
+1. Di bagian **Pengaturan, pilih **Peluasan skala (paket App Service)****.
 
-   ```powershell
-    git push https://<deployment-username>:<deployment-password>@<app-name>-staging.scm.azurewebsites.net/<app-name>.git master
-   ```
+    >**Catatan:** Pastikan Anda mengerjakan slot produksi bukan slot penahapan.  
 
-1. Tutup panel Cloud Shell.
+1. Dari bagian **Penskalakan** , pilih **Otomatis**. **Perhatikan opsi Berbasis** Aturan. Penskalaan berbasis aturan dapat dikonfigurasi untuk metrik aplikasi yang berbeda. 
 
-1. Pada bilah slot penahapan, klik **Gambaran Umum** lalu klik **tautan Domain** default untuk menampilkan halaman web default di tab browser baru.
+1. **Di bidang Ledakkan** maksimum, pilih **2**.
 
-1. Verifikasi bahwa halaman browser menampilkan **Halo Dunia** pesan dan tutup tab baru.
+    ![Cuplikan layar halaman skala otomatis.](../media/az104-lab09a-autoscale.png)
 
-## Tugas 5: Menukar slot penahapan
+1. Pilih **Simpan**.
 
-Dalam tugas ini, Anda akan menukar slot pentahapan dengan slot produksi
+1. Pilih **Diagnosis dan selesaikan masalah** (panel kiri).
 
-1. Navigasi kembali ke panel yang menampilkan slot produksi aplikasi web.
+1. Dalam kotak **Uji Beban Aplikasi** Anda, pilih **Buat Uji** Beban.
 
-1. Di bagian **Penyebaran**, klik **Slot penyebaran**, lalu klik ikon toolbar **Tukar**.
+    + Pilih **+ Buat** dan beri nama** uji **beban Anda.  Nama harus unik.
+    + Pilih **Ulas + buat**, lalu pilih **Buat**.
 
-1. Pada panel **Tukar**, tinjau pengaturan default dan klik **Tukar**.
+1. Tunggu hingga pengujian beban dibuat, lalu pilih **Buka sumber daya**.
 
-1. Klik **Gambaran Umum** pada bilah slot produksi aplikasi web lalu klik **tautan Domain** default untuk menampilkan halaman beranda situs web di tab browser baru.
+1. Dari **Gambaran Umum**** | Tambahkan permintaan** HTTP, pilih **Buat**.
 
-1. Pastikan halaman web default telah diganti dengan **Halo Dunia!** halaman.
+1. **Untuk URL** Pengujian, tempelkan di URL domain** Default Anda**. Pastikan ini diformat dengan benar dan dimulai dengan **https://**.
 
-## Tugas 6: Mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure
+1. Pilih **Tinjau + buat** dan **Buat.**
 
-Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure.
+    >**Catatan:** Mungkin perlu waktu beberapa menit untuk membuat pengujian. 
 
-1. Pada panel yang menampilkan slot produksi aplikasi web, di bagian **Pengaturan**, klik **Peluasan skala (paket App Service)**.
+1. Tinjau hasil pengujian termasuk **Pengguna virtual**, **Waktu** respons, dan **Permintaan/detik**.
 
-1. Dari bagian **** Penskalakan pilih **opsi Berbasis** Aturan, lalu klik **tautan Kelola penskalakan** berbasis aturan.
+1. Pilih **Hentikan** untuk menyelesaikan eksekusi pengujian.
 
-1. Klik **Skala otomatis kustom**.
+## Membersihkan sumber daya Anda
 
-    >**Catatan**: Anda juga memiliki opsi untuk menskalakan aplikasi web secara manual.
+Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
-1. Pilih **Skala berdasarkan metrik** dan klik **+ Tambahkan aturan**
++ Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
++ Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-1. Pada panel **Aturan skala**, tentukan setelan berikut (biarkan yang lain dengan nilai defaultnya):
 
-    | Pengaturan | Nilai |
-    | --- |--- |
-    | Sumber metrik | **Sumber daya saat ini** |
-    | Namespace metrik | **metrik standar** |
-    | Nama metrik | **Persentase CPU** |
-    | Operator | **Lebih besar dari** |
-    | Ambang batas metrik untuk memicu tindakan penskalaan | **10** |
-    | Durasi (dalam menit) | **1** |
-    | Statistik butir waktu | **Maksimum** |
-    | Agregasi waktu | **Maksimum** |
-    | Operasi | **Tingkatkan jumlah sebesar** |
-    | Jumlah Instans | **1** |
-    | Pendinginan (menit) | **5**
-           |
 
-    >**Catatan**: Nilai ini tidak menunjukkan konfigurasi yang realistis, karena tujuannya adalah untuk memicu penskalaan otomatis sesegera mungkin, tanpa masa tunggu yang diperpanjang.
+## Poin penting
 
-1. Klik **Tambahkan** dan, kembali pada panel penskalaan paket App Service, tentukan setelan berikut (biarkan yang lain dengan nilai defaultnya):
+Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 
-    | Pengaturan | Nilai |
-    | --- |--- |
-    | Batas instans Minimum | **1** |
-    | Batas instans Maksimum | **2** |
-    | Batas instans Default | **1** |
++ Azure App Services memungkinkan Anda membuat, menyebarkan, dan menskalakan aplikasi web dengan cepat.
++ App Service mencakup dukungan untuk banyak lingkungan pengembang termasuk ASP.NET, Java, PHP, dan Python.
++ Slot penyebaran memungkinkan Anda membuat lingkungan terpisah untuk menyebarkan dan menguji aplikasi web Anda.
++ Anda dapat menskalakan aplikasi web secara manual atau otomatis untuk menangani permintaan tambahan.
++ Berbagai alat diagnostik dan pengujian tersedia. 
 
-1. Klik **Simpan**.
+## Pelajari lebih lanjut dengan pelatihan mandiri
 
-    >**Catatan**: Jika Anda mendapatkan kesalahan saat mengeluh tentang penyedia sumber daya 'microsoft.insights' yang tidak terdaftar, jalankan `az provider register --namespace 'Microsoft.Insights'` di cloudshell Anda dan coba simpan kembali aturan skala otomatis Anda.
-
-1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
-
-1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
-
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mengidentifikasi URL aplikasi web Azure.
-
-   ```powershell
-   $rgName = 'az104-09a-rg1'
-
-   $webapp = Get-AzWebApp -ResourceGroupName $rgName
-   ```
-
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk memulai dan perulangan tak terbatas yang mengirim permintaan HTTP ke aplikasi web:
-
-   ```powershell
-   while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
-   ```
-
-1. Perkecil panel Cloud Shell (namun jangan ditutup) dan, di bilah aplikasi web, di bagian Pengaturan, klik **Skalakan (Paket App Service)**.
-
-1. Pantau pemanfaatan dan jumlah instans selama beberapa menit. 
-
-    >**Catatan**: Anda mungkin perlu **Merefresh** halaman.
-
-1. Setelah Anda melihat bahwa jumlah instans telah meningkat menjadi 2, buka kembali panel Cloud Shell dan hentikan skrip dengan menekan **Ctrl+C**.
-
-1. Tutup panel Cloud Shell.
-
-## Membersihkan sumber daya
-
->**Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Dengan menghapus sumber daya yang tidak digunakan, Anda tidak akan melihat biaya yang tak terduga.
-
->**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
-
-1. Di portal Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
-
-1. Buat daftar semua grup sumber daya yang dibuat di seluruh lab modul ini dengan menjalankan perintah berikut:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09a*'
-   ```
-
-1. Hapus semua grup sumber daya yang Anda buat di seluruh lab modul ini dengan menjalankan perintah berikut:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09a*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
-
-## Tinjau
-
-Di lab ini, Anda telah:
-
-+ Membuat aplikasi web Azure
-+ Buat slot penyebaran pentahapan
-+ Mengonfigurasikan pengaturan penyebaran aplikasi web
-+ Menyebarkan kode ke slot penyebaran pentahapan
-+ Tukar slot pentahapan
-+ Mengonfigurasi dan menguji penskalaan otomatis aplikasi web Azure
++ [Tahapkan penyebaran aplikasi web untuk pengujian dan pembatalan dengan menggunakan slot](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/) penyebaran App Service. Gunakan slot penyebaran untuk menyederhanakan penyebaran dan mengembalikan aplikasi web di Azure App Service.
++ [Skalakan aplikasi web App Service untuk memenuhi permintaan secara efisien dengan peningkatan dan peluasan](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/) skala App Service. Tanggapi periode peningkatan aktivitas dengan meningkatkan sumber daya yang tersedia secara bertahap dan kemudian, untuk mengurangi biaya, mengurangi sumber daya ini ketika aktivitas turun.

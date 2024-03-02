@@ -4,100 +4,88 @@ lab:
   module: Administer PaaS Compute Options
 ---
 
-# Lab 09c: Menerapkan Azure Container Apps
-# Panduan lab siswa
+# Lab 09c - Menerapkan Azure Container Apps
 
-## Skenario laboratorium
-Azure Container Apps memungkinkan Anda menjalankan layanan mikro dan aplikasi dalam kontainer pada platform tanpa server. Dengan Container Apps, Anda bisa mendapatkan manfaat menjalankan kontainer tanpa repot mengonfigurasi infrastruktur cloud dan orkestrator kontainer yang kompleks secara manual.
+## Pengenalan lab
 
-## Tujuan
+Di lab ini, Anda mempelajari cara menerapkan dan menyebarkan Azure Container Apps.
 
-Di lab ini, kami akan:
-- Tugas 1: Membuat aplikasi dan lingkungan kontainer
-- Tugas 2: Menyebarkan aplikasi kontainer
-- Tugas 3: Menguji dan memverifikasi penyebaran aplikasi kontainer
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US** Timur.
 
-Mulailah dengan masuk ke [portal Microsoft Azure](https://portal.azure.com).
+## Perkiraan waktu: 15 menit
 
-## Perkiraan waktu: 20 menit
+## Skenario lab
 
-## Tugas 1: Membuat aplikasi dan lingkungan kontainer
+Organisasi Anda memiliki aplikasi web yang berjalan pada komputer virtual di pusat data lokal Anda. Organisasi ingin memindahkan semua aplikasi ke cloud tetapi tidak ingin memiliki sejumlah besar server untuk dikelola. Anda memutuskan untuk mengevaluasi Azure Container Apps.
 
-Untuk membuat aplikasi kontainer Anda, mulai di halaman beranda portal Microsoft Azure.
+## Simulasi lab interaktif
 
-1. Cari `Container Apps` di bilah pencarian atas.
-1. Pilih **Aplikasi Kontainer** di hasil pencarian.
-1. Pilih tombol **Buat**.
+Tidak ada simulasi lab interaktif untuk topik ini. 
 
-### Tab Dasar
+## Keterampilan pekerjaan
 
-Pada tab *Dasar*, lakukan hal berikut.
+- Tugas 1: Membuat dan mengonfigurasi Azure Container App dan lingkungan.
+- Tugas 2: Menguji dan memverifikasi penyebaran Aplikasi Kontainer Azure.
 
-1. Masukkan nilai berikut ini di bagian *Detail Proyek*.
+## Diagram arsitektur
+
+![Diagram tugas.](../media/az104-lab09b-aca-architecture.png)
+
+## Tugas 1: Membuat dan mengonfigurasi Azure Container App dan lingkungan
+
+Azure Container Apps mengambil konsep kluster Kubernetes terkelola selangkah lebih jauh dan mengelola lingkungan kluster serta menyediakan layanan terkelola lainnya di atas kluster. Tidak seperti kluster Azure Kubernetes, di mana Anda masih harus mengelola kluster, instans Azure Container Apps menghapus beberapa kompleksitas untuk menyiapkan kluster Kubernetes.
+
+1. Dari portal Azure, cari dan pilih `Container Apps`.
+
+1. Dari **Aplikasi** Kontainer, pilih **Buat**.
+
+1. Gunakan informasi berikut untuk mengisi detail pada tab **Dasar** .*.
 
     | Pengaturan | Tindakan |
     |---|---|
-    | Langganan | Pilih langganan Azure Anda. |
-    | Grup sumber daya | Pilih **Buat baru** dan masukkan `az104-09c-rg1`. |
-    | Nama aplikasi kontainer |  Memasuki `my-container-app`. |
+    | Langganan | Pilih langganan Azure Anda |
+    | Grup sumber daya | `az104-rg9` |
+    | Nama aplikasi kontainer |  `my-app` |
+    | Wilayah    | **US** Timur (Atau wilayah yang tersedia di dekat Anda) |
+    | Lingkungan Aplikasi Kontainer | Biarkan default |
 
-#### Membuat lingkungan
+1. Pada tab **Kontainer** , pastikan bahwa **Gunakan gambar** mulai cepat diaktifkan dan gambar mulai cepat diatur ke **kontainer** Halo dunia sederhana.
 
-Selanjutnya, buat lingkungan untuk aplikasi kontainer Anda.
+1. Pilih **Tinjau dan buat** lalu **Buat**.
 
-1. Pilih subnet yang sesuai.
+    >**Catatan:** Tunggu hingga aplikasi kontainer disebarkan. Ini akan butuh waktu beberapa menit. 
+ 
+## Tugas 2: Menguji dan memverifikasi penyebaran Aplikasi Kontainer Azure
 
-    | Pengaturan | Nilai |
-    |--|--|
-    | Wilayah | **Pilihanmu**. |
-
-1. Di bidang *Buat lingkungan Container Apps*, pilih tautan **Buat baru**.
-1. Di halaman *Buat Lingkungan Container Apps* pada tab *Dasar-dasar*, masukkan nilai berikut:
-
-    | Pengaturan | Nilai |
-    |--|--|
-    | Nama lingkungan | Memasuki `my-environment`. |
-    | Redundansi zona | Pilih **Dinonaktifkan** |
-
-1. Pilih tab **Pemantauan** untuk membuat ruang kerja Analitik Log.
-1. Pilih tautan **Buat baru** di bidang *ruang kerja Analitik Log* dan masukkan nilai berikut.
-
-    | Pengaturan | Nilai |
-    |--|--|
-    | Nama | Masukkan `my-container-apps-logs` |
-  
-    Bidang *Lokasi* telah diisi sebelumnya dengan wilayah Anda untuk Anda.
-
-1. Pilih **OK** lalu **Buat**. 
-
-1. Klik **Berikutnya: Kontainer**.
-
-1. Centang kotak di samping **Gunakan gambar** mulai cepat.
-
-1. Pilih tombol **Tinjau + buat** di bagian bawah halaman. Langkah ini mungkin memakan waktu beberapa menit. 
-
-    Pengaturan di Aplikasi Kontainer diverifikasi. Jika tidak ada kesalahan yang ditemukan, tombol *Buat* diaktifkan.  
-
-    Jika ada kesalahan, tab apa pun yang berisi kesalahan ditandai dengan titik merah.  Buka tab yang sesuai. Bidang yang berisi kesalahan akan disorot dengan warna merah.  Setelah semua kesalahan diperbaiki, pilih **Tinjau dan buat** lagi.
-
-1. Pilih **Buat**.
-
-    Halaman dengan pesan *Penyebaran sedang berlangsung* ditampilkan.  Setelah penyebaran berhasil diselesaikan, Anda akan melihat pesan *Penyebaran Anda selesai*.
-   
-## Tugas 2: Menguji dan memverifikasi penyebaran aplikasi kontainer
+Secara default, aplikasi kontainer Azure yang Anda buat akan menerima lalu lintas pada port 80 menggunakan sampel Halo Dunia aplikasi. Azure Container Apps akan memberikan nama DNS untuk aplikasi tersebut. Salin dan navigasikan ke URL ini untuk memastikan bahwa aplikasi aktif dan berjalan.
 
 1. Pilih **Buka sumber daya** untuk melihat aplikasi kontainer baru Anda.
 
 1. Pilih tautan di samping *URL Aplikasi* untuk melihat aplikasi Anda.
 
+    ![Cuplikan layar halaman gambaran umum ACA di portal.](../media/az104-lab09b-aca-overview.png)
+
 1. Verifikasi bahwa Anda menerima **aplikasi Azure Container Apps Anda adalah pesan langsung** .
+   
+## Membersihkan sumber daya Anda
 
-## Membersihkan sumber daya
+Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
-Jika Anda tidak akan terus menggunakan aplikasi ini, Anda dapat menghapus instans Aplikasi Kontainer Azure dan semua layanan terkait dengan menghapus grup sumber daya.
++ Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
++ Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-1. Pilih grup sumber daya **my-container-apps** dari bagian *Gambaran Umum*.
-1. Pilih tombol **Hapus grup sumber daya** di bagian atas *Gambaran Umum* grup sumber daya.
-1. Masukkan nama grup sumber daya dan konfirmasikan bahwa Anda ingin menghapus aplikasi. 
-1. Pilih **Hapus**.
-1. Proses untuk menghapus grup sumber daya mungkin memerlukan waktu beberapa menit untuk diselesaikan.
+
+
+## Poin penting
+
+Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
+
++ Azure Container Apps (ACA) adalah platform tanpa server yang memungkinkan Anda mempertahankan lebih sedikit infrastruktur dan menghemat biaya saat menjalankan aplikasi kontainer.
++ Container Apps menyediakan konfigurasi server, orkestrasi kontainer, dan detail penyebaran. 
++ Beban kerja di ACA biasanya merupakan proses yang berjalan lama seperti Aplikasi Web.
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Mengonfigurasi aplikasi kontainer di Azure Container Apps](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Memeriksa fitur dan kemampuan Azure Container Apps, lalu berfokus pada cara membuat, mengonfigurasi, menskalakan, dan mengelola aplikasi kontainer menggunakan Azure Container Apps.
+     

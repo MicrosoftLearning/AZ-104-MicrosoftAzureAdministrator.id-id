@@ -5,335 +5,257 @@ lab:
 ---
 
 # Lab 07 - Mengelola Azure Storage
-# Panduan lab siswa
+
+## Pengenalan lab
+
+Di lab ini, Anda belajar membuat akun penyimpanan untuk blob Azure dan file Azure. Anda belajar mengonfigurasi dan mengamankan kontainer blob. Anda juga belajar menggunakan Browser Penyimpanan untuk mengonfigurasi dan mengamankan berbagi file Azure. 
+
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US** Timur.
+
+## Perkiraan waktu: 50 menit
 
 ## Skenario lab
 
-Anda perlu mengevaluasi penggunaan penyimpanan Azure untuk menyimpan file yang saat ini berada di penyimpanan data lokal. Meskipun sebagian besar file ini tidak sering diakses, ada beberapa pengecualian. Anda ingin meminimalkan biaya penyimpanan dengan menempatkan file yang jarang diakses di tingkat penyimpanan dengan harga lebih rendah. Selain itu, rencanakan untuk menjelajahi berbagai mekanisme perlindungan yang ditawarkan Azure Storage, termasuk akses jaringan, autentikasi, otorisasi, dan replikasi. Terakhir, Anda ingin menentukan sejauh mana layanan Azure Files mungkin cocok untuk menghosting berbagi file lokal Anda.
+Organisasi Anda saat ini menyimpan data di penyimpanan data lokal. Sebagian besar file ini tidak sering diakses. Anda ingin meminimalkan biaya penyimpanan dengan menempatkan file yang jarang diakses di tingkat penyimpanan dengan harga lebih rendah. Selain itu, rencanakan untuk menjelajahi berbagai mekanisme perlindungan yang ditawarkan Azure Storage, termasuk akses jaringan, autentikasi, otorisasi, dan replikasi. Terakhir, Anda ingin menentukan sejauh mana Azure Files cocok untuk menghosting berbagi file lokal Anda.
 
-**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
+## Simulasi lab interaktif
 
-## Tujuan
+Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
 
-Di lab ini Anda akan:
-
-+ Tugas 1: Memprovisikan lingkungan lab
-+ Tugas 2: Membuat dan mengonfigurasi akun Azure Storage
-+ Tugas 3: Mengelola penyimpanan blob
-+ Tugas 4: Mengelola autentikasi dan otorisasi untuk Azure Storage
-+ Tugas 5: Membuat dan mengonfigurasi berbagi Azure Files
-+ Tugas 6: Mengelola akses jaringan untuk Azure Storage
-
-## Perkiraan waktu: 40 menit
++ [Buat penyimpanan](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205) blob. Buat akun penyimpanan, kelola penyimpanan blob, dan pantau aktivitas penyimpanan. 
+  
++ [Mengelola penyimpanan](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011) Azure. Buat akun penyimpanan dan tinjau konfigurasinya. Mengelola kontainer penyimpanan blob. Mengonfigurasi jaringan penyimpanan. 
 
 ## Diagram arsitektur
 
-![gambar](../media/lab07.png)
+![Diagram tugas.](../media/az104-lab07-architecture.png)
 
+## Keterampilan pekerjaan
 
-### Petunjuk
++ Tugas 1: Membuat dan mengonfigurasi akun penyimpanan. 
++ Tugas 2: Membuat dan mengonfigurasi penyimpanan blob aman.
++ Tugas 3: Membuat dan mengonfigurasi penyimpanan file Azure yang aman.
 
-## Latihan 1
+## Tugas 1: Membuat dan mengonfigurasi akun penyimpanan. 
 
-## Tugas 1: Memprovisikan lingkungan lab
+Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun penyimpanan akan menggunakan penyimpanan geo-redundan dan tidak akan memiliki akses publik. 
 
-Dalam tugas ini, Anda akan menerapkan komputer virtual Azure yang akan Anda gunakan nanti di lab ini.
+1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Masuk ke **[portal Azure](https://portal.azure.com)**.
+1. Cari dan pilih `Storage accounts`, lalu klik **+ Buat**.
 
-1. Di portal Microsoft Azure, buka **Azure Cloud Shell** dengan mengeklik ikon di kanan atas Portal Azure.
+1. Pada tab **Dasar** dari bilah **Buat akun** penyimpanan, tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
-1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**.
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Langganan          | nama langganan Azure Anda  |
+    | Grup sumber daya        | **az104-rg7** (buat baru) |
+    | Nama akun penyimpanan  | nama unik global apa pun yang panjangnya antara 3 dan 24 yang terdiri atas huruf dan angka |
+    | Wilayah                | **(AS) AS Timur**  |
+    | Performa           | **Standar** (perhatikan opsi Premium) |
+    | Redundansi geografis            | **Penyimpanan geo-redundan** (perhatikan opsi lainnya)|
+    | Membuat akses baca ke data jika terjadi ketersediaan regional | Centang kotak |
 
-    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**.
+>**Apakah Anda tahu?** Anda harus menggunakan tingkat performa Standar untuk sebagian besar aplikasi. Gunakan tingkat performa Premium untuk aplikasi perusahaan atau berkinerja tinggi. 
 
-1. Di bilah alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu menurun, klik **Unggah** dan unggah file **\\Allfiles\\Labs\\07\\az104-07-vm-template.json** dan **\\Allfiles\\Labs\\07\\az104-07-vm-parameters.json** ke direktori beranda Cloud Shell.
+1. Pada tab **Tingkat Lanjut** , gunakan ikon informasi untuk mempelajari selengkapnya tentang pilihan tersebut. Ambil default. 
 
-1. Dari panel Cloud Shell, jalankan elemen berikut ini untuk membuat grup sumber daya yang akan menghosting komputer virtual (ganti tempat penampung '[Azure_region]' dengan nama wilayah Azure tempat Anda ingin menerapkan komputer virtual Azure)
+1. Pada tab **Jaringan** , tinjau opsi yang tersedia, pilih **Nonaktifkan akses publik dan gunakan akses privat.**.
 
-    >**Catatan**: Untuk mencantumkan nama wilayah Azure, jalankan `(Get-AzLocation).Location`
-    >**Catatan**: Setiap perintah di bawah ini harus di ketikkan secara terpisah
+1. Tinjau tab **Perlindungan** data. Pemberitahuan 7 hari adalah kebijakan penyimpanan penghapusan sementara default. Perhatikan bahwa Anda dapat mengaktifkan penerapan versi blob. Terima default.
 
-    ```powershell
-    $location = '[Azure_region]'
-    ```
+1. Tinjau tab **Enkripsi** . Perhatikan opsi keamanan tambahan. Terima default.
+
+1. Pilih **Tinjau**, tunggu hingga proses validasi selesai, lalu klik **Buat**.
+
+1. Setelah akun penyimpanan disebarkan, pilih **Buka sumber daya**.
+
+1. Tinjau bilah **Gambaran Umum** dan konfigurasi tambahan yang dapat diubah. Ini adalah pengaturan global untuk akun penyimpanan. Perhatikan bahwa akun penyimpanan dapat digunakan untuk kontainer Blob, Berbagi file, Antrean, dan Tabel.
+
+1. Di bagian **Keamanan + Jaringan** , pilih **Jaringan**. Perhatikan bahwa akses jaringan publik dinonaktifkan.
+
+    + **Ubah tingkat** akses publik menjadi **Diaktifkan dari jaringan virtual dan alamat** IP yang dipilih.
+    + Di bagian **Firewall** , centang kotak untuk **Tambahkan alamat IP klien Anda.**
+    + Pastikan untuk **Menyimpan** perubahan Anda. 
   
-    ```powershell
-     $rgName = 'az104-07-rg0'
-    ```
+1. Di bagian **Manajemen data** , lihat bilah **Redundansi** . Perhatikan informasi tentang lokasi pusat data primer dan sekunder Anda.
 
-    ```powershell
-    New-AzResourceGroup -Name $rgName -Location $location
-    ```
+1. Di bagian **Manajemen data** , pilih **Manajemen** siklus hidup, lalu pilih **Tambahkan aturan**.
+
+    + **Beri nama** aturan `Movetocool`. Perhatikan opsi Anda untuk membatasi cakupan aturan.
     
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk menyebarkan komputer virtual menggunakan templat yang diupload dan file parameter:
+    + Pada tab **Blob** dasar, *jika* blob berbasis terakhir dimodifikasi lebih dari `30 days` yang lalu *, pindahkan* **ke penyimpanan** dingin. Perhatikan pilihan Anda yang lain. 
+    
+    + Perhatikan bahwa Anda dapat mengonfigurasi kondisi lain. Pilih **Tambahkan** saat Anda selesai menjelajahi.
 
-    >**Catatan**: Anda akan diminta untuk memberikan kata sandi Admin.
+    ![Cuplikan layar berpindah ke kondisi aturan dingin.](../media/az104-lab07-movetocool.png)
 
-   ```powershell
-   New-AzResourceGroupDeployment `
-      -ResourceGroupName $rgName `
-      -TemplateFile $HOME/az104-07-vm-template.json `
-      -TemplateParameterFile $HOME/az104-07-vm-parameters.json `
-      -AsJob
-   ```
+## Tugas 2: Membuat dan mengonfigurasi penyimpanan blob aman
 
-    >**Catatan**: Jangan tunggu penyebaran selesai, tetapi lanjutkan ke tugas berikutnya.
+Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah gambar. Kontainer blob adalah struktur seperti direktori yang menyimpan data yang tidak terstruktur.
 
-    >**Catatan**: Jika Anda mendapatkan kesalahan yang menyatakan ukuran VM tidak tersedia, silakan minta bantuan instruktur Anda dan coba langkah-langkah ini.
-    > 1. Klik tombol `{}` di CloudShell Anda, pilih **az104-07-vm-parameters.json** dari bilah sisi kiri dan catat nilai parameter `vmSize`.
-    > 1. Periksa lokasi di mana grup sumber daya 'az104-04-rg1' diterapkan. Anda dapat menjalankan `az group show -n az104-04-rg1 --query location` di CloudShell Anda untuk mendapatkannya.
-    > 1. Jalankan `az vm list-skus --location <Replace with your location> -o table --query "[? contains(name,'Standard_D2s')].name"` di CloudShell Anda.
-    > 1. Ganti nilai parameter `vmSize` dengan salah satu nilai yang dikembalikan oleh perintah yang baru saja Anda jalankan.
-    > 1. Sekarang sebarkan ulang template Anda dengan menjalankan perintah `New-AzResourceGroupDeployment` lagi. Anda dapat menekan tombol atas beberapa kali yang akan membawa ke perintah yang dieksekusi terakhir.
+### Membuat kontainer blob dan kebijakan penyimpanan berbasis waktu
 
-1. Tutup panel Cloud Shell.
+1. Lanjutkan di portal Azure, bekerja dengan akun penyimpanan Anda.
 
-## Tugas 2: Membuat dan mengonfigurasi akun Azure Storage
+1. Di bagian **Penyimpanan data**, klik **Wadah**. 
 
-Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun Azure Storage.
-
-1. Di portal Azure, cari dan pilih **Akun penyimpanan**, lalu klik **+ Buat**.
-
-1. Pada tab **Dasar** pada bilah **Buat akun penyimpanan**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Klik **+ Kontainer** dan **Buat** kontainer dengan pengaturan berikut:
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup sumber daya | nama grup sumber daya **baru** **az104-07-rg1** |
-    | Nama akun penyimpanan | nama unik global apa pun yang panjangnya antara 3 dan 24 yang terdiri atas huruf dan angka |
-    | Wilayah | nama wilayah Azure tempat Anda dapat membuat akun Azure Storage  |
-    | Performa | **Standard**
-           |
-    | Redundansi geografis | **Penyimpanan Geo-redundant (GRS)** |
+    | Nama | `data`  |
+    | Tingkat akses publik | Perhatikan tingkat akses diatur ke privat |
 
-1. Klik **Berikutnya: >** Tingkat Lanjut, pada tab **Tingkat Lanjut** dari bilah **Buat akun** penyimpanan, tinjau opsi yang tersedia, terima default, dan klik **Berikutnya: Jaringan >**.
+    ![Cuplikan layar buat kontainer.](../media/az104-lab07-create-container.png)
 
-1. Pada tab **Jaringan dari bilah **Buat akun** penyimpanan, tinjau opsi yang tersedia, terima opsi **default Aktifkan akses publik dari semua jaringan** dan klik **Berikutnya: Perlindungan data >****.
+1. Pada kontainer Anda, gulir ke elipsis (...) di ujung kanan, pilih **Kebijakan** Akses.
 
-1. Pada tab **Perlindungan data** dari bilah **Buat akun penyimpanan**, tinjau opsi yang tersedia, terima defaultnya, klik **Tinjau + Buat**, tunggu proses validasi untuk selesai dan klik **Buat**.
-
-    >**Catatan**: Tunggu hingga akun Penyimpanan dibuat. Proses ini memerlukan waktu sekitar 2 menit.
-
-1. Pada bilah penerapan, klik **Buka sumber daya** untuk menampilkan bilah akun Azure Storage.
-
-1. Pada bilah akun Penyimpanan, di bagian **Manajemen data**, klik **Redundansi** dan catat lokasi sekunder. 
-
-1. Di daftar menu dropdown **Redundansi** pilih **Penyimpanan yang berlebihan secara lokal (LRS)** dan simpan perubahannya. Perhatikan bahwa, saat ini, akun Penyimpanan hanya memiliki lokasi primer.
-
-1. Pada bilah akun Penyimpanan, di bagian **Pengaturan**, pilih **Konfigurasi**. Tetapkan **tingkat akses Blob (default)** ke **Cool**, dan simpan perubahannya.
-
-    > **Catatan**: Tingkat akses dingin optimal untuk data yang tidak sering diakses.
-
-## Tugas 3: Mengelola penyimpanan blob
-
-Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamnya.
-
-1. Pada bilah akun Penyimpanan, di bagian **Penyimpanan data**, klik **Kontainer**.
-
-1. Klik **+ Penampung** dan buat penampung dengan pengaturan berikut:
+1. **Di area penyimpanan** blob yang tidak dapat diubah, pilih **Tambahkan kebijakan**.
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama | **az104-07-container**  |
-    | Tingkat akses publik | **Pribadi (tidak ada akses anonim**) |
+    | Jenis kebijakan | **Retensi berbasis waktu**  |
+    | Mengatur periode retensi untuk | `180` hari |
 
-1. Dalam daftar kontainer, klik **az104-07-container**, lalu klik **Unggah**.
+1. Pilih **Simpan**.
 
-1. Telusuri **\\Allfiles\\Labs\\07\\LISENSI** di komputer lab Anda dan klik **Buka**.
+### Mengelola unggahan blob
 
-1. Pada bilah **Unggah blob**, luaskan bagian **Lanjutan** dan tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Kembali ke halaman kontainer, pilih kontainer data** Anda **lalu klik **Unggah**.
+
+1. Pada bilah **Unggah blob** , perluas bagian **Tingkat Lanjut** .
+
+    >**Catatan**: Temukan file untuk diunggah. Ini bisa berupa semua jenis file, tetapi file kecil adalah yang terbaik. File sampel dapat diunduh dari direktori AllFiles. 
 
     | Pengaturan | Nilai |
     | --- | --- |
+    | Telusuri file | tambahkan file yang telah Anda pilih untuk diunggah |
+    | Pilih **Tingkat Lanjut** | |
     | Jenis blob | **Blob blok** |
-    | Ukuran blok | **4 MB** |
-    | Tingkat penyimpanan | **Populer** |
-    | Unggah ke folder | **lisensi** |
-
-    > **Catatan**: Tingkat akses dapat diatur untuk blob individual.
+    | Ukuran blok | **4 MiB** |
+    | Tingkat penyimpanan | **Panas**  (perhatikan opsi lainnya) |
+    | Unggah ke folder | `securitytest` |
+    | Cakupan enkripsi | Gunakan lingkup kontainer default yang ada |
 
 1. Klik **Unggah**.
 
-    > **Catatan**: Perhatikan bahwa unggahan secara otomatis membuat subfolder bernama **lisensi**.
+1. Konfirmasikan bahwa Anda memiliki folder baru, dan file Anda telah diunggah. 
 
-1. Kembali ke bilah **az104-07-container**, klik **lisensi**, lalu klik **LICENSE**.
+1. Pilih file unggahan Anda dan tinjau opsi termasuk Unduh, Hapus **, **** Ubah tingkat**, dan **Dapatkan sewa**.****
 
-1. Pada bilah **lisensi/LICENSE**, tinjau opsi yang tersedia.
-
-    > **Catatan**: Anda memiliki opsi untuk mengunduh blob, mengubah tingkat aksesnya (saat ini diatur ke **Panas**), memperoleh sewa, yang akan mengubah status sewanya menjadi **Terkunci** (saat ini diatur ke **Tidak Terkunci**) dan melindungi blob agar tidak dimodifikasi atau dihapus, serta menetapkan metadata kustom (dengan menentukan pasangan kunci dan nilai arbitrer). Anda juga memiliki kemampuan untuk **Mengedit** file secara langsung di antarmuka portal Azure, tanpa mengunduhnya terlebih dahulu. Anda juga dapat membuat snapshot, serta menghasilkan token SAS (Anda akan menjelajahi opsi ini di tugas berikutnya).
-
-## Tugas 4: Mengelola autentikasi dan otorisasi untuk Azure Storage
-
-Dalam tugas ini, Anda akan mengonfigurasi autentikasi dan otorisasi Azure Storage.
-
-1. Pada bilah **lisensi/LICENSE**, pada tab **Ringkasan**, klik tombol **Salin ke papan klip** di samping entri **URL**.
-
-1. Buka jendela browser lain dengan menggunakan mode InPrivate dan arahkan ke URL yang Anda salin di langkah sebelumnya.
+1. Salin URL** file **dan tempelkan ke jendela penjelajahan Inprivate** baru**.
 
 1. Anda akan diberikan pesan berformat XML yang menyatakan **ResourceNotFound** atau **PublicAccessNotPermitted**.
 
     > **Catatan**: Ini diharapkan, karena kontainer yang Anda buat memiliki tingkat akses publik yang diatur ke **Privat (tidak ada akses anonim)**.
 
-1. Tutup jendela browser mode InPrivate, kembali ke jendela browser yang menampilkan bilah **lisensi/LICENSE** dari wadah Azure Storage, dan alihkan ke tab **Buat SAS**.
+### Mengonfigurasi akses terbatas ke penyimpanan blob
 
-1. Pada tab **Buat SAS** pada bilah **lisensi/LICENSE**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
+1. Pilih file yang Anda unggah lalu pada tab **Hasilkan SAS** . Anda juga dapat menggunakan elipsis (...) di ujung kanan. Tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Kunci penandatanganan | **Kunci 1** |
-    | Izin | **Baca** |
+    | Izin | **Baca** (perhatikan pilihan Anda yang lain) |
     | Tanggal mulai | tanggal kemarin |
     | Waktu mulai | waktu saat ini |
     | Tanggal kedaluwarsa | tanggal besok |
     | Waktu kedaluwarsa | waktu saat ini |
     | Alamat IP yang diizinkan | biarkan kosong |
-    
 
 1. Klik **Hasilkan token SAS dan URL**.
 
-1. Klik tombol **Salin ke papan klip** di sebelah entri **Blob SAS URL**.
+1. **Salin entri URL** SAS Blob ke clipboard.
 
-1. Buka jendela browser lain dengan menggunakan mode InPrivate dan arahkan ke URL yang Anda salin di langkah sebelumnya.
+1. Buka jendela browser InPrivate lain dan navigasikan ke URL SAS Blob yang Anda salin di langkah sebelumnya.
 
-    > **Catatan**: Anda harus dapat melihat konten file dengan mengunduhnya dan membukanya dengan Notepad.
+    >**Catatan**: Anda harus dapat melihat konten file. 
 
-    > **Catatan**: Ini diharapkan, karena sekarang akses Anda diotorisasi berdasarkan token SAS yang baru dibuat.
+## Tugas 3: Membuat dan mengonfigurasi penyimpanan File Azure
 
-    > **Catatan**: Simpan URL SAS blob. Anda akan membutuhkannya nanti di lab ini.
+Dalam tugas ini, Anda akan membuat dan mengonfigurasi berbagi File Azure. Anda akan menggunakan Browser Penyimpanan untuk mengelola berbagi file. 
 
-1. Tutup jendela browser mode InPrivate, kembali ke jendela browser yang menampilkan bilah **lisensi/LICENSE** dari kontainer Azure Storage, dan dari sana, navigasikan kembali ke bilah **az104-07-container**.
+### Membuat berbagi file dan mengunggah file
 
-1. **Klik tautan Beralih ke Akun** Pengguna Microsoft Entra di **samping label Metode** autentikasi.
+1. Di portal Azure, navigasi kembali ke akun penyimpanan Anda, di bagian **Penyimpanan data**, klik **Berbagi** file.
 
-    > **Catatan**: Anda dapat melihat kesalahan saat mengubah metode autentikasi (kesalahannya adalah *"Anda tidak memiliki izin untuk mencantumkan data menggunakan akun pengguna Anda dengan Microsoft Entra"*). Hal ini diharapkan.  
+1. Klik **+ Berbagi** file dan pada tab **Dasar** memberi nama berbagi file, `share1`. 
 
-    > **Catatan**: Pada titik ini, Anda tidak memiliki izin untuk mengubah metode Autentikasi.
+1. **Perhatikan opsi Tingkat**. Tetap optimalkan** Transaksi default**.
+   
+1. Pindah ke tab **Cadangan** dan pastikan **Aktifkan Pencadangan** tidak** dicentang**. Kami menonaktifkan pencadangan untuk menyederhanakan konfigurasi lab.
 
-1. Pada bilah **az104-07-container**, klik **Access Control (IAM)**.
+1. Klik **Tinjau + buat**, lalu **Buat**. Tunggu hingga berbagi file disebarkan.
 
-1. Pada tab **Periksa akses**, klik **Tambahkan penetapan peran**.
+    ![Cuplikan layar halaman buat berbagi file.](../media/az104-lab07-create-share.png)
 
-1. Pada bilah **Tambahkan penetapan peran**, tentukan pengaturan berikut:
+### Menjelajahi Browser Penyimpanan dan mengunggah file
 
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Peran | **Pemilik Data Blob Penyimpanan** |
-    | Tetapkan akses ke | **Pengguna, grup, atau perwakilan layanan** |
-    | Anggota | nama akun pengguna Anda |
+1. Kembali ke akun penyimpanan Anda dan pilih **Browser** Penyimpanan. Browser Azure Storage adalah alat portal yang memungkinkan Anda dengan cepat melihat semua layanan penyimpanan di bawah akun Anda.
 
-1. Klik **Tinjau + Tetapkan** lalu **Tinjau + tetapkan**, dan kembali ke **bilah **Gambaran Umum** kontainer az104-07-container** dan verifikasi bahwa Anda dapat mengubah metode Autentikasi menjadi (Beralih ke Akun Pengguna Microsoft Entra).
+1. Pilih **Berbagi** file dan verifikasi bahwa direktori share1** Anda **ada.
 
-    > **Catatan**: Mungkin perlu waktu sekitar 5 menit agar perubahan diterapkan.
+1. Pilih direktori share1** Anda **dan perhatikan bahwa Anda dapat **+ Tambahkan direktori**. Ini memungkinkan Anda membuat struktur folder.
 
-## Tugas 5: Membuat dan mengonfigurasi berbagi Azure Files
+1. Pilih **Unggah**. Telusuri ke file pilihan Anda, lalu klik **Unggah**.
 
-Dalam tugas ini, Anda akan membuat dan mengonfigurasi pembagian Azure Files.
+    >**Catatan**: Anda dapat melihat berbagi file dan mengelola berbagi tersebut di Browser Penyimpanan. Saat ini tidak ada batasan.
 
-> **Catatan**: Sebelum Anda memulai tugas ini, verifikasi bahwa komputer virtual yang Anda provisikan dalam tugas pertama lab ini sedang berjalan.
+### Membatasi akses jaringan ke akun penyimpanan
 
-1. Di portal Azure, navigasikan kembali ke bilah akun penyimpanan yang Anda buat di tugas pertama lab ini dan, di bagian **Penyimpanan data**, klik **Berbagi file**.
+1. Di portal, cari dan pilih **Jaringan virtual**.
 
-1. Klik **+ Berbagi file** dan pada tab **Dasar** memberi nama berbagi file, **az104-07-share**. Tinjau pengaturan lain pada tab ini. 
+1. Pilih **+ Buat.** Pilih grup sumber daya Anda. dan beri nama** jaringan **virtual, `vnet1`.
 
-1. Pindah ke tab **Cadangan**, dan pastikan **Aktifkan Pencadangan** tidak** dicentang**.
+1. Ambil default untuk parameter lain, pilih **Tinjau + buat**, lalu **Buat**.
 
-1. Klik **Tinjau dan buat**, lalu **Buat**. Tunggu hingga berbagi file disebarkan. 
+1. Tunggu hingga jaringan virtual disebarkan, lalu pilih **Buka sumber daya**.
 
-1. Klik berbagi file yang baru dibuat dan catat informasi yang tersedia di bilah **az104-07-share** .
+1. Di bagian **Pengaturan**, pilih bilah **Subnet**.
+    + Pilih subnet **default**.
+    + Di bagian **Titik** akhir layanan pilih **Microsoft.Storage** di **menu drop-down Layanan** .
+    + Jangan membuat perubahan lain.    
+    + Pastikan untuk **Menyimpan** perubahan Anda. 
 
-1. Klik **Telusuri** dan perhatikan bahwa tidak ada file atau folder dalam berbagi file baru. Klik **Sambungkan**.
+1. Kembali ke akun penyimpanan Anda.
 
-1. Pada panel **Hubungkan**, pastikan tab **Windows** dipilih. Di bawah ini Anda akan menemukan tombol dengan label **Tampilkan Skrip**. Klik pada tombol dan Anda akan menemukan kotak teks abu-abu dengan skrip, di sudut kanan bawah kotak tersebut arahkan kursor ke ikon halaman dan klik **Salin ke papan klip**.
+1. Di bagian **Keamanan + jaringan** , pilih bilah **Jaringan** .
 
-1. Di portal Azure, cari dan pilih **Komputer virtual**, dan, dalam daftar komputer virtual, klik **az104-07-vm0**.
+1. Pilih **tambahkan jaringan** virtual yang ada dan pilih **vnet1** dan **subnet default** , pilih **Tambahkan**.
 
-1. Pada bilah **az104-07-vm0**, di bagian **Operasi**, klik **Jalankan perintah**.
+1. Di bagian **Firewall** , **Hapus** alamat IP komputer Anda. Lalu lintas yang diizinkan hanya boleh berasal dari jaringan virtual. 
 
-1. Pada bilah **az104-07-vm0 - Jalankan perintah**, klik **RunPowerShellScript**.
+1. Pastikan untuk **Menyimpan** perubahan Anda.
 
-1. Pada bilah **Jalankan Skrip Perintah**, tempel skrip yang Anda salin sebelumnya dalam tugas ini ke panel **PowerShell Script** dan klik **Jalankan**.
+    >**Catatan:** Akun penyimpanan sekarang hanya boleh diakses dari jaringan virtual yang baru saja Anda buat. 
 
-1. Verifikasi bahwa skrip berhasil diselesaikan.
+1. **Pilih browser** Penyimpanan dan **Refresh** halaman. Navigasikan ke berbagi file atau konten blob Anda.  
 
-1. Ganti konten panel **Skrip PowerShell** dengan skrip berikut dan klik **Jalankan**:
+    >**Catatan:** Anda harus menerima pesan *yang tidak berwenang untuk melakukan operasi* ini. Anda tidak tersambung dari jaringan virtual. Mungkin perlu waktu beberapa menit agar ini berlaku.
 
-   ```powershell
-   New-Item -Type Directory -Path 'Z:\az104-07-folder'
 
-   New-Item -Type File -Path 'Z:\az104-07-folder\az-104-07-file.txt'
-   ```
+![Cuplikan layar akses tidak sah.](../media/az104-lab07-notauthorized.png)
 
-1. Verifikasi bahwa skrip berhasil diselesaikan.
+## Membersihkan sumber daya Anda
 
-1. Navigasi kembali ke **bilah az104-07-share \| Telusuri** berbagi file, klik **Refresh**, dan verifikasi bahwa **folder** az104-07 muncul dalam daftar folder.
+Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
-1. Klik **az104-07-folder** dan verifikasi bahwa **az104-07-file.txt** muncul dalam daftar file.
++ Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
++ Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Tugas 6: Mengelola akses jaringan untuk Azure Storage
+## Poin penting
 
-Dalam tugas ini, Anda akan mengonfigurasi akses jaringan Azure Storage.
+Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 
-1. Di portal Microsoft Azure, navigasikan kembali ke bilah akun penyimpanan yang Anda buat di tugas pertama lab ini dan, di bagian **Keamanan + Jaringan**, klik **Jaringan** lalu klik **Firewall dan jaringan virtual**.
++ Akun penyimpanan Azure berisi semua objek data Azure Storage Anda: blob, file, antrean, dan tabel. Akun penyimpanan menyediakan ruang nama unik untuk data Microsoft Azure Storage Anda yang dapat diakses dari mana saja di seluruh dunia melalui HTTP atau HTTPS.
++ Penyimpanan Azure menyediakan beberapa model redundansi termasuk Penyimpanan redundan lokal (LRS), Penyimpanan zona redundan (ZRS), dan penyimpanan Geo-redundan (GRS). 
++ Penyimpanan blob Azure memungkinkan Anda menyimpan sejumlah besar data yang tidak terstruktur di platform penyimpanan data Microsoft. Blob adalah singkatan dari Binary Large Object, yang mencakup objek seperti gambar dan file multimedia.
++ Azure file Storage menyediakan penyimpanan bersama untuk data terstruktur. Data dapat diatur dalam folder.
++ Penyimpanan yang tidak dapat diubah menyediakan kemampuan untuk menyimpan data dalam status menulis sekali, membaca banyak (WORM). Kebijakan penyimpanan yang tidak dapat diubah dapat berbasis waktu atau penahanan hukum.
 
-1. Klik opsi **Diaktifkan dari jaringan virtual dan alamat IP yang dipilih** dan tinjau pengaturan konfigurasi yang tersedia setelah opsi ini diaktifkan.
+## Pelajari lebih lanjut dengan pelatihan mandiri
 
-    > **Catatan**: Anda dapat menggunakan pengaturan ini untuk mengonfigurasi konektivitas langsung antara komputer virtual Azure pada subnet jaringan virtual yang ditunjuk dan akun penyimpanan dengan menggunakan titik akhir layanan.
-
-1. Klik kotak centang **Tambahkan alamat IP klien Anda** dan simpan perubahannya.
-
-1. Buka jendela browser lain dengan menggunakan mode InPrivate dan navigasikan ke URL blob SAS yang Anda buat di tugas sebelumnya.
-
-    > **Catatan**: Jika Anda tidak merekam URL SAS dari tugas 4, Anda harus membuat url baru dengan konfigurasi yang sama. Gunakan Tugas 4 langkah 4-6 sebagai panduan untuk membuat URL blob SAS baru. 
-
-1. Anda harus dapat mengunduh file LICENSE.txt.
-
-    > **Catatan**: Ini diharapkan, karena Anda terhubung dari alamat IP klien Anda.
-
-1. Tutup jendela browser mode InPrivate, kembali ke jendela browser yang menampilkan bilah **Jaringan** akun Azure Storage.
-
-1. Di portal Azure, cari dan pilih **Komputer virtual**, dan, dalam daftar komputer virtual, klik **az104-07-vm0**.
-
-1. Pada bilah **az104-07-vm0**, di bagian **Operasi**, klik **Jalankan perintah**.
-
-1. Pada bilah **Jalankan Skrip** Perintah, jalankan yang berikut ini di **panel Skrip** PowerShell untuk mencoba mengunduh blob LISENSI dari **kontainer az104-07-container** akun penyimpanan (ganti `[blob SAS URL]` tempat penampung dengan URL SAS blob yang Anda buat di tugas sebelumnya):
-
-   ```powershell
-   Invoke-WebRequest -URI '[blob SAS URL]'
-   ```
-1. Verifikasi bahwa upaya pengunduhan gagal.
-
-    > **Catatan**: Anda harus menerima pesan yang menyatakan **AuthorizationFailure: Permintaan ini tidak berwenang untuk melakukan operasi** ini. Hal ini diharapkan, karena Anda terhubung dari alamat IP yang ditetapkan ke Azure VM yang menghosting instans Cloud Shell.
-
-## Membersihkan sumber daya
-
->**Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Dengan menghapus sumber daya yang tidak digunakan, Anda tidak akan melihat biaya yang tak terduga.
-
->**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. Anda juga dapat mencoba menghapus Grup Sumber Daya tempat sumber daya berada. Itu adalah pintasan Administrator cepat. Jika Anda memiliki kekhawatiran berbicara dengan instruktur Anda.
-
-1. Di portal Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
-
-1. Buat daftar semua grup sumber daya yang dibuat di seluruh lab modul ini dengan menjalankan perintah berikut:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-07*'
-   ```
-
-1. Hapus semua grup sumber daya yang Anda buat di seluruh lab modul ini dengan menjalankan perintah berikut:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-07*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
-
-## Tinjauan
-
-Di lab ini, Anda telah:
-
-- Memprovisikan lingkungan lab
-- Membuat dan mengonfigurasi akun Azure Storage
-- Penyimpanan blob terkelola
-- Autentikasi dan otorisasi terkelola untuk Azure Storage
-- Membuat dan mengonfigurasi berbagi file Azure
-- Akses jaringan terkelola untuk Azure Storage
++ [Optimalkan biaya Anda dengan Azure Blob Storage](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Pelajari cara mengoptimalkan biaya Anda dengan Azure Blob Storage.
++ [Mengontrol akses ke Azure Storage dengan tanda tangan](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/) akses bersama. Berikan akses ke data yang disimpan di akun Azure Storage Anda dengan aman dengan menggunakan tanda tangan akses bersama.

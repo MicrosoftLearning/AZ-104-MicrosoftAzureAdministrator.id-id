@@ -5,214 +5,175 @@ lab:
 ---
 
 # Lab 02a - Mengelola Langganan dan RBAC
-# Panduan lab siswa
 
-## Persyaratan laboratorium
+## Pengenalan lab
 
-Lab ini memerlukan izin untuk membuat pengguna, membuat peran Kontrol Akses Berbasis Peran (RBAC) Azure kustom, dan menetapkan peran ini kepada pengguna. Tidak semua hoster lab dapat menyediakan kemampuan ini. Tanyakan kepada instruktur Anda untuk ketersediaan lab ini.
+Di lab ini, Anda mempelajari tentang kontrol akses berbasis peran. Anda mempelajari cara menggunakan izin dan cakupan untuk mengontrol identitas tindakan apa yang dapat dan tidak dapat dilakukan. Anda juga mempelajari cara mempermudah manajemen langganan menggunakan grup manajemen. 
 
-## Skenario laboratorium
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US** Timur. 
 
-Untuk meningkatkan pengelolaan sumber daya Azure di Contoso, Anda telah ditugaskan untuk menerapkan fungsionalitas berikut:
+## Perkiraan waktu: 30 menit
 
-- membuat grup manajemen yang akan mencakup semua langganan Azure Contoso
+## Skenario lab
 
-- memberikan izin untuk mengirimkan permintaan dukungan untuk semua langganan dalam grup manajemen kepada pengguna yang ditunjuk. Izin pengguna tersebut harus dibatasi hanya untuk: 
+Untuk menyederhanakan manajemen sumber daya Azure di organisasi Anda, Anda telah ditugaskan untuk menerapkan fungsionalitas berikut:
 
-    - membuat tiket permintaan dukungan
-    - melihat grup sumber daya
+- Membuat grup manajemen yang menyertakan semua langganan Azure Anda.
 
-**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama.
+- Memberikan izin untuk mengirimkan permintaan dukungan untuk semua langganan di grup manajemen. Izin harus dibatasi hanya untuk: 
 
-## Tujuan
-
-Di lab ini Anda akan:
-
-+ Tugas 1: Menerapkan Grup Manajemen
-+ Tugas 2: Membuat peran RBAC kustom 
-+ Tugas 3: Menetapkan peran RBAC
+    - Membuat dan mengelola komputer virtual
+    - Membuat tiket permintaan dukungan (tidak termasuk menambahkan penyedia Azure)
 
 
-## Perkiraan waktu: 60 menit
+## Simulasi lab interaktif
+
+Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
+
++ [Mengelola akses dengan RBAC](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2014). Tetapkan peran bawaan untuk pengguna dan pantau log aktivitas. 
+
++ [Mengelola langganan dan RBAC](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%202). Terapkan grup manajemen dan buat dan tetapkan peran RBAC kustom.
+
++ [Buka permintaan](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2022) dukungan. Tinjau opsi paket dukungan, lalu buat dan pantau permintaan dukungan, teknis atau penagihan.
 
 ## Diagram arsitektur
 
-![gambar](../media/lab02aentra.png)
+![Diagram tugas lab.](../media/az104-lab02a-architecture.png)
 
+## Keterampilan pekerjaan
 
-### Petunjuk
-
-## Latihan 1
++ Tugas 1: Menerapkan grup manajemen.
++ Tugas 2: Tinjau dan tetapkan peran Azure bawaan.
++ Tugas 3: Buat peran RBAC kustom.
++ Tugas 4: Memantau penetapan peran dengan Log Aktivitas.
 
 ## Tugas 1: Menerapkan Grup Manajemen
 
-Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. 
+Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. Grup manajemen digunakan untuk mengatur langganan secara logis. Langganan harus disegmentasi dan memungkinkan RBAC dan Azure Policy ditetapkan dan diwariskan ke grup manajemen dan langganan lainnya. Misalnya, jika organisasi Anda memiliki tim dukungan khusus untuk Eropa, Anda dapat mengatur langganan Eropa ke dalam grup manajemen untuk menyediakan akses staf dukungan ke langganan tersebut (tanpa menyediakan akses individual ke semua langganan). Dalam skenario kami, semua orang di Help Desk harus membuat permintaan dukungan di semua langganan. 
 
-1. Masuk ke [**portal Azure**](http://portal.azure.com).
+1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Telusuri dan pilih **Grup manajemen** untuk menavigasi ke panel **Grup manajemen**.
+1. Cari dan pilih `Microsoft Entra ID`.
 
-1. Tinjau pesan di bagian atas panel **Grup manajemen**. Jika Anda melihat pesan yang menyatakan **Anda terdaftar sebagai admin direktori tetapi tidak memiliki izin yang diperlukan untuk mengakses grup** manajemen akar, lakukan urutan langkah-langkah berikut:
+1. Di bilah **Kelola** , pilih **Properti**.
 
-    1. Di portal Azure, cari dan pilih **ID** Microsoft Entra.
-    
-    1.  Pada bilah yang menampilkan properti penyewa Anda, di menu vertikal di sisi kiri, di bagian **Kelola** , pilih **Properti**.
-    
-    1.  Pada bilah **Properti** penyewa Anda, di bagian **Manajemen akses untuk sumber daya** Azure, pilih **Ya** lalu pilih **Simpan**.
-    
-    1.  Navigasikan kembali ke panel **Grup manajemen**, dan pilih **Refresh**.
+1. **Tinjau area Manajemen akses untuk sumber daya** Azure. Pastikan Anda dapat mengelola akses ke semua langganan Azure dan grup manajemen di penyewa.
+   
+1. Cari dan pilih `Management groups`.
 
 1. Pada panel **Grup manajemen**, klik **+ Buat**.
 
-    >**Catatan**: Jika Sebelumnya Anda belum membuat Grup Manajemen, pilih **Mulai menggunakan grup manajemen**
-
-1. Buat grup manajemen dengan pengaturan berikut:
+1. Buat grup manajemen dengan pengaturan berikut. Pilih **Kirim** saat Anda selesai. 
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | ID grup manajemen | **az104-02-mg1** |
-    | Nama tampilan grup manajemen | **az104-02-mg1** |
+    | ID grup manajemen | `az104-mg1` (harus unik dalam direktori) |
+    | Nama tampilan grup manajemen | `az104-mg1` |
 
-1. Dalam daftar grup manajemen, klik entri yang mewakili grup manajemen yang baru dibuat.
+1. **Refresh** halaman grup manajemen untuk memastikan grup manajemen baru Anda ditampilkan. Ini mungkin memakan waktu satu menit. 
 
-1. Pada panel **az104-02-mg1**, klik **Langganan**. 
+   >**Catatan:** Apakah Anda melihat grup manajemen akar? Grup manajemen root ini dibangun ke dalam hierarki agar semua grup manajemen dan langganan berada di dalamnya. Grup manajemen akar ini memungkinkan kebijakan global dan penetapan peran Azure diterapkan di tingkat direktori. Setelah membuat grup manajemen, Anda akan menambahkan langganan apa pun yang harus disertakan dalam grup. 
 
-1. Pada panel **az104-02-mg1 \| Langganan**, klik **+ Tambahkan**, pada panel **Tambahkan langganan**, di **Langganan** daftar dropdown, pilih langganan yang Anda gunakan di lab ini dan klik **Simpan**.
+## Tugas 2: Meninjau dan menetapkan peran Azure bawaan
 
-    >**Catatan**: Pada bilah **Langganan** az104-02-mg1\|, salin ID langganan Azure Anda ke Clipboard. Anda akan membutuhkannya dalam tugas berikutnya.
+Dalam tugas ini, Anda akan meninjau peran bawaan dan menetapkan peran Kontributor VM kepada anggota Staf Dukungan. Azure menyediakan sejumlah besar peran bawaan[](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
-## Tugas 2: Membuat peran RBAC kustom
+1. Pilih **grup manajemen az104-mg1** .
 
-Dalam tugas ini, Anda akan membuat definisi peran RBAC kustom.
+1. Pilih bilah **Kontrol akses (IAM),** lalu tab **Peran** .
 
-1. Dari komputer lab, buka file **\\Allfiles\\Labs\\02\\az104-02a-customRoleDefinition.json** di Notepad dan tinjau kontennya:
+1. Gulir definisi peran bawaan yang tersedia. **Lihat** peran untuk mendapatkan informasi terperinci tentang **Izin**, **JSON**, dan **Penugasan**. Anda akan sering menggunakan *pemilik*, *kontributor*, dan *pembaca*. 
 
-   ```json
-   {
-      "Name": "Support Request Contributor (Custom)",
-      "IsCustom": true,
-      "Description": "Allows to create support requests",
-      "Actions": [
-          "Microsoft.Resources/subscriptions/resourceGroups/read",
-          "Microsoft.Support/*"
-      ],
-      "NotActions": [
-      ],
-      "AssignableScopes": [
-          "/providers/Microsoft.Management/managementGroups/az104-02-mg1",
-          "/subscriptions/SUBSCRIPTION_ID"
-      ]
-   }
-   ```
-    > **Catatan**: Jika Anda tidak yakin di mana file disimpan secara lokal di lingkungan lab Anda, silakan tanyakan kepada instruktur Anda.
+1. Pilih **+ Tambahkan**, dari menu drop-down, pilih **Tambahkan penetapan** peran. 
 
-1. Ganti `SUBSCRIPTION_ID` tempat penampung di file JSON dengan ID langganan yang Anda salin ke Clipboard dan simpan perubahannya.
+1. Pada bilah **Tambahkan penetapan** peran, cari dan pilih **Kontributor** Komputer Virtual. Peran Kontributor komputer virtual memungkinkan Anda mengelola komputer virtual, tetapi tidak mengakses sistem operasi mereka atau mengelola jaringan virtual dan akun penyimpanan yang terhubung dengannya. Ini adalah peran yang baik untuk Help Desk. Pilih **Selanjutnya**.
 
-1. Di portal Azure, buka panel **Cloud Shell** dengan mengeklik ikon panel alat langsung di sebelah kanan kotak teks penelusuran.
+    >**Apakah Anda tahu?** Azure awalnya hanya **menyediakan model penyebaran Klasik** . Ini telah digantikan oleh **model penyebaran Azure Resource Manager** . Sebagai praktik terbaik, jangan gunakan sumber daya klasik. 
 
-1. Jika diminta untuk memilih **Bash** atau **PowerShell**, pilih **PowerShell**. 
+1. Pada tab **Anggota** , **Pilih Anggota**.
 
-    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
+    >**Catatan:** Langkah berikutnya menetapkan peran ke **grup helpdesk** . Jika Anda tidak memiliki grup Help Desk, luangkan waktu satu menit untuk membuatnya.
 
-1. Di panel alat panel Cloud Shell, klik ikon **Unggah/Unduh file**, di menu dropdown klik **Unggah**, dan unggah file **\\Allfiles\\Lab\\02\\az104-02a-customRoleDefinition.json** ke dalam direktori beranda Cloud Shell.
+1. Cari dan pilih `helpdesk` grup. Klik **Pilih**. 
 
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk membuat definisi peran kustom:
+1. Klik **Tinjau + tetapkan** dua kali untuk membuat penetapan peran.
 
-   ```powershell
-   New-AzRoleDefinition -InputFile $HOME/az104-02a-customRoleDefinition.json
-   ```
+1. Lanjutkan pada bilah **Kontrol akses (IAM).** Pada tab **Penetapan** peran, konfirmasikan **grup helpdesk** memiliki **peran Kontributor** Komputer Virtual. 
 
-1. Tutup panel Cloud Shell.
+    >**Catatan:** Sebagai praktik terbaik, selalu tetapkan peran ke grup bukan individu. 
 
-## Tugas 3: Menetapkan peran RBAC
-
-Dalam tugas ini, Anda akan membuat pengguna, menetapkan peran RBAC yang Anda buat di tugas sebelumnya kepada pengguna tersebut, dan memverifikasi bahwa pengguna dapat melakukan tugas yang ditentukan dalam definisi peran RBAC.
-
-1. Di portal Azure, cari dan pilih **ID** Microsoft Entra, klik **Pengguna**, lalu klik **+ Pengguna** baru.
-
-1. Buat pengguna baru dengan pengaturan berikut (biarkan yang lain dengan default):
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Nama pengguna | **az104-02-aaduser1**|
-    | Nama | **az104-02-aaduser1**|
-    | Izinkan saya membuat kata sandi | diaktifkan |
-    | Kata sandi awal | **Berikan kata sandi yang aman** |
-
-    >**Catatan**: **Salin ke clipboard** nama** pengguna lengkap**. Anda akan membutuhkannya nanti di lab ini.
-
-1. Di portal Azure, navigasikan kembali ke grup pengelolaan **az104-02-mg1** dan tampilkan **detailnya**.
-
-1. Klik **Access Control (IAM)**, klik **+ Tambahkan** lalu **Tambahkan penetapan peran**. Pada tab **Peran**, cari **Kontributor Permintaan Dukungan (Kustom)**. 
-
-    >**Catatan**: jika peran kustom Anda tidak terlihat, diperlukan waktu hingga 10 menit agar peran kustom muncul setelah dibuat.
-
-1. Pilih **Peran** dan klik **Berikutnya**. Pada tab **Anggota**, klik **+ Pilih anggota** dan **pilih** akun pengguna az104-****************** *******.**********.onmicrosoft.com. Klik **Berikutnya** lalu **Tinjau dan tetapkan**.
-
-1. Buka jendela browser **InPrivate** dan masuk ke [portal Azure](https://portal.azure.com) menggunakan akun pengguna yang baru dibuat. Saat diminta untuk memperbarui kata sandi, ubah kata sandi untuk pengguna.
-
-    >**Catatan**: Daripada mengetik nama pengguna, Anda dapat menempelkan konten Clipboard.
-
-1. Di jendela browser **InPrivate**, di portal Azure, telusuri dan pilih **Grup sumber daya** untuk memverifikasi bahwa pengguna az104-02-aaduser1 dapat melihat semua grup sumber daya.
-
-1. Di jendela browser **InPrivate**, di portal Azure, telusuri dan pilih **Semua sumber daya** untuk memverifikasi bahwa pengguna az104-02-aaduser1 tidak dapat melihat sumber daya apa pun.
-
-1. Di jendela browser **InPrivate**, di portal Azure, telusuri dan pilih **Bantuan + dukungan** lalu klik **+ Buat permintaan dukungan**. 
-
-1. Di jendela browser **InPrivate**, pada tab **Deskripsi/Ringkasan Masalah** dari **Bantuan + dukungan - Blade permintaan dukungan baru**, ketik **Batas layanan dan langganan** di bidang Ringkasan dan pilih jenis masalah **Batas layanan dan langganan (kuota)**. Perhatikan bahwa langganan yang Anda gunakan di lab ini tercantum dalam daftar dropdown **Langganan**.
-
-    >**Catatan**: Kehadiran langganan yang Anda gunakan di lab ini di **daftar drop-down Langganan** menunjukkan bahwa akun yang Anda gunakan memiliki izin yang diperlukan untuk membuat permintaan dukungan khusus langganan.
-
-    >**Catatan**: Jika Anda tidak melihat **opsi Layanan dan batas langganan (kuota),** keluar dari portal Azure dan masuk kembali.
-
-1. Jangan lanjutkan dengan membuat permintaan dukungan. Sebagai gantinya, keluar sebagai pengguna az104-02-aaduser1 dari portal Azure dan tutup jendela browser InPrivate.
-
-## Tugas 4: Bersihkan sumber daya
-
-   >**Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Menghapus sumber daya yang tidak digunakan memastikan Anda tidak akan melihat biaya tak terduga, meskipun, sumber daya yang dibuat di lab ini tidak dikenakan biaya tambahan.
-
-   >**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya.
-
-1. Di portal Azure, cari dan pilih **ID** Microsoft Entra, klik **Pengguna**.
-
-1. Pada panel **Pengguna - Semua pengguna**, klik **az104-02-aaduser1**.
-
-1. Pada panel **az104-02-aaduser1 - Profile**, salin nilai atribut **Object ID**.
-
-1. Di portal Azure, mulai sesi **PowerShell** dalam **Cloud Shell**.
-
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk menghapus penetapan definisi peran kustom (ganti `[object_ID]` tempat penampung dengan nilai **atribut ID** objek dari **akun pengguna az104-02-aaduser1** yang Anda salin sebelumnya dalam tugas ini):
-
-   ```powershell
-   
-    $scope = (Get-AzRoleDefinition -Name 'Support Request Contributor (Custom)').AssignableScopes | Where-Object {$_ -like '*managementgroup*'}
+    >**Apakah Anda tahu?** Penugasan ini mungkin tidak benar-benar memberi Anda hak istimewa tambahan. Jika Anda sudah memiliki peran Pemilik, peran tersebut menyertakan semua izin yang terkait dengan peran Kontributor VM.
     
-    Remove-AzRoleAssignment -ObjectId '[object_ID]' -RoleDefinitionName 'Support Request Contributor (Custom)' -Scope $scope
-   ```
+## Tugas 3: Membuat peran RBAC kustom
 
-1. Dari panel Cloud Shell, jalankan perintah berikut untuk menghapus definisi peran kustom:
+Dalam tugas ini, Anda akan membuat peran RBAC kustom. Peran kustom adalah bagian inti dari menerapkan prinsip hak istimewa paling sedikit untuk lingkungan. Peran bawaan mungkin memiliki terlalu banyak izin untuk skenario Anda. Dalam tugas ini kita akan membuat peran baru dan menghapus izin yang tidak diperlukan. Apakah Anda memiliki rencana untuk mengelola izin yang tumpang tindih?
 
-   ```powershell
-   Remove-AzRoleDefinition -Name 'Support Request Contributor (Custom)' -Force
-   ```
+1. Lanjutkan mengerjakan grup manajemen Anda. Di bilah **Kontrol akses (IAM),** pilih tab **Periksa akses** .
 
-1. Di portal Azure, navigasikan kembali ke bilah **Pengguna - Semua pengguna** ID **** Microsoft Entra, dan hapus **akun pengguna az104-02-aaduser1**.
+1. Dalam kotak **Buat peran** kustom, pilih **Tambahkan**.
 
-1. Di portal Azure, navigasikan kembali ke panel **Grup manajemen**. 
+1. Pada tab Dasar selesaikan konfigurasi.
 
-1. Pada panel **Grup manajemen**, pilih ikon **elipsis** di samping langganan Anda di bawah grup pengelolaan **az104-02-mg1** dan pilih **Pindahkan** untuk memindahkan langganan ke **grup pengelolaan Penyewa Root**.
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Nama peran kustom | `Custom Support Request` |
+    | Deskripsi | ''Peran kontributor kustom untuk permintaan dukungan.' |
 
-   >**Catatan**: Kemungkinan grup manajemen target adalah **grup** manajemen Akar Penyewa, kecuali Anda membuat hierarki grup manajemen kustom sebelum menjalankan lab ini.
-   
-1. Pilih **Refresh** untuk memverifikasi bahwa langganan telah berhasil dipindahkan ke **grup pengelolaan Penyewa Root**.
+1. Untuk **Izin** garis besar, pilih **Kloning peran**. **Di menu drop-down Peran untuk mengkloning**, pilih **Kontributor** Permintaan Dukungan.
 
-1. Navigasikan kembali ke panel **Grup manajemen**, klik ikon **elipsis** di sebelah kanan grup manajemen **az104-02-mg1** dan klik **Hapus**.
-  >**Catatan**: Jika Anda tidak dapat menghapus **grup manajemen Akar Penyewa**, kemungkinan **Langganan Azure** berada di bawah grup manajemen. Anda perlu memindahkan **Langganan Azure** dari **grup manajemen Akar Penyewa** lalu menghapus grup.
+    ![Cuplikan layar mengkloning peran.](../media/az104-lab02a-clone-role.png)
 
-## Tinjau
+1. Pilih **Berikutnya** untuk berpindah ke tab **Izin** , lalu pilih **+ Kecualikan izin**.
 
-Di lab ini, Anda telah:
+1. Di bidang pencarian penyedia sumber daya, masukkan `.Support` dan pilih **Microsoft.Support**.
 
-- Grup Manajemen yang Diimplementasikan
-- Membuat peran RBAC kustom 
-- Peran RBAC yang ditetapkan
+1. Dalam daftar izin, letakkan kotak centang di samping **Lainnya: Mendaftarkan Penyedia** Sumber Daya Dukungan lalu pilih **Tambahkan**. Peran harus diperbarui untuk menyertakan izin ini sebagai *NotAction*.
+
+    >**Catatan:** Penyedia sumber daya Azure adalah sekumpulan operasi REST yang memungkinkan fungsionalitas untuk layanan Azure tertentu. Kami tidak ingin Help Desk dapat memiliki kemampuan ini, sehingga dihapus dari peran kloning. Anda juga dapat memisahkan dan menambahkan kemampuan lain ke peran baru. 
+
+1. Pada tab **Cakupan** yang dapat ditetapkan, pastikan grup manajemen Anda tercantum, lalu klik **Berikutnya**.
+
+1. Tinjau JSON untuk *Tindakan*, *NotActions*, dan *AssignableScopes* yang disesuaikan dalam peran. 
+
+1. Pilih **Tinjauan + Buat**, kemudian pilih **Buat**.
+
+    >**Catatan:** Pada titik ini, Anda telah membuat peran kustom dan menetapkannya ke grup manajemen.  
+
+## Tugas 4: Memantau penetapan peran dengan Log Aktivitas
+
+Dalam tugas ini, Anda melihat log aktivitas untuk menentukan apakah ada yang telah membuat peran baru. 
+
+1. Di portal, temukan **sumber daya az104-mg1** dan pilih **Log aktivitas**. Log aktivitas memberikan wawasan tentang peristiwa tingkat langganan. 
+
+1. Tinjau aktivitas untuk penetapan peran. Log aktivitas dapat difilter untuk operasi tertentu. 
+
+    ![Cuplikan layar halaman Log aktivitas dengan filter yang dikonfigurasi.](../media/az104-lab02a-searchactivitylog.png)
+
+## Membersihkan sumber daya Anda
+
+Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+
++ Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
++ Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Menggunakan CLI, `az group delete --name resourceGroupName`.
+  
+## Poin penting
+
+Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
+
++ Grup manajemen digunakan untuk mengatur langganan secara logis.
++ Grup manajemen akar bawaan mencakup semua grup manajemen dan langganan.
++ Azure memiliki banyak peran bawaan. Anda dapat menetapkan peran ini untuk mengontrol akses ke sumber daya.
++ Anda dapat membuat peran baru atau menyesuaikan peran yang ada.
++ Peran didefinisikan dalam file berformat JSON dan mencakup *Tindakan*, *NotActions*, dan *AssignableScopes*.
++ Anda dapat menggunakan Log Aktivitas untuk memantau penetapan peran. 
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Amankan sumber daya Azure Anda dengan kontrol akses berbasis peran Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Gunakan Azure RBAC untuk mengelola akses ke sumber daya di Azure.
++ [Buat peran kustom untuk sumber daya Azure dengan kontrol akses berbasis peran (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Memahami struktur definisi peran untuk kontrol akses. Mengidentifikasi properti peran yang akan digunakan yang menentukan izin peran kustom Anda. Membuat peran kustom Azure dan menetapkan ke pengguna.
+
+
+
+
+

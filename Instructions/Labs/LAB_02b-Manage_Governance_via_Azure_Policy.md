@@ -5,173 +5,174 @@ lab:
 ---
 
 # Lab 02b - Mengelola Tata Kelola melalui Azure Policy
-# Panduan lab siswa
 
-## Skenario laboratorium
+## Pengenalan lab
 
-Untuk meningkatkan pengelolaan sumber daya Azure di Contoso, Anda telah ditugaskan untuk menerapkan fungsionalitas berikut:
+Di lab ini, Anda mempelajari cara menerapkan rencana tata kelola organisasi Anda. Anda mempelajari bagaimana kebijakan Azure dapat memastikan keputusan operasional diberlakukan di seluruh organisasi. Anda mempelajari cara menggunakan pemberian tag sumber daya untuk meningkatkan pelaporan. 
 
-- menandai grup sumber daya yang hanya menyertakan sumber daya infrastruktur (seperti Cloud Shell akun penyimpanan)
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US** Timur. 
 
-- memastikan bahwa hanya sumber daya infrastruktur yang diberi tag dengan benar yang dapat ditambahkan ke grup sumber daya infrastruktur
+## Perkiraan waktu: 30 menit
 
-- meremediasi sumber daya yang tidak patuh
+## Skenario lab
 
-**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
+Jejak cloud organisasi Anda telah berkembang pesat dalam setahun terakhir. Selama audit baru-baru ini, Anda menemukan sejumlah besar sumber daya yang tidak memiliki pemilik, proyek, atau pusat biaya yang ditentukan. Untuk meningkatkan manajemen sumber daya Azure di organisasi Anda, Anda memutuskan untuk menerapkan fungsionalitas berikut:
 
-## Tujuan
+- menerapkan tag sumber daya untuk melampirkan metadata penting ke sumber daya Azure
 
-Di lab ini, kami akan:
+- menerapkan penggunaan tag sumber daya untuk sumber daya baru dengan menggunakan kebijakan Azure
 
-+ Tugas 1: Membuat dan menetapkan tag melalui portal Azure
-+ Tugas 2: Menerapkan pemberian tag melalui kebijakan Azure
-+ Tugas 3: Menerapkan pemberian tag melalui kebijakan Azure
+- memperbarui sumber daya yang ada dengan tag sumber daya
 
-## Perkiraan waktu: 60 menit
+- menggunakan kunci sumber daya untuk melindungi sumber daya yang dikonfigurasi
+
+## Simulasi lab interaktif
+
+Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
+
++ [Mengelola kunci](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015) sumber daya. Tambahkan kunci sumber daya dan uji untuk mengonfirmasi.
+  
++ [Membuat kebijakan](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2017) Azure. Buat kebijakan Azure yang membatasi sumber daya lokasi dapat ditemukan. Buat sumber daya baru dan pastikan kebijakan diberlakukan. 
+
++ [Mengelola tata kelola melalui kebijakan](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203) Azure. Buat dan tetapkan tag melalui portal Azure. Buat kebijakan Azure yang memerlukan pemberian tag. Memulihkan sumber daya yang tidak sesuai.
 
 ## Diagram arsitektur
 
-![gambar](../media/lab02b.png)
+![Diagram arsitektur tugas.](../media/az104-lab02b-architecture.png)
 
-### Petunjuk
+## Keterampilan pekerjaan
 
-## Latihan 1
++ Tugas 1: Buat dan tetapkan tag melalui portal Azure.
++ Tugas 2: Menerapkan pemberian tag melalui Azure Policy.
++ Tugas 3: Terapkan pemberian tag melalui Azure Policy.
++ Tugas 4: Mengonfigurasi dan menguji kunci sumber daya. 
 
 ## Tugas 1: Menetapkan tag melalui portal Azure
 
-Dalam tugas ini, Anda akan membuat dan menetapkan tag ke grup sumber daya Azure melalui portal Microsoft Azure.
+Dalam tugas ini, Anda akan membuat dan menetapkan tag ke grup sumber daya Azure melalui portal Microsoft Azure. Tag adalah komponen penting dari strategi tata kelola seperti yang diuraikan oleh Microsoft Well-Architected Framework dan Cloud Adoption Framework. Tag dapat memungkinkan Anda mengidentifikasi pemilik sumber daya, tanggal matahari terbenam, kontak grup, dan pasangan nama/nilai lainnya yang dianggap penting oleh organisasi Anda. Untuk tugas ini, Anda menetapkan tag yang mengidentifikasi peran sumber daya ('Infra' untuk 'Infrastruktur').
 
-1. Di portal Azure, mulai sesi **PowerShell** dalam **Cloud Shell**.
+1. Masuk ke **portal Azure** - `https://portal.azure.com`.
+      
+1. Cari dan pilih `Resource groups`.
 
-    >**Catatan**: Jika ini adalah pertama kalinya Anda memulai **Cloud Shell** dan Anda disajikan dengan **pesan Anda tidak memiliki penyimpanan yang dipasang** , pilih langganan yang Anda gunakan di lab ini, dan klik **Buat penyimpanan**. 
-
-1. Dari panel Cloud Shell, jalankan yang berikut ini untuk mengidentifikasi nama akun penyimpanan yang digunakan oleh Cloud Shell:
-
-   ```powershell
-   df
-   ```
-
-1. Dalam output perintah, perhatikan bagian pertama dari jalur yang sepenuhnya memenuhi syarat yang menunjuk dudukan drive rumah Cloud Shell (ditandai di sini sebagai `xxxxxxxxxxxxxx`:
-
-   ```
-   //xxxxxxxxxxxxxx.file.core.windows.net/cloudshell   (..)  /usr/csuser/clouddrive
-   ```
-
-1. Di portal Microsoft Azure, cari dan pilih **akun Storage** dan, dalam daftar akun penyimpanan, klik entri yang mewakili akun penyimpanan yang Anda identifikasi di langkah sebelumnya.
-
-1. Pada panel akun penyimpanan, klik tautan yang mewakili nama grup sumber daya yang berisi akun penyimpanan.
-
-    **Catatan**: perhatikan grup sumber daya tempat akun penyimpanan berada, Anda akan membutuhkannya nanti di lab.
-
-1. Pada bilah grup sumber daya, klik **Tag** di menu sebelah kiri dan buat tag baru.
-
-1. Buat tag dengan pengaturan berikut dan Terapkan perubahan Anda:
+1. Dari Grup sumber daya, pilih **+ Buat**.
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama | **Peran** |
-    | Value | **Infra** |
+    | Nama langganan | langganan Anda |
+    | Nama grup sumber daya | `az104-rg2` |
+    | Lokasi | **US Timur** |
 
-1. Klik **Terapkan** dan tutup jendela edisi tag untuk menavigasi kembali ke bilah akun penyimpanan. klik elipsis pada akun penyimpanan dan pilih **Edit tag** untuk mencatat bahwa tag baru tidak secara otomatis ditetapkan ke akun penyimpanan. 
+    >**Catatan:** Untuk setiap lab dalam kursus ini, Anda akan membuat grup sumber daya baru. Ini memungkinkan Anda dengan cepat menemukan dan mengelola sumber daya lab Anda. 
 
-## Tugas 2: Menerapkan pemberian tag melalui kebijakan Azure
+1. Pilih **Berikutnya: Tag** dan buat tag baru.
 
-Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada kebijakan sumber daya* ke grup sumber daya dan mengevaluasi hasilnya. 
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Nama | `Cost Center` |
+    | Nilai | `000` |
 
-1. Di portal Microsoft Azure, telusuri dan pilih **Kebijakan**. 
+1. Pilih **Tinjauan + Buat**, kemudian pilih **Buat**.
 
-1. Di bagian **Penulisan**, klik **Definisi**. Luangkan waktu sejenak untuk menelusuri daftar definisi kebijakan bawaan yang tersedia untuk Anda gunakan. Cantumkan semua kebijakan bawaan yang melibatkan penggunaan tag dengan memilih entri **Tag** (dan membatalkan pemilihan semua entri lainnya) di daftar drop-down **Kategori**. 
+## Tugas 2: Menerapkan pemberian tag melalui Azure Policy
 
-1. Klik entri yang mewakili kebijakan bawaan **Memerlukan tag dan nilainya pada sumber daya** dan tinjau definisinya.
+Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada kebijakan sumber daya* ke grup sumber daya dan mengevaluasi hasilnya. Azure Policy dapat digunakan untuk menerapkan konfigurasi, dan dalam hal ini, tata kelola, ke sumber daya Azure Anda. 
+
+1. Di portal Azure, cari dan pilih `Policy`. 
+
+1. Di bilah **Penulisan** , pilih **Definisi**. Luangkan waktu sejenak untuk menelusuri daftar definisi[ kebijakan bawaan ](https://learn.microsoft.com/azure/governance/policy/samples/built-in-policies)yang tersedia untuk Anda gunakan. Perhatikan bahwa Anda juga dapat mencari definisi.
+
+    ![Cuplikan layar definisi kebijakan.](../media/az104-lab02b-policytags.png)
+
+1. Klik entri yang mewakili kebijakan bawaan **Memerlukan tag dan nilainya pada sumber daya** . Luangkan waktu semenit untuk meninjau definisi. 
 
 1. Pada panel **Memerlukan tag dan nilainya pada definisi** kebijakan bawaan sumber daya, klik **Tetapkan**.
 
-1. Tentukan **Cakupan** dengan mengklik tombol elipsis dan memilih nilai berikut:
+1. **Tentukan Cakupan** dengan mengklik tombol elipsis dan memilih nilai berikut. Klik **Pilih** saat Anda selesai. 
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup Sumber Daya | nama grup sumber daya yang berisi akun Cloud Shell yang Anda identifikasi di tugas sebelumnya |
+    | Langganan | *langganan Anda* |
+    | Grup Sumber Daya | **az104-rg2** |
 
-    >**Catatan**: Cakupan menentukan sumber daya atau grup sumber daya tempat penetapan kebijakan berlaku. Anda dapat menetapkan kebijakan pada tingkat grup manajemen, langganan, atau grup sumber daya. Anda juga memiliki opsi untuk menentukan pengecualian, seperti langganan individual, grup sumber daya, atau sumber daya (tergantung pada cakupan penugasan). 
+    >**Catatan**: Anda dapat menetapkan kebijakan pada tingkat grup manajemen, langganan, atau grup sumber daya. Anda juga memiliki opsi untuk menentukan pengecualian, seperti langganan individual, grup sumber daya, atau sumber daya. Dalam skenario ini, kami menginginkan tag pada semua sumber daya dalam grup sumber daya.
 
 1. Konfigurasikan properti **Dasar** penugasan dengan menentukan pengaturan berikut (biarkan yang lain dengan defaultnya):
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama penetapan | **Memerlukan tag Peran dengan nilai Infra**|
-    | Deskripsi | **Memerlukan tag Peran dengan nilai Infra untuk semua sumber daya dalam grup sumber daya Cloud Shell**|
+    | Nama penetapan | `Require Cost Center tag with Default value`|
+    | Deskripsi | `Require Cost Center tag with default value for all resources in the resource group`|
     | Pemberlakuan kebijakan | Diaktifkan |
 
-    >**Catatan**: Nama **** Penugasan secara otomatis diisi dengan nama kebijakan yang Anda pilih, tetapi Anda dapat mengubahnya. Anda juga dapat menambahkan **Deskripsi** opsional. **Ditetapkan oleh** diisi secara otomatis berdasarkan nama pengguna yang membuat penugasan. 
+    >**Catatan**: Nama **** Penugasan secara otomatis diisi dengan nama kebijakan yang Anda pilih, tetapi Anda dapat mengubahnya. **Deskripsi** bersifat opsional. Perhatikan bahwa Anda dapat menonaktifkan kebijakan kapan saja. 
 
 1. Klik **Berikutnya** dua kali dan atur **Parameter** ke nilai berikut:
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama Tag | **Peran** |
-    | Nilai Tag | **Infra** |
+    | Nama Tag | `Cost Center` |
+    | Nilai Tag | `000` |
 
 1. Klik **Berikutnya** dan tinjau tab **Remediasi** . Biarkan kotak **centang Buat Identitas** Terkelola tidak dicentang. 
 
-    >**Catatan**: Pengaturan ini dapat digunakan saat kebijakan atau inisiatif menyertakan **efek deployIfNotExists** atau **Modifikasi** .
-
 1. Klik **Tinjau + Buat**, lalu klik **Buat**.
 
-    >**Catatan**: Sekarang Anda akan memverifikasi bahwa penetapan kebijakan baru berlaku dengan mencoba membuat akun Azure Storage lain di grup sumber daya tanpa secara eksplisit menambahkan tag yang diperlukan. 
+    >**Catatan**: Sekarang Anda akan memverifikasi bahwa penetapan kebijakan baru berlaku dengan mencoba membuat akun Azure Storage di grup sumber daya. Anda akan membuat akun penyimpanan tanpa menambahkan tag yang diperlukan. 
     
-    >**Catatan**: Mungkin diperlukan waktu antara 5 dan 15 menit agar kebijakan diterapkan.
+    >**Catatan**: Mungkin diperlukan waktu antara 5 dan 10 menit agar kebijakan diterapkan.
 
-1. Navigasi kembali ke panel grup sumber daya yang menghosting akun penyimpanan yang digunakan untuk Cloud Shell home drive, yang Anda identifikasi di tugas sebelumnya.
+1. Di portal, cari dan pilih `Storage Account`, dan pilih **+ Buat**. 
 
-1. Pada panel grup sumber daya, klik **+ Buat** lalu cari **Akun Storage**, dan klik **+ Buat**. 
-
-1. Pada tab **Dasar** dari bilah **Buat akun** penyimpanan, verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Kebijakan diterapkan dan tentukan pengaturan berikut (biarkan orang lain dengan defaultnya), klik **Tinjau** lalu klik **Buat**:
+1. Pada tab **Dasar** dari bilah **Buat akun** penyimpanan, selesaikan konfigurasi.
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama akun penyimpanan | kombinasi unik global antara 3 dan 24 huruf kecil dan digit, dimulai dengan huruf |
+    | Grup sumber daya | **az104-rg2** |
+    | Nama akun penyimpanan | *kombinasi unik global antara 3 dan 24 huruf kecil dan digit, dimulai dengan huruf* |
 
-    >**Catatan**: Anda mungkin menerima **Validasi gagal. Klik di sini untuk kesalahan detail** ; Jika demikian, klik pesan kesalahan untuk mengidentifikasi alasan kegagalan dan melewati langkah berikutnya. 
+1. Pilih **Tinjau** lalu klik **Buat**:
 
 1. Setelah membuat penyebaran, Anda akan melihat pesan **Penyebaran gagal** di daftar **Pemberitahuan** portal. Dari **daftar Pemberitahuan** , navigasikan ke gambaran umum penyebaran dan klik **Penyebaran gagal. Klik di sini untuk pesan detail** untuk mengidentifikasi alasan kegagalan tersebut. 
 
-    >**Catatan**: Verifikasi apakah pesan kesalahan menyatakan bahwa penyebaran sumber daya tidak diizinkan oleh kebijakan. 
+    ![Cuplikan layar kesalahan kebijakan yang tidak diizinkan.](../media/az104-lab02b-policyerror.png) 
 
-    >**Catatan**: Dengan mengklik tab **Kesalahan** Mentah, Anda dapat menemukan detail selengkapnya tentang kesalahan, termasuk nama definisi **peran Memerlukan tag Peran dengan nilai** Infra. Penyebaran gagal karena akun penyimpanan yang Anda coba buat tidak memiliki tag bernama **Peran** dengan nilainya yang diatur ke **Infra**.
+    >**Catatan**: Verifikasi pesan kesalahan menyatakan bahwa penyebaran sumber daya tidak diizinkan oleh kebijakan. 
+
+    >**Catatan**: Dengan mengklik tab **Kesalahan** Mentah, Anda dapat menemukan detail selengkapnya tentang kesalahan, termasuk nama definisi **peran Memerlukan tag Pusat Biaya dengan nilai** Default. Penyebaran gagal karena akun penyimpanan yang Anda coba buat tidak memiliki tag bernama **Pusat** Biaya dengan nilainya diatur ke **Default**.
 
 ## Tugas 3: Menerapkan pemberian tag melalui kebijakan Azure
 
-Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk memulihkan sumber daya yang tidak patuh. 
+Dalam tugas ini, kita akan menggunakan definisi kebijakan baru untuk memulihkan sumber daya yang tidak sesuai. Dalam skenario ini, kami akan membuat sumber daya anak dari grup sumber daya mewarisi **tag Pusat** Biaya yang ditentukan pada grup sumber daya.
 
-1. Di portal Microsoft Azure, telusuri dan pilih **Kebijakan**. 
+1. Di portal Azure, cari dan pilih `Policy`. 
 
 1. Di bagian **Authoring**, klik **Tugas**. 
 
-1. Dalam daftar penetapan, klik ikon elipsis di baris yang mewakili penetapan kebijakan **Memerlukan tag Peran dengan nilai Infra** dan gunakan item menu **Hapus penetapan** untuk menghapus penetapan.
+1. Dalam daftar tugas, klik ikon elipsis di baris yang mewakili **tag Memerlukan Pusat Biaya dengan penetapan kebijakan nilai** Default dan gunakan **item menu Hapus penugasan** untuk menghapus penugasan.
 
 1. Klik **Tetapkan kebijakan** dan tentukan **Cakupan** dengan mengeklik tombol elipsis dan memilih nilai berikut:
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup Sumber Daya | nama grup sumber daya yang berisi akun Cloud Shell yang Anda identifikasi di tugas pertama |
+    | Langganan | langganan Azure Anda |
+    | Grup Sumber Daya | `az104-rg2` |
 
-1. Untuk menentukan **Definisi kebijakan**, klik tombol elipsis lalu cari dan pilih **Warisi tag dari grup sumber daya jika hilang**.
+1. Untuk menentukan **Definisi kebijakan**, klik tombol elipsis lalu cari dan pilih `Inherit a tag from the resource group if missing`.
 
-1. Konfigurasikan properti **Dasar** yang tersisa dari penetapan dengan menetapkan setelan berikut (biarkan yang lain dengan default):
+1. Pilih **Tambahkan** lalu konfigurasikan properti Dasar** yang tersisa **dari penugasan.
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama penetapan | **Mewarisi tag Peran dan nilai Infra-nya dari grup sumber daya Cloud Shell jika hilang**|
-    | Deskripsi | **Mewarisi tag Peran dan nilai Infra-nya dari grup sumber daya Cloud Shell jika hilang**|
+    | Nama penetapan | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
+    | Deskripsi | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
     | Pemberlakuan kebijakan | Diaktifkan |
 
 1. Klik **Berikutnya** dua kali dan atur **Parameter** ke nilai berikut:
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama Tag | **Peran** |
+    | Nama Tag | `Cost Center` |
 
 1. Klik **Berikutnya** dan, pada tab **Perbaikan**, konfigurasikan setelan berikut (biarkan yang lain dengan default):
 
@@ -180,48 +181,77 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan yang berbeda untuk mem
     | Buat tugas remediasi | diaktifkan |
     | Kebijakan yang akan diremediasi | **Mewarisi tag dari grup sumber daya jika tidak ada** |
 
-    >**Catatan**: Definisi kebijakan ini mencakup **efek Ubah** .
+    >**Catatan**: Definisi kebijakan ini mencakup **efek Ubah** . Jadi, identitas terkelola diperlukan. 
+
+    ![Cuplikan layar halaman remediasi kebijakan. ](../media/az104-lab02b-policyremediation.png) 
 
 1. Klik **Tinjau + Buat**, lalu klik **Buat**.
 
-    >**Catatan**: Untuk memverifikasi bahwa penetapan kebijakan baru berlaku, Anda akan membuat akun Azure Storage lain di grup sumber daya yang sama tanpa secara eksplisit menambahkan tag yang diperlukan. 
+    >**Catatan**: Untuk memverifikasi bahwa penetapan kebijakan baru berlaku, Anda akan membuat akun penyimpanan Azure lain di grup sumber daya yang sama tanpa secara eksplisit menambahkan tag yang diperlukan. 
     
-    >**Catatan**: Mungkin diperlukan waktu antara 5 dan 15 menit agar kebijakan diterapkan.
+    >**Catatan**: Mungkin diperlukan waktu antara 5 dan 10 menit agar kebijakan diterapkan.
 
-1. Navigasikan kembali ke panel grup sumber daya yang menghosting akun penyimpanan yang digunakan untuk drive beranda Cloud Shell, yang Anda identifikasi di tugas pertama.
-
-1. Pada panel grup sumber daya, klik **+ Buat** lalu cari **Akun Storage**, dan klik **+ Buat**. 
+1. Cari dan pilih `Storage Account`, dan klik **+ Buat**. 
 
 1. Pada tab **Dasar dari bilah **Buat akun** penyimpanan, verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Kebijakan diterapkan dan tentukan pengaturan berikut (biarkan orang lain dengan defaultnya) dan klik **Tinjau**:**
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama akun penyimpanan | kombinasi unik global antara 3 dan 24 huruf kecil dan digit, dimulai dengan huruf |
+    | Nama akun penyimpanan | *kombinasi unik global antara 3 dan 24 huruf kecil dan digit, dimulai dengan huruf* |
 
 1. Verifikasi bahwa kali ini validasi lulus dan klik **Buat**.
 
-1. Setelah akun penyimpanan baru disediakan, klik tombol **Buka sumber daya** dan, pada panel **Gambaran Umum** akun penyimpanan yang baru dibuat, perhatikan bahwa **Peran** tag dengan nilai **Infra** telah secara otomatis ditetapkan ke sumber daya.
+1. Setelah akun penyimpanan baru disediakan, klik **Buka sumber daya**.
 
-## Tugas 4: Bersihkan sumber daya
+1. Pada bilah **Tag** , perhatikan bahwa tag **Pusat** Biaya dengan nilai **000** telah ditetapkan secara otomatis ke sumber daya.
 
-   >**Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Menghapus sumber daya yang tidak digunakan memastikan Anda tidak akan melihat biaya tak terduga, meskipun perlu diingat bahwa kebijakan Azure tidak dikenakan biaya tambahan.
+    >**Apakah Anda tahu?** Jika Anda mencari dan memilih **Tag** di portal, Anda dapat melihat sumber daya dengan tag tertentu. 
+
+## Tugas 4: Mengonfigurasi dan menguji kunci sumber daya
+
+Dalam tugas ini, Anda mengonfigurasi dan menguji kunci sumber daya. Kunci mencegah penghapusan atau modifikasi sumber daya. 
+
+1. Cari dan pilih grup sumber daya Anda.
    
-   >**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki dependensi dan membutuhkan waktu lebih lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
+1. Di bilah **Pengaturan**, pilih **Kunci**.
 
-1. Di portal, telusuri dan pilih **Kebijakan**.
+1. Pilih **Tambahkan** dan lengkapi informasi kunci sumber daya. Setelah selesai pilih **Ok**. 
 
-1. Di bagian **Penulisan**, klik **Penugasan**, klik ikon elipsis di sebelah kanan tugas yang Anda buat di tugas sebelumnya dan klik **Hapus penugasan**. 
+    | Pengaturan | Nilai |
+    | --- | --- |
+    | Nama kunci | `rg-lock` |
+    | Jenis kunci | **hapus** (perhatikan pilihan untuk baca-saja) |
+    
+1. Navigasi ke bilah Gambaran Umum** grup **sumber daya, dan pilih **Hapus grup** sumber daya.
 
-1. Di portal, telusuri dan pilih **Akun penyimpanan**.
+1. Di kotak **teks Masukkan nama grup sumber daya untuk mengonfirmasi penghapusan** , berikan nama grup sumber daya, `az104-rg2`. Perhatikan bahwa Anda dapat menyalin dan menempelkan nama grup sumber daya. 
 
-1. Dalam daftar akun penyimpanan, pilih grup sumber daya yang sesuai dengan akun penyimpanan yang Anda buat di tugas terakhir lab ini. Pilih **Tag** dan klik **Hapus** (Tempat sampah di sebelah kanan) ke tag **Role:Infra** dan tekan **Terapkan**. 
+1. Perhatikan peringatan: Menghapus grup sumber daya ini dan sumber daya dependennya adalah tindakan permanen dan tidak dapat dibatalkan. Pilih **Hapus**.
 
-1. Klik **Gambaran Umum** dan klik **Hapus** di bagian atas panel akun penyimpanan. Saat dimintai konfirmasi, di panel **Hapus akun penyimpanan**, ketik nama akun penyimpanan untuk mengonfirmasi dan klik **Hapus**. 
+1. Anda harus menerima pemberitahuan yang menolak penghapusan. 
 
-## Tinjau
+    ![Cuplikan layar kegagalan untuk menghapus pesan.](../media/az104-lab02b-failuretodelete.png) 
 
-Di lab ini, Anda telah:
+## Membersihkan sumber daya Anda
 
-- Membuat dan menetapkan tag melalui portal Microsoft Azure
-- Menegakkan pemberian tag melalui Azure Policy
-- Menerapkan pemberian tag melalui kebijakan Azure
+Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+
++ Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
++ Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Menggunakan CLI, `az group delete --name resourceGroupName`.
+
+## Poin penting
+
+Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
+
++ Tag Azure adalah metadata yang terdiri dari pasangan kunci-nilai. Tag menjelaskan sumber daya tertentu di lingkungan Anda. Secara khusus, pemberian tag di Azure memungkinkan Anda memberi label sumber daya Anda secara logis.
++ Azure Policy menetapkan konvensi untuk sumber daya. Definisi kebijakan menjelaskan kondisi kepatuhan sumber daya dan efek yang harus diambil jika kondisi terpenuhi. Kondisi membandingkan bidang properti sumber daya atau nilai dengan nilai yang diperlukan. Ada banyak definisi kebijakan bawaan dan Anda dapat menyesuaikan kebijakan. 
++ Fitur tugas remediasi Azure Policy digunakan untuk membawa sumber daya ke kepatuhan berdasarkan definisi dan penugasan. Sumber daya yang tidak sesuai dengan penetapan definisi modifikasi atau deployIfNotExist, dapat dibawa ke kepatuhan menggunakan tugas remediasi.
++ Anda dapat mengonfigurasi kunci sumber daya pada langganan, grup sumber daya, atau sumber daya. Kunci dapat melindungi sumber daya dari penghapusan dan modifikasi pengguna yang tidak disengaja. Kunci menimpa izin pengguna apa pun.
++ Azure Policy adalah praktik keamanan pra-penyebaran. RBAC dan kunci sumber daya adalah praktik keamanan pasca-penyebaran. 
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Merancang strategi](https://learn.microsoft.com/training/modules/enterprise-governance/) tata kelola perusahaan. Gunakan RBAC dan Azure Policy untuk membatasi akses ke solusi Azure Anda, dan tentukan metode mana yang tepat untuk tujuan keamanan Anda.
+  
+

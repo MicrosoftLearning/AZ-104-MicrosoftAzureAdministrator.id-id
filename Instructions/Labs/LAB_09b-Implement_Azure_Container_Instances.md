@@ -5,51 +5,56 @@ lab:
 ---
 
 # Lab 09b - Menerapkan Azure Container Instances
-# Panduan lab siswa
 
-## Skenario laboratorium
+## Pengenalan lab
 
-Contoso ingin menemukan platform baru untuk beban kerja virtualnya. Anda mengidentifikasi sejumlah gambar kontainer yang dapat dimanfaatkan untuk mencapai tujuan ini. Karena Anda ingin meminimalkan manajemen kontainer, Anda berencana untuk mengevaluasi penggunaan Azure Container Instances untuk penyebaran gambar Docker.
+Di lab ini, Anda mempelajari cara menerapkan dan menyebarkan Azure Container Instances.
 
-**Catatan:** Tersedia **[simulasi lab interaktif](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014)** yang memungkinkan Anda mengklik lab ini sesuai keinginan Anda. Anda mungkin menemukan sedikit perbedaan antara simulasi interaktif dan lab yang dihosting, tetapi konsep dan ide utama yang ditunjukkan sama. 
+Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US** Timur.
 
-## Tujuan
+## Perkiraan waktu: 15 menit
 
-Di lab ini Anda akan:
+## Skenario lab
 
-- Tugas 1: Menyebarkan Azure Container Instance menggunakan gambar Docker
-- Tugas 2: Tinjau fungsionalitas Azure Container Instance
+Organisasi Anda memiliki aplikasi web yang berjalan pada komputer virtual di pusat data lokal Anda. Organisasi ingin memindahkan semua aplikasi ke cloud tetapi tidak ingin memiliki sejumlah besar server untuk dikelola. Anda memutuskan untuk mengevaluasi Azure Container Instances dan Docker. 
+## Simulasi lab interaktif
 
-## Perkiraan waktu: 20 menit
+Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
+
++ [Menyebarkan Azure Container Instances](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%203). Membuat, mengonfigurasi, dan menyebarkan kontainer Docker dengan Azure Container Instances.
+  
++ [Menerapkan Azure Container Instances](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014).  Sebarkan gambar Docker menggunakan Azure Container Instances. 
+
+## Keterampilan pekerjaan
+
+- Tugas 1: Sebarkan Azure Container Instance menggunakan gambar Docker.
+- Tugas 2: Menguji dan memverifikasi penyebaran Azure Container Instance.
+
 
 ## Diagram arsitektur
 
-![gambar](../media/lab09b.png)
-
-### Petunjuk
-
-## Latihan 1
+![Diagram tugas.](../media/az104-lab09b-aci-architecture.png)
 
 ## Tugas 1: Menyebarkan Azure Container Instance menggunakan gambar Docker
 
-Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
+Dalam tugas ini, Anda akan membuat aplikasi web sederhana menggunakan gambar Docker. Docker adalah platform yang menyediakan kemampuan untuk mengemas dan menjalankan aplikasi di lingkungan terisolasi yang disebut kontainer. Azure Container Instances menyediakan lingkungan komputasi untuk gambar kontainer.
 
-1. Masuk ke [portal Azure](https://portal.azure.com).
+1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Di portal Azure, jelajahi **Instans kontainer** lalu, pada bilah **Instans kontainer**, klik **+ Buat**.
+1. Di portal Azure, cari dan pilih `Container instances` lalu, pada bilah **Instans** kontainer, klik **+ Buat**.
 
 1. Pada tab **Dasar-dasar** pada bilah **Buat instans penampung**, tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | ---- | ---- |
-    | Langganan | nama langganan Azure yang Anda gunakan di lab ini |
-    | Grup sumber daya | nama grup sumber daya baru **az104-09b-rg1** |
-    | Nama kontainer | **az104-9b-c1** |
-    | Wilayah | nama wilayah tempat Anda dapat menyediakan instans kontainer Azure |
+    | Langganan | Pilih langganan Azure Anda |
+    | Grup sumber daya | `az104-rg9` (Jika perlu, pilih **Buat baru**) |
+    | Nama kontainer | `az104-c1` |
+    | Wilayah | **US** Timur (atau wilayah yang tersedia di dekat Anda)|
     | Sumber Gambar | **Gambar memulai cepat** |
     | Gambar | **mcr.microsoft.com/azuredocs/aci-helloworld:latest (Linux)** |
 
-1. Klik **Berikutnya: Jaringan >** dan, pada tab **Jaringan** dari bilah **Buat instans** kontainer, tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
+1. Klik **Berikutnya: Jaringan >** dan tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -57,15 +62,17 @@ Dalam tugas ini, Anda akan membuat instans kontainer baru untuk aplikasi web.
 
     >**Catatan**: Kontainer Anda akan dapat dijangkau secara publik pada dns-name-label.region.azurecontainer.io. Jika Anda menerima pesan galat **DNS name label not available**, tentukan nilai yang berbeda.
 
-1. Klik **Berikutnya: >** Tingkat Lanjut, tinjau pengaturan pada tab Tingkat Lanjut** dari ****bilah Buat instans** kontainer tanpa membuat perubahan apa pun, klik **Tinjau + Buat**, pastikan validasi lulus dan klik **Buat**.
+1. Klik **Berikutnya: >** Tingkat Lanjut, tinjau pengaturan tanpa membuat perubahan apa pun.
 
-    >**Catatan**: Tunggu hingga penyebaran selesai. Ini akan memakan waktu sekitar 3 menit.
+ 1. Klik **Tinjau + Buat**, pastikan validasi lulus lalu pilih **Buat**.
 
-    >**Catatan**: Saat menunggu, Anda mungkin tertarik untuk melihat [kode di belakang aplikasi](https://github.com/Azure-Samples/aci-helloworld) sampel. Untuk melihatnya, jelajahi \\folder aplikasi.
+    >**Catatan**: Tunggu hingga penyebaran selesai. Ini akan memakan waktu 2-3 menit.
 
-## Tugas 2: Tinjau fungsionalitas Azure Container Instance
+    >**Catatan**: Saat menunggu, Anda mungkin tertarik untuk melihat [kode di belakang aplikasi](https://github.com/Azure-Samples/aci-helloworld) sampel. Untuk melihat kode, telusuri \\folder aplikasi.
 
-Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
+## Tugas 2: Menguji dan memverifikasi penyebaran Azure Container Instance 
+
+Dalam tugas ini, Anda meninjau penyebaran instans kontainer. Secara default, Azure Container Instance dapat diakses melalui port 80. Setelah instans disebarkan, Anda dapat menavigasi ke kontainer menggunakan nama DNS yang Anda berikan di tugas sebelumnya.
 
 1. Pada bilah penyebaran, klik tautan **Buka sumber daya**.
 
@@ -73,39 +80,34 @@ Dalam tugas ini, Anda akan meninjau penyebaran instans kontainer.
 
 1. Salin nilai instans kontainer **FQDN**, buka tab browser baru, dan navigasikan ke URL yang sesuai.
 
-1. Pastikan halaman **Selamat datang di Azure Container Instance** ditampilkan.
+     ![Cuplikan layar halaman gambaran umum ACI di portal.](../media/az104-lab09b-aci-overview.png)
 
-1. Tutup tab browser baru, kembali ke portal Azure, di bagian **Pengaturan** bilah instans kontainer, klik **Kontainer**, lalu klik **Log**.
+1. Pastikan halaman **Selamat datang di Azure Container Instance** ditampilkan. Refresh halaman beberapa kali untuk membuat beberapa entri log lalu tutup tab browser.  
+
+1. Di bagian **Pengaturan** bilah instans kontainer, klik **Kontainer**, lalu klik **Log**.
 
 1. Verifikasi bahwa Anda melihat entri log yang mewakili permintaan HTTP GET yang dihasilkan dengan menampilkan aplikasi di browser.
+   
+## Membersihkan sumber daya Anda
 
-## Membersihkan sumber daya
+Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
->**Catatan**: Ingatlah untuk menghapus sumber daya Azure yang baru dibuat yang tidak lagi Anda gunakan. Dengan menghapus sumber daya yang tidak digunakan, Anda tidak akan melihat biaya yang tak terduga.
++ Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
++ Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
++ Menggunakan CLI, `az group delete --name resourceGroupName`.
 
->**Catatan**: Jangan khawatir jika sumber daya lab tidak dapat segera dihapus. Terkadang sumber daya memiliki ketergantungan dan membutuhkan waktu lama untuk dihapus. Ini adalah tugas Administrator yang umum untuk memantau penggunaan sumber daya, jadi tinjau sumber daya Anda secara berkala di Portal untuk melihat bagaimana pembersihannya. 
 
-1. Di portal Azure, buka sesi **PowerShell** dalam panel **Cloud Shell**.
+## Poin penting
 
-    >**Catatan**: Penyimpanan Cloud Shell harus dibuat agar perintah ini berfungsi. 
+Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
 
-1. Buat daftar semua grup sumber daya yang dibuat di seluruh lab modul ini dengan menjalankan perintah berikut:
++ Azure Container Instances (ACI) adalah layanan yang memungkinkan Anda menyebarkan kontainer di cloud publik Microsoft Azure.
++ ACI tidak mengharuskan Anda untuk menyediakan atau mengelola infrastruktur yang mendasar.
++ ACI mendukung kontainer Linux dan kontainer Windows.
++ Beban kerja pada ACI biasanya dimulai dan dihentikan oleh beberapa jenis proses atau pemicu dan biasanya berumur pendek. 
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09b*'
-   ```
+## Pelajari lebih lanjut dengan pelatihan mandiri
 
-1. Hapus semua grup sumber daya yang Anda buat di seluruh lab modul ini dengan menjalankan perintah berikut:
++ [Jalankan gambar kontainer di Azure Container Instances](https://learn.microsoft.com/training/modules/create-run-container-images-azure-container-instances/). Pelajari cara Azure Container Instances dapat membantu Anda dalam menyebarkan kontainer dengan cepat, cara mengatur variabel lingkungan, dan menentukan kebijakan hidupkan ulang kontainer.
 
-   ```powershell
-   Get-AzResourceGroup -Name 'az104-09b*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-    >**Catatan**: Perintah dijalankan secara asinkron (seperti yang ditentukan oleh parameter -AsJob), jadi sementara Anda akan dapat menjalankan perintah PowerShell lain segera setelah itu dalam sesi PowerShell yang sama, akan memakan waktu beberapa menit sebelum grup sumber daya benar-benar dihapus.
-
-## Tinjau
-
-Di lab ini, Anda telah:
-
-- Menyebarkan gambar Docker dengan menggunakan Azure Container Instance
-- Meninjau fungsionalitas Instans Kontainer Azure
+    
