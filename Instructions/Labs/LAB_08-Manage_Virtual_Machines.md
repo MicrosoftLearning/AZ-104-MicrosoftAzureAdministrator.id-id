@@ -353,7 +353,7 @@ Dalam tugas ini, Anda menskalakan set skala komputer virtual menggunakan aturan 
     -Image 'Win2019Datacenter' `
     -Zone '1' `
     -Size 'Standard_D2s_v3' 
-    -Credential '(Get-Credential)' `
+    -Credential '(Get-Credential)' 
     ```
 
 1. Setelah perintah selesai, gunakan **Get-AzVM** untuk mencantumkan komputer virtual di grup sumber daya Anda.
