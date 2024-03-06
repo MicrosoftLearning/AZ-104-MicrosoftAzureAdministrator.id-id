@@ -51,7 +51,7 @@ Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik 
 
 Dalam tugas ini, Anda akan membuat dan menetapkan tag ke grup sumber daya Azure melalui portal Microsoft Azure. Tag adalah komponen penting dari strategi tata kelola seperti yang diuraikan oleh Microsoft Well-Architected Framework dan Cloud Adoption Framework. Tag dapat memungkinkan Anda mengidentifikasi pemilik sumber daya, tanggal matahari terbenam, kontak grup, dan pasangan nama/nilai lainnya yang dianggap penting oleh organisasi Anda. Untuk tugas ini, Anda menetapkan tag yang mengidentifikasi peran sumber daya ('Infra' untuk 'Infrastruktur').
 
-1. Masuk ke **portal Azure** - `https://portal.azure.com`.
+1. Masuk ke **portal Microsoft Azure** - `https://portal.azure.com`.
       
 1. Cari dan pilih `Resource groups`.
 
@@ -131,15 +131,13 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
     | Grup sumber daya | **az104-rg2** |
     | Nama akun penyimpanan | *kombinasi unik global antara 3 dan 24 huruf kecil dan digit, dimulai dengan huruf* |
 
-1. Pilih **Tinjau** lalu klik **Buat**:
+1. Pilih **Tinjau** lalu klik **Buat**.
 
-1. Setelah membuat penyebaran, Anda akan melihat pesan **Penyebaran gagal** di daftar **Pemberitahuan** portal. Dari **daftar Pemberitahuan** , navigasikan ke gambaran umum penyebaran dan klik **Penyebaran gagal. Klik di sini untuk pesan detail** untuk mengidentifikasi alasan kegagalan tersebut. 
+1. Anda akan menerima **pesan Validasi gagal** . Lihat pesan untuk mengidentifikasi alasan kegagalan. Verifikasi pesan kesalahan menyatakan bahwa penyebaran sumber daya tidak diizinkan oleh kebijakan. 
 
     ![Cuplikan layar kesalahan kebijakan yang tidak diizinkan.](../media/az104-lab02b-policyerror.png) 
 
-    >**Catatan**: Verifikasi pesan kesalahan menyatakan bahwa penyebaran sumber daya tidak diizinkan oleh kebijakan. 
-
-    >**Catatan**: Dengan mengklik tab **Kesalahan** Mentah, Anda dapat menemukan detail selengkapnya tentang kesalahan, termasuk nama definisi **peran Memerlukan tag Pusat Biaya dengan nilai** Default. Penyebaran gagal karena akun penyimpanan yang Anda coba buat tidak memiliki tag bernama **Pusat** Biaya dengan nilainya diatur ke **Default**.
+>**Catatan**: Dengan mengklik tab **Kesalahan** Mentah, Anda dapat menemukan detail selengkapnya tentang kesalahan, termasuk nama definisi **peran Memerlukan tag Pusat Biaya dengan nilai** Default. Penyebaran gagal karena akun penyimpanan yang Anda coba buat tidak memiliki tag bernama **Pusat** Biaya dengan nilainya diatur ke **Default**.
 
 ## Tugas 3: Menerapkan pemberian tag melalui kebijakan Azure
 
