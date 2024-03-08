@@ -153,7 +153,13 @@ Dalam tugas ini, Anda akan menskalakan komputer virtual dengan menyesuaikan ukur
 
 1. Navigasi kembali ke **komputer virtual az104-vm1** dan pilih **Disk**.
 
+1. Di bagian **Disk data** , pilih **Lampirkan disk yang** ada.
+
+1. **Di menu drop-down Nama** disk, pilih **VM1-DISK1**. 
+
 1. Verifikasi bahwa disk sekarang **adalah SSD** Standar.
+
+1. Pilih **Terapkan** untuk menyimpan perubahan. 
 
     >**Catatan:** Anda sekarang telah membuat komputer virtual, menskalakan SKU dan ukuran disk data. Dalam tugas berikutnya kita menggunakan Virtual Machine Scale Sets untuk mengotomatiskan proses penskalakan.
 
