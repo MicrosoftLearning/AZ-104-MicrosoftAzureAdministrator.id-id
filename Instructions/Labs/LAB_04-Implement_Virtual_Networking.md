@@ -53,7 +53,7 @@ Jaringan virtual dan subnet ini disusun dengan cara yang mengakomodasi sumber da
 
 Organisasi merencanakan sejumlah besar pertumbuhan untuk layanan inti. Dalam tugas ini, Anda membuat jaringan virtual dan subnet terkait untuk mengakomodasi sumber daya yang ada dan pertumbuhan yang direncanakan. Dalam tugas ini, Anda akan menggunakan portal Azure. 
 
-1. Masuk ke **portal Azure** - `https://portal.azure.com`.
+1. Masuk ke **portal Microsoft Azure** - `https://portal.azure.com`.
    
 1. Cari dan pilih `Virtual Networks`.
 
@@ -135,7 +135,7 @@ Dalam tugas ini, Anda membuat jaringan virtual ManufacturingVnet dan subnet terk
 
 ### Membuat perubahan pada file parameter
 
-1. Temukan file template.json** yang **diekspor di tugas sebelumnya. Seharusnya ada di folder Unduhan** Anda**.
+1. Temukan file parameters.json** yang **diekspor di tugas sebelumnya. Seharusnya ada di folder Unduhan** Anda**.
 
 1. Edit file menggunakan editor pilihan Anda.
 
