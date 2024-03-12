@@ -41,7 +41,7 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 
 Dalam tugas ini, Anda akan menggunakan komputer virtual yang akan digunakan untuk menguji skenario monitoring.
 
-1. Jika perlu, unduh **\\file lab Allfiles\\Lab11\\az104-11-vm-template.json** ke komputer Anda.
+1. **\\Unduh file lab Allfiles\\Lab11\\az104-11-vm-template.json** ke komputer Anda.
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
@@ -192,7 +192,7 @@ Masukkan pengaturan ini untuk penjadwalan aturan pemrosesan pemberitahuan:
     |---------|---------|
     | Menerapkan aturan | Pada waktu tertentu |
     | Mulai | Masukkan tanggal hari ini pukul 22.00. |
-    | End | Masukkan tanggal besok pukul 07.00. |
+    | Akhir | Masukkan tanggal besok pukul 07.00. |
     | Zona waktu | Pilih zona waktu lokal. |
 
     ![Cuplikan layar bagian penjadwalan aturan pemrosesan pemberitahuan](../media/az104-lab11-alert-processing-rule-schedule.png)

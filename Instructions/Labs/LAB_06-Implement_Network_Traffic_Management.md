@@ -157,7 +157,7 @@ Dalam tugas ini, Anda menerapkan Azure Load Balancer di depan dua komputer virtu
     | Kegigihan sesi | **Tidak** |
     | Waktu idle habis (menit) | `4` |
     | Reset TCP | **Nonaktif** |
-    | IP Float | **Nonaktif** |
+    | IP Mengambang | **Nonaktif** |
     | Terjemahan alamat jaringan sumber keluar (SNAT) | **Direkomendasikan** |
 
 1. Pilih **Konfigurasi** IP Frontend dari halaman Load Balancer. Salin alamat IP publik.
@@ -272,7 +272,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua komputer
 
    >**Catatan:** Luangkan waktu semenit untuk membaca informasi tentang **afinitas** berbasis Cookie dan **pengurasan** Koneksi.
 
-1. Di bagian **Perutean** berbasis jalur, pilih **Tambahkan beberapa target untuk membuat aturan** berbasis jalur. Anda akan membuat dua aturan. Klik **Tambahkan** setelah aturan pertama lalu tambahkan aturan kedua.
+1. Di bagian **Perutean** berbasis jalur, pilih **Tambahkan beberapa target untuk membuat aturan** berbasis jalur. Anda akan membuat dua aturan. Klik **Tambahkan** setelah aturan pertama lalu tambahkan aturan kedua. 
 
     **Aturan - perutean ke backend gambar**
 
@@ -292,7 +292,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua komputer
     | Pengaturan backend | **az104-http** |
     | Target ujung belakang | `az104-videobe` |
 
-1. Pilih **Tambahkan** dua kali lalu pilih **Berikutnya: Tag >**. Tidak diperlukan perubahan.
+1. Pastikan untuk **Menyimpan** dan memeriksa perubahan Anda, lalu pilih **Berikutnya: Tag >**. Tidak diperlukan perubahan.
 
 1. Pilih **Berikutnya: Tinjau + buat >** lalu klik **Buat**.
 
