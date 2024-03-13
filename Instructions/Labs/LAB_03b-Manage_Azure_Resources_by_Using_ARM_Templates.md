@@ -146,7 +146,7 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell dan Azure PowerShell. Azu
     | Pengaturan | Nilai |
     |  -- | -- |
     | Grup Sumber Daya | **az104-rg3** |
-    | Akun penyimpanan (Buat baru) | `sacloudshell` (harus unik secara global, antara 3 dan 24 karakter dan menggunakan angka dan huruf kecil saja) |
+    | Akun penyimpanan (Buat baru) | *harus unik secara global, antara 3 dan 24 karakter dan hanya menggunakan angka dan huruf kecil* |
     | Berbagi file (Buat baru) | `fs-cloudshell` |
 
 1. Setelah selesai, pilih **Buat penyimpanan**. Anda hanya perlu melakukan ini saat pertama kali menggunakan Cloud Shell. Dibutuhkan beberapa menit untuk menyediakan penyimpanan.
