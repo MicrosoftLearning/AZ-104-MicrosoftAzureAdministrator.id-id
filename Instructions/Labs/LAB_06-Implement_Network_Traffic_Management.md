@@ -180,9 +180,9 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua komputer
 
 1. Di portal Azure, cari dan pilih `Virtual networks`.
 
-1. Pada bilah **Jaringan** virtual, dalam daftar jaringan virtual, klik **az104-vnet1**.
+1. Pada bilah **Jaringan** virtual, dalam daftar jaringan virtual, klik **az104-06-vnet1**.
 
-1. Pada bilah **jaringan virtual az104-vnet1**, di bagian **Pengaturan**, klik **Subnet**, lalu klik **+ Subnet**.
+1. Pada bilah **jaringan virtual az104-06-vnet1**, di bagian **Pengaturan**, klik **Subnet**, lalu klik **+ Subnet**.
 
 1. Tambahkan subnet dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya).
 
@@ -208,7 +208,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua komputer
     | Tingkat | **Standard V2** |
     | Aktifkan penskalaan otomatis | **Tidak** |
     | Jumlah instans minimum | `2` |
-    | Zona ketersediaan | **Tidak** |
+    | Zona ketersediaan | **Zona 1** |
     | HTTP2 | **Nonaktif** |
     | Jaringan virtual | **az104-06-vnet1** |
     | Subnet | **subnet-appgw (10.60.3.224/27)** |
@@ -272,7 +272,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua komputer
 
    >**Catatan:** Luangkan waktu semenit untuk membaca informasi tentang **afinitas** berbasis Cookie dan **pengurasan** Koneksi.
 
-1. Di bagian **Perutean** berbasis jalur, pilih **Tambahkan beberapa target untuk membuat aturan** berbasis jalur. Anda akan membuat dua aturan. Klik **Tambahkan** setelah aturan pertama lalu tambahkan aturan kedua. 
+1. Di bagian **Perutean** berbasis jalur, pilih **Tambahkan beberapa target untuk membuat aturan** berbasis jalur. Anda akan membuat dua aturan. Klik **Tambahkan** setelah aturan pertama lalu **Tambahkan** setelah aturan kedua. 
 
     **Aturan - perutean ke backend gambar**
 

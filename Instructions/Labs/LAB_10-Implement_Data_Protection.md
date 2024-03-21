@@ -151,7 +151,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure. S
            | **Harian** |
     | Waktu | **12:00 Siang** |
     | Timezone | nama zona waktu lokal Anda |
-    | Pertahankan snapshot pemulihan instans untuk | **12** Hari |
+    | Pertahankan snapshot pemulihan instans untuk | **2** Hari |
 
     ![Cuplikan layar halaman kebijakan cadangan.](../media/az104-lab10-backup-policy.png)
 

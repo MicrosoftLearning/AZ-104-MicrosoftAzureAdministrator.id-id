@@ -92,7 +92,7 @@ Dalam tugas ini, Anda menggunakan templat yang diunduh untuk menyebarkan disk te
 1. Di dalam panel editor, buat perubahan ini.
 
     + Ubah **disks_az104_disk1_name** menjadi `disk_name` (dua tempat untuk diubah)
-    + Ubah **az104_disk1** menjadi `az102_disk2` (satu tempat untuk diubah)
+    + Ubah **az104-disk1** menjadi `az104-disk2` (satu tempat untuk diubah)
 
 1. Perhatikan bahwa ini adalah **disk Standar** . Lokasinya eastus****. Ukuran disk adalah **32GB**.
 

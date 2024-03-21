@@ -358,8 +358,8 @@ Dalam tugas ini, Anda menskalakan set skala komputer virtual menggunakan aturan 
     -Location 'East US' `
     -Image 'Win2019Datacenter' `
     -Zone '1' `
-    -Size 'Standard_D2s_v3' 
-    -Credential '(Get-Credential)' 
+    -Size 'Standard_D2s_v3' ` 
+    -Credential (Get-Credential)
     ```
 
 1. Setelah perintah selesai, gunakan **Get-AzVM** untuk mencantumkan komputer virtual di grup sumber daya Anda.
@@ -377,7 +377,7 @@ Dalam tugas ini, Anda menskalakan set skala komputer virtual menggunakan aturan 
     ```powershell
     Stop-AzVM `
     -ResourceGroupName 'az104-rg8' `
-    -Name 'myPSVM' `
+    -Name 'myPSVM' 
     ```
 
 1. Gunakan Get-AzVM** dengan **parameter -Status** untuk memverifikasi bahwa komputer dibatalkan alokasinya****.**
