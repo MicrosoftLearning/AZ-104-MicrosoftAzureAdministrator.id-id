@@ -25,15 +25,14 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
   
 + [Menerapkan Azure Container Instances](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014).  Sebarkan gambar Docker menggunakan Azure Container Instances. 
 
+## Diagram arsitektur
+
+![Diagram tugas.](../media/az104-lab09b-aci-architecture.png)
+
 ## Keterampilan pekerjaan
 
 - Tugas 1: Sebarkan Azure Container Instance menggunakan gambar Docker.
 - Tugas 2: Menguji dan memverifikasi penyebaran Azure Container Instance.
-
-
-## Diagram arsitektur
-
-![Diagram tugas.](../media/az104-lab09b-aci-architecture.png)
 
 ## Tugas 1: Menyebarkan Azure Container Instance menggunakan gambar Docker
 

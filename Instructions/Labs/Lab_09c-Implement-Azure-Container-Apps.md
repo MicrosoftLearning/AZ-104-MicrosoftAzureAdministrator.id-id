@@ -22,14 +22,14 @@ Organisasi Anda memiliki aplikasi web yang berjalan pada komputer virtual di pus
 
 Tidak ada simulasi lab interaktif untuk topik ini. 
 
+## Diagram arsitektur
+
+![Diagram tugas.](../media/az104-lab09b-aca-architecture.png)
+
 ## Keterampilan pekerjaan
 
 - Tugas 1: Membuat dan mengonfigurasi Azure Container App dan lingkungan.
 - Tugas 2: Menguji dan memverifikasi penyebaran Aplikasi Kontainer Azure.
-
-## Diagram arsitektur
-
-![Diagram tugas.](../media/az104-lab09b-aca-architecture.png)
 
 ## Tugas 1: Membuat dan mengonfigurasi Azure Container App dan lingkungan
 
