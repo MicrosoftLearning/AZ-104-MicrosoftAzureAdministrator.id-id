@@ -53,7 +53,7 @@ Jaringan virtual dan subnet ini disusun dengan cara yang mengakomodasi sumber da
 
 Organisasi merencanakan sejumlah besar pertumbuhan untuk layanan inti. Dalam tugas ini, Anda membuat jaringan virtual dan subnet terkait untuk mengakomodasi sumber daya yang ada dan pertumbuhan yang direncanakan. Dalam tugas ini, Anda akan menggunakan portal Azure. 
 
-1. Masuk ke **portal Microsoft Azure** - `https://portal.azure.com`.
+1. Masuk ke **portal Azure** - `https://portal.azure.com`.
    
 1. Cari dan pilih `Virtual Networks`.
 
@@ -115,7 +115,7 @@ Dalam tugas ini, Anda membuat jaringan virtual ManufacturingVnet dan subnet terk
 
 1. Ganti semua kemunculan **CoreServicesVnet** dengan `ManufacturingVnet`. 
 
-1. Ganti semua kemunculan **10.20.0.0/16** dengan `10.30.0.0/16`. 
+1. Ganti semua kemunculan **10.20.0.0** dengan `10.30.0.0`. 
 
 ### Membuat perubahan untuk subnet ManufacturingVnet
 
