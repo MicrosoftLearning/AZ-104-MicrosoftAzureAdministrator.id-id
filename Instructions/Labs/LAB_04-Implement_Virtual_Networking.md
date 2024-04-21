@@ -71,8 +71,7 @@ Organisasi merencanakan sejumlah besar pertumbuhan untuk layanan inti. Dalam tug
 
     |  **Opsi**         | **Nilai**            |
     | ------------------ | -------------------- |
-
-    | Ruang alamat IPv4 | `10.20.0.0/16` (pisahkan entri) |
+    | Ruang alamat IPv4 | `10.20.0.0/16` (pisahkan entri)    |
 
 1. Pilih **+ Tambahkan subnet**. Lengkapi informasi nama dan alamat untuk setiap subnet. Pastikan untuk memilih **Tambahkan** untuk setiap subnet baru. 
 

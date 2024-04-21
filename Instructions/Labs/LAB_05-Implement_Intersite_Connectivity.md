@@ -158,7 +158,7 @@ Dalam tugas ini, Anda memverifikasi bahwa sumber daya di jaringan virtual yang d
 
     ![Portal Microsoft Azure memperlihatkan pengaturan Pemecahan Masalah Koneksi ion.](../media/az104-lab05-connection-troubleshoot.png)
 
-1. Pilih **Jalankan pengujian** diagnostik.
+1. Pilih **Jalankan pengujian diagnostik**.
 
     >**Catatan**: Mungkin perlu waktu beberapa menit agar hasilnya dikembalikan. Pilihan layar akan berwarna abu-abu saat hasilnya sedang dikumpulkan. Perhatikan bahwa **pengujian** Koneksi ivity menunjukkan **UnReachable**. Ini masuk akal karena komputer virtual berada di jaringan virtual yang berbeda. 
 
@@ -196,7 +196,8 @@ Dalam tugas ini, Anda membuat peering jaringan virtual untuk mengaktifkan komuni
 
 1. Tinjau pengaturan Anda dan pilih **Tambahkan**.
 
-    ![Cuplikan layar halaman peering.](../media/az104-lab05-peering.png)
+![Cuplikan layar halaman peering.](../media/az104-lab05-peering.png)
+
  
 1. Di CoreServicesVnet | Peering, verifikasi bahwa peering **CoreServicesVnet-to-ManufacturingVnet** dicantumkan. Refresh halaman untuk memastikan **status** **Peering Koneksi**.
 
