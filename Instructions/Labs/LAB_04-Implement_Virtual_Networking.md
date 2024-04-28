@@ -265,7 +265,7 @@ Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik A
     | Properti | Nilai    |
     |:---------|:---------|
     | Langganan | **Pilih langganan Anda** |
-    | Grup sumber daya | **az04-rg4** |
+    | Grup sumber daya | **az-104-rg4** |
     | Nama | `contoso.com` (jika dipesan sesuaikan nama) |
     | Wilayah |**US** Timur (tinjau ikon informasi) |
 
@@ -308,7 +308,7 @@ Zona DNS privat menyediakan layanan resolusi nama dalam jaringan virtual. Zona D
     | Properti | Nilai    |
     |:---------|:---------|
     | Langganan | **Pilih langganan Anda** |
-    | Grup sumber daya | **az04-rg4** |
+    | Grup sumber daya | **az-104-rg4** |
     | Nama | `private.contoso.com` (sesuaikan jika Anda harus mengganti nama) |
     | Wilayah |**US Timur** |
 
