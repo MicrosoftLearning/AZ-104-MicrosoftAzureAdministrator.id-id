@@ -78,7 +78,7 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan inti dengan komputer virt
 
     | Pengaturan | Nilai | 
     | --- | --- |
-    | Nama | `CoreServicesVNet` (Buat baru) |
+    | Nama | `CoreServicesVnet` (Buat baru) |
     | Rentang alamat | `10.0.0.0/16`  |
     | Nama Subnet | `Core` | 
     | Rentang alamat subnet | `10.0.0.0/24` |
@@ -124,7 +124,7 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan manufaktur dengan kompute
 
     | Pengaturan | Nilai | 
     | --- | --- |
-    | Nama | `ManufacturingVNet` |
+    | Nama | `ManufacturingVnet` |
     | Rentang alamat | `172.16.0.0/16`  |
     | Nama Subnet | `Manufacturing` |
     | Rentang alamat subnet | `172.16.0.0/24` |
@@ -179,20 +179,20 @@ Dalam tugas ini, Anda membuat peering jaringan virtual untuk mengaktifkan komuni
 | --------------------------------------------- | ------------------------------------- |
 | **Jaringan virtual ini**                                       |                                       |
 | Nama tautan penyerekan                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Izinkan CoreServicesVNet mengakses jaringan virtual yang di-peering            | dipilih (default)                       |
-| Izinkan CoreServicesVNet menerima lalu lintas yang diteruskan dari jaringan virtual yang di-peering | dipilih                       |
-| Mengizinkan gateway di CoreServicesVNet untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | Tidak dipilih (default) |
-| Aktifkan CoreServicesVNet untuk menggunakan gateway jarak jauh jaringan virtual yang di-peering       | Tidak dipilih (default)                        |
+| Izinkan CoreServicesVnet mengakses jaringan virtual yang di-peering            | dipilih (default)                       |
+| Izinkan CoreServicesVnet menerima lalu lintas yang diteruskan dari jaringan virtual yang di-peering | dipilih                       |
+| Izinkan gateway di CoreServicesVnet untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | Tidak dipilih (default) |
+| Aktifkan CoreServicesVnt untuk menggunakan gateway jarak jauh jaringan virtual yang di-peering       | Tidak dipilih (default)                        |
 | **Jaringan virtual jarak jauh**                                   |                                       |
 | Nama tautan penyerekan                             | `ManufacturingVnet-to-CoreServicesVnet` |
 | Model penyebaran jaringan virtual              | **Manajer sumber daya**                      |
 | Saya mengetahui ID sumber daya saya                         | Tidak dipilih                          |
 | Langganan                                  | *langganan Anda*    |
 | Jaringan virtual                               | **ManufacturingVnet**                     |
-| Izinkan ManufacturingVNet mengakses CoreServicesVNet  | dipilih (default)                       |
-| Izinkan ManufacturingVNet menerima lalu lintas yang diteruskan dari CoreServicesVNet | dipilih                        |
-| Mengizinkan gateway di CoreServicesVNet untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | Tidak dipilih (default) |
-| Mengaktifkan ManufacturingVNet untuk menggunakan gateway jarak jauh CoreServicesVNet       | Tidak dipilih (default)                        |
+| Izinkan ManufacturingVnet mengakses CoreServicesVnet  | dipilih (default)                       |
+| Izinkan ManufacturingVnet menerima lalu lintas yang diteruskan dari CoreServicesVnet | dipilih                        |
+| Izinkan gateway di CoreServicesVnet untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | Tidak dipilih (default) |
+| Mengaktifkan ManufacturingVnet untuk menggunakan gateway jarak jauh CoreServicesVnet       | Tidak dipilih (default)                        |
 
 1. Tinjau pengaturan Anda dan pilih **Tambahkan**.
 

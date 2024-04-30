@@ -129,7 +129,7 @@ Dalam tugas ini, Anda menerapkan Azure Load Balancer di depan dua komputer virtu
     | az104-06-vm0 | **centang kotak** |
     | az104-06-vm1 | **centang kotak** |
 
-1. Saat luang, tinjau tab lainnya, lalu klik **Tinjau dan buat**. Pastikan tidak ada kesalahan validasi, lalu klik **Buat**.
+1. Saat Anda punya waktu, tinjau tab lain, lalu klik **Tinjau + buat**. Pastikan tidak ada kesalahan validasi, lalu klik **Buat**.
 
 1. Tunggu hingga penyeimbang beban diterapkan, lalu klik **Buka sumber daya**.
 
@@ -137,7 +137,7 @@ Dalam tugas ini, Anda menerapkan Azure Load Balancer di depan dua komputer virtu
 
 1. Di bilah **Pengaturan**, pilih **Aturan** penyeimbangan beban.
 
-1. **Tambahkan aturan penyeimbangan beban**. Tambahkan aturan penyeimbangan beban dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya).  Saat Anda mengonfigurasi aturan, gunakan ikon informasi untuk mempelajari tentang setiap pengaturan. Setelah selesai, klik **Simpan**.
+1. Pilih **+ Tambah**. Tambahkan aturan penyeimbangan beban dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya).  Saat Anda mengonfigurasi aturan, gunakan ikon informasi untuk mempelajari tentang setiap pengaturan. Setelah selesai, klik **Simpan**.
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -195,7 +195,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua komputer
 
     > **Catatan**: Subnet ini akan digunakan oleh Azure Application Gateway. Application Gateway memerlukan subnet khusus dengan ukuran /27 atau lebih besar.
 
-1. Di portal Azure, cari dan pilih `Application Gateways` dan, pada bilah **Application Gateways**, klik **+ Buat**.
+1. Di portal Azure, cari dan pilih `Application gateways` dan, pada bilah **Application Gateways**, klik **+ Buat**.
 
 1. Pada tab **Dasar**, tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
 
@@ -226,7 +226,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua komputer
 
     >**Catatan:** Application Gateway dapat memiliki alamat IP publik dan privat.
  
-1. Klik **Berikutnya: Backend >** lalu **Tambahkan kumpulan backend**. Tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai klik **Tambahkan**.
+1. Klik **Berikutnya : Backend >** lalu **Tambahkan kumpulan** backend. Tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai klik **Tambahkan**.
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -251,14 +251,14 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua komputer
     | Menambahkan kumpulan backend tanpa target | **Tidak** |
     | Komputer virtual | **az104-rg6-nic2 (10.60.2.4)** |
 
-1. Pilih **Berikutnya: Konfigurasi** lalu **Tambahkan aturan** perutean. Lengkapi informasi.
+1. Pilih **Berikutnya : Konfigurasi >** lalu **Tambahkan aturan** perutean. Lengkapi informasi.
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama aturan | `az104-gwrule` |
     | Prioritas | `10` |
     | Nama listener | `az104-listener` |
-    | IP Frontend | **Publik** |
+    | IP Frontend | **IPv4 Publik** |
     | Protokol | **HTTP** |
     | Port | `80` |
     | Tipe listener | **Dasar** |
@@ -292,9 +292,9 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua komputer
     | Pengaturan backend | **az104-http** |
     | Target ujung belakang | `az104-videobe` |
 
-1. Pastikan untuk **Menyimpan** dan memeriksa perubahan Anda, lalu pilih **Berikutnya: Tag >**. Tidak diperlukan perubahan.
+1. Pastikan untuk **Menyimpan** dan memeriksa perubahan Anda, lalu pilih **Berikutnya : Tag >**. Tidak diperlukan perubahan.
 
-1. Pilih **Berikutnya: Tinjau + buat >** lalu klik **Buat**.
+1. Pilih **Berikutnya : Tinjau + buat >** lalu klik **Buat**.
 
     > **Catatan**: Tunggu hingga instans Application Gateway dibuat. Ini akan memakan waktu sekitar 5-10 menit. Saat Anda menunggu, pertimbangkan untuk meninjau beberapa tautan pelatihan mandiri di akhir halaman ini.
 
