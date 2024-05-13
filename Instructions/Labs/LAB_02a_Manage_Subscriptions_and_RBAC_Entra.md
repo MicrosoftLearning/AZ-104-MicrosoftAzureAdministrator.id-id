@@ -157,6 +157,19 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
   
+## Perluas pembelajaran Anda dengan Copilot
+
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
++ Buat dua tabel yang menyoroti perintah PowerShell dan CLI penting untuk mendapatkan informasi tentang langganan organisasi di Azure dan jelaskan setiap perintah di kolom "Penjelasan". 
++ Apa format file JSON Azure RBAC?
++ Apa langkah-langkah dasar untuk membuat peran Azure RBAC kustom?
++ Apa perbedaan antara peran Azure RBAC dan peran ID Microsoft Entra?
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Amankan sumber daya Azure Anda dengan kontrol akses berbasis peran Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Gunakan Azure RBAC untuk mengelola akses ke sumber daya di Azure.
++ [Buat peran kustom untuk sumber daya Azure dengan kontrol akses berbasis peran (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Memahami struktur definisi peran untuk kontrol akses. Mengidentifikasi properti peran yang akan digunakan yang menentukan izin peran kustom Anda. Membuat peran kustom Azure dan menetapkan ke pengguna.
+
 ## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
@@ -166,13 +179,7 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Azure memiliki banyak peran bawaan. Anda dapat menetapkan peran ini untuk mengontrol akses ke sumber daya.
 + Anda dapat membuat peran baru atau menyesuaikan peran yang ada.
 + Peran didefinisikan dalam file berformat JSON dan mencakup *Tindakan*, *NotActions*, dan *AssignableScopes*.
-+ Anda dapat menggunakan Log Aktivitas untuk memantau penetapan peran. 
-
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Amankan sumber daya Azure Anda dengan kontrol akses berbasis peran Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Gunakan Azure RBAC untuk mengelola akses ke sumber daya di Azure.
-+ [Buat peran kustom untuk sumber daya Azure dengan kontrol akses berbasis peran (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Memahami struktur definisi peran untuk kontrol akses. Mengidentifikasi properti peran yang akan digunakan yang menentukan izin peran kustom Anda. Membuat peran kustom Azure dan menetapkan ke pengguna.
-
++ Anda dapat menggunakan Log Aktivitas untuk memantau penetapan peran.
 
 
 

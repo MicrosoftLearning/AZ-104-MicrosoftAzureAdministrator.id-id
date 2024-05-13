@@ -422,6 +422,18 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
+## Perluas pembelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+
++ Berikan langkah-langkah dan perintah Azure CLI untuk membuat komputer virtual Linux. 
++ Tinjau cara Anda dapat menskalakan komputer virtual dan meningkatkan performa.
++ Menjelaskan kebijakan manajemen siklus hidup penyimpanan Azure dan bagaimana mereka dapat mengoptimalkan biaya.
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Buat komputer virtual Windows di Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Membuat komputer virtual Windows menggunakan portal Microsoft Azure. Sambungkan ke komputer virtual Windows yang sedang berjalan menggunakan Desktop Jarak Jauh
++ [Bangun aplikasi yang dapat diskalakan dengan Virtual Machine Scale Sets](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Aktifkan aplikasi Anda untuk secara otomatis menyesuaikan dengan perubahan beban sambil meminimalkan biaya dengan Virtual Machine Scale Sets.
++ [Koneksi ke komputer virtual melalui portal Azure dengan menggunakan Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Sebarkan Azure Bastion untuk terhubung dengan aman ke komputer virtual Azure langsung dalam portal Azure untuk mengganti solusi jumpbox yang ada secara efektif, memantau sesi jarak jauh dengan menggunakan log diagnostik, dan mengelola sesi jarak jauh dengan memutuskan sesi pengguna.
 
 ## Poin penting
 
@@ -433,10 +445,3 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Azure Virtual Machine Scale Sets memungkinkan Anda membuat dan mengelola grup VM yang di-load balanced.
 + Komputer virtual dalam Virtual Machine Scale Set dibuat dari gambar dan konfigurasi yang sama.
 + Dalam Virtual Machine Scale Set, jumlah instans VM dapat secara otomatis meningkatkan atau mengurangi respons terhadap permintaan atau jadwal yang ditentukan.
-
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Buat komputer virtual Windows di Azure](https://learn.microsoft.com/training/modules/create-windows-virtual-machine-in-azure/). Membuat komputer virtual Windows menggunakan portal Microsoft Azure. Sambungkan ke komputer virtual Windows yang sedang berjalan menggunakan Desktop Jarak Jauh
-+ [Bangun aplikasi yang dapat diskalakan dengan Virtual Machine Scale Sets](https://learn.microsoft.com/training/modules/build-app-with-scale-sets/). Aktifkan aplikasi Anda untuk secara otomatis menyesuaikan dengan perubahan beban sambil meminimalkan biaya dengan Virtual Machine Scale Sets.
-+ [Koneksi ke komputer virtual melalui portal Azure dengan menggunakan Azure Bastion](https://learn.microsoft.com/en-us/training/modules/connect-vm-with-azure-bastion/). Sebarkan Azure Bastion untuk terhubung dengan aman ke komputer virtual Azure langsung dalam portal Azure untuk mengganti solusi jumpbox yang ada secara efektif, memantau sesi jarak jauh dengan menggunakan log diagnostik, dan mengelola sesi jarak jauh dengan memutuskan sesi pengguna.
-  

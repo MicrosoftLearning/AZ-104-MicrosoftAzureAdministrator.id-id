@@ -144,14 +144,14 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
   
-## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah beberapa jalur utama untuk lab ini:
+## Perluas pembelajaran Anda dengan Copilot
 
-+ Penyewa mewakili organisasi Anda dan membantu Anda mengelola instans layanan cloud Microsoft tertentu untuk pengguna internal dan eksternal Anda.
-+ MICROSOFT Entra ID memiliki akun pengguna dan tamu. Setiap akun memiliki tingkat akses khusus untuk cakupan pekerjaan yang diharapkan untuk dilakukan.
-+ Grup menggabungkan bersama-sama pengguna atau perangkat terkait. Ada dua jenis grup termasuk Keamanan dan Microsoft 365.
-+ Keanggotaan grup dapat ditetapkan secara statis atau dinamis.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
++ Apa saja perintah Azure PowerShell dan CLI untuk membuat grup keamanan yang disebut Admin TI? Berikan halaman referensi perintah resmi.  
++ Berikan strategi langkah demi langkah untuk mengelola pengguna dan grup di ID Microsoft Entra.
++ Apa saja langkah-langkah dalam portal Azure membuat pengguna dan grup secara massal?
++ Berikan tabel perbandingan akun pengguna ID Microsoft Entra internal dan eksternal. 
 
 
 ## Pelajari lebih lanjut dengan pelatihan mandiri
@@ -161,4 +161,11 @@ Selamat atas penyelesaian lab. Berikut adalah beberapa jalur utama untuk lab ini
 + [Izinkan pengguna untuk mengatur ulang kata sandi mereka dengan pengaturan ulang](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/) kata sandi mandiri Microsoft Entra. Evaluasi setel ulang kata sandi layanan mandiri untuk memungkinkan pengguna di organisasi Anda menyetel ulang kata sandi mereka atau membuka kunci akun mereka. Siapkan, konfigurasikan, dan uji setel ulang kata sandi layanan mandiri.
 
 
+## Poin penting
 
+Selamat atas penyelesaian lab. Berikut adalah beberapa jalur utama untuk lab ini:
+
++ Penyewa mewakili organisasi Anda dan membantu Anda mengelola instans layanan cloud Microsoft tertentu untuk pengguna internal dan eksternal Anda.
++ MICROSOFT Entra ID memiliki akun pengguna dan tamu. Setiap akun memiliki tingkat akses khusus untuk cakupan pekerjaan yang diharapkan untuk dilakukan.
++ Grup menggabungkan bersama-sama pengguna atau perangkat terkait. Ada dua jenis grup termasuk Keamanan dan Microsoft 365.
++ Keanggotaan grup dapat ditetapkan secara statis atau dinamis.

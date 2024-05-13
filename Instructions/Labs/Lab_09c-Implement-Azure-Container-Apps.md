@@ -75,6 +75,15 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
+## Perluas pembelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+
++ Ringkas langkah-langkah untuk membuat dan mengonfigurasi Aplikasi Kontainer Azure.
++ Membandingkan dan membandingkan Azure Container Apps dengan Azure Kubernetes Service.
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Mengonfigurasi aplikasi kontainer di Azure Container Apps](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Memeriksa fitur dan kemampuan Azure Container Apps, lalu berfokus pada cara membuat, mengonfigurasi, menskalakan, dan mengelola aplikasi kontainer menggunakan Azure Container Apps.
 
 
 ## Poin penting
@@ -85,7 +94,4 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Container Apps menyediakan konfigurasi server, orkestrasi kontainer, dan detail penyebaran. 
 + Beban kerja di ACA biasanya merupakan proses yang berjalan lama seperti Aplikasi Web.
 
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Mengonfigurasi aplikasi kontainer di Azure Container Apps](https://learn.microsoft.com/training/modules/configure-container-app-azure-container-apps/). Memeriksa fitur dan kemampuan Azure Container Apps, lalu berfokus pada cara membuat, mengonfigurasi, menskalakan, dan mengelola aplikasi kontainer menggunakan Azure Container Apps.
      

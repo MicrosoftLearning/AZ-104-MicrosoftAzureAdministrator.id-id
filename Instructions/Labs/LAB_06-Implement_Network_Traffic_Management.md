@@ -323,7 +323,21 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
-  
+
+## Perluas pembelajaran Anda dengan Copilot
+
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+
++ Membandingkan dan membedakan Azure Load Balancer dengan Azure Application Gateway.
++ Bagaimana cara memecahkan masalah konektivitas masuk ke Azure Load Balancer?
++ Apa langkah-langkah dasar untuk mengonfigurasi Azure Application Gateway?
++ Buat tabel yang menyoroti solusi penyeimbangan beban Azure. Sertakan kolom ini: Protokol yang didukung, Penyeimbangan beban privat, Penyeimbangan beban global, Kebijakan Perutean, Lingkungan yang didukung, pengurasan Koneksi ion, Afinitas sesi, Penyeimbangan beban berbasis host dan jalur, offloading TLS, Akselerasi situs, Keamanan, Penembolokan, dan kompresi.
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Meningkatkan skalabilitas dan ketahanan aplikasi dengan menggunakan Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Bahas beragam load balancer di Azure dan cara memilih solusi load balancer Azure yang tepat untuk memenuhi kebutuhan Anda.
++ [Muat keseimbangan lalu lintas layanan web Anda dengan Application Gateway](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Tingkatkan ketahanan aplikasi dengan mendistribusikan muatan di beberapa server dan gunakan perutean berbasis jalur untuk mengarahkan lalu lintas web.
+
 ## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
@@ -334,8 +348,3 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Azure Application Gateway adalah penyeimbang beban lalu lintas web (OSI lapisan 7) yang memungkinkan Anda mengelola lalu lintas ke aplikasi web Anda.
 + Tingkat Standar Application Gateway menawarkan semua fungsionalitas L7, termasuk penyeimbangan beban, tingkat WAF menambahkan firewall untuk memeriksa lalu lintas berbahaya.
 + Application Gateway dapat membuat keputusan perutean berdasarkan atribut tambahan permintaan HTTP, misalnya jalur URI atau header host.
-
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Meningkatkan skalabilitas dan ketahanan aplikasi dengan menggunakan Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Bahas beragam load balancer di Azure dan cara memilih solusi load balancer Azure yang tepat untuk memenuhi kebutuhan Anda.
-+ [Muat keseimbangan lalu lintas layanan web Anda dengan Application Gateway](https://learn.microsoft.com/training/modules/load-balance-web-traffic-with-application-gateway/). Tingkatkan ketahanan aplikasi dengan mendistribusikan muatan di beberapa server dan gunakan perutean berbasis jalur untuk mengarahkan lalu lintas web.

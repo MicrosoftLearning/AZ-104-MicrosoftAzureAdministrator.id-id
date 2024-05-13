@@ -289,6 +289,18 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
+## Perluas pembelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+
++ Bagaimana cara menggunakan perintah Azure PowerShell atau Azure CLI untuk menambahkan peering jaringan virtual antara vnet1 dan vnet2?
++ Buat tabel yang menyoroti berbagai alat pemantauan Azure dan pihak ke-3 yang didukung di Azure. Sorot kapan harus menggunakan setiap alat. 
++ Kapan saya akan membuat rute jaringan kustom di Azure?
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Distribusikan layanan Anda di seluruh jaringan virtual Azure dan integrasikan dengan menggunakan peering](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/) jaringan virtual. Menggunakan peering jaringan virtual untuk memungkinkan komunikasi di seluruh jaringan virtual dengan cara yang aman dan tingkat kerumitan yang kecil.
++ [Mengelola dan mengontrol arus lalu lintas dalam penyebaran Azure Anda dengan rute](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Pelajari cara mengontrol lalu lintas jaringan virtual Azure dengan menerapkan rute kustom.
+
 
 ## Poin penting
 
@@ -300,8 +312,3 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Lalu lintas antara mesin virtual di jaringan virtual yang di-peering menggunakan infrastruktur backbone Microsoft.
 + Rute yang ditentukan sistem secara otomatis dibuat untuk setiap subnet dalam jaringan virtual. Rute yang ditentukan pengguna mengambil alih atau menambahkan ke rute sistem default. 
 + Azure Network Watcher menyediakan serangkaian alat untuk memantau, mendiagnosis, dan melihat metrik dan log untuk sumber daya Azure IaaS.
-
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Distribusikan layanan Anda di seluruh jaringan virtual Azure dan integrasikan dengan menggunakan peering](https://learn.microsoft.com/en-us/training/modules/integrate-vnets-with-vnet-peering/) jaringan virtual. Menggunakan peering jaringan virtual untuk memungkinkan komunikasi di seluruh jaringan virtual dengan cara yang aman dan tingkat kerumitan yang kecil.
-+ [Mengelola dan mengontrol arus lalu lintas dalam penyebaran Azure Anda dengan rute](https://learn.microsoft.com/training/modules/control-network-traffic-flow-with-routes/). Pelajari cara mengontrol lalu lintas jaringan virtual Azure dengan menerapkan rute kustom.

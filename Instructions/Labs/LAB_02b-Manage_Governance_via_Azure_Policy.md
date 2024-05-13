@@ -51,7 +51,7 @@ Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik 
 
 Dalam tugas ini, Anda akan membuat dan menetapkan tag ke grup sumber daya Azure melalui portal Microsoft Azure. Tag adalah komponen penting dari strategi tata kelola seperti yang diuraikan oleh Microsoft Well-Architected Framework dan Cloud Adoption Framework. Tag dapat memungkinkan Anda mengidentifikasi pemilik sumber daya, tanggal matahari terbenam, kontak grup, dan pasangan nama/nilai lainnya yang dianggap penting oleh organisasi Anda. Untuk tugas ini, Anda menetapkan tag yang mengidentifikasi peran sumber daya ('Infra' untuk 'Infrastruktur').
 
-1. Masuk ke **portal Microsoft Azure** - `https://portal.azure.com`.
+1. Masuk ke **portal Azure** - `https://portal.azure.com`.
       
 1. Cari dan pilih `Resource groups`.
 
@@ -238,6 +238,17 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
+## Perluas pembelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
++ Apa saja perintah Azure PowerShell dan CLI untuk menambahkan dan menghapus kunci sumber daya pada grup sumber daya?
++ Tabulasikan perbedaan antara kebijakan Azure dan Azure RBAC, sertakan contoh.
++ Apa langkah-langkah untuk memberlakukan kebijakan Azure dan memulihkan sumber daya yang tidak sesuai?
++ Bagaimana cara mendapatkan laporan sumber daya Azure dengan tag tertentu?
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Merancang strategi](https://learn.microsoft.com/training/modules/enterprise-governance/) tata kelola perusahaan. Gunakan RBAC dan Azure Policy untuk membatasi akses ke solusi Azure Anda, dan tentukan metode mana yang tepat untuk tujuan keamanan Anda.
+
 ## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
@@ -246,10 +257,5 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Azure Policy menetapkan konvensi untuk sumber daya. Definisi kebijakan menjelaskan kondisi kepatuhan sumber daya dan efek yang harus diambil jika kondisi terpenuhi. Kondisi membandingkan bidang properti sumber daya atau nilai dengan nilai yang diperlukan. Ada banyak definisi kebijakan bawaan dan Anda dapat menyesuaikan kebijakan. 
 + Fitur tugas remediasi Azure Policy digunakan untuk membawa sumber daya ke kepatuhan berdasarkan definisi dan penugasan. Sumber daya yang tidak sesuai dengan penetapan definisi modifikasi atau deployIfNotExist, dapat dibawa ke kepatuhan menggunakan tugas remediasi.
 + Anda dapat mengonfigurasi kunci sumber daya pada langganan, grup sumber daya, atau sumber daya. Kunci dapat melindungi sumber daya dari penghapusan dan modifikasi pengguna yang tidak disengaja. Kunci menimpa izin pengguna apa pun.
-+ Azure Policy adalah praktik keamanan pra-penyebaran. RBAC dan kunci sumber daya adalah praktik keamanan pasca-penyebaran. 
-
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Merancang strategi](https://learn.microsoft.com/training/modules/enterprise-governance/) tata kelola perusahaan. Gunakan RBAC dan Azure Policy untuk membatasi akses ke solusi Azure Anda, dan tentukan metode mana yang tepat untuk tujuan keamanan Anda.
-  
++ Azure Policy adalah praktik keamanan pra-penyebaran. RBAC dan kunci sumber daya adalah praktik keamanan pasca-penyebaran.
 

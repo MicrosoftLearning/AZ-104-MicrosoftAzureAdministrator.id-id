@@ -249,6 +249,18 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
+## Perluas pembelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+
++ Apa langkah-langkah konfigurasi dasar yang akan diperingatkan di Azure saat komputer virtual tidak berfungsi?
++ Bagaimana cara diberi tahu saat pemberitahuan Azure dipicu?
++ Buat kueri Azure Monitor untuk memberikan informasi performa CPU komputer virtual.
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Meningkatkan respons insiden dengan pemberitahuan di Azure](https://learn.microsoft.com/en-us/training/modules/incident-response-with-alerting-on-azure/). Tanggapi insiden dan aktivitas di infrastruktur Anda melalui kapabilitas peringatan di Azure Monitor.
++ [Pantau komputer virtual Azure Anda dengan Azure Monitor](https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/). Pantau Azure VM Anda dengan menggunakan Azure Monitor untuk mengumpulkan dan menganalisis metrik dan log host dan klien VM.
+
 ## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
@@ -258,8 +270,3 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Aturan pemberitahuan memantau data Anda dan menangkap sinyal yang menunjukkan ada sesuatu yang terjadi pada sumber daya yang ditentukan.
 + Pemberitahuan dipicu jika kondisi aturan pemberitahuan terpenuhi. Beberapa tindakan (email, SMS, push, suara) dapat dipicu.
 + Grup tindakan mencakup individu yang harus diberi tahu tentang pemberitahuan.
-
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Meningkatkan respons insiden dengan pemberitahuan di Azure](https://learn.microsoft.com/en-us/training/modules/incident-response-with-alerting-on-azure/). Tanggapi insiden dan aktivitas di infrastruktur Anda melalui kapabilitas peringatan di Azure Monitor.
-+ [Pantau komputer virtual Azure Anda dengan Azure Monitor](https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/). Pantau Azure VM Anda dengan menggunakan Azure Monitor untuk mengumpulkan dan menganalisis metrik dan log host dan klien VM.

@@ -252,18 +252,15 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
-  
-## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
+## Perluas pembelajaran Anda dengan Copilot
 
-+ Templat Azure Resource Manager memungkinkan Anda menyebarkan, mengelola, dan memantau semua sumber daya untuk solusi Anda sebagai grup, daripada menangani sumber daya ini satu per satu.
-+ Templat Azure Resource Manager adalah file JavaScript Object Notation (JSON) yang memungkinkan Anda mengelola infrastruktur secara deklaratif daripada dengan skrip.
-+ Daripada meneruskan parameter sebagai nilai sebaris dalam templat Anda, Anda dapat menggunakan file JSON terpisah yang berisi nilai parameter.
-+ Templat Azure Resource Manager dapat disebarkan dengan berbagai cara termasuk portal Azure, Azure PowerShell, dan CLI.
-+ Bicep adalah alternatif untuk templat Azure Resource Manager. Bicep menggunakan sintaksis deklaratif untuk menyebarkan sumber daya Azure. 
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
-Bicep menyediakan sintaksis ringkas, keamanan jenis yang andal, dan dukungan untuk penggunaan kembali kode. Bicep menawarkan pengalaman penulisan kelas satu untuk solusi infrastruktur sebagai kode di Azure.
++ Apa format file templat Azure Resource Manager? Jelaskan setiap komponen dengan contoh. 
++ Bagaimana cara menggunakan templat Azure Resource Manager yang sudah ada?
++ Membandingkan dan membedakan templat Azure Resource Manager dan templat Azure Bicep. 
+
 
 ## Pelajari lebih lanjut dengan pelatihan mandiri
 
@@ -272,5 +269,16 @@ Bicep menyediakan sintaksis ringkas, keamanan jenis yang andal, dan dukungan unt
 + [Mengelola sumber daya Azure dengan Windows PowerShell](https://learn.microsoft.com/training/modules/manage-azure-resources-windows-powershell/). Modul ini menjelaskan cara untuk menginstal modul yang diperlukan manajemen layanan cloud dan menggunakan perintah PowerShell untuk melakukan tugas administratif sederhana pada sumber daya cloud, seperti mesin virtual Azure, langganan Azure, dan akun penyimpanan Azure.
 + [Pengantar Bash](https://learn.microsoft.com/training/modules/bash-introduction/). Gunakan Bash untuk mengelola infrastruktur TI.
 + [Buat templat](https://learn.microsoft.com/training/modules/build-first-bicep-template/) Bicep pertama Anda. Tentukan sumber daya Azure dalam templat Bicep. Tingkatkan konsistensi dan keandalan penyebaran, kurangi upaya manual yang diperlukan, dan skalakan penyebaran di seluruh lingkungan. Templat Anda akan fleksibel dan dapat digunakan kembali dengan menggunakan parameter, variabel, ekspresi, dan modul.
+
+## Poin penting
+
+Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
+
++ Templat Azure Resource Manager memungkinkan Anda menyebarkan, mengelola, dan memantau semua sumber daya untuk solusi Anda sebagai grup, daripada menangani sumber daya ini satu per satu.
++ Templat Azure Resource Manager adalah file JavaScript Object Notation (JSON) yang memungkinkan Anda mengelola infrastruktur secara deklaratif daripada dengan skrip.
++ Daripada meneruskan parameter sebagai nilai sebaris dalam templat Anda, Anda dapat menggunakan file JSON terpisah yang berisi nilai parameter.
++ Templat Azure Resource Manager dapat disebarkan dengan berbagai cara termasuk portal Azure, Azure PowerShell, dan CLI.
++ Bicep adalah alternatif untuk templat Azure Resource Manager. Bicep menggunakan sintaksis deklaratif untuk menyebarkan sumber daya Azure.
++ Bicep menyediakan sintaksis ringkas, keamanan jenis yang andal, dan dukungan untuk penggunaan kembali kode. Bicep menawarkan pengalaman penulisan kelas satu untuk solusi infrastruktur sebagai kode di Azure.
 
 

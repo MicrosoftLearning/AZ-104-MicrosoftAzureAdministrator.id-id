@@ -285,6 +285,18 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
+## Perluas pembelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+
++ Produk apa yang didukung Azure Backup?
++ Ringkas langkah-langkah untuk mencadangkan dan memulihkan komputer virtual Azure dengan Azure Backup.
++ Bagaimana cara menggunakan Azure PowerShell atau CLI untuk memeriksa status pekerjaan Azure Backup.
++ Berikan setidaknya lima praktik terbaik untuk mengonfigurasi pencadangan komputer virtual Azure.  
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Lindungi komputer virtual Anda dengan menggunakan Azure Backup](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/). Gunakan Azure Backup untuk membantu melindungi server lokal, komputer virtual, SQL Server, berbagi file Azure, dan beban kerja lainnya.
++ [Lindungi infrastruktur Azure Anda dengan Azure Site Recovery](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/). Berikan pemulihan bencana untuk infrastruktur Azure Anda dengan menyesuaikan replikasi, failover, dan failback komputer virtual Azure dengan Azure Site Recovery.
 
 ## Poin penting
 
@@ -296,8 +308,3 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Azure Site Recovery adalah solusi pemulihan bencana yang memberikan perlindungan untuk komputer virtual dan aplikasi Anda.
 + Azure Site Recovery mereplikasi beban kerja Anda ke situs sekunder, dan jika terjadi pemadaman atau bencana, Anda dapat melakukan failover ke situs sekunder dan melanjutkan operasi dengan waktu henti minimal.
 + Vault Layanan Pemulihan menyimpan data cadangan Anda dan meminimalkan overhead manajemen.
-
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Lindungi komputer virtual Anda dengan menggunakan Azure Backup](https://learn.microsoft.com/training/modules/protect-virtual-machines-with-azure-backup/). Gunakan Azure Backup untuk membantu melindungi server lokal, komputer virtual, SQL Server, berbagi file Azure, dan beban kerja lainnya.
-+ [Lindungi infrastruktur Azure Anda dengan Azure Site Recovery](https://learn.microsoft.com/en-us/training/modules/protect-infrastructure-with-site-recovery/). Berikan pemulihan bencana untuk infrastruktur Azure Anda dengan menyesuaikan replikasi, failover, dan failback komputer virtual Azure dengan Azure Site Recovery.

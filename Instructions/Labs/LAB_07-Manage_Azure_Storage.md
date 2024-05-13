@@ -72,7 +72,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun pen
 
 1. Tinjau bilah **Gambaran Umum** dan konfigurasi tambahan yang dapat diubah. Ini adalah pengaturan global untuk akun penyimpanan. Perhatikan bahwa akun penyimpanan dapat digunakan untuk kontainer Blob, Berbagi file, Antrean, dan Tabel.
 
-1. Di bagian **Keamanan + Jaringan** , pilih **Jaringan**. Perhatikan bahwa akses jaringan publik dinonaktifkan.
+1. Di bagian **Keamanan + Jaringan**, pilih**Jaringan**. Perhatikan bahwa akses jaringan publik dinonaktifkan.
 
     + **Ubah tingkat** akses publik menjadi **Diaktifkan dari jaringan virtual dan alamat** IP yang dipilih.
     + Di bagian **Firewall** , centang kotak untuk **Tambahkan alamat IP klien Anda.**
@@ -245,6 +245,18 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
+## Perluas pembelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+
++ Berikan skrip Azure PowerShell untuk membuat akun penyimpanan dengan kontainer blob. 
++ Berikan daftar periksa yang dapat saya gunakan untuk memastikan akun penyimpanan Azure saya aman.
++ Buat tabel untuk membandingkan model redundansi penyimpanan Azure.
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Optimalkan biaya Anda dengan Azure Blob Storage](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Pelajari cara mengoptimalkan biaya Anda dengan Azure Blob Storage.
++ [Mengontrol akses ke Azure Storage dengan tanda tangan](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/) akses bersama. Berikan akses ke data yang disimpan di akun Azure Storage Anda dengan aman dengan menggunakan tanda tangan akses bersama.
+
 ## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
@@ -254,8 +266,3 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Penyimpanan blob Azure memungkinkan Anda menyimpan sejumlah besar data yang tidak terstruktur di platform penyimpanan data Microsoft. Blob adalah singkatan dari Binary Large Object, yang mencakup objek seperti gambar dan file multimedia.
 + Azure file Storage menyediakan penyimpanan bersama untuk data terstruktur. Data dapat diatur dalam folder.
 + Penyimpanan yang tidak dapat diubah menyediakan kemampuan untuk menyimpan data dalam status menulis sekali, membaca banyak (WORM). Kebijakan penyimpanan yang tidak dapat diubah dapat berbasis waktu atau penahanan hukum.
-
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Optimalkan biaya Anda dengan Azure Blob Storage](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Pelajari cara mengoptimalkan biaya Anda dengan Azure Blob Storage.
-+ [Mengontrol akses ke Azure Storage dengan tanda tangan](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/) akses bersama. Berikan akses ke data yang disimpan di akun Azure Storage Anda dengan aman dengan menggunakan tanda tangan akses bersama.

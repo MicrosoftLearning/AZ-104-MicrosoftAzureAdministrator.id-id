@@ -177,7 +177,16 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
+## Perluas pembelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
++ Ringkas langkah-langkah untuk membuat dan mengonfigurasi aplikasi web Azure.
++ Apa cara saya dapat menskalakan Azure Web App?
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Tahapkan penyebaran aplikasi web untuk pengujian dan pembatalan dengan menggunakan slot](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/) penyebaran App Service. Gunakan slot penyebaran untuk menyederhanakan penyebaran dan mengembalikan aplikasi web di Azure App Service.
++ [Skalakan aplikasi web App Service untuk memenuhi permintaan secara efisien dengan peningkatan dan peluasan](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/) skala App Service. Tanggapi periode peningkatan aktivitas dengan meningkatkan sumber daya yang tersedia secara bertahap dan kemudian, untuk mengurangi biaya, mengurangi sumber daya ini ketika aktivitas turun.
 
 ## Poin penting
 
@@ -188,8 +197,3 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Slot penyebaran memungkinkan Anda membuat lingkungan terpisah untuk menyebarkan dan menguji aplikasi web Anda.
 + Anda dapat menskalakan aplikasi web secara manual atau otomatis untuk menangani permintaan tambahan.
 + Berbagai alat diagnostik dan pengujian tersedia. 
-
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Tahapkan penyebaran aplikasi web untuk pengujian dan pembatalan dengan menggunakan slot](https://learn.microsoft.com/training/modules/stage-deploy-app-service-deployment-slots/) penyebaran App Service. Gunakan slot penyebaran untuk menyederhanakan penyebaran dan mengembalikan aplikasi web di Azure App Service.
-+ [Skalakan aplikasi web App Service untuk memenuhi permintaan secara efisien dengan peningkatan dan peluasan](https://learn.microsoft.com/training/modules/app-service-scale-up-scale-out/) skala App Service. Tanggapi periode peningkatan aktivitas dengan meningkatkan sumber daya yang tersedia secara bertahap dan kemudian, untuk mengurangi biaya, mengurangi sumber daya ini ketika aktivitas turun.

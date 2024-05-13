@@ -345,7 +345,23 @@ Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit
 + Di portal Azure, pilih grup sumber daya, pilih **Hapus grup** sumber daya, **Masukkan nama** grup sumber daya, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
- 
+
+## Perluas pembelajaran Anda dengan Copilot
+
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
++ Bagikan 10 praktik terbaik teratas saat menyebarkan dan mengonfigurasi jaringan virtual di Azure.
++ Bagaimana cara menggunakan perintah Azure PowerShell dan Azure CLI untuk membuat jaringan virtual dengan alamat IP publik dan satu subnet. 
++ Jelaskan aturan masuk dan keluar Azure Network Security Group dan bagaimana aturan tersebut digunakan.
++ Apa perbedaan antara Azure Network Security Groups dan Azure Application Security Groups? Bagikan contoh kapan harus menggunakan masing-masing grup ini. 
++ Berikan panduan langkah demi langkah tentang cara memecahkan masalah jaringan apa pun yang kami hadapi saat menyebarkan jaringan di Azure. Bagikan juga proses pemikiran yang digunakan untuk setiap langkah pemecahan masalah.
+
+## Pelajari lebih lanjut dengan pelatihan mandiri
+
++ [Pengantar Azure Virtual Networks](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). Merancang dan mengimplementasikan infrastruktur Azure Networking inti seperti jaringan virtual, IP publik dan privat, DNS, peering jaringan virtual, perutean, dan Azure Virtual NAT.
++ [Merancang skema](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/) alamat IP. Identifikasi kemampuan alamat IP privat dan publik Azure dan jaringan virtual lokal.
++ [Mengamankan dan mengisolasi akses ke sumber daya Azure dengan menggunakan grup keamanan jaringan dan titik](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/) akhir layanan. Grup keamanan jaringan dan titik akhir layanan membantu Anda mengamankan komputer virtual dan layanan Azure dari akses jaringan yang tidak sah.
++ [Host domain Anda di Azure DNS](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). Membuat zona DNS untuk nama domain Anda. Buat catatan DNS untuk memetakan domain ke alamat IP. Uji apakah nama domain tersebut ditetapkan ke server web Anda.
+  
 ## Poin penting
 
 Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini. 
@@ -356,11 +372,3 @@ Selamat atas penyelesaian lab. Berikut adalah takeaway utama untuk lab ini.
 + Kelompok keamanan jaringan berisi aturan keamanan yang mengizinkan atau menolak lalu lintas jaringan. Ada aturan masuk dan keluar default yang dapat Anda sesuaikan dengan kebutuhan Anda.
 + Grup keamanan aplikasi digunakan untuk melindungi grup server dengan fungsi umum, seperti server web atau server database.
 + Azure DNS adalah layanan hosting untuk domain DNS yang menyediakan resolusi nama. Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik Anda.  Anda juga dapat menggunakan zona DNS privat untuk menetapkan nama DNS ke komputer virtual (VM) di jaringan virtual Azure Anda.
-
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Pengantar Azure Virtual Networks](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/). Merancang dan mengimplementasikan infrastruktur Azure Networking inti seperti jaringan virtual, IP publik dan privat, DNS, peering jaringan virtual, perutean, dan Azure Virtual NAT.
-+ [Merancang skema](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/) alamat IP. Identifikasi kemampuan alamat IP privat dan publik Azure dan jaringan virtual lokal.
-+ [Mengamankan dan mengisolasi akses ke sumber daya Azure dengan menggunakan grup keamanan jaringan dan titik](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/) akhir layanan. Grup keamanan jaringan dan titik akhir layanan membantu Anda mengamankan komputer virtual dan layanan Azure dari akses jaringan yang tidak sah.
-+ [Host domain Anda di Azure DNS](https://learn.microsoft.com/training/modules/host-domain-azure-dns/). Membuat zona DNS untuk nama domain Anda. Buat catatan DNS untuk memetakan domain ke alamat IP. Uji apakah nama domain tersebut ditetapkan ke server web Anda.
-  
