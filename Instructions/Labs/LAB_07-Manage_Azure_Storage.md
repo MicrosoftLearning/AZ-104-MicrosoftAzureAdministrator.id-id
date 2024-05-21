@@ -60,7 +60,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun pen
 
 1. Pada tab **Tingkat Lanjut** , gunakan ikon informasi untuk mempelajari selengkapnya tentang pilihan tersebut. Ambil default. 
 
-1. Pada tab **Jaringan** , tinjau opsi yang tersedia, pilih **Nonaktifkan akses publik dan gunakan akses privat.**.
+1. Pada tab **Jaringan** , tinjau opsi yang tersedia, pilih **Nonaktifkan akses publik dan gunakan akses** privat.
 
 1. Tinjau tab **Perlindungan** data. Pemberitahuan 7 hari adalah kebijakan penyimpanan penghapusan sementara default. Perhatikan bahwa Anda dapat mengaktifkan penerapan versi blob. Terima default.
 
@@ -72,7 +72,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun pen
 
 1. Tinjau bilah **Gambaran Umum** dan konfigurasi tambahan yang dapat diubah. Ini adalah pengaturan global untuk akun penyimpanan. Perhatikan bahwa akun penyimpanan dapat digunakan untuk kontainer Blob, Berbagi file, Antrean, dan Tabel.
 
-1. Di bagian **Keamanan + Jaringan**, pilih**Jaringan**. Perhatikan bahwa akses jaringan publik dinonaktifkan.
+1. Di bagian **Keamanan + jaringan** , pilih **Jaringan**. Perhatikan bahwa akses jaringan publik dinonaktifkan.
 
     + **Ubah tingkat** akses publik menjadi **Diaktifkan dari jaringan virtual dan alamat** IP yang dipilih.
     + Di bagian **Firewall** , centang kotak untuk **Tambahkan alamat IP klien Anda.**
@@ -182,9 +182,9 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi berbagi File Azure. Anda a
 
 1. Klik **+ Berbagi** file dan pada tab **Dasar** memberi nama berbagi file, `share1`. 
 
-1. **Perhatikan opsi Tingkat**. Tetap optimalkan** Transaksi default**.
+1. **Perhatikan opsi Tingkat** akses. Tetap optimalkan** Transaksi default**.
    
-1. Pindah ke tab **Cadangan** dan pastikan **Aktifkan Pencadangan** tidak** dicentang**. Kami menonaktifkan pencadangan untuk menyederhanakan konfigurasi lab.
+1. Pindah ke tab **Cadangan** dan pastikan **Aktifkan pencadangan** tidak** dicentang**. Kami menonaktifkan pencadangan untuk menyederhanakan konfigurasi lab.
 
 1. Klik **Tinjau + buat**, lalu **Buat**. Tunggu hingga berbagi file disebarkan.
 
@@ -192,7 +192,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi berbagi File Azure. Anda a
 
 ### Menjelajahi Browser Penyimpanan dan mengunggah file
 
-1. Kembali ke akun penyimpanan Anda dan pilih **Browser** Penyimpanan. Browser Azure Storage adalah alat portal yang memungkinkan Anda dengan cepat melihat semua layanan penyimpanan di bawah akun Anda.
+1. Kembali ke akun penyimpanan Anda dan pilih **Browser penyimpanan**. Browser Azure Storage adalah alat portal yang memungkinkan Anda dengan cepat melihat semua layanan penyimpanan di bawah akun Anda.
 
 1. Pilih **Berbagi** file dan verifikasi bahwa direktori share1** Anda **ada.
 
