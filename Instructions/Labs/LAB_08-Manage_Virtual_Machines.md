@@ -347,7 +347,7 @@ Dalam tugas ini, Anda menskalakan set skala komputer virtual menggunakan aturan 
 
 1. Gunakan ikon (kanan atas) untuk meluncurkan **sesi Cloud Shell** . Secara bergantian, navigasikan langsung ke `https://shell.azure.com`.
 
-1. Pastikan untuk memilih **PowerShell**. Jika perlu, gunakan **Tampilkan pengaturan** tingkat lanjut dan konfigurasikan penyimpanan shell.
+1. Pastikan untuk memilih **PowerShell**. Jika perlu, konfigurasikan penyimpanan shell.
 
 1. Jalankan perintah berikut untuk membuat komputer virtual. Saat diminta, berikan nama pengguna dan kata sandi untuk VM. Saat Anda menunggu, lihat [referensi perintah New-AzVM](https://learn.microsoft.com/powershell/module/az.compute/new-azvm?view=azps-11.1.0) untuk semua parameter yang terkait dengan pembuatan komputer virtual.
 
@@ -388,7 +388,7 @@ Dalam tugas ini, Anda menskalakan set skala komputer virtual menggunakan aturan 
 
 1. Gunakan ikon (kanan atas) untuk meluncurkan **sesi Cloud Shell** . Secara bergantian, navigasikan langsung ke `https://shell.azure.com`.
 
-1. Pastikan untuk memilih **Bash**. Jika perlu, gunakan **Tampilkan pengaturan** tingkat lanjut dan konfigurasikan penyimpanan shell.
+1. Pastikan untuk memilih **Bash**. Jika perlu, konfigurasikan penyimpanan shell.
 
 1. Jalankan perintah berikut untuk membuat komputer virtual. Saat diminta, berikan nama pengguna dan kata sandi untuk VM. Saat Anda menunggu, lihat [referensi perintah az vm create](https://learn.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-create) untuk semua parameter yang terkait dengan pembuatan komputer virtual.
 

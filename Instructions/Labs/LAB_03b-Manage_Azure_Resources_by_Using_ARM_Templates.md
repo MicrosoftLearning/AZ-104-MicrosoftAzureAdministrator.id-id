@@ -139,19 +139,23 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell dan Azure PowerShell. Azu
 
     >**Apakah Anda tahu?**  Jika Anda sebagian besar bekerja dengan sistem Linux, Bash (CLI) terasa lebih akrab. Jika Anda sebagian besar bekerja dengan sistem Windows, Azure PowerShell merasa lebih akrab. 
 
-1. **Pada layar Anda tidak memiliki penyimpanan yang dipasang** pilih **Tampilkan pengaturan** tingkat lanjut dan berikan informasi yang diperlukan. 
+1. **Pada layar Memulai** pilih **Pasang akun** penyimpanan lalu **saya ingin membuat akun** penyimpanan.  
 
-    >**Catatan:** Saat Anda bekerja dengan Cloud Shell, akun penyimpanan dan berbagi file diperlukan. 
-
+    >**Catatan:** Untuk lab ini, akun penyimpanan diperlukan. Berikan informasi yang diperlukan. 
+    
     | Pengaturan | Nilai |
     |  -- | -- |
+    | Langganan | *pilih langganan Anda* |
     | Grup Sumber Daya | **az104-rg3** |
+    | Wilayah | *pilih wilayah Anda* | 
     | Akun penyimpanan (Buat baru) | *harus unik secara global, antara 3 dan 24 karakter dan hanya menggunakan angka dan huruf kecil* |
     | Berbagi file (Buat baru) | `fs-cloudshell` |
 
-1. Setelah selesai, pilih **Buat penyimpanan**. Anda hanya perlu melakukan ini saat pertama kali menggunakan Cloud Shell. Dibutuhkan beberapa menit untuk menyediakan penyimpanan.
+1. Setelah selesai, pilih **Berikutnya**. Anda hanya perlu melakukan ini saat pertama kali menggunakan Cloud Shell. Dibutuhkan beberapa menit untuk menyediakan penyimpanan.
 
 1. **Gunakan ikon Unggah/Unduh file** untuk mengunggah file templat dan parameter dari direktori unduhan. Anda harus mengunggah setiap file secara terpisah.
+
+   >**Catatan:** Jika kapan saja Anda diminta untuk Beralih ke **cloud shell** klasik, lakukanlah. 
 
 1. Verifikasi file Anda tersedia di penyimpanan Cloud Shell. 
 
