@@ -212,11 +212,11 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi berbagi File Azure. Anda a
 
 1. Tunggu hingga jaringan virtual disebarkan, lalu pilih **Buka sumber daya**.
 
-1. Di bagian **Pengaturan**, pilih bilah **Subnet**.
-    + Pilih subnet **default**.
-    + Di bagian **Titik** akhir layanan pilih **Microsoft.Storage** di **menu drop-down Layanan** .
-    + Jangan membuat perubahan lain.    
-    + Pastikan untuk **Menyimpan** perubahan Anda. 
+1. Di bagian **Pengaturan**, pilih bilah **Titik** akhir layanan.
+    + Pilih **Tambahkan**. 
+    + Di menu **drop-down Layanan** , pilih **Microsoft.Storage**.
+    + **Di menu drop-down Subnet**, periksa **subnet Default**.
+    + Klik **Tambahkan** untuk menyimpan perubahan Anda.  
 
 1. Kembali ke akun penyimpanan Anda.
 
