@@ -230,6 +230,8 @@ Dalam tugas ini, Anda mengonfigurasi dan menguji kunci sumber daya. Kunci menceg
 
     ![Cuplikan layar kegagalan untuk menghapus pesan.](../media/az104-lab02b-failuretodelete.png) 
 
+    >**Catatan:** Anda harus menghapus kunci jika ingin menghapus grup sumber daya. 
+    
 ## Membersihkan sumber daya Anda
 
 Jika Anda bekerja dengan **langganan** Anda sendiri membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara term mudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
