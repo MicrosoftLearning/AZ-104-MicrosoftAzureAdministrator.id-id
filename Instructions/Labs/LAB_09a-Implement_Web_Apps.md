@@ -79,7 +79,7 @@ Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan. Slot penyebaran m
 
     >**Catatan**: Aplikasi Web, pada saat ini, memiliki satu slot penyebaran berlabel **PRODUKSI**.
 
-1. Klik **+ Tambahkan slot**, dan tambahkan slot baru dengan setelan berikut:
+1. Klik **Tambahkan slot**, dan tambahkan slot baru dengan pengaturan berikut:
 
     | Pengaturan | Nilai |
     | --- | ---|
