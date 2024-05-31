@@ -1,10 +1,10 @@
 ---
-title: Instruksi yang Dihosting Online
+title: Instruksi yang Tersedia Online
 permalink: index.html
 layout: home
 ---
 
-# Direktori Konten
+# Daftar Isi Direktori
 
 File lab yang diperlukan dapat [DIUNDUH DI SINI](https://github.com/MicrosoftLearning/AZ-104-MicrosoftAzureAdministrator/archive/master.zip)
 
@@ -21,5 +21,5 @@ File lab yang diperlukan dapat [DIUNDUH DI SINI](https://github.com/MicrosoftLea
 {% assign demos = site.pages | where_exp:"page", "page.url berisi '/Instructions/Demos'" %}
 | Modul | Demonstrasi |
 | --- | --- | 
-{% untuk aktivitas dalam demo %}| {{ activity.demo.module }} | [{{ activity.demo.title }}]({{ site.github.url }}{{ activity.url }}) |
+{% untuk aktivitas di Demo %}| {{ activity.demo.module }} | [{{ activity.demo.title }}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
