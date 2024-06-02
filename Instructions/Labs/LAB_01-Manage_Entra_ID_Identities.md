@@ -122,7 +122,7 @@ Dalam tugas ini, Anda membuat akun grup. Akun grup dapat menyertakan akun penggu
 
 1. Pilih **Tidak ada pemilik yang dipilih**.
 
-1. Di halaman **Tambahkan pemilik**, cari dan **pilih** diri Anda sebagai pemilik. Perhatikan bahwa Anda dapat memiliki lebih dari satu pemilik. 
+1. Di halaman **Tambahkan pemilik**, cari dan **pilih** Anda sendiri sebagai pemilik. Perhatikan bahwa Anda dapat memiliki lebih dari satu pemilik. 
 
 1. Pilih **Tidak ada anggota yang dipilih**.
 
@@ -147,7 +147,7 @@ Jika Anda bekerja dengan **langganan Anda sendiri**, luangkan waktu sebentar unt
 
 ## Perluas pembelajaran Anda dengan Copilot
 
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 + Apa saja perintah Azure PowerShell dan CLI untuk membuat grup keamanan yang disebut Admin TI? Berikan halaman referensi perintah resmi.  
 + Berikan strategi langkah demi langkah untuk mengelola pengguna dan grup di Microsoft Entra ID.
 + Apa saja langkah-langkah di portal Microsoft Azure untuk membuat pengguna dan grup secara massal?
@@ -157,7 +157,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 ## Pelajari lebih lanjut dengan pelatihan mandiri
 
 + [Memahami Microsoft Entra ID](https://learn.microsoft.com/training/modules/understand-azure-active-directory/). Bandingkan Microsoft Entra ID dengan Active Directory DS, pelajari tentang Microsoft Entra ID P1 dan P2, dan jelajahi Layanan Domain Microsoft Entra untuk mengelola perangkat dan aplikasi yang bergabung dengan domain di cloud.
-+ [Buat pengguna dan grup Azure di Microsoft Entra Id](https://learn.microsoft.com//training/modules/create-users-and-groups-in-azure-active-directory/). Buat pengguna di Microsoft Entra ID. Pahami berbagai jenis grup. Buat grup dan tambahkan anggota. Kelola akun tamu bisnis ke bisnis.
++ [Buat pengguna dan grup Azure di Microsoft Entra ID](https://learn.microsoft.com//training/modules/create-users-and-groups-in-azure-active-directory/). Buat pengguna di Microsoft Entra ID. Pahami berbagai jenis grup. Buat grup dan tambahkan anggota. Kelola akun tamu bisnis ke bisnis.
 + [Izinkan pengguna menyetel ulang sandi mereka dengan penyetelan ulang sandi mandiri Microsoft Entra](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/). Evaluasi setel ulang kata sandi layanan mandiri untuk memungkinkan pengguna di organisasi Anda menyetel ulang kata sandi mereka atau membuka kunci akun mereka. Siapkan, konfigurasikan, dan uji setel ulang kata sandi layanan mandiri.
 
 
