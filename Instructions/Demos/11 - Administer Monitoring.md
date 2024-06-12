@@ -1,52 +1,52 @@
 ---
 demo:
-  title: 'Demonstrasi 11: Pemantauan Administer'
-  module: Administer Monitoring
+    title: 'Demonstration 11: Administer Monitoring'
+    module: 'Administer Monitoring'
 ---
 
-# 11 - Mengelola Pemantauan
+# 11 - Administer Monitoring
 
-## Mengonfigurasi Pemberitahuan Azure
+## Configure Azure Alerts
 
-Dalam demonstrasi ini, kami akan membuat aturan pemberitahuan.
+In this demonstration, we will create an alert rule.
 
-**Referensi**: [Membuat, menampilkan, dan mengelola Pemberitahuan Metrik Menggunakan Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-metric)
+**Reference**: [Create, view, and manage Metric Alerts Using Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-metric)
 
-**Buat aturan peringatan**
+**Create an alert rule**
 
-1. Gunakan portal Azure.
+1. Use the Azure portal.
 
-1. Cari dan pilih **Pantau** lalu **Pemberitahuan**.
+1. Search for and select **Monitor** and then **Alerts**.
 
-1. Pilih cakupan untuk aturan pemberitahuan. Diskusikan bagaimana Anda dapat memfilter berdasarkan langganan, jenis sumber daya, atau lokasi sumber daya.
+1. Select a scope for the alert rule. Discuss how You can filter by subscription, resource type, or resource location.
 
-1. Atur kondisi untuk aturan pemberitahuan. Diskusikan bagaimana sinyal menentukan apa yang ingin Anda ukur. 
+1. Set the conditions for the alert rule. Discuss how signals define what you want to measure. 
 
-1. Atur tindakan untuk aturan pemberitahuan. Tinjau grup tindakan dan jenis pemberitahuan yang tersedia. 
+1. Set the actions for the alert rule. Review action groups and the type of notifications that are available. 
 
-1. Atur detail untuk aturan pemberitahuan. Tinjau detail umum seperti tingkat keparahan. 
+1. Set the details for the alert rule. Review common details like severity. 
 
-1. Selesaikan mengonfigurasi pemberitahuan Anda dan tinjau pemberitahuan apa pun yang telah diaktifkan. 
+1. Finish configuring your alert and review any alerts which have fired. 
 
-## Mengonfigurasi Log Analytics
+## Configure Log Analytics
 
-Dalam demonstrasi ini, Anda akan bekerja dengan bahasa kueri Analitik Log.
+In this demonstration, you will work with the Log Analytics query language.
 
-1. Gunakan portal Azure.
+1. Use the Azure portal.
 
-1. Cari dan pilih **Pantau** lalu **Log**.
+1. Search for and select **Monitor** and then **Logs**.
 
-1. Jika ditampilkan, tutup layar splash.
+1. If shown, close the splash screen.
 
-1. Pilih cakupan dan **terapkan** perubahan Anda. 
+1. Select a scope and **apply** your changes. 
 
-1. Tinjau bagaimana informasi log diatur dalam tabel. Telusuri beberapa tabel.
+1. Review how log information is organized in tables. Browse several of the tables.
 
-1. Pindah ke **tab kueri** . Pilih kueri dan **muat ke editor**. Diskusikan berapa banyak kueri umum yang telah dibuat.
+1. Move to the **queries** tab. Select a query and **load to editor**. Discuss how many common queries have already been created.
 
-1. Tinjau sintaks KQL secara singkat. 
+1. Briefly review the KQL syntax. 
 
-1. Saat Anda memiliki waktu, bereksperimenlah dengan **Favorit dan **Kueri** Tersimpan** .
+1. As you have time, experiment with **Favorites** and **Saved Queries**.
 
 
 

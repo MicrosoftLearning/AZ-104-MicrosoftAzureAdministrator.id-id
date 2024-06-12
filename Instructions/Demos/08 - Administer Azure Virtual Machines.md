@@ -1,67 +1,67 @@
 ---
 demo:
-  title: 'Demonstrasi 08: Mengelola Azure Virtual Machines'
-  module: Administer Azure Virtual Machines
+    title: 'Demonstration 08: Administer Azure Virtual Machines'
+    module: 'Administer Azure Virtual Machines'
 ---
 
 
-# 08 - Mengelola Azure Virtual Machines
+# 08 - Administer Azure Virtual Machines
 
-## Demonstrasi -- Membuat Komputer Virtual di portal
+## Demonstration -- Create Virtual Machines in the portal
 
-Dalam demonstrasi ini, kita akan membuat dan mengakses komputer virtual Azure di portal.
+In this demonstration, we will create and access an Azure virtual machine in the portal.
 
-**Referensi**
+**References**
 
-[Mulai Cepat - Membuat VM Windows di portal Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
+[Quickstart - Create a Windows VM in the Azure portal](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
 
-[Mulai Cepat - Membuat VM Linux di portal Azure](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal)
+[Quickstart - Create a Linux VM in the Azure portal](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal)
 
-[Koneksi ke komputer virtual dengan Bastion](https://learn.microsoft.com/azure/bastion/tutorial-create-host-portal#connect)
+[Connect to a virtual machine with Bastion](https://learn.microsoft.com/azure/bastion/tutorial-create-host-portal#connect)
 
-**Membuat komputer virtual**
+**Create the virtual machine**
 
-**Catatan: **Langkah-langkah ini hanya mencakup beberapa parameter mesin virtual. Jangan ragu untuk menjelajahi dan mencakup area lain. Anda dapat membuat komputer virtual Windows atau Linux, tergantung audiens Anda.
+**Note:** These steps only cover a few virtual machine parameters. Feel free to explore and cover other areas. You can create either Windows or Linux virtual machine, depending on your audience.
 
-1. Gunakan portal Azure.
+1. Use the Azure portal.
 
-1. Cari **Komputer virtual**. 
+1. Search for **Virtual machines**. 
 
-1. Buat komputer virtual dasar. Tinjau opsi ketersediaan, gambar, dan aturan masuk.
+1. Create a basic virtual machine. Review the availability options, images, and inbound rules.
 
-1. Diskusikan pentingnya membuat akun administrator yang aman.
+1. Discuss the importance of creating a secure administrator account.
 
-1. Buat komputer virtual dan tunggu hingga sumber daya disebarkan.  
+1. Create the virtual machine and wait for the resource to deploy.  
 
-**Koneksi ke komputer virtual**
+**Connect to the virtual machine**
 
-1. Ada beberapa cara untuk **Koneksi** ke komputer virtual. 
+1. There are several ways to **Connect** to the virtual machine. 
 
-1. Untuk server Windows, Anda dapat menggunakan **RDP**, seperti yang diperlihatkan dalam Mulai Cepat. 
+1. For a Windows server you can use **RDP**, as shown in the QuickStart. 
 
-1. Untuk server Linux, Anda dapat **SSH**, seperti yang ditunjukkan di Mulai Cepat. 
+1. For a Linux server you can **SSH**, as shown in the QuickStart. 
 
-1. Untuk salah satu server, Anda dapat tersambung dengan **layanan Bastion** (Mulai Cepat). Tinjau mengapa Bastion lebih disukai untuk RDP atau SSH. 
+1. For either server you can connect with the **Bastion** service (QuickStart). Review why Bastion is preferred to RDP or SSH. 
 
-## Mengonfigurasi Ketersediaan Mesin Virtual
+## Configure Virtual Machine Availability
 
-Dalam demonstrasi ini, kita akan menjelajahi opsi penskalaan mesin virtual.
+In this demonstration, we will explore virtual machine scaling options.
 
-**Referensi**
+**References**
 
-[Membuat komputer virtual dalam set skala menggunakan portal Azure](https://learn.microsoft.com/azure/virtual-machine-scale-sets/flexible-virtual-machine-scale-sets-portal)
+[Create virtual machines in a scale set using Azure portal](https://learn.microsoft.com/azure/virtual-machine-scale-sets/flexible-virtual-machine-scale-sets-portal)
 
-1. Gunakan Portal Microsoft Azure.
+1. Use the Azure Portal.
 
-1. Cari dan pilih **Virtual Machine Scale Sets**. 
+1. Search for and select **Virtual Machine Scale Sets**. 
 
-1. Buat **Set** Skala Komputer Virtual. Tinjau tujuan set skala komputer virtual. Tinjau perbedaan antara **mode orkestrasi Uniform** dan **Flexible** . Jelaskan pilihan Anda dapat memengaruhi opsi penskalakan Anda. 
+1. Create a **Virtual Machine Scale Sets**. Review the purpose of virtual machine scale sets. Review the difference between the **Uniform** and **Flexible** orchestration modes. Explain your selection can affect your scaling options. 
 
-1. Pindah ke **tab Penskalakan** . 
+1. Move to **Scaling** tab. 
 
-1. Tinjau bagaimana **kebijakan** Skala** manual dan **Penyempurnaan skala digunakan. 
+1. Review how **Manual scale** and **Scale-in policy** is used. 
 
-1. Ubah ke **kebijakan Penskalakan kustom** . 
+1. Change to a **Custom** scaling policy. 
 
-1. Tinjau bagaimana **ambang CPU (%)** digunakan untuk meluaskan skala dan menskalakan dalam instans komputer virtual. 
+1. Review how **CPU threshold (%)** is used to scale out and scale in the virtual machine instances. 
 
