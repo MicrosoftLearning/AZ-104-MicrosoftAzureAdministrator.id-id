@@ -1,70 +1,71 @@
 ---
 demo:
-  title: 'Demonstrasi 05: Mengelola Intersite Koneksi ivity'
-  module: Administer Intersite Connectivity
+    title: 'Demonstration 05: Administer Intersite Connectivity'
+    module: 'Administer Intersite Connectivity'
 ---
 
-# 05 - Mengelola intersite Koneksi ivity
+# 05 - Administer Intersite Connectivity
 
-## Mengonfigurasi Peering VNet
+## Configure VNet Peering
 
-**Catatan:** Untuk demonstrasi ini, Anda memerlukan dua jaringan virtual.
+**Note:** For this demonstration you will need two virtual networks.
 
-**Referensi**: [Koneksi jaringan virtual dengan peering VNet - tutorial](https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal)
+**Reference**: [Connect virtual networks with VNet peering - tutorial](https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal)
 
-**Mengonfigurasi peering VNet pada jaringan virtual pertama**
+**Configure VNet peering on the first virtual network**
 
-1.  **Di portal Azure**, pilih jaringan virtual pertama. Tinjau nilai peering. 
+1. In the **Azure portal**, select the first virtual network. Review the value of peering. 
 
-1. Di bawah ** Pengaturan**, pilih **Peering** dan **+ Tambahkan** peering baru.
+1. Under **Settings**, select **Peerings** and **+ Add** a new peering.
 
-1. Konfigurasikan peering jaringan virtual kedua. Gunakan ikon informasi untuk meninjau pengaturan yang berbeda. 
+1. Configure the peering the second virtual network. Use the information icons to review the different settings. 
 
-1. Saat peering selesai, tinjau **status** Peering. 
+1. When the peering is complete, review the **Peering status**. 
 
-**Mengonfirmasi peering VNet pada jaringan virtual kedua**
+**Confirm VNet peering on the second virtual network**
 
-1.  **Di portal Azure**, pilih jaringan virtual kedua
+1. In the **Azure portal**, select the second virtual network
 
-1. Di bawah ** Pengaturan, pilih **Peering****.
+1. Under **Settings**, select **Peerings**.
 
-1. Perhatikan bahwa peering telah dibuat secara otomatis. Perhatikan bahwa **Status** Peering Koneksi ** ed**.
+1. Notice that a peering has automatically been created. Notice that the **Peering Status** is **Connected**.
 
-1. Di lab, siswa akan membuat peering dan menguji koneksi antara komputer virtual. 
+1. In the lab, students will create peering and test the connection between virtual machines. 
 
-## Mengonfigurasi Perutean Jaringan dan Titik Akhir
+## Configure Network Routing and Endpoints
 
-Dalam demonstrasi ini, kita akan mempelajari cara membuat tabel rute, menentukan rute kustom, dan mengaitkan rute dengan subnet.
+In this demonstration, we will learn how to create a route table, define
+a custom route, and associate the route with a subnet.
 
-**Catatan:** Demonstrasi ini memerlukan jaringan virtual dengan setidaknya satu subnet.
+**Note:** This demonstration requires a virtual network with at least one subnet.
 
-**Referensi**: [Merutekan lalu lintas jaringan - tutorial - portal Azure](https://learn.microsoft.com/azure/virtual-network/tutorial-create-route-table-portal#create-a-route-table)
+**Reference**: [Route network traffic - tutorial - Azure portal](https://learn.microsoft.com/azure/virtual-network/tutorial-create-route-table-portal#create-a-route-table)
 
-**Membuat tabel perutean**
+**Create a routing table**
 
-1. Karena Anda memiliki waktu untuk meninjau diagram tutorial. Jelaskan mengapa Anda perlu membuat rute yang ditentukan pengguna. 
+1. As you have time review the tutorial diagram. Explain why you need to create a user-defined route. 
 
-1. Akses portal Microsoft Azure.
+1. Access the Azure portal.
 
-1. Cari dan pilih **Tabel rute**. Diskusikan kapan **rute** gateway yang disebarluaskan harus digunakan. 
+1. Search for and select **Route tables**. Discuss when **propagate gateway routes** should be used. 
 
-1. Buat tabel perutean, jelaskan pengaturan yang tidak biasa. 
+1. Create a routing table, explain any uncommon settings. 
 
-1. Tunggu hingga tabel perutean baru diterapkan.
+1. Wait for the new routing table to be deployed.
 
-**Menambahkan rute**
+**Add a route**
 
-1.  Pilih tabel perutean baru Anda, lalu pilih **Rute**.
+1.  Select your new routing table, and then select **Routes**.
 
-1.  Buat rute** baru**. Diskusikan berbagai **jenis** hop yang tersedia. 
+1.  Create a new **route**. Discuss the different **hop types** that are available. 
 
-1.  Buat rute baru dan tunggu hingga sumber daya disebarkan.
+1.  Create the new route and wait for the resource to be deployed.
  
-**Mengaitkan tabel rute ke subnet**
+**Associate a route table to a subnet**
 
-1.  Navigasi ke subnet yang ingin Anda kaitkan dengan tabel perutean.
+1.  Navigate to the subnet you want to associate with the routing table.
 
-1.  Pilih **Tabel rute** dan pilih tabel perutean baru Anda. 
+1.  Select **Route table** and choose your new routing table. 
 
-1.  **Simpan** perubahan Anda.
+1.  **Save** your changes.
 

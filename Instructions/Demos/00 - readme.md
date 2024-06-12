@@ -1,27 +1,27 @@
 ---
 demo:
-  title: Instruksi Demonstrasi
-  module: All
+    title: 'Demonstration Instructions'
+    module: 'All'
 ---
 
-# Tujuan
+# Purpose
 
-Direktori ini menyediakan demonstrasi instruktur untuk kursus Administrator Azure AZ-104. **Ini tidak dimaksudkan bagi Anda untuk melakukan setiap demonstrasi. Pilih yang paling berlaku untuk audiens Anda.**
+This directory provides instructor demonstrations for the AZ-104 Azure Administrator course. **It is not intended for you to do every demonstration. Pick the ones most applicable to your audience.**
 
-# Hal-hal yang perlu dipikirkan
+# Things to think about
 
-- Sebagian besar area memiliki demonstrasi. Luangkan waktu untuk mengerjakan masing-masing dan putuskan mana yang akan digunakan. Beberapa demonstrasi sederhana menunjukkan dan memberikan panduan portal Microsoft Azure; lainnya membutuhkan keterampilan skrip.
+- Most areas have a demonstration. Take the time to work through each one and decide which to use. Some of the demonstrations are simple show and tell walk-throughs of the Azure portal; others require scripting skills.
 
-- Pertimbangkan agar siswa mengikuti saat Anda melakukan demonstrasi atau minta salah satu siswa "mengemudi" dan melatih mereka melalui langkah-langkah.
+- Consider having the students follow along as you do the demonstration or have one of the students' "drive" and coach them through the steps.
 
-- Pertimbangkan untuk melakukan demonstrasi terlebih dahulu, lalu gunakan slide untuk menjawab pertanyaan dan pastikan semuanya dibahas.
+- Consider doing the demonstration first and then using the slides to answer questions and ensure everything is covered.
 
-- Pertimbangkan tumpang tindih dengan lab formal dan manfaatkan waktu Anda sebaik-baiknya.
+- Consider the overlap with the formal labs and make the best use of your time.
 
-- Demonstrasi ini disediakan untuk instruktur dengan pengalaman administrasi Azure. Langkah-langkahnya berada pada tingkat yang lebih tinggi daripada lab kursus yang akan dilakukan siswa.
+- These demonstrations are provided for an instructor with Azure administration experience. The steps are at a higher level than the course labs that students will perform.
 
-- Demonstrasi ini menyediakan serangkaian fitur minimal untuk ditampilkan kepada siswa Anda. Saat waktu memungkinkan untuk menambahkan, menunjukkan, dan mendiskusikan lebih banyak hal.
+- These demonstrations provide a minimal set of features to show your students. As time permits feel free to add, show, and discuss more things.
 
-- Halaman *Ringkasan dan Sumber Daya* mengidentifikasi tempat Kotak pasir Learn tersedia. Pertimbangkan untuk menggunakan kotak pasir untuk memanah siswa melalui langkah-langkahnya.
+- The *Summary and Resources* page identifies where Learn sandboxes are available. Consider using a sandbox to walk students through the steps.
 
-- Jika Anda tidak memiliki lingkungan demonstrasi, pertimbangkan untuk menggunakan halaman Tutorial dan Mulai Cepat yang disediakan. 
+- If you don't have a demonstration environment consider using the Tutorial and QuickStart pages that are provided. 

@@ -1,106 +1,106 @@
 ---
 demo:
-  title: 'Demonstrasi 09: Mengelola Opsi Komputasi PaaS'
-  module: Administer PaaS Compute Options
+    title: 'Demonstration 09: Administer PaaS Compute Options'
+    module: 'Administer PaaS Compute Options'
 ---
 
-# 09 - Mengelola Opsi Komputasi PaaS
+# 09 - Administer PaaS Compute Options
 
-## Mengonfigurasi Paket Azure App Service
+## Configure Azure App Service Plans
 
-Dalam demonstrasi ini, kita akan membuat dan bekerja dengan rencana Azure App Service.
+In this demonstration, we will create and work with Azure App Service plans.
 
-**Referensi**: [Mengelola paket App Service - Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-plan-manage)
+**Reference**: [Manage App Service plan - Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-plan-manage)
 
-**Referensi**: [Meningkatkan skala aplikasi di Azure App Service](https://learn.microsoft.com/azure/app-service/manage-scale-up)
+**Reference**: [Scale up an app in Azure App Service](https://learn.microsoft.com/azure/app-service/manage-scale-up)
 
-**Referensi**: [Penskalakan otomatis di Azure App Service](https://learn.microsoft.com/azure/app-service/manage-automatic-scaling?tabs=azure-portal)
+**Reference**: [Automatic scaling in Azure App Service](https://learn.microsoft.com/azure/app-service/manage-automatic-scaling?tabs=azure-portal)
 
-1. Gunakan portal Azure. 
+1. Use the Azure portal. 
 
-1. Cari dan pilih **paket** App Service.
+1. Search for and select **App Service plans**.
 
-1. Buat paket App Service sederhana. Diskusikan kebutuhan untuk memilih Windows atau Linux. Diskusikan paket harga sekarang atau di langkah berikutnya. 
+1. Create a simple App Service plan. Discuss the need to select Windows or Linux. Discuss pricing plans now or in the next steps. 
 
-1. Sebarkan paket layanan aplikasi baru Anda. 
+1. Deploy your new app service plan. 
 
-1. Tinjau bilah **Skalakan (Paket App Service).** Diskusikan perbedaan antara **paket Dev/Test** dan **Production** . Tinjau daftar fitur. 
+1. Review the **Scale up (App Service Plan)** blade. Discuss the difference between **Dev/Test** and **Production** plans. Review the feature list. 
 
-1. Tinjau bilah **Peluasan skala (Paket App Service).** Tinjau perbedaan antara **Manual** dan **Berbasis** aturan. 
+1. Review the **Scale out (App Service Plan)** blade. Review the difference between **Manual** and **Rule-based**. 
 
-## Mengonfigurasi Azure App Services
+## Configure Azure App Services
 
-Dalam demonstrasi ini, kami akan membuat aplikasi web baru yang menjalankan kontainer Docker. Kontainer menampilkan pesan Selamat Datang.
+In this demonstration, we will create a new web app that runs a Docker container. The container displays a Welcome message.
 
-**Referensi**: [Membuat Aplikasi Web](https://learn.microsoft.com/training/modules/host-a-web-app-with-azure-app-service/3-exercise-create-a-web-app-in-the-azure-portal?pivots=csharp)
+**Reference**: [Create a Web App](https://learn.microsoft.com/training/modules/host-a-web-app-with-azure-app-service/3-exercise-create-a-web-app-in-the-azure-portal?pivots=csharp)
 
-Dalam tugas ini, kita akan membuat Aplikasi Web Azure App Service.
+In this task, we will create an Azure App Service Web App.
 
-1. Gunakan portal Azure. 
+1. Use the Azure portal. 
 
-1. Cari dan pilih **App Services**.
+1. Search for and select **App Services**.
 
-1. **Membuat** **Aplikasi** Web.
+1. **Create** a **Web App**.
 
-    - Terbitkan: **Kode**. Tinjau pilihan lain.
-    - Tumpukan runtime: **.Net**. Tinjau pilihan lain.
-    - Sistem operasi: **Linux**
+    - Publish: **Code**. Review other choices.
+    - Runtime stack: **.Net**. Review other choices.
+    - Operating system: **Linux**
 
-1. Pilih paket **layanan F1** Gratis.
+1. Select the **Free F1** service plan.
 
-1. **Tinjau + buat** aplikasi web. Tunggu hingga sumber daya disebarkan.
+1. **Review + create** the web app. Wait for the resource to deploy.
 
-1. Pada halaman **Gambaran Umum** , pastikan **Status** **Berjalan**.
+1. On the **Overview** page, ensure the **Status** is **Running**.
 
-1. **Pilih URL** dan pastikan halaman tempat penampung default dimuat.
+1. Select the **URL** and ensure the default placeholder page loads.
 
-1. Saat Anda punya waktu, jelajahi **opsi Slot** penyebaran.
+1. As you have time, explore the **Deployment slots** options.
    
-## Mengonfigurasi Azure Container Instances
+## Configure Azure Container Instances
 
-Dalam demonstrasi ini kami membuat, mengonfigurasi, dan menyebarkan kontainer dengan menggunakan Azure Container Instances (ACI) dari Portal Microsoft Azure. Aplikasi ACI menampilkan halaman HTML statis dengan gambar microsoft Halo Dunia publik. 
+In this demonstration we create, configure, and deploy a container by using Azure Container Instances (ACI) from the Azure Portal. The ACI application displays a static HTML page with the public Microsoft Hello World image. 
 
-**Referensi**: [Mulai Cepat - Menyebarkan kontainer Docker ke instans kontainer](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart-portal)
+**Reference**: [Quickstart - Deploy Docker container to container instance](https://learn.microsoft.com/en-us/azure/container-instances/container-instances-quickstart-portal)
 
-1. Gunakan portal Azure.
+1. Use the Azure portal.
 
-1. Cari dan pilih **Instans** kontainer.
+1. Search for and select **Container instances**.
 
-1. **Buat** instans kontainer baru. 
+1. **Create** a new container instance. 
 
-1. **Isi grup** Sumber Daya dan **Nama** kontainer. 
+1. Fill in the **Resource group** and **Container name**. 
 
-1. Diskusikan **opsi Sumber gambar** . Gunakan **gambar** Mulai Cepat.
+1. Discuss the **Image source** options. Use **Quickstart images**.
 
-1. Untuk **Gambar** kontainer gunakan **mcr.microsoft.com/azuredocs/aci-helloworld:latest (Linux)**. Sampel gambar Linux ini mengemas aplikasi web kecil yang ditulis di Node.js yang menyajikan halaman HTML statis.
+1. For **Container image** use **mcr.microsoft.com/azuredocs/aci-helloworld:latest (Linux)**. This sample Linux image packages a small web app written in Node.js that serves a static HTML page.
 
-1. Pada halaman **Jaringan**, tentukan **Label nama DNS** untuk kontainer Anda. 
+1. On the **Networking** page, specify a **DNS name label** for your container. 
 
-1. Biarkan pengaturan lain sebagai default, lalu pilih **Tinjau + buat**.
+1. Leave all other settings as their defaults, then select **Review + create**.
 
-1. Tunggu hingga sumber daya disebarkan.
+1. Wait for the resource to deploy.
 
-1. Pada halaman **Gambaran Umum** untuk sumber daya, pastikan **Status** **Berjalan**.
+1. On the **Overview** page for the resource, ensure the **Status** is **Running**.
 
-1. Navigasikan ke **FQDN** untuk instans kontainer dan pastikan halaman selamat datang ditampilkan. 
+1. Navigate to the **FQDN** for the container instance and ensure the welcome page displays. 
 
-**Catatan**: Untuk menghindari biaya tambahan, hapus sumber daya. 
+**Note**: To avoid additional costs, delete the resource. 
 
-## Mengonfigurasi Azure Container Apps
+## Configure Azure Container Apps
 
-Dalam demonstrasi ini, kita akan membuat dan bekerja dengan Azure Container Apps. 
+In this demonstration, we will create and work with Azure Container Apps. 
 
-**Referensi**: [Mulai cepat: Menyebarkan aplikasi kontainer pertama Anda menggunakan portal Azure](https://learn.microsoft.com/azure/container-apps/quickstart-portal)
+**Reference**: [Quickstart: Deploy your first container app using the Azure portal](https://learn.microsoft.com/azure/container-apps/quickstart-portal)
 
-1. Cari dan pilih **Aplikasi** Kontainer.
+1. Search for and select **Container Apps**.
 
-1. Selesaikan **detail** Proyek dan buat lingkungan** aplikasi **kontainer.
+1. Complete the **Project details** and create the container apps **environment**.
 
-1. **Tinjau dan buat** aplikasi kontainer.
+1. **Review and create** the container app.
 
-1. **Gunakan tautan URL** Aplikasi untuk melihat aplikasi Anda.
+1. Use the **Application URL** link to view your application.
 
-1. Verifikasi browser menampilkan pesan Selamat Datang di **Azure Container Apps** . 
+1. Verify the browser displays the **Welcome to Azure Container Apps** message. 
 
 
 

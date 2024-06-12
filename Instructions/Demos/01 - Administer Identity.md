@@ -1,55 +1,58 @@
 ---
 demo:
-  title: 'Demonstrasi 01: Mengelola Identitas'
-  module: Administer Identity
+    title: 'Demonstration 01: Administer Identity'
+    module: 'Administer Identity'
 ---
 
-# 01 - Mengelola Identitas
+# 01 - Administer Identity
 
-## Mengonfigurasi Identitas ID Entra
+## Configure Entra ID Identities
 
-Area ini tidak memiliki demonstrasi formal. Pertimbangkan untuk menelusuri simulasi lab interaktif untuk Lab 01 siswa. 
+This area does not have a formal demonstration. Consider walking through the interactive lab simulation for student Lab 01. 
 
-[Lab Simulasi Lab Interaktif 01](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)
+[Interactive Lab Simulation Lab 01](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201)
 
-Atau, Anda dapat menggunakan salah satu Mulai Cepat ini. 
+Alternatively, you could use one of these QuickStarts. 
 
-**Referensi**: [Mulai Cepat - Akses & buat penyewa baru di ID Microsoft Entra](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+**Reference**: [Quickstart - Create a group with members and view all groups and members](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-view-azure-portal)
 
-**Referensi**: [Mulai Cepat - Membuat grup dengan anggota dan menampilkan semua grup dan anggota](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-view-azure-portal)
+## Configure User and Group Accounts
 
-## Mengonfigurasi Akun Pengguna dan Grup
+In this demonstration, we will explore Entra ID identities.
 
-Dalam demonstrasi ini, kita akan menjelajahi identitas Id Entra.
+**Reference**: [Add or delete users](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory)
 
-**Referensi**: [Menambahkan atau menghapus pengguna](https://docs.microsoft.com/azure/active-directory/fundamentals/add-users-azure-active-directory)
+**Reference**: [Create a basic group and add members](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal#create-a-basic-group-and-add-members)
 
-**Referensi**: [Membuat grup dasar dan menambahkan anggota](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal#create-a-basic-group-and-add-members)
+**Note:** Depending on your subscription not all areas of the Microsoft Entra ID blade will be available. 
 
-**Catatan:** Bergantung pada langganan Anda, tidak semua area bilah ID Microsoft Entra akan tersedia. 
+**Review license and domain information**
 
-**Meninjau informasi lisensi dan domain**
+1.  Access the Azure portal and navigate to the **Microsoft Entra ID** blade.
 
-1.  Akses portal Azure dan navigasikan ke bilah **ID** Microsoft Entra.
+2.  On the Overview blade, review the **Tenant information** including license and primary domain.
 
-2.  Pada bilah Gambaran Umum, tinjau **informasi** Penyewa termasuk lisensi dan domain utama.
+**Explore user accounts**
 
-**Menjelajahi akun pengguna**
+1.  Select the **Users** blade.
 
-1.  Pilih bilah **Pengguna** .
+2.  Explain the choices for **New user** and **New guest user**.
 
-2.  Jelaskan pilihan untuk **Pengguna** baru dan **Pengguna** tamu baru.
+3.  Select **New user** and discuss the differences between **Create
+    user** and **Invite user**.
 
-3.  Pilih **Pengguna **baru dan diskusikan perbedaan antara **Buat pengguna** dan **Undang pengguna**.
+4.  Create a **New user** reviewing the **Identity**, **Groups and
+    roles**, **Settings**, and **Job Info** parameters.
 
-4.  Buat pengguna  **Baru yang**meninjau **parameter Identitas**, Grup, ** dan peran**, ** Pengaturan**, dan **Info** Pekerjaan.
+5.  After the user is created, review **Reset password**, **Delete
+    user**, and **Sign-ins**.
 
-5.  Setelah pengguna dibuat, tinjau **Reset kata sandi**, ** Hapus pengguna**, dan **Masuk**.
+**Explore group accounts**
 
-**Menjelajahi akun grup**
+1.  Return to the **Microsoft Entra ID** page and select
+    the **Groups** blade.
 
-1.  Kembali ke **halaman ID** Microsoft Entra dan pilih bilah **Grup** .
+2.  Create a **New group** or select an existing group to review.
 
-2.  Buat **grup** Baru atau pilih grup yang sudah ada untuk ditinjau.
-
-3.  Tinjau informasi tentang grup termasuk **Jenis** keanggotaan dan **Jenis**.
+3.  Review information about a group including **Membership
+    type** and **Type**.

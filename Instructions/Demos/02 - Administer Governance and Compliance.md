@@ -1,111 +1,112 @@
 ---
+
 demo:
-  title: 'Demonstrasi 02: Mengelola Tata Kelola dan Kepatuhan'
-  module: Administer Governance and Compliance
+    title: 'Demonstration 02: Administer Governance and Compliance'
+    module: 'Administer Governance and Compliance'
 ---
 
-# 02 - Mengelola Tata Kelola dan Kepatuhan
+# 02 - Administer Governance and Compliance
 
-## Mengonfigurasi Langganan
+## Configure Subscriptions
 
-Area ini tidak memiliki demonstrasi formal. 
+This area does not have a formal demonstration. 
 
-**Referensi**: [Membuat langganan Azure tambahan](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription)
+**Reference**: [Create an additional Azure subscription](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription)
 
-## Mengonfigurasi kebijakan Azure
+## Configure Azure Policy
 
-Dalam demonstrasi ini, kita akan bekerja dengan kebijakan Azure.
+In this demonstration, we will work with Azure policies.
 
-**Referensi**: [Tutorial: Membangun kebijakan untuk menegakkan kepatuhan - Azure Policy](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+**Reference**: [Tutorial: Build policies to enforce compliance - Azure Policy](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
 
-**Menetapkan kebijakan**
+**Assign a policy**
 
-1.  Akses portal Microsoft Azure.
+1.  Access the Azure portal.
 
-2.  Cari dan pilih **Kebijakan**.
+2.  Search for and select **Policy**.
 
-3.  Pilih **Penugasan** lalu **Tetapkan Kebijakan**.
+3.  Select **Assignments** and then **Assign Policy**.
 
-5.  Diskusikan **Cakupan** yang menentukan sumber daya atau pengelompokan sumber daya tempat penetapan kebijakan diberlakukan.
+5.  Discuss the **Scope** which determines what resources or grouping of resources the policy assignment is enforced on.
 
-6.   **Pilih elipsis Definisi kebijakan** untuk membuka daftar definisi yang tersedia. Luangkan waktu untuk meninjau definisi kebijakan bawaan.
+6.  Select the **Policy definition** ellipsis to open the list of available definitions. Take some time to review the built-in policy definitions.
 
-7.  Cari dan pilih **kebijakan Lokasi yang** diizinkan. Kebijakan ini memungkinkan Anda membatasi lokasi yang dapat ditentukan oleh organisasi Anda saat menggunakan sumber daya.
+7.  Search for and select the **Allowed locations** policy. This policy enables you to restrict the locations your organization can specify when deploying resources.
 
-8.  Pindahkan tab **Parameter** dan gunakan menu drop-down pilih satu atau beberapa lokasi yang diizinkan.
+8.  Move the **Parameters** tab and using the drop-down select one or more allowed locations.
 
-9.  Klik **Tinjau + buat** lalu **Buat** untuk membuat kebijakan.
+9.  Click **Review + create** and then **Create** to create the policy.
 
-**Membuat dan menetapkan definisi inisiatif**
+**Create and assign an initiative definition**
 
-1.  Kembali ke halaman Azure Policy dan pilih **Definisi** di bawah Penulisan.
+1.  Return to the Azure Policy page and select **Definitions** under Authoring.
 
-2.  Pilih **Definisi** Inisiatif di bagian atas halaman.
+2.  Select **Initiative Definition** at the top of the page.
 
-3.  Berikan **Nama** dan **Deskripsi**.
+3.  Provide a **Name** and **Description**.
 
-4.  **Buat Kategori baru** .
+4.  **Create new** Category.
 
-5.  Dari panel **kanan Tambahkan **kebijakan Lokasi yang **** diizinkan.
+5.  From the right panel **Add** the **Allowed locations** policy.
 
-6.  Tambahkan satu kebijakan tambahan yang Anda pilih.
+6.  Add one additional policy of your choosing.
 
-7.  **Simpan** perubahan Anda lalu **Tetapkan** definisi inisiatif Anda ke langganan Anda.
+7.  **Save** your changes and then **Assign** your initiative definition to your subscription.
 
-**Periksa kepatuhan**
+**Check for compliance**
 
-1.  Kembali ke halaman layanan Azure Policy.
+1.  Return to the Azure Policy service page.
 
-2.  Pilih **Kepatuhan**.
+2.  Select **Compliance**.
 
-3.  Tinjau status kebijakan dan definisi Anda.
+3.  Review the status of your policy and your definition.
 
-**Periksa tugas remediasi**
+**Check for remediation tasks**
 
-1.  Kembali ke halaman layanan Azure Policy.
+1.  Return to the Azure Policy service page.
 
-2.  Pilih **Remediasi**.
+2.  Select **Remediation**.
 
-3.  Tinjau tugas remediasi apa pun yang tercantum.
+3.  Review any remediation tasks that are listed.
 
-4. Saat Anda memiliki waktu, hapus kebijakan dan inisiatif. 
+4. As you have time, remove the policy and the initiative. 
 
-## Mengonfigurasi Kontrol Akses Berbasis Peran
+## Configure Role-Based Access Control
 
-Dalam demonstrasi ini, kita akan belajar tentang tugas peran.
+In this demonstration, we will learn about role assignments.
 
-**Referensi**: [Tutorial: Memberikan akses pengguna ke sumber daya Azure menggunakan portal Azure - Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
+**Reference**: [Tutorial: Grant a user access to Azure resources using the Azure portal - Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
 
-**Referensi**: [Mulai Cepat - Memeriksa akses untuk pengguna ke sumber daya Azure - Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/check-access)
+**Reference**: [Quickstart - Check access for a user to Azure resources - Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/check-access)
 
-**Temukan lokasi bilah Kontrol Akses**
+**Locate Access Control blade**
 
-1.  Akses portal Microsoft Azure dan pilih grup sumber daya. Catat grup sumber daya apa yang Anda gunakan.
+1.  Access the Azure portal and select a resource group. Make a note of what resource group you use.
 
-2.  Pilih bilah **Kontrol Akses (IAM)**  .
+2.  Select the **Access Control (IAM)** blade.
 
-3.  Bilah ini akan tersedia untuk banyak sumber daya yang berbeda sehingga Anda dapat mengontrol izin.
+3.  This blade will be available for many different resources so you can control permissions.
 
-**Meninjau izin peran**
+**Review role permissions**
 
-1.  Pilih tab **Peran** (atas).
+1.  Select the **Roles** tab (top).
 
-1.  Tinjau peran bawaan dalam jumlah besar yang tersedia.
+1.  Review the large number of built-in roles that are available.
 
-1.  Klik dua kali peran, lalu pilih **Izin** (atas).
+1.  Double-click a role, and then select **Permissions** (top).
 
-1.  Lanjutkan menelusuri peran hingga Anda dapat melihat tindakan Baca, Tulis, dan Hapus ** untuk peran tersebut**.
+1.  Continue drilling into the role until you can view the **Read, Write, and Delete** actions for that role.
 
-1.  Kembali ke bilah **Access Control (IAM).** 
+1.  Return to the **Access Control (IAM)** blade.
 
-**Tambahkan penetapan peran**
+**Add a role assignment**
 
-1.  Buat pengguna atau pilih pengguna yang sudah ada.
+1.  Create a user or select an existing user.
 
-1.  Pilih **Tambahkan penetapan** peran dan pilih peran. Misalnya, *pemilik*.
+1.  Select **Add role assignment** and select a role. For example, *owner*.
 
-1.  Pilih **Periksa akses**.
+1.  Select **Check access**.
 
-1.  Tinjau izin pengguna.
+1.  Review the user permissions.
 
-1.  Perhatikan bahwa Anda dapat **Menolak penugasan**.
+1.  Note that you can **Deny assignments**.
