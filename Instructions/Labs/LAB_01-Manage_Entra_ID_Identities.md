@@ -10,7 +10,7 @@ lab:
 
 Ini adalah yang pertama dalam serangkaian lab untuk Administrator Azure. Di lab ini, Anda mempelajari tentang pengguna dan grup. Pengguna dan grup adalah blok penyusun dasar untuk solusi identitas. 
 
-Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US Timur**. 
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US Timur**. 
 
 
 ## Perkiraan waktu: 30 menit
@@ -122,7 +122,7 @@ Dalam tugas ini, Anda membuat akun grup. Akun grup dapat menyertakan akun penggu
 
 1. Pilih **Tidak ada pemilik yang dipilih**.
 
-1. Di halaman **Tambahkan pemilik**, cari dan **pilih** Anda sendiri sebagai pemilik. Perhatikan bahwa Anda dapat memiliki lebih dari satu pemilik. 
+1. Di halaman **Tambahkan pemilik** , cari dan **pilih** diri Anda (diperlihatkan di sudut kanan atas) sebagai pemilik. Perhatikan bahwa Anda dapat memiliki lebih dari satu pemilik. 
 
 1. Pilih **Tidak ada anggota yang dipilih**.
 
@@ -138,16 +138,16 @@ Dalam tugas ini, Anda membuat akun grup. Akun grup dapat menyertakan akun penggu
    
 ## Membersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri**, luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dibebaskan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
   
 
-## Perluas pembelajaran Anda dengan Copilot
+## Perluas pemelajaran Anda dengan Copilot
 
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 + Apa saja perintah Azure PowerShell dan CLI untuk membuat grup keamanan yang disebut Admin TI? Berikan halaman referensi perintah resmi.  
 + Berikan strategi langkah demi langkah untuk mengelola pengguna dan grup di Microsoft Entra ID.
 + Apa saja langkah-langkah di portal Microsoft Azure untuk membuat pengguna dan grup secara massal?
@@ -157,7 +157,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 ## Pelajari lebih lanjut dengan pelatihan mandiri
 
 + [Memahami Microsoft Entra ID](https://learn.microsoft.com/training/modules/understand-azure-active-directory/). Bandingkan Microsoft Entra ID dengan Active Directory DS, pelajari tentang Microsoft Entra ID P1 dan P2, dan jelajahi Layanan Domain Microsoft Entra untuk mengelola perangkat dan aplikasi yang bergabung dengan domain di cloud.
-+ [Buat pengguna dan grup Azure di Microsoft Entra ID](https://learn.microsoft.com//training/modules/create-users-and-groups-in-azure-active-directory/). Buat pengguna di Microsoft Entra ID. Pahami berbagai jenis grup. Buat grup dan tambahkan anggota. Kelola akun tamu bisnis ke bisnis.
++ [Buat pengguna dan grup Azure di Microsoft Entra Id](https://learn.microsoft.com//training/modules/create-users-and-groups-in-azure-active-directory/). Buat pengguna di Microsoft Entra ID. Pahami berbagai jenis grup. Buat grup dan tambahkan anggota. Kelola akun tamu bisnis ke bisnis.
 + [Izinkan pengguna menyetel ulang sandi mereka dengan penyetelan ulang sandi mandiri Microsoft Entra](https://learn.microsoft.com/training/modules/allow-users-reset-their-password/). Evaluasi setel ulang kata sandi layanan mandiri untuk memungkinkan pengguna di organisasi Anda menyetel ulang kata sandi mereka atau membuka kunci akun mereka. Siapkan, konfigurasikan, dan uji setel ulang kata sandi layanan mandiri.
 
 

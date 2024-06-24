@@ -10,7 +10,7 @@ lab:
 
 Di lab ini, Anda membuat dan membandingkan mesin virtual dengan set skala mesin virtual. Anda mempelajari cara membuat, mengonfigurasi, dan mengubah ukuran satu mesin virtual. Anda mempelajari cara membuat kumpulan skala mesin virtual dan mengonfigurasi penskalaan otomatis.
 
-Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **AS Timur**.
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah dalam lab ini ditulis menggunakan **US Timur**.
 
 ## Perkiraan waktu: 50 menit
 
@@ -20,7 +20,7 @@ Organisasi Anda ingin menjelajahi penyebaran dan konfigurasi mesin virtual Azure
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
+Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
 
 + [Membuat mesin virtual di portal](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%201). Membuat mesin virtual, menyambungkan dan menginstal peran server web.
 
@@ -358,7 +358,7 @@ Dalam tugas ini, Anda menskalakan set skala mesin virtual menggunakan aturan ska
     -Location 'East US' `
     -Image 'Win2019Datacenter' `
     -Zone '1' `
-    -Size 'Standard_D2s_v3' ` 
+    -Size 'Standard_D2s_v3' `
     -Credential (Get-Credential)
     ```
 
@@ -416,14 +416,14 @@ Dalam tugas ini, Anda menskalakan set skala mesin virtual menggunakan aturan ska
 
 ## Membersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri** membutuhkan waktu satu menit untuk menghapus sumber daya lab. Ini akan memastikan sumber daya dibebankan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Perluas pembelajaran Anda dengan Copilot
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+## Perluas pemelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Berikan langkah-langkah dan perintah Azure CLI untuk membuat mesin virtual Linux. 
 + Tinjau cara Anda dapat menskalakan mesin virtual dan meningkatkan performa.
@@ -437,7 +437,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama dari lab ini.
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini.
 
 + Mesin virtual Azure adalah sumber daya komputasi sesuai permintaan dan dapat diskalakan.
 + Mesin virtual Azure menyediakan opsi penskalaan vertikal dan horizontal.
