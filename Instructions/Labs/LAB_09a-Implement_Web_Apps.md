@@ -124,7 +124,7 @@ Dalam tugas ini, Anda akan menukar slot penahapan dengan slot produksi. Menukar 
 
 1. Navigasikan kembali ke bilah **Slot penyebaran**, lalu pilih **Tukar**.
 
-1. Tinjau pengaturan default dan klik **Tukar**.
+1. Tinjau pengaturan default dan klik **Mulai Pertukaran**.
 
 1. Pada bilah **Gambaran Umum** Aplikasi Web, pilih tautan **Domain default** untuk menampilkan beranda situs web.
 

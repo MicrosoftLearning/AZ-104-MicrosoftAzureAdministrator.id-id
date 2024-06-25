@@ -103,7 +103,7 @@ Dalam tugas ini, Anda akan membuat vault Recovery Services. Vault Recovery Servi
 
 1. Saat penyebaran selesai, klik **Buka Sumber Daya**.
 
-1. Pada bilah vault Recovery Services, di bagian **Pengaturan**, klik **Properti**.
+1. Di bagian **Pengaturan** , klik **Properti**.
 
 1. Pilih tautan **Perbarui** di bagian label **Konfigurasi Pencadangan**.
 

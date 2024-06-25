@@ -10,7 +10,7 @@ lab:
 
 Di lab ini, Anda mempelajari cara mengotomatiskan penyebaran sumber daya. Anda mempelajari tentang templat Azure Resource Manager dan templat Bicep. Anda mempelajari tentang berbagai cara menyebarkan templat. 
 
-Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur dalam lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah dalam lab ini ditulis menggunakan **US Timur**. 
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah dalam lab ini ditulis menggunakan **US Timur**. 
 
 ## Perkiraan waktu: 50 menit
 
@@ -127,7 +127,7 @@ Dalam tugas ini, Anda menggunakan templat yang diunduh untuk menyebarkan disk te
 
 1. Pilih penyebaran dan tinjau konten bilah **Input** dan **Templat**.
 
-## Tugas 3: Konfigurasikan Cloud Shell dan sebarkan templat dengan Azure PowerShell
+## Tugas 3: Mengonfigurasi Cloud Shell dan menyebarkan templat dengan PowerShell 
 
 Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell dan Azure PowerShell. Azure Cloud Shell adalah terminal interaktif, diautentikasi, dan dapat diakses dengan browser untuk mengelola sumber daya Azure. Ini memberi fleksibilitas untuk memilih pengalaman shell yang paling sesuai dengan cara Anda bekerja, baik Bash atau PowerShell. Dalam tugas ini, Anda menggunakan PowerShell untuk menyebarkan templat. 
 
@@ -139,32 +139,28 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell dan Azure PowerShell. Azu
 
     >**Tahukah Anda?**  Jika Anda kebanyakan bekerja dengan sistem Linux, Bash (CLI) terasa lebih akrab. Jika Anda kebanyakan bekerja dengan sistem Windows, Azure PowerShell terasa lebih akrab. 
 
-1. Pada layar **Mulai** pilih **Pasang akun penyimpanan** lalu **Saya ingin membuat akun penyimpanan**.  
+1. **Pada layar Memulai** pilih **Pasang akun** penyimpanan, pilih langganan** akun Penyimpanan Anda**, lalu pilih **Terapkan**.
 
-    >**Catatan:** Untuk lab ini, diperlukan akun penyimpanan. Berikan informasi yang diperlukan. 
+1. Pilih **Saya ingin membuat akun** penyimpanan lalu **Berikutnya**. **Lengkapi informasi Buat akun** penyimpanan. 
     
     | Pengaturan | Nilai |
     |  -- | -- |
-    | Langganan | *pilih langganan Anda* |
     | Grup Sumber Daya | **az104-rg3** |
     | Wilayah | *pilih wilayah Anda* | 
     | Akun penyimpanan (Buat baru) | *harus unik secara global, panjangnya antara 3 hingga 24 karakter dan hanya menggunakan angka serta huruf kecil* |
     | Berbagi file (Buat baru) | `fs-cloudshell` |
 
-1. Setelah selesai, pilih **Berikutnya**. Anda hanya perlu melakukan ini saat pertama kali menggunakan Cloud Shell. Dibutuhkan beberapa menit untuk menyediakan penyimpanan.
+1. Setelah selesai, pilih **Buat**.
 
-1. Gunakan ikon **Unggah/Unduh file** untuk mengunggah file templat dan parameter dari direktori pengunduhan. Anda perlu mengunggah setiap file secara terpisah.
+    >Dibutuhkan beberapa menit untuk menyediakan penyimpanan.
 
-   >**Catatan:** Jika kapan saja Anda diminta untuk **Beralih ke cloud shell klasik**, lakukanlah. 
+1. Pilih **Pengaturan** (bilah atas) lalu **Buka versi** klasik.
 
-1. Verifikasi file Anda tersedia di penyimpanan Cloud Shell. 
+1. Pilih **ikon Unggah/Unduh file** (bilah atas) lalu pilih **Unggah**.
 
-    ```powershell
-    dir
-    ```
-    >**Catatan**: Jika perlu, Anda dapat menggunakan **cls** untuk membersihkan jendela perintah. Anda bisa menggunakan tombol panah untuk memindahkan riwayat perintah.
-   
-1. Pilih ikon **Editor** (kurung kurawal) dan navigasikan ke file JSON templat.
+1. Unggah file templat dan parameter dari **direktori Unduhan** . 
+
+1. **Pilih ikon Editor (kurung kurawal)** dan navigasikan ke file JSON templat di sebelah kiri di panel navigasi.
 
 1. Mengubah. Misalnya, ubah nama disk menjadi **az104-disk3**. Pilih **Ctrl +S** untuk menyimpan perubahan Anda. 
 
@@ -257,9 +253,9 @@ Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untu
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Perluas pembelajaran Anda dengan Copilot
+## Perluas pemelajaran Anda dengan Copilot
 
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Apa format file templat Azure Resource Manager? Jelaskan setiap komponen dengan contoh. 
 + Bagaimana cara menggunakan templat Azure Resource Manager yang sudah ada?
@@ -276,7 +272,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama lab ini. 
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama lab ini. 
 
 + Templat Azure Resource Manager memungkinkan Anda menyebarkan, mengelola, dan memantau semua sumber daya untuk solusi Anda sebagai grup, alih-alih menangani sumber daya ini satu per satu.
 + Templat Azure Resource Manager adalah file JavaScript Object Notation (JSON) yang memungkinkan Anda mengelola infrastruktur secara deklaratif alih-alih dengan skrip.
