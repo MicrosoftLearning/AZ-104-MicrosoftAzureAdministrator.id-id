@@ -113,11 +113,9 @@ Dalam tugas ini, Anda akan membuat vault Recovery Services. Vault Recovery Servi
     
     >**Tahukah Anda?** Opsi Pemulihan Lintas Wilayah memungkinkan Anda memulihkan data di [wilayah berpasangan Azure sekunder](https://learn.microsoft.com/azure/backup/backup-create-recovery-services-vault#set-cross-region-restore). 
 
-1. Kembali ke bilah vault Recovery Services, klik tautan **Perbarui** di bagian label **Pengaturan Keamanan > Penghapusan Sementara dan pengaturan keamanan**.
+1. **Pilih tautan Perbarui** di bawah **Pengaturan Keamanan > Penghapusan Sementara dan label pengaturan** keamanan.
 
 1. Pada bilah **Pengaturan Keamanan**, perhatikan bahwa **Penghapusan Sementara (Untuk beban kerja yang berjalan di Azure)** **Diaktifkan**. Perhatikan bahwa **periode retensi penghapusan sementara** adalah **14** hari. 
-
-1. Kembali ke bilah vault Recovery Services, pilih bilah **Ringkasan**.
 
 >**Tahukah Anda?** Azure memiliki dua jenis vault: Vault Recovery Services dan vault Cadangan. Perbedaan utamanya adalah sumber data yang dapat dicadangkan. Pelajari selengkapnya tentang [perbedaannya](https://learn.microsoft.com/answers/questions/405915/what-is-difference-between-recovery-services-vault).
 
@@ -279,14 +277,14 @@ Di tugas ini, Anda akan menyebarkan akun penyimpanan Azure. Kemudian, Anda akan 
 
 ## Bersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dibebaskan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Perluas pembelajaran Anda dengan Copilot
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+## Perluas pemelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Produk apa yang didukung Azure Backup?
 + Ringkas langkah-langkah untuk mencadangkan dan memulihkan mesin virtual Azure dengan Azure Backup.
@@ -300,7 +298,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama dari lab ini. 
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini. 
 
 + Layanan Azure Backup menyediakan solusi sederhana, aman, dan hemat biaya untuk mencadangkan dan memulihkan data Anda.
 + Azure Backup dapat melindungi sumber daya lokal dan cloud termasuk mesin virtual dan berbagi file.

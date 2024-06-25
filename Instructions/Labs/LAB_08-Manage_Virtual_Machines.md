@@ -243,20 +243,13 @@ Dalam tugas ini, Anda akan menyebarkan set skala mesin virtual Azure di seluruh 
     | Opsi penyeimbangan muatan | **Penyeimbang beban Azure** |
     | Pilih load balancer | **Membuat penyeimbang beban** |
 
-1. Pada halaman **Buat penyeimbang beban**, tentukan nama load balancer dan ambil default. Klik **Buat** setelah selesai, lalu **Berikutnya : Menskalakan >**.
+1. Pada halaman **Buat penyeimbang beban**, tentukan nama load balancer dan ambil default. Klik **Buat** setelah selesai, lalu **Berikutnya : Manajemen >**.
 
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama load balancer | `vmss-lb` |
 
     >**Catatan:** Jeda selama satu menit dan tinjau apa yang Anda lakukan. Pada titik ini, Anda telah mengonfigurasi set skala mesin virtual dengan disk dan jaringan. Dalam konfigurasi jaringan, Anda telah membuat grup keamanan jaringan dan mengizinkan HTTP. Anda juga telah membuat load balancer dengan alamat IP publik.
-
-1. Pada tab **Penskalakan**, tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya) dan klik **Berikutnya : Pengelolaan >**:
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Jumlah instans awal | `2` |
-    | Kebijakan penskalaan | **Manual** |
 
 1. Pada tab **Manajemen**, tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
@@ -280,7 +273,7 @@ Dalam tugas ini, Anda menskalakan set skala mesin virtual menggunakan aturan ska
 
 1. Pilih **Buka** sumber daya atau cari dan pilih set skala **vmss1**.
 
-1. Pilih **Penskalaan** dari menu di sisi kiri dari jendela set skala.
+1. Pilih **Ketersediaan + Penskalan** dari menu sisi kiri, lalu pilih **Penskalakan**.
 
 >**Tahukah Anda?** Anda dapat **Skala manual** atau **skala otomatis kustom**. Dalam set skala dengan sejumlah kecil instans VM, meningkatkan atau mengurangi jumlah instans (Skala manual) mungkin yang terbaik. Dalam set skala dengan sejumlah besar instans VM, penskalaan berdasarkan metrik (Skala otomatis kustom) mungkin lebih sesuai.
 
