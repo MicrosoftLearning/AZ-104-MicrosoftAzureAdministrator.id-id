@@ -10,7 +10,7 @@ lab:
 
 Lab ini adalah lab pertama dari tiga lab yang berfokus pada jaringan virtual. Dalam lab ini, Anda akan mempelajari dasar-dasar jaringan virtual dan subnet. Anda akan mempelajari cara melindungi jaringan Anda dengan kelompok keamanan jaringan dan kelompok keamanan aplikasi. Anda juga mempelajari tentang zona dan catatan DNS. 
 
-Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah dalam lab ini ditulis menggunakan **US Timur**.
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah dalam lab ini ditulis menggunakan **US Timur**.
 
 ## Perkiraan waktu: 50 menit
 
@@ -24,7 +24,7 @@ Jaringan virtual **ManufacturingVnet** berisi sistem untuk operasi fasilitas man
 
 ## Simulasi lab interaktif
 
-Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
+Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
 
 + [Amankan lalu lintas jaringan](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2013). Buat mesin virtual, jaringan virtual, dan kelompok keamanan jaringan. Tambahkan aturan kelompok keamanan jaringan untuk memperbolehkan dan melarang lalu lintas.
   
@@ -71,9 +71,9 @@ Organisasi merencanakan pertumbuhan besar untuk layanan inti. Dalam tugas ini, A
 
     |  **Opsi**         | **Nilai**            |
     | ------------------ | -------------------- |
-    | Ruang alamat IPv4 | `10.20.0.0/16` (pisahkan entri)    |
+    | Ruang alamat IPv4 | Ganti ruang alamat IPv4 yang telah diisi sebelumnya dengan `10.20.0.0/16` (pisahkan entri)  |
 
-1. Pilih **+ Tambahkan subnet**. Lengkapi informasi nama dan alamat untuk setiap subnet. Pastikan Anda memilih **Tambahkan** untuk setiap subnet baru. 
+1. Pilih **+ Tambahkan subnet**. Lengkapi informasi nama dan alamat untuk setiap subnet. Pastikan Anda memilih **Tambahkan** untuk setiap subnet baru. Pastikan untuk menghapus subnet default - baik sebelum atau sesudah membuat subnet lainnya.
 
     | **Subnet**             | **Opsi**           | **Nilai**              |
     | ---------------------- | -------------------- | ---------------------- |
@@ -340,15 +340,15 @@ Zona DNS privat menyediakan layanan resolusi nama dalam jaringan virtual. Zona D
 
 ## Membersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri**, luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dibebaskan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Perluas pembelajaran Anda dengan Copilot
+## Perluas pemelajaran Anda dengan Copilot
 
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 + Bagikan 10 praktik terbaik saat menyebarkan dan mengonfigurasi jaringan virtual di Azure.
 + Bagaimana cara menggunakan perintah Azure PowerShell dan Azure CLI untuk membuat jaringan virtual dengan alamat IP publik dan satu subnet. 
 + Jelaskan aturan masuk dan keluar Kelompok Keamanan Jaringan Azure dan cara aturan tersebut digunakan.
@@ -364,7 +364,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
   
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama lab ini. 
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama lab ini. 
 
 + Jaringan virtual adalah representasi jaringan Anda sendiri di cloud. 
 + Saat mendesain jaringan virtual, praktik yang baik adalah menghindari rentang alamat IP yang tumpang tindih. Ini akan mengurangi masalah dan menyederhanakan pemecahan masalah.

@@ -11,7 +11,7 @@ lab:
 
 Di lab ini, Anda mempelajari tentang aplikasi web Azure. Anda belajar mengonfigurasi aplikasi web untuk menampilkan aplikasi Halo Dunia di repositori GitHub eksternal. Anda belajar membuat slot penahapan dan bertukar dengan slot produksi. Anda juga mempelajari tentang penskalaan otomatis untuk mengakomodasi perubahan permintaan.
 
-Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah lab ini ditulis menggunakan US Timur.
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah lab ini ditulis menggunakan US Timur.
 
 ## Perkiraan waktu: 20 menit
 
@@ -21,7 +21,7 @@ Organisasi Anda tertarik dengan aplikasi Web Azure untuk meng-hosting situs web 
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
+Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
 
 + [Membuat aplikasi web](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202). Buat aplikasi web yang menjalankan kontainer Docker.
     
@@ -106,7 +106,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran Aplikasi Web. Pe
 
 1. Di bidang repositori, masukkan `https://github.com/Azure-Samples/php-docs-hello-world`
 
-1. Di bidang cabang, masukkan `master`.
+1. Di bidang cabang, masukkan `main`.
 
 1. Pilih **Simpan**.
 
@@ -159,7 +159,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis Aplika
 
 1. Dari **Gambaran Umum** | **Tambahkan permintaan HTTP**, pilih **Buat**.
 
-1. Untuk **URL pengujian**, tempelkan di URL **Domain default**. Pastikan ini diformat dengan benar dan dimulai dengan **https://**.
+1. Pada tab **Uji paket** , klik **Tambahkan permintaan**. **Di bidang** URL, tempelkan di URL domain** Default Anda**. Pastikan ini diformat dengan benar dan dimulai dengan **https://**.
 
 1. Pilih **Tinjau + buat** dan **Buat.**
 
@@ -171,14 +171,14 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis Aplika
 
 ## Membersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri**, luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dibebaskan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Perluas pembelajaran Anda dengan Copilot
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+## Perluas pemelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Ringkas langkah-langkah untuk membuat dan mengonfigurasi aplikasi web Azure.
 + Apa saja cara untuk menskalakan Aplikasi Web Azure?
@@ -190,7 +190,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama dari lab ini. 
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini. 
 
 + Azure App Services memungkinkan Anda membuat, menyebarkan, dan menskalakan aplikasi web dengan cepat.
 + App Service mencakup dukungan untuk banyak lingkungan pengembang, termasuk ASP.NET, Java, PHP, dan Python.
