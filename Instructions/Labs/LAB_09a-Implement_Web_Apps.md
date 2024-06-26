@@ -106,7 +106,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran Aplikasi Web. Pe
 
 1. Di bidang repositori, masukkan `https://github.com/Azure-Samples/php-docs-hello-world`
 
-1. Di bidang cabang, masukkan `main`.
+1. Di bidang cabang, masukkan `master`.
 
 1. Pilih **Simpan**.
 
