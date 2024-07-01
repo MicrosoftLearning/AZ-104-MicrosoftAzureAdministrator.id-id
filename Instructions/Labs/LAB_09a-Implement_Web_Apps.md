@@ -106,7 +106,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran Aplikasi Web. Pe
 
 1. Di bidang repositori, masukkan `https://github.com/Azure-Samples/php-docs-hello-world`
 
-1. Di bidang cabang, masukkan `main`.
+1. Di bidang cabang, masukkan `master`.
 
 1. Pilih **Simpan**.
 
@@ -124,7 +124,7 @@ Dalam tugas ini, Anda akan menukar slot penahapan dengan slot produksi. Menukar 
 
 1. Navigasikan kembali ke bilah **Slot penyebaran**, lalu pilih **Tukar**.
 
-1. Tinjau pengaturan default dan klik **Tukar**.
+1. Tinjau pengaturan default dan klik **Mulai Pertukaran**.
 
 1. Pada bilah **Gambaran Umum** Aplikasi Web, pilih tautan **Domain default** untuk menampilkan beranda situs web.
 

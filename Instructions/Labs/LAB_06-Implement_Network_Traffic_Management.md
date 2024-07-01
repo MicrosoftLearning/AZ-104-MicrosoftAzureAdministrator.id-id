@@ -10,7 +10,7 @@ lab:
 
 Di lab ini, Anda mempelajari cara untuk mengonfigurasi dan menguji Load Balancer publik dan Application Gateway.
 
-Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah ditulis menggunakan **US Timur**.
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah dalam lab ini ditulis menggunakan **US Timur**.
 
 ## Perkiraan waktu: 50 menit
 
@@ -20,7 +20,7 @@ Organisasi Anda memiliki situs web publik. Anda perlu menyeimbangkan beban permi
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
+Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
 
 + [Membuat dan mengonfigurasi Azure load balancer](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer). Buat jaringan virtual, server backend, load balancer, lalu uji load balancer.
 + [Menyebarkan Azure Application Gateway](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway). Buat application gateway, buat mesin virtual, buat kumpulan backend, lalu uji gateway.
@@ -189,7 +189,8 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | `subnet-appgw` |
-    | Rentang alamat subnet | `10.60.3.224/27` |
+    | Alamat awal| `10.60.3.224` |
+    | Ukuran | `/27` |
 
 1. Klik **Simpan**
 
@@ -208,7 +209,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | Tingkat | **Standard V2** |
     | Aktifkan penskalaan otomatis | **Tidak** |
     | Jumlah instans minimum | `2` |
-    | Zona ketersediaan | **Zona 1** |
+    | Zona ketersediaan | **1** (default) |
     | HTTP2 | **Nonaktif** |
     | Jaringan virtual | **az104-06-vnet1** |
     | Subnet | **subnet-appgw (10.60.3.224/27)** |
@@ -232,8 +233,8 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | --- | --- |
     | Nama | `az104-appgwbe` |
     | Menambahkan kumpulan backend tanpa target | **Tidak** |
-    | Komputer virtual | **az104-rg6-nic1 (10.60.1.4)** |
-    | Komputer virtual | **az104-rg6-nic2 (10.60.2.4)** |
+    | Komputer virtual | **az104-06-nic1 (10.60.1.4)** |
+    | Mesin virtual | **az104-06-nic2 (10.60.2.4)** |
 
 1. klik **tambahkan kumpulan backend**. Ini adalah kumpulan backend untuk **gambar**. Tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai klik **Tambahkan**.
 
@@ -241,7 +242,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | --- | --- |
     | Nama | `az104-imagebe` |
     | Menambahkan kumpulan backend tanpa target | **Tidak** |
-    | Komputer virtual | **az104-rg6-nic1 (10.60.1.4)** |
+    | Komputer virtual | **az104-06-nic1 (10.60.1.4)** |
 
 1. klik **tambahkan kumpulan backend**. Ini adalah kumpulan backend untuk **video**. Tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai klik **Tambahkan**.
 
@@ -249,7 +250,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | --- | --- |
     | Nama | `az104-videobe` |
     | Menambahkan kumpulan backend tanpa target | **Tidak** |
-    | Komputer virtual | **az104-rg6-nic2 (10.60.2.4)** |
+    | Komputer virtual | **az104-06-nic2 (10.60.2.4)** |
 
 1. Pilih **Berikutnya : Konfigurasi >** lalu **Tambahkan aturan perutean**. Lengkapi informasi.
 
@@ -318,15 +319,15 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
 
 ## Bersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri**, luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dibebaskan dan meminimalkan biaya. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Perluas pembelajaran Anda dengan Copilot
+## Perluas pemelajaran Anda dengan Copilot
 
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Bandingkan dan bedakan Azure Load Balancer dengan Azure Application Gateway.
 + Bagaimana cara memecahkan masalah konektivitas masuk ke Azure Load Balancer?
@@ -340,7 +341,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama dari lab ini.
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini.
 
 + Azure Load Balancer adalah pilihan yang sangat baik untuk mendistribusikan lalu lintas jaringan pada beberapa mesin virtual di lapisan transportasi (OSI lapisan 4 - TCP dan UDP).
 + Load Balancer Publik digunakan untuk menyeimbangkan beban lalu lintas internet ke VM Anda. Penyeimbang beban internal (atau privat) digunakan jika IP privat hanya diperlukan di frontend.

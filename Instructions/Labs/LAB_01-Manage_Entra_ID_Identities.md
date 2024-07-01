@@ -41,6 +41,8 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna Azure AD. Akun pe
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
+1. Untuk melanjutkan ke portal, pilih **Batal** di layar Selamat Datang di **percikan Azure** . 
+
     >**Catatan:** Portal Azure digunakan di semua lab. Jika Anda baru menggunakan Azure, cari dan pilih `Quickstart Center`. Luangkan beberapa menit untuk menonton video **Memulai di portal Azure**. Bahkan jika telah menggunakan portal sebelumnya, Anda akan menemukan beberapa tips dan trik tentang menavigasi dan menyesuaikan antarmuka.
     
 1. Cari dan pilih `Microsoft Entra ID`. Microsoft Entra ID adalah solusi manajemen identitas dan akses berbasis cloud Azure. Luangkan beberapa menit untuk membiasakan diri dengan beberapa fitur yang tercantum di panel kiri. 
@@ -49,7 +51,9 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna Azure AD. Akun pe
 
     >**Tahukah Anda?** Penyewa adalah instans tertentu dari Microsoft Entra ID yang berisi akun dan grup. Bergantung pada situasi Anda, Anda dapat membuat lebih banyak penyewa dan **Beralih** di antara mereka. 
 
-1. Kembali ke halaman **Entra ID** dan pilih **Lisensi**. Dari sini Anda dapat membeli lisensi, mengelola lisensi yang Anda miliki, dan menetapkan lisensi untuk pengguna dan grup. Pilih **Fitur berlisensi** untuk melihat apa yang tersedia.
+1. Kembali ke **halaman ID** Entra dengan menekan kembali di browser atau memilih opsi di menu breadcrumb.
+
+1. Pilih **Lisensi**. Dari sini Anda dapat membeli lisensi, mengelola lisensi yang Anda miliki, dan menetapkan lisensi untuk pengguna dan grup. Pilih **Fitur berlisensi** untuk melihat apa yang tersedia.
    
 ###  Buat pengguna baru 
 

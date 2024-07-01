@@ -171,38 +171,21 @@ Dalam tugas ini, Anda membuat peering jaringan virtual untuk mengaktifkan komuni
 
 1. Di CoreServicesVnet, di bagian **Pengaturan**, pilih **Peering**.
 
-1. Di CoreServicesVnet | Peering, pilih **+ Tambahkan**.
-
-1. Gunakan informasi dalam tabel berikut untuk membuat peering.
+1. Di CoreServicesVnet | Peering, pilih **+ Tambahkan**. Jika tidak ditentukan, ambil default. 
 
 | **Parameter**                                    | **Nilai**                             |
-| --------------------------------------------- | ------------------------------------- |
-| **Jaringan virtual ini**                                       |                                       |
+| --------------------------------------------- | ------------------------------------- |                                
 | Nama tautan penyerekan                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Izinkan CoreServicesVnet mengakses jaringan virtual yang di-peering            | dipilih (default)                       |
-| Izinkan CoreServicesVnet menerima lalu lintas yang diteruskan dari jaringan virtual yang di-peering | dipilih                       |
-| Izinkan gateway di CoreServicesVnet untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | Tidak dipilih (default) |
-| Aktifkan CoreServicesVnet untuk menggunakan gateway jarak jauh jaringan virtual yang di-peering       | Tidak dipilih (default)                        |
-| **Jaringan virtual jarak jauh**                                   |                                       |
-| Nama tautan penyerekan                             | `ManufacturingVnet-to-CoreServicesVnet` |
-| Model penyebaran jaringan virtual              | **Manajer sumber daya**                      |
-| Saya mengetahui ID sumber daya saya                         | Tidak dipilih                          |
-| Langganan                                  | *langganan Anda*    |
-| Jaringan virtual                               | **ManufacturingVnet**                     |
+| Jaringan virtual    | **ManufacturingVM-net (az104-rg5)**  |
 | Izinkan ManufacturingVnet untuk mengakses CoreServicesVnet  | dipilih (default)                       |
 | Izinkan ManufacturingVnet menerima lalu lintas yang diteruskan dari CoreServicesVnet | dipilih                        |
-| Izinkan gateway di CoreServicesVnet untuk meneruskan lalu lintas ke jaringan virtual yang di-peering | Tidak dipilih (default) |
-| Aktifkan ManufacturingVnet untuk menggunakan gateway jarak jauh CoreServicesVnet       | Tidak dipilih (default)                        |
+| Nama tautan penyerekan                             | `ManufacturingVnet-to-CoreServicesVnet` |
+| Izinkan CoreServicesVnet mengakses jaringan virtual yang di-peering            | dipilih (default)                       |
+| Izinkan CoreServicesVnet menerima lalu lintas yang diteruskan dari jaringan virtual yang di-peering | dipilih                       |
 
-1. Tinjau pengaturan dan pilih **Tambahkan**.
-
-![Cuplikan layar halaman peering.](../media/az104-lab05-peering.png)
-
- 
 1. Di CoreServicesVnet | Peering, verifikasi bahwa peering **CoreServicesVnet-to-ManufacturingVnet** dicantumkan. Refresh halaman untuk memastikan **Status peering** adalah **Terhubung**.
 
 1. Beralih ke **ManufacturingVnet** dan verifikasi bahwa peering **ManufacturingVnet-to-CoreServicesVnet** tercantum. Pastikan bahwa **Status peering** adalah **Terhubung**. Anda mungkin perlu melakukan **Refresh** halamannya. 
-
 
 ## Tugas 5: Menggunakan Azure PowerShell untuk menguji koneksi antara mesin virtual
 

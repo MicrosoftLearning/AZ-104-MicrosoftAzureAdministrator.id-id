@@ -10,7 +10,7 @@ lab:
 
 Di lab ini, Anda mempelajari tentang kontrol akses berbasis peran. Anda mempelajari cara menggunakan izin dan cakupan untuk mengontrol tindakan apa yang dapat dan tidak dapat dilakukan oleh identitas. Anda juga mempelajari cara mempermudah manajemen langganan menggunakan grup manajemen. 
 
-Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah ditulis menggunakan **US Timur**. 
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US Timur**. 
 
 ## Perkiraan waktu: 30 menit
 
@@ -49,7 +49,7 @@ Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik 
 
 ## Tugas 1: Menerapkan Grup Manajemen
 
-Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. Grup manajemen digunakan untuk mengatur langganan secara logis. Langganan harus disegmentasi serta memungkinkan RBAC dan Azure Policy ditetapkan dan diwariskan ke grup manajemen dan langganan lainnya. Misalnya, jika organisasi Anda memiliki tim dukungan khusus untuk Eropa, Anda dapat mengatur langganan Eropa ke dalam satu grup manajemen untuk menyediakan akses ke langganan tersebut kepada staf (tanpa menyediakan akses individual ke semua langganan). Dalam skenario kami, semua orang di Staf Dukungan harus membuat permintaan dukungan di semua langganan. 
+Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. Grup manajemen digunakan untuk mengatur dan mengelompokkan langganan secara logis. Mereka memungkinkan RBAC dan Azure Policy ditetapkan dan diwariskan ke grup manajemen dan langganan lainnya. Misalnya, jika organisasi Anda memiliki tim dukungan khusus untuk Eropa, Anda dapat mengatur langganan Eropa ke dalam satu grup manajemen untuk menyediakan akses ke langganan tersebut kepada staf (tanpa menyediakan akses individual ke semua langganan). Dalam skenario kami, semua orang di Staf Dukungan harus membuat permintaan dukungan di semua langganan. 
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
@@ -151,15 +151,15 @@ Dalam tugas ini, Anda melihat log aktivitas untuk menentukan apakah ada seseoran
 
 ## Bersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri**, luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dibebaskan dan meminimalkan biaya. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
   
-## Perluas pembelajaran Anda dengan Copilot
+## Perluas pemelajaran Anda dengan Copilot
 
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 + Buat dua tabel yang menyoroti perintah PowerShell dan CLI penting untuk mendapatkan informasi tentang langganan organisasi di Azure serta jelaskan setiap perintah di kolom “Penjelasan”. 
 + Apa format dari file JSON Azure RBAC?
 + Apa langkah-langkah dasar untuk membuat peran Azure RBAC kustom?
@@ -172,7 +172,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama dari lab ini. 
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini. 
 
 + Grup manajemen digunakan untuk mengatur langganan secara logis.
 + Grup manajemen akar bawaan mencakup semua grup manajemen dan langganan.
