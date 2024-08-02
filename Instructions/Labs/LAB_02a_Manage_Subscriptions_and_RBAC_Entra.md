@@ -76,7 +76,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. Grup manaj
 
 ## Tugas 2: Tinjau dan tetapkan peran Azure bawaan
 
-Dalam tugas ini, Anda akan meninjau peran bawaan dan menetapkan peran Kontributor VM kepada anggota Staf Dukungan. Azure menyediakan sejumlah besar [peran bawaan](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
+, Anda akan meninjau peran bawaan dan menetapkan peran Kontributor VM kepada anggota Staf Dukungan. Azure menyediakan sejumlah besar [peran bawaan](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
 1. Pilih grup manajemen **az104-mg1**.
 
@@ -129,7 +129,7 @@ Dalam tugas ini, Anda akan membuat peran RBAC kustom. Peran kustom adalah bagian
 
 1. Dalam daftar izin, letakkan kotak centang di samping **Lainnya: Daftarkan Penyedia Sumber Daya Dukungan** lalu pilih **Tambahkan**. Peran harus diperbarui untuk menyertakan izin ini sebagai *NotAction*.
 
-    >**Catatan:** Penyedia sumber daya Azure adalah serangkaian operasi REST yang memungkinkan fungsionalitas untuk layanan Azure tertentu. Kami tidak ingin Staf Dukungan dapat memiliki kemampuan ini, sehingga dihapus dari peran yang dikloning. Anda juga dapat menghilangkan dan menambahkan kemampuan lain ke peran baru. 
+    >**Catatan:** Penyedia sumber daya Azure adalah serangkaian operasi REST yang memungkinkan fungsionalitas untuk layanan Azure tertentu. Kami tidak ingin Staf Dukungan dapat memiliki kemampuan ini, sehingga dihapus dari peran yang dikloning. 
 
 1. Pada tab **Cakupan yang dapat ditetapkan**, pastikan grup manajemen Anda tercantum, lalu klik **Berikutnya**.
 
