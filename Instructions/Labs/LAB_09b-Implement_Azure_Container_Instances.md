@@ -63,7 +63,7 @@ Dalam tugas ini, Anda akan membuat aplikasi web sederhana menggunakan citra Dock
 
 1. Klik **Berikutnya: Lanjutan >**, tinjau pengaturan tanpa membuat perubahan apa pun.
 
- 1. Klik **Tinjau + Buat**, pastikan validasi lulus lalu pilih **Buat**.
+ 1. Klik **Tinjau + Buat**, pastikan lulus validasi lalu pilih **Buat**.
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Proses ini memerlukan waktu 2-3 menit.
 
