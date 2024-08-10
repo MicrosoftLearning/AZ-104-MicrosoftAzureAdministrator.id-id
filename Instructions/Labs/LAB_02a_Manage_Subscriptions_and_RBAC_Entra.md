@@ -76,7 +76,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. Grup manaj
 
 ## Tugas 2: Tinjau dan tetapkan peran Azure bawaan
 
-, Anda akan meninjau peran bawaan dan menetapkan peran Kontributor VM kepada anggota Staf Dukungan. Azure menyediakan sejumlah besar [peran bawaan](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
+Dalam tugas ini, Anda akan meninjau peran bawaan dan menetapkan peran Kontributor VM kepada anggota Staf Dukungan. Azure menyediakan sejumlah besar [peran bawaan](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
 1. Pilih grup manajemen **az104-mg1**.
 
@@ -106,7 +106,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. Grup manaj
     
 ## Tugas 3: Buat peran RBAC kustom
 
-Dalam tugas ini, Anda akan membuat peran RBAC kustom. Peran kustom adalah bagian inti dari penerapan prinsip hak istimewa minimal untuk lingkungan. Peran bawaan mungkin memiliki terlalu banyak izin untuk skenario Anda. Dalam tugas ini kita akan membuat peran baru dan menghapus izin yang tidak diperlukan. Apakah Anda sudah memiliki rencana untuk mengelola izin yang tumpang tindih?
+Dalam tugas ini, Anda akan membuat peran RBAC kustom. Peran kustom adalah bagian inti dari penerapan prinsip hak istimewa minimal untuk lingkungan. Peran bawaan mungkin memiliki terlalu banyak izin untuk skenario Anda. Kami juga akan membuat peran baru dan menghapus izin yang tidak diperlukan. Apakah Anda sudah memiliki rencana untuk mengelola izin yang tumpang tindih?
 
 1. Lanjutkan mengerjakan grup manajemen Anda. Di blade **Kontrol akses (IAM)**, pilih tab **Periksa akses**.
 
@@ -117,7 +117,7 @@ Dalam tugas ini, Anda akan membuat peran RBAC kustom. Peran kustom adalah bagian
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama peran kustom | `Custom Support Request` |
-    | Deskripsi | ``Peran kontributor kustom untuk permintaan dukungan.` |
+    | Deskripsi | `A custom contributor role for support requests.` |
 
 1. Untuk **Izin garis dasar**, pilih **Kloning peran**. Di menu drop-down **Peran yang akan dikloning**, pilih **Kontributor Permintaan Dukungan**.
 
