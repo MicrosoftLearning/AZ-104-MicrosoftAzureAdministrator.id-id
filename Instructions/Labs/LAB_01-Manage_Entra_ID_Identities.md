@@ -19,15 +19,8 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 Organisasi Anda sedang membangun lingkungan lab baru untuk pengujian pra-produksi aplikasi dan layanan.  Beberapa teknisi sedang dipekerjakan untuk mengelola lingkungan lab, termasuk komputer virtual. Untuk memungkinkan teknisi mengautentikasi dengan menggunakan Microsoft Entra ID, Anda telah ditugaskan untuk menyediakan pengguna dan grup. Untuk meminimalkan overhead administratif, keanggotaan grup harus diperbarui secara otomatis berdasarkan jabatan. 
 
-## Simulasi lab interaktif
-
-Lab ini menggunakan simulasi lab interaktif. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
-
->**Catatan:** Simulasi ini sedang diperbarui. Microsoft Entra ID adalah nama baru untuk Azure Active Directory (Azure AD). 
-
-+ [Mengelola Identitas Entra ID](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%201). Membuat dan mengonfigurasi pengguna dan menetapkan ke grup. Buat penyewa Azure dan kelola akun tamu. 
-
 ## Diagram arsitektur
+
 ![Diagram arsitektur lab 01.](../media/az104-lab01-architecture.png)
 
 ## Keterampilan pekerjaan
@@ -151,7 +144,7 @@ Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untu
 
 ## Perluas pemelajaran Anda dengan Copilot
 
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 + Apa saja perintah Azure PowerShell dan CLI untuk membuat grup keamanan yang disebut Admin TI? Berikan halaman referensi perintah resmi.  
 + Berikan strategi langkah demi langkah untuk mengelola pengguna dan grup di Microsoft Entra ID.
 + Apa saja langkah-langkah di portal Microsoft Azure untuk membuat pengguna dan grup secara massal?
