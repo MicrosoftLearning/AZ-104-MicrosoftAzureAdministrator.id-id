@@ -10,7 +10,7 @@ lab:
 
 Di lab ini, Anda mempelajari cara menerapkan rencana tata kelola organisasi Anda. Anda mempelajari bagaimana kebijakan Azure dapat memastikan keputusan operasional diberlakukan di seluruh organisasi. Anda mempelajari cara menggunakan pemberian tag sumber daya untuk meningkatkan pelaporan. 
 
-Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US Timur**. 
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US Timur**. 
 
 ## Perkiraan waktu: 30 menit
 
@@ -28,7 +28,7 @@ Jejak cloud organisasi Anda telah berkembang pesat dalam setahun terakhir. Selam
 
 ## Simulasi lab interaktif
 
-Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
+Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
 
 + [Mengelola kunci sumber daya](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Tambahkan kunci sumber daya dan uji untuk mengonfirmasi.
   
@@ -234,14 +234,14 @@ Dalam tugas ini, Anda mengonfigurasi dan menguji kunci sumber daya. Kunci menceg
     
 ## Membersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri**, luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dibebaskan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Perluas pembelajaran Anda dengan Copilot
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Salinan juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+## Perluas pemelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 + Apa saja perintah Azure PowerShell dan CLI untuk menambahkan dan menghapus kunci sumber daya pada grup sumber daya?
 + Tabulasikan perbedaan antara kebijakan Azure dan Azure RBAC, sertakan contoh.
 + Apa langkah-langkah untuk memberlakukan kebijakan Azure dan memulihkan sumber daya yang tidak sesuai?
@@ -253,7 +253,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama dari lab ini. 
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini. 
 
 + Tag Azure adalah metadata yang terdiri dari pasangan kunci-nilai. Tag menjelaskan sumber daya tertentu di lingkungan Anda. Secara khusus, pemberian tag di Azure memungkinkan Anda memberi label sumber daya Anda secara logis.
 + Azure Policy menetapkan konvensi untuk sumber daya. Definisi kebijakan menjelaskan kondisi kepatuhan sumber daya dan efek yang harus diambil jika kondisi terpenuhi. Kondisi membandingkan bidang properti sumber daya atau nilai dengan nilai yang diperlukan. Ada banyak definisi kebijakan bawaan dan Anda dapat menyesuaikan kebijakan. 
