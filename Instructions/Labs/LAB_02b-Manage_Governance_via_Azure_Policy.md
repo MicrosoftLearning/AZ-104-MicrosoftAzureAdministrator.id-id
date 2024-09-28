@@ -107,7 +107,7 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
     >**Catatan**: **Nama tugas** secara otomatis diisi dengan nama kebijakan yang Anda pilih, tetapi Anda dapat mengubahnya. **Deskripsi** bersifat opsional. Perhatikan bahwa Anda dapat menonaktifkan kebijakan kapan saja. 
 
-1. Klik **Berikutnya** dua kali dan atur **Parameter** ke nilai berikut:
+1. Klik **Berikutnya** dan atur **Parameter** ke nilai berikut:
 
     | Pengaturan | Nilai |
     | --- | --- |

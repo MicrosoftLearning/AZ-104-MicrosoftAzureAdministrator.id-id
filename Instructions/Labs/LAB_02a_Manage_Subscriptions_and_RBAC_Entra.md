@@ -108,9 +108,9 @@ Dalam tugas ini, Anda akan meninjau peran bawaan dan menetapkan peran Kontributo
 
 Dalam tugas ini, Anda akan membuat peran RBAC kustom. Peran kustom adalah bagian inti dari penerapan prinsip hak istimewa minimal untuk lingkungan. Peran bawaan mungkin memiliki terlalu banyak izin untuk skenario Anda. Kami juga akan membuat peran baru dan menghapus izin yang tidak diperlukan. Apakah Anda sudah memiliki rencana untuk mengelola izin yang tumpang tindih?
 
-1. Lanjutkan mengerjakan grup manajemen Anda. Di blade **Kontrol akses (IAM)**, pilih tab **Periksa akses**.
+1. Lanjutkan mengerjakan grup manajemen Anda. Navigasikan ke bilah **Kontrol akses (IAM).**
 
-1. Dalam kotak **Buat peran kustom**, pilih **Tambahkan**.
+1. Pilih **+ Tambahkan**, dari menu drop-down, pilih **Tambahkan peran** kustom.
 
 1. Pada tab Dasar, lengkapi konfigurasi.
 
@@ -159,7 +159,7 @@ Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untu
   
 ## Perluas pemelajaran Anda dengan Copilot
 
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 + Buat dua tabel yang menyoroti perintah PowerShell dan CLI penting untuk mendapatkan informasi tentang langganan organisasi di Azure serta jelaskan setiap perintah di kolom “Penjelasan”. 
 + Apa format dari file JSON Azure RBAC?
 + Apa langkah-langkah dasar untuk membuat peran Azure RBAC kustom?
