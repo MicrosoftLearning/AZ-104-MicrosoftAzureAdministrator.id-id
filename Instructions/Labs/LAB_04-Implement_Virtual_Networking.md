@@ -18,7 +18,7 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 Organisasi global berencana untuk mengimplementasikan jaringan virtual. Tujuan langsungnya adalah untuk mengakomodasi semua sumber daya yang ada. Namun, organisasi sedang dalam fase pertumbuhan dan ingin memastikan ada kapasitas tambahan untuk pertumbuhan tersebut.
 
-Jaringan virtual **CoreServicesVnet** memiliki jumlah sumber daya terbesar. Sejumlah besar pertumbuhan diantisipasi, sehingga ruang alamat besar diperlukan untuk jaringan virtual ini.
+Jaringan **virtual CoreServicesVnet** memiliki jumlah sumber daya terbesar. Sejumlah besar pertumbuhan diantisipasi, sehingga ruang alamat besar diperlukan untuk jaringan virtual ini.
 
 Jaringan virtual **ManufacturingVnet** berisi sistem untuk operasi fasilitas manufaktur. Organisasi mengantisipasi sejumlah besar perangkat terhubung internal tempat sistem mereka dapat mengambil data. 
 
@@ -318,14 +318,16 @@ Zona DNS privat menyediakan layanan resolusi nama dalam jaringan virtual. Zona D
 
 1. Perhatikan pada blade **Gambaran Umum** tidak ada catatan server nama. 
 
-1. Pilih **+ Tautan jaringan virtual** lalu pilih **+ Tambahkan**. 
+1. Pilih **Pengaturan** lalu **Manajemen** DNS.
+
+1. Pilih **Tautan** jaringan virtual dan konfigurasikan tautan. 
 
     | Properti | Nilai    |
     |:---------|:---------|
     | Nama tautan | `manufacturing-link` |
     | Jaringan virtual | `ManufacturingVnet` |
 
-1. Pilih **OK** dan tunggu hingga tautan dibuat. 
+1. Pilih **Buat** dan tunggu hingga tautan dibuat. 
 
 1. Dari blade **Gambaran Umum**, pilih **+ Kumpulan catatan**. Sekarang Anda akan menambahkan catatan untuk setiap mesin virtual yang membutuhkan dukungan resolusi nama privat.
 
@@ -348,7 +350,7 @@ Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untu
 
 ## Perluas pemelajaran Anda dengan Copilot
 
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 + Bagikan 10 praktik terbaik saat menyebarkan dan mengonfigurasi jaringan virtual di Azure.
 + Bagaimana cara menggunakan perintah Azure PowerShell dan Azure CLI untuk membuat jaringan virtual dengan alamat IP publik dan satu subnet. 
 + Jelaskan aturan masuk dan keluar Kelompok Keamanan Jaringan Azure dan cara aturan tersebut digunakan.
