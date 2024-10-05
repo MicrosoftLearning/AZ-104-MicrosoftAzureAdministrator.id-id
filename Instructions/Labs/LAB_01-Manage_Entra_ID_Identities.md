@@ -97,7 +97,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna Azure AD. Akun pe
 
 Dalam tugas ini, Anda membuat akun grup. Akun grup dapat menyertakan akun pengguna atau perangkat. Ini adalah dua cara dasar anggota ditetapkan ke grup: Secara Statis dan Dinamis. Grup statis mengharuskan administrator untuk menambahkan dan menghapus anggota secara manual.  Grup dinamis diperbarui secara otomatis berdasarkan properti akun pengguna atau perangkat. Misalnya, jabatan. 
 
-1. Di portal Azure, telusuri dan pilih `Groups`.
+1. Di portal Azure, telusuri dan pilih `Microsoft Entra ID`. Di bilah **Kelola** , pilih **Grup**. 
 
 1. Luangkan waktu sebentar untuk membiasakan diri Anda dengan pengaturan grup di panel kiri.
 
@@ -133,15 +133,6 @@ Dalam tugas ini, Anda membuat akun grup. Akun grup dapat menyertakan akun penggu
 
 >**Catatan:** Anda mungkin mengelola sejumlah besar grup. Apakah organisasi Anda memiliki rencana untuk membuat grup dan menambahkan anggota?
    
-## Membersihkan sumber daya Anda
-
-Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. Perhatikan bahwa ini tidak akan menghapus pengguna atau grup ID Entra yang telah Anda buat. 
-
-+ Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
-+ Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
-+ Menggunakan CLI, `az group delete --name resourceGroupName`.
-  
-
 ## Perluas pemelajaran Anda dengan Copilot
 
 Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.

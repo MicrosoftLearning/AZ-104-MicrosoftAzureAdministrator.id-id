@@ -10,7 +10,7 @@ lab:
 
 Di lab ini, Anda akan mempelajari cara menerapkan dan menyebarkan Azure Container Apps.
 
-Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah dalam lab ini ditulis menggunakan **US Timur**.
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah ditulis menggunakan **US Timur**.
 
 ## Perkiraan waktu: 15 menit
 
@@ -47,7 +47,7 @@ Azure Container Apps mengambil konsep kluster Kubernetes terkelola selangkah leb
     | Grup sumber daya | `az104-rg9` |
     | Nama aplikasi kontainer |  `my-app` |
     | Wilayah    | **US Timur** (atau wilayah yang tersedia di dekat Anda) |
-    | Lingkungan Container Apps | Biarkan default |
+    | Lingkungan Container Apps | Pilih **Buat > Baru** Atur Nama lingkungan ke **Buat lingkungan > ****saya** |
 
 1. Pada tab **Kontainer**, pastikan bahwa **Gunakan citra mulai cepat** diaktifkan dan citra mulai cepat diatur ke **kontainer Halo Dunia sederhana**.
 
@@ -69,14 +69,14 @@ Secara default, aplikasi kontainer Azure yang Anda buat akan menerima lalu linta
    
 ## Membersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri**, luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dibebaskan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Perluas pembelajaran Anda dengan Copilot
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+## Perluas pemelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Ringkas langkah-langkah untuk membuat dan mengonfigurasi Aplikasi Kontainer Azure.
 + Membandingkan dan membedakan Azure Container Apps dengan Azure Kubernetes Service.
@@ -88,7 +88,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama dari lab ini. 
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini. 
 
 + Azure Container Apps (ACA) adalah platform tanpa server yang memungkinkan Anda mengelola lebih sedikit infrastruktur dan menghemat biaya saat menjalankan aplikasi kontainer.
 + Container Apps menyediakan konfigurasi server, orkestrasi kontainer, dan detail penyebaran. 
