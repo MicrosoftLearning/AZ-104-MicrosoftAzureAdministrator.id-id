@@ -21,7 +21,7 @@ Organisasi Anda tertarik dengan aplikasi Web Azure untuk meng-hosting situs web 
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
+Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
 
 + [Membuat aplikasi web](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%202). Buat aplikasi web yang menjalankan kontainer Docker.
     
@@ -60,12 +60,14 @@ Dalam tugas ini, Anda membuat aplikasi web Azure. Azure App Services adalah solu
     | Tumpukan runtime | **PHP 8.2** |
     | Sistem operasi | **Linux** |
     | Wilayah | **US Timur** |
-    | Paket harga | menerima default |
+    | Paket harga | **Premium V3 P1V3** |
     | Redundansi zona | menerima default |
 
  1. Klik **Tinjau + buat.**, lalu klik **Buat**.
 
     >**Catatan**: Tunggu hingga Aplikasi Web dibuat sebelum Anda melanjutkan ke tugas berikutnya. Ini akan memakan waktu sekitar satu menit.
+    
+    >**Catatan**: Jika penyebaran gagal, ubah ke wilayah lain dan coba lagi. Misalnya, beralih ke **US Timur 2**. 
 
 1. Setelah penyebaran, pilih **Buka sumber daya**.
 
@@ -178,7 +180,7 @@ Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untu
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
 ## Perluas pemelajaran Anda dengan Copilot
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Ringkas langkah-langkah untuk membuat dan mengonfigurasi aplikasi web Azure.
 + Apa saja cara untuk menskalakan Aplikasi Web Azure?
