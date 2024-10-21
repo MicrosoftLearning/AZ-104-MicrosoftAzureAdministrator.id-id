@@ -20,7 +20,7 @@ Organisasi Anda memiliki situs web publik. Anda perlu menyeimbangkan beban permi
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
+Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
 
 + [Membuat dan mengonfigurasi Azure load balancer](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer). Buat jaringan virtual, server backend, load balancer, lalu uji load balancer.
 + [Menyebarkan Azure Application Gateway](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway). Buat application gateway, buat mesin virtual, buat kumpulan backend, lalu uji gateway.
@@ -214,8 +214,6 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | Jaringan virtual | **az104-06-vnet1** |
     | Subnet | **subnet-appgw (10.60.3.224/27)** |
 
-    ![Cuplikan layar halaman buat gateway aplikasi.](../media/az104-lab06-create-appgw.png)
-
 1. Klik **Berikutnya: Frontend >** dan tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Setelah selesai, klik **OKE**.
 
     | Pengaturan | Nilai |
@@ -223,7 +221,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | Jenis alamat IP frontend | **Publik** |
     | Alamat IP publik| **Tambah **yang baru |
     | Nama | `az104-gwpip` |
-    | Zona ketersediaan | **Tidak** |
+    | Zona ketersediaan | **1** |
 
     >**Catatan:** Application Gateway dapat memiliki alamat IP publik dan privat.
  
@@ -327,7 +325,7 @@ Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untu
 
 ## Perluas pemelajaran Anda dengan Copilot
 
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Bandingkan dan bedakan Azure Load Balancer dengan Azure Application Gateway.
 + Bagaimana cara memecahkan masalah konektivitas masuk ke Azure Load Balancer?
