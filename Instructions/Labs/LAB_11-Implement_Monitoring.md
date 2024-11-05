@@ -157,7 +157,7 @@ Dalam tugas ini, Anda memicu peringatan dan mengonfirmasi bahwa pemberitahuan te
 
 1. Pilih **Hapus** dari bilah menu.
 
-1. Centang kotak **Terapkan penghapusan paksa**. Masukkan `delete` untuk mengonfirmasi, lalu pilih **Hapus**. 
+1. Centang kotak **Terapkan penghapusan paksa**. Centang kotak di bagian bawah yang mengonfirmasi bahwa Anda ingin sumber daya dihapus dan pilih **Hapus**. 
 
 1. Di bilah judul, pilih ikon **Pemberitahuan** dan tunggu hingga **vm0** berhasil dihapus.
 
@@ -243,14 +243,14 @@ Dalam tugas ini, Anda akan menggunakan Azure Monitor untuk mengkueri data yang d
 
 ## Bersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dibebaskan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Perluas pembelajaran Anda dengan Copilot
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+## Perluas pemelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Apa langkah-langkah konfigurasi dasar yang akan diperingatkan di Azure saat mesin virtual tidak berfungsi?
 + Bagaimana cara diberi tahu saat peringatan Azure dipicu?
@@ -263,7 +263,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama dari lab ini. 
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini. 
 
 + Peringatan membantu Anda mendeteksi dan mengatasi masalah sebelum pengguna menyadari bahwa mungkin ada masalah dengan infrastruktur atau aplikasi Anda.
 + Anda dapat memperingatkan metrik atau sumber data log apa pun di platform data Azure Monitor.
