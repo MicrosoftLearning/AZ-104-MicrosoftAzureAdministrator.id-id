@@ -61,6 +61,8 @@ Dalam tugas ini, Anda akan membuat aplikasi web sederhana menggunakan citra Dock
 
     >**Catatan**: Kontainer Anda akan dapat dijangkau publik di dns-name-label.region.azurecontainer.io. Jika Anda menerima pesan galat **DNS name label not available**, tentukan nilai yang berbeda.
 
+1. Klik **Berikutnya: Memantau >** dan menghapus centang **Aktifkan log instans** kontainer. 
+
 1. Klik **Berikutnya: Lanjutan >**, tinjau pengaturan tanpa membuat perubahan apa pun.
 
  1. Klik **Tinjau + Buat**, pastikan lulus validasi lalu pilih **Buat**.
