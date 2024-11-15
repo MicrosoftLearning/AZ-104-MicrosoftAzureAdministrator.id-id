@@ -327,10 +327,10 @@ Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untu
 
 Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
-+ Bandingkan dan bedakan Azure Load Balancer dengan Azure Application Gateway.
-+ Bagaimana cara memecahkan masalah konektivitas masuk ke Azure Load Balancer?
-+ Apa langkah-langkah dasar untuk mengonfigurasi Azure Application Gateway?
-+ Buat tabel yang menyoroti solusi penyeimbangan beban Azure. Sertakan kolom ini: Protokol yang didukung, Kebijakan Perutean, Afinitas sesi, dan offloading TLS.
++ Bandingkan dan bedakan Azure Load Balancer dengan Azure Application Gateway. Bantu saya memutuskan skenario mana saya harus menggunakan setiap produk.
++ Alat apa yang tersedia untuk memecahkan masalah koneksi ke Azure Load Balancer? 
++ Apa langkah-langkah dasar untuk mengonfigurasi Azure Application Gateway? Berikan daftar periksa tingkat tinggi. 
++ Buat tabel yang menyoroti tiga solusi penyeimbangan beban Azure. Untuk setiap solusi menunjukkan protokol yang didukung, kebijakan perutean, afinitas sesi, dan offloading TLS.
   
 ## Pelajari lebih lanjut dengan pelatihan mandiri
 
