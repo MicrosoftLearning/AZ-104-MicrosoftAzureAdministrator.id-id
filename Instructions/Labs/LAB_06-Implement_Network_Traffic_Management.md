@@ -327,11 +327,11 @@ Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untu
 
 Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
-+ Bandingkan dan bedakan Azure Load Balancer dengan Azure Application Gateway.
-+ Bagaimana cara memecahkan masalah konektivitas masuk ke Azure Load Balancer?
-+ Apa langkah-langkah dasar untuk mengonfigurasi Azure Application Gateway?
-+ Buat tabel yang menyoroti solusi penyeimbangan beban Azure. Sertakan kolom ini: Protokol yang didukung, Penyeimbangan beban privat, Penyeimbangan beban global, Kebijakan Perutean, Lingkungan yang didukung, Pengurasan koneksi, Afinitas sesi, Penyeimbangan beban berbasis host dan jalur, offloading TLS, Akselerasi situs, Keamanan, Penyimpanan di cache, dan pemadatan.
-
++ Bandingkan dan bedakan Azure Load Balancer dengan Azure Application Gateway. Bantu saya memutuskan skenario mana saya harus menggunakan setiap produk.
++ Alat apa yang tersedia untuk memecahkan masalah koneksi ke Azure Load Balancer? 
++ Apa langkah-langkah dasar untuk mengonfigurasi Azure Application Gateway? Berikan daftar periksa tingkat tinggi. 
++ Buat tabel yang menyoroti tiga solusi penyeimbangan beban Azure. Untuk setiap solusi menunjukkan protokol yang didukung, kebijakan perutean, afinitas sesi, dan offloading TLS.
+  
 ## Pelajari lebih lanjut dengan pelatihan mandiri
 
 + [Meningkatkan skalabilitas dan ketahanan aplikasi dengan menggunakan Azure Load Balancer](https://learn.microsoft.com/training/modules/improve-app-scalability-resiliency-with-load-balancer/). Bahas beragam load balancer di Azure dan cara memilih solusi load balancer Azure yang tepat untuk memenuhi kebutuhan Anda.
@@ -339,7 +339,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini.
+Selamat atas penyelesaian lab ini. Berikut adalah poin-poin penting untuk lab ini.
 
 + Azure Load Balancer adalah pilihan yang sangat baik untuk mendistribusikan lalu lintas jaringan pada beberapa mesin virtual di lapisan transportasi (OSI lapisan 4 - TCP dan UDP).
 + Load Balancer Publik digunakan untuk menyeimbangkan beban lalu lintas internet ke VM Anda. Penyeimbang beban internal (atau privat) digunakan jika IP privat hanya diperlukan di frontend.
