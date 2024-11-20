@@ -273,7 +273,7 @@ Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untu
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
 ## Perluas pemelajaran Anda dengan Copilot
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Bagaimana cara menggunakan perintah Azure PowerShell atau Azure CLI untuk menambahkan peering jaringan virtual antara vnet1 dan vnet2?
 + Buat tabel yang menyoroti berbagai alat pemantauan Azure dan pihak ke-3 yang didukung di Azure. Sorot kapan harus menggunakan setiap alat. 
