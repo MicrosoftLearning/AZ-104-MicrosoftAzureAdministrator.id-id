@@ -318,9 +318,7 @@ Zona DNS privat menyediakan layanan resolusi nama dalam jaringan virtual. Zona D
 
 1. Perhatikan pada blade **Gambaran Umum** tidak ada catatan server nama. 
 
-1. Pilih **Pengaturan** lalu **Manajemen** DNS.
-
-1. Pilih **Tautan** jaringan virtual dan konfigurasikan tautan. 
+1. Pilih **Manajemen** DNS lalu pilih **Tautan jaringan virtual**. Konfigurasikan tautan. 
 
     | Properti | Nilai    |
     |:---------|:---------|
@@ -329,7 +327,7 @@ Zona DNS privat menyediakan layanan resolusi nama dalam jaringan virtual. Zona D
 
 1. Pilih **Buat** dan tunggu hingga tautan dibuat. 
 
-1. Dari blade **Gambaran Umum**, pilih **+ Kumpulan catatan**. Sekarang Anda akan menambahkan catatan untuk setiap mesin virtual yang membutuhkan dukungan resolusi nama privat.
+1. Dari bilah **Manajemen DNS pilih **+ Recordsets****. Sekarang Anda akan menambahkan catatan untuk setiap mesin virtual yang membutuhkan dukungan resolusi nama privat.
 
     | Properti | Nilai    |
     |:---------|:---------|
