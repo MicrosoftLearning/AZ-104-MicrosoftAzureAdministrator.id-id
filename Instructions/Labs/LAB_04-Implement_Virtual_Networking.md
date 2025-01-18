@@ -175,7 +175,9 @@ Dalam tugas ini, kita akan membuat Kelompok Keamanan Aplikasi dan Kelompok Keama
 
 1. Klik **Tinjau + buat** dan setelah validasi klik **Buat**.
 
-### Membuat Kelompok Keamanan Jaringan dan mengasosiasikan dengan subnet ASG
+>**Catatan:** Pada titik ini, Anda akan mengaitkan ASG dengan komputer virtual. Komputer ini akan dipengaruhi oleh aturan NSG masuk yang Anda buat di tugas berikutnya.  
+
+### Buat Kelompok Keamanan Jaringan dan kaitkan dengan CoreServicesVnet
 
 1. Di portal Azure, cari dan pilih `Network security groups`.
 
