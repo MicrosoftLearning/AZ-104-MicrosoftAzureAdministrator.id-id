@@ -169,9 +169,9 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis Aplika
 
 1. Tinjau hasil pengujian termasuk **Pengguna virtual**, **Waktu respons**, dan **Permintaan/detik**.
 
-1. Pilih **Hentikan** untuk menyelesaikan eksekusi pengujian.
+1. Pilih **Hentikan** untuk menyelesaikan eksekusi pengujian. Anda tidak perlu menunggu pengujian selesai. 
 
-## Membersihkan sumber daya Anda
+## Bersihkan sumber daya Anda
 
 Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
