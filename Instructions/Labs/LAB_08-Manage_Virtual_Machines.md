@@ -185,6 +185,7 @@ Dalam tugas ini, Anda akan menyebarkan set skala mesin virtual Azure di seluruh 
     | Mode Orkestrasi | **Seragam** |
     | Jenis keamanan | **Standard**
            |
+    | Opsi penskalaan | **Tinjau dan ambil default**. Kami akan mengubah ini di tugas berikutnya. |
     | Gambar | **Pusat Data Windows Server 2019 -x64 Gen2** |
     | Jalankan dengan diskon Azure Spot | **Tidak Dicentang** |
     | Ukuran | **D2s_v3 standar** |
@@ -205,7 +206,7 @@ Dalam tugas ini, Anda akan menyebarkan set skala mesin virtual Azure di seluruh 
     | Pengaturan | Nilai |
     | --- | --- |
     | Nama | `vmss-vnet` |
-    | Rentang alamat | `10.82.0.0/20` (ubah apa yang ada di sana) |
+    | Rentang alamat | `10.82.0.0/20` (hapus rentang alamat yang ada) |
     | Nama subnet | `subnet0` |
     | Rentang subnet | `10.82.0.0/24` |
 
@@ -273,11 +274,11 @@ Dalam tugas ini, Anda menskalakan set skala mesin virtual menggunakan aturan ska
 
 1. Pilih **Buka** sumber daya atau cari dan pilih set skala **vmss1**.
 
-1. Pilih **Ketersediaan + Penskalan** dari menu sisi kiri, lalu pilih **Penskalakan**.
+1. Pilih **Ketersediaan + Skala** dari menu sisi kiri, lalu pilih **Penskalakan**.
 
->**Tahukah Anda?** Anda dapat **Skala manual** atau **skala otomatis kustom**. Dalam set skala dengan sejumlah kecil instans VM, meningkatkan atau mengurangi jumlah instans (Skala manual) mungkin yang terbaik. Dalam set skala dengan sejumlah besar instans VM, penskalaan berdasarkan metrik (Skala otomatis kustom) mungkin lebih sesuai.
+    >**Tahukah Anda?** Anda dapat **Skala manual** atau **skala otomatis kustom**. Dalam set skala dengan sejumlah kecil instans VM, meningkatkan atau mengurangi jumlah instans (Skala manual) mungkin yang terbaik. Dalam set skala dengan sejumlah besar instans VM, penskalaan berdasarkan metrik (Skala otomatis kustom) mungkin lebih sesuai.
 
-### Aturan peluasan skala
+**Aturan peluasan skala**
 
 1. Pilih **Skala otomatis kustom**. Kemudian ubah **Mode skala** menjadi **Skala berdasarkan metrik**. Lalu pilih **Tambahkan aturan**.
 
@@ -295,13 +296,13 @@ Dalam tugas ini, Anda menskalakan set skala mesin virtual menggunakan aturan ska
     | Operasi | **Tingkatkan persen berdasarkan** (tinjau pilihan lain) |
     | Pendinginan (menit) | **5**
            |
-    | Persentase | **20** |
+    | Persentase | **50** |
 
     ![Cuplikan layar halaman tambahkan aturan penskalaan.](../media/az104-lab08-scale-rule.png)
 
 1. Pastikan untuk **Menyimpan** perubahan Anda.
 
-### Menskalakan dalam aturan
+**Menskalakan dalam aturan**
 
 1. Selama malam atau akhir pekan, permintaan dapat menurun sehingga penting untuk membuat aturan skala.
 
@@ -314,11 +315,11 @@ Dalam tugas ini, Anda menskalakan set skala mesin virtual menggunakan aturan ska
     | Operator | **Kurang dari** |
     | Ambang | **30** |
     | Operasi | **mengurangi persentase berdasarkan** (tinjau pilihan Anda yang lain) |
-    | Persentase | **20** |
+    | Persentase | **50** |
 
 1. Pastikan untuk **Menyimpan** perubahan Anda.
 
-### Mengatur batas instans
+**Mengatur batas instans**
 
 1. Saat aturan skala otomatis Anda diterapkan, batas instans memastikan bahwa Anda tidak meluaskan skala di luar jumlah maksimum instans atau menskalakan di luar jumlah instans minimum.
 
