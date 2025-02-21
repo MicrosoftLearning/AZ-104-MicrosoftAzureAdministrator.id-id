@@ -282,7 +282,7 @@ Dalam tugas ini, Anda menskalakan set skala mesin virtual menggunakan aturan ska
 
 1. Pilih **Skala otomatis kustom**. Kemudian ubah **Mode skala** menjadi **Skala berdasarkan metrik**. Lalu pilih **Tambahkan aturan**.
 
-1. Mari kita buat aturan yang secara otomatis meningkatkan jumlah instans VM. Aturan ini diskalakan ketika beban CPU rata-rata lebih besar dari 70% selama periode 10 menit. Ketika aturan memicu, jumlah instans VM bertambah sebanyak 20%.
+1. Mari kita buat aturan yang secara otomatis meningkatkan jumlah instans VM. Aturan ini diskalakan ketika beban CPU rata-rata lebih besar dari 70% selama periode 10 menit. Ketika aturan memicu, jumlah instans VM ditingkatkan sebesar 50%.
 
     | Pengaturan | Nilai |
     | --- | --- |
