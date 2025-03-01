@@ -243,7 +243,7 @@ Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perime
 
 1. Setelah tabel rute disebarkan, pilih **Buka sumber daya**.
 
-1. Pilih **Rute** lalu **+ Tambahkan**. Buat rute dari NVA mendatang ke jaringan virtual CoreServices. 
+1. Pilih **Rute** lalu **+ Tambahkan**. Buat rute dari Network Virtual Appliance (NVA) di masa mendatang ke jaringan virtual CoreServices. 
 
     | Pengaturan | Nilai | 
     | --- | --- |
