@@ -46,7 +46,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna Azure AD. Akun pe
 
 1. Kembali ke **halaman ID** Entra dengan menekan kembali di browser atau memilih opsi di menu breadcrumb.
 
-1. Pilih **Lisensi**. Dari sini Anda dapat membeli lisensi, mengelola lisensi yang Anda miliki, dan menetapkan lisensi untuk pengguna dan grup. Pilih **Fitur berlisensi** untuk melihat apa yang tersedia.
+1. Saat Anda memiliki waktu, jelajahi opsi lain seperti **Lisensi** dan **Reset** kata sandi.
    
 ###  Buat pengguna baru 
 
