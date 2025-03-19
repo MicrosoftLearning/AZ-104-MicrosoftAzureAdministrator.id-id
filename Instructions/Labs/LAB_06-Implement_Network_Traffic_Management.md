@@ -1,10 +1,10 @@
 ---
 lab:
-  title: 'Lab 06: Menerapkan Manajemen Lalu Lintas'
+  title: 'Lab 06: Menerapkan Manajemen Lalu Lintas Jaringan'
   module: Administer Network Traffic Management
 ---
 
-# Lab 06 - Menerapkan Manajemen Lalu Lintas
+# Lab 06 - Menerapkan Manajemen Lalu Lintas Jaringan
 
 ## Pengenalan lab
 
