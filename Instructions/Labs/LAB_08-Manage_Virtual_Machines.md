@@ -201,7 +201,7 @@ Dalam tugas ini, Anda akan menyebarkan set skala mesin virtual Azure di seluruh 
 
 1. Pada tab **Disk**, terima nilai default dan klik **Berikutnya : Jaringan >**.
 
-1. Pada halaman **Jaringan**, klik tautan **Buat jaringan virtual** di bawah kotak teks **Jaringan virtual** dan buat jaringan virtual baru dengan pengaturan berikut (biarkan orang lain dengan nilai defaultnya).  Setelah selesai, pilih **OK**.
+1. Pada halaman **Jaringan** , pilih **Edit tautan jaringan** virtual. Buat beberapa perubahan. Setelah selesai, pilih **OK**.
 
     | Pengaturan | Nilai |
     | --- | --- |
