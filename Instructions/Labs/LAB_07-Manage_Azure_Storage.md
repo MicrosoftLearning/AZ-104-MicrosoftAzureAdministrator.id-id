@@ -10,7 +10,7 @@ lab:
 
 Di lab ini, Anda belajar membuat akun penyimpanan untuk blob Azure dan file Azure. Anda belajar mengonfigurasi dan mengamankan kontainer blob. Anda juga belajar menggunakan Browser Penyimpanan untuk mengonfigurasi dan mengamankan berbagi file Azure. 
 
-Lab ini memerlukan langganan Azure. Jenis langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah dalam lab ini ditulis menggunakan **US Timur**.
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah dalam lab ini ditulis menggunakan **US Timur**.
 
 ## Perkiraan waktu: 50 menit
 
@@ -20,7 +20,7 @@ Organisasi Anda saat ini menyimpan data di penyimpanan data lokal. Sebagian besa
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
+Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
 
 + [Menciptakan penyimpanan blob](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205). Buat akun penyimpanan, kelola penyimpanan blob, dan pantau aktivitas penyimpanan. 
   
@@ -56,31 +56,33 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun pen
     | Redundansi geografis            | **Penyimpanan geo-redundan** (perhatikan opsi lainnya)|
     | Membuat akses baca ke data jika terjadi ketersediaan regional | Centang kotak |
 
->**Tahukah Anda?** Anda harus menggunakan tingkat performa Standar untuk sebagian besar aplikasi. Gunakan tingkat performa Premium untuk aplikasi perusahaan atau berkinerja tinggi. 
+    >**Tahukah Anda?** Anda harus menggunakan tingkat performa Standar untuk sebagian besar aplikasi. Gunakan tingkat performa Premium untuk aplikasi perusahaan atau berkinerja tinggi. 
 
 1. Pada tab **Tingkat Lanjut**, gunakan ikon informasi untuk mempelajari selengkapnya tentang pilihan tersebut. Biarkan default. 
 
-1. Pada tab **Jaringan**, tinjau opsi yang tersedia, pilih **Nonaktifkan akses publik dan gunakan akses privat**.
+1. Pada tab **Jaringan** , di bagian **Akses** jaringan publik, pilih **Nonaktifkan**. Ini akan membatasi akses masuk sambil mengizinkan akses keluar. 
 
-1. Tinjau tab **Perlindungan data**. Pemberitahuan 7 hari adalah kebijakan penyimpanan penghapusan sementara default. Perhatikan bahwa Anda dapat mengaktifkan penerapan versi blob. Terima default.
+1. Tinjau tab **Perlindungan data**. Pemberitahuan 7 hari adalah kebijakan penyimpanan penghapusan sementara default. Perhatikan bahwa Anda dapat mengaktifkan penerapan versi untuk blob. Terima default.
 
 1. Tinjau tab **Enkripsi**. Perhatikan opsi keamanan tambahan. Terima default.
 
-1. Pilih **Tinjau**, tunggu hingga proses validasi selesai, lalu klik **Buat**.
+1. Pilih **Tinjau + Buat**, tunggu hingga proses validasi selesai, lalu klik **Buat**.
 
 1. Setelah akun penyimpanan disebarkan, pilih **Buka sumber daya**.
 
 1. Tinjau bilah **Gambaran Umum** dan konfigurasi tambahan yang dapat diubah. Ini adalah pengaturan global untuk akun penyimpanan. Perhatikan bahwa akun penyimpanan dapat digunakan untuk kontainer Blob, Berbagi file, Antrean, dan Tabel.
 
-1. Di bagian **Keamanan + jaringan**, pilih **Jaringan**. Perhatikan bahwa akses jaringan publik dinonaktifkan.
+1. Di bilah **Keamanan + jaringan** , pilih **Jaringan**. Perhatikan Akses **** jaringan publik dinonaktifkan.
 
-    + Ubah **tingkat akses publik** menjadi **Diaktifkan dari jaringan virtual dan alamat IP yang dipilih**.
-    + Di bagian **Firewall**, centang kotak untuk **Tambahkan alamat IP klien Anda.**
-    + Pastikan untuk **Menyimpan** perubahan Anda. 
+    + Pilih **Kelola** **akses** jaringan publik.
+    + **Ubah Akses** jaringan publik menjadi **Aktifkan**.
+    + **Ubah tindakan** Default menjadi **Aktifkan dari jaringan** yang dipilih.
+    + Di bagian **Alamat** IP, pilih **Tambahkan alamat** IP klien Anda.
+    + **Simpan** perubahan Anda.
   
-1. Di bagian **Manajemen data**, lihat bilah **Redundansi**. Perhatikan informasi tentang lokasi pusat data primer dan sekunder Anda.
+1. Di bilah **Manajemen data** , pilih **Redundansi**. Perhatikan informasi tentang lokasi pusat data primer dan sekunder Anda.
 
-1. Di bagian **Manajemen data**, pilih **Manajemen siklus hidup**, lalu pilih **Tambahkan aturan**.
+1. Di bilah **Manajemen data** , pilih **Manajemen** siklus hidup, lalu pilih **Tambahkan aturan**.
 
     + **Beri nama** aturan `Movetocool`. Perhatikan opsi Anda untuk membatasi cakupan aturan.
     
@@ -98,7 +100,7 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamny
 
 1. Lanjutkan di portal Microsoft Azure, bekerja dengan akun penyimpanan Anda.
 
-1. Di bagian **Penyimpanan data**, klik **Wadah**. 
+1. Di bilah **Penyimpanan** data, pilih **Kontainer**. 
 
 1. Klik **+ Kontainer** dan **Buat** kontainer dengan pengaturan berikut:
 
@@ -178,7 +180,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi berbagai Azure File. Anda 
 
 ### Membuat berbagi file dan mengunggah file
 
-1. Di portal Azure, navigasikan kembali ke akun penyimpanan Anda, di bagian **Penyimpanan data**, klik **Berbagi file**.
+1. Di portal Azure, navigasikan kembali ke akun penyimpanan Anda, di bilah **Penyimpanan** data, klik **Berbagi file**.
 
 1. Klik **+ Berbagi file** dan pada tab **Dasar** memberi nama berbagi file, `share1`. 
 
@@ -220,9 +222,9 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi berbagai Azure File. Anda 
 
 1. Kembali ke akun penyimpanan Anda.
 
-1. Di bagian **Keamanan + jaringan**, pilih bilah **Jaringan**.
+1. Di bilah **Keamanan + jaringan** , pilih **Jaringan**.
 
-1. Pilih **tambahkan jaringan virtual yang ada** dan pilih subnet **vnet1** dan **default**, pilih **Tambahkan**.
+1. Pilih **Tambahkan jaringan** virtual yang ada dan pilih **vnet1** dan **subnet default** , pilih **Tambahkan**.
 
 1. Di bagian **Firewall**, **Hapus** alamat IP komputer Anda. Lalu lintas yang diizinkan hanya boleh berasal dari jaringan virtual. 
 
@@ -239,14 +241,14 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi berbagai Azure File. Anda 
 
 ## Membersihkan sumber daya Anda
 
-Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dibebaskan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
+Jika Anda bekerja dengan **langganan Anda sendiri** luangkan waktu sebentar untuk menghapus sumber daya lab. Hal ini akan memastikan sumber daya dikosongkan dan biaya diminimalkan. Cara termudah untuk menghapus sumber daya lab adalah dengan menghapus grup sumber daya lab. 
 
 + Di portal Microsoft Azure, pilih grup sumber daya, pilih **Hapus grup sumber daya**, **Masukkan nama grup sumber daya**, lalu klik **Hapus**.
 + Menggunakan Azure PowerShell, `Remove-AzResourceGroup -Name resourceGroupName`.
 + Menggunakan CLI, `az group delete --name resourceGroupName`.
 
-## Perluas pembelajaran Anda dengan Copilot
-Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau di mana Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasikan ke *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
+## Perluas pemelajaran Anda dengan Copilot
+Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Azure. Copilot juga dapat membantu di area yang tidak tercakup dalam lab atau ketika Anda memerlukan informasi lebih lanjut. Buka browser Edge dan pilih Copilot (kanan atas) atau navigasi *copilot.microsoft.com*. Luangkan beberapa menit untuk mencoba perintah ini.
 
 + Berikan skrip Azure PowerShell untuk membuat akun penyimpanan dengan kontainer blob. 
 + Berikan daftar periksa yang dapat saya gunakan untuk memastikan akun penyimpanan Azure saya aman.
@@ -259,7 +261,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Poin penting
 
-Selamat atas penyelesaian lab. Berikut adalah kesimpulan utama dari lab ini. 
+Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini. 
 
 + Akun penyimpanan Azure berisi semua objek data Azure Storage Anda: blob, file, antrean, dan tabel. Akun penyimpanan menyediakan ruang nama unik untuk data Microsoft Azure Storage Anda yang dapat diakses dari mana saja di seluruh dunia melalui HTTP atau HTTPS.
 + Penyimpanan Azure menyediakan beberapa model redundansi termasuk Penyimpanan redundan lokal (LRS), Penyimpanan redundan zona (ZRS), dan Penyimpanan geo-redundan (GRS). 
