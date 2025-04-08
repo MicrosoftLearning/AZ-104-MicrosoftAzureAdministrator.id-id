@@ -37,7 +37,7 @@ Azure Container Apps mengambil konsep kluster Kubernetes terkelola selangkah leb
 
 1. Dari portal Azure, telusuri dan pilih `Container Apps`.
 
-1. Dari **Container Apps**, pilih **Buat**.
+1. Pilih **+ Buat**, dari menu drop-down, **Aplikasi** Kontainer. Perhatikan pilihan yang lain. 
 
 1. Gunakan informasi berikut untuk mengisi detail di tab **Dasar**.*.
 
@@ -46,10 +46,12 @@ Azure Container Apps mengambil konsep kluster Kubernetes terkelola selangkah leb
     | Langganan | Pilih langganan Azure Anda |
     | Grup sumber daya | `az104-rg9` |
     | Nama aplikasi kontainer |  `my-app` |
-    | Wilayah    | **US Timur** (atau wilayah yang tersedia di dekat Anda) |
-    | Lingkungan Container Apps | Pilih **Buat > Baru** Atur Nama lingkungan ke **Buat lingkungan > ****saya** |
+    | Wilayah    | **US** Timur (|
+    | Lingkungan Container Apps | Pilih **Buat > Baru** Atur Nama lingkungan ke > `my-environment`** Buat** |
 
-1. Pada tab **Kontainer**, pastikan bahwa **Gunakan citra mulai cepat** diaktifkan dan citra mulai cepat diatur ke **kontainer Halo Dunia sederhana**.
+1. Klik **Berikutnya: Tab kontainer** dan pastikan bahwa **Gunakan gambar** mulai cepat dicentang. Anda mungkin perlu menggulir ke atas untuk melihat pengaturan ini. 
+
+1. Pastikan **gambar** Mulai Cepat diatur ke **kontainer** Halo dunia sederhana. Perhatikan pilihan yang lain. 
 
 1. Pilih **Tinjau dan buat** lalu **Buat**.
 
