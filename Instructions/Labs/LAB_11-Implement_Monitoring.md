@@ -93,7 +93,7 @@ Dalam tugas ini, Anda membuat peringatan saat mesin virtual dihapus.
 
 1. Pilih **Buat +** dan pilih **Aturan peringatan**. 
 
-1. Pilih kotak untuk grup sumber daya, lalu pilih **Terapkan**. Peringatan ini akan berlaku untuk semua mesin virtual di grup sumber daya. Alternatifnya, Anda dapat menentukan satu mesin tertentu. 
+1. Pilih kotak untuk langganan, lalu pilih **Terapkan**. Pemberitahuan ini akan berlaku untuk komputer virtual apa pun dalam langganan. Alternatifnya, Anda dapat menentukan satu mesin tertentu. 
 
 1. Pilih tab **Kondisi**, lalu pilih tautan **Lihat semua sinyal**.
 
@@ -136,6 +136,8 @@ Dalam tugas ini, jika peringatan dipicu, kirim pemberitahuan email ke tim operas
 
     >**Catatan:** Anda akan menerima pemberitahuan email yang mengatakan bahwa Anda ditambahkan ke grup tindakan. Mungkin ada penundaan beberapa menit, tetapi itu adalah tanda pasti aturan telah disebarkan.
 
+1. Pilih **Tinjau ulang + Buat**, lalu pilih **Buat**.
+   
 1. Setelah grup tindakan dibuat, lanjutkan ke **Berikutnya: Tab Detail**, lalu masukkan nilai berikut untuk setiap pengaturan.
 
     | Pengaturan | Nilai |
@@ -179,7 +181,7 @@ Dalam tugas ini, Anda membuat aturan peringatan untuk menyembunyikan pemberitahu
 
 1. Lanjutkan di bilah **Peringatan**, pilih **Aturan pemrosesan peringatan**, lalu **+ Buat**. 
    
-1. Pilih **grup sumber daya** Anda, lalu pilih **Terapkan**.
+1. Pilih Langganan** Anda**, lalu pilih **Terapkan**.
    
 1. Pilih **Berikutnya: Pengaturan aturan**, lalu pilih **Sembunyikan pemberitahuan**.
    
@@ -211,13 +213,15 @@ Masukkan pengaturan berikut untuk penjadwalan aturan pemrosesan peringatan:
 
 Dalam tugas ini, Anda akan menggunakan Azure Monitor untuk mengkueri data yang diambil dari mesin virtual.
 
-1. Di portal Microsoft Azure, cari dan pilih bilah `Monitor`, klik **Log**.
+1. Di portal Azure, cari dan pilih `Monitor`, lalu klik **Log**.
 
 1. Jika perlu, tutup layar splash. 
 
-1. Pilih cakupan, **grup sumber daya** Anda. Pilih **Terapkan**. 
+1. Jika perlu, pilih cakupan, Langganan** Anda**. Pilih **Terapkan**. 
 
-1. Di tab **Kueri**, pilih **Mesin virtual** (panel kiri). 
+1. Di tab **Kueri**, pilih **Mesin virtual** (panel kiri). Anda mungkin perlu membuka kembali bilah.
+
+    ![Cuplikan layar tab kueri.](../media/az104-lab11-queries.png)
 
 1. Tinjau kueri yang tersedia. **Jalankan** (arahkan mouse ke atas kueri) kueri **Hitung heartbeat**.
 

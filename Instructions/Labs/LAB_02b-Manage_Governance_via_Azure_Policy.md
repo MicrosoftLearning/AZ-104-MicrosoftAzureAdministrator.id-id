@@ -65,12 +65,12 @@ Dalam tugas ini, Anda akan membuat dan menetapkan tag ke grup sumber daya Azure 
 
     >**Catatan:** Untuk setiap lab dalam kursus ini, Anda akan membuat grup sumber daya baru. Ini memungkinkan Anda dengan cepat menemukan dan mengelola sumber daya lab Anda. 
 
-1. Pilih **Berikutnya: Tag** dan buat tag baru.
+1. Pilih **Berikutnya** dan pindah ke tab **Tag** . Berikan informasi untuk tag baru.
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama | `Cost Center` |
-    | Nilai | `000` |
+    | Nama | Pusat Biaya |
+    | Nilai | 000 |
 
 1. Pilih **Tinjauan + Buat**, kemudian pilih **Buat**.
 
@@ -84,9 +84,9 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
     ![Cuplikan layar definisi kebijakan.](../media/az104-lab02b-policytags.png)
 
-1. Klik entri yang mewakili **Memerlukan tag dan nilainya pada sumber daya** kebijakan bawaan. Luangkan waktu semenit untuk meninjau definisi. 
+1. Cari kebijakan bawaan `Require a tag and its value on resources` . Pilih kebijakan dan luangkan waktu satu menit untuk meninjau definisi. 
 
-1. Pada panel **Memerlukan tag dan nilainya pada definisi** kebijakan bawaan sumber daya, klik **Tetapkan**.
+1. Pilih **Tetapkan kebijakan**.
 
 1. Tentukan **Cakupan** dengan mengklik tombol elipsis dan memilih nilai berikut. Klik **Pilih** setelah selesai. 
 
@@ -101,8 +101,8 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama penetapan | `Require Cost Center tag with Default value`|
-    | Deskripsi | `Require Cost Center tag with default value for all resources in the resource group`|
+    | Nama penetapan | 'Memerlukan tag Pusat Biaya dan nilainya pada sumber daya |
+    | Deskripsi | `Require Cost Center tag and its value on all resources in the resource group`|
     | Pemberlakuan kebijakan | Diaktifkan |
 
     >**Catatan**: **Nama tugas** secara otomatis diisi dengan nama kebijakan yang Anda pilih, tetapi Anda dapat mengubahnya. **Deskripsi** bersifat opsional. Perhatikan bahwa Anda dapat menonaktifkan kebijakan kapan saja. 
@@ -122,7 +122,7 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
     
     >**Catatan**: Mungkin perlu waktu antara 5 dan 10 menit agar kebijakan diterapkan.
 
-1. Di portal, cari dan pilih `Storage Account`, dan pilih **+ Buat**. 
+1. Di portal, cari dan pilih `Storage Accounts`, dan pilih **+ Buat**. 
 
 1. Pada tab **Dasar** bilah **Buat akun penyimpanan**, selesaikan konfigurasi.
 
@@ -137,7 +137,7 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
     ![Cuplikan layar kesalahan kebijakan yang tidak diizinkan.](../media/az104-lab02b-policyerror.png) 
 
->**Catatan**: Dengan mengklik tab **Kesalahan Mentah**, Anda dapat menemukan detail selengkapnya tentang kesalahan, termasuk nama definisi peran **Memerlukan tag Pusat Biaya dengan nilai Default**. Penyebaran gagal karena akun penyimpanan yang Anda coba buat tidak memiliki tag bernama **Cost Center** dengan nilainya diatur ke **Default**.
+>**Catatan**: Dengan mengklik tab **Kesalahan** Mentah, Anda dapat menemukan detail selengkapnya tentang kesalahan, termasuk nama definisi **peran Memerlukan tag dan nilainya pada sumber daya**. Penyebaran gagal karena akun penyimpanan yang Anda coba buat tidak memiliki tag bernama **Cost Center** dengan nilainya diatur ke **Default**.
 
 ## Tugas 3: Terapkan penandaan melalui kebijakan Azure
 
@@ -147,7 +147,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan baru untuk memulihkan 
 
 1. Di bagian **Authoring**, klik **Tugas**. 
 
-1. Dalam daftar penugasan, klik ikon elipsis di baris yang mewakili tag **Memerlukan Pusat Biaya dengan nilai Default** penetapan kebijakan dan gunakan item menu **Hapus tugas** untuk menghapus penugasan.
+1. Dalam daftar tugas, klik ikon elipsis di baris yang mewakili **memerlukan tag dan nilainya pada penetapan kebijakan sumber daya** dan gunakan **item menu Hapus penugasan** untuk menghapus penugasan.
 
 1. Klik **Tetapkan kebijakan** dan tentukan **Cakupan** dengan mengeklik tombol elipsis dan memilih nilai berikut:
 
@@ -189,7 +189,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan baru untuk memulihkan 
     
     >**Catatan**: Mungkin perlu waktu antara 5 dan 10 menit agar kebijakan diterapkan.
 
-1. Cari dan pilih `Storage Account`, dan klik **+ Buat**. 
+1. Cari dan pilih `Storage Account` dan klik **+ Buat**. 
 
 1. Pada tab **Dasar** dari bilah **Buat akun penyimpanan**, verifikasi bahwa Anda menggunakan Grup Sumber Daya tempat Kebijakan diterapkan dan tentukan pengaturan berikut (biarkan orang lain dengan defaultnya) dan klik **Tinjau**:
 
