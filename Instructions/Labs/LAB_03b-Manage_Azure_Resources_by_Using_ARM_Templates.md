@@ -44,8 +44,8 @@ Dalam tugas ini, kita akan membuat disk terkelola di portal Microsoft Azure. Dis
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Cari dan pilih `Disks`.
-
+1. Cari dan pilih `Disks`. 
+   
 1. Pada halaman Disk, pilih **Buat**.
 
 1. Pada halaman **Buat disk terkelola**, konfigurasikan disk lalu pilih **Ok**. 
@@ -213,23 +213,27 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell dan Azure PowerShell. Azu
 
 Dalam tugas ini, Anda akan menggunakan file Bicep untuk menyebarkan disk terkelola. Bicep adalah alat automasi deklaratif yang dibangun pada templat ARM.
 
+1. **Temukan file \Allfiles\Lab03\azuredeploydisk.bicep**.
+
 1. Lanjutkan bekerja di **Cloud Shell** dalam sesi **Bash**.
 
-1. Temukan dan unduh file **\Allfiles\Lab03\azuredeploydisk.bicep**.
+1. Pilih **Kelola file** lalu **Unggah** file Bicep ke Cloud Shell. 
 
-1. **Unggah** file bicep ke Cloud Shell. 
+1. Klik **Editor** dan saat diminta **Konfirmasi** tombol ke Cloud Shell Klasik.
 
-1. Pilih ikon **Editor** (kurung kurawal) dan navigasikan ke file.
+1. **Pilih file azuredeploydisk.bicep** 
 
-1. Luangkan waktu sebentar untuk membaca file templat bicep. Perhatikan bagaimana sumber daya disk ditentukan. 
+1. Luangkan waktu satu menit untuk membaca file templat Bicep. Perhatikan bagaimana sumber daya disk ditentukan. 
    
 1. Lakukan perubahan berikut:
 
-    + Ubah nilai **managedDiskName** menjadi `Disk4`.
-    + Ubah nilai **nama sku** menjadi `StandardSSD_LRS`.
-    + Ubah nilai **diskSizeinGiB** menjadi `32`.
+    + **Ubah nilai managedDiskName**, baris 4, menjadi Disk4.
+    + **Ubah nilai nama** sku, baris 26, menjadi StandardSSD_LRS.
+    + Ubah nilai **diskSizeinGiB** ; baris 7, menjadi 32.
 
-1. Pilih **Ctrl +S** untuk menyimpan perubahan Anda.
+    >**Catatan:** Templat Bicep yang telah selesai tersedia di file lab.
+    
+1. Gunakan **Ctrl + S** untuk menyimpan perubahan Anda.
 
 1. Sekarang, sebarkan templat.
 

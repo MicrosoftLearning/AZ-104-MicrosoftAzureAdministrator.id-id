@@ -146,7 +146,7 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamny
 
 1. Pilih berkas unggahan Anda dan tinjau berbagai pilihan termasuk **Unduh**, **Hapus**, **Ubah tingkatan**, dan **Dapatkan sewa**.
 
-1. Salin **URL** file dan tempelkan ke jendela penjelajahan **Inprivate** baru.
+1. Salin URL** file **(bilah Properti) dan tempelkan ke jendela penjelajahan Inprivate** baru**.
 
 1. Anda akan diberikan pesan berformat XML yang menyatakan **ResourceNotFound** atau **PublicAccessNotPermitted**.
 
