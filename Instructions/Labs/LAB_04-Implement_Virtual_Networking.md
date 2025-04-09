@@ -126,7 +126,7 @@ Dalam tugas ini, Anda akan membuat jaringan virtual ManufacturingVnet dan subnet
 
 1. Ubah semua kemunculan **10.20.20.0/24** menjadi `10.30.21.0/24`.
 
-1. Baca kembali file dan pastikan semuanya terlihat benar.
+1. Baca kembali file dan pastikan semuanya terlihat benar. Gunakan diagram arsitektur untuk nama sumber daya dan alamat IP. 
 
 1. Pastikan untuk **Menyimpan** perubahan Anda.
 
@@ -144,11 +144,17 @@ Dalam tugas ini, Anda akan membuat jaringan virtual ManufacturingVnet dan subnet
    
 ### Menyebarkan templat kustom
 
-1. Di portal, cari dan pilih **Sebarkan templat kustom**.
+1. Di portal, cari dan pilih `Deploy a custom template`.
 
 1. Pilih **Bangun templat Anda sendiri di penyunting** lalu **Muat file**.
 
 1. Pilih file **templates.json** dengan perubahan Manufaktur, lalu pilih **Simpan**.
+
+1. Pilih **Edit templat**, lalu **Muat file**.
+
+1. **Pilih file parameters.json** dengan perubahan Manufaktur Anda, lalu pilih **Simpan**.
+
+1. Pastikan grup sumber daya Anda, **az104-rg4** dipilih. 
 
 1. Pilih **Ulas + buat**, lalu pilih **Buat**.
 
@@ -277,7 +283,7 @@ Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik A
 
 1. Pada blade **Gambaran Umum**, perhatikan nama empat server nama Azure DNS yang ditetapkan ke zona tersebut. **Salin** salah satu alamat server nama. Anda akan membutuhkannya di langkah berikutnya. 
   
-1. Pilih **Kumpulan catatan**. Anda menambahkan catatan tautan jaringan virtual untuk setiap jaringan virtual yang membutuhkan dukungan resolusi nama privat.
+1. Pilih **Kumpulan catatan**. **Tambahkan** rekaman tautan jaringan virtual untuk setiap jaringan virtual yang memerlukan dukungan resolusi nama privat.
 
     | Properti | Nilai    |
     |:---------|:---------|
@@ -288,9 +294,9 @@ Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik A
 
 >**Catatan:**  Dalam skenario dunia nyata, Anda akan memasukkan alamat IP publik server web Anda.
 
-1. Pilih **OK** dan verifikasi **contoso.com** memiliki kumpulan catatan A bernama **www**.
+1. Pilih **OK** dan verifikasi domain Anda memiliki kumpulan catatan A bernama **www**.
 
-1. Buka perintah dan jalankan perintah berikut:
+1. Buka perintah, dan jalankan perintah berikut. Jika Anda telah mengubah nama domain, lakukan penyesuaian. 
 
    ```sh
    nslookup www.contoso.com <name server name>

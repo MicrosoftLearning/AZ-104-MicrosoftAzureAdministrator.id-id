@@ -65,7 +65,7 @@ Dalam tugas ini, Anda akan membuat aplikasi web sederhana menggunakan citra Dock
 
 1. Klik **Berikutnya: Lanjutan >**, tinjau pengaturan tanpa membuat perubahan apa pun.
 
- 1. Klik **Tinjau + Buat**, pastikan lulus validasi lalu pilih **Buat**.
+1. Klik **Tinjau + Buat**, pastikan lulus validasi lalu pilih **Buat**.
 
     >**Catatan**: Tunggu hingga penyebaran selesai. Proses ini memerlukan waktu 2-3 menit.
 
@@ -75,7 +75,7 @@ Dalam tugas ini, Anda akan membuat aplikasi web sederhana menggunakan citra Dock
 
 Dalam tugas ini, Anda meninjau penyebaran instans kontainer. Secara default, Azure Container Instance dapat diakses melalui port 80. Setelah instans disebarkan, Anda dapat menavigasi ke kontainer menggunakan nama DNS yang Anda berikan di tugas sebelumnya.
 
-1. Pada bilah penyebaran, klik tautan **Buka sumber daya**.
+1. Saat penyebaran selesai, pilih **Buka tautan sumber daya** .
 
 1. Pada bilah **Ringkasan** instans penampung, verifikasi bahwa **Status** dilaporkan sebagai **Berjalan**.
 
