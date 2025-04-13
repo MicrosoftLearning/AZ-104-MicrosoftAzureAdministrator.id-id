@@ -153,12 +153,14 @@ Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure. S
 
     ![Cuplikan layar halaman kebijakan cadangan.](../media/az104-lab10-backup-policy.png)
 
-1. Klik **OK** untuk membuat kebijakan, lalu di bagian **Virtual Machines**, pilih **Tambah**.
+1. Klik **OK** untuk membuat kebijakan lalu, di bagian **Komputer Virtual** , pilih **Tambahkan** (gulir ke bawah).
 
 1. Pada bilah **Pilih mesin virtual**, pilih **az-104-10-vm0**, klik **OK**, lalu kembali ke bilah **Cadangan**, klik **Aktifkan pencadangan**.
 
     >**Catatan**: Tunggu hingga cadangan diaktifkan. Proses ini akan memakan waktu sekitar 2 menit.
 
+1. Setelah penyebaran, pilih **Buka sumber daya**.
+   
 1. Di bagian **Item terproteksi**, klik **Item cadangan**, lalu klik entri **mesin virtual Azure**.
 
 1. Pilih tautan **Lihat detail** untuk **az104-10-vm0**, dan tinjau nilai entri **Pra-Pemeriksaan Cadangan** dan **Status Cadangan Terakhir**.
@@ -215,7 +217,7 @@ Di tugas ini, Anda akan menyebarkan akun penyimpanan Azure. Kemudian, Anda akan 
 
 1. Temukan operasi pencadangan untuk mesin virtual **az104-10-vm0**. 
 
-1. Tinjau detail pekerjaan pencadangan.
+1. **Lihat detail** (gulir ke kanan untuk tautan) dari pekerjaan pencadangan.
 
 ## Tugas 5: Aktifkan replikasi mesin virtual
 
@@ -244,20 +246,11 @@ Di tugas ini, Anda akan menyebarkan akun penyimpanan Azure. Kemudian, Anda akan 
 
 1. Pada tab **Dasar**, perhatikan **Wilayah target**.
 
-1. Pindah ke tab **Pengaturan tingkat lanjut**. Pilihan sumber daya telah dibuat untuk Anda. Penting untuk meninjaunya. 
+1. Pilih **Berikutnya: Pengaturan tingkat lanjut**. Pilihan sumber daya telah dibuat untuk Anda. 
 
-1. Verifikasi pengaturan langganan, grup sumber daya vm, jaringan virtual, dan ketersediaan Anda (ambil default).
+1. Gulir ke bawah dan **Buat** akun otomatisasi. 
 
-1. Di **Pengaturan penyimpanan**, pilih **Tampilkan detail**.
-
-    | Pengaturan | Nilai |
-    | ---- | ---- |
-    | Churn untuk vm | **Churn normal**  |
-    | Akun penyimpanan cache | **(baru) xxx**  |
-
-   >**Catatan:** Kedua pengaturan ini wajib diisi, atau validasi akan gagal. Jika nilai tidak ada, coba refresh halaman. Jika tidak berhasil, buat akun penyimpanan kosong, lalu kembali ke halaman ini.
-
-1. Di **Pengaturan replikasi**, pilih **Tampilkan detail**. Perhatikan bahwa vault sumber daya pemulihan Anda di wilayah 2 dipilih secara otomatis.
+   >**Catatan:** Penting agar pengaturan diisi, atau validasi akan gagal. 
 
 1. Pilih **Tinjau + Mulai replikasi**, lalu **Aktifkan replikasi**.
 
