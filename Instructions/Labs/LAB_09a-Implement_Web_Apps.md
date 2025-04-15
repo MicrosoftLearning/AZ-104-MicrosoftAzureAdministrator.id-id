@@ -67,7 +67,7 @@ Dalam tugas ini, Anda membuat aplikasi web Azure. Azure App Services adalah solu
 
     >**Catatan**: Tunggu hingga Aplikasi Web dibuat sebelum Anda melanjutkan ke tugas berikutnya. Ini akan memakan waktu sekitar satu menit.
     
-    >**Catatan**: Jika penyebaran gagal, ubah ke wilayah lain dan coba lagi. Misalnya, beralih ke **US Timur 2**. 
+    >**Catatan**: Jika penyebaran gagal, ubah ke wilayah lain dan coba lagi. Hal ini disebabkan oleh kuota di berbagai wilayah.  
 
 1. Setelah penyebaran, pilih **Buka sumber daya**.
 
@@ -79,8 +79,6 @@ Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan. Slot penyebaran m
 
 1. Tutup tab browser baru dan, kembali ke portal Microsoft Azure, di bagian **Penyebaran** panel Aplikasi Web, klik **Slot penyebaran**.
 
-    >**Catatan**: Aplikasi Web, pada titik ini, memiliki satu slot penerapan berlabel **PRODUCTION**.
-
 1. Klik **Tambahkan slot**, dan tambahkan slot baru dengan setelan berikut:
 
     | Pengaturan | Nilai |
@@ -88,9 +86,11 @@ Dalam tugas ini, Anda akan membuat slot penyebaran pentahapan. Slot penyebaran m
     | Nama | `staging` |
     | Klon pengaturan dari | **Jangan klon pengaturan**|
 
-1. Pilih **Tambahkan**.
+1. Pilih **Tambahkan** untuk membuat slot.
 
-1. Kembali ke penyebaran **Slot penyebaran** Aplikasi Web, klik entri yang mewakili slot penahapan yang baru dibuat.
+1. Refresh halaman untuk melihat slot Produksi dan Penahapan. 
+
+1. Pilih entri yang mewakili slot penahapan yang baru dibuat.
 
     >**Catatan**: Ini akan membuka panel yang menampilkan properti slot pentahapan.
 
@@ -116,7 +116,7 @@ Dalam tugas ini, Anda akan mengonfigurasi pengaturan penyebaran Aplikasi Web. Pe
 
 1. Pilih tautan **Domain default**, lalu buka URL di tab baru. 
 
-1. Verifikasikan bahwa slot penahapan menampilkan **Halo Dunia**.
+1. Verifikasikan bahwa slot penahapan menampilkan **Halo Dunia**. 
 
 >**Catatan:** Penerapan mungkin membutuhkan waktu satu menit. Pastikan untuk **Me-refresh** halaman aplikasi.
 
@@ -126,11 +126,13 @@ Dalam tugas ini, Anda akan menukar slot penahapan dengan slot produksi. Menukar 
 
 1. Navigasikan kembali ke bilah **Slot penyebaran**, lalu pilih **Tukar**.
 
-1. Tinjau pengaturan default dan klik **Mulai Pertukaran**.
+1. Tinjau pengaturan default dan klik **Mulai Pertukaran**. Tunggu pemberitahuan bahwa pertukaran telah selesai.
 
-1. Pada bilah **Gambaran Umum** Aplikasi Web, pilih tautan **Domain default** untuk menampilkan beranda situs web.
+1. Kembali ke beranda portal. Anda harus memiliki aplikasi web produksi dan slot penahapan.
 
-1. Verifikasikan halaman web produksi menampilkan **Halo Dunia!** halaman.
+1. Pilih aplikasi web App Service dan pada bilah **Gambaran Umum** Aplikasi Web pilih **tautan Domain** default untuk menampilkan beranda situs web.
+
+1. Verifikasi halaman web produksi sekarang menampilkan **Halo Dunia!** halaman.
 
     >**Catatan:** Salin URL **Default domain** karena Anda akan memerlukannya untuk pengujian beban di tugas berikutnya. 
 
@@ -159,15 +161,17 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis Aplika
 
 1. Tunggu hingga pengujian beban dibuat, lalu pilih **Buka sumber daya**.
 
-1. Dari **Gambaran Umum** | **Tambahkan permintaan HTTP**, pilih **Buat**.
+1. Dari **Gambaran Umum**** | Buat dengan menambahkan permintaan** HTTP, pilih **Buat**.
 
-1. Pada tab **Uji paket** , klik **Tambahkan permintaan**. **Di bidang** URL, tempelkan di URL domain** Default Anda**. Pastikan ini diformat dengan benar dan dimulai dengan **https://**.
+1. Pada tab **Uji paket** , klik **Tambahkan permintaan**. **Di bidang** URL, tempelkan di URL domain** Default Anda**. Pastikan ini diformat dengan benar dan dimulai dengan **https://**. Pilih **Tambahkan** untuk menyimpan perubahan Anda. 
 
 1. Pilih **Tinjau + buat** dan **Buat.**
 
-    >**Catatan:** Mungkin butuh waktu beberapa menit untuk membuat pengujian. 
+    >**Catatan:** Mungkin butuh waktu beberapa menit untuk membuat pengujian. Tonton pemberitahuan.
 
-1. Tinjau hasil pengujian termasuk **Pengguna virtual**, **Waktu respons**, dan **Permintaan/detik**.
+1. Navigasi ke pengujian (tercantum di halaman beranda). 
+
+1. Refresh dan tinjau metrik langsung termasuk **Pengguna virtual**, **Waktu** respons, dan **Permintaan/detik**.
 
 1. Pilih **Hentikan** untuk menyelesaikan eksekusi pengujian. Anda tidak perlu menunggu pengujian selesai. 
 
