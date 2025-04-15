@@ -227,7 +227,7 @@ Dalam tugas ini, Anda akan menggunakan file Bicep untuk menyebarkan disk terkelo
    
 1. Lakukan perubahan berikut:
 
-    + **Ubah nilai managedDiskName**, baris 4, menjadi Disk4.
+    + **Ubah nilai managedDiskName**, baris 2, menjadi Disk4.
     + **Ubah nilai nama** sku, baris 26, menjadi StandardSSD_LRS.
     + Ubah nilai **diskSizeinGiB** ; baris 7, menjadi 32.
 

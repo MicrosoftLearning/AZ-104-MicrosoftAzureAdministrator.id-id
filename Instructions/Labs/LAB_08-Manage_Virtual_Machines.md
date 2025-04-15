@@ -121,9 +121,9 @@ Dalam tugas ini, Anda akan menskalakan mesin virtual dengan menyesuaikan ukurann
 
 1. Pada mesin virtual **az104-vm1**, di bilah **Ketersediaan + skala**, pilih **Ukuran**.
 
-1. Atur ukuran mesin virtual ke **DS1_v2** dan klik **Mengubah Ukuran**. Saat diminta, konfirmasi perubahan.
+1. Atur ukuran komputer virtual ke **D2ds_v4** dan klik **Mengubah Ukuran**. Saat diminta, konfirmasi perubahan.
 
-    >**Catatan**: Pilih ukuran lain jika **Standar DS1_v2** tidak tersedia. Mengubah ukuran juga dikenal sebagai penskalaan vertikal, naik atau turun.
+    >**Catatan**: Pilih ukuran lain jika **D2ds_v4** tidak tersedia. Mengubah ukuran juga dikenal sebagai penskalaan vertikal, naik atau turun.
 
     ![Cuplikan layar mengubah ukuran mesin virtual.](../media/az104-lab08-resize-vm.png)
 
