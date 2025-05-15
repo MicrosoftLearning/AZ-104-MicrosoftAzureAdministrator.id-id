@@ -183,6 +183,8 @@ Dalam tugas ini, Anda membuat peering jaringan virtual untuk mengaktifkan komuni
 | Izinkan CoreServicesVnet mengakses jaringan virtual yang di-peering            | dipilih (default)                       |
 | Izinkan CoreServicesVnet menerima lalu lintas yang diteruskan dari jaringan virtual yang di-peering | dipilih                       |
 
+1. Klik **Tambahkan**.
+
 1. Di CoreServicesVnet | Peering, verifikasi bahwa peering **CoreServicesVnet-to-ManufacturingVnet** dicantumkan. Refresh halaman untuk memastikan **Status peering** adalah **Terhubung**.
 
 1. Beralih ke **ManufacturingVnet** dan verifikasi bahwa peering **ManufacturingVnet-to-CoreServicesVnet** tercantum. Pastikan bahwa **Status peering** adalah **Terhubung**. Anda mungkin perlu melakukan **Refresh** halamannya. 
@@ -223,7 +225,7 @@ Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perime
 
 1. Cari untuk memilih `CoreServicesVnet`.
 
-1. Pilih **Subnet** lalu **+ Buat**. Pastikan untuk **Menyimpan** perubahan Anda. 
+1. Pilih **Subnet** lalu **+ Subnet**. Pastikan untuk memilih **Tambahkan** untuk menyimpan perubahan Anda. 
 
     | Pengaturan | Nilai | 
     | --- | --- |
@@ -241,9 +243,11 @@ Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perime
     | Nama | `rt-CoreServices` |
     | Merambat rute gateway | **Tidak** |
 
-1. Setelah tabel rute disebarkan, pilih **Buka sumber daya**.
+1. Setelah tabel rute disebarkan, Cari dan pilih **Tabel** Rute.
+   
+1. Pilih sumber daya (bukan kotak centang) **rt-CoreServices**
 
-1. Pilih **Rute** lalu **+ Tambahkan**. Buat rute dari Network Virtual Appliance (NVA) di masa mendatang ke jaringan virtual CoreServices. 
+1. Perluas **Pengaturan lalu pilih **Rute** lalu **+ Tambahkan****. Buat rute dari Network Virtual Appliance (NVA) di masa mendatang ke jaringan virtual CoreServices. 
 
     | Pengaturan | Nilai | 
     | --- | --- |
@@ -253,9 +257,9 @@ Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perime
     | Jenis hop berikutnya | **Appliance virtual** (perhatikan pilihan Anda yang lain) |
     | Alamat lompatan berikutnya | `10.0.1.7` (NVA mendatang) |
 
-1. Pilih **+ Tambahkan** saat rute selesai. Hal terakhir yang harus dilakukan adalah mengaitkan rute dengan subnet.
+1. Pilih **+ Tambahkan**. Hal terakhir yang harus dilakukan adalah mengaitkan rute dengan subnet.
 
-1. Pilih **Subnet** lalu **Kaitkan**. Selesaikan konfigurasinya.
+1. Pilih **Subnet** lalu **+ Kaitkan**. Selesaikan konfigurasinya.
 
     | Pengaturan | Nilai | 
     | --- | --- |
