@@ -148,9 +148,9 @@ Dalam tugas ini, Anda akan membuat jaringan virtual ManufacturingVnet dan subnet
 
 1. Pilih **Bangun templat Anda sendiri di penyunting** lalu **Muat file**.
 
-1. Pilih file **templates.json** dengan perubahan Manufaktur, lalu pilih **Simpan**.
+1. **Pilih file template.json** dengan perubahan Manufaktur Anda, lalu pilih **Simpan**.
 
-1. Pilih **Edit templat**, lalu **Muat file**.
+1. Pilih **Edit parameter**, lalu **Muat file**.
 
 1. **Pilih file parameters.json** dengan perubahan Manufaktur Anda, lalu pilih **Simpan**.
 
@@ -283,7 +283,7 @@ Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik A
 
 1. Pada blade **Gambaran Umum**, perhatikan nama empat server nama Azure DNS yang ditetapkan ke zona tersebut. **Salin** salah satu alamat server nama. Anda akan membutuhkannya di langkah berikutnya. 
   
-1. Pilih **Kumpulan catatan**. **Tambahkan** rekaman tautan jaringan virtual untuk setiap jaringan virtual yang memerlukan dukungan resolusi nama privat.
+1. Perluas bilah **Manajemen** DNS dan pilih **+ Kumpulan catatan**. Tambahkan rekaman tautan jaringan virtual untuk setiap jaringan virtual yang memerlukan dukungan resolusi nama privat.
 
     | Properti | Nilai    |
     |:---------|:---------|
@@ -326,7 +326,7 @@ Zona DNS privat menyediakan layanan resolusi nama dalam jaringan virtual. Zona D
 
 1. Perhatikan pada blade **Gambaran Umum** tidak ada catatan server nama. 
 
-1. Pilih **Manajemen** DNS lalu pilih **Tautan jaringan virtual**. Konfigurasikan tautan. 
+1. Perluas bilah **Manajemen** DNS lalu pilih **Tautan jaringan virtual**. Konfigurasikan tautan. 
 
     | Properti | Nilai    |
     |:---------|:---------|

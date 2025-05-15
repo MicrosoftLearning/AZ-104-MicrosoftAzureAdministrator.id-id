@@ -102,7 +102,7 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamny
 
 1. Di bilah **Penyimpanan** data, pilih **Kontainer**. 
 
-1. Klik **+ Kontainer** dan **Buat** kontainer dengan pengaturan berikut:
+1. Klik **+ Tambahkan kontainer** dan **Buat** kontainer dengan pengaturan berikut:
 
     | Pengaturan | Nilai |
     | --- | --- |
