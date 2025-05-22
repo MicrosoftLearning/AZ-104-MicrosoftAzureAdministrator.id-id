@@ -130,6 +130,8 @@ Dalam tugas ini, Anda akan menukar slot penahapan dengan slot produksi. Menukar 
 
 1. Kembali ke beranda portal. Anda harus memiliki aplikasi web produksi dan slot penahapan.
 
+1. Cari `App Services` dan pilih aplikasi web App Service Anda. Ini mengembalikan Anda ke slot Penyebaran Produksi.
+
 1. Pilih aplikasi web App Service dan pada bilah **Gambaran Umum** Aplikasi Web pilih **tautan Domain** default untuk menampilkan beranda situs web.
 
 1. Verifikasi halaman web produksi sekarang menampilkan **Halo Dunia!** halaman.

@@ -34,7 +34,7 @@ Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simu
 
 ## Tugas 1: Gunakan templat untuk menyediakan infrastruktur
 
-Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan satu jaringan virtual, satu kelompok keamanan jaringan, dan dua mesin virtual.
+Dalam tugas ini, Anda akan menggunakan templat untuk menyebarkan satu jaringan virtual, satu kelompok keamanan jaringan, dan tiga komputer virtual.
 
 1. Unduh file lab **\\Allfiles\\Lab06** (templat dan parameter).
 
@@ -106,7 +106,7 @@ Dalam tugas ini, Anda menerapkan Azure Load Balancer di depan dua mesin virtual 
     | Penyeimbang Beban Gateway | Tidak |
     | Alamat IP publik | Pilih **Buat baru** (gunakan instruksi di langkah berikutnya) |
 
-1. Pada popup **Tambahkan alamat IP publik**, gunakan pengaturan berikut sebelum mengeklik **OK** lalu **Tambahkan**. Setelah selesai klik **Berikutnya: Kumpulan backend**.
+1. **Pada popup Tambahkan alamat** IP publik, gunakan pengaturan berikut sebelum mengklik **Simpan** dua kali. Setelah selesai klik **Berikutnya: Kumpulan backend**.
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -118,7 +118,7 @@ Dalam tugas ini, Anda menerapkan Azure Load Balancer di depan dua mesin virtual 
 
     >**Catatan:** SKU Standar menyediakan alamat IP statik. Alamat IP statik ditetapkan dengan sumber daya dibuat dan dirilis saat sumber daya dihapus.  
 
-1. Pada tab **Kumpulan backend**, klik **Tambahkan kumpulan backend** dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Klik **+ Tambahkan** (dua kali) lalu klik **Berikutnya: Aturan masuk**.
+1. Pada tab **Kumpulan backend**, klik **Tambahkan kumpulan backend** dengan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya). Klik **Tambahkan** lalu **Simpan**. Klik **Berikutnya: Aturan** masuk.
 
     | Pengaturan | Nilai |
     | --- | --- |
@@ -190,9 +190,9 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | --- | --- |
     | Nama | `subnet-appgw` |
     | Alamat awal| `10.60.3.224` |
-    | Ukuran | `/27` |
+    | Ukuran | `/27` - Pastikan **alamat** awal masih **10.63.3.224**|
 
-1. Klik **Simpan**
+1. Klik **Tambahkan**
 
     > **Catatan**: Subnet ini akan digunakan oleh Azure Application Gateway. Application Gateway memerlukan subnet khusus dengan ukuran /27 atau lebih besar.
 
@@ -208,8 +208,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | Wilayah | Wilayah Azure yang **sama** dengan yang Anda gunakan di Tugas 1 |
     | Tingkat | **Standard V2** |
     | Aktifkan penskalaan otomatis | **Tidak** |
-    | Jumlah instans minimum | `2` |
-    | Zona ketersediaan | **1** (default) |
+    | Jumlah Instans | `2` |
     | HTTP2 | **Nonaktif** |
     | Jaringan virtual | **az104-06-vnet1** |
     | Subnet | **subnet-appgw (10.60.3.224/27)** |
@@ -291,7 +290,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | Pengaturan backend | **az104-http** |
     | Target ujung belakang | `az104-videobe` |
 
-1. Pastikan untuk **Simpan** dan periksa perubahan Anda, lalu pilih **Berikutnya : Tag >**. Tidak diperlukan perubahan.
+1. Pastikan untuk memeriksa perubahan Anda, lalu pilih **Berikutnya : Tag >**. Tidak diperlukan perubahan.
 
 1. Pilih **Berikutnya : Tinjau + buat >** lalu klik **Buat**.
 

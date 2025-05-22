@@ -79,7 +79,7 @@ Dalam tugas ini, Anda akan menggunakan komputer virtual yang akan digunakan untu
 
 1. Pilih **Tampilkan** di kotak **Wawasan VM**, lalu pilih **Konfigurasikan Wawasan**.
 
-1. Pilih mesin virtual Anda, lalu **Aktifkan** (dua kali).
+1. Pilih **Aktifkan** di samping komputer virtual Anda, lalu **Aktifkan pada bilah Azure Monitor - Insights Onboarding** .
 
 1. Ambil default untuk aturan langganan dan pengumpulan data, lalu pilih **Konfigurasikan**. 
 
@@ -109,7 +109,7 @@ Dalam tugas ini, Anda membuat peringatan saat mesin virtual dihapus.
 
 Dalam tugas ini, jika peringatan dipicu, kirim pemberitahuan email ke tim operasi. 
 
-1. Lanjutkan mengerjakan peringatan Anda. Pilih **Berikutnya: Tindakan**, lalu pilih **Buat grup tindakan**.
+1. Lanjutkan mengerjakan peringatan Anda. Pilih **Gunakan grup** tindakan lalu pilih **Buat grup** tindakan di bilah **Pilih grup** tindakan.
 
     >**Tahukah Anda?** Anda dapat menambahkan hingga lima grup tindakan ke aturan peringatan. Grup tindakan dijalankan secara bersamaan, tanpa urutan tertentu. Beberapa aturan peringatan dapat menggunakan grup tindakan yang sama. 
 
@@ -227,7 +227,7 @@ Dalam tugas ini, Anda akan menggunakan Azure Monitor untuk mengkueri data yang d
 
 1. Anda harus menerima jumlah heartbeat ketika mesin virtual berjalan.
 
-1. Tinjau kueri. Kueri ini menggunakan tabel *heartbeat*. 
+1. Di sisi kanan layar pilih menu drop-down di samping **Mode** sederhana, pilih **mode** KQL. Tinjau kueri. Kueri ini menggunakan tabel *heartbeat*.
 
 1. Ganti kueri dengan yang ini, lalu klik **Jalankan**. Tinjau bagan yang dihasilkan. 
 
@@ -238,6 +238,8 @@ Dalam tugas ini, Anda akan menggunakan Azure Monitor untuk mengkueri data yang d
     | summarize avg(Val) by bin(TimeGenerated, 5m), Computer //split up by computer
     | render timechart
    ```
+
+    >**Catatan:** Jika kueri tidak menempel dengan benar, coba tempelkan ke Notepad lalu salin dan tempel ulang ke bidang kueri.
 
 1. Saat Anda memiliki waktu, tinjau dan jalankan kueri lain. 
 
