@@ -242,8 +242,6 @@ Di tugas ini, Anda akan menyebarkan akun penyimpanan Azure. Kemudian, Anda akan 
 
 1. Di bilah **Pencadangan + Pemulihan bencana**, pilih **Pemulihan bencana**. 
 
-1. Pilih **Aktifkan replikasi**.
-
 1. Pada tab **Dasar**, perhatikan **Wilayah target**.
 
 1. Pilih **Berikutnya: Pengaturan tingkat lanjut**. Pilihan sumber daya telah dibuat untuk Anda. 
