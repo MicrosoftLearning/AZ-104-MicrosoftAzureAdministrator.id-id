@@ -60,7 +60,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun pen
 
 1. Pada tab **Tingkat Lanjut**, gunakan ikon informasi untuk mempelajari selengkapnya tentang pilihan tersebut. Biarkan default. 
 
-1. Pada tab **Jaringan** , di bagian **Akses** jaringan publik, pilih **Nonaktifkan**. Ini akan membatasi akses masuk sambil mengizinkan akses keluar. 
+1. Pada tab **Jaringan** , di bagian **Akses** jaringan, pilih **Nonaktifkan akses publik dan gunakan akses** privat. Ini akan membatasi akses masuk sambil mengizinkan akses keluar. 
 
 1. Tinjau tab **Perlindungan data**. Pemberitahuan 7 hari adalah kebijakan penyimpanan penghapusan sementara default. Perhatikan bahwa Anda dapat mengaktifkan penerapan versi untuk blob. Terima default.
 
@@ -74,19 +74,17 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun pen
 
 1. Di bilah **Keamanan + jaringan** , pilih **Jaringan**. Perhatikan Akses **** jaringan publik dinonaktifkan.
 
-    + Pilih **Kelola** **akses** jaringan publik.
-    + **Ubah Akses** jaringan publik menjadi **Aktifkan**.
-    + **Ubah tindakan** Default menjadi **Aktifkan dari jaringan** yang dipilih.
-    + Di bagian **Alamat** IP, pilih **Tambahkan alamat** IP klien Anda.
-    + **Simpan** perubahan Anda.
+    + **Ubah Akses** jaringan publik ke **Aktifkan dari jaringan dan alamat** IP yang dipilih.
+    + Di bagian **Firewall** , pilih kotak centang untuk **Menambahkan alamat** IP klien Anda.
+    + Simpan perubahan Anda.
   
 1. Di bilah **Manajemen data** , pilih **Redundansi**. Perhatikan informasi tentang lokasi pusat data primer dan sekunder Anda.
 
 1. Di bilah **Manajemen data** , pilih **Manajemen** siklus hidup, lalu pilih **Tambahkan aturan**.
 
-    + **Beri nama** aturan `Movetocool`. Perhatikan opsi Anda untuk membatasi cakupan aturan.
+    + **Beri nama** aturan `Movetocool`. Perhatikan opsi Anda untuk membatasi cakupan aturan. Klik **Berikutnya**. 
     
-    + Pada tab **Blob dasar**, *jika* blob dasar terakhir dimodifikasi lebih dari `30 days` yang lalu, *kemudian* **pindahkan ke penyimpanan dingin**. Perhatikan pilihan Anda yang lain. 
+    + Pada tab **Blob** dasar, *jika* blob berbasis terakhir dimodifikasi lebih dari `30 days` yang lalu *, pindahkan* **ke penyimpanan** dingin. Perhatikan pilihan Anda yang lain. 
     
     + Perhatikan bahwa Anda dapat mengonfigurasi kondisi lain. Pilih **Tambahkan** saat Anda selesai menjelajahi.
 
@@ -154,7 +152,7 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamny
 
 ### Mengonfigurasi akses terbatas ke penyimpanan blob
 
-1. Pilih file yang Anda unggah lalu pada tab **Hasilkan SAS**. Anda juga dapat menggunakan elipsis (...) di ujung kanan. Tentukan pengaturan berikut (biarkan yang lain diatur ke nilai defaultnya):
+1. Telusuri kembali ke file yang Anda unggah dan pilih elipsis (...) ke ujung kanan, lalu pilih **Buat SAS** dan tentukan pengaturan berikut (biarkan yang lain dengan nilai defaultnya):
 
     | Pengaturan | Nilai |
     | --- | --- |

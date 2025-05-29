@@ -74,7 +74,7 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan inti dengan mesin virtual
 
 1. Di tab **Jaringan**, untuk Jaringan virtual, pilih **Buat baru**.
 
-1. Gunakan informasi berikut untuk mengonfigurasi jaringan virtual, lalu pilih **Ok**. Jika perlu, hapus atau ganti informasi yang ada.
+1. Gunakan informasi berikut untuk mengonfigurasi jaringan virtual, lalu pilih **OK**. Jika perlu, hapus atau ganti informasi yang ada.
 
     | Pengaturan | Nilai | 
     | --- | --- |
@@ -120,7 +120,7 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan manufaktur dengan mesin v
 
 1. Di tab Jaringan, untuk Jaringan virtual, pilih **Buat baru**.
 
-1. Gunakan informasi berikut untuk mengonfigurasi jaringan virtual, lalu pilih **Ok**.  Jika perlu, hapus atau ganti rentang alamat yang ada.
+1. Gunakan informasi berikut untuk mengonfigurasi jaringan virtual, lalu pilih **OK**.  Jika perlu, hapus atau ganti rentang alamat yang ada.
 
     | Pengaturan | Nilai | 
     | --- | --- |
@@ -171,23 +171,23 @@ Dalam tugas ini, Anda membuat peering jaringan virtual untuk mengaktifkan komuni
 
 1. Di CoreServicesVnet, di bagian **Pengaturan**, pilih **Peering**.
 
-1. Di CoreServicesVnet | Peering, pilih **+ Tambahkan**. Jika tidak ditentukan, ambil default. 
+1. Di CoreServicesVnet, di bawah Peering, pilih **+ Tambahkan**. Jika tidak ditentukan, ambil default. 
 
-| **Parameter**                                    | **Nilai**                             |
-| --------------------------------------------- | ------------------------------------- |                                
-| Nama tautan penyerekan                             | `CoreServicesVnet-to-ManufacturingVnet` |
-| Jaringan virtual    | **ManufacturingVM-net (az104-rg5)**  |
-| Izinkan ManufacturingVnet untuk mengakses CoreServicesVnet  | dipilih (default)                       |
-| Izinkan ManufacturingVnet menerima lalu lintas yang diteruskan dari CoreServicesVnet | dipilih                        |
-| Nama tautan penyerekan                             | `ManufacturingVnet-to-CoreServicesVnet` |
-| Izinkan CoreServicesVnet mengakses jaringan virtual yang di-peering            | dipilih (default)                       |
-| Izinkan CoreServicesVnet menerima lalu lintas yang diteruskan dari jaringan virtual yang di-peering | dipilih                       |
+    | **Parameter**                                    | **Nilai**                             |
+    | --------------------------------------------- | ------------------------------------- |                                
+    | Nama tautan penyerekan                             | `CoreServicesVnet-to-ManufacturingVnet` |
+    | Jaringan virtual    | **ManufacturingVM-net (az104-rg5)**  |
+    | Izinkan ManufacturingVnet untuk mengakses CoreServicesVnet  | dipilih (default) |
+    | Izinkan ManufacturingVnet menerima lalu lintas yang diteruskan dari CoreServicesVnet | dipilih  |
+    | Nama tautan penyerekan                             | `ManufacturingVnet-to-CoreServicesVnet` |
+    | Izinkan CoreServicesVnet mengakses jaringan virtual yang di-peering            | dipilih (default) |
+    | Izinkan CoreServicesVnet menerima lalu lintas yang diteruskan dari jaringan virtual yang di-peering | dipilih |
 
-1. Klik **Tambahkan**.
+4. Klik **Tambahkan**.
 
-1. Di CoreServicesVnet | Peering, verifikasi bahwa peering **CoreServicesVnet-to-ManufacturingVnet** dicantumkan. Refresh halaman untuk memastikan **Status peering** adalah **Terhubung**.
+5. Di CoreServicesVnet, di bawah Peering, verifikasi bahwa **peering CoreServicesVnet-to-ManufacturingVnet** tercantum. Refresh halaman untuk memastikan **Status peering** adalah **Terhubung**.
 
-1. Beralih ke **ManufacturingVnet** dan verifikasi bahwa peering **ManufacturingVnet-to-CoreServicesVnet** tercantum. Pastikan bahwa **Status peering** adalah **Terhubung**. Anda mungkin perlu melakukan **Refresh** halamannya. 
+6. Beralih ke **ManufacturingVnet** dan verifikasi bahwa peering **ManufacturingVnet-to-CoreServicesVnet** tercantum. Pastikan bahwa **Status peering** adalah **Terhubung**. Anda mungkin perlu melakukan **Refresh** halamannya. 
 
 ## Tugas 5: Menggunakan Azure PowerShell untuk menguji koneksi antara mesin virtual
 
@@ -233,7 +233,7 @@ Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perime
     | Rentang alamat subnet | `10.0.1.0/24`  |
 
    
-1. Di portal Microsoft Azure, cari dan pilih `Route tables`, lalu pilih **Buat**. 
+1. Di portal Azure, cari dan pilih `Route tables`, pilih **Tinjau + Buat**, lalu pilih **Buat**. 
 
     | Pengaturan | Nilai | 
     | --- | --- |
@@ -247,7 +247,7 @@ Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perime
    
 1. Pilih sumber daya (bukan kotak centang) **rt-CoreServices**
 
-1. Perluas **Pengaturan lalu pilih **Rute** lalu **+ Tambahkan****. Buat rute dari Network Virtual Appliance (NVA) di masa mendatang ke jaringan virtual CoreServices. 
+1. Perluas **Pengaturan lalu pilih **Rute** lalu **Tambahkan****. Buat rute dari Network Virtual Appliance (NVA) di masa mendatang ke jaringan virtual CoreServices. 
 
     | Pengaturan | Nilai | 
     | --- | --- |
