@@ -166,7 +166,7 @@ Dalam tugas ini, kita akan menggunakan definisi kebijakan baru untuk memulihkan 
     | Deskripsi | `Inherit the Cost Center tag and its value 000 from the resource group if missing` |
     | Pemberlakuan kebijakan | Diaktifkan |
 
-1. Klik **Berikutnya** dua kali dan atur **Parameter** ke nilai berikut:
+1. Klik **Berikutnya** dan atur **Parameter** ke nilai berikut:
 
     | Pengaturan | Nilai |
     | --- | --- |
