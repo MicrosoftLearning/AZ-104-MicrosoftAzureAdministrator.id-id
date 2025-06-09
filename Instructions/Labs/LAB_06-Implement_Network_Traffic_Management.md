@@ -190,7 +190,7 @@ Dalam tugas ini, Anda menerapkan Azure Application Gateway di depan dua mesin vi
     | --- | --- |
     | Nama | `subnet-appgw` |
     | Alamat awal| `10.60.3.224` |
-    | Ukuran | `/27` - Pastikan **alamat** awal masih **10.63.3.224**|
+    | Ukuran | `/27` - Pastikan **alamat** awal masih **10.60.3.224**|
 
 1. Klik **Tambahkan**
 

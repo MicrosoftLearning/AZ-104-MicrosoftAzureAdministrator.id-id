@@ -230,10 +230,12 @@ Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perime
     | Pengaturan | Nilai | 
     | --- | --- |
     | Nama | `perimeter` |
-    | Rentang alamat subnet | `10.0.1.0/24`  |
+    | Alamat awal | `10.0.1.0/24`  |
 
    
-1. Di portal Azure, cari dan pilih `Route tables`, pilih **Tinjau + Buat**, lalu pilih **Buat**. 
+1. Di portal Azure, cari dan pilih `Route tables`, pilih **+ Buat**.
+
+1. Masukkan detail berikut, pilih **Tinjau + Buat**, lalu pilih **Buat**. 
 
     | Pengaturan | Nilai | 
     | --- | --- |

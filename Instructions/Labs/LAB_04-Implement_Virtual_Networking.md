@@ -283,7 +283,7 @@ Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik A
 
 1. Pada blade **Gambaran Umum**, perhatikan nama empat server nama Azure DNS yang ditetapkan ke zona tersebut. **Salin** salah satu alamat server nama. Anda akan membutuhkannya di langkah berikutnya. 
   
-1. Perluas bilah **Manajemen** DNS dan pilih **+ Kumpulan catatan**.
+1. Perluas bilah **Manajemen** DNS dan pilih **Himpunan** Catatan. Klik **+Tambah**. 
 
     | Properti | Nilai    |
     |:---------|:---------|
@@ -294,7 +294,7 @@ Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik A
 
 >**Catatan:**  Dalam skenario dunia nyata, Anda akan memasukkan alamat IP publik server web Anda.
 
-1. Pilih **OK** dan verifikasi domain Anda memiliki kumpulan catatan A bernama **www**.
+1. Pilih **Tambahkan** dan verifikasi domain Anda memiliki kumpulan catatan A bernama **www**.
 
 1. Buka perintah, dan jalankan perintah berikut. Jika Anda telah mengubah nama domain, lakukan penyesuaian. 
 

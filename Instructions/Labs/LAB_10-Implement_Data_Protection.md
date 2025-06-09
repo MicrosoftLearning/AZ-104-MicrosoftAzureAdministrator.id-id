@@ -205,7 +205,6 @@ Di tugas ini, Anda akan menyebarkan akun penyimpanan Azure. Kemudian, Anda akan 
     - **Data Peringatan Azure Backup Tambahan**
     - **Pekerjaan Azure Site Recovery**
     - **Peristiwa Azure Site Recovery**
-    - **Kesehatan**
 
 1. Di detail Tujuan, letakkan tanda centang di samping **Arsipkan ke akun penyimpanan**.
 
