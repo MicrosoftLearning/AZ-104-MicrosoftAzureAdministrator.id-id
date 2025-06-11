@@ -16,11 +16,7 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
-
-+ [Kelola sumber daya menggunakan templat Azure Resource Manager](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%205). Tinjau, buat, dan sebarkan disk terkelola dengan templat.
-  
-+ [Buat mesin virtual dengan templat](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Sebarkan mesin virtual dengan templat Mulai Cepat.
+>**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
   
 ## Skenario lab
 

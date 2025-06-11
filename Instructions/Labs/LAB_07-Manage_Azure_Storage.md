@@ -20,11 +20,7 @@ Organisasi Anda saat ini menyimpan data di penyimpanan data lokal. Sebagian besa
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
-
-+ [Menciptakan penyimpanan blob](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%205). Buat akun penyimpanan, kelola penyimpanan blob, dan pantau aktivitas penyimpanan. 
-  
-+ [Mengelola penyimpanan Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2011). Buat akun penyimpanan dan tinjau konfigurasinya. Mengelola kontainer penyimpanan blob. Mengonfigurasi jaringan penyimpanan. 
+>**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
 
 ## Diagram arsitektur
 

@@ -20,9 +20,7 @@ Organisasi Anda sedang mengevaluasi cara mencadangkan dan memulihkan mesin virtu
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
-
-+ **[Cadangkan mesin virtual dan file lokal.](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2016)**. Buat vault layanan pemulihan dan terapkan pencadangan mesin virtual Azure. Terapkan pencadangan file dan folder lokal menggunakan agen Microsoft Azure Recovery Services. Pencadangan lokal berada di luar cakupan lab ini, tetapi mungkin berguna untuk melihat langkah-langkah tersebut. 
+>**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
 
 ## Keterampilan pekerjaan
 

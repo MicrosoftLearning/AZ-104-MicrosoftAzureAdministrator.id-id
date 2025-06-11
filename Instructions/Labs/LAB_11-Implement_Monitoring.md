@@ -20,11 +20,10 @@ Organisasi Anda telah memigrasikan infrastrukturnya ke Azure. Penting bagi Admin
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa dengan kecepatan Anda sendiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
-
-+ [Menerapkan Pemantauan](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2017). Buat ruang kerja Analitik Log dan solusi otomatisasi Azure. Tinjau pengaturan pemantauan dan diagnostik untuk mesin virtual. Tinjau fungsionalitas Azure Monitor dan Analitik Log. 
+>**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
 
 ## Diagram arsitektur
+
 
 ![Diagram tugas arsitektur](../media/az104-lab11-architecture.png)
 
