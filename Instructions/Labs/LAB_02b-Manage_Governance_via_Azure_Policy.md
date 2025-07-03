@@ -28,13 +28,7 @@ Jejak cloud organisasi Anda telah berkembang pesat dalam setahun terakhir. Selam
 
 ## Simulasi lab interaktif
 
-Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
-
-+ [Mengelola kunci sumber daya](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2015). Tambahkan kunci sumber daya dan uji untuk mengonfirmasi.
-  
-+ [Membuat kebijakan Azure](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2017). Buat kebijakan Azure yang membatasi sumber daya lokasi dapat ditemukan. Buat sumber daya baru dan pastikan kebijakan diberlakukan. 
-
-+ [Mengelola tata kelola melalui kebijakan Azure](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%203). Buat dan tetapkan tag melalui portal Azure. Buat kebijakan Azure yang memerlukan pemberian tag. Memulihkan sumber daya yang tidak sesuai.
+>**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
 
 ## Diagram arsitektur
 

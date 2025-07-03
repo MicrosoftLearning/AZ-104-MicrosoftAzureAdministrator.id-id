@@ -20,15 +20,7 @@ Organisasi Anda ingin menjelajahi penyebaran dan konfigurasi mesin virtual Azure
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
-
-+ [Membuat mesin virtual di portal](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%201). Membuat mesin virtual, menyambungkan dan menginstal peran server web.
-
-+ [Menyebarkan mesin virtual dengan templat](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%209). Menjelajahi galeri QuickStart dan temukan templat mesin virtual. Menyebarkan templat dan memverifikasi penyebarannya.
-
-+ [Buat mesin virtual dengan PowerShell.](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2010) Gunakan Azure PowerShell untuk menyebarkan mesin virtual. Tinjau rekomendasi Azure Advisor.
-
-+ [Buat mesin virtual dengan CLI](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2011). Gunakan CLI untuk menyebarkan mesin virtual. Tinjau rekomendasi Azure Advisor.
+>**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
 
 ## Keterampilan pekerjaan
 

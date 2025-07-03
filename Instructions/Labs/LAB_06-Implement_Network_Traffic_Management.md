@@ -20,11 +20,7 @@ Organisasi Anda memiliki situs web publik. Anda perlu menyeimbangkan beban permi
 
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
-
-+ [Membuat dan mengonfigurasi Azure load balancer](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer). Buat jaringan virtual, server backend, load balancer, lalu uji load balancer.
-+ [Menyebarkan Azure Application Gateway](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway). Buat application gateway, buat mesin virtual, buat kumpulan backend, lalu uji gateway.
-+ [ Menerapkan manajemen lalu lintas](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2010). Terapkan jaringan hub dan spoke lengkap termasuk mesin virtual, jaringan virtual, peering, load balancer, dan application gateway.
+>**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
 
 ## Keterampilan pekerjaan
 

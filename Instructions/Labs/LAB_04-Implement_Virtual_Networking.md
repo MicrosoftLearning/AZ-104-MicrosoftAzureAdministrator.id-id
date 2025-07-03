@@ -24,15 +24,7 @@ Jaringan virtual **ManufacturingVnet** berisi sistem untuk operasi fasilitas man
 
 ## Simulasi lab interaktif
 
-Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
-
-+ [Amankan lalu lintas jaringan](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%2013). Buat mesin virtual, jaringan virtual, dan kelompok keamanan jaringan. Tambahkan aturan kelompok keamanan jaringan untuk memperbolehkan dan melarang lalu lintas.
-  
-+ [Buat jaringan virtual sederhana](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%204). Buat jaringan virtual dengan dua mesin virtual. Tunjukkan bahwa mesin virtual dapat berkomunikasi. 
-
-+ [Desain dan implementasikan jaringan virtual di Azure](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure). Buat grup sumber daya dan buat jaringan virtual dengan subnet.  
-
-+ [Implementasikan jaringan virtual](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%208). Buat dan konfigurasikan jaringan virtual, sebarkan mesin virtual, konfigurasikan kelompok keamanan jaringan, dan konfigurasikan Azure DNS.
+>**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
 
 ## Diagram arsitektur
 

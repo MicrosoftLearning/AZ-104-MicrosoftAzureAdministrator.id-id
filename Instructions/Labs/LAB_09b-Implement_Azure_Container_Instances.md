@@ -17,13 +17,10 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 ## Skenario lab
 
 Organisasi Anda memiliki aplikasi web yang berjalan pada mesin virtual di pusat data lokal Anda. Organisasi ingin memindahkan semua aplikasi ke cloud tetapi tidak ingin mengelola jumlah server yang besar. Anda memutuskan untuk mengevaluasi Azure Container Instances dan Docker. 
+
 ## Simulasi lab interaktif
 
-Ada simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan.
-
-+ [Menyebarkan Azure Container Instances](https://mslearn.cloudguides.com/en-us/guides/AZ-900%20Exam%20Guide%20-%20Azure%20Fundamentals%20Exercise%203). Membuat, mengonfigurasikan, dan menyebarkan kontainer Docker ke Azure Container Instances.
-  
-+ [Mengimplementasikan Azure Container Instances](https://mslabs.cloudguides.com/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%2014).  Menyebarkan citra Docker ke Azure Container Instances. 
+>**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
 
 ## Diagram arsitektur
 

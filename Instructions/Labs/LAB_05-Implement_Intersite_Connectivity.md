@@ -20,13 +20,7 @@ Organisasi Anda membuat segmentasi aplikasi dan layanan TI inti (seperti DNS dan
 
 ## Simulasi lab interaktif
 
-Ada beberapa simulasi lab interaktif yang mungkin berguna bagi Anda untuk topik ini. Simulasi ini memungkinkan Anda mengeklik skenario serupa secara mandiri. Ada perbedaan antara simulasi interaktif dan lab ini, tetapi banyak konsep intinya sama. Langganan Azure tidak diperlukan. 
-
-+ [Menghubungkan dua jaringan virtual Azure menggunakan peering jaringan virtual global](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering). Menguji koneksi antara dua mesin virtual di jaringan virtual yang berbeda. Membuat peering jaringan virtual dan uji ulang.
-
-+ [Mengonfigurasi pemantauan untuk jaringan virtual](https://learn.microsoft.com/training/modules/configure-monitoring-virtual-networks/). Memahami cara menggunakan Monitor Koneksi Azure Network Watcher, log alur, diagnostik NSG, dan pengambilan paket untuk memantau konektivitas di seluruh sumber daya jaringan Azure IaaS Anda.
-
-+ [Mengimplementasikan konektivitas antarsitus](https://mslabs.cloudguides.com/en-us/guides/AZ-104%20Exam%20Guide%20-%20Microsoft%20Azure%20Administrator%20Exercise%209). Menjalankan templat untuk membuat infrastruktur jaringan virtual dengan beberapa mesin virtual. Mengonfigurasikan peering jaringan virtual dan uji koneksi. 
+>**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
 
 ## Diagram arsitektur
 
