@@ -56,7 +56,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun pen
 
 1. Pada tab **Tingkat Lanjut**, gunakan ikon informasi untuk mempelajari selengkapnya tentang pilihan tersebut. Biarkan default. 
 
-1. Pada tab **Jaringan** , di bagian **Akses** jaringan, pilih **Nonaktifkan akses publik dan gunakan akses** privat. Ini akan membatasi akses masuk sambil mengizinkan akses keluar. 
+1. Pada tab **Jaringan** , di bagian **Akses** jaringan publik, pilih **Nonaktifkan**. Ini akan membatasi akses masuk sambil mengizinkan akses keluar. 
 
 1. Tinjau tab **Perlindungan data**. Pemberitahuan 7 hari adalah kebijakan penyimpanan penghapusan sementara default. Perhatikan bahwa Anda dapat mengaktifkan penerapan versi untuk blob. Terima default.
 
@@ -70,8 +70,9 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun pen
 
 1. Di bilah **Keamanan + jaringan** , pilih **Jaringan**. Perhatikan Akses **** jaringan publik dinonaktifkan.
 
-    + **Ubah Akses** jaringan publik ke **Aktifkan dari jaringan dan alamat** IP yang dipilih.
-    + Di bagian **Firewall** , pilih kotak centang untuk **Menambahkan alamat** IP klien Anda.
+    + Pilih **Kelola** dan ubah **Pengaturan akses** jaringan publik menjadi **Diaktifkan**. 
+    + **Ubah cakupan** akses jaringan publik menjadi **Aktifkan dari jaringan** yang dipilih.
+    + Di bagian **Alamat** IPv4, pilih **Tambahkan alamat** IPv4 klien Anda.
     + Simpan perubahan Anda.
   
 1. Di bilah **Manajemen data** , pilih **Redundansi**. Perhatikan informasi tentang lokasi pusat data primer dan sekunder Anda.
@@ -80,7 +81,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi akun penyimpanan. Akun pen
 
     + **Beri nama** aturan `Movetocool`. Perhatikan opsi Anda untuk membatasi cakupan aturan. Klik **Berikutnya**. 
     
-    + Pada tab **Blob** dasar, *jika* blob berbasis terakhir dimodifikasi lebih dari `30 days` yang lalu *, pindahkan* **ke penyimpanan** dingin. Perhatikan pilihan Anda yang lain. 
+    + Pada halaman **Tambahkan aturan** , *jika* blob dasar terakhir dimodifikasi lebih dari `30` hari yang lalu *, pindahkan* **ke penyimpanan** dingin. Perhatikan pilihan Anda yang lain. 
     
     + Perhatikan bahwa Anda dapat mengonfigurasi kondisi lain. Pilih **Tambahkan** saat Anda selesai menjelajahi.
 
@@ -138,9 +139,9 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamny
 
 1. Konfirmasikan bahwa Anda memiliki folder baru, dan file Anda telah diunggah. 
 
-1. Pilih berkas unggahan Anda dan tinjau berbagai pilihan termasuk **Unduh**, **Hapus**, **Ubah tingkatan**, dan **Dapatkan sewa**.
+1. Pilih file unggahan Anda dan tinjau opsi elipsis (...) termasuk Unduh, Hapus **, **** Ubah tingkat**, dan **Dapatkan sewa**.****
 
-1. Salin URL** file **(bilah Properti) dan tempelkan ke jendela penjelajahan Inprivate** baru**.
+1. Salin URL** file **(Pengaturan --> bilah Properti) dan tempelkan ke jendela penjelajahan Inprivate** baru**.
 
 1. Anda akan diberikan pesan berformat XML yang menyatakan **ResourceNotFound** atau **PublicAccessNotPermitted**.
 
@@ -200,7 +201,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi berbagai Azure File. Anda 
 
 ### Membatasi akses jaringan ke akun penyimpanan
 
-1. Di portal, cari dan pilih **Jaringan virtual**.
+1. Di portal, cari dan pilih `Virtual networks`.
 
 1. Pilih **+ Buat.** Pilih grup sumber daya Anda. dan beri **nama** pada jaringan virtual tersebut, `vnet1`.
 
@@ -218,9 +219,13 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi berbagai Azure File. Anda 
 
 1. Di bilah **Keamanan + jaringan** , pilih **Jaringan**.
 
-1. Pilih **Tambahkan jaringan** virtual yang ada dan pilih **vnet1** dan **subnet default** , pilih **Tambahkan**.
+1. Di bawah **Akses** jaringan publik pilih **Kelola**. 
 
-1. Di bagian **Firewall**, **Hapus** alamat IP komputer Anda. Lalu lintas yang diizinkan hanya boleh berasal dari jaringan virtual. 
+1. Pilih **Tambahkan jaringan** virtual lalu **Tambahkan jaringan** yang sudah ada.
+
+1. Pilih **vnet1** dan **subnet default** , pilih **Tambahkan**.
+
+1. Di bagian **Alamat** IPv4, **Hapus** alamat IP komputer Anda. Lalu lintas yang diizinkan hanya boleh berasal dari jaringan virtual. 
 
 1. Pastikan untuk **Menyimpan** perubahan Anda.
 
@@ -228,7 +233,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi berbagai Azure File. Anda 
 
 1. Pilih **Browser penyimpanan** dan **Refresh** halaman. Navigasikan ke berbagi file atau konten blob Anda.  
 
-    >**Catatan:** Anda harus menerima pesan *yang tidak berwenang untuk melakukan operasi ini*. Anda tidak tersambung dari jaringan virtual. Mungkin perlu waktu beberapa menit agar ini berlaku.
+    >**Catatan:** Anda harus menerima pesan *yang tidak berwenang untuk melakukan operasi ini*. Anda tidak tersambung dari jaringan virtual. Mungkin perlu waktu beberapa menit agar ini berlaku. Anda mungkin masih dapat melihat berbagi file, tetapi bukan file atau blob di akun penyimpanan. 
 
 
 ![Cuplikan layar akses tidak sah.](../media/az104-lab07-notauthorized.png)
@@ -250,8 +255,9 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 ## Pelajari lebih lanjut dengan pelatihan mandiri
 
++ [Buat akun](https://learn.microsoft.com/training/modules/create-azure-storage-account/) Azure Storage. Buat akun Azure Storage dengan opsi yang benar untuk kebutuhan bisnis Anda.
++ [Mengelola siklus](https://learn.microsoft.com/training/modules/manage-azure-blob-storage-lifecycle) hidup penyimpanan Azure Blob. Mempelajari cara mengelola ketersediaan data di seluruh siklus hidup penyimpanan Azure Blob.
 + [Mengoptimalkan biaya Anda dengan Azure Blob Storage](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Pelajari cara mengoptimalkan biaya Anda dengan Azure Blob Storage.
-+ [Mengontrol akses ke Azure Storage dengan tanda tangan akses bersama](https://learn.microsoft.com/training/modules/control-access-to-azure-storage-with-sas/). Memberikan akses ke data yang tersimpan di akun Azure Storage Anda dengan aman dengan menggunakan tanda tangan akses bersama.
 
 ## Poin penting
 
