@@ -241,10 +241,6 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 + Apa langkah-langkah untuk memberlakukan kebijakan Azure dan memulihkan sumber daya yang tidak sesuai?
 + Bagaimana cara mendapatkan laporan sumber daya Azure dengan tag tertentu?
 
-## Pelajari lebih lanjut dengan pelatihan mandiri
-
-+ [Merancang strategi tata kelola perusahaan](https://learn.microsoft.com/training/modules/enterprise-governance/). Gunakan RBAC dan Azure Policy untuk membatasi akses ke solusi Azure Anda, dan tentukan metode mana yang tepat untuk tujuan keamanan Anda.
-
 ## Poin penting
 
 Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini. 

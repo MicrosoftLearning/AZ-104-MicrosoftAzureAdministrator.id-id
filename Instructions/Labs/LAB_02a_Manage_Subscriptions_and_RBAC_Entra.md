@@ -162,7 +162,6 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 ## Pelajari lebih lanjut dengan pelatihan mandiri
 
 + [Mengamankan sumber daya Azure dengan kontrol akses berbasis peran Azure (Azure RBAC)](https://learn.microsoft.com/training/modules/secure-azure-resources-with-rbac/). Menggunakan Azure RBAC untuk mengelola akses ke sumber daya di Azure.
-+ [Membuat peran kustom untuk sumber daya Azure dengan kontrol akses berbasis peran (RBAC)](https://learn.microsoft.com/training/modules/create-custom-azure-roles-with-rbac/). Memahami struktur definisi peran untuk kontrol akses. Mengidentifikasi properti peran yang akan digunakan yang menentukan izin peran kustom Anda. Membuat peran kustom Azure dan menetapkan ke pengguna.
 
 ## Poin penting
 
@@ -174,6 +173,7 @@ Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini.
 + Anda dapat membuat peran baru atau menyesuaikan peran yang sudah ada.
 + Peran didefinisikan dalam file berformat JSON dan menyertakan *Actions*, *NotActions*, dan *AssignableScopes*.
 + Anda dapat menggunakan Log Aktivitas untuk memantau penetapan peran.
+
 
 
 
