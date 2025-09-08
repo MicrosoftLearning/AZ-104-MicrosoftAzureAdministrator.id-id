@@ -177,7 +177,9 @@ Dalam tugas ini, kita akan membuat Kelompok Keamanan Aplikasi dan Kelompok Keama
 
 ### Buat Kelompok Keamanan Jaringan dan kaitkan dengan CoreServicesVnet
 
-1. Di portal Azure, cari dan pilih `Network security groups`.
+1. Di portal Microsoft Azure, cari dan pilih `Network security groups`.
+
+>**Catatan:** Anda juga dapat menemukan sumber daya ini menggunakan menu portal Azure (ikon kiri atas). Pilih **Buat sumber daya** lalu di bilah **Jaringan** , pilih **Grup** keamanan jaringan. 
 
 1. Pilih **+ Buat** dan berikan informasi pada tab **Dasar**. 
 
@@ -240,12 +242,12 @@ Dalam tugas ini, kita akan membuat Kelompok Keamanan Aplikasi dan Kelompok Keama
     | Tujuan | **Tag layanan** |
     | Tag layanan tujuan | **Internet** |
     | Layanan | **Adat** |
-    | Rentang port tujuan | **8080** |
+    | Rentang port tujuan | `*` |
     | Protokol | **Mana pun** |
     | Tindakan
            | **Tolak** |
     | Prioritas | **4096** |
-    | Nama | **DenyAnyCustom8080Outbound** |
+    | Nama | `DenyInternetOutbound` |
 
 
 ## Tugas 4: Mengonfigurasi zona Azure DNS publik dan privat
@@ -372,3 +374,5 @@ Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama lab ini.
 + Kelompok keamanan jaringan berisi aturan keamanan yang memperbolehkan atau menolak lalu lintas jaringan. Ada aturan masuk dan keluar default yang dapat Anda sesuaikan dengan kebutuhan Anda.
 + Kelompok keamanan aplikasi digunakan untuk melindungi kelompok server dengan fungsi yang sama, seperti server web atau server database.
 + Azure DNS adalah layanan hosting untuk domain DNS yang menyediakan resolusi nama. Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik Anda.  Anda juga dapat menggunakan zona DNS privat untuk menetapkan nama DNS ke mesin virtual (VM) di jaringan virtual Azure Anda.
+
+
