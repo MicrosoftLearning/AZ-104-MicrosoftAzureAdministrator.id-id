@@ -257,6 +257,7 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 + [Buat akun](https://learn.microsoft.com/training/modules/create-azure-storage-account/) Azure Storage. Buat akun Azure Storage dengan opsi yang benar untuk kebutuhan bisnis Anda.
 + [Mengelola siklus](https://learn.microsoft.com/training/modules/manage-azure-blob-storage-lifecycle) hidup penyimpanan Azure Blob. Mempelajari cara mengelola ketersediaan data di seluruh siklus hidup penyimpanan Azure Blob.
++ [Mengoptimalkan biaya Anda dengan Azure Blob Storage](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Pelajari cara mengoptimalkan biaya Anda dengan Azure Blob Storage.
 
 ## Poin penting
 
