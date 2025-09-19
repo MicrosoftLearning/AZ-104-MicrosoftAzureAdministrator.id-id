@@ -172,7 +172,7 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell dan Azure PowerShell. Azu
 1. Konfirmasikan bahwa disk telah dibuat.
 
    ```powershell
-   Get-AzDisk
+   Get-AzDisk | ft
    ```
    
 ## Tugas 4: Sebarkan templat dengan CLI 
