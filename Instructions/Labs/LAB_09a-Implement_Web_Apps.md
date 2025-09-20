@@ -138,9 +138,9 @@ Dalam tugas ini, Anda akan menukar slot penahapan dengan slot produksi. Menukar 
 
 Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis Aplikasi Web Azure. Penskalaan otomatis memungkinkan Anda mempertahankan aplikasi web Anda dalam performa optimal saat lalu lintas ke aplikasi web meningkat. Untuk menentukan kapan aplikasi harus diskalakan, Anda dapat memantau metrik seperti penggunaan CPU, memori, atau bandwidth.
 
-1. Di bagian **Pengaturan**, pilih **Peluasan skala (paket App Service)**.
+1. Di panel kiri, di bagian **paket** App Service, pilih **Peluasan** skala.
 
-    >**Catatan:** Pastikan Anda mengerjakan slot produksi dan bukan slot penahapan.  
+    >**Catatan:** Pastikan Anda mengerjakan slot produksi, bukan slot penahapan.  
 
 1. Dari bagian **Penskalaan**, pilih **Otomatis**. Perhatikan opsi **Berbasis Aturan**. Penskalaan berbasis aturan dapat dikonfigurasi untuk metrik aplikasi yang berbeda. 
 
