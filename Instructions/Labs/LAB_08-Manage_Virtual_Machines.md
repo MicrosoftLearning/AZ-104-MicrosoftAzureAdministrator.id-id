@@ -385,7 +385,7 @@ Dalam tugas ini, Anda menskalakan set skala mesin virtual menggunakan aturan ska
 1. Setelah perintah selesai, gunakan **az vm show** untuk memverifikasi komputer Anda dibuat.
 
     ```sh
-    az vm show --name  myCLIVM --resource-group az104-rg8 --show-details
+    az vm show --name  myCLIVM --resource-group az104-rg8 --show-details --output table
     ```
 
 1. Verifikasi **powerState** adalah **VM Berjalan**.
