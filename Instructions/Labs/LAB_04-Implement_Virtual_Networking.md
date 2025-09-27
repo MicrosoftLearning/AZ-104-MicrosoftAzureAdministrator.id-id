@@ -267,7 +267,7 @@ Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik A
     | Properti | Nilai    |
     |:---------|:---------|
     | Langganan | **Pilih langganan Anda** |
-    | Grup sumber daya | **az-104-rg4** |
+    | Grup sumber daya | **az104-rg4** |
     | Nama | `contoso.com` (jika telah dicadangkan, sesuaikan namanya) |
     | Wilayah |**US Timur** (tinjau ikon informasi) |
 
@@ -310,7 +310,7 @@ Zona DNS privat menyediakan layanan resolusi nama dalam jaringan virtual. Zona D
     | Properti | Nilai    |
     |:---------|:---------|
     | Langganan | **Pilih langganan Anda** |
-    | Grup sumber daya | **az-104-rg4** |
+    | Grup sumber daya | **az104-rg4** |
     | Nama | `private.contoso.com` (sesuaikan jika Anda harus mengganti nama) |
     | Wilayah |**US Timur** |
 
@@ -374,5 +374,6 @@ Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama lab ini.
 + Kelompok keamanan jaringan berisi aturan keamanan yang memperbolehkan atau menolak lalu lintas jaringan. Ada aturan masuk dan keluar default yang dapat Anda sesuaikan dengan kebutuhan Anda.
 + Kelompok keamanan aplikasi digunakan untuk melindungi kelompok server dengan fungsi yang sama, seperti server web atau server database.
 + Azure DNS adalah layanan hosting untuk domain DNS yang menyediakan resolusi nama. Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik Anda.  Anda juga dapat menggunakan zona DNS privat untuk menetapkan nama DNS ke mesin virtual (VM) di jaringan virtual Azure Anda.
+
 
 
