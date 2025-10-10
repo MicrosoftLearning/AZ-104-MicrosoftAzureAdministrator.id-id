@@ -50,7 +50,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi pengguna Azure AD. Akun pe
    
 ###  Buat pengguna baru 
 
-1. Pilih **Pengguna**, lalu di menu drop-down **Pengguna baru** pilih **Buat pengguna baru**. 
+1. Di bilah **Kelola** , pilih **Pengguna**; lalu di **menu drop-down Pengguna** baru pilih **Buat pengguna** baru. 
 
 1. Buat pengguna baru dengan pengaturan berikut (biarkan yang lain dengan default). Pada tab **Properti**, perhatikan semua jenis informasi berbeda yang dapat disertakan dalam akun pengguna. 
 
@@ -157,3 +157,4 @@ Selamat atas penyelesaian lab. Berikut beberapa hal penting yang dapat diambil d
 + Microsoft Entra ID memiliki akun pengguna dan tamu. Setiap akun memiliki tingkat akses spesifik terhadap lingkup pekerjaan yang diharapkan dapat dilakukan.
 + Grup menggabungkan pengguna atau perangkat terkait. Ada dua jenis grup termasuk Keamanan dan Microsoft 365.
 + Keanggotaan grup dapat ditetapkan secara statis atau dinamis.
+

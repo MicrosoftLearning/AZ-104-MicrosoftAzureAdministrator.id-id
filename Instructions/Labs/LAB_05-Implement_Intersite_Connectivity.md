@@ -215,7 +215,7 @@ Dalam tugas ini, Anda menguji ulang koneksi antara mesin virtual di jaringan vir
 
 ## Tugas 6: Membuat rute kustom 
 
-Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perimeter dan subnet layanan inti internal. Appliance jaringan virtual akan diinstal di subnet layanan inti dan semua lalu lintas harus dirutekan di sana. 
+Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perimeter dan subnet layanan inti internal. Appliance jaringan virtual akan diinstal di subnet perimeter dan semua lalu lintas harus dirutekan di sana. 
 
 1. Cari untuk memilih `CoreServicesVnet`.
 
