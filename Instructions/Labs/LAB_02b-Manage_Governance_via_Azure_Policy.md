@@ -26,10 +26,6 @@ Jejak cloud organisasi Anda telah berkembang pesat dalam setahun terakhir. Selam
 
 - menggunakan kunci sumber daya untuk melindungi sumber daya yang dikonfigurasi
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Diagram arsitektur
 
 ![Diagram arsitektur tugas.](../media/az104-lab02b-architecture.png)

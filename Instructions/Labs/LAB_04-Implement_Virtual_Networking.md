@@ -22,10 +22,6 @@ Jaringan **virtual CoreServicesVnet** memiliki jumlah sumber daya terbesar. Seju
 
 Jaringan virtual **ManufacturingVnet** berisi sistem untuk operasi fasilitas manufaktur. Organisasi mengantisipasi sejumlah besar perangkat terhubung internal tempat sistem mereka dapat mengambil data. 
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Diagram arsitektur
 
 ![Tata letak jaringan](../media/az104-lab04-architecture.png)
@@ -374,6 +370,7 @@ Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama lab ini.
 + Kelompok keamanan jaringan berisi aturan keamanan yang memperbolehkan atau menolak lalu lintas jaringan. Ada aturan masuk dan keluar default yang dapat Anda sesuaikan dengan kebutuhan Anda.
 + Kelompok keamanan aplikasi digunakan untuk melindungi kelompok server dengan fungsi yang sama, seperti server web atau server database.
 + Azure DNS adalah layanan hosting untuk domain DNS yang menyediakan resolusi nama. Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik Anda.  Anda juga dapat menggunakan zona DNS privat untuk menetapkan nama DNS ke mesin virtual (VM) di jaringan virtual Azure Anda.
+
 
 
 

@@ -18,10 +18,6 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 Organisasi Anda memiliki aplikasi web yang berjalan pada mesin virtual di pusat data lokal Anda. Organisasi ingin memindahkan semua aplikasi ke cloud tetapi tidak ingin mengelola jumlah server yang besar. Anda memutuskan untuk mengevaluasi Azure Container Instances dan Docker. 
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Diagram arsitektur
 
 ![Diagram tugas.](../media/az104-lab09b-aci-architecture.png)

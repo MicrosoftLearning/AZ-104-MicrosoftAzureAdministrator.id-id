@@ -18,10 +18,6 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 Organisasi Anda memiliki situs web publik. Anda perlu menyeimbangkan beban permintaan publik yang masuk di seluruh mesin virtual. Anda juga perlu menyediakan gambar dan video dari mesin virtual yang berbeda. Anda berencana menerapkan Azure Load Balancer dan Azure Application Gateway. Semua sumber daya berada di wilayah yang sama.
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Keterampilan pekerjaan
 
 + Tugas 1: Gunakan templat untuk menyediakan infrastruktur.
