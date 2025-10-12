@@ -1,11 +1,3 @@
-#README
-
-We've turned off the ability to report issues directly on this repo and do not monitor PRs.
-
-Provide feedback here: https://aka.ms/provide-feedback
-
-Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
-
 # AZ-104: Administrator Microsoft Azure
 
 ## Selamat datang
@@ -18,7 +10,7 @@ Repositori ini untuk instruktur yang mengajar kursus Microsoft. Jika Anda berada
 
 ## Masalah Keamanan - April 2023
 
-Mulai saat ini, kata sandi Admin akan dihapus dari file parameter templat JSON. Hal ini berarti siswa harus memberikan kata sandi saat templat disebarkan. Hal ini memengaruhi Lab 4, 5, 6, 7, 10, dan 11.  Petunjuk lab akan diubah untuk mencerminkan perubahan ini. 
+Berlaku segera, kata sandi Admin akan dihapus dari file parameter templat JSON. Hal ini berarti siswa harus memberikan kata sandi saat templat disebarkan. Ini mempengaruhi Lab 4, 5, 6, 7, 10 dan 11.  Petunjuk lab akan diubah untuk mencerminkan perubahan ini. 
 
 ## Apa yang kami kerjakan?
 
@@ -36,9 +28,9 @@ Mulai saat ini, kata sandi Admin akan dihapus dari file parameter templat JSON. 
 
 ## Bagaimana cara berkontribusi?
 
-- Setiap MCT dapat mengirimkan permintaan penarikan kode atau konten di repro GitHub, Microsoft dan penulis kursus akan melakukan triase serta menyertakan konten dan perubahan kode lab sesuai kebutuhan.
+- Setiap MCT dapat mengirimkan permintaan pull terhadap kode atau konten di repositori GitHub, Microsoft dan penulis kursus akan melakukan triase dan menyertakan perubahan konten dan kode lab sesuai kebutuhan.
 
-- Anda dapat mengirimkan bug, perubahan, peningkatan, dan ide.  Menemukan fitur Azure baru sebelum kami?  Kirimkan demo baru!
+- Anda dapat mengirimkan bug, perubahan, peningkatan, dan ide.  Menemukan fitur Azure baru sebelum kita memilikinya?  Kirimkan demo baru!
 
 ## Bagaimana dengan perubahan pada buku pegangan siswa?
 

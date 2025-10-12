@@ -91,7 +91,7 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama penetapan | 'Memerlukan tag Pusat Biaya dan nilainya pada sumber daya |
+    | Nama penetapan | `Require Cost Center tag and its value on resources` |
     | Deskripsi | `Require Cost Center tag and its value on all resources in the resource group`|
     | Pemberlakuan kebijakan | Diaktifkan |
 

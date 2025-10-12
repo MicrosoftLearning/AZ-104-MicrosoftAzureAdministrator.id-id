@@ -137,7 +137,7 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamny
 
 1. Pilih file unggahan Anda dan tinjau opsi elipsis (...) termasuk Unduh, Hapus **, **** Ubah tingkat**, dan **Dapatkan sewa**.****
 
-1. Salin URL** file **(Pengaturan --> bilah Properti) dan tempelkan ke jendela penjelajahan Inprivate** baru**.
+1. Salin URL** file **(Pengaturan --> bilah Properti) dan tempelkan ke jendela penjelajahan InPrivate** baru**.
 
 1. Anda akan diberikan pesan berformat XML yang menyatakan **ResourceNotFound** atau **PublicAccessNotPermitted**.
 
