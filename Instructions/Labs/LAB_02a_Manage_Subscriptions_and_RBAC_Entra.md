@@ -25,11 +25,6 @@ Untuk menyederhanakan manajemen sumber daya Azure di organisasi Anda, Anda telah
     - Membuat dan mengelola komputer virtual
     - Membuat tiket permintaan dukungan (tidak termasuk menambahkan penyedia Azure)
 
-
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Diagram arsitektur
 
 ![Diagram tugas lab.](../media/az104-lab02a-architecture.png)
@@ -173,6 +168,7 @@ Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini.
 + Anda dapat membuat peran baru atau menyesuaikan peran yang sudah ada.
 + Peran didefinisikan dalam file berformat JSON dan menyertakan *Actions*, *NotActions*, dan *AssignableScopes*.
 + Anda dapat menggunakan Log Aktivitas untuk memantau penetapan peran.
+
 
 
 

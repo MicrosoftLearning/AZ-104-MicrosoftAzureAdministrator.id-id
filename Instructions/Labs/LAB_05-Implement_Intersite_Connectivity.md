@@ -18,10 +18,6 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 Organisasi Anda membuat segmentasi aplikasi dan layanan TI inti (seperti DNS dan layanan keamanan) dari bagian lain bisnis, termasuk departemen manufaktur Anda. Namun, dalam beberapa skenario, aplikasi dan layanan di area inti perlu berkomunikasi dengan aplikasi dan layanan di area manufaktur. Di lab ini, Anda mengonfigurasi konektivitas antara area tersegmentasi. Ini adalah skenario umum untuk memisahkan produksi dengan pengembangan atau memisahkan satu anak perusahaan dengan anak perusahaan lainnya.  
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Diagram arsitektur
 
 ![Diagram arsitektur Lab 05](../media/az104-lab05-architecture.png)

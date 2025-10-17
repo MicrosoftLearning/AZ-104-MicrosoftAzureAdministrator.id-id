@@ -19,10 +19,6 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 Organisasi Anda tertarik dengan aplikasi Web Azure untuk meng-hosting situs web perusahaan Anda. Situs web ini saat ini di-hosting di pusat data lokal. Situs web berjalan di server Windows menggunakan tumpukan runtime PHP. Perangkat keras mendekati akhir masa pakai dan akan segera perlu diganti. Organisasi Anda ingin menghindari biaya perangkat keras baru dengan menggunakan Azure untuk meng-hosting situs web. 
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Diagram arsitektur
 
 ![Diagram tugas.](../media/az104-lab09a-architecture.png)

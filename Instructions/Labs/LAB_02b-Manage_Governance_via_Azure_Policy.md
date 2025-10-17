@@ -26,10 +26,6 @@ Jejak cloud organisasi Anda telah berkembang pesat dalam setahun terakhir. Selam
 
 - menggunakan kunci sumber daya untuk melindungi sumber daya yang dikonfigurasi
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Diagram arsitektur
 
 ![Diagram arsitektur tugas.](../media/az104-lab02b-architecture.png)
@@ -95,7 +91,7 @@ Dalam tugas ini, Anda akan menetapkan *bawaan Memerlukan tag dan nilainya pada k
 
     | Pengaturan | Nilai |
     | --- | --- |
-    | Nama penetapan | 'Memerlukan tag Pusat Biaya dan nilainya pada sumber daya |
+    | Nama penetapan | `Require Cost Center tag and its value on resources` |
     | Deskripsi | `Require Cost Center tag and its value on all resources in the resource group`|
     | Pemberlakuan kebijakan | Diaktifkan |
 

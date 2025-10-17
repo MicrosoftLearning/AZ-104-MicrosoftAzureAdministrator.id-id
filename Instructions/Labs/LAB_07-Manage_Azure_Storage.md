@@ -18,10 +18,6 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 Organisasi Anda saat ini menyimpan data di penyimpanan data lokal. Sebagian besar file ini tidak sering diakses. Anda ingin meminimalkan biaya penyimpanan dengan menempatkan file yang jarang diakses di tingkat penyimpanan dengan harga lebih rendah. Selain itu, rencanakan untuk menjelajahi berbagai mekanisme perlindungan yang ditawarkan Azure Storage, termasuk akses jaringan, autentikasi, otorisasi, dan replikasi. Terakhir, Anda ingin menentukan sejauh mana Azure Files cocok untuk menghosting berbagi file lokal Anda.
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Diagram arsitektur
 
 ![Diagram tugas.](../media/az104-lab07-architecture.png)
@@ -141,7 +137,7 @@ Dalam tugas ini, Anda akan membuat kontainer blob dan mengunggah blob ke dalamny
 
 1. Pilih file unggahan Anda dan tinjau opsi elipsis (...) termasuk Unduh, Hapus **, **** Ubah tingkat**, dan **Dapatkan sewa**.****
 
-1. Salin URL** file **(Pengaturan --> bilah Properti) dan tempelkan ke jendela penjelajahan Inprivate** baru**.
+1. Salin URL** file **(Pengaturan --> bilah Properti) dan tempelkan ke jendela penjelajahan InPrivate** baru**.
 
 1. Anda akan diberikan pesan berformat XML yang menyatakan **ResourceNotFound** atau **PublicAccessNotPermitted**.
 
@@ -257,7 +253,6 @@ Copilot dapat membantu Anda mempelajari cara menggunakan alat pembuatan skrip Az
 
 + [Buat akun](https://learn.microsoft.com/training/modules/create-azure-storage-account/) Azure Storage. Buat akun Azure Storage dengan opsi yang benar untuk kebutuhan bisnis Anda.
 + [Mengelola siklus](https://learn.microsoft.com/training/modules/manage-azure-blob-storage-lifecycle) hidup penyimpanan Azure Blob. Mempelajari cara mengelola ketersediaan data di seluruh siklus hidup penyimpanan Azure Blob.
-+ [Mengoptimalkan biaya Anda dengan Azure Blob Storage](https://learn.microsoft.com/training/modules/optimize-your-cost-azure-blob-storage/). Pelajari cara mengoptimalkan biaya Anda dengan Azure Blob Storage.
 
 ## Poin penting
 

@@ -14,10 +14,6 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 ## Perkiraan waktu: 50 menit
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-  
 ## Skenario lab
 
 Tim Anda ingin melihat cara mengotomatiskan dan menyederhanakan penyebaran sumber daya. Organisasi Anda mencari cara untuk mengurangi overhead administratif, mengurangi kesalahan manusia, dan meningkatkan konsistensi.  

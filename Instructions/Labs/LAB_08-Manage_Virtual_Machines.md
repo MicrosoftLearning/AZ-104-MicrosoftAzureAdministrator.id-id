@@ -18,10 +18,6 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 Organisasi Anda ingin menjelajahi penyebaran dan konfigurasi mesin virtual Azure. Pertama, Anda mengimplementasikan mesin virtual Azure dengan penskalaan manual. Selanjutnya, Anda menerapkan Virtual Machine Scale Set dan menjelajahi penskalaan otomatis.
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Keterampilan pekerjaan
 
 + Tugas 1: Sebarkan mesin virtual Azure yang tangguh zona dengan menggunakan portal Microsoft Azure.

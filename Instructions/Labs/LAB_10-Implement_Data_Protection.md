@@ -18,10 +18,6 @@ Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi keters
 
 Organisasi Anda sedang mengevaluasi cara mencadangkan dan memulihkan mesin virtual Azure dari kehilangan data yang tidak disengaja atau berbahaya. Selain itu, organisasi ingin mengeksplorasi penggunaan Azure Site Recovery untuk skenario pemulihan bencana. 
 
-## Simulasi lab interaktif
-
->**Catatan**: Simulasi lab yang sebelumnya disediakan telah dihentikan.
-
 ## Keterampilan pekerjaan
 
 + Tugas 1: Gunakan templat untuk menyediakan infrastruktur.
