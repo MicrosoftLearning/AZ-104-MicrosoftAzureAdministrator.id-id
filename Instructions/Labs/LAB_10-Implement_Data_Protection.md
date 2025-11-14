@@ -126,7 +126,7 @@ Dalam tugas ini, Anda akan menerapkan pencadangan tingkat mesin virtual Azure. S
     | Pengaturan | Nilai |
     | --- | --- |
     | Di mana beban kerja Anda berjalan? | **Azure** (perhatikan opsi Anda yang lain) |
-    | Apa yang ingin Anda cadangkan? | **Mesin virtual** (perhatikan opsi Anda yang lain |
+    | Apa yang ingin Anda cadangkan? | **Komputer virtual** (perhatikan opsi Anda yang lain)|
 
 1. Pilih **Backup**.
 

@@ -55,7 +55,7 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual Azure ke zona ketersedi
     | Zona ketersediaan | **Zona 1, 2** (baca catatan tentang menggunakan set skala mesin virtual) |
     | Jenis keamanan | **Standard**
            |
-    | Gambar | **Pusat Data Windows Server 2019 -x64 Gen2** |
+    | Gambar (Lihat semua gambar) | **Pusat Data Windows Server 2019 -x64 Gen2** |
     | Instans Azure Spot | **yang tidak dicentang** |
     | Ukuran | **Standar D2s v3** |
     | Nama Pengguna | `localadmin` |
@@ -174,7 +174,7 @@ Dalam tugas ini, Anda akan menyebarkan set skala mesin virtual Azure di seluruh 
     | Jenis keamanan | **Standard**
            |
     | Opsi penskalaan | **Tinjau dan ambil default**. Kami akan mengubah ini di tugas berikutnya. |
-    | Gambar | **Pusat Data Windows Server 2019 -x64 Gen2** |
+    | Gambar (Lihat semua gambar) | **Pusat Data Windows Server 2019 -x64 Gen2** |
     | Jalankan dengan diskon Azure Spot | **Tidak Dicentang** |
     | Ukuran | **D2s_v3 standar** |
     | Nama Pengguna | `localadmin` |

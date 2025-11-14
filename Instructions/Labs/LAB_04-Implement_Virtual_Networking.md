@@ -61,7 +61,9 @@ Organisasi merencanakan pertumbuhan besar untuk layanan inti. Dalam tugas ini, A
     | ------------------ | -------------------- |
     | Ruang alamat IPv4 | Ganti ruang alamat IPv4 yang telah diisi sebelumnya dengan `10.20.0.0/16` (pisahkan entri)  |
 
-1. Pilih **+ Tambahkan subnet**. Lengkapi informasi nama dan alamat untuk setiap subnet. Pastikan Anda memilih **Tambahkan** untuk setiap subnet baru. Pastikan untuk menghapus subnet default - baik sebelum atau sesudah membuat subnet lainnya.
+1. Pilih **+ Tambahkan subnet**. Lengkapi informasi nama dan alamat untuk setiap subnet. Pastikan Anda memilih **Tambahkan** untuk setiap subnet baru. 
+
+    >**Catatan:** Pastikan untuk menghapus subnet default - baik sebelum atau sesudah membuat subnet lainnya.
 
     | **Subnet**             | **Opsi**           | **Nilai**              |
     | ---------------------- | -------------------- | ---------------------- |
@@ -227,7 +229,7 @@ Dalam tugas ini, kita akan membuat Kelompok Keamanan Aplikasi dan Kelompok Keama
 
 1. Setelah membuat aturan NSG masuk, pilih **Aturan keamanan keluar**. 
 
-1. Perhatikan aturan **AllowInternetOutboundRule**. Perhatikan juga bahwa aturan ini tidak dapat dihapus dan prioritasnya adalah 65001.
+1. **Perhatikan aturan AllowInternetOutBound**. Perhatikan juga bahwa aturan ini tidak dapat dihapus dan prioritasnya adalah 65001.
 
 1. Pilih **+ Tambahkan** lalu konfigurasikan aturan keluar yang menolak akses ke internet. Setelah selesai, pilih **Tambahkan**.
 
@@ -267,7 +269,7 @@ Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik A
     | Nama | `contoso.com` (jika telah dicadangkan, sesuaikan namanya) |
     | Wilayah |**US Timur** (tinjau ikon informasi) |
 
-1. Pilih **Tinjau buat** lalu **Buat**.
+1. Pilih **Ulas + buat**, lalu pilih **Buat**.
    
 1. Tunggu zona DNS disebarkan lalu pilih **Buka sumber daya**.
 
@@ -310,7 +312,7 @@ Zona DNS privat menyediakan layanan resolusi nama dalam jaringan virtual. Zona D
     | Nama | `private.contoso.com` (sesuaikan jika Anda harus mengganti nama) |
     | Wilayah |**US Timur** |
 
-1. Pilih **Tinjau buat** lalu **Buat**.
+1. Pilih **Ulas + buat**, lalu pilih **Buat**.
    
 1. Tunggu zona DNS disebarkan lalu pilih **Buka sumber daya**.
 
@@ -370,6 +372,8 @@ Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama lab ini.
 + Kelompok keamanan jaringan berisi aturan keamanan yang memperbolehkan atau menolak lalu lintas jaringan. Ada aturan masuk dan keluar default yang dapat Anda sesuaikan dengan kebutuhan Anda.
 + Kelompok keamanan aplikasi digunakan untuk melindungi kelompok server dengan fungsi yang sama, seperti server web atau server database.
 + Azure DNS adalah layanan hosting untuk domain DNS yang menyediakan resolusi nama. Anda bisa mengonfigurasi Azure DNS untuk meresolusi nama host di domain publik Anda.  Anda juga dapat menggunakan zona DNS privat untuk menetapkan nama DNS ke mesin virtual (VM) di jaringan virtual Azure Anda.
+
+
 
 
 
