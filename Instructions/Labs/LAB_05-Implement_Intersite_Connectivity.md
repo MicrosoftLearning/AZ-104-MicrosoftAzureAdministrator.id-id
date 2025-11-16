@@ -39,9 +39,9 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan inti dengan mesin virtual
 
 1. Cari dan pilih `Virtual Machines`.
 
-1. Dari halaman mesin virtual, pilih **Buat**, lalu pilih **Mesin Virtual Azure**.
+1. Dari halaman komputer virtual, pilih **Buat lalu pilih **Komputer virtual****.
 
-1. Di tab Dasar, gunakan informasi berikut untuk melengkapi formulir, lalu pilih **Berikutnya: Disk >**. Untuk pengaturan yang tidak ditentukan, biarkan nilai default.
+1. Pada tab Dasar, gunakan informasi berikut untuk melengkapi formulir, lalu pilih **Berikutnya : Disk >**. Untuk pengaturan yang tidak ditentukan, biarkan nilai default.
  
     | Pengaturan | Nilai | 
     | --- | --- |
@@ -52,7 +52,7 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan inti dengan mesin virtual
     | Opsi ketersediaan | Tidak ada redundansi infrastruktur yang diperlukan |
     | Jenis keamanan | **Standard**
            |
-    | Gambar | **Pusat Data Windows Server 2019: x64 Gen2** (perhatikan pilihan Anda yang lain) |
+    | Gambar (Lihat semua gambar) | **Pusat Data Windows Server 2019 - x64 Gen2** (perhatikan pilihan Anda yang lain) |
     | Ukuran | **Standard_DS2_v3** |
     | Nama Pengguna | `localadmin` | 
     | Kata sandi | **Berikan kata sandi yang kompleks** |
@@ -60,7 +60,7 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan inti dengan mesin virtual
 
     ![Cuplikan layar halaman pembuatan mesin virtual Dasar. ](../media/az104-lab05-createcorevm.png)
    
-1. Di tab **Disk** gunakan default lalu pilih **Berikutnya: Jaringan >**.
+1. Pada tab **Disk** , ambil default lalu pilih **Berikutnya : Jaringan >**.
 
 1. Di tab **Jaringan**, untuk Jaringan virtual, pilih **Buat baru**.
 
@@ -68,14 +68,14 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan inti dengan mesin virtual
 
     | Pengaturan | Nilai | 
     | --- | --- |
-    | Nama | `CoreServicesVnet` (Buat baru) |
+    | Nama | `CoreServicesVnet` (Buat atau edit) |
     | Rentang alamat | `10.0.0.0/16`  |
     | Nama Subnet | `Core` | 
     | Rentang alamat subnet | `10.0.0.0/24` |
 
-1. Pilih tab **Pemantauan**. Untuk Diagnostik Boot, pilih **Nonaktifkan**.
+1. Pilih tab **Pemantauan** . Untuk Diagnostik boot, pilih **Nonaktifkan**.
 
-1. Pilih **Tinjauan + Buat**, kemudian pilih **Buat**.
+1. Pilih **Tinjau + buat**, lalu pilih **Buat**.
 
 1. Anda tidak perlu menunggu hingga sumber daya dibuat. Lanjutkan ke tugas berikutnya.
 
@@ -87,9 +87,9 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan manufaktur dengan mesin v
 
 1. Di portal Microsoft Azure, cari dan navigasi ke **Virtual Machines.**
 
-1. Dari halaman mesin virtual, pilih **Buat**, lalu pilih **Mesin Virtual Azure**.
+1. Dari halaman komputer virtual, pilih **Buat lalu pilih **Komputer virtual****.
 
-1. Di tab Dasar, gunakan informasi berikut untuk melengkapi formulir, lalu pilih **Berikutnya: Disk >**. Untuk pengaturan yang tidak ditentukan, biarkan nilai default.
+1. Pada tab Dasar, gunakan informasi berikut untuk melengkapi formulir, lalu pilih **Berikutnya : Disk >**. Untuk pengaturan yang tidak ditentukan, biarkan nilai default.
  
     | Pengaturan | Nilai | 
     | --- | --- |
@@ -100,13 +100,13 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan manufaktur dengan mesin v
     | Jenis keamanan | **Standard**
            |
     | Opsi ketersediaan | Tidak ada redundansi infrastruktur yang diperlukan |
-    | Gambar | **Pusat Data Windows Server 2019: x64 Gen2** |
+    | Gambar (Lihat semua gambar) | **Pusat Data Windows Server 2019 -x64 Gen2** |
     | Ukuran | **Standard_DS2_v3** | 
     | Nama Pengguna | `localadmin` | 
     | Kata sandi | **Berikan kata sandi yang kompleks** |
     | Port masuk publik | **Tidak** |
 
-1. Di tab **Disk** gunakan default lalu pilih **Berikutnya: Jaringan >**.
+1. Pada tab **Disk** , ambil default lalu pilih **Berikutnya : Jaringan >**.
 
 1. Di tab Jaringan, untuk Jaringan virtual, pilih **Buat baru**.
 
@@ -121,7 +121,7 @@ Dalam tugas ini, Anda membuat jaringan virtual layanan manufaktur dengan mesin v
 
 1. Pilih tab **Pemantauan**. Untuk Diagnostik Boot, pilih **Nonaktifkan**.
 
-1. Pilih **Tinjauan + Buat**, kemudian pilih **Buat**.
+1. Pilih **Tinjau + buat**, lalu pilih **Buat**.
 
 ## Tugas 3: Menggunakan Network Watcher untuk menguji koneksi antara mesin virtual 
 
@@ -138,7 +138,7 @@ Dalam tugas ini, Anda memverifikasi bahwa sumber daya di jaringan virtual yang d
     | --- | --- |
     | Jenis sumber           | **Mesin virtual**   |
     | Komputer virtual       | **CoreServicesVM**    | 
-    | Tipe tujuan      | **Mesin virtual**   |
+    | Tipe tujuan      | **Pilih komputer virtual**   |
     | Komputer virtual       | **ManufacturingVM**   | 
     | Versi IP Pilihan  | **Keduanya**              | 
     | Protokol              | **TCP**               |
@@ -150,7 +150,7 @@ Dalam tugas ini, Anda memverifikasi bahwa sumber daya di jaringan virtual yang d
 
 1. Pilih **Jalankan pengujian diagnostik**.
 
-    >**Catatan**: Mungkin perlu waktu beberapa menit untuk menampilkan hasil. Pilihan layar akan berwarna abu-abu saat hasilnya sedang dikumpulkan. Perhatikan **Pengujian konektivitas** menunjukkan **UnReachable**. Ini masuk akal karena mesin virtual berada di jaringan virtual yang berbeda. 
+    >**Catatan**: Mungkin perlu waktu beberapa menit untuk menampilkan hasil. Pilihan layar akan berwarna abu-abu saat hasilnya sedang dikumpulkan. Perhatikan bahwa **pengujian** Konektivitas menunjukkan **Tidak Dapat Dijangkau**. Ini masuk akal karena mesin virtual berada di jaringan virtual yang berbeda. 
 
  
 ## Tugas 4: Mengonfigurasikan peering jaringan virtual antara jaringan virtual
@@ -164,14 +164,14 @@ Dalam tugas ini, Anda membuat peering jaringan virtual untuk mengaktifkan komuni
 1. Di CoreServicesVnet, di bawah Peering, pilih **+ Tambahkan**. Jika tidak ditentukan, ambil default. 
 
     | **Parameter**                                    | **Nilai**                             |
-    | --------------------------------------------- | ------------------------------------- |                                
-    | Nama tautan penyerekan                             | `CoreServicesVnet-to-ManufacturingVnet` |
-    | Jaringan virtual    | **ManufacturingVM-net (az104-rg5)**  |
-    | Izinkan ManufacturingVnet untuk mengakses CoreServicesVnet  | dipilih (default) |
-    | Izinkan ManufacturingVnet menerima lalu lintas yang diteruskan dari CoreServicesVnet | dipilih  |
+    | --------------------------------------------- | ------------------------------------- |
     | Nama tautan penyerekan                             | `ManufacturingVnet-to-CoreServicesVnet` |
-    | Izinkan CoreServicesVnet mengakses jaringan virtual yang di-peering            | dipilih (default) |
-    | Izinkan CoreServicesVnet menerima lalu lintas yang diteruskan dari jaringan virtual yang di-peering | dipilih |
+    | Jaringan virtual    | **ManufacturingVnet (az104-rg5)**  |
+    | Izinkan 'CoreServicesVnet' untuk mengakses 'ManufacturingVnet'            | dipilih (default) |
+    | Izinkan 'CoreServicesVnet' menerima lalu lintas yang diteruskan dari 'ManufacturingVnet' | dipilih |
+    | Nama tautan penyerekan                             | `CoreServicesVnet-to-ManufacturingVnet` |
+    | Izinkan 'ManufacturingVnet' untuk mengakses 'CoreServicesVnet'  | dipilih (default) |
+    | Izinkan 'ManufacturingVnet' menerima lalu lintas yang diteruskan dari 'CoreServicesVnet' | dipilih  |
 
 4. Klik **Tambahkan**.
 
@@ -202,7 +202,7 @@ Dalam tugas ini, Anda menguji ulang koneksi antara mesin virtual di jaringan vir
     ```Powershell
     Test-NetConnection <CoreServicesVM private IP address> -port 3389
     ```
-1. Mungkin perlu waktu beberapa menit agar skrip kehabisan waktu. Bagian atas halaman menampilkan pesan informasi *Eksekusi Skrip sedang berlangsung.*
+1. Mungkin perlu waktu beberapa menit agar skrip kehabisan waktu. Bagian atas halaman memperlihatkan pesan *informasi Eksekusi Skrip yang sedang berlangsung...*
 
    
 1. Uji koneksi harus berhasil karena peering telah dikonfigurasi. Nama komputer dan alamat jarak jauh Anda dalam gambar ini mungkin berbeda. 
@@ -225,7 +225,7 @@ Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perime
    
 1. Di portal Azure, cari dan pilih `Route tables`, pilih **+ Buat**.
 
-1. Masukkan detail berikut, pilih **Tinjau + Buat**, lalu pilih **Buat**. 
+1. Masukkan detail berikut, pilih **Tinjau + buat**, lalu pilih **Buat**. 
 
     | Pengaturan | Nilai | 
     | --- | --- |
@@ -239,7 +239,7 @@ Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perime
    
 1. Pilih sumber daya (bukan kotak centang) **rt-CoreServices**
 
-1. Perluas **Pengaturan lalu pilih **Rute** lalu **Tambahkan****. Buat rute dari Network Virtual Appliance (NVA) di masa mendatang ke jaringan virtual CoreServices. 
+1. Perluas **Pengaturan lalu pilih **Rute** lalu **+ Tambahkan****. Buat rute dari Network Virtual Appliance (NVA) di masa mendatang ke jaringan virtual CoreServices. 
 
     | Pengaturan | Nilai | 
     | --- | --- |
@@ -249,13 +249,13 @@ Dalam tugas ini, Anda ingin mengontrol lalu lintas jaringan antara subnet perime
     | Jenis hop berikutnya | **Appliance virtual** (perhatikan pilihan Anda yang lain) |
     | Alamat lompatan berikutnya | `10.0.1.7` (NVA mendatang) |
 
-1. Pilih **+ Tambahkan**. Hal terakhir yang harus dilakukan adalah mengaitkan rute dengan subnet.
+1. Pilih **Tambahkan**. Hal terakhir yang harus dilakukan adalah mengaitkan rute dengan subnet.
 
 1. Pilih **Subnet** lalu **+ Kaitkan**. Selesaikan konfigurasinya.
 
     | Pengaturan | Nilai | 
     | --- | --- |
-    | Jaringan virtual | **CoreServicesVnet** |
+    | Jaringan virtual | **CoreServicesVnet (az104-rg5)** |
     | Subnet | **Core** |    
 
 >**Catatan**: Anda telah membuat rute yang ditentukan pengguna untuk mengarahkan lalu lintas dari DMZ ke NVA baru.  

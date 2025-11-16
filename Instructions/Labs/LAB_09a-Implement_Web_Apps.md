@@ -37,7 +37,7 @@ Dalam tugas ini, Anda membuat aplikasi web Azure. Azure App Services adalah solu
 
 1. Masuk ke **portal Azure** - `https://portal.azure.com`.
 
-1. Cari dan pilih `App services`.
+1. Cari dan pilih `App Services`.
 
 1. Pilih **+ Buat**, dari menu drop-down, **Aplikasi Web**. Perhatikan pilihan yang lain. 
 
@@ -146,7 +146,7 @@ Dalam tugas ini, Anda akan mengonfigurasi dan menguji penskalaan otomatis Aplika
 
 1. Pilih **Simpan**.
 
-1. Pilih **Diagnosis dan selesaikan masalah** (panel kiri).
+1. Pilih **Diagnosis dan selesaikan masalah** (panel kiri halaman utama aplikasi web).
 
 1. Dalam kotak **Uji Beban Aplikasi Anda**, pilih **Buat Pengujian Beban**.
 

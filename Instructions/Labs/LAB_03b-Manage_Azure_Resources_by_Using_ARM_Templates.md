@@ -198,7 +198,7 @@ Dalam tugas ini, Anda bekerja dengan Azure Cloud Shell dan Azure PowerShell. Azu
 1. Konfirmasikan bahwa disk telah dibuat.
 
      ```sh
-     az disk list --output table
+     az disk list --resource-group az104-rg3 --output table
      ```
    
 ## Tugas 5: Sebarkan sumber daya menggunakan Azure Bicep
@@ -234,7 +234,7 @@ Dalam tugas ini, Anda akan menggunakan file Bicep untuk menyebarkan disk terkelo
 1. Konfirmasikan bahwa disk telah dibuat.
 
     ```sh
-    az disk list --output table
+    az disk list --resource-group az104-rg3 --output table
     ```
 
     >**Catatan:** Anda telah berhasil menyebarkan lima disk terkelola, masing-masing dengan cara yang berbeda. Kerja bagus!

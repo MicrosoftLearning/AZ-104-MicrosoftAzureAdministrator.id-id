@@ -48,7 +48,7 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. Grup manaj
 
 1. Tinjau area **Manajemen akses untuk sumber daya Azure**. Pastikan Anda dapat mengelola akses ke semua langganan Azure dan grup manajemen di penyewa ini.
    
-1. Cari dan pilih `Management groups`.
+1. Cari dan pilih **Grup** manajemen.
 
 1. Pada panel **Grup manajemen**, klik **+ Buat**.
 
@@ -168,6 +168,7 @@ Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini.
 + Anda dapat membuat peran baru atau menyesuaikan peran yang sudah ada.
 + Peran didefinisikan dalam file berformat JSON dan menyertakan *Actions*, *NotActions*, dan *AssignableScopes*.
 + Anda dapat menggunakan Log Aktivitas untuk memantau penetapan peran.
+
 
 
 
