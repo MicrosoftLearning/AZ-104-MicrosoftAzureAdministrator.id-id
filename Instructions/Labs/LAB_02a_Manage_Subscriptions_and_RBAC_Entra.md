@@ -67,6 +67,8 @@ Dalam tugas ini, Anda akan membuat dan mengonfigurasi grup manajemen. Grup manaj
 
 Dalam tugas ini, Anda akan meninjau peran bawaan dan menetapkan peran Kontributor VM kepada anggota Staf Dukungan. Azure menyediakan sejumlah besar [peran bawaan](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles). 
 
+>**Catatan:** Dalam langkah-langkah berikut, Anda akan menetapkan peran ke **grup helpdesk** . Jika Anda tidak memiliki grup Staf Dukungan, luangkan waktu sejenak untuk membuatnya.
+
 1. Pilih grup manajemen **az104-mg1**.
 
 1. Pilih blade **Kontrol akses (IAM)**, lalu tab **Peran**.
@@ -77,11 +79,9 @@ Dalam tugas ini, Anda akan meninjau peran bawaan dan menetapkan peran Kontributo
 
 1. Pada blade **Tambahkan penetapan peran**, cari dan pilih **Kontributor Mesin Virtual**. Peran Kontributor komputer virtual memungkinkan Anda mengelola komputer virtual, tetapi tidak mengakses sistem operasinya atau mengelola jaringan virtual dan akun penyimpanan tempat itu tersambung. Ini adalah peran yang baik untuk Staf Dukungan. Pilih **Selanjutnya**.
 
-    >**Tahukah Anda?** Azure awalnya hanya menyediakan model penyebaran **Klasik**. Model ini telah digantikan dengan model penyebaran **Azure Resource Manager**. Sebagai praktik terbaik, jangan gunakan sumber daya klasik. 
+    >**Tahukah Anda?** Azure awalnya hanya menyediakan model penyebaran **Klasik**. Model ini telah digantikan dengan model penyebaran **Azure Resource Manager**. Sebagai praktik terbaik, jangan gunakan sumber daya klasik.
 
 1. Di tab **Anggota**, **Pilih Anggota**.
-
-    >**Catatan:** Langkah berikutnya menetapkan peran ke grup **staf dukungan**. Jika Anda tidak memiliki grup Staf Dukungan, luangkan waktu sejenak untuk membuatnya.
 
 1. Cari dan pilih grup `helpdesk`. Klik **Pilih**. 
 
@@ -168,6 +168,8 @@ Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini.
 + Anda dapat membuat peran baru atau menyesuaikan peran yang sudah ada.
 + Peran didefinisikan dalam file berformat JSON dan menyertakan *Actions*, *NotActions*, dan *AssignableScopes*.
 + Anda dapat menggunakan Log Aktivitas untuk memantau penetapan peran.
+
+
 
 
 
