@@ -81,11 +81,7 @@ Dalam tugas ini, Anda akan menyebarkan dua mesin virtual Azure ke zona ketersedi
     | Opsi penyeimbangan muatan | **Tidak** |
 
 
-1. Klik **Berikutnya : Manajemen >** dan tentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
-
-    | Pengaturan | Nilai |
-    | --- | --- |
-    | Opsi orkestrasi patch | **yang diorkestrasi Azure** |  
+1. Klik **Berikutnya : Manajemen >** dan tinjau pengaturan. Jangan membuat perubahan apa pun. 
 
 1. Klik **Berikutnya : Memantau >** dan menentukan pengaturan berikut (biarkan orang lain dengan nilai defaultnya):
 
