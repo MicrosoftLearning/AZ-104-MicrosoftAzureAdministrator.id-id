@@ -207,7 +207,7 @@ Masukkan pengaturan berikut untuk penjadwalan aturan pemrosesan peringatan:
 
 Dalam tugas ini, Anda akan menggunakan Azure Monitor untuk mengkueri data yang diambil dari mesin virtual.
 
-    >**Note:** It can take 15-30 minutes for data to appear. Concentrate on the method and types of queries, rather than the results. 
+   >**Catatan:** Tidak apa-apa jika data tidak muncul. Fokus pada langkah-langkah untuk meninjau informasi pemantauan, termasuk kueri log yang telah dikonfigurasi sebelumnya dan kustom. 
 
 1. Di portal Azure, cari dan pilih `Monitor`, lalu klik **Log**.
 
