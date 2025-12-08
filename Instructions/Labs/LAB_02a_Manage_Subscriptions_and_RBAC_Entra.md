@@ -10,9 +10,9 @@ lab:
 
 Di lab ini, Anda mempelajari tentang kontrol akses berbasis peran. Anda mempelajari cara menggunakan izin dan cakupan untuk mengontrol tindakan apa yang dapat dan tidak dapat dilakukan oleh identitas. Anda juga mempelajari cara mempermudah manajemen langganan menggunakan grup manajemen. 
 
-Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkahnya ditulis menggunakan **US Timur**. 
+Lab ini memerlukan langganan Azure. Tipe langganan Anda dapat memengaruhi ketersediaan fitur di lab ini. Anda dapat mengubah wilayah, tetapi langkah-langkah ditulis menggunakan **US Timur**. 
 
-## Perkiraan waktu: 30 menit
+## Perkiraan waktu: 20 menit
 
 ## Skenario lab
 
@@ -168,6 +168,7 @@ Selamat atas penyelesaian lab ini. Berikut adalah kesimpulan utama dari lab ini.
 + Anda dapat membuat peran baru atau menyesuaikan peran yang sudah ada.
 + Peran didefinisikan dalam file berformat JSON dan menyertakan *Actions*, *NotActions*, dan *AssignableScopes*.
 + Anda dapat menggunakan Log Aktivitas untuk memantau penetapan peran.
+
 
 
 
